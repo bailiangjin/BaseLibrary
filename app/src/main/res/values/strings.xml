@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">基础资源库</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+        <!-- 登录相关 -->
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="please_input_user_name">请输入用户名</string>
+  
+    <string name="please_input_password">请输入密码</string>
+    <string name="username_pwd_cannot_be_null">用户名密码不能为空</string>
+    <string name="getbackpwd">忘记密码？</string>
+    <string name="logging_in">正在登陆中</string>
+    <string name="loading">加载中...</string>
+
+    <!-- 操作相关 -->
+    <string name="back">返回</string>
+    <string name="setting">设置</string>
+    <string name="title">标题</string>
+    <string name="one_more_click_exit">再点击一次退出程序</string>
+
+    <!-- 提示相关 -->
+    <string name="server_exception">您的网络状况不太好哦</string>
+    <string name="connect_server_exception">联接服务器异常</string>
+    <string name="download_error">下载出现异常</string>
+   
+    
+
+</resources>
