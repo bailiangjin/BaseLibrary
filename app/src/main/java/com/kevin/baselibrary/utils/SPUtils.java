@@ -1,11 +1,14 @@
 package com.kevin.baselibrary.utils;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
+import com.kevin.baselibrary.AApplication;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
-
-import android.content.Context;
-import android.content.SharedPreferences;
+import java.util.Objects;
 
 public class SPUtils
 {
@@ -20,53 +23,54 @@ public class SPUtils
 		throw new UnsupportedOperationException("cannot be instantiated");
 	}
 
+	public static void put(String key,Objects obj){
+		put(AApplication.getContext(),key,obj);
+	}
+
+	public static void putString(String key,String value){
+		putString(AApplication.getContext(), key, value);
+	}
+
+	public static String getString(String key){
+		return getString(AApplication.getContext(),key);
+	}
+
+
 	/**
-	 * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
-	 * 
-	 * @param context
+	 * 保存boolean数据的方法
+	 *
 	 * @param key
-	 * @param obj
 	 */
-	public static void put(Context context, String key, Object obj)
+	public static void putBoolean( String key, boolean value)
+	{
+		putBoolean(AApplication.getContext(), key, value);
+	}
+
+	/**
+	 * 获取boolean 方法
+	 *
+	 * @param key
+	 * @return
+	 */
+	public static boolean getBoolean( String key)
 	{
 
-		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = sp.edit();
-
-		if (obj instanceof String)
-		{
-			editor.putString(key, (String) obj);
-		}
-		else if (obj instanceof Integer)
-		{
-			editor.putInt(key, (Integer) obj);
-		}
-		else if (obj instanceof Boolean)
-		{
-			editor.putBoolean(key, (Boolean) obj);
-		}
-		else if (obj instanceof Float)
-		{
-			editor.putFloat(key, (Float) obj);
-		}
-		else if (obj instanceof Long)
-		{
-			editor.putLong(key, (Long) obj);
-		}
-		else
-		{
-			editor.putString(key, obj.toString());
-		}
-
-		SharedPreferencesCompat.apply(editor);
+		return (Boolean) get(AApplication.getContext(), key, false);
 	}
+
+
+
+	public static void remove(String key){
+		remove(AApplication.getContext(), key);
+	}
+
+
 	
 	/**
      * 保存boolean数据的方法
      * 
      * @param context
      * @param key
-     * @param str
      */
     public static void putBoolean(Context context, String key, boolean value)
     {
@@ -78,13 +82,12 @@ public class SPUtils
      * 
      * @param context
      * @param key
-     * @param defaltStr
      * @return
      */
     public static boolean getBoolean(Context context, String key)
     {
-
-        return (Boolean) get(context, key, false);
+		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+		return sp.getBoolean(key,false);
     }
 
 
@@ -108,41 +111,7 @@ public class SPUtils
 		SharedPreferencesCompat.apply(editor);
 	}
 
-	/**
-	 * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
-	 * 
-	 * @param context
-	 * @param key
-	 * @param defaultObj
-	 * @return
-	 */
-	public static Object get(Context context, String key, Object defaultObj)
-	{
-		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
 
-		if (defaultObj instanceof String)
-		{
-			return sp.getString(key, (String) defaultObj);
-		}
-		else if (defaultObj instanceof Integer)
-		{
-			return sp.getInt(key, (Integer) defaultObj);
-		}
-		else if (defaultObj instanceof Boolean)
-		{
-			return sp.getBoolean(key, (Boolean) defaultObj);
-		}
-		else if (defaultObj instanceof Float)
-		{
-			return sp.getFloat(key, (Float) defaultObj);
-		}
-		else if (defaultObj instanceof Long)
-		{
-			return sp.getLong(key, (Long) defaultObj);
-		}
-
-		return null;
-	}
 
 	/**
 	 * 获取String 方法
@@ -164,7 +133,6 @@ public class SPUtils
 	 * 
 	 * @param context
 	 * @param key
-	 * @param defaltStr
 	 * @return
 	 */
 	public static String getString(Context context, String key)
@@ -223,6 +191,85 @@ public class SPUtils
 	{
 		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
 		return sp.getAll();
+	}
+
+
+
+	/**
+	 * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
+	 *
+	 * @param context
+	 * @param key
+	 * @param obj
+	 */
+	public static void put(Context context, String key, Object obj)
+	{
+
+		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
+
+		if (obj instanceof String)
+		{
+			editor.putString(key, (String) obj);
+		}
+		else if (obj instanceof Integer)
+		{
+			editor.putInt(key, (Integer) obj);
+		}
+		else if (obj instanceof Boolean)
+		{
+			editor.putBoolean(key, (Boolean) obj);
+		}
+		else if (obj instanceof Float)
+		{
+			editor.putFloat(key, (Float) obj);
+		}
+		else if (obj instanceof Long)
+		{
+			editor.putLong(key, (Long) obj);
+		}
+		else
+		{
+			editor.putString(key, obj.toString());
+		}
+
+		SharedPreferencesCompat.apply(editor);
+	}
+
+	/**
+	 * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
+	 *
+	 * @param context
+	 * @param key
+	 * @param defaultObj
+	 * @return
+	 */
+	public static Object get(Context context, String key, Object defaultObj)
+	{
+		SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+
+		if (defaultObj instanceof String)
+		{
+			return sp.getString(key, (String) defaultObj);
+		}
+		else if (defaultObj instanceof Integer)
+		{
+			return sp.getInt(key, (Integer) defaultObj);
+		}
+		else if (defaultObj instanceof Boolean)
+		{
+			return sp.getBoolean(key, (Boolean) defaultObj);
+		}
+		else if (defaultObj instanceof Float)
+		{
+			return sp.getFloat(key, (Float) defaultObj);
+		}
+		else if (defaultObj instanceof Long)
+		{
+			return sp.getLong(key, (Long) defaultObj);
+		}
+
+		return null;
 	}
 
 	/**

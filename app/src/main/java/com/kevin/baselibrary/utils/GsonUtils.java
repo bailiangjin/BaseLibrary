@@ -1,11 +1,11 @@
 package com.kevin.baselibrary.utils;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 /**
  * Gson 工具类
@@ -32,11 +32,11 @@ public class GsonUtils {
         gson = new Gson();
     }
 
-    public <T> T parseJson2Obj(String json, Class<T> T) {
+    public <T> T toObj(String json, Class<T> T) {
         return gson.fromJson(json, T);
     }
 
-    public String parseObj2Json(Object obj) {
+    public String toJson(Object obj) {
         return gson.toJson(obj);
     }
     
@@ -57,6 +57,10 @@ public class GsonUtils {
             return list;
         }
         return null;
+    }
+
+    public Gson getGson(){
+        return gson;
     }
 
   

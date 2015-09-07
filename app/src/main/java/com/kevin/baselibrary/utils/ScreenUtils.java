@@ -8,6 +8,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.kevin.baselibrary.AApplication;
+
 /**
  * 获得屏幕相关的辅助类
  * 
@@ -25,6 +27,36 @@ public class ScreenUtils
 	/**
 	 * 获得屏幕高度
 	 * 
+	 * @return
+	 */
+	public static int getScreenWidth()
+	{
+
+		return getScreenWidth(AApplication.getContext());
+	}
+
+	/**
+	 * 获得屏幕宽度
+	 * 
+	 * @return
+	 */
+	public static int getScreenHeight()
+	{
+		return getScreenHeight(AApplication.getContext());
+	}
+
+	/**
+	 * 获得状态栏的高度
+	 * 
+	 * @return
+	 */
+	public static int getStatusHeight()
+	{
+
+		return getStatusHeight(AApplication.getContext());
+	}/**
+	 * 获得屏幕高度
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -38,7 +70,7 @@ public class ScreenUtils
 
 	/**
 	 * 获得屏幕宽度
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -52,7 +84,7 @@ public class ScreenUtils
 
 	/**
 	 * 获得状态栏的高度
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */

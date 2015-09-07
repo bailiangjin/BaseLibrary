@@ -1,9 +1,11 @@
 package com.kevin.baselibrary.utils;
 
-import java.io.File;
-
 import android.content.Context;
 import android.os.Environment;
+
+import com.kevin.baselibrary.AApplication;
+
+import java.io.File;
 
 /**
  * 文件路径工具类 IM工程特有功能 工具类 其他处使用UcFileUtil
@@ -48,12 +50,16 @@ public class FilePathUtil
 		return DEFAULT_STORAGE_DIRECTORY;
 	}
 
+	public static String getAppPath(){
+		return getAppPath(AApplication.getContext());
+	}
+
 	/**
 	 * 
 	 * @param context
 	 * @return /mnt/sdcard/packageName
 	 */
-	public static String getAppPath(Context context)
+	private static String getAppPath(Context context)
 	{
 		if (context != null && DEFAULT_STORAGE_DIRECTORY != null)
 		{
