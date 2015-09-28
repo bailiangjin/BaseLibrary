@@ -15,10 +15,10 @@ import com.kevin.baselibrary.AApplication;
 public class ToastUtils {
 
     public static void show(int resId) {
-        shortShowResId(AApplication.getContext(), resId);
+        shortShow(AApplication.getContext(), resId);
     }
     public static void show(String  str) {
-        shortShowString(AApplication.getContext(), str);
+        shortShow(AApplication.getContext(), str);
     }
 
     /**
@@ -27,8 +27,8 @@ public class ToastUtils {
      * @param context
      * @param resId
      */
-    public static void shortShowResId(Context context, int resId) {
-        showToastResId(context, resId, Toast.LENGTH_SHORT);
+    public static void shortShow(Context context, int resId) {
+        showResId(context, resId, Toast.LENGTH_SHORT);
     }
 
     /**
@@ -37,8 +37,8 @@ public class ToastUtils {
      * @param context
      * @param resId
      */
-    public static void longShowResId(Context context, int resId) {
-        showToastResId(context, resId, Toast.LENGTH_LONG);
+    public static void longShow(Context context, int resId) {
+        showResId(context, resId, Toast.LENGTH_LONG);
     }
 
     /**
@@ -47,8 +47,8 @@ public class ToastUtils {
      * @param context
      * @param string
      */
-    public static void shortShowString(Context context, String string) {
-        showToastStr(context, string, Toast.LENGTH_SHORT);
+    public static void shortShow(Context context, String string) {
+        showString(context, string, Toast.LENGTH_SHORT);
     }
 
     /**
@@ -57,8 +57,8 @@ public class ToastUtils {
      * @param context
      * @param string
      */
-    public static void longShowStr(Context context, String string) {
-        showToastStr(context, string, Toast.LENGTH_LONG);
+    public static void longShow(Context context, String string) {
+        showString(context, string, Toast.LENGTH_LONG);
     }
 
     /**
@@ -68,7 +68,7 @@ public class ToastUtils {
      * @param str      文字
      * @param showTime
      */
-    private static void showToastStr(Context context, String str, int showTime) {
+    private static void showString(Context context, String str, int showTime) {
         MyToast.getToast(context, str, showTime).show();
     }
 
@@ -79,7 +79,7 @@ public class ToastUtils {
      * @param resId
      * @param showTime
      */
-    private static void showToastResId(Context context, int resId, int showTime) {
+    private static void showResId(Context context, int resId, int showTime) {
         MyToast.getToast(context, context.getString(resId), showTime).show();
     }
 

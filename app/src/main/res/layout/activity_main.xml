@@ -9,9 +9,5 @@
     tools:context="com.kevin.baselibrary.MainActivity" >
     <include layout="@layout/title_view"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
 
 </RelativeLayout>

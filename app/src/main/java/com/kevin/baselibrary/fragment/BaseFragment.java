@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 
 public class BaseFragment extends Fragment
 {
@@ -87,6 +88,44 @@ public class BaseFragment extends Fragment
 	{
 		LogUtils.d("Fragment:::-->>onDetach");
 		super.onDetach();
+	}
+
+
+
+	/**
+	 * show toast by string
+	 *
+	 * @param string
+	 */
+	protected void show(String string) {
+		ToastUtils.shortShow(getActivity(), string);
+	}
+
+	/**
+	 * show toast by res id
+	 *
+	 * @param resId
+	 */
+	protected void show(int resId) {
+		ToastUtils.shortShow(getActivity(), resId);
+	}
+
+	/**
+	 * long toast
+	 *
+	 * @param string
+	 */
+	protected void longShow(String string) {
+		ToastUtils.longShow(getActivity(), string);
+	}
+
+	/**
+	 * long toast
+	 *
+	 * @param resId
+	 */
+	protected void longShow(int resId) {
+		ToastUtils.longShow(getActivity(), resId);
 	}
 
 }

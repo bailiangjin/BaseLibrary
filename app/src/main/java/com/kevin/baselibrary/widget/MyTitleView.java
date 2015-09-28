@@ -40,7 +40,7 @@ public class MyTitleView extends FrameLayout
 			@Override
 			public void onClick(View v)
 			{
-				ToastUtils.shortShowString(getContext(), "点击了设置按钮");
+				ToastUtils.shortShow(getContext(), "点击了设置按钮");
 			}
 		});
 	}
