@@ -11,11 +11,10 @@ import android.content.IntentFilter;
  * Create Time: 2015/9/29 15:38
  */
 public class HomeListener {
-    static final String TAG = "HomeListener";
     private Context mContext;
-    private IntentFilter mFilter;
-    private OnHomePressedListener mListener;
-    private InnerRecevier mRecevier;
+    private IntentFilter intentFilter;
+    private OnHomePressedListener onHomePressedListener;
+    private HomeBroadcastReceiver homeBroadcastReceiver;
 
     // 回调接口
     public interface OnHomePressedListener {
@@ -26,7 +25,7 @@ public class HomeListener {
 
     public HomeListener(Context context) {
         mContext = context;
-        mFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
+        intentFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
     }
 
     /**
@@ -35,16 +34,16 @@ public class HomeListener {
      * @param listener
      */
     public void setOnHomePressedListener(OnHomePressedListener listener) {
-        mListener = listener;
-        mRecevier = new InnerRecevier();
+        onHomePressedListener = listener;
+        homeBroadcastReceiver = new HomeBroadcastReceiver();
     }
 
     /**
      * 开始监听，注册广播
      */
     public void startWatch() {
-        if (mRecevier != null) {
-            mContext.registerReceiver(mRecevier, mFilter);
+        if (homeBroadcastReceiver != null) {
+            mContext.registerReceiver(homeBroadcastReceiver, intentFilter);
         }
     }
 
@@ -52,12 +51,12 @@ public class HomeListener {
      * 停止监听，注销广播
      */
     public void stopWatch() {
-        if (mRecevier != null) {
-            mContext.unregisterReceiver(mRecevier);
+        if (homeBroadcastReceiver != null) {
+            mContext.unregisterReceiver(homeBroadcastReceiver);
         }
     }
 
-    class InnerRecevier extends BroadcastReceiver {
+    class HomeBroadcastReceiver extends BroadcastReceiver {
         final String SYSTEM_DIALOG_REASON_KEY = "reason";
         final String SYSTEM_DIALOG_REASON_GLOBAL_ACTIONS = "globalactions";
         final String SYSTEM_DIALOG_REASON_RECENT_APPS = "recentapps";
@@ -70,14 +69,14 @@ public class HomeListener {
                 String reason = intent.getStringExtra(SYSTEM_DIALOG_REASON_KEY);
                 if (reason != null) {
                     //LogUtils.e( "action:" + action + ",reason:" + reason);
-                    if (mListener != null) {
+                    if (onHomePressedListener != null) {
                         if (reason.equals(SYSTEM_DIALOG_REASON_HOME_KEY)) {
                             // 短按home键
-                            mListener.onHomePressed();
+                            onHomePressedListener.onHomePressed();
                         } else if (reason
                                 .equals(SYSTEM_DIALOG_REASON_RECENT_APPS)) {
                             // 长按home键
-                            mListener.onHomeLongPressed();
+                            onHomePressedListener.onHomeLongPressed();
                         }
                     }
                 }
