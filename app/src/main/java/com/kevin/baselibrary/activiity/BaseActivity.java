@@ -13,6 +13,7 @@ import com.kevin.baselibrary.utils.ToastUtils;
  */
 public class BaseActivity extends FragmentActivity {
 
+    protected HomeListener homeListener;
 
     /**
      * show toast by string
@@ -49,7 +50,7 @@ public class BaseActivity extends FragmentActivity {
     protected void longShow(int resId) {
         ToastUtils.longShow(BaseActivity.this, resId);
     }
-    protected HomeListener homeListener;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
