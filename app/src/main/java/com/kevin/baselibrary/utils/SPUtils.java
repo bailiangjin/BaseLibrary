@@ -3,7 +3,7 @@ package com.kevin.baselibrary.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.kevin.baselibrary.AApplication;
+import com.kevin.baselibrary.BaseApplication;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -24,15 +24,15 @@ public class SPUtils
 	}
 
 	public static void put(String key,Objects obj){
-		put(AApplication.getContext(),key,obj);
+		put(BaseApplication.getContext(),key,obj);
 	}
 
 	public static void putString(String key,String value){
-		putString(AApplication.getContext(), key, value);
+		putString(BaseApplication.getContext(), key, value);
 	}
 
 	public static String getString(String key){
-		return getString(AApplication.getContext(),key);
+		return getString(BaseApplication.getContext(),key);
 	}
 
 
@@ -43,7 +43,7 @@ public class SPUtils
 	 */
 	public static void putBoolean( String key, boolean value)
 	{
-		putBoolean(AApplication.getContext(), key, value);
+		putBoolean(BaseApplication.getContext(), key, value);
 	}
 
 	/**
@@ -55,13 +55,13 @@ public class SPUtils
 	public static boolean getBoolean( String key)
 	{
 
-		return (Boolean) get(AApplication.getContext(), key, false);
+		return (Boolean) get(BaseApplication.getContext(), key, false);
 	}
 
 
 
 	public static void remove(String key){
-		remove(AApplication.getContext(), key);
+		remove(BaseApplication.getContext(), key);
 	}
 
 

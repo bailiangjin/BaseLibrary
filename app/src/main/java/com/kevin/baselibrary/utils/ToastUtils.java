@@ -3,7 +3,7 @@ package com.kevin.baselibrary.utils;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.kevin.baselibrary.AApplication;
+import com.kevin.baselibrary.BaseApplication;
 
 /**
  * Toast 工具类
@@ -15,10 +15,10 @@ import com.kevin.baselibrary.AApplication;
 public class ToastUtils {
 
     public static void show(int resId) {
-        shortShow(AApplication.getContext(), resId);
+        shortShow(BaseApplication.getContext(), resId);
     }
     public static void show(String  str) {
-        shortShow(AApplication.getContext(), str);
+        shortShow(BaseApplication.getContext(), str);
     }
 
     /**

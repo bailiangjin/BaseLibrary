@@ -3,7 +3,7 @@ package com.kevin.baselibrary.utils;
 import android.content.Context;
 import android.telephony.TelephonyManager;
 
-import com.kevin.baselibrary.AApplication;
+import com.kevin.baselibrary.BaseApplication;
 
 /**
  * 设备相关工具类
@@ -33,7 +33,7 @@ public class DeviceUtils {
      */
     public static String getIMei() {
 
-        return getIMei(AApplication.getContext());
+        return getIMei(BaseApplication.getContext());
     }
 
     /**

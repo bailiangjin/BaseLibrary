@@ -18,7 +18,6 @@ import java.util.Map;
 
 public class MyHttpUtils {
 
-
     public
     static void asyncGet(final String url, final Map<String, Object> pairs, final HttpCallback httpCallback) {
         LogUtils.e("localh2asyncPost:url=" + url);
