@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.callback;
+package com.kevin.baselibrary.interfaze.callback;
 
 public interface HttpCallback {
     /**

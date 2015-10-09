@@ -8,7 +8,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.kevin.baselibrary.BaseApplication;
+import com.kevin.baselibrary.app.BaseApplication;
 
 /**
  * 获得屏幕相关的辅助类

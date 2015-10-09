@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.activiity;
+package com.kevin.baselibrary.base;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;

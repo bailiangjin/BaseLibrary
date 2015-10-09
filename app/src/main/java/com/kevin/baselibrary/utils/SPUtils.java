@@ -3,7 +3,7 @@ package com.kevin.baselibrary.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.kevin.baselibrary.BaseApplication;
+import com.kevin.baselibrary.app.BaseApplication;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

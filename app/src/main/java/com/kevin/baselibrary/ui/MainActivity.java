@@ -1,8 +1,9 @@
-package com.kevin.baselibrary;
+package com.kevin.baselibrary.ui;
 
 import android.os.Bundle;
 
-import com.kevin.baselibrary.activiity.BaseActivity;
+import com.kevin.baselibrary.R;
+import com.kevin.baselibrary.base.BaseActivity;
 
 public class MainActivity extends BaseActivity
 {

@@ -3,7 +3,7 @@ package com.kevin.baselibrary.utils;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.kevin.baselibrary.BaseApplication;
+import com.kevin.baselibrary.app.BaseApplication;
 
 /**
  * Toast 工具类
