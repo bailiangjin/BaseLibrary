@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * 自定义 哈希 list 保证list中无重复元素
@@ -43,14 +44,14 @@ public class HashArrayList extends ArrayList {
 
     @Override
     public boolean addAll(Collection collection) {
-        Collection abHashCollection = toABHashCollection(collection);
+        Collection abHashCollection = toABHashList(collection);
         hashSet.addAll(abHashCollection);
         return super.addAll(abHashCollection);
     }
 
     @Override
     public boolean addAll(int index, Collection collection) {
-        Collection abHashCollection = toABHashCollection(collection);
+        Collection abHashCollection = toABHashList(collection);
         hashSet.addAll(abHashCollection);
         return super.addAll(index, abHashCollection);
     }
@@ -62,33 +63,36 @@ public class HashArrayList extends ArrayList {
      * @return
      */
     @NonNull
-    private Collection toHashCollection(Collection collection) {
-        if (collection.size() < 0) {
+    private List toHashList(Collection collection) {
+        if (null == collection || collection.size() <= 0) {
             return null;
         }
         HashSet allSet = new HashSet(collection);
-        Collection hashCollection = Arrays.asList(allSet.toArray());
-        return hashCollection;
+        List hashList = Arrays.asList(allSet.toArray());
+        return hashList;
     }
 
     /**
-     * 将 collection 转为不包含重复元素的HashCollection 并删除HashSet中已包含的元素
+     * 将 collection 转为不包含重复元素的HashList 并删除HashSet中已包含的元素
      *
      * @param collection
      * @return
      */
     @NonNull
-    private Collection toABHashCollection(Collection collection) {
-        Collection hashCollection = toHashCollection(collection);
+    private List toABHashList(Collection collection) {
+        if (null == collection || collection.size() <= 0) {
+            return null;
+        }
         //遍历删除HashSet中已包含的元素
         Iterator iterator = collection.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Object obj = iterator.next();
             if (hashSet.contains(obj)) {
                 iterator.remove();
             }
         }
-        return hashCollection;
+        List abHashList = toHashList(collection);
+        return abHashList;
     }
 
     @Override
