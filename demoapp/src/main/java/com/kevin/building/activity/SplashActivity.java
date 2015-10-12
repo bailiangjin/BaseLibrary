@@ -17,6 +17,7 @@ public class SplashActivity extends BaseActivity
 	{
 		super.onCreate(savedInstanceState);
 
+		//跳转到 主页
 		new Handler().postDelayed(new Runnable()
 		{
 
@@ -27,7 +28,7 @@ public class SplashActivity extends BaseActivity
 				SplashActivity.this.finish();
 
 			}
-		}, 500);
+		}, 300);
 
 	}
 

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.kevin.building.R;
-import com.kevin.building.activity.AMainActivity;
+import com.kevin.building.MainActivity;
 import com.kevin.building.base.BaseActivity;
 
 import java.util.ArrayList;
@@ -134,7 +134,7 @@ public class AppManager
 		}
 		for (Activity activity : list_activity)
 		{
-			if (activity.getClass().equals(AMainActivity.class))
+			if (activity.getClass().equals(MainActivity.class))
 			{
 				return true;
 			}
@@ -206,7 +206,7 @@ public class AppManager
 //		{
 //			for (int i = 0, size = list_activity.size(); i < size; i++)
 //			{
-//				if (null != list_activity.get(i) && !(list_activity.get(i) instanceof AMainActivity))
+//				if (null != list_activity.get(i) && !(list_activity.get(i) instanceof MainActivity))
 //				{
 //					finishList.add(list_activity.get(i));
 //					list_activity.get(i).finish();
