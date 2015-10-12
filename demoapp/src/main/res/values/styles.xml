@@ -14,4 +14,27 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+    <!-- Application theme. -->
+
+
+    <style name="MyBasicTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowSoftInputMode">stateHidden</item>
+        <item name="android:windowAnimationStyle">@style/AnimFade</item>
+    </style>
+
+    <style name="SplashTheme" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/splach_gray_black_gradient_bg</item>
+        <item name="android:windowAnimationStyle">@style/AnimFade</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AnimFade" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/hold</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
+
+
 </resources>

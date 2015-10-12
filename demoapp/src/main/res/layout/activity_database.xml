@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_gray_black_gradient_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_view" >
+    </include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_insert"
+            style="@style/btn_large_style"
+            android:layout_margin="10dp"
+            android:onClick="onClick_insert"
+            android:text="插入" />
+
+        <Button
+            android:id="@+id/btn_update"
+            style="@style/btn_large_style"
+            android:layout_margin="10dp"
+            android:onClick="onClick_update"
+            android:text="更新" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            style="@style/btn_large_style"
+            android:layout_margin="10dp"
+            android:onClick="onClick_delete"
+            android:text="删除" />
+
+        <Button
+            android:id="@+id/btn_search"
+            style="@style/btn_large_style"
+            android:layout_margin="10dp"
+            android:onClick="onClick_search"
+            android:text="搜索" />
+    </LinearLayout>
+
+</LinearLayout>

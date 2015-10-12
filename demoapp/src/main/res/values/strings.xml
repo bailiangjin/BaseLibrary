@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Building</string>
     <string name="action_settings">Settings</string>
+
+
+    <!-- 登陆相关 -->
+    <string name="please_input_company_name">请输入公司名</string>
+    <string name="load_initialize_file">加载初始化文件...</string>
+    <string name="building_communication_link">正在建立通讯连接</string>
+    <string name="connect_conflict">同一帐号已在其他设备登录</string>
+
+    <!-- IM相关 -->
+
+    <string name="login_loading">用户中心登录</string>
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_gray_black_gradient_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_view" >
+    </include>
+
+    <EditText
+        android:id="@+id/et_username"
+        style="@style/et_large_style"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="请输入要添加的用户名" />
+
+    <Button
+        android:id="@+id/btn_add"
+        style="@style/btn_large_style"
+        android:layout_width="@dimen/btn_common_width"
+        android:layout_marginTop="20dp"
+        android:text="添加" />
+
+</LinearLayout>

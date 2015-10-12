@@ -1,19 +1,20 @@
 package com.kevin.building;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.os.Message;
 import android.view.View;
-import android.widget.Toolbar;
 
 import com.kevin.building.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
     @Override
+    protected int getLayoutViewResID() {
+        return R.layout.activity_main;
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -24,6 +25,18 @@ public class MainActivity extends BaseActivity {
 //                        .setAction("Action", null).show();
 //            }
 //        });
+    }
+
+
+
+    @Override
+    protected void handleMsg(Message msg) {
+
+    }
+
+    @Override
+    protected void widgetClick(View v) {
+
     }
 
 

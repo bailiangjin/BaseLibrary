@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/common_gray_black_gradient_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_view" >
+    </include>
+
+    <EditText
+        android:id="@+id/et_ip"
+        style="@style/et_large_style"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:ems="10"
+        android:hint=""
+        android:singleLine="true"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/et_username"
+        style="@style/et_large_style"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
+        android:ems="10"
+        android:hint="请填写注册用户名"
+        android:singleLine="true"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/et_pwd"
+        style="@style/et_large_style"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:password="true"
+        android:singleLine="true"
+        android:text=""
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/et_confirm_pwd"
+        style="@style/et_large_style"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="请确认密码"
+        android:password="true"
+        android:singleLine="true"
+        android:textSize="15sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_regist"
+        style="@style/btn_large_style"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:text="注册" />
+
+</LinearLayout>
