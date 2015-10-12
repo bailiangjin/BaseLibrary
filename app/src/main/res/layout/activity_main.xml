@@ -9,6 +9,8 @@
     tools:context="com.kevin.baselibrary.ui.MainActivity" >
     <include layout="@layout/title_view"
          />
+    <include layout="@layout/body"
+         />
 
 
 </RelativeLayout>
