@@ -11,7 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 
-import com.kevin.baselibrary.app.SPKey;
+import com.kevin.baselibrary.constant.SPKey;
 import com.kevin.baselibrary.utils.SPUtils;
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
@@ -28,7 +28,7 @@ public class LoginActivity extends BaseActivity
 	private String userName = null;
 	private String passWord = null;
 
-	protected int getLayoutViewResID()
+	protected int getLayoutResID()
 	{
 		return R.layout.activity_login;
 	}
@@ -97,7 +97,7 @@ public class LoginActivity extends BaseActivity
 	}
 
 	@Override
-	public void widgetClick(View v)
+	public void onViewClick(View v)
 	{
 		switch (v.getId())
 		{

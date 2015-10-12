@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.app;
+package com.kevin.baselibrary.constant;
 
 /**
  * 

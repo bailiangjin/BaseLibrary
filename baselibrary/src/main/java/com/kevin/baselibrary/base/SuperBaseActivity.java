@@ -2,6 +2,7 @@ package com.kevin.baselibrary.base;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 
 import com.kevin.baselibrary.listener.HomeListener;
 import com.kevin.baselibrary.utils.LogUtils;
@@ -11,9 +12,41 @@ import com.kevin.baselibrary.utils.ToastUtils;
  * 作者：bailiangjin  bailiangjin@gmail.com
  * 创建时间：15/9/28 23:10
  */
-public class SuperBaseActivity extends FragmentActivity {
+public abstract class SuperBaseActivity extends FragmentActivity {
 
     protected HomeListener homeListener;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //初始化UI
+        initUI();
+        registerHomeListener();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        homeListener.startWatch();
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        homeListener.stopWatch();
+    }
+
+    //当前类实现 方法
+
+    /**
+     * 初始化当前Activity根界面 不允许子类覆盖
+     */
+    private void initUI() {
+        setContentView(getLayoutResID());
+    }
+
 
     /**
      * show toast by string
@@ -52,26 +85,6 @@ public class SuperBaseActivity extends FragmentActivity {
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        registerHomeListener();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        homeListener.startWatch();
-    }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        homeListener.stopWatch();
-    }
-
-
     /**
      * 注册Home键的监听
      */
@@ -94,13 +107,29 @@ public class SuperBaseActivity extends FragmentActivity {
         homeListener.startWatch();
     }
 
-    protected  void onHomePressed(){
+    protected void onHomePressed() {
 
     }
 
-    protected  void onHomeLongPressed(){
+    protected void onHomeLongPressed() {
 
     }
+
+    //子类必须实现的抽象方法
+
+    /**
+     * 获取页面Layout ID
+     *
+     * @return
+     */
+    protected abstract int getLayoutResID();
+
+    /**
+     * 全局点击事件
+     *
+     * @param v
+     */
+    protected abstract void onViewClick(View v);
 
 
 }

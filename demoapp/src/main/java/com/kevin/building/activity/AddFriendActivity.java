@@ -25,7 +25,7 @@ public class AddFriendActivity extends BaseActivity
 	private static final int SEARCH_USER_MSG_WHAT = 104;
 
 	@Override
-	protected int getLayoutViewResID()
+	protected int getLayoutResID()
 	{
 		return R.layout.activity_addfriend;
 	}
@@ -156,7 +156,7 @@ public class AddFriendActivity extends BaseActivity
 	}
 
 	@Override
-	public void widgetClick(View v)
+	public void onViewClick(View v)
 	{
 		// TODO Auto-generated method stub
 

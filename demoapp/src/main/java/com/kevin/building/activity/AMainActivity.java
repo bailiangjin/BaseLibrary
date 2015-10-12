@@ -6,6 +6,8 @@ import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.NetUtils;
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
@@ -18,7 +20,7 @@ public class AMainActivity extends BaseActivity
 	private long gapTime = 2000;
 
 	@Override
-	protected int getLayoutViewResID() {
+	protected int getLayoutResID() {
 		return R.layout.activity_main;
 	}
 	@Override
@@ -26,6 +28,8 @@ public class AMainActivity extends BaseActivity
 	{
 		super.onCreate(savedInstanceState);
 		initView();
+		LogUtils.e("mytype:nettype:" + NetUtils.getNetWorkType().toString());
+		LogUtils.e("mytype:providerType:"+ NetUtils.getProviderType().toString());
 	}
 
 
@@ -94,7 +98,7 @@ public class AMainActivity extends BaseActivity
 	}
 
 	@Override
-	public void widgetClick(View v)
+	public void onViewClick(View v)
 	{
 		// TODO Auto-generated method stub
 

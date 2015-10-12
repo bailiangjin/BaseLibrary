@@ -27,7 +27,7 @@ public class RegistActivity extends BaseActivity
 	}
 
 	@Override
-	protected int getLayoutViewResID()
+	protected int getLayoutResID()
 	{
 		return R.layout.activity_regist;
 	}
@@ -40,7 +40,7 @@ public class RegistActivity extends BaseActivity
 	}
 
 	@Override
-	protected void widgetClick(View v)
+	protected void onViewClick(View v)
 	{
 		switch (v.getId())
 		{

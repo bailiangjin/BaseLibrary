@@ -13,7 +13,7 @@
 
         <TextView
             style="@style/tv_base_style"
-            android:text="安信"
+            android:text="Splash"
             android:textSize="60dp" />
     </LinearLayout>
 

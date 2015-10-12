@@ -4,37 +4,37 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import com.kevin.baselibrary.interfaze.HandlerInterface;
+import com.kevin.baselibrary.interfaze.HandleMsgListener;
 
 
 public class UIHandler extends Handler
 {
 
-	private HandlerInterface handler;// 回调接口，消息传递给注册者
+	private HandleMsgListener handleMsgListener;// 回调接口，消息传递给注册者
 
 	public UIHandler(Looper looper)
 	{
 		super(looper);
 	}
 
-	public UIHandler(Looper looper, HandlerInterface handlerInterface)
+	public UIHandler(Looper looper, HandleMsgListener handleMsgListener)
 	{
 		super(looper);
-		this.handler = handlerInterface;
+		this.handleMsgListener = handleMsgListener;
 	}
 
-	public void setHandler(HandlerInterface handlerInterface)
+	public void setListener(HandleMsgListener handlMsgListener)
 	{
-		this.handler = handlerInterface;
+		this.handleMsgListener = handlMsgListener;
 	}
 
 	@Override
 	public void handleMessage(Message msg)
 	{
 		super.handleMessage(msg);
-		if (handler != null)
+		if (handleMsgListener != null)
 		{
-			handler.handleMessage(msg);// 有消息，就传递
+			handleMsgListener.handleMessage(msg);// 有消息，就传递
 		}
 	}
 }

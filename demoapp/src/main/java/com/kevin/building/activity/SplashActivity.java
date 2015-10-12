@@ -27,18 +27,18 @@ public class SplashActivity extends BaseActivity
 				SplashActivity.this.finish();
 
 			}
-		}, 4000);
+		}, 500);
 
 	}
 
 	@Override
-	protected int getLayoutViewResID()
+	protected int getLayoutResID()
 	{
 		return R.layout.activity_splash;
 	}
 
 	@Override
-	public void widgetClick(View v)
+	public void onViewClick(View v)
 	{
 		// TODO Auto-generated method stub
 

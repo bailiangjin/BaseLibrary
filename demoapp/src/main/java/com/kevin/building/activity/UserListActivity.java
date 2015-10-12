@@ -39,7 +39,7 @@ public class UserListActivity extends BaseActivity
 	}
 
 	@Override
-	protected int getLayoutViewResID()
+	protected int getLayoutResID()
 	{
 		return R.layout.activity_userlist;
 	}
@@ -52,7 +52,7 @@ public class UserListActivity extends BaseActivity
 	}
 
 	@Override
-	protected void widgetClick(View v)
+	protected void onViewClick(View v)
 	{
 		// TODO Auto-generated method stub
 

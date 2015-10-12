@@ -40,7 +40,7 @@ public class LogoutActivity extends BaseActivity
 	}
 
 	@Override
-	protected int getLayoutViewResID()
+	protected int getLayoutResID()
 	{
 		return R.layout.activity_logout;
 	}
@@ -53,7 +53,7 @@ public class LogoutActivity extends BaseActivity
 	}
 
 	@Override
-	protected void widgetClick(View v)
+	protected void onViewClick(View v)
 	{
 		switch (v.getId())
 		{

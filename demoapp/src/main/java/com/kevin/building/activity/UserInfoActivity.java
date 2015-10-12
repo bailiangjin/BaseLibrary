@@ -31,7 +31,7 @@ public class UserInfoActivity extends BaseActivity
 	}
 
 	@Override
-	protected int getLayoutViewResID()
+	protected int getLayoutResID()
 	{
 		return R.layout.activity_user_info;
 	}
@@ -44,7 +44,7 @@ public class UserInfoActivity extends BaseActivity
 	}
 
 	@Override
-	protected void widgetClick(View v)
+	protected void onViewClick(View v)
 	{
 		switch (v.getId())
 		{

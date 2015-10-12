@@ -3,7 +3,7 @@ package com.kevin.baselibrary.utils;
 import android.content.Context;
 import android.os.Environment;
 
-import com.kevin.baselibrary.app.SuperBaseApplication;
+import com.kevin.baselibrary.app.SuperApplication;
 
 import java.io.File;
 
@@ -51,7 +51,7 @@ public class FilePathUtil
 	}
 
 	public static String getAppPath(){
-		return getAppPath(SuperBaseApplication.getContext());
+		return getAppPath(SuperApplication.getContext());
 	}
 
 	/**

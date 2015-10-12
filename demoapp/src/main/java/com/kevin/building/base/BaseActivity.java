@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.kevin.baselibrary.base.SuperBaseActivity;
-import com.kevin.baselibrary.interfaze.HandlerInterface;
+import com.kevin.baselibrary.interfaze.HandleMsgListener;
 import com.kevin.baselibrary.model.UIHandler;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.NetUtils;
@@ -56,7 +56,7 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 	{
 		LogUtils.d("Activity:::-->>onCreate");
 		super.onCreate(savedInstanceState);
-		initUI();
+		initBaseView();
 		setHandler();
 		AppManager.getInstance().addActivity(this);
 	}
@@ -113,18 +113,12 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
-	protected void initUI()
+	protected void initBaseView()
 	{
-		setContentView(getLayoutViewResID());
 		titleView = (MyTitleView) findViewById(R.id.title_view);
 	}
 
-	/**
-	 * 获取页面Layout ID
-	 * 
-	 * @return
-	 */
-	protected abstract int getLayoutViewResID();
+
 
 	/**
 	 * Handler 消息处理方法
@@ -161,20 +155,13 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 		show("网络已经断开");
 	}
 
-	/**
-	 * 点击事件
-	 * 
-	 * @param v
-	 */
-	protected abstract void widgetClick(View v);
 
 	private void setHandler()
 	{
-		handler.setHandler(new HandlerInterface()
+		handler.setListener(new HandleMsgListener()
 
 		{
-			public void handleMessage(Message msg)
-			{
+			public void handleMessage(Message msg) {
 				handleMsg(msg);// 有消息就提交给子类实现的方法
 			}
 		});
@@ -183,7 +170,7 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 	@Override
 	public void onClick(View v)
 	{
-		widgetClick(v);
+		onViewClick(v);
 
 	}
 
