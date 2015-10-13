@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
+import com.kevin.baselibrary.utils.AppUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.MyFragmentActivity;
@@ -29,6 +30,9 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 //        LogUtils.e("mytype:nettype:" + NetUtils.getNetWorkType().toString());
 //        LogUtils.e("mytype:providerType:" + NetUtils.getProviderType().toString());
+
+//        show("isPad:"+ AppUtils.isPad());
+        show("isPad:"+ AppUtils.isTablet());
     }
 
     @Override

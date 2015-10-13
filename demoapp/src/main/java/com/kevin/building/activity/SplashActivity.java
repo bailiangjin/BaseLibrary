@@ -6,7 +6,7 @@ import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
-import com.kevin.baselibrary.utils.AppUtil;
+import com.kevin.baselibrary.utils.AppUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.utils.ActivityUtils;
@@ -51,7 +51,7 @@ public class SplashActivity extends BaseActivity
 
 	@Override
 	protected void initLogic() {
-		tv_app_version_name.setText(AppUtil.getCurrentAppVersionName());
+		tv_app_version_name.setText(AppUtils.getCurrentAppVersionName());
 	}
 
 
