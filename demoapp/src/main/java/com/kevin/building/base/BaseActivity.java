@@ -3,7 +3,9 @@ package com.kevin.building.base;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.MotionEvent;
 
+import com.bugtags.library.Bugtags;
 import com.kevin.baselibrary.base.SuperBaseActivity;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.view.MyTitleView;
@@ -54,6 +56,7 @@ public abstract class BaseActivity extends SuperBaseActivity
 	{
 		LogUtils.d("Activity:::-->>onResume");
 		super.onResume();
+		Bugtags.onResume(this);
 
 
 	}
@@ -63,7 +66,9 @@ public abstract class BaseActivity extends SuperBaseActivity
 	{
 		LogUtils.d("Activity:::-->>onPause");
 		super.onPause();
+		Bugtags.onPause(this);
 	}
+
 
 	@Override
 	protected void onStop()
@@ -86,6 +91,14 @@ public abstract class BaseActivity extends SuperBaseActivity
 		LogUtils.d("Activity:::-->>onActivityResult");
 		super.onActivityResult(requestCode, resultCode, data);
 	}
+
+	@Override
+	public boolean dispatchTouchEvent(MotionEvent event) {
+		//注：回调 3
+		Bugtags.onDispatchTouchEvent(this, event);
+		return super.dispatchTouchEvent(event);
+	}
+
 
 	@Override
 	protected void initBaseUI()

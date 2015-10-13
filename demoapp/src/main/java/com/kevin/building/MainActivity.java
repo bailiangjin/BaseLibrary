@@ -6,7 +6,6 @@ import android.os.Message;
 import android.view.View;
 
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.NetUtils;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.MyFragmentActivity;
 import com.kevin.building.activity.RegistActivity;
@@ -28,8 +27,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LogUtils.e("mytype:nettype:" + NetUtils.getNetWorkType().toString());
-        LogUtils.e("mytype:providerType:" + NetUtils.getProviderType().toString());
+//        LogUtils.e("mytype:nettype:" + NetUtils.getNetWorkType().toString());
+//        LogUtils.e("mytype:providerType:" + NetUtils.getProviderType().toString());
     }
 
     @Override
