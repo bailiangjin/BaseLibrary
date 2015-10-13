@@ -1,15 +1,5 @@
 package com.kevin.baselibrary.utils;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
@@ -20,6 +10,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -30,6 +21,16 @@ import android.util.Log;
 import android.view.WindowManager;
 
 import com.kevin.baselibrary.app.SuperApplication;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * android 应用程序工具
@@ -492,8 +493,20 @@ public class AppUtils {
         return sdf.format(date);
     }
 
+
     /**
-     * 判断是否为pad
+     * 判断是否为平板 有效
+     * @return boolean
+     */
+    public static boolean isTablet() {
+        return (getContext().getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
+
+    /**
+     * 判断是否为pad 在步步高vivo x510w 上误判为平板
      *
      * @return
      */
