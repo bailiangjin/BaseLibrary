@@ -287,14 +287,14 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      * 网络连接上 回调方法
      */
     protected void onNetConnected() {
-        String connectType;
-        if (NetUtils.isWifiConnect(getApplicationContext())) {
-            connectType = "WiFi";
-
-        } else {
-            connectType = "手机网络";
-        }
-        show("网络已经连接 连接类型：" + connectType);
+//        String connectType;
+//        if (NetUtils.isWifiConnect(getApplicationContext())) {
+//            connectType = "WiFi";
+//
+//        } else {
+//            connectType = "手机网络";
+//        }
+//        show("网络已经连接 连接类型：" + connectType);
     }
 
     /**
@@ -310,7 +310,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      */
 
     /**
-     * 获取页面Layout ID
+     * 获取页面Layout ResID
      *
      * @return
      */

@@ -45,7 +45,7 @@ public abstract class AbstractBaseAdapter<T> extends BaseAdapter {
         return myGetView(position, convertView, parent);
     }
 
-    public abstract View myGetView(int position, View convertView, ViewGroup viewGroup);
+
 
     /**
      * get item layout ResId
@@ -58,4 +58,13 @@ public abstract class AbstractBaseAdapter<T> extends BaseAdapter {
         this.mListData = mListData;
         notifyDataSetChanged();
     }
+
+    /**
+     * 抽象方法 获取View
+     * @param position
+     * @param convertView
+     * @param viewGroup
+     * @return
+     */
+    public abstract View myGetView(int position, View convertView, ViewGroup viewGroup);
 }
