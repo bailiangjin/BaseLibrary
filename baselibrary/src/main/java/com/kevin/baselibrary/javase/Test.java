@@ -1,6 +1,6 @@
-package com.kevin.baselibrary.nonandroid;
+package com.kevin.baselibrary.javase;
 
-import com.kevin.baselibrary.nonandroid.datastructure.HashArrayList;
+import com.kevin.baselibrary.javase.datastructure.HashArrayList;
 
 /**
  * Author:  liangjin.bai

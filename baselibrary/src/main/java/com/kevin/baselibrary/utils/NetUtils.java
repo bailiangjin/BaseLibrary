@@ -10,8 +10,8 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.kevin.baselibrary.app.SuperApplication;
-import com.kevin.baselibrary.constant.NetworkTypeEnum;
-import com.kevin.baselibrary.constant.ProviderTypeEnum;
+import com.kevin.baselibrary.constant.enums.NetworkTypeEnum;
+import com.kevin.baselibrary.constant.enums.ProviderTypeEnum;
 
 public class NetUtils {
 

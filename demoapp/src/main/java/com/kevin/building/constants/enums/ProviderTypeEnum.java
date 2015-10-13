@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.constant;
+package com.kevin.building.constants.enums;
 
 public enum ProviderTypeEnum {
     UNKNOWN("UNKNOWN"),//未知

@@ -1,4 +1,4 @@
-package com.kevin.building.constants.enumconstants;
+package com.kevin.baselibrary.constant.enums;
 
 public enum NetworkTypeEnum {
     UNKNOWN("UNKNOWN"),

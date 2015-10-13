@@ -16,15 +16,20 @@ public class RegistActivity extends BaseActivity
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 
-		initView();
 	}
 
-	private void initView()
-	{
+	@Override
+	protected void initView() {
 		titleView.setTitleText("注册");
 		titleView.setRightBtnVisibility(View.GONE);
 		findViewById(R.id.btn_regist).setOnClickListener(this);
 	}
+
+	@Override
+	protected void initLogic() {
+
+	}
+
 
 	@Override
 	protected int getLayoutResID()

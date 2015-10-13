@@ -34,12 +34,11 @@ public class AddFriendActivity extends BaseActivity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		initView();
 		initHandler();
 	}
 
-	private void initView()
-	{
+	@Override
+	protected void initView() {
 		titleView.setTitleText("添加联系人");
 		titleView.setRightBtnText("退出");
 		titleView.setRightButtonListener(new OnClickListener()
@@ -53,6 +52,12 @@ public class AddFriendActivity extends BaseActivity
 			}
 		});
 	}
+
+	@Override
+	protected void initLogic() {
+
+	}
+
 
 	@Override
 	protected void onStart()

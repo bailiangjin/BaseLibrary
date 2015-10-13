@@ -11,7 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 
-import com.kevin.baselibrary.constant.SPKey;
+import com.kevin.baselibrary.constant.SuperSPKey;
 import com.kevin.baselibrary.utils.SPUtils;
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
@@ -37,21 +37,21 @@ public class LoginActivity extends BaseActivity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
-		initView();
+
 		initData();
 		// LogUtils.d("手机型号：" + android.os.Build.MODEL);
 		// longToastString("手机型号：" + android.os.Build.MODEL);
 	}
 
-	private void initView()
-	{
+	@Override
+	protected void initView() {
+
 		et_username = (EditText) findViewById(R.id.et_username);
 		et_password = (EditText) findViewById(R.id.et_password);
 		btn_login = (Button) findViewById(R.id.btn_login);
 		btn_login.setOnClickListener(this);
-		SPUtils.getString(getApplicationContext(), SPKey.PASSWORD);
-		boolean isChecked = (Boolean) SPUtils.get(getApplicationContext(), SPKey.SAVEPWD, false);
+		SPUtils.getString(getApplicationContext(), SuperSPKey.PASSWORD);
+		boolean isChecked = (Boolean) SPUtils.get(getApplicationContext(), SuperSPKey.SAVEPWD, false);
 		cb_save_password = (CheckBox) findViewById(R.id.cb_save_password);
 		cb_save_password.setChecked(isChecked);
 		cb_save_password.setOnCheckedChangeListener(new OnCheckedChangeListener()
@@ -62,25 +62,31 @@ public class LoginActivity extends BaseActivity
 			{
 				if (isChecked)
 				{
-					SPUtils.put(getApplicationContext(), SPKey.SAVEPWD, true);
+					SPUtils.put(getApplicationContext(), SuperSPKey.SAVEPWD, true);
 				}
 				else
 				{
-					SPUtils.put(getApplicationContext(), SPKey.SAVEPWD, false);
+					SPUtils.put(getApplicationContext(), SuperSPKey.SAVEPWD, false);
 				}
 
 			}
 		});
 	}
 
+	@Override
+	protected void initLogic() {
+
+	}
+
+
 	private void initData()
 	{
-		String userName = SPUtils.getString(getApplicationContext(), SPKey.USER_NAME);
+		String userName = SPUtils.getString(getApplicationContext(), SuperSPKey.USER_NAME);
 		if (!TextUtils.isEmpty(userName))
 		{
 			et_username.setText(userName);
 		}
-		String passWord = SPUtils.getString(getApplicationContext(), SPKey.PASSWORD);
+		String passWord = SPUtils.getString(getApplicationContext(), SuperSPKey.PASSWORD);
 		if (!TextUtils.isEmpty(passWord))
 		{
 			et_password.setText(passWord);
@@ -115,17 +121,17 @@ public class LoginActivity extends BaseActivity
 				if (isLoginSuccess)
 				{
 
-					SPUtils.putString(getApplicationContext(), SPKey.USER_NAME, et_username.getText().toString().trim());
+					SPUtils.putString(getApplicationContext(), SuperSPKey.USER_NAME, et_username.getText().toString().trim());
 
 					if (cb_save_password.isChecked())
 					{
 						// TODO:密码加密后存放
-						SPUtils.putString(getApplicationContext(), SPKey.PASSWORD, et_password.getText().toString()
+						SPUtils.putString(getApplicationContext(), SuperSPKey.PASSWORD, et_password.getText().toString()
 								.trim());
 					}
 					else
 					{
-						SPUtils.putString(getApplicationContext(), SPKey.PASSWORD, "");
+						SPUtils.putString(getApplicationContext(), SuperSPKey.PASSWORD, "");
 					}
 				}
 

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
-import android.view.View.OnClickListener;
 
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.NetUtils;
@@ -17,6 +16,7 @@ import com.kevin.building.base.BaseActivity;
 import com.kevin.building.utils.ActivityUtils;
 
 public class MainActivity extends BaseActivity
+
 {
 
 	private long lastTouchTime = 0;
@@ -30,20 +30,17 @@ public class MainActivity extends BaseActivity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		initView();
 		LogUtils.e("mytype:nettype:" + NetUtils.getNetWorkType().toString());
-		LogUtils.e("mytype:providerType:"+ NetUtils.getProviderType().toString());
+		LogUtils.e("mytype:providerType:" + NetUtils.getProviderType().toString());
 	}
 
-
-
-	private void initView()
-	{
+	@Override
+	protected void initView() {
 		// titleView.setRightBtnVisibility(View.GONE);
 		titleView.setTitleText("主页面");
 		titleView.setLeftBtnVisibility(View.GONE);
 		titleView.setRightBtnText("注册");
-		titleView.setRightButtonListener(new OnClickListener()
+		titleView.setRightButtonListener(new View.OnClickListener()
 		{
 
 			@Override
@@ -55,8 +52,15 @@ public class MainActivity extends BaseActivity
 
 			}
 		});
+	}
+
+	@Override
+	protected void initLogic() {
 
 	}
+
+
+
 
 	public void onClick_btn_fragment(View v)
 	{

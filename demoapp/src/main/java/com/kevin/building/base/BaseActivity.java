@@ -6,21 +6,15 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.os.Looper;
-import android.os.Message;
-import android.view.View;
-import android.view.View.OnClickListener;
 
 import com.kevin.baselibrary.base.SuperBaseActivity;
-import com.kevin.baselibrary.interfaze.HandleMsgListener;
-import com.kevin.baselibrary.model.UIHandler;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.NetUtils;
 import com.kevin.baselibrary.view.MyTitleView;
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
 
-public abstract class BaseActivity extends SuperBaseActivity implements OnClickListener
+public abstract class BaseActivity extends SuperBaseActivity
 {
 
 	public static final String ACTION_NETWORK_CHANGE = "android.net.conn.CONNECTIVITY_CHANGE";
@@ -29,10 +23,7 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 
 	protected MyTitleView titleView;
 
-	/**
-	 * Handler 消息处理
-	 */
-	protected static UIHandler handler = new UIHandler(Looper.getMainLooper());
+
 
 	protected BroadcastReceiver receiver = new BroadcastReceiver()
 	{
@@ -56,8 +47,7 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 	{
 		LogUtils.d("Activity:::-->>onCreate");
 		super.onCreate(savedInstanceState);
-		initBaseView();
-		setHandler();
+
 		AppManager.getInstance().addActivity(this);
 	}
 
@@ -113,6 +103,7 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
+	@Override
 	protected void initBaseView()
 	{
 		titleView = (MyTitleView) findViewById(R.id.title_view);
@@ -120,12 +111,7 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 
 
 
-	/**
-	 * Handler 消息处理方法
-	 * 
-	 * @param msg
-	 */
-	protected abstract void handleMsg(Message msg);
+
 
 	/**
 	 * 网络连接上
@@ -156,23 +142,9 @@ public abstract class BaseActivity extends SuperBaseActivity implements OnClickL
 	}
 
 
-	private void setHandler()
-	{
-		handler.setListener(new HandleMsgListener()
 
-		{
-			public void handleMessage(Message msg) {
-				handleMsg(msg);// 有消息就提交给子类实现的方法
-			}
-		});
-	}
 
-	@Override
-	public void onClick(View v)
-	{
-		onViewClick(v);
 
-	}
 
 	@Override
 	public void onBackPressed()

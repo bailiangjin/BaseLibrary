@@ -1,6 +1,7 @@
 package com.kevin.baselibrary.activity;
 
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 
 import com.kevin.baselibrary.R;
@@ -14,6 +15,22 @@ public class MainActivity extends SuperBaseActivity
 	{
 		super.onCreate(savedInstanceState);
 	}
+
+	@Override
+	protected void initView() {
+
+	}
+
+	@Override
+	protected void initBaseView() {
+
+	}
+
+	@Override
+	protected void initLogic() {
+
+	}
+
 
 	@Override
 	protected int getLayoutResID() {
@@ -33,6 +50,11 @@ public class MainActivity extends SuperBaseActivity
 
 	@Override
 	protected void onViewClick(View v) {
+
+	}
+
+	@Override
+	protected void handleMsg(Message msg) {
 
 	}
 }

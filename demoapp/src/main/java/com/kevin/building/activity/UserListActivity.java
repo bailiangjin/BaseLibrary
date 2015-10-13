@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
-import android.view.View.OnClickListener;
 
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
@@ -16,17 +15,15 @@ public class UserListActivity extends BaseActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 
-		initView();
 	}
 
-	private void initView()
-	{
+	@Override
+	protected void initView() {
 		titleView.setTitleText("联系人");
 		titleView.setRightBtnText("添加");
-		titleView.setRightButtonListener(new OnClickListener()
+		titleView.setRightButtonListener(new View.OnClickListener()
 		{
 
 			@Override
@@ -37,6 +34,12 @@ public class UserListActivity extends BaseActivity
 			}
 		});
 	}
+
+	@Override
+	protected void initLogic() {
+
+	}
+
 
 	@Override
 	protected int getLayoutResID()

@@ -1,5 +1,7 @@
 package com.kevin.building.constants;
 
+import com.kevin.baselibrary.constant.SuperSPKey;
+
 /**
  * 
  SharedPreferences 键值类
@@ -7,9 +9,6 @@ package com.kevin.building.constants;
  * @author blj
  * 
  */
-public class SPKey
+public class SPKey extends SuperSPKey
 {
-	public static final String USER_NAME = "username";
-	public static final String PASSWORD = "password";
-	public static final String SAVEPWD = "savepwd";
 }

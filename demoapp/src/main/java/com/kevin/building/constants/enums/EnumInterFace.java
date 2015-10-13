@@ -1,4 +1,4 @@
-package com.kevin.building.constants;
+package com.kevin.building.constants.enums;
 
 /**
  * 使用接口组织枚举

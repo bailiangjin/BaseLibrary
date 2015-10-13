@@ -5,16 +5,17 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.kevin.baselibrary.base.AbstractBaseFragment;
+import com.kevin.building.base.BaseActivity;
 import com.kevin.building.fragment.Fragment1;
 import com.kevin.building.fragment.Fragment2;
 
-public class MyFragmentActivity extends FragmentActivity
+public class MyFragmentActivity extends BaseActivity
 {
 
 	private Fragment1 fragment1;
@@ -43,6 +44,31 @@ public class MyFragmentActivity extends FragmentActivity
 			fragmentTransaction.replace(android.R.id.content, getFragment2());
 		}
 		fragmentTransaction.commit();
+
+	}
+
+	@Override
+	protected void initView() {
+
+	}
+
+	@Override
+	protected void initLogic() {
+
+	}
+
+	@Override
+	protected int getLayoutResID() {
+		return 0;
+	}
+
+	@Override
+	protected void onViewClick(View v) {
+
+	}
+
+	@Override
+	protected void handleMsg(Message msg) {
 
 	}
 

@@ -17,6 +17,37 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors {
+        armv7_debug {
+            ndk {
+                abiFilters "armeabi-v7a", ""
+            }
+            resValue("string", "collectUrl", "http://123.57.213.13:8080/collect-web")
+            resValue("string", "ccUrl", "http://123.57.213.15:10080/cc-web/")
+        }
+        armv7_release {
+            ndk {
+                abiFilters "armeabi-v7a", ""
+            }
+            resValue("string", "collectUrl", "http://123.56.44.160:8080/collect-web")
+            resValue("string", "ccUrl", "http://123.57.213.15:10080/cc-web/")
+        }
+        x86_debug {
+            ndk {
+                abiFilters "x86", ""
+            }
+            resValue("string", "collectUrl", "http://123.57.213.13:8080/collect-web")
+            resValue("string", "ccUrl", "http://123.57.213.15:10080/cc-web/")
+        }
+        x86_release {
+            ndk {
+                abiFilters "x86", ""
+            }
+            resValue("string", "collectUrl", "http://123.56.44.160:8080/collect-web")
+            resValue("string", "ccUrl", "http://123.57.213.15:10080/cc-web/")
+        }
+
+    }
 }
 
 dependencies {

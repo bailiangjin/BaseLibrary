@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.listener;
+package com.kevin.baselibrary.model.art;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.content.IntentFilter;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/9/29 15:38
  */
-public class HomeListener {
+public class HomeEventListener {
     private Context mContext;
     private IntentFilter intentFilter;
     private OnHomePressedListener onHomePressedListener;
@@ -23,7 +23,7 @@ public class HomeListener {
         public void onHomeLongPressed();
     }
 
-    public HomeListener(Context context) {
+    public HomeEventListener(Context context) {
         mContext = context;
         intentFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
     }

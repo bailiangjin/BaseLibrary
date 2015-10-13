@@ -1,10 +1,14 @@
 package com.kevin.baselibrary.base;
 
 import android.os.Bundle;
+import android.os.Looper;
+import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
-import com.kevin.baselibrary.listener.HomeListener;
+import com.kevin.baselibrary.interfaze.listener.UIHandlerListener;
+import com.kevin.baselibrary.model.art.HomeEventListener;
+import com.kevin.baselibrary.model.art.UIHandler;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 
@@ -12,16 +16,46 @@ import com.kevin.baselibrary.utils.ToastUtils;
  * 作者：bailiangjin  bailiangjin@gmail.com
  * 创建时间：15/9/28 23:10
  */
-public abstract class SuperBaseActivity extends FragmentActivity {
+public abstract class SuperBaseActivity extends FragmentActivity implements View.OnClickListener {
 
-    protected HomeListener homeListener;
+    protected HomeEventListener homeListener;
 
+    /**
+     * Handler 消息处理
+     */
+    protected static UIHandler handler = new UIHandler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //初始化UI
-        initUI();
+        /**
+         * 初始化baseview
+         */
+        initSuperUI();
+        initBaseView();
+
+        //初始化子类布局
+        initView();
+        //初始化父类逻辑
+        initSuperLogic();
+
+        initLogic();
+    }
+
+
+    /**
+     * 初始化父类UI
+     */
+    private void initSuperUI() {
+        //初始化根布局
+        initRootLayout();
+    }
+
+    private void initSuperLogic() {
+
+        //设置handler 监听
+        setHandlerListener();
+        //设置Home键时间监听
         registerHomeListener();
     }
 
@@ -38,13 +72,36 @@ public abstract class SuperBaseActivity extends FragmentActivity {
         homeListener.stopWatch();
     }
 
+    @Override
+    public void onClick(View v) {
+        onViewClick(v);
+
+    }
+
     //当前类实现 方法
 
     /**
-     * 初始化当前Activity根界面 不允许子类覆盖
+     * 初始化根布局
      */
-    private void initUI() {
-        setContentView(getLayoutResID());
+    private void initRootLayout() {
+
+        int rootLayoutResId = getLayoutResID();
+        if (0 != rootLayoutResId && 1 != rootLayoutResId) {
+            setContentView(rootLayoutResId);
+        }
+    }
+
+    /**
+     * 设置handler 监听
+     */
+    private void setHandlerListener() {
+        handler.setListener(new UIHandlerListener()
+
+        {
+            public void handleMessage(Message msg) {
+                handleMsg(msg);// 有消息就提交给子类实现的方法
+            }
+        });
     }
 
 
@@ -89,8 +146,8 @@ public abstract class SuperBaseActivity extends FragmentActivity {
      * 注册Home键的监听
      */
     protected void registerHomeListener() {
-        homeListener = new HomeListener(SuperBaseActivity.this);
-        homeListener.setOnHomePressedListener(new HomeListener.OnHomePressedListener() {
+        homeListener = new HomeEventListener(SuperBaseActivity.this);
+        homeListener.setOnHomePressedListener(new HomeEventListener.OnHomePressedListener() {
 
             @Override
             public void onHomePressed() {
@@ -118,6 +175,21 @@ public abstract class SuperBaseActivity extends FragmentActivity {
     //子类必须实现的抽象方法
 
     /**
+     * 初始化子类UI
+     *
+     * @return
+     */
+    protected abstract void initView();
+
+    protected abstract void initBaseView();
+
+
+    /**
+     * 初始化子类逻辑
+     */
+    protected abstract void initLogic();
+
+    /**
      * 获取页面Layout ID
      *
      * @return
@@ -131,6 +203,12 @@ public abstract class SuperBaseActivity extends FragmentActivity {
      */
     protected abstract void onViewClick(View v);
 
+    /**
+     * Handler 消息处理方法
+     *
+     * @param msg
+     */
+    protected abstract void handleMsg(Message msg);
 
 }
 

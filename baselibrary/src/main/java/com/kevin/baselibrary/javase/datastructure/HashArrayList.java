@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.nonandroid.datastructure;
+package com.kevin.baselibrary.javase.datastructure;
 
 import android.support.annotation.NonNull;
 

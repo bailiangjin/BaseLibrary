@@ -19,16 +19,21 @@ public class UserInfoActivity extends BaseActivity
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 
-		initView();
 	}
 
-	private void initView()
-	{
+	@Override
+	protected void initView() {
 		titleView.setTitleText("好友信息");
 		titleView.setRightBtnVisibility(View.GONE);
 		btn_userinfo_back = (Button) findViewById(R.id.btn_userinfo_back);
 		btn_userinfo_back.setOnClickListener(this);
 	}
+
+	@Override
+	protected void initLogic() {
+
+	}
+
 
 	@Override
 	protected int getLayoutResID()

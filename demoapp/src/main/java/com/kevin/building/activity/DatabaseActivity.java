@@ -31,14 +31,19 @@ public class DatabaseActivity extends BaseActivity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		initView();
 		initHandler();
 	}
 
-	private void initView()
-	{
+	@Override
+	protected void initView() {
 		titleView.setTitleText("测试数据库");
 	}
+
+	@Override
+	protected void initLogic() {
+
+	}
+
 
 	@Override
 	protected void onStart()
