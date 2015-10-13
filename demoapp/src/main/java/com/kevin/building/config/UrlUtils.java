@@ -10,7 +10,7 @@ import com.kevin.building.app.MyApplication;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/9/22 17:46
  */
-public class UrlUtis {
+public class UrlUtils {
 
 
     /**

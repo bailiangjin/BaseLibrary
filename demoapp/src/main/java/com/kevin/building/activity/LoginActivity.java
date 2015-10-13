@@ -28,7 +28,7 @@ public class LoginActivity extends BaseActivity
 	private String userName = null;
 	private String passWord = null;
 
-	protected int getLayoutResID()
+	protected int getLayoutResId()
 	{
 		return R.layout.activity_login;
 	}

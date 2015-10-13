@@ -36,7 +36,7 @@ public class UserInfoActivity extends BaseActivity
 
 
 	@Override
-	protected int getLayoutResID()
+	protected int getLayoutResId()
 	{
 		return R.layout.activity_user_info;
 	}

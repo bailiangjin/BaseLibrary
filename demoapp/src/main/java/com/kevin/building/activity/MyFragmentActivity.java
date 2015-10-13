@@ -58,7 +58,7 @@ public class MyFragmentActivity extends BaseActivity
 	}
 
 	@Override
-	protected int getLayoutResID() {
+	protected int getLayoutResId() {
 		return 0;
 	}
 

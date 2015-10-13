@@ -32,7 +32,7 @@ public class RegistActivity extends BaseActivity
 
 
 	@Override
-	protected int getLayoutResID()
+	protected int getLayoutResId()
 	{
 		return R.layout.activity_regist;
 	}
