@@ -36,18 +36,23 @@ import com.kevin.baselibrary.app.SuperApplication;
  *
  * @author qianjunping
  */
-public class AppUtil {
+public class AppUtils {
+
+
+    public static Context getContext(){
+        return  SuperApplication.getContext();
+    }
     /**
      * 当前activity是否在运行
      *
-     * @param paramContext
      * @return
      */
-    public static boolean isAppRunningForeground(Context paramContext) {
-        ActivityManager localActivityManager = (ActivityManager) paramContext
+    public static boolean isAppRunningForeground() {
+
+        ActivityManager localActivityManager = (ActivityManager) getContext()
                 .getSystemService("activity");
         List localList = localActivityManager.getRunningTasks(1);
-        return paramContext
+        return getContext()
                 .getPackageName()
                 .equalsIgnoreCase(
                         ((ActivityManager.RunningTaskInfo) localList.get(0)).baseActivity
@@ -57,11 +62,10 @@ public class AppUtil {
     /**
      * 应用程序是否运行在后台
      *
-     * @param context
      * @return
      */
-    public static boolean isBackground(Context context) {
-
+    public static boolean isBackground() {
+        Context context = getContext();
         ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         List<RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
         for (RunningAppProcessInfo appProcess : appProcesses) {
@@ -101,11 +105,11 @@ public class AppUtil {
     /**
      * 获得清单文件的MetaData
      *
-     * @param context
      * @param key
      * @return
      */
-    public static Object getAppMetaData(Context context, String key) {
+    public static Object getAppMetaData(String key) {
+        Context context =getContext();
         if (context == null) {
             return null;
         }
@@ -128,15 +132,46 @@ public class AppUtil {
         return null;
     }
 
+    public static String getCurrentAppPackageName(){
+        return SuperApplication.getContext().getPackageName();
+    }
+
+
     /**
-     * 获得app的 viersionCode
+     * 获得当前app的 viersionCode
      *
-     * @param context
+     * @return int viersionCode
+     */
+    public static int getCurrentAppVersionCode( ) {
+        return getAppVersionCode(getCurrentAppPackageName());
+    }
+
+    /**
+     * 获得当前app的 viersionName
+     * @return string viersionName
+     */
+    public static String getCurrentAppVersionName() {
+        return getAppVersionName(getCurrentAppPackageName());
+    }
+
+
+    /**
+     * 获取当前应用名
      * @param packageName
      * @return
      */
-    public static int getAppVersionCode(Context context, String packageName) {
+    public static String getCurrentAppName(String packageName) {
+        return  getAppName(getContext().getPackageName());
+    }
 
+    /**
+     * 获得app的 viersionCode
+     *
+     * @param packageName  应用包名
+     * @return
+     */
+    public static int getAppVersionCode( String packageName) {
+        Context context =SuperApplication.getContext();
         PackageInfo info = null;
         try {
             if (packageName != null) {
@@ -154,16 +189,9 @@ public class AppUtil {
         return -1;
     }
 
-    /**
-     * 取包名路径作为应用唯一标识
-     */
-    public static String getAppId(Context context) {
-        return context.getPackageCodePath();
-    }
 
-    public static String getCurrentAppVersionName() {
-       return getAppVersionName(SuperApplication.getContext().getPackageName());
-    }
+
+
 
     /**
      * 获得app的VersionName
@@ -186,6 +214,15 @@ public class AppUtil {
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    /**
+     * 取包名路径作为应用唯一标识
+     */
+    public static String getAppId() {
+
+        return getContext().getPackageCodePath();
     }
 
     /**
@@ -239,11 +276,11 @@ public class AppUtil {
     /**
      * 自动安装
      *
-     * @param context
      * @param apkPath apk包的路径
      * @return
      */
-    public static boolean autoInstallApk(Context context, String apkPath) {
+    public static boolean autoInstallApk( String apkPath) {
+        Context context=getContext();
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -314,12 +351,11 @@ public class AppUtil {
     /**
      * 判断应用是否安装
      *
-     * @param context
      * @param packageName
      * @return
      */
-    public static boolean isInstall(Context context, String packageName) {
-
+    public static boolean isInstall( String packageName) {
+        Context context=getContext();
         PackageInfo pInfo = null;
         if (packageName != null) {
             try {
@@ -337,24 +373,21 @@ public class AppUtil {
     /**
      * 根据apk包判断是否已经安装
      *
-     * @param context
      * @param apkPath
      * @return
      */
-    public static boolean isInstallByApkPath(Context context, String apkPath) {
-        return isInstall(context, getPackageNameFromApk(context, apkPath));
+    public static boolean isInstallByApkPath( String apkPath) {
+        return isInstall( getPackageNameFromApk(apkPath));
     }
 
     /**
      * 从apk文件获得程序的包名
      *
-     * @param context
      * @param apkPath
      * @return
      */
-    public static String getPackageNameFromApk(Context context, String apkPath) {
-
-        PackageInfo apkInfo = context.getPackageManager()
+    public static String getPackageNameFromApk(String apkPath) {
+        PackageInfo apkInfo = getContext().getPackageManager()
                 .getPackageArchiveInfo(apkPath, PackageManager.GET_ACTIVITIES);
         Log.i("NscAppManger", "apkPath: " + apkPath);
         if (apkInfo != null) {
@@ -364,18 +397,18 @@ public class AppUtil {
     }
 
     /**
-     * 得到应用程序名
-     *
-     * @param context
+     * 获取应用名
+     * @param packageName
      * @return
      */
-    public static String getApplicationName(Context context) {
+    public static String getAppName(String packageName) {
+        Context context =getContext();
         PackageManager packageManager = null;
         String applicationName = "";
         try {
             packageManager = context.getPackageManager();
             ApplicationInfo packageInfo = packageManager.getApplicationInfo(
-                    context.getPackageName(), 0);
+                    packageName, 0);
             applicationName = (String) packageManager
                     .getApplicationLabel(packageInfo);
         } catch (NameNotFoundException e) {
@@ -389,18 +422,17 @@ public class AppUtil {
     /**
      * 卸载应用
      *
-     * @param context
      * @param packageName
      */
-    public static void unInstallApp(Context context, String packageName) {
+    public static void unInstallApp( String packageName) {
 
         Intent intent = new Intent(Intent.ACTION_DELETE, Uri.parse("package:"
                 + packageName));
-        context.startActivity(intent);
+        getContext().startActivity(intent);
     }
 
-    public static boolean isWorked(Context context) {
-        ActivityManager myManager = (ActivityManager) context
+    public static boolean isWorked() {
+        ActivityManager myManager = (ActivityManager) getContext()
                 .getSystemService(Context.ACTIVITY_SERVICE);
         ArrayList<RunningServiceInfo> runningService = (ArrayList<RunningServiceInfo>) myManager
                 .getRunningServices(30);
@@ -416,10 +448,10 @@ public class AppUtil {
     /**
      * 根据包名启动应用
      */
-    public static void startApp(Context context, String packageName) {
-        Intent intent = context.getPackageManager().getLaunchIntentForPackage(
+    public static void startApp( String packageName) {
+        Intent intent = getContext().getPackageManager().getLaunchIntentForPackage(
                 packageName);
-        context.startActivity(intent);
+        getContext().startActivity(intent);
     }
 
     /**
@@ -463,12 +495,12 @@ public class AppUtil {
     /**
      * 判断是否为pad
      *
-     * @param context
      * @return
      */
-    public static boolean isPad(Context context) {
+    public static boolean isPad() {
+
         DisplayMetrics dm = new DisplayMetrics();
-        WindowManager wm = (WindowManager) context
+        WindowManager wm = (WindowManager) getContext()
                 .getSystemService(Context.WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(dm);
 
@@ -476,6 +508,7 @@ public class AppUtil {
         double y = Math.pow(dm.heightPixels / dm.ydpi, 2);
         // 屏幕尺寸
         double screenInches = Math.sqrt(x + y);
+        LogUtils.e("screenInches:"+screenInches);
         // 大于7尺寸则为Pad
 
         if (screenInches >= 7.0) {
