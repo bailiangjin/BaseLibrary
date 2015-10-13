@@ -47,8 +47,15 @@ public class AddFriendActivity extends BaseActivity
 			@Override
 			public void onClick(View v)
 			{
-				Intent intent = new Intent(AddFriendActivity.this, LogoutActivity.class);
-				AppManager.getInstance().startActivity(AddFriendActivity.this, intent);
+				show("点击了退出");
+				runOnUiThread(new Runnable() {
+					@Override
+					public void run() {
+						Intent intent = new Intent(AddFriendActivity.this, LogoutActivity.class);
+						AppManager.getInstance().startActivity(AddFriendActivity.this, intent);
+					}
+				});
+
 			}
 		});
 	}

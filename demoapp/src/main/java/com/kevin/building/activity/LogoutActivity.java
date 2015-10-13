@@ -11,7 +11,7 @@ import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.constants.SPKey;
 
-class LogoutActivity extends BaseActivity {
+public class LogoutActivity extends BaseActivity {
 
     private Button btn_set_manageuser;
     private Button btn_set_cancel;

@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">Building</string>
+    <!--使用build.gradle中配置的app_name-->
+    <!--<string name="app_name">资源库Demo</string>-->
     <string name="action_settings">Settings</string>
 
 

@@ -165,7 +165,7 @@ public class AppManager
 	 */
 	public void startActivity(BaseActivity activity, Intent intent)
 	{
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		// appIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 		activity.startActivity(intent);
 		activity.overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
