@@ -33,10 +33,10 @@
         <TextView
             android:id="@+id/tv_version"
             style="@style/guide_tv_style"
-            android:text="版本" />
+            android:text="@string/versiion" />
 
         <TextView
-            android:id="@+id/tv_version_code"
+            android:id="@+id/tv_app_version_name"
             style="@style/guide_tv_style"
             android:layout_marginLeft="5dp"
             android:text="V 1.0" />

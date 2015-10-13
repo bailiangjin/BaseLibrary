@@ -13,4 +13,5 @@
     <!-- IM相关 -->
 
     <string name="login_loading">用户中心登录</string>
+    <string name="versiion">版本</string>
 </resources>
