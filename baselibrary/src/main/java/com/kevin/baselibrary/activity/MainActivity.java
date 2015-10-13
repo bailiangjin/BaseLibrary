@@ -22,7 +22,7 @@ public class MainActivity extends SuperBaseActivity
 	}
 
 	@Override
-	protected void initBaseView() {
+	protected void initBaseUI() {
 
 	}
 
@@ -33,7 +33,7 @@ public class MainActivity extends SuperBaseActivity
 
 
 	@Override
-	protected int getLayoutResID() {
+	protected int getLayoutResId() {
 		return R.layout.activity_main;
 	}
 

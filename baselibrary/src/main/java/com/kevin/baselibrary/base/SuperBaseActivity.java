@@ -1,16 +1,24 @@
 package com.kevin.baselibrary.base;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 
+import com.kevin.baselibrary.constant.SuperBroadcastAction;
 import com.kevin.baselibrary.interfaze.listener.UIHandlerListener;
 import com.kevin.baselibrary.model.art.HomeEventListener;
 import com.kevin.baselibrary.model.art.UIHandler;
 import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.NetUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
+
+import java.util.Set;
 
 /**
  * 作者：bailiangjin  bailiangjin@gmail.com
@@ -18,29 +26,74 @@ import com.kevin.baselibrary.utils.ToastUtils;
  */
 public abstract class SuperBaseActivity extends FragmentActivity implements View.OnClickListener {
 
-    protected HomeEventListener homeListener;
 
     /**
      * Handler 消息处理
      */
     protected static UIHandler handler = new UIHandler(Looper.getMainLooper());
 
+    /**
+     * Home键时间监听
+     */
+    protected HomeEventListener homeEventListener;
+
+    /**
+     * 全局广播监听
+     */
+    protected BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            onSuperBroadcast(intent);
+        }
+
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /**
-         * 初始化baseview
-         */
+        //初始化根类UI
         initSuperUI();
-        initBaseView();
-
-        //初始化子类布局
+        //初始化 子类BaseActivity UI
+        initBaseUI();
+        //初始化子类(具体Activity)布局
         initView();
         //初始化父类逻辑
         initSuperLogic();
-
+        //初始化子类逻辑
         initLogic();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        homeEventListener.startWatch();
+        registBroadCastReceiver();
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        homeEventListener.stopWatch();
+        unRegistBroadCastReceiver();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        onViewClick(v);
+    }
+
+
+    /**
+     * 当前类实现当前类调用方法----------------------------------start----------------------------------
+     */
 
 
     /**
@@ -51,6 +104,9 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
         initRootLayout();
     }
 
+    /**
+     * 初始化根类逻辑
+     */
     private void initSuperLogic() {
 
         //设置handler 监听
@@ -59,36 +115,47 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
         registerHomeListener();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        homeListener.startWatch();
-    }
-
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        homeListener.stopWatch();
-    }
-
-    @Override
-    public void onClick(View v) {
-        onViewClick(v);
-
-    }
-
-    //当前类实现 方法
-
     /**
      * 初始化根布局
      */
     private void initRootLayout() {
 
-        int rootLayoutResId = getLayoutResID();
-        if (0 != rootLayoutResId && 1 != rootLayoutResId) {
+        int rootLayoutResId = getLayoutResId();
+        if (0 != rootLayoutResId && -1 != rootLayoutResId) {
             setContentView(rootLayoutResId);
         }
+    }
+
+    /**
+     * 注册广播监听
+     */
+    private void registBroadCastReceiver() {
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(SuperBroadcastAction.NETWORK_CHANGE_ACTION);
+        //注册子类广播
+        Set<String> actionSet = getBroadCastAction();
+        if (null != actionSet && actionSet.size() > 0) {
+            for (String action : actionSet) {
+                intentFilter.addAction(action);
+            }
+        }
+
+        registerReceiver(broadcastReceiver, intentFilter);
+
+    }
+
+    protected Set<String> getBroadCastAction() {
+        return null;
+    }
+
+    /**
+     * 注销广播监听
+     */
+    private void unRegistBroadCastReceiver() {
+        if (null != broadcastReceiver) {
+            unregisterReceiver(broadcastReceiver);
+        }
+
     }
 
     /**
@@ -104,6 +171,54 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
         });
     }
 
+    /**
+     * 注册Home键的监听
+     */
+    private void registerHomeListener() {
+        homeEventListener = new HomeEventListener(SuperBaseActivity.this);
+        homeEventListener.setOnHomePressedListener(new HomeEventListener.OnHomePressedListener() {
+
+            @Override
+            public void onHomePressed() {
+                LogUtils.e("onHomePressed:::SuperBaseActivity");
+                SuperBaseActivity.this.onHomePressed();
+            }
+
+            @Override
+            public void onHomeLongPressed() {
+                LogUtils.e("onHomeLongPressed:::SuperBaseActivity");
+                SuperBaseActivity.this.onHomeLongPressed();
+            }
+        });
+        homeEventListener.startWatch();
+    }
+
+    /**
+     * 处理广播事件
+     *
+     * @param intent
+     */
+    private void onSuperBroadcast(Intent intent) {
+        // 处理各种情况
+        String action = intent.getAction();
+        if (SuperBroadcastAction.NETWORK_CHANGE_ACTION.equals(action)) { // 网络发生变化
+            LogUtils.d("网络状况变化");
+            if (NetUtils.isConnect(getApplicationContext())) {
+                onNetConnected();
+            } else {
+                onNetDisConnected();
+            }
+        }
+
+        //调用子类广播回调
+        onBroadcast(intent);
+
+    }
+
+
+    /**
+     * 当前类实现供子类调用方法----------------------------------start----------------------------------
+     */
 
     /**
      * show toast by string
@@ -143,68 +258,92 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
 
 
     /**
-     * 注册Home键的监听
+     * 子类可override的回调方法---------------------------------start----------------------------------
      */
-    protected void registerHomeListener() {
-        homeListener = new HomeEventListener(SuperBaseActivity.this);
-        homeListener.setOnHomePressedListener(new HomeEventListener.OnHomePressedListener() {
 
-            @Override
-            public void onHomePressed() {
-                LogUtils.e("onHomePressed:::SuperBaseActivity");
-                SuperBaseActivity.this.onHomePressed();
-            }
 
-            @Override
-            public void onHomeLongPressed() {
-                LogUtils.e("onHomeLongPressed:::SuperBaseActivity");
-                SuperBaseActivity.this.onHomeLongPressed();
-            }
-        });
-        homeListener.startWatch();
+    /**
+     * 广播回调事件
+     * @param intent
+     */
+    protected void onBroadcast(Intent intent) {
     }
 
+    /**
+     * 回调方法 Home键点击事件 回调方法
+     */
     protected void onHomePressed() {
 
     }
 
+    /**
+     * 回调方法 Home键点击事件 回调方法
+     */
     protected void onHomeLongPressed() {
 
     }
 
-    //子类必须实现的抽象方法
+    /**
+     * 网络连接上 回调方法
+     */
+    protected void onNetConnected() {
+        String connectType;
+        if (NetUtils.isWifiConnect(getApplicationContext())) {
+            connectType = "WiFi";
+
+        } else {
+            connectType = "手机网络";
+        }
+        show("网络已经连接 连接类型：" + connectType);
+    }
 
     /**
-     * 初始化子类UI
-     *
-     * @return
+     * 网络断开 回调方法
      */
-    protected abstract void initView();
-
-    protected abstract void initBaseView();
+    protected void onNetDisConnected() {
+        show("网络已经断开");
+    }
 
 
     /**
-     * 初始化子类逻辑
+     * 子类必须实现的抽象方法----------------------------------start----------------------------------
      */
-    protected abstract void initLogic();
 
     /**
      * 获取页面Layout ID
      *
      * @return
      */
-    protected abstract int getLayoutResID();
+    protected abstract int getLayoutResId();
+
 
     /**
-     * 全局点击事件
+     * 初始化 子类(BaseActivity) UI
+     */
+    protected abstract void initBaseUI();
+
+    /**
+     * 初始化子类(具体Activity)UI
+     *
+     * @return
+     */
+    protected abstract void initView();
+
+    /**
+     * 初始化子类逻辑
+     */
+    protected abstract void initLogic();
+
+
+    /**
+     * 全局点击事件 回调方法
      *
      * @param v
      */
     protected abstract void onViewClick(View v);
 
     /**
-     * Handler 消息处理方法
+     * Handler 消息处理方法 回调方法
      *
      * @param msg
      */
