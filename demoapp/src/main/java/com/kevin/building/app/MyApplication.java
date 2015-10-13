@@ -12,7 +12,6 @@ import com.kevin.baselibrary.app.SuperApplication;
 public class MyApplication extends SuperApplication {
 
 
-    //private  final String BUGTAGS_APP_SECRET ="53cc4b1aa7916e92a3826d20686b3a18";
 
     @Override
     public void onCreate() {
