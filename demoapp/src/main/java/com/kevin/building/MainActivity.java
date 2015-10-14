@@ -6,6 +6,7 @@ import android.os.Message;
 import android.view.View;
 
 import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.ConfigUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.MyFragmentActivity;
@@ -30,7 +31,7 @@ public class MainActivity extends BaseActivity {
 
 //        show("isPad:"+ AppUtils.isPad());
 
-//        show(ConfigUtils.getVlueByKey("im_login_ip"));
+        show(ConfigUtils.getVlueByKey("testkey"));
     }
 
     @Override
