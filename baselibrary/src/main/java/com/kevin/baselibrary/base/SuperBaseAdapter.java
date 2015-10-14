@@ -14,13 +14,13 @@ import java.util.List;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/9 18:23
  */
-public abstract class AbstractBaseAdapter<T> extends BaseAdapter {
+public abstract class SuperBaseAdapter<T> extends BaseAdapter {
     protected final Context context;
     protected final LayoutInflater mLayoutInflater;
     protected List<T> mListData;
     protected int itemResId = getItemLayoutResId();
 
-    public AbstractBaseAdapter(Context context) {
+    public SuperBaseAdapter(Context context) {
         this.context = context;
         mLayoutInflater = LayoutInflater.from(this.context);
     }

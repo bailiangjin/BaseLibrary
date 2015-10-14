@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.net;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.util.Log;
 import com.kevin.baselibrary.app.SuperApplication;
 import com.kevin.baselibrary.constant.enums.NetworkTypeEnum;
 import com.kevin.baselibrary.constant.enums.ProviderTypeEnum;
+import com.kevin.baselibrary.utils.LogUtils;
 
 public class NetUtils {
 

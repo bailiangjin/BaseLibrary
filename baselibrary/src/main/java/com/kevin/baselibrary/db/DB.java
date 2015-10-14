@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.dao;
+package com.kevin.baselibrary.db;
 
 /**
  * Author:  liangjin.bai

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 
-public abstract class AbstractBaseFragment extends Fragment
+public abstract class SuperBaseFragment extends Fragment
 {
 
 	@Override

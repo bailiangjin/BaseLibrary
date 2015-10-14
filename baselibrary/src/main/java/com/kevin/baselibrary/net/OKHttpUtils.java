@@ -1,6 +1,7 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.net;
 
 import com.kevin.baselibrary.interfaze.callback.HttpCallback;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
@@ -16,8 +17,14 @@ import java.util.Map;
  * 创建时间 2015/8/25 14:40
  */
 
-public class MyHttpUtils {
+public class OKHttpUtils {
 
+    /**
+     * 异步get方式请求网络
+     * @param url
+     * @param pairs 参数map
+     * @param httpCallback 网络请求回调
+     */
     public
     static void asyncGet(final String url, final Map<String, Object> pairs, final HttpCallback httpCallback) {
         LogUtils.e("localh2asyncPost:url=" + url);
@@ -52,6 +59,12 @@ public class MyHttpUtils {
     }
 
 
+    /**
+     * 异步 post 方式请求网络
+     * @param url url
+     * @param pairs 参数键值对Map
+     * @param httpCallback 请求网络回调
+     */
     public static void asyncPost(final String url, final Map<String, Object> pairs, final HttpCallback httpCallback) {
 
 
@@ -92,72 +105,5 @@ public class MyHttpUtils {
         }).start();
 
     }
-
-
-//    public
-//    static String send(String url, String method, Map<String, Object> pairs, HttpCallback callBack) {
-//        if (method.equals("post"))
-//            return post(url, pairs);
-//        else if (method.equals("get"))
-//            return get(url, pairs);
-//        else if (method.equals("asyncGet"))
-//            return asyncGet(url, pairs, callBack);
-//        else if (method.equals("asyncPost"))
-//            return asyncPost(url, pairs, callBack);
-//    }
-//
-//    public static String get(String url, Map<String, Object> pairs) {
-//        println "h2get:url=$url;pairs=$pairs"
-//        String queryString = "";
-//        pairs.each {
-//            _m ->
-//                    queryString += _m.key + "=" + _m.value.toString() + "&"
-//        }
-//        println "h2get:queryString=$queryString"
-//        OkHttpClient client = new OkHttpClient();
-//        Request request = new Request.Builder()
-//                .url("$url?$queryString")
-//                .build();
-//        Response response = null;
-//        try {
-//            response = client.newCall(request).execute();
-//            String body = response.body().string();
-//            println "h2get:response=" + body
-//            return body;
-//        } catch (IOException e) {
-//            println "h2get:error=" + e.getMessage()
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
-//
-//
-//    public static String post(String url, Map<String, Object> pairs) {
-//        println "h2post:url=$url;pairs=$pairs"
-//        OkHttpClient client = new OkHttpClient();
-//        FormEncodingBuilder formEncodingBuilder = new FormEncodingBuilder();
-//        pairs.each {
-//            _m ->
-//                    formEncodingBuilder.add(_m.key, _m.value.toString());
-//            println "h2post:" + _m.key + "=" + _m.value.toString()
-//        }
-//        RequestBody formBody = formEncodingBuilder.build();
-//        Request request = new Request.Builder()
-//                .url(url)
-//                .post(formBody)
-//                .build();
-//        Response response = null;
-//        try {
-//            println "h2post:start"
-//            response = client.newCall(request).execute();
-//            String body = response.body().string();
-//            println "h2post:response=" + body
-//            return body;
-//        } catch (Exception e) {
-//            println "h2post:error=" + e
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 
 }

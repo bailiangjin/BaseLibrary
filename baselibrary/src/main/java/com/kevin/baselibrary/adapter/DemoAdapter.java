@@ -4,21 +4,22 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.kevin.baselibrary.base.AbstractBaseAdapter;
+import com.kevin.baselibrary.base.SuperBaseAdapter;
 
 import java.util.List;
 
 /**
+ * 示例Adapter 类
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/9 18:25
  */
-public class TestAdapter extends AbstractBaseAdapter {
-    public TestAdapter(Context context) {
+public class DemoAdapter extends SuperBaseAdapter {
+    public DemoAdapter(Context context) {
         super(context);
     }
 
-    public TestAdapter(Context context, List<String> list) {
+    public DemoAdapter(Context context, List<String> list) {
         super(context);
         setListData(list);
     }

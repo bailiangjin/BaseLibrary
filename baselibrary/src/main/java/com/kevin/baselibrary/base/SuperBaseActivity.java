@@ -15,7 +15,7 @@ import com.kevin.baselibrary.interfaze.listener.UIHandlerListener;
 import com.kevin.baselibrary.model.art.HomeEventListener;
 import com.kevin.baselibrary.model.art.UIHandler;
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.NetUtils;
+import com.kevin.baselibrary.net.NetUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 
 import java.util.Set;
@@ -62,6 +62,13 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
         initSuperLogic();
         //初始化子类逻辑
         initLogic();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //开始执行子类逻辑
+        startLogic();
     }
 
     @Override
@@ -333,6 +340,11 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      * 初始化子类逻辑
      */
     protected abstract void initLogic();
+
+    /**
+     * 执行子类逻辑 耗时等不建议放到 onCreate的操作在此执行
+     */
+    protected abstract void startLogic();
 
 
     /**
