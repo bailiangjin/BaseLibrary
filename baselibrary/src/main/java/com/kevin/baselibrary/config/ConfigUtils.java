@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.config;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -23,7 +23,7 @@ public class ConfigUtils {
      * @param key 键
      * @return value 值
      */
-    public static String getVlueByKey(String key) {
+    public static String getValueByKey(String key) {
         Context context = AppUtils.getContext();
         String value = null;
         UTF8Properties properties = new UTF8Properties();
