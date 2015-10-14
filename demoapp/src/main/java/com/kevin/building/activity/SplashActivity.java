@@ -6,7 +6,7 @@ import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
-import com.kevin.baselibrary.utils.AppUtils;
+import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.utils.ActivityUtils;

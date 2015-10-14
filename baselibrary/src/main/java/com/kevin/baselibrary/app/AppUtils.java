@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.app;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -21,7 +21,8 @@ import android.util.Log;
 import android.view.WindowManager;
 
 import com.kevin.baselibrary.R;
-import com.kevin.baselibrary.app.SuperApplication;
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
