@@ -62,6 +62,20 @@
             android:name=".activity.LogoutActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".activity.launchmode.LaunchModeActivity1"
+
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.launchmode.LaunchModeActivity2"
+            android:launchMode="singleInstance"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".activity.launchmode.LaunchModeActivity3"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

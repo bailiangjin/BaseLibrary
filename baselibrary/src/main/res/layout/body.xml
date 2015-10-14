@@ -2,35 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
 
     <Button
+        android:id="@+id/btn1"
         style="@style/btn_base_style"
-        android:text="测试1"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:text="测试1" />
 
     <Button
+        android:id="@+id/btn2"
         style="@style/btn_base_style"
-        android:text="测试2"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:text="测试2" />
 
     <Button
+        android:id="@+id/btn3"
         style="@style/btn_base_style"
-        android:text="测试3"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:text="测试3" />
 
     <Button
+        android:id="@+id/btn4"
         style="@style/btn_base_style"
-        android:text="测试4"
-        android:layout_marginBottom="20dp"/>
-
+        android:layout_marginBottom="20dp"
+        android:text="测试4" />
 
     <Button
+        android:id="@+id/btn5"
         style="@style/btn_base_style"
-        android:text="测试5"
+        android:layout_marginBottom="20dp"
+        android:text="测试5" />
+    <Button
+        android:id="@+id/btn6"
+        style="@style/btn_base_style"
+        android:layout_marginBottom="20dp"
+        android:text="测试6" />
+    <Button
+        android:id="@+id/btn7"
+        style="@style/btn_base_style"
+        android:layout_marginBottom="20dp"
+        android:text="测试7" />
+    <Button
+        android:id="@+id/btn8"
+        style="@style/btn_base_style"
+        android:text="测试8"
         android:layout_marginBottom="20dp"/>
-
 
 </LinearLayout>

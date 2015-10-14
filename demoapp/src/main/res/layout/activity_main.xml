@@ -35,13 +35,21 @@
             android:minWidth="240dp"
             android:onClick="onClick_btn_test_login"
             android:text="测试登录" />
-        <Button
+
+        <Button
             android:id="@+id/btn_test_userinfo"
             style="@style/btn_xlarge_style"
             android:layout_marginTop="20dp"
             android:minWidth="240dp"
             android:onClick="onClick_btn_test_user"
             android:text="测试用户详情" />
+        <Button
+            android:id="@+id/btn_test_launchmode"
+            style="@style/btn_xlarge_style"
+            android:layout_marginTop="20dp"
+            android:minWidth="240dp"
+            android:onClick="onClick_btn_test_launchmode"
+            android:text="@string/test_launchmode" />
     </LinearLayout>
 
 </RelativeLayout>

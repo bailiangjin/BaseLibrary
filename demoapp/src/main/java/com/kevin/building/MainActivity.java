@@ -8,6 +8,7 @@ import android.view.View;
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.ConfigUtils;
 import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.building.activity.launchmode.LaunchModeActivity1;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.MyFragmentActivity;
 import com.kevin.building.activity.RegistActivity;
@@ -74,6 +75,11 @@ public class MainActivity extends BaseActivity {
 
     public void onClick_btn_test_user(View v) {
         Intent intent = new Intent(this, UserInfoActivity.class);
+        AppManager.getInstance().startActivity(MainActivity.this, intent);
+    }
+
+    public void onClick_btn_test_launchmode(View v) {
+        Intent intent = new Intent(this, LaunchModeActivity1.class);
         AppManager.getInstance().startActivity(MainActivity.this, intent);
     }
 

@@ -22,4 +22,5 @@
     <string name="add">添加</string>
     <string name="contacts">联系人</string>
     <string name="friend_info">好友信息</string>
+    <string name="test_launchmode">测试Launchmode</string>
 </resources>

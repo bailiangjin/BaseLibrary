@@ -43,7 +43,7 @@ public class DemoActivity extends SuperBaseActivity {
     @Override
     protected int getLayoutResId() {
         //TODO: 初始化页面根布局
-        return R.layout.activity_main;
+        return R.layout.activity_demo;
     }
 
 

@@ -114,7 +114,7 @@ public abstract class BaseActivity extends SuperBaseActivity
 	@Override
 	public void onBackPressed()
 	{
-		finish();
+//		finish();
 		overridePendingTransition(R.anim.activity_edit_in, R.anim.activity_edit_out);
 		super.onBackPressed();
 	}
