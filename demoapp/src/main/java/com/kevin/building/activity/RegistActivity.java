@@ -20,7 +20,7 @@ public class RegistActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		titleView.setTitleText("注册");
+		titleView.setTitleText(getString(R.string.register));
 		titleView.setRightBtnVisibility(View.GONE);
 		findViewById(R.id.btn_regist).setOnClickListener(this);
 	}

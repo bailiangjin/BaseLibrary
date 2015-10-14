@@ -23,7 +23,7 @@ public class UserInfoActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		titleView.setTitleText("好友信息");
+		titleView.setTitleText(getString(R.string.friend_info));
 		titleView.setRightBtnVisibility(View.GONE);
 		btn_userinfo_back = (Button) findViewById(R.id.btn_userinfo_back);
 		btn_userinfo_back.setOnClickListener(this);

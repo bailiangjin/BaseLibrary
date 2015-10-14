@@ -21,8 +21,8 @@ public class UserListActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		titleView.setTitleText("联系人");
-		titleView.setRightBtnText("添加");
+		titleView.setTitleText(getString(R.string.contacts));
+		titleView.setRightBtnText(getString(R.string.add));
 		titleView.setRightButtonListener(new View.OnClickListener()
 		{
 

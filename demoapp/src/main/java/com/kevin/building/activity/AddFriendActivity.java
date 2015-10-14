@@ -39,8 +39,8 @@ public class AddFriendActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		titleView.setTitleText("添加联系人");
-		titleView.setRightBtnText("退出");
+		titleView.setTitleText(getString(R.string.addcontacts));
+		titleView.setRightBtnText(getString(R.string.exit));
 		titleView.setRightButtonListener(new OnClickListener()
 		{
 

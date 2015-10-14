@@ -17,4 +17,9 @@
     <string name="register">注册</string>
     <string name="index_page">主页面</string>
     <string name="logout">注销</string>
+    <string name="exit">退出</string>
+    <string name="addcontacts">添加联系人</string>
+    <string name="add">添加</string>
+    <string name="contacts">联系人</string>
+    <string name="friend_info">好友信息</string>
 </resources>
