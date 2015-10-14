@@ -17,8 +17,7 @@ import com.kevin.building.utils.ActivityUtils;
 
 public class MainActivity extends BaseActivity {
 
-    private long lastTouchTime = 0;
-    private long gapTime = 2000;
+
 
     @Override
     protected int getLayoutResId() {
@@ -28,19 +27,16 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        LogUtils.e("mytype:nettype:" + NetUtils.getNetWorkType().toString());
-//        LogUtils.e("mytype:providerType:" + NetUtils.getProviderType().toString());
 
 //        show("isPad:"+ AppUtils.isPad());
-        show("isPad:"+ AppUtils.isTablet());
     }
 
     @Override
     protected void initView() {
         // titleView.setRightBtnVisibility(View.GONE);
-        titleView.setTitleText("主页面");
+        titleView.setTitleText(getString(R.string.index_page));
         titleView.setLeftBtnVisibility(View.GONE);
-        titleView.setRightBtnText("注册");
+        titleView.setRightBtnText(getString(R.string.register));
         titleView.setRightButtonListener(new View.OnClickListener() {
 
             @Override
@@ -61,9 +57,7 @@ public class MainActivity extends BaseActivity {
 
     public void onClick_btn_fragment(View v) {
         Intent intent = new Intent(this, MyFragmentActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
-
+        AppManager.getInstance().startActivity(MainActivity.this, intent);
     }
 
     public void onClick_btn_test_db(View v) {
@@ -82,16 +76,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        long currentTime = System.currentTimeMillis();
-        if (currentTime - lastTouchTime > gapTime) {
-            show(R.string.one_more_click_exit);
-            lastTouchTime = currentTime;
-            return;
-        } else {
-            finish();
-        }
+        //再点一次 退出应用
+        AppUtils.oneMoreClickExitApp(this);
 
     }
+
+
 
     @Override
     public void onViewClick(View v) {

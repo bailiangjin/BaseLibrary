@@ -32,7 +32,7 @@ public class LogoutActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        titleView.setTitleText("注销");
+        titleView.setTitleText(getString(R.string.logout));
         titleView.setRightBtnVisibility(View.GONE);
         btn_set_manageuser = (Button) findViewById(R.id.btn_set_manageuser);
         btn_set_cancel = (Button) findViewById(R.id.btn_set_cancel);

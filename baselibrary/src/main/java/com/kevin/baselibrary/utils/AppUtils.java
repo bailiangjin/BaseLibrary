@@ -20,6 +20,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.app.SuperApplication;
 
 import java.io.ByteArrayOutputStream;
@@ -39,10 +40,31 @@ import java.util.List;
  */
 public class AppUtils {
 
+    /**
+     * 再点一次退出应用 上次点击时间
+     */
+    private static long lastTouchTime = 0;
 
-    public static Context getContext(){
-        return  SuperApplication.getContext();
+    public static void oneMoreClickExitApp(Activity activity) {
+        //间隔时间 阈值 毫秒
+        final long gapTime = 2000;
+
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastTouchTime > gapTime) {
+            ToastUtils.show(R.string.one_more_click_exit);
+            lastTouchTime = currentTime;
+            return;
+        } else {
+            activity.finish();
+            AppUtils.exit();
+        }
     }
+
+
+    public static Context getContext() {
+        return SuperApplication.getContext();
+    }
+
     /**
      * 当前activity是否在运行
      *
@@ -110,7 +132,7 @@ public class AppUtils {
      * @return
      */
     public static Object getAppMetaData(String key) {
-        Context context =getContext();
+        Context context = getContext();
         if (context == null) {
             return null;
         }
@@ -133,7 +155,7 @@ public class AppUtils {
         return null;
     }
 
-    public static String getCurrentAppPackageName(){
+    public static String getCurrentAppPackageName() {
         return SuperApplication.getContext().getPackageName();
     }
 
@@ -143,12 +165,13 @@ public class AppUtils {
      *
      * @return int viersionCode
      */
-    public static int getCurrentAppVersionCode( ) {
+    public static int getCurrentAppVersionCode() {
         return getAppVersionCode(getCurrentAppPackageName());
     }
 
     /**
      * 获得当前app的 viersionName
+     *
      * @return string viersionName
      */
     public static String getCurrentAppVersionName() {
@@ -158,21 +181,22 @@ public class AppUtils {
 
     /**
      * 获取当前应用名
+     *
      * @param packageName
      * @return
      */
     public static String getCurrentAppName(String packageName) {
-        return  getAppName(getContext().getPackageName());
+        return getAppName(getContext().getPackageName());
     }
 
     /**
      * 获得app的 viersionCode
      *
-     * @param packageName  应用包名
+     * @param packageName 应用包名
      * @return
      */
-    public static int getAppVersionCode( String packageName) {
-        Context context =SuperApplication.getContext();
+    public static int getAppVersionCode(String packageName) {
+        Context context = SuperApplication.getContext();
         PackageInfo info = null;
         try {
             if (packageName != null) {
@@ -189,9 +213,6 @@ public class AppUtils {
         }
         return -1;
     }
-
-
-
 
 
     /**
@@ -280,8 +301,8 @@ public class AppUtils {
      * @param apkPath apk包的路径
      * @return
      */
-    public static boolean autoInstallApk( String apkPath) {
-        Context context=getContext();
+    public static boolean autoInstallApk(String apkPath) {
+        Context context = getContext();
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -355,8 +376,8 @@ public class AppUtils {
      * @param packageName
      * @return
      */
-    public static boolean isInstall( String packageName) {
-        Context context=getContext();
+    public static boolean isInstall(String packageName) {
+        Context context = getContext();
         PackageInfo pInfo = null;
         if (packageName != null) {
             try {
@@ -377,8 +398,8 @@ public class AppUtils {
      * @param apkPath
      * @return
      */
-    public static boolean isInstallByApkPath( String apkPath) {
-        return isInstall( getPackageNameFromApk(apkPath));
+    public static boolean isInstallByApkPath(String apkPath) {
+        return isInstall(getPackageNameFromApk(apkPath));
     }
 
     /**
@@ -399,11 +420,12 @@ public class AppUtils {
 
     /**
      * 获取应用名
+     *
      * @param packageName
      * @return
      */
     public static String getAppName(String packageName) {
-        Context context =getContext();
+        Context context = getContext();
         PackageManager packageManager = null;
         String applicationName = "";
         try {
@@ -425,7 +447,7 @@ public class AppUtils {
      *
      * @param packageName
      */
-    public static void unInstallApp( String packageName) {
+    public static void unInstallApp(String packageName) {
 
         Intent intent = new Intent(Intent.ACTION_DELETE, Uri.parse("package:"
                 + packageName));
@@ -449,7 +471,7 @@ public class AppUtils {
     /**
      * 根据包名启动应用
      */
-    public static void startApp( String packageName) {
+    public static void startApp(String packageName) {
         Intent intent = getContext().getPackageManager().getLaunchIntentForPackage(
                 packageName);
         getContext().startActivity(intent);
@@ -496,6 +518,7 @@ public class AppUtils {
 
     /**
      * 判断是否为平板 有效
+     *
      * @return boolean
      */
     public static boolean isTablet() {
@@ -521,7 +544,7 @@ public class AppUtils {
         double y = Math.pow(dm.heightPixels / dm.ydpi, 2);
         // 屏幕尺寸
         double screenInches = Math.sqrt(x + y);
-        LogUtils.e("screenInches:"+screenInches);
+        LogUtils.e("screenInches:" + screenInches);
         // 大于7尺寸则为Pad
 
         if (screenInches >= 7.0) {

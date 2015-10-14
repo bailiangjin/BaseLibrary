@@ -14,4 +14,7 @@
 
     <string name="login_loading">用户中心登录</string>
     <string name="versiion">版本</string>
+    <string name="register">注册</string>
+    <string name="index_page">主页面</string>
+    <string name="logout">注销</string>
 </resources>
