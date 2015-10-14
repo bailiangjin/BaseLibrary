@@ -49,12 +49,11 @@ public class LaunchModeActivity1 extends LaunchBaseActivity {
 
             case R.id.btn1:
                 Intent intent1 = new Intent(LaunchModeActivity1.this, LaunchModeActivity1.class);
-//                intent1.putExtra("classname",LaunchModeActivity1.this.getClass().)
                 startActivity(intent1);
                 break;
             case R.id.btn2:
                 Intent intent2 = new Intent(LaunchModeActivity1.this, LaunchModeActivity2.class);
-//                intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                //intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent2.putExtra("lastTaskId",LaunchModeActivity1.this.getTaskId());
                 startActivity(intent2);
                 break;
