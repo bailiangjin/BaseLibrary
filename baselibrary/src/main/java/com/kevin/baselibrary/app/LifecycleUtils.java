@@ -17,24 +17,25 @@ public class LifecycleUtils {
 
     /**
      * //判断 last TaskId 不为-1 并且 不等于当前taskId 切换到之前 task 否则 销毁activity
+     *
      * @param activity
      * @param lastTaskId
      */
     @SuppressLint("NewApi")
     public static void onBackPressedToLastTask(Activity activity, int lastTaskId) {
         //获取当前activity taskId
-        int curTaskId= activity.getTaskId();
+        int curTaskId = activity.getTaskId();
 
         ActivityManager mActivityManager = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningTaskInfo> runningTaskInfoList= mActivityManager.getRunningTasks(100);
+        List<ActivityManager.RunningTaskInfo> runningTaskInfoList = mActivityManager.getRunningTasks(100);
         boolean isLastTaskRunning = isTaskRunning(lastTaskId);
 
-        if (isLastTaskRunning&&-1!=lastTaskId&&lastTaskId!=curTaskId){
+        if (isLastTaskRunning && -1 != lastTaskId && lastTaskId != curTaskId) {
             LogUtils.e("onBack:toLastTask");
 
 
             mActivityManager.moveTaskToFront(lastTaskId, ActivityManager.MOVE_TASK_WITH_HOME);
-        }else {
+        } else {
             LogUtils.e("onBack:finishActivity");
             activity.finish();
         }
@@ -42,18 +43,28 @@ public class LifecycleUtils {
 
     /**
      * 判断Tsak 是否在运行中
+     *
      * @param taskId
      * @return
      */
-    public static boolean isTaskRunning( int taskId){
+    public static boolean isTaskRunning(int taskId) {
         ActivityManager mActivityManager = (ActivityManager) AppUtils.getContext().getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningTaskInfo> runningTaskInfoList= mActivityManager.getRunningTasks(100);
+        List<ActivityManager.RunningTaskInfo> runningTaskInfoList = mActivityManager.getRunningTasks(100);
         boolean lastTaskRunning = false;
-        for (ActivityManager.RunningTaskInfo info:runningTaskInfoList) {
-            if(info.id==taskId){
+        for (ActivityManager.RunningTaskInfo info : runningTaskInfoList) {
+            if (info.id == taskId) {
                 lastTaskRunning = true;
             }
         }
         return lastTaskRunning;
+    }
+
+    /**
+     * 将当前activity 所属task切到后台
+     *
+     * @return
+     */
+    public static void moveTaskToBack(Activity activity) {
+        activity.moveTaskToBack(true);
     }
 }

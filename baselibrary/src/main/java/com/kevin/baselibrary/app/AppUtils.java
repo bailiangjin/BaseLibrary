@@ -111,8 +111,13 @@ public class AppUtils {
      * 强制退出应用程序
      */
     public static void exit() {
-        android.os.Process.killProcess(android.os.Process.myPid());
-        System.exit(10);
+//        android.os.Process.killProcess(android.os.Process.myPid());
+//        ActivityManager mActivityManager = (ActivityManager) AppUtils.getContext().getSystemService(Context.ACTIVITY_SERVICE);
+//
+//        mActivityManager.killBackgroundProcesses(AppUtils.getContext().getPackageName());
+//        mActivityManager.getAppTasks();
+//        mActivityManager.restartPackage(AppUtils.getContext().getPackageName());
+//        System.exit(0);
     }
 
     /**

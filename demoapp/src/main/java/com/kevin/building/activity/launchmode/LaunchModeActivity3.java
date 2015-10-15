@@ -25,4 +25,7 @@ public class LaunchModeActivity3 extends LaunchModeActivity1 {
     protected void handleMsg(Message msg) {
 
     }
+
+
+
 }

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 
-import com.kevin.baselibrary.app.LifecycleUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 
 /**
@@ -13,19 +12,22 @@ import com.kevin.baselibrary.utils.LogUtils;
  * Create Time: 2015/10/14 13:58
  */
 public class LaunchModeActivity2 extends LaunchModeActivity1 {
-    private int lastTaskId = -1;
+//    private int lastTaskId = -1;
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         LogUtils.e("onNewIntent:test");
-        lastTaskId = getIntent().getIntExtra("lastTaskId", -1);
+        LogUtils.e("taskId:" + getLocalClassName() + ":" + getTaskId());
+        show("onNewIntent");
+//        lastTaskId = getIntent().getIntExtra("lastTaskId", -1);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        lastTaskId = getIntent().getIntExtra("lastTaskId", -1);
+        show("onCreate");
+//        lastTaskId = getIntent().getIntExtra("lastTaskId", -1);
     }
 
     @Override
@@ -37,9 +39,10 @@ public class LaunchModeActivity2 extends LaunchModeActivity1 {
 
     @Override
     protected void onStart() {
-        if(!LifecycleUtils.isTaskRunning(lastTaskId)){
-            finish();
-        }
+//        if(!LifecycleUtils.isTaskRunning(lastTaskId)){
+//            finish();
+//        }
+
         super.onStart();
     }
 
@@ -63,7 +66,8 @@ public class LaunchModeActivity2 extends LaunchModeActivity1 {
 
     @Override
     public void onBackPressed() {
-        LifecycleUtils.onBackPressedToLastTask(LaunchModeActivity2.this, lastTaskId);
+//        LifecycleUtils.onBackPressedToLastTask(LaunchModeActivity2.this, lastTaskId);
+        moveTaskToBack(true);
 
     }
 
