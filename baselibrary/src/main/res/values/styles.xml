@@ -16,6 +16,25 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
+
+    <style name="SuperMyBasicTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowSoftInputMode">stateHidden</item>
+        <item name="android:windowAnimationStyle">@style/SuperAnimFade</item>
+    </style>
+
+    <style name="SuperSplashTheme" parent="android:Theme.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/splach_gray_black_gradient_bg</item>
+        <item name="android:windowAnimationStyle">@style/SuperAnimFade</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="SuperAnimFade" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/hold</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
     
     
     

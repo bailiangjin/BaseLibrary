@@ -26,7 +26,7 @@ public abstract class LaunchBaseActivity extends BaseActivity{
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_test1;
+        return R.layout.activity_launchmode;
     }
 
     @Override
