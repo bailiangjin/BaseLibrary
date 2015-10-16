@@ -1,9 +1,11 @@
 package com.kevin.baselibrary.app;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.os.Build;
 
 import com.kevin.baselibrary.utils.LogUtils;
 
@@ -39,6 +41,20 @@ public class LifecycleUtils {
             LogUtils.e("onBack:finishActivity");
             activity.finish();
         }
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public static void moveTaskToFront(int taskId){
+        ActivityManager mActivityManager = (ActivityManager) AppUtils.getContext().getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> runningTaskInfoList = mActivityManager.getRunningTasks(100);
+        boolean isLastTaskRunning = isTaskRunning(taskId);
+        if (isLastTaskRunning){
+            mActivityManager.moveTaskToFront(taskId, ActivityManager.MOVE_TASK_WITH_HOME);
+            LogUtils.e("moveTaskToFront:taskId:"+taskId);
+        }else {
+            LogUtils.e("moveTaskToFront:taskNotRunning");
+        }
+
     }
 
     /**
