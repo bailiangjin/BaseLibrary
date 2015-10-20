@@ -2,8 +2,8 @@ package com.kevin.building.utils;
 
 import android.content.Intent;
 
-import com.kevin.building.MainActivity;
 import com.kevin.building.activity.DatabaseActivity;
+import com.kevin.building.activity.NewMainActivity;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
 
@@ -24,7 +24,7 @@ public class ActivityUtils
 
 	public static void startAMainActivity(BaseActivity context)
 	{
-		Intent intent = new Intent(context, MainActivity.class);
+		Intent intent = new Intent(context, NewMainActivity.class);
 		startActivity(context, intent);
 	}
 

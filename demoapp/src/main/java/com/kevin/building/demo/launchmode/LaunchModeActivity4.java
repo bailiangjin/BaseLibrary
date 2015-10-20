@@ -1,4 +1,4 @@
-package com.kevin.building.activity.launchmode;
+package com.kevin.building.demo.launchmode;
 
 import android.content.Intent;
 import android.os.Message;

@@ -1,4 +1,4 @@
-package com.kevin.building.activity.launchmode;
+package com.kevin.building.demo.launchmode;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,14 @@ import android.view.View;
 
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
+import com.kevin.building.base.BtnBaseActivity;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/14 13:58
  */
-public class LaunchModeActivity1 extends LaunchBaseActivity {
+public class LaunchModeActivity1 extends BtnBaseActivity {
 
 
     @Override

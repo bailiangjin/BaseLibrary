@@ -8,7 +8,7 @@ import android.view.View;
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.ConfigUtils;
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.building.activity.launchmode.LaunchModeActivity1;
+import com.kevin.building.demo.launchmode.LaunchModeActivity1;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.MyFragmentActivity;
 import com.kevin.building.activity.RegistActivity;

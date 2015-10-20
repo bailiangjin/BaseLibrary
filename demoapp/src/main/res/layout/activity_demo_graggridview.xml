@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.kevin.baselibrary.view.draggridview.DragGridView
+        android:layout_marginTop="30dp"
+        android:layout_margin="10dp"
+        android:id="@+id/dragGridView"
+        android:listSelector="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:verticalSpacing="10dip"
+        android:horizontalSpacing="10dip"
+        android:columnWidth="90dip"
+  	    android:gravity="center" 
+        android:numColumns="auto_fit" >
+    </com.kevin.baselibrary.view.draggridview.DragGridView>
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.kevin.building.activity.launchmode;
+package com.kevin.building.base;
 
 import android.content.Intent;
 import android.view.View;
@@ -6,14 +6,13 @@ import android.widget.Button;
 
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/14 14:44
  */
-public abstract class LaunchBaseActivity extends BaseActivity{
+public abstract class BtnBaseActivity extends BaseActivity{
     protected Button btn1;
     protected Button btn2;
     protected Button btn3;
@@ -26,7 +25,7 @@ public abstract class LaunchBaseActivity extends BaseActivity{
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_launchmode;
+        return R.layout.activity_btnbase;
     }
 
     @Override
