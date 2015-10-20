@@ -5,23 +5,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.view.draggridview.DragGridBaseAdapter;
 import com.kevin.building.R;
+import com.kevin.building.model.TaskItemBean;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 
 public class DragAdapter extends BaseAdapter implements DragGridBaseAdapter {
-	private List<HashMap<String, Object>> list;
+//	private List<HashMap<String, Object>> list;
+	private List<TaskItemBean> list;
 	private LayoutInflater mInflater;
 	private int mHidePosition = -1;
 	
-	public DragAdapter(Context context, List<HashMap<String, Object>> list){
+	public DragAdapter(Context context, List<TaskItemBean> list){
 		this.list = list;
 		mInflater = LayoutInflater.from(context);
 	}
@@ -47,11 +47,9 @@ public class DragAdapter extends BaseAdapter implements DragGridBaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		convertView = mInflater.inflate(R.layout.drag_gridview_item, null);
-		ImageView mImageView = (ImageView) convertView.findViewById(R.id.item_image);
 		TextView mTextView = (TextView) convertView.findViewById(R.id.item_text);
 		
-		mImageView.setImageResource((Integer) list.get(position).get("item_image"));
-		mTextView.setText((CharSequence) list.get(position).get("item_text"));
+		mTextView.setText((CharSequence) list.get(position).getName());
 		
 		if(position == mHidePosition){
 			convertView.setVisibility(View.INVISIBLE);
@@ -63,7 +61,7 @@ public class DragAdapter extends BaseAdapter implements DragGridBaseAdapter {
 
 	@Override
 	public void reorderItems(int oldPosition, int newPosition) {
-		HashMap<String, Object> temp = list.get(oldPosition);
+		TaskItemBean temp = list.get(oldPosition);
 		if(oldPosition < newPosition){
 			for(int i=oldPosition; i<newPosition; i++){
 				Collections.swap(list, i, i + 1);

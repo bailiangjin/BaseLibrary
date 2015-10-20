@@ -13,10 +13,12 @@ import android.widget.EditText;
 
 import com.kevin.baselibrary.constant.SuperSPKey;
 import com.kevin.baselibrary.utils.SPUtils;
+import com.kevin.building.MainActivity;
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.constants.LoginResult;
+import com.kevin.building.utils.ActivityUtils;
 
 public class LoginActivity extends BaseActivity
 {
@@ -45,6 +47,15 @@ public class LoginActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
+
+		titleView.setRightBtnText(getString(R.string.register));
+		titleView.setRightButtonListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				ActivityUtils.startActivity(LoginActivity.this,RegistActivity.class);
+			}
+		});
 
 		et_username = (EditText) findViewById(R.id.et_username);
 		et_password = (EditText) findViewById(R.id.et_password);

@@ -8,14 +8,12 @@ import android.view.View;
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.ConfigUtils;
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.building.demo.launchmode.LaunchModeActivity1;
-import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.MyFragmentActivity;
 import com.kevin.building.activity.RegistActivity;
 import com.kevin.building.activity.UserInfoActivity;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.utils.ActivityUtils;
+import com.kevin.building.demo.launchmode.LaunchModeActivity1;
 
 public class MainActivity extends BaseActivity {
 
@@ -64,14 +62,14 @@ public class MainActivity extends BaseActivity {
         AppManager.getInstance().startActivity(MainActivity.this, intent);
     }
 
-    public void onClick_btn_test_db(View v) {
-        ActivityUtils.startDatabaseActivity(MainActivity.this);
-    }
+//    public void onClick_btn_test_db(View v) {
+//        ActivityUtils.startDatabaseActivity(MainActivity.this);
+//    }
 
-    public void onClick_btn_test_login(View v) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        AppManager.getInstance().startActivity(MainActivity.this, intent);
-    }
+//    public void onClick_btn_test_login(View v) {
+//        Intent intent = new Intent(this, LoginActivity.class);
+//        AppManager.getInstance().startActivity(MainActivity.this, intent);
+//    }
 
     public void onClick_btn_test_user(View v) {
         Intent intent = new Intent(this, UserInfoActivity.class);

@@ -4,19 +4,11 @@
     android:layout_height="wrap_content"
     android:background="@android:color/transparent">
 
-    <ImageView
-        android:id="@+id/item_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:scaleType="centerCrop"
-        android:visibility="gone"></ImageView>
 
     <TextView
         android:id="@+id/item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/item_image"
         android:layout_centerHorizontal="true"
         android:height="40dp"
         android:background="@drawable/drag_item_bg_selector"

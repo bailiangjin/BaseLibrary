@@ -1,11 +1,10 @@
-package com.kevin.building.activity;
+package com.kevin.building;
 
-import android.content.Intent;
 import android.os.Message;
 import android.view.View;
 
-import com.kevin.building.R;
-import com.kevin.building.app.AppManager;
+import com.kevin.building.activity.LoginActivity;
+import com.kevin.building.activity.UIMainActivity;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.draggridview.DragGridViewActivity;
 import com.kevin.building.utils.ActivityUtils;
@@ -30,13 +29,13 @@ public class NewMainActivity extends BtnBaseActivity {
         titleView.setLeftBtnVisibility(View.GONE);
 
         btn1.setText("UI");
-        btn2.setText("生命周期");
+        btn2.setText("应用");
         btn3.setText("网络");
         btn4.setText("数据库");
         btn5.setText("文件");
         btn6.setText("传感器");
         btn7.setText("控件");
-        btn8.setText("备用");
+        btn8.setText("当前测试");
 
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
@@ -57,22 +56,19 @@ public class NewMainActivity extends BtnBaseActivity {
     protected void onViewClick(View v) {
         switch (v.getId()) {
             case R.id.btn1:
-
-
+                ActivityUtils.startActivity(this,UIMainActivity.class);
                 break;
 
             case R.id.btn2:
-
+                ActivityUtils.startActivity(this,LoginActivity.class);
 
                 break;
 
             case R.id.btn3:
-                ActivityUtils.startDatabaseActivity(NewMainActivity.this);
-
-
                 break;
 
             case R.id.btn4:
+                ActivityUtils.startDatabaseActivity(NewMainActivity.this);
 
 
                 break;
@@ -93,8 +89,8 @@ public class NewMainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn8:
-                Intent intent = new Intent(this, DragGridViewActivity.class);
-                AppManager.getInstance().startActivity(NewMainActivity.this, intent);
+                ActivityUtils.startActivity(this, DragGridViewActivity.class);
+
 
                 break;
 

@@ -33,11 +33,16 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".activity.NewMainActivity"
+            android:name=".NewMainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
             android:name=".activity.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".activity.UIMainActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
