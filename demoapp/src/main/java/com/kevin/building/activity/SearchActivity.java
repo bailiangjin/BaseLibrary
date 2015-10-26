@@ -4,6 +4,7 @@ import android.os.Message;
 import android.view.View;
 
 import com.kevin.baselibrary.interfaze.listener.SearchBarListener;
+import com.kevin.baselibrary.interfaze.listener.TitleViewListener;
 import com.kevin.baselibrary.view.SearchBar;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
@@ -27,6 +28,17 @@ public class SearchActivity extends BaseActivity {
     protected void initView() {
 
         titleView.setTitleText("搜索");
+        titleView.setTitleViewListener(new TitleViewListener() {
+            @Override
+            public void onLeftBtnClick() {
+
+            }
+
+            @Override
+            public void onRightBtnClick() {
+                show("点击了设置");
+            }
+        });
         searchBar= (SearchBar) findViewById(R.id.search_bar);
         searchBar.setHint("请输入关键词搜索");
         searchBar.setSearchBarListener(new SearchBarListener() {
