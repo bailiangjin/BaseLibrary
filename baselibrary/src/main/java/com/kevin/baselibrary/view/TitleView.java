@@ -13,14 +13,14 @@ import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.utils.ToastUtils;
 
 
-public class MyTitleView extends FrameLayout
+public class TitleView extends FrameLayout
 {
 
 	private TextView tv_title;
 	private Button btn_left;
 	private Button btn_right;
 
-	public MyTitleView(Context context, AttributeSet attrs)
+	public TitleView(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 		LayoutInflater.from(context).inflate(R.layout.my_title_view, this);

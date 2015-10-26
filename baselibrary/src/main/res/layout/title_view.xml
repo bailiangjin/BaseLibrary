@@ -4,10 +4,10 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <com.kevin.baselibrary.view.MyTitleView
+    <com.kevin.baselibrary.view.TitleView
         android:id="@+id/title_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-    </com.kevin.baselibrary.view.MyTitleView>
+    </com.kevin.baselibrary.view.TitleView>
 
 </LinearLayout>
