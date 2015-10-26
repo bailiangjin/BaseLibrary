@@ -29,4 +29,9 @@ public class MySearchBar extends SearchBar{
         ToastUtils.show("内容变化");
 
     }
+
+    @Override
+    public void onCancelClicked() {
+        ToastUtils.show("点击了取消");
+    }
 }

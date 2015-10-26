@@ -71,18 +71,36 @@ abstract public class SearchBar extends FrameLayout {
             }
         });
 
+        //添加 取消按钮点击事件监听
+        btn_cancel.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                onCancelClicked();
+            }
+        });
+
 
     }
 
 
     /**
      * 设置输入框 hint 内容
+     *
      * @param hintStr
      */
-    public void setETHint(String hintStr) {
+    public void setHint(String hintStr) {
         if (!TextUtils.isEmpty(hintStr)) {
             et_search.setHint(hintStr);
         }
+    }
+
+    /**
+     * 设置 取消按钮显示状态
+     * @param visibility
+     */
+    public void setCancelBtnVisibility(int visibility) {
+        btn_cancel.setVisibility(visibility);
     }
 
     /**
@@ -92,26 +110,27 @@ abstract public class SearchBar extends FrameLayout {
         et_search.setText("");
     }
 
-    /**
-     * 设置 取消按钮 点击事件监听
-     * @param onClickListener
-     */
-    public void setCancelBtnListener(OnClickListener onClickListener) {
-        btn_cancel.setOnClickListener(onClickListener);
-    }
 
     /**
      * 搜索回调
+     *
      * @param searchKey
      * @return
      */
     abstract public boolean onSearch(String searchKey);
 
     /**
-     * 输入框 文字变化监听
+     * 输入框 文字变化监听 回调
+     *
      * @param searchKey
      */
     abstract public void onEditTextChange(String searchKey);
+
+
+    /**
+     * 取消按钮点击事件 回调
+     */
+    abstract public void onCancelClicked();
 
 
 }
