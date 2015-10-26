@@ -37,7 +37,7 @@ import java.util.List;
  */
 public class DragGridView extends GridView {
 	/**
-	 * DragGridView的item长按响应的时间， 默认是1000毫秒，也可以自行设置
+	 * DragGridView的item长按响应的时间， 默认是500毫秒，也可以自行设置
 	 */
 	private long dragResponseMS = 500;
 	
