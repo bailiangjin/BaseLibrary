@@ -1,5 +1,7 @@
 package com.kevin.baselibrary.utils;
 
+import com.kevin.baselibrary.app.AppUtils;
+
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
@@ -8,6 +10,6 @@ package com.kevin.baselibrary.utils;
 public class ResUtils {
 
     public static String getString(int resId) {
-        return getString(resId);
+        return AppUtils.getContext().getString(resId);
     }
 }
