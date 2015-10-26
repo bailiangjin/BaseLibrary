@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#F8F8F8"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_search"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+
+            android:background="@drawable/et_input_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/search_icon" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:imeOptions="actionSearch"
+                android:background="@null"
+                android:hint="@string/search"
+                android:textColor="@color/black_half_translucent"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:id="@+id/iv_clear"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/clear_icon"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/blue"
+            android:text="@string/cancel"
+            android:visibility="gone"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

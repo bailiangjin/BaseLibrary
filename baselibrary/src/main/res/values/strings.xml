@@ -27,7 +27,8 @@
     <string name="server_exception">您的网络状况不太好哦</string>
     <string name="connect_server_exception">联接服务器异常</string>
     <string name="download_error">下载出现异常</string>
-   
-    
+    <string name="search">搜索</string>
+    <string name="cancel">取消</string>
+
 
 </resources>

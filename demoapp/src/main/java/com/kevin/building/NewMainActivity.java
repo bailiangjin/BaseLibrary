@@ -4,9 +4,9 @@ import android.os.Message;
 import android.view.View;
 
 import com.kevin.building.activity.LoginActivity;
+import com.kevin.building.activity.SearchActivity;
 import com.kevin.building.activity.UIMainActivity;
 import com.kevin.building.base.BtnBaseActivity;
-import com.kevin.building.demo.draggridview.DragGridViewActivity;
 import com.kevin.building.utils.ActivityUtils;
 
 /**
@@ -89,7 +89,7 @@ public class NewMainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn8:
-                ActivityUtils.startActivity(this, DragGridViewActivity.class);
+                ActivityUtils.startActivity(this, SearchActivity.class);
 
 
                 break;
