@@ -7,8 +7,9 @@ package com.kevin.baselibrary.interfaze.listener;
  */
 public interface TitleViewListener {
 
-   void onLeftBtnClick();
-   void onRightBtnClick();
+    boolean onLeftBtnClick();
+
+    boolean onRightBtnClick();
 
 
 }

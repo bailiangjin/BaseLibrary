@@ -53,13 +53,11 @@ public class SearchBar extends FrameLayout {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 String searchKey = v.getText().toString();
-                if (null == searchBarListener) {
-                    ToastUtils.show("please set Listener");
-                    LogUtils.e("please set Listener");
+                if (!isListenerInit()) {
                     return true;
-                } else {
-                    return searchBarListener.onSearch(searchKey);
                 }
+                return searchBarListener.onSearch(searchKey);
+
 
             }
         });
@@ -79,12 +77,10 @@ public class SearchBar extends FrameLayout {
             @Override
             public void afterTextChanged(Editable s) {
                 String textString = et_search.getText().toString();
-                if (null == searchBarListener) {
-                    ToastUtils.show("please set Listener");
-                    LogUtils.e("please set Listener");
-                } else {
-                    searchBarListener.onTextChange(textString);
+                if (!isListenerInit()) {
+                    return;
                 }
+                searchBarListener.onTextChange(textString);
 
 
             }
@@ -94,12 +90,23 @@ public class SearchBar extends FrameLayout {
         btn_cancel.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (!isListenerInit()) {
+                    return;
+                }
                 searchBarListener.onCancelClick();
             }
         });
 
 
+    }
+
+    private boolean isListenerInit() {
+        if (null == searchBarListener) {
+            ToastUtils.show("please set Listener");
+            LogUtils.e("please set Listener");
+            return false;
+        }
+        return true;
     }
 
 
@@ -139,9 +146,6 @@ public class SearchBar extends FrameLayout {
     public void clearET() {
         et_search.setText("");
     }
-
-
-
 
 
 }

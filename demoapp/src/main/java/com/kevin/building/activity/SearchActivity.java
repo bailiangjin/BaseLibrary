@@ -30,16 +30,17 @@ public class SearchActivity extends BaseActivity {
         titleView.setTitleText("搜索");
         titleView.setTitleViewListener(new TitleViewListener() {
             @Override
-            public void onLeftBtnClick() {
-
+            public boolean onLeftBtnClick() {
+                return false;
             }
 
             @Override
-            public void onRightBtnClick() {
+            public boolean onRightBtnClick() {
                 show("点击了设置");
+                return false;
             }
         });
-        searchBar= (SearchBar) findViewById(R.id.search_bar);
+        searchBar = (SearchBar) findViewById(R.id.search_bar);
         searchBar.setHint("请输入关键词搜索");
         searchBar.setSearchBarListener(new SearchBarListener() {
             @Override
@@ -49,14 +50,16 @@ public class SearchActivity extends BaseActivity {
             }
 
             @Override
-            public void onTextChange(String curTextStr) {
+            public boolean onTextChange(String curTextStr) {
                 show("内容变化");
+                return true;
 
             }
 
             @Override
-            public void onCancelClick() {
+            public boolean onCancelClick() {
                 show("点击了取消");
+                return true;
             }
         });
 

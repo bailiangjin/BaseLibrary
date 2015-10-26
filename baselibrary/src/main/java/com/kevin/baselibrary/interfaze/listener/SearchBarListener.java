@@ -17,10 +17,10 @@ public interface SearchBarListener {
      * 输入框文字变化
      * @param curTextStr
      */
-    void onTextChange(String curTextStr);
+    boolean onTextChange(String curTextStr);
 
     /**
      * 点击取消回调
      */
-    void onCancelClick();
+    boolean onCancelClick();
 }

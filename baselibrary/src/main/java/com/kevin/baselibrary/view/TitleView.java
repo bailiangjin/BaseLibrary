@@ -32,22 +32,40 @@ public class TitleView extends FrameLayout {
         btn_left.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!isListenerInit()) {
+                    return;
+                }
+                if (titleViewListener.onLeftBtnClick()) {
+                    return;
+                }
                 ((Activity) getContext()).finish();
             }
         });
         btn_right.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (null == titleViewListener) {
-                    ToastUtils.show("please set titleView listener");
-                    LogUtils.e("please set titleView listener");
+                if (!isListenerInit()) {
                     return;
                 }
-                titleViewListener.onRightBtnClick();
+                if (titleViewListener.onRightBtnClick()){
+                    return;
+                }else {
+                    ToastUtils.show("点击了"+btn_right.getText().toString());
+                }
+
             }
         });
 
 
+    }
+
+    private boolean isListenerInit() {
+        if (null == titleViewListener) {
+            ToastUtils.show("please set titleView listener");
+            LogUtils.e("please set titleView listener");
+            return false;
+        }
+        return true;
     }
 
     public void setTitleViewListener(TitleViewListener titleViewListener) {
