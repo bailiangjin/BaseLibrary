@@ -28,8 +28,8 @@ public class UIMainActivity extends BtnBaseActivity{
 //        btn5.setText("文件");
 //        btn6.setText("传感器");
 //        btn7.setText("控件");
-//        btn8.setText("当前测试");
-
+        btn8.setText("搜索Bar");
+//
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
         btn3.setVisibility(View.VISIBLE);
@@ -84,7 +84,7 @@ public class UIMainActivity extends BtnBaseActivity{
                 break;
 
             case R.id.btn8:
-
+                ActivityUtils.startActivity(this, SearchActivity.class);
 
                 break;
 

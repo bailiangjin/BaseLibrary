@@ -15,17 +15,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.R;
+import com.kevin.baselibrary.interfaze.listener.SearchBarListener;
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/26 11:06
  */
-abstract public class SearchBar extends FrameLayout {
+public class SearchBar extends FrameLayout {
 
     private EditText et_search;
     private ImageView iv_clear;
     private Button btn_cancel;
+
+    private SearchBarListener searchBarListener;
 
 
     public SearchBar(Context context, AttributeSet attrs) {
@@ -48,7 +53,14 @@ abstract public class SearchBar extends FrameLayout {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 String searchKey = v.getText().toString();
-                return onSearch(searchKey);
+                if (null == searchBarListener) {
+                    ToastUtils.show("please set Listener");
+                    LogUtils.e("please set Listener");
+                    return true;
+                } else {
+                    return searchBarListener.onSearch(searchKey);
+                }
+
             }
         });
 
@@ -67,7 +79,14 @@ abstract public class SearchBar extends FrameLayout {
             @Override
             public void afterTextChanged(Editable s) {
                 String textString = et_search.getText().toString();
-                onEditTextChange(textString);
+                if (null == searchBarListener) {
+                    ToastUtils.show("please set Listener");
+                    LogUtils.e("please set Listener");
+                } else {
+                    searchBarListener.onTextChange(textString);
+                }
+
+
             }
         });
 
@@ -76,7 +95,7 @@ abstract public class SearchBar extends FrameLayout {
             @Override
             public void onClick(View v) {
 
-                onCancelClicked();
+                searchBarListener.onCancelClick();
             }
         });
 
@@ -95,8 +114,19 @@ abstract public class SearchBar extends FrameLayout {
         }
     }
 
+
+    /**
+     * 设置监听
+     *
+     * @param searchBarListener
+     */
+    public void setSearchBarListener(SearchBarListener searchBarListener) {
+        this.searchBarListener = searchBarListener;
+    }
+
     /**
      * 设置 取消按钮显示状态
+     *
      * @param visibility
      */
     public void setCancelBtnVisibility(int visibility) {
@@ -111,26 +141,7 @@ abstract public class SearchBar extends FrameLayout {
     }
 
 
-    /**
-     * 搜索回调
-     *
-     * @param searchKey
-     * @return
-     */
-    abstract public boolean onSearch(String searchKey);
 
-    /**
-     * 输入框 文字变化监听 回调
-     *
-     * @param searchKey
-     */
-    abstract public void onEditTextChange(String searchKey);
-
-
-    /**
-     * 取消按钮点击事件 回调
-     */
-    abstract public void onCancelClicked();
 
 
 }
