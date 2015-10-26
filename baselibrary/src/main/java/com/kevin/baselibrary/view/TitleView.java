@@ -32,13 +32,13 @@ public class TitleView extends FrameLayout {
         btn_left.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isListenerInit()) {
+                //如果监听为空 或未覆盖事件 则结束Activity
+                if (!isListenerInit() || !titleViewListener.onLeftBtnClick()) {
+                    ((Activity) getContext()).finish();
                     return;
                 }
-                if (titleViewListener.onLeftBtnClick()) {
-                    return;
-                }
-                ((Activity) getContext()).finish();
+
+
             }
         });
         btn_right.setOnClickListener(new OnClickListener() {
@@ -47,10 +47,10 @@ public class TitleView extends FrameLayout {
                 if (!isListenerInit()) {
                     return;
                 }
-                if (titleViewListener.onRightBtnClick()){
+                if (titleViewListener.onRightBtnClick()) {
                     return;
-                }else {
-                    ToastUtils.show("点击了"+btn_right.getText().toString());
+                } else {
+                    ToastUtils.show("点击了" + btn_right.getText().toString());
                 }
 
             }
@@ -61,7 +61,6 @@ public class TitleView extends FrameLayout {
 
     private boolean isListenerInit() {
         if (null == titleViewListener) {
-            ToastUtils.show("please set titleView listener");
             LogUtils.e("please set titleView listener");
             return false;
         }
