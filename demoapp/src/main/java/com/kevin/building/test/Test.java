@@ -1,7 +1,6 @@
 package com.kevin.building.test;
 
 import com.kevin.baselibrary.utils.PinyinUtils;
-import com.kevin.building.config.Config;
 
 /**
  * Author:  liangjin.bai
@@ -11,7 +10,6 @@ import com.kevin.building.config.Config;
 public class Test {
 
     public static void main(String[] args) {
-       System.out.println("baseUrl:" + Config.BASE_URL);
         testPinyin();
     }
 
