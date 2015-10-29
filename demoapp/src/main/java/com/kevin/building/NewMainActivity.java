@@ -3,6 +3,7 @@ package com.kevin.building;
 import android.os.Message;
 import android.view.View;
 
+import com.kevin.baselibrary.instance.jni.NdkJniUtils;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.SearchActivity;
 import com.kevin.building.activity.UIMainActivity;
@@ -45,6 +46,8 @@ public class NewMainActivity extends BtnBaseActivity {
         btn6.setVisibility(View.VISIBLE);
         btn7.setVisibility(View.VISIBLE);
         btn8.setVisibility(View.VISIBLE);
+        NdkJniUtils jni= new NdkJniUtils();
+        show("jni:"+jni.getCLanguageString());
     }
 
     @Override
