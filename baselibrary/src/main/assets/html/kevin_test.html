@@ -32,6 +32,7 @@
     <script src="../lib/ejs/ejs.js"></script>
     <script src="../js/utils/base-utils.js"></script>
     <script src="../js/utils/task-page-utils.js"></script>
+    <script src="../js/utils/widget-utils.js"></script>
 
 
 
@@ -45,8 +46,11 @@
 
             $("#test1").click(function(){
 
-                alert("isEmpty:"+baseUtils.isEmpty(""));
-                alert("isnull:"+baseUtils.isNull(""));
+                //alert("isEmpty:"+baseUtils.isEmpty(""));
+                //alert("isnull:"+baseUtils.isNull(""));
+                widgetUtils.showConfirm("confirm",ok,cancel);
+
+
             });
 
             $("#test2").click(function(){
@@ -57,7 +61,13 @@
 
         });
 
+        function ok(){
+            alert("ok");
+        }
 
+         function cancel(){
+            alert("cancel");
+        }
 
     </script>
 
