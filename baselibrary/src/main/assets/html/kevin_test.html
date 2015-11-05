@@ -1,0 +1,81 @@
+<!--测试文件 不影响工程运行 请忽略-->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <style>
+        .alertbox {left:50%;margin-left:-150px;margin-top:-130px;position:fixed; top:50%;z-index:10000; font-family:"微软雅黑";}
+        body {
+        background:url(background.png) #EFF;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../lib/jquery-mobile/jquery.mobile.custom.structure.css"/>
+
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap-theme.min.css"/>
+
+
+    <script src="../lib/jquery/jquery-2.1.3.min.js"></script>
+    <script src="../lib/jquery-mobile/jquery.mobile.custom.min.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="../lib/jquery-util/jquery.metadata.js"></script>
+    <script src="../lib/jquery-util/jquery.validate.min.js"></script>
+    <script src="../lib/jquery-util/jquery.validate.messages_zh.js"></script>
+    <script src="../lib/jquery-util/jquery.values.js"></script>
+
+    <script src="../lib/ejs/ejs.js"></script>
+    <script src="../js/utils/base-utils.js"></script>
+    <script src="../js/utils/task-page-utils.js"></script>
+
+
+
+    <script src="../service/suzhou-core.js"></script>
+    <script src="../service/suzhou.js" data-main="../service/suzhou-service.js"></script>
+
+    <script src="../dataup/query.js"></script>
+    <script type="text/javascript">
+
+        $(function(){
+
+            $("#test1").click(function(){
+
+                alert("isEmpty:"+baseUtils.isEmpty(""));
+                alert("isnull:"+baseUtils.isNull(""));
+            });
+
+            $("#test2").click(function(){
+               <!--alert("点击了测试二");-->
+                taskPageUtils.refreshCheckingAnnotation($("#annotation"),5);
+
+            });
+
+        });
+
+
+
+    </script>
+
+</head>
+
+
+<body>
+
+
+<button id="test1">测试一</button>
+<br/>
+<br/>
+<button id="test2">测试二</button>
+
+<br/>
+<p class="annotation" id="annotation">已领取</p>
+
+</body>
+
+
+</html>
