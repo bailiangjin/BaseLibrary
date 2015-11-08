@@ -53,7 +53,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initLogic() {
-
+        AppUtils.getContext().getCodeCacheDir();
     }
 
 
