@@ -3,7 +3,9 @@ package com.kevin.building;
 import android.os.Message;
 import android.view.View;
 
+import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.instance.jni.NdkJniUtils;
+import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.SearchActivity;
 import com.kevin.building.activity.UIMainActivity;
@@ -46,24 +48,31 @@ public class NewMainActivity extends BtnBaseActivity {
         btn6.setVisibility(View.VISIBLE);
         btn7.setVisibility(View.VISIBLE);
         btn8.setVisibility(View.VISIBLE);
-        NdkJniUtils jni= new NdkJniUtils();
-        show("jni:"+jni.getCLanguageString());
+        NdkJniUtils jni = new NdkJniUtils();
+        show("jni:" + jni.getCLanguageString());
     }
 
     @Override
     protected void initLogic() {
 
+        CleanOptions cleanOptions = new CleanOptions.Builder()
+                .cleanRootDir(false)
+                .cleanDBDir(true)
+                .cleanMediaDir(false)
+                .cleanOtherDir(false).build();
+
+        CleanUtils.cleanAppFileDirOnUpdate(cleanOptions);
     }
 
     @Override
     protected void onViewClick(View v) {
         switch (v.getId()) {
             case R.id.btn1:
-                ActivityUtils.startActivity(this,UIMainActivity.class);
+                ActivityUtils.startActivity(this, UIMainActivity.class);
                 break;
 
             case R.id.btn2:
-                ActivityUtils.startActivity(this,LoginActivity.class);
+                ActivityUtils.startActivity(this, LoginActivity.class);
 
                 break;
 

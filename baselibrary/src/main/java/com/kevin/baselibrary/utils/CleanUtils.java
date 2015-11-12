@@ -2,6 +2,7 @@ package com.kevin.baselibrary.utils;
 
 
 import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.enums.SPKeyEnum;
 
 /**
@@ -16,29 +17,33 @@ public class CleanUtils {
 
     /**
      * 应用初始化时调用的 版本升级时清理本地文件的方法
-     *
-     * @param cleanRoot 是否清理应用文件根目录
-     * @param cleanWeb  是否清理web资源缓存
      */
-    public static void cleanAppFileDirOnUpdate(boolean cleanRoot, boolean cleanWeb) {
+    public static void cleanAppFileDirOnUpdate(CleanOptions cleanOptions) {
         int oldVersionCode = SPUtils.getInt(SPKeyEnum.APP_VERSION_CODE_KEY.toString());
         int currentVersionCode = AppUtils.getAppVersionCode(AppUtils.getContext().getPackageName());
         LogUtils.e("appversion:old:" + oldVersionCode + "::cur:" + currentVersionCode);
 
 
         if (-1 == oldVersionCode) {
-            //在未安装或已卸载本应用的手机上一律执行清空应用根目录操作
+            //在未安装或已卸载本应用的手机上
+            //一律执行清空应用根目录操作
             cleanAPPRootFileDir();
             LogUtils.e("cleanApp:cleanAPPRootFileDir newDevice");
         } else if (oldVersionCode < currentVersionCode) {
-            if (cleanRoot) {
-                //在已安装旧版本应用的手机上根据配置判断是否执行清空应用根目录操作
+            //在已安装旧版本应用的手机上
+            if (cleanOptions.isCleanRootDir()) {
+                //是否执行清空应用根目录操作
                 cleanAPPRootFileDir();
                 LogUtils.e("cleanApp:cleanAPPRootFileDir update");
-            } else if (cleanWeb) {
-                //在已安装旧版本应用的手机上根据配置判断是否执行清空web缓存目录和web界面相关数据库操作
-//                cleanWebFileAndDBTable();
-                LogUtils.e("cleanApp:cleanWebFileAndDBTable update");
+            } else if (cleanOptions.isCleanDBDir()) {
+                //是否执行清空数据库操作
+                LogUtils.e("cleanApp:cleanDBDir update");
+            } else if (cleanOptions.isCleanMediaDir()) {
+                //在已安装旧版本应用的手机上根据配置判断是否执行清空数据库操作
+                LogUtils.e("cleanApp:cleanMedia update");
+            } else if (cleanOptions.isCleanOtherDir()) {
+                //是否执行清空otherDir
+                LogUtils.e("cleanApp:cleanOtherDir update");
             }
         }
         SPUtils.putInt(SPKeyEnum.APP_VERSION_CODE_KEY.toString(), currentVersionCode);
@@ -89,8 +94,6 @@ public class CleanUtils {
 
 
     //-----------------------数据库相关操作----------------------------------------------------------
-
-
 
 
 }
