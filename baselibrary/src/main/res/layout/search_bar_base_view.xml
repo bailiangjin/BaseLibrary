@@ -30,7 +30,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:layout_marginLeft="2dp"
-                android:background="@drawable/search_icon" />
+                android:background="@drawable/ic_search_gray" />
 
             <EditText
                 android:id="@+id/et_search"
@@ -50,7 +50,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="2dp"
-                android:background="@drawable/clear_icon"
+                android:background="@drawable/ic_clear_grey"
                 android:visibility="visible" />
 
 
