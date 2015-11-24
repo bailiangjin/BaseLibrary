@@ -8,6 +8,7 @@
     <item name="green" type="color">#FF99CC00</item>
     <item name="orange" type="color">#FFFFBB33</item>
     <item name="red" type="color">#FFFF4444</item>
+    <item name="brown" type="color">#FF795548</item>
     <item name="darkblue" type="color">#FF0099CC</item>
     <item name="darkpurple" type="color">#FF9933CC</item>
     <item name="darkgreen" type="color">#FF669900</item>
@@ -62,13 +63,15 @@
 
     <color name="btn_white_normal">#f7f8f8</color>
     <color name="btn_white_pressed">#b5b5b6</color>
-    <color name="btn_green_noraml">#68C270</color>
-    <color name="btn_green_pressed">#6FCD78</color>
+    <color name="btn_green_noraml">#8BC34A</color>
+    <color name="btn_green_pressed">#689F38</color>
     <color name="btn_gray_normal">#c0c0c0</color>
     <color name="btn_gray_pressed_status">#b5b5b6</color>
     <color name="btn_gray_pressed">#666667</color>
     <color name="btn_blue_normal">#1e90ff</color>
     <color name="btn_blue_pressed">#0066FF</color>
+    <color name="btn_brown_normal">#8D6E63</color>
+    <color name="btn_brown_pressed">#5D4037</color>
     <color name="gray_normal">#666667</color>
 
 </resources>

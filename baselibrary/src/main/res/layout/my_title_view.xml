@@ -6,11 +6,12 @@
 
     <Button
         android:id="@+id/btn_left"
-        style="@style/btn_small_style"
         android:layout_centerVertical="true"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/btn_gray_red_selector"
-        android:text="@string/back" />
+        android:background="@drawable/ic_arrow_back_white_36dp"
+         />
 
     <TextView
         android:id="@+id/tv_title"
@@ -24,7 +25,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
-        android:background="@drawable/btn_gray_red_selector"
+        android:background="@drawable/btn_for_title_selector"
         android:text="@string/setting" />
 
 </RelativeLayout>

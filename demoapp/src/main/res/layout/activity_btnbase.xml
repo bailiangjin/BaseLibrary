@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splach_gray_black_gradient_bg"
+    android:background="@drawable/demo_common_gradient_bg"
     tools:context="com.kevin.baselibrary.activity.DemoActivity">
 
     <include layout="@layout/title_view" />
