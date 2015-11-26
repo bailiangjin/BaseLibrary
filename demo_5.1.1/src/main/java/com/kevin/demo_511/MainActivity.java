@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.SearchView;
 
+import com.kevin.baselibrary.utils.KeyBoardUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 
 import java.lang.reflect.Field;
@@ -22,12 +24,15 @@ import java.lang.reflect.Field;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private SearchView  searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setOverflowShowingAlways();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -64,22 +69,29 @@ public class MainActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-//        searchItem.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
-//            @Override
-//            public boolean onMenuItemActionExpand(MenuItem item) {
-//                Log.d("TAG", "on expand");
-//                return true;
-//            }
-//
-//            @Override
-//            public boolean onMenuItemActionCollapse(MenuItem item) {
-//                Log.d("TAG", "on collapse");
-//                return true;
-//            }
-//        });
+        searchView = (SearchView) searchItem.getActionView();
+        LogUtils.e("searchViewisnull:" + (searchView == null));
+        searchView.setQueryHint(getString(R.string.hello_world));
+        searchView.setIconifiedByDefault(false);
+        searchView.setOnQueryTextListener(oQueryTextListener);
         return super.onCreateOptionsMenu(menu);
     }
+
+    SearchView.OnQueryTextListener oQueryTextListener = new SearchView.OnQueryTextListener() {
+
+        @Override
+        public boolean onQueryTextSubmit(String query) {
+            //action when press button search
+            LogUtils.d( "query string is:" + query);
+            ToastUtils.show("search key:"+query);
+            return true;
+        }
+
+        @Override
+        public boolean onQueryTextChange(String newText) {
+            return false;
+        }
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -89,6 +101,9 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         int id = item.getItemId();
         switch (id) {
+            case android.R.id.home:
+                finish();
+                break;
             case R.id.action_settings:
                 ToastUtils.show("点击了设置");
                 break;
@@ -96,6 +111,8 @@ public class MainActivity extends AppCompatActivity
                 ToastUtils.show("点击了分享");
                 break;
             case R.id.action_search:
+                searchView.requestFocusFromTouch();
+                KeyBoardUtils.openKeybord(searchView);
                 ToastUtils.show("点击了搜索");
                 break;
             case R.id.action_others:
