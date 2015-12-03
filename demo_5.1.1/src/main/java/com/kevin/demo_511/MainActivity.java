@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.view.ViewConfiguration;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.kevin.baselibrary.utils.KeyBoardUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private SearchView searchView;
+    private Menu menu;
+
+    MenuItem searchItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,42 +62,62 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        ToastUtils.show("searchView:可见" + searchView.isShown());
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }
-//        else if (searchView.isShown()&&searchView.getVisibility()==View.VISIBLE) {
-//
-//            searchView.clearFocus();
-//        }
-        else {
+        } else if (searchView.isShown()) {
+            //关闭搜索框
+           boolean collapaed= searchItem.collapseActionView();
+            ToastUtils.show("searchView:关闭" + collapaed);
+        } else {
 
             super.onBackPressed();
         }
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+
+        if (keyCode== KeyEvent.KEYCODE_SEARCH){
+            LogUtils.d("search:expandActionView");
+           searchView.onActionViewExpanded();
+        }
+        return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-        MenuItem searchItem = menu.findItem(R.id.action_search);
+        this.menu = menu;
+        searchItem = menu.findItem(R.id.action_search);
         MenuItemCompat.setOnActionExpandListener(searchItem, new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
-                Toast.makeText(MainActivity.this, "打开", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "打开searchView", Toast.LENGTH_SHORT).show();
                 return true;
             }
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
+                Toast.makeText(MainActivity.this, "关闭searchView", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
 
         searchView = (SearchView) searchItem.getActionView();
-        LogUtils.e("searchViewisnull:" + (searchView == null));
-        searchView.setQueryHint(getString(R.string.hello_world));
-        searchView.setIconifiedByDefault(true);
+        searchView.setQueryHint(getString(R.string.search));
+        searchView.setIconifiedByDefault(false);
         searchView.setOnQueryTextListener(oQueryTextListener);
 
 
@@ -131,6 +156,8 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.action_search:
                 ToastUtils.show("点击了搜索");
+                searchView.requestFocus();
+                KeyBoardUtils.openKeybord(searchView);
                 break;
             case R.id.action_others:
                 ToastUtils.show("点击了其他");

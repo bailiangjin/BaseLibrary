@@ -17,7 +17,7 @@
         app:actionViewClass="android.widget.SearchView"
         android:orderInCategory="80"
         android:title="@string/action_search"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom|collapseActionView" />
 
     <item
         android:id="@+id/action_settings"
