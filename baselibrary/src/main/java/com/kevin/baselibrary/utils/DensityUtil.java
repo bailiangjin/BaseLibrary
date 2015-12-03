@@ -1,6 +1,10 @@
 package com.kevin.baselibrary.utils;
 
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
+import android.util.DisplayMetrics;
 
 /**
  * dp与px转换工具
@@ -55,4 +59,44 @@ public class DensityUtil
 			throw new RuntimeException("转换字符串不合法");
 		}
 	}
+
+
+	/**
+	 * 获取手机屏幕宽度
+	 *
+	 * @param activity
+	 * @return
+	 */
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+	public static int getScreenWidth(Activity activity) {
+		//获取手机系统版本号
+		int deviceApiVersion = DeviceUtils.getCurrentApiVersion();
+		DisplayMetrics dm = new DisplayMetrics();
+		if (17 >= deviceApiVersion) {//获取没有虚拟按键的屏幕尺寸
+			activity.getWindowManager().getDefaultDisplay().getRealMetrics(dm);
+		} else {
+			activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+		}
+		return  dm.widthPixels;
+	}
+
+	/**
+	 * 获取手机屏高度
+	 *
+	 * @param activity
+	 * @return
+	 */
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+	public static int getScreenheight(Activity activity) {
+		//获取手机系统版本号
+		int deviceApiVersion = DeviceUtils.getCurrentApiVersion();
+		DisplayMetrics dm = new DisplayMetrics();
+		if (17 >= deviceApiVersion) {//获取没有虚拟按键的屏幕尺寸
+			activity.getWindowManager().getDefaultDisplay().getRealMetrics(dm);
+		} else {
+			activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+		}
+		return dm.heightPixels;
+	}
+
 }
