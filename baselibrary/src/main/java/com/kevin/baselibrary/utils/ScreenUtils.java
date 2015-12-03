@@ -1,9 +1,11 @@
 package com.kevin.baselibrary.utils;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.os.Build;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -24,25 +26,64 @@ public class ScreenUtils
 		throw new UnsupportedOperationException("cannot be instantiated");
 	}
 
+
 	/**
-	 * 获得屏幕高度
-	 * 
+	 * 获取手机屏幕显示宽度(实际显示宽度)
+	 *
+	 * @param activity
 	 * @return
 	 */
-	public static int getScreenWidth()
-	{
-
-		return getScreenWidth(SuperApplication.getContext());
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+	public static int getScreenWidth(Activity activity) {
+		//获取手机系统版本号
+		int deviceApiVersion = DeviceUtils.getCurrentApiVersion();
+		DisplayMetrics dm = new DisplayMetrics();
+		if (17 >= deviceApiVersion) {//获取没有虚拟按键的屏幕尺寸
+			activity.getWindowManager().getDefaultDisplay().getRealMetrics(dm);
+		} else {
+			activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+		}
+		return  dm.widthPixels;
 	}
 
 	/**
-	 * 获得屏幕宽度
+	 * 获取手机屏幕显示高度(实际显示高度 不包括虚拟按键部分)
+	 *
+	 * @param activity
+	 * @return
+	 */
+	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+	public static int getScreenheight(Activity activity) {
+		//获取手机系统版本号
+		int deviceApiVersion = DeviceUtils.getCurrentApiVersion();
+		DisplayMetrics dm = new DisplayMetrics();
+		if (17 >= deviceApiVersion) {//获取没有虚拟按键的屏幕尺寸
+			activity.getWindowManager().getDefaultDisplay().getRealMetrics(dm);
+		} else {
+			activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+		}
+		return dm.heightPixels;
+	}
+
+	/**
+	 * 获得手机硬件屏幕高度(设备硬件高度 不依赖于页面)
 	 * 
 	 * @return
 	 */
-	public static int getScreenHeight()
+	public static int getDeviceScreenWidth()
 	{
-		return getScreenHeight(SuperApplication.getContext());
+
+		return getDeviceScreenWidth(SuperApplication.getContext());
+	}
+
+	/**
+	 * 获得硬件屏幕宽度(设备硬件高度 不依赖于页面)
+	 * 
+	 * @return
+	 */
+	public static int getDeviceScreenHeight()
+	{
+		return getDeviceScreenHeight(SuperApplication.getContext());
 	}
 
 	/**
@@ -60,7 +101,7 @@ public class ScreenUtils
 	 * @param context
 	 * @return
 	 */
-	public static int getScreenWidth(Context context)
+	public static int getDeviceScreenWidth(Context context)
 	{
 		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics outMetrics = new DisplayMetrics();
@@ -74,7 +115,7 @@ public class ScreenUtils
 	 * @param context
 	 * @return
 	 */
-	public static int getScreenHeight(Context context)
+	public static int getDeviceScreenHeight(Context context)
 	{
 		WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 		DisplayMetrics outMetrics = new DisplayMetrics();
@@ -118,8 +159,8 @@ public class ScreenUtils
 		view.setDrawingCacheEnabled(true);
 		view.buildDrawingCache();
 		Bitmap bmp = view.getDrawingCache();
-		int width = getScreenWidth(activity);
-		int height = getScreenHeight(activity);
+		int width = getDeviceScreenWidth(activity);
+		int height = getDeviceScreenHeight(activity);
 		Bitmap bp = null;
 		bp = Bitmap.createBitmap(bmp, 0, 0, width, height);
 		view.destroyDrawingCache();
@@ -143,8 +184,8 @@ public class ScreenUtils
 		activity.getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
 		int statusBarHeight = frame.top;
 
-		int width = getScreenWidth(activity);
-		int height = getScreenHeight(activity);
+		int width = getDeviceScreenWidth(activity);
+		int height = getDeviceScreenHeight(activity);
 		Bitmap bp = null;
 		bp = Bitmap.createBitmap(bmp, 0, statusBarHeight, width, height - statusBarHeight);
 		view.destroyDrawingCache();

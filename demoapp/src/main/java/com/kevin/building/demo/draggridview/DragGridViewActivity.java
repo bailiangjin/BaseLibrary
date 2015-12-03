@@ -21,9 +21,6 @@ public class DragGridViewActivity extends Activity {
 
         DragGridView mDragGridView = (DragGridView) findViewById(R.id.dragGridView);
         for (int i = 0; i < 15; i++) {
-//			HashMap<String, Object> itemHashMap = new HashMap<String, Object>();
-//			itemHashMap.put("item_image",R.drawable.ic_launcher);
-//			itemHashMap.put("item_text", "拖拽 " + Integer.toString(i));
             TaskItemBean taskItemBean = new TaskItemBean();
             taskItemBean.setName("拖拽 " + Integer.toString(i));
             dataSourceList.add(taskItemBean);
