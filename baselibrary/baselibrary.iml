@@ -90,8 +90,8 @@
     <orderEntry type="library" exported="" name="nineoldanimatin" level="project" />
     <orderEntry type="library" exported="" name="gson-2.4" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.2.1" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="okhttp-2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.2.1" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
