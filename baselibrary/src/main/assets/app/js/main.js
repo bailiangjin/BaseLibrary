@@ -11,13 +11,13 @@ require.config({
 
 require(['math','baseUtils'],function (math,baseUtils) {
     alert("加载math成功！");
-    alert(math.add(1,1));
-    alert("加载baseUtils成功！");
-    alert(baseUtils.isEmpty("test"));
+    alert("function add:"+math.add(1,1));
 });
 
-//require(['math'],function (math) {
-//    alert("加载math成功！");
-//    alert(math.add(1,1));
-//});
+//测试常量
+var testConstants={
+        testUrl:"www.baidu.com",
 
+
+
+    };
