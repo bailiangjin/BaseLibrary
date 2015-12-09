@@ -66,22 +66,21 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else if (searchView.isShown()) {
-            //关闭搜索框
-           boolean collapaed= searchItem.collapseActionView();
-            ToastUtils.show("searchView:关闭" + collapaed);
         } else {
 
             super.onBackPressed();
         }
+
+        /* else if (searchView.isShown()) {
+            //关闭搜索框
+           boolean collapsed= searchItem.collapseActionView();
+            ToastUtils.show("searchView:关闭" + collapsed);
+        }*/
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-
-        }
         return super.onKeyDown(keyCode, event);
     }
 
