@@ -1,4 +1,4 @@
-package com.kevin.building.test;
+package com.kevin.building.javase;
 
 import com.kevin.baselibrary.utils.PinyinUtils;
 
