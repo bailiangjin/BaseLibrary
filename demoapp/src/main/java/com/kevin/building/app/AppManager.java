@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
-import com.kevin.building.R;
 import com.kevin.building.MainActivity;
+import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
 import java.util.ArrayList;

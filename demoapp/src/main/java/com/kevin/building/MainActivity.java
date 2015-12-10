@@ -22,7 +22,7 @@ import com.kevin.building.utils.ActivityUtils;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/20 10:40
  */
-public class NewMainActivity extends BtnBaseActivity {
+public class MainActivity extends BtnBaseActivity {
 
     @Override
     protected int getLayoutResId() {
@@ -87,7 +87,7 @@ public class NewMainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn4:
-                ActivityUtils.startDatabaseActivity(NewMainActivity.this);
+                ActivityUtils.startDatabaseActivity(MainActivity.this);
 
 
                 break;
@@ -99,14 +99,14 @@ public class NewMainActivity extends BtnBaseActivity {
 
             case R.id.btn6:
                 Intent intent = new Intent(this, UserInfoActivity.class);
-                AppManager.getInstance().startActivity(NewMainActivity.this, intent);
+                AppManager.getInstance().startActivity(MainActivity.this, intent);
 
 
                 break;
 
             case R.id.btn7:
                 Intent intent7 = new Intent(this, LaunchModeActivity1.class);
-                AppManager.getInstance().startActivity(NewMainActivity.this, intent7);
+                AppManager.getInstance().startActivity(MainActivity.this, intent7);
 
 
                 break;

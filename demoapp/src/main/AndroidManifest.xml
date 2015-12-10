@@ -30,7 +30,7 @@
         </activity>
 
         <activity
-            android:name=".NewMainActivity"
+            android:name=".MainActivity"
             android:label="@string/main_page"></activity>
 
 
