@@ -4,8 +4,8 @@ import android.content.DialogInterface;
 import android.os.Message;
 import android.view.View;
 
-import com.kevin.baselibrary.utils.uiutils.DialogUtils;
-import com.kevin.baselibrary.utils.uiutils.callback.PNDialogListener;
+import com.kevin.baselibrary.widget.utils.DialogUtils;
+import com.kevin.baselibrary.widget.callback.PNDialogListener;
 import com.kevin.building.R;
 import com.kevin.building.base.BtnBaseActivity;
 
@@ -52,8 +52,7 @@ public class DialogActivity extends BtnBaseActivity {
 
         switch (v.getId()) {
             case R.id.btn1:
-                show("点击了测试1");
-                DialogUtils.showPNDialog(DialogActivity.this, getString(R.string.notice), getString(R.string.exit_app) + "?", getString(R.string.confirm), getString(R.string.cancel), new PNDialogListener() {
+                DialogUtils.showPNDialog(DialogActivity.this, getString(R.string.exit_app) + "?", false, new PNDialogListener() {
                     @Override
                     public void onPositive(DialogInterface dialog, int which) {
                         DialogActivity.this.finish();

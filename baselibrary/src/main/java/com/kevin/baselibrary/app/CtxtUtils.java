@@ -8,7 +8,7 @@ import android.content.Context;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/9/28 15:01
  */
-public class CttUtils {
+public class CtxtUtils {
 
     /**
      * 全局 根据id获取string 字段方法

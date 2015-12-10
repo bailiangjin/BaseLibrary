@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils.uiutils.callback;
+package com.kevin.baselibrary.widget.callback;
 
 import android.content.DialogInterface;
 
