@@ -24,5 +24,11 @@
         android:layout_width="@dimen/btn_common_width"
         android:layout_marginTop="20dp"
         android:text="添加" />
+    <Button
+        android:id="@+id/btn_logout"
+        style="@style/btn_large_style"
+        android:layout_width="@dimen/btn_common_width"
+        android:layout_marginTop="20dp"
+        android:text="退出" />
 
 </LinearLayout>

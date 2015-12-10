@@ -1,6 +1,5 @@
 package com.kevin.building;
 
-import android.content.Intent;
 import android.os.Message;
 import android.view.View;
 
@@ -8,15 +7,13 @@ import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.config.ConfigUtils;
 import com.kevin.baselibrary.instance.jni.NdkJniUtils;
 import com.kevin.baselibrary.utils.CleanUtils;
+import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.ui.activity.LoginActivity;
 import com.kevin.building.ui.demo.fragmentdemo.MyFragmentActivity;
-import com.kevin.building.ui.demo.networkdemo.NetworkActivity;
-import com.kevin.building.ui.demo.widget.searchbar.SearchActivity;
-import com.kevin.building.ui.demo.widget.WidgetMainActivity;
-import com.kevin.building.ui.activity.UserInfoActivity;
-import com.kevin.building.app.AppManager;
-import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.ui.demo.launchmode.LaunchModeActivity1;
+import com.kevin.building.ui.demo.networkdemo.NetworkActivity;
+import com.kevin.building.ui.demo.widget.WidgetMainActivity;
+import com.kevin.building.ui.demo.widget.searchbar.SearchActivity;
 import com.kevin.building.utils.ActivityUtils;
 
 /**
@@ -43,7 +40,7 @@ public class MainActivity extends BtnBaseActivity {
         btn3.setText("网络模块");
         btn4.setText("数据库模块");
         btn5.setText("Fragment模块");
-        btn6.setText("用户信息");
+//        btn6.setText("用户信息");
         btn7.setText("启动模式");
         btn8.setText("当前测试");
 
@@ -63,13 +60,13 @@ public class MainActivity extends BtnBaseActivity {
 
     @Override
     protected void initLogic() {
-
+        //建造者模式 设置应用启动时的清理项
         CleanOptions cleanOptions = new CleanOptions.Builder()
                 .cleanRootDir(false)
                 .cleanDBDir(true)
                 .cleanMediaDir(false)
                 .cleanOtherDir(false).build();
-
+        //按设置清理应用目录
         CleanUtils.cleanAppFileDirOnUpdate(cleanOptions);
     }
 
@@ -86,32 +83,27 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn3:
-                Intent intent3 = new Intent(this, NetworkActivity.class);
-                AppManager.getInstance().startActivity(MainActivity.this, intent3);
+                ActivityUtils.startActivity(this, NetworkActivity.class);
                 break;
 
             case R.id.btn4:
                 ActivityUtils.startDatabaseActivity(MainActivity.this);
-
-
                 break;
 
             case R.id.btn5:
-                Intent intent5 = new Intent(this, MyFragmentActivity.class);
-                AppManager.getInstance().startActivity(MainActivity.this, intent5);
-
+                ActivityUtils.startActivity(this, MyFragmentActivity.class);
                 break;
 
             case R.id.btn6:
-                Intent intent = new Intent(this, UserInfoActivity.class);
-                AppManager.getInstance().startActivity(MainActivity.this, intent);
+                //TODO:待添加模块
+                show("点击了测试6");
 
 
                 break;
 
             case R.id.btn7:
-                Intent intent7 = new Intent(this, LaunchModeActivity1.class);
-                AppManager.getInstance().startActivity(MainActivity.this, intent7);
+                ActivityUtils.startActivity(this, LaunchModeActivity1.class);
+
 
 
                 break;

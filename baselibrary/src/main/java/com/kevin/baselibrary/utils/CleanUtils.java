@@ -27,23 +27,27 @@ public class CleanUtils {
         if (-1 == oldVersionCode) {
             //在未安装或已卸载本应用的手机上
             //一律执行清空应用根目录操作
-            cleanAPPRootFileDir();
-            LogUtils.e("cleanApp:cleanAPPRootFileDir newDevice");
+            cleanAppRootFileDir();
+            LogUtils.e("cleanApp:cleanAppRootFileDir newDevice");
         } else if (oldVersionCode < currentVersionCode) {
             //在已安装旧版本应用的手机上
             if (cleanOptions.isCleanRootDir()) {
                 //是否执行清空应用根目录操作
-                cleanAPPRootFileDir();
-                LogUtils.e("cleanApp:cleanAPPRootFileDir update");
-            } else if (cleanOptions.isCleanDBDir()) {
-                //是否执行清空数据库操作
-                LogUtils.e("cleanApp:cleanDBDir update");
-            } else if (cleanOptions.isCleanMediaDir()) {
-                //在已安装旧版本应用的手机上根据配置判断是否执行清空数据库操作
-                LogUtils.e("cleanApp:cleanMedia update");
-            } else if (cleanOptions.isCleanOtherDir()) {
-                //是否执行清空otherDir
-                LogUtils.e("cleanApp:cleanOtherDir update");
+                cleanAppRootFileDir();
+                LogUtils.e("cleanApp:cleanAppRootFileDir update");
+            } else {
+                if (cleanOptions.isCleanDBDir()) {
+                    //执行清空数据库操作
+                    LogUtils.e("cleanApp:cleanDBDir update");
+                }
+                if (cleanOptions.isCleanMediaDir()) {
+                    //清空媒体目录
+                    LogUtils.e("cleanApp:cleanMedia update");
+                }
+                if (cleanOptions.isCleanOtherDir()) {
+                    //执行清空otherDir
+                    LogUtils.e("cleanApp:cleanOtherDir update");
+                }
             }
         }
         SPUtils.putInt(SPKeyEnum.APP_VERSION_CODE_KEY.toString(), currentVersionCode);
@@ -54,7 +58,7 @@ public class CleanUtils {
      *
      * @return
      */
-    public static boolean cleanAPPRootFileDir() {
+    public static boolean cleanAppRootFileDir() {
 
         return cleanAppRootFilePath();
     }

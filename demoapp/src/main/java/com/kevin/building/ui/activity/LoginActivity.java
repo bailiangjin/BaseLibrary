@@ -75,7 +75,7 @@ public class LoginActivity extends BaseActivity {
         et_username.setText(TextUtils.isEmpty(userName) ? "" : userName);
 
         String passWord = SPUtils.getString(SuperSPKey.PASSWORD);
-        et_password.setText(!TextUtils.isEmpty(passWord) ? "" : passWord);
+        et_password.setText(TextUtils.isEmpty(passWord) ? "" : passWord);
 
         boolean isChecked = SPUtils.getBoolean(SuperSPKey.SAVEPWD);
         cb_save_password.setChecked(isChecked);
