@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.demo.networkdemo;
 
 import android.os.Message;
 import android.view.View;
@@ -49,14 +49,14 @@ public class NetworkActivity extends BaseActivity {
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
 
-        btn1.setVisibility(View.GONE);
-        btn2.setVisibility(View.GONE);
-        btn3.setVisibility(View.GONE);
-        btn4.setVisibility(View.GONE);
-        btn5.setVisibility(View.GONE);
-        btn6.setVisibility(View.GONE);
-        btn7.setVisibility(View.GONE);
-        btn8.setVisibility(View.GONE);
+//        btn1.setVisibility(View.GONE);
+//        btn2.setVisibility(View.GONE);
+//        btn3.setVisibility(View.GONE);
+//        btn4.setVisibility(View.GONE);
+//        btn5.setVisibility(View.GONE);
+//        btn6.setVisibility(View.GONE);
+//        btn7.setVisibility(View.GONE);
+//        btn8.setVisibility(View.GONE);
 
     }
 

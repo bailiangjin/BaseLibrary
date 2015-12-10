@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
 
+/**
+ * 用户列表页
+ */
 public class UserListActivity extends BaseActivity
 {
 

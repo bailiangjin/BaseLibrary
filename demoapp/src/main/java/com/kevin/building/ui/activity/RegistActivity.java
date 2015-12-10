@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.activity;
 
 import android.os.Bundle;
 import android.os.Message;
@@ -7,6 +7,9 @@ import android.view.View;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
+/**
+ * 注册
+ */
 public class RegistActivity extends BaseActivity
 {
 

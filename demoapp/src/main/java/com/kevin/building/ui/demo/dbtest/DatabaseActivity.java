@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.demo.dbtest;
 
 import android.os.Bundle;
 import android.os.Handler;

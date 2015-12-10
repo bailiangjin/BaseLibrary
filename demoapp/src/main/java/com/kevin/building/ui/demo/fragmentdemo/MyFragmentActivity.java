@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.demo.fragmentdemo;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -12,8 +12,8 @@ import android.view.WindowManager;
 
 import com.kevin.baselibrary.base.SuperBaseFragment;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.fragment.Fragment1;
-import com.kevin.building.fragment.Fragment2;
+import com.kevin.building.ui.fragment.Fragment1;
+import com.kevin.building.ui.fragment.Fragment2;
 
 public class MyFragmentActivity extends BaseActivity
 {

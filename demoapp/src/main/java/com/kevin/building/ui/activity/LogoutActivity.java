@@ -1,15 +1,15 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 
-import com.kevin.baselibrary.utils.SPUtils;
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.constants.SPKey;
+import com.kevin.building.ui.activity.logicutils.AccountUtils;
 
 public class LogoutActivity extends BaseActivity {
 
@@ -62,10 +62,12 @@ public class LogoutActivity extends BaseActivity {
                 break;
             case R.id.btn_set_logout:
                 // 用户登出逻辑添加
-                // SPUtils.remove(getApplicationContext(), SuperSPKey.USER_NAME);
-                SPUtils.remove(getApplicationContext(), SPKey.PASSWORD);
-                SPUtils.remove(getApplicationContext(), SPKey.SAVEPWD);
-                AppManager.getInstance().AppExit(getApplicationContext());
+                AccountUtils.logout();
+                //Activity登出
+                AppManager.getInstance().appLogout();
+                //打开登录页
+                Intent intent = new Intent(this, LoginActivity.class);
+                AppManager.getInstance().startActivity(LogoutActivity.this, intent);
                 this.finish();
                 break;
             case R.id.btn_set_manageuser:

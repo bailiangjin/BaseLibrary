@@ -8,13 +8,15 @@ import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.config.ConfigUtils;
 import com.kevin.baselibrary.instance.jni.NdkJniUtils;
 import com.kevin.baselibrary.utils.CleanUtils;
-import com.kevin.building.activity.LoginActivity;
-import com.kevin.building.activity.SearchActivity;
-import com.kevin.building.activity.UIMainActivity;
-import com.kevin.building.activity.UserInfoActivity;
+import com.kevin.building.ui.activity.LoginActivity;
+import com.kevin.building.ui.demo.fragmentdemo.MyFragmentActivity;
+import com.kevin.building.ui.demo.networkdemo.NetworkActivity;
+import com.kevin.building.ui.demo.widget.searchbar.SearchActivity;
+import com.kevin.building.ui.demo.widget.WidgetMainActivity;
+import com.kevin.building.ui.activity.UserInfoActivity;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BtnBaseActivity;
-import com.kevin.building.demo.launchmode.LaunchModeActivity1;
+import com.kevin.building.ui.demo.launchmode.LaunchModeActivity1;
 import com.kevin.building.utils.ActivityUtils;
 
 /**
@@ -36,11 +38,11 @@ public class MainActivity extends BtnBaseActivity {
         titleView.setTitleText("主页面");
         titleView.setLeftBtnVisibility(View.GONE);
 
-        btn1.setText("UI");
-        btn2.setText("应用");
-        btn3.setText("网络");
-        btn4.setText("数据库");
-        btn5.setText("文件");
+        btn1.setText("控件模块");
+        btn2.setText("App流程模块");
+        btn3.setText("网络模块");
+        btn4.setText("数据库模块");
+        btn5.setText("Fragment模块");
         btn6.setText("用户信息");
         btn7.setText("启动模式");
         btn8.setText("当前测试");
@@ -75,7 +77,7 @@ public class MainActivity extends BtnBaseActivity {
     protected void onViewClick(View v) {
         switch (v.getId()) {
             case R.id.btn1:
-                ActivityUtils.startActivity(this, UIMainActivity.class);
+                ActivityUtils.startActivity(this, WidgetMainActivity.class);
                 break;
 
             case R.id.btn2:
@@ -84,6 +86,8 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn3:
+                Intent intent3 = new Intent(this, NetworkActivity.class);
+                AppManager.getInstance().startActivity(MainActivity.this, intent3);
                 break;
 
             case R.id.btn4:
@@ -93,7 +97,8 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn5:
-
+                Intent intent5 = new Intent(this, MyFragmentActivity.class);
+                AppManager.getInstance().startActivity(MainActivity.this, intent5);
 
                 break;
 

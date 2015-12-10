@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +11,9 @@ import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.utils.ActivityUtils;
 
+/**
+ * Splash页
+ */
 public class SplashActivity extends BaseActivity
 {
 

@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,9 @@ import com.kevin.building.base.BaseActivity;
 import com.kevin.building.db.dao.PersonDao;
 import com.kevin.building.db.modle.Person;
 
+/**
+ * 添加联系人
+ */
 public class AddFriendActivity extends BaseActivity
 {
 

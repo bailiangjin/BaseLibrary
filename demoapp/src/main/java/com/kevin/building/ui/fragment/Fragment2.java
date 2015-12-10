@@ -1,4 +1,4 @@
-package com.kevin.building.fragment;
+package com.kevin.building.ui.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;

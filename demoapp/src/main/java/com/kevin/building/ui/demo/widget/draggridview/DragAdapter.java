@@ -1,4 +1,4 @@
-package com.kevin.building.demo.draggridview;
+package com.kevin.building.ui.demo.widget.draggridview;
 
 import android.content.Context;
 import android.view.LayoutInflater;

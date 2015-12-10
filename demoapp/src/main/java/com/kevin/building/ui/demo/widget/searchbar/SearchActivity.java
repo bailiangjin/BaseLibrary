@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.demo.widget.searchbar;
 
 import android.os.Message;
 import android.view.View;

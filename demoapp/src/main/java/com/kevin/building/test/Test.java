@@ -14,6 +14,6 @@ public class Test {
     }
 
     private static void testPinyin(){
-        System.out.println("pinyin" + PinyinUtils.chinese2Pinyin("中国好声音"));
+        System.out.println("转换结果:" + PinyinUtils.chinese2Pinyin("中国好声音"));
     }
 }

@@ -18,7 +18,7 @@
         tools:replace="android:icon">
 
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".ui.activity.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -35,72 +35,72 @@
 
 
         <!--网络相关demo-->
-        <activity32
-            android:name=".activity.NetworkActivity"
+        <activity
+            android:name=".ui.demo.networkdemo.NetworkActivity"
             android:label="@string/network" />
         <!--拖拽按钮demo-->
         <activity
-            android:name=".demo.draggridview.DragGridViewActivity"
+            android:name=".ui.demo.widget.draggridview.DragGridViewActivity"
 
             android:label="@string/drag_gridveiw_demo" />
 
         <activity
-            android:name=".activity.SearchActivity"
+            android:name=".ui.demo.widget.searchbar.SearchActivity"
 
             android:label="@string/search_demo" />
 
         <!--启动模式测试-->
 
         <activity
-            android:name=".demo.launchmode.LaunchModeActivity1"
+            android:name=".ui.demo.launchmode.LaunchModeActivity1"
 
             android:label="@string/launch_mode" />
         <activity
-            android:name=".demo.launchmode.LaunchModeActivity2"
+            android:name=".ui.demo.launchmode.LaunchModeActivity2"
             android:label="@string/launch_mode"
             android:launchMode="singleInstance" />
 
 
         <activity
-            android:name=".demo.launchmode.LaunchModeActivity3"
+            android:name=".ui.demo.launchmode.LaunchModeActivity3"
             android:label="@string/launch_mode" />
 
 
         <activity
-            android:name=".demo.launchmode.LaunchModeActivity4"
+            android:name=".ui.demo.launchmode.LaunchModeActivity4"
             android:label="@string/launch_mode"
             android:launchMode="standard" />
 
         <!--应用界面demo-->
 
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".ui.activity.LoginActivity"
             android:label="@string/login"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".activity.UIMainActivity"
+            android:name=".ui.demo.widget.WidgetMainActivity"
             android:label="@string/ui_demo"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".activity.MyFragmentActivity"
+            android:name=".ui.demo.fragmentdemo.MyFragmentActivity"
             android:label="@string/fragment" />
         <activity
-            android:name=".activity.DatabaseActivity"
+            android:name=".ui.demo.dbtest.DatabaseActivity"
             android:label="@string/database" />
         <activity
-            android:name=".activity.AddFriendActivity"
+            android:name=".ui.activity.AddFriendActivity"
             android:label="@string/addcontacts" />
         <activity
-            android:name="com.kevin.building.activity.UserListActivity"
+            android:name=".ui.activity.UserListActivity"
             android:label="@string/user_list" />
         <activity
-            android:name=".activity.RegistActivity"
+            android:name=".ui.activity.RegistActivity"
             android:label="@string/register" />
         <activity
-            android:name=".activity.UserInfoActivity"
+            android:name=".ui.activity.UserInfoActivity"
             android:label="@string/user_info" />
         <activity
-            android:name=".activity.LogoutActivity"
+            android:name=".ui.activity.LogoutActivity"
             android:label="@string/logout" />
 
 

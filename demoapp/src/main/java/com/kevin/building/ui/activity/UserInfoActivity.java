@@ -1,4 +1,4 @@
-package com.kevin.building.activity;
+package com.kevin.building.ui.activity;
 
 import android.os.Bundle;
 import android.os.Message;
@@ -8,6 +8,9 @@ import android.widget.Button;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
+/**
+ * 用户信息页
+ */
 public class UserInfoActivity extends BaseActivity
 {
 

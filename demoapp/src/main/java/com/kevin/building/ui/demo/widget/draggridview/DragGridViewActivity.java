@@ -1,4 +1,4 @@
-package com.kevin.building.demo.draggridview;
+package com.kevin.building.ui.demo.widget.draggridview;
 
 import android.app.Activity;
 import android.os.Bundle;
