@@ -7,7 +7,7 @@ public interface HttpCallback {
      * @param json
      *            返回参数
      */
-    public void onSucess(String json);
+    public void onSucess(final String json);
 
     /**
      * 请求失败
@@ -15,7 +15,7 @@ public interface HttpCallback {
      * @param json
      *            返回参数
      */
-    public void onFailed(String json);
+    public void onFailed(final String json);
 
     /**
      * 请求异常
@@ -23,5 +23,5 @@ public interface HttpCallback {
      * @param json
      *            返回参数
      */
-    public void onError(String json);
+    public void onError(final String json);
 }

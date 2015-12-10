@@ -4,8 +4,12 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 
+import com.kevin.baselibrary.interfaze.callback.HttpCallback;
+import com.kevin.baselibrary.net.OKHttpUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
+
+import java.util.HashMap;
 
 /**
  * Author:  liangjin.bai
@@ -30,6 +34,7 @@ public class NetworkActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        titleView.setTitleText("网络模块");
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -49,24 +54,143 @@ public class NetworkActivity extends BaseActivity {
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
 
-//        btn1.setVisibility(View.GONE);
-//        btn2.setVisibility(View.GONE);
-//        btn3.setVisibility(View.GONE);
-//        btn4.setVisibility(View.GONE);
-//        btn5.setVisibility(View.GONE);
-//        btn6.setVisibility(View.GONE);
-//        btn7.setVisibility(View.GONE);
-//        btn8.setVisibility(View.GONE);
 
     }
 
     @Override
     protected void initLogic() {
+        btn1.setText("测试get");
+        btn2.setText("测试post");
 
     }
 
     @Override
     protected void onViewClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.btn1:
+                OKHttpUtils.asyncGet("http://ip.jsontest.com/", new HashMap<String, Object>(), new HttpCallback() {
+                    @Override
+                    public void onSucess(final String json) {
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                longShow("onSucess:"+json);
+
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onFailed(final String json) {
+
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                longShow("onFailed:" + json);
+
+                            }
+                        });
+
+
+                    }
+
+                    @Override
+                    public void onError(final String json) {
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                longShow("onError:" + json);
+
+                            }
+                        });
+
+
+                    }
+                });
+                break;
+
+            case R.id.btn2:
+
+                OKHttpUtils.asyncPost("http://www.baidu.com", new HashMap<String, Object>(), new HttpCallback() {
+                    @Override
+                    public void onSucess(final String json) {
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                longShow("onSucess:" + json);
+
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onFailed(final String json) {
+
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                longShow("onFailed:" + json);
+
+                            }
+                        });
+
+
+                    }
+
+                    @Override
+                    public void onError(final String json) {
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                longShow("onError:" + json);
+
+                            }
+                        });
+
+
+                    }
+                });
+
+                break;
+
+            case R.id.btn3:
+                break;
+
+            case R.id.btn4:
+                break;
+
+            case R.id.btn5:
+                break;
+
+            case R.id.btn6:
+                //TODO:待添加模块
+                show("点击了测试6");
+
+
+                break;
+
+            case R.id.btn7:
+
+
+                break;
+
+            case R.id.btn8:
+                show("点击了当前测试");
+
+
+                break;
+
+
+            default:
+                break;
+        }
 
     }
 
