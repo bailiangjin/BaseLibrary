@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
 import com.kevin.baselibrary.R;
-import com.kevin.baselibrary.app.CtxUtils;
+import com.kevin.baselibrary.app.CttUtils;
 import com.kevin.baselibrary.utils.uiutils.callback.PNDialogListener;
 
 /**
@@ -24,7 +24,7 @@ public class DialogUtils {
      * @param listener 按钮点击监听回调
      */
     public static void showPNDialog(final Activity activity, String message, final PNDialogListener listener) {
-        showPNDialog(activity, CtxUtils.getString(R.string.notice), message, CtxUtils.getString(R.string.confirm), CtxUtils.getString(R.string.cancel), listener);
+        showPNDialog(activity, CttUtils.getString(R.string.notice), message, CttUtils.getString(R.string.confirm), CttUtils.getString(R.string.cancel), listener);
     }
 
     /**
