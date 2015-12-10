@@ -10,7 +10,7 @@
     tools:context="com.kevin.baselibrary.activity.DemoActivity" >
     <include layout="@layout/title_view"
          />
-    <include layout="@layout/body"
+    <include layout="@layout/btn_base_body"
          />
 
 

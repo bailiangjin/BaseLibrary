@@ -17,7 +17,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            resValue("string", "app_name", "资源库")
+            resValue("string", "app_name", "Kevin资源库")
             resValue("string", "collectUrl", "http://123.56.44.160:8080/collect-web")
             resValue("string", "ccUrl", "http://123.57.213.15:10080/cc-web/")
 
@@ -28,7 +28,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            resValue("string", "app_name", "资源库测试")
+            resValue("string", "app_name", "Kevin资源库")
             resValue("string", "collectUrl", "http://123.57.213.13:8080/collect-web")
             resValue("string", "ccUrl", "http://123.57.213.15:10080/cc-web/")
 

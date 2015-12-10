@@ -23,4 +23,6 @@
     <string name="contacts">联系人</string>
     <string name="friend_info">好友信息</string>
     <string name="test_launchmode">测试Launchmode</string>
+    <string name="search_demo">搜索demo</string>
+    <string name="drag_gridveiw_demo">拖动GridView Demo</string>
 </resources>

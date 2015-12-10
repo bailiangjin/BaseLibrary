@@ -21,7 +21,7 @@ public class NewMainActivity extends BtnBaseActivity {
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.activity_btnbase;
+        return R.layout.activity_btn_base;
     }
 
     @Override

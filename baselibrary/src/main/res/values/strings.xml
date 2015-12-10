@@ -30,6 +30,14 @@
     <string name="search">搜索</string>
     <string name="cancel">取消</string>
     <string name="others">其他</string>
+    <string name="user_info">用户信息</string>
+    <string name="user_list">用户列表</string>
+    <string name="database">数据库</string>
+    <string name="fragment">Fragment</string>
+    <string name="ui_demo">UI Demo</string>
+    <string name="main_page">主页</string>
+    <string name="splash">Splash</string>
+    <string name="launch_mode">LaunchMode</string>
 
 
 </resources>

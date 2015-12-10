@@ -24,7 +24,7 @@
     </style>
 
     <style name="SplashTheme" parent="android:Theme.NoTitleBar.Fullscreen">
-        <item name="android:windowBackground">@drawable/splach_gray_black_gradient_bg</item>
+        <item name="android:windowBackground">@drawable/splach_green_gradient_bg</item>
         <item name="android:windowAnimationStyle">@style/AnimFade</item>
         <item name="android:windowNoTitle">true</item>
     </style>
