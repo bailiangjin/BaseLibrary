@@ -28,73 +28,82 @@
             </intent-filter>
 
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/main_page"></activity>
+
         <activity
             android:name=".NewMainActivity"
             android:label="@string/main_page"></activity>
-        <activity
-            android:name=".activity.LoginActivity"
-            android:label="@string/login"
-            android:theme="@android:style/Theme.NoTitleBar"></activity>
-        <activity
-            android:name=".activity.UIMainActivity"
-            android:label="@string/ui_demo"
-            android:theme="@android:style/Theme.NoTitleBar"></activity>
-        <activity
-            android:name=".activity.MyFragmentActivity"
-            android:label="@string/fragment"></activity>
-        <activity
-            android:name=".activity.DatabaseActivity"
-            android:label="@string/database"></activity>
-        <activity
-            android:name=".activity.AddFriendActivity"
-            android:label="@string/addcontacts"></activity>
-        <activity
-            android:name="com.kevin.building.activity.UserListActivity"
-            android:label="@string/user_list"></activity>
-        <activity
-            android:name=".activity.RegistActivity"
-            android:label="@string/register"></activity>
-        <activity
-            android:name=".activity.UserInfoActivity"
-            android:label="@string/user_info"></activity>
-        <activity
-            android:name=".activity.LogoutActivity"
-            android:label="@string/logout"></activity>
+
+
+        <!--网络相关demo-->
+        <activity32
+            android:name=".activity.NetworkActivity"
+            android:label="@string/network" />
+        <!--拖拽按钮demo-->
         <activity
             android:name=".demo.draggridview.DragGridViewActivity"
 
-            android:label="@string/drag_gridveiw_demo"></activity>
+            android:label="@string/drag_gridveiw_demo" />
 
         <activity
             android:name=".activity.SearchActivity"
 
-            android:label="@string/search_demo"></activity>
+            android:label="@string/search_demo" />
+
+        <!--启动模式测试-->
 
         <activity
             android:name=".demo.launchmode.LaunchModeActivity1"
 
-            android:label="@string/launch_mode"></activity>
+            android:label="@string/launch_mode" />
         <activity
             android:name=".demo.launchmode.LaunchModeActivity2"
             android:label="@string/launch_mode"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance" />
 
 
-        </activity>
         <activity
             android:name=".demo.launchmode.LaunchModeActivity3"
-            android:label="@string/launch_mode">
+            android:label="@string/launch_mode" />
 
-        </activity>
+
         <activity
             android:name=".demo.launchmode.LaunchModeActivity4"
             android:label="@string/launch_mode"
-            android:launchMode="standard">
+            android:launchMode="standard" />
 
-        </activity>
+        <!--应用界面demo-->
+
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/login"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.UIMainActivity"
+            android:label="@string/ui_demo"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.MyFragmentActivity"
+            android:label="@string/fragment" />
+        <activity
+            android:name=".activity.DatabaseActivity"
+            android:label="@string/database" />
+        <activity
+            android:name=".activity.AddFriendActivity"
+            android:label="@string/addcontacts" />
+        <activity
+            android:name="com.kevin.building.activity.UserListActivity"
+            android:label="@string/user_list" />
+        <activity
+            android:name=".activity.RegistActivity"
+            android:label="@string/register" />
+        <activity
+            android:name=".activity.UserInfoActivity"
+            android:label="@string/user_info" />
+        <activity
+            android:name=".activity.LogoutActivity"
+            android:label="@string/logout" />
+
+
     </application>
 
 </manifest>

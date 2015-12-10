@@ -1,15 +1,20 @@
 package com.kevin.building;
 
+import android.content.Intent;
 import android.os.Message;
 import android.view.View;
 
 import com.kevin.baselibrary.config.CleanOptions;
+import com.kevin.baselibrary.config.ConfigUtils;
 import com.kevin.baselibrary.instance.jni.NdkJniUtils;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.activity.SearchActivity;
 import com.kevin.building.activity.UIMainActivity;
+import com.kevin.building.activity.UserInfoActivity;
+import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BtnBaseActivity;
+import com.kevin.building.demo.launchmode.LaunchModeActivity1;
 import com.kevin.building.utils.ActivityUtils;
 
 /**
@@ -36,8 +41,8 @@ public class NewMainActivity extends BtnBaseActivity {
         btn3.setText("网络");
         btn4.setText("数据库");
         btn5.setText("文件");
-        btn6.setText("传感器");
-        btn7.setText("控件");
+        btn6.setText("用户信息");
+        btn7.setText("启动模式");
         btn8.setText("当前测试");
 
         btn1.setVisibility(View.VISIBLE);
@@ -50,6 +55,8 @@ public class NewMainActivity extends BtnBaseActivity {
         btn8.setVisibility(View.VISIBLE);
         NdkJniUtils jni = new NdkJniUtils();
         show("jni:" + jni.getCLanguageString());
+
+        show(ConfigUtils.getValueByKey("testkey"));
     }
 
     @Override
@@ -91,11 +98,15 @@ public class NewMainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn6:
+                Intent intent = new Intent(this, UserInfoActivity.class);
+                AppManager.getInstance().startActivity(NewMainActivity.this, intent);
 
 
                 break;
 
             case R.id.btn7:
+                Intent intent7 = new Intent(this, LaunchModeActivity1.class);
+                AppManager.getInstance().startActivity(NewMainActivity.this, intent7);
 
 
                 break;

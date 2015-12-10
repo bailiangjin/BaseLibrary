@@ -38,6 +38,7 @@
     <string name="main_page">主页</string>
     <string name="splash">Splash</string>
     <string name="launch_mode">LaunchMode</string>
+    <string name="network">网络</string>
 
 
 </resources>
