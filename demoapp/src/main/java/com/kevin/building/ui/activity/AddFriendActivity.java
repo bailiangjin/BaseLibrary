@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
@@ -14,6 +15,16 @@ import com.kevin.building.utils.ActivityUtils;
  */
 public class AddFriendActivity extends BaseActivity
 {
+
+	/**
+	 * 添加按钮
+	 */
+	private Button btn_add;
+	/**
+	 * 退出按钮
+	 */
+	private Button btn_logout;
+
 
 	@Override
 	protected int getLayoutResId()
@@ -31,6 +42,13 @@ public class AddFriendActivity extends BaseActivity
 	protected void initView() {
 		titleView.setTitleText(getString(R.string.addcontacts));
 		titleView.setRightBtnText(getString(R.string.user_info));
+
+		btn_add = (Button) findViewById(R.id.btn_add);
+		btn_logout = (Button) findViewById(R.id.btn_logout);
+
+		btn_add.setOnClickListener(this);
+		btn_logout.setOnClickListener(this);
+
 		titleView.setRightButtonListener(new OnClickListener()
 		{
 

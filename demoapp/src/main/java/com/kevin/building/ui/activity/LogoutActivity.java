@@ -64,7 +64,7 @@ public class LogoutActivity extends BaseActivity {
                 // 用户登出逻辑添加
                 AccountUtils.logout();
                 //Activity登出
-                AppManager.getInstance().appLogout();
+                AppManager.getInstance().logout();
                 //打开登录页
                 Intent intent = new Intent(this, LoginActivity.class);
                 AppManager.getInstance().startActivity(LogoutActivity.this, intent);

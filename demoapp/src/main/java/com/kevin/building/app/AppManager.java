@@ -145,6 +145,21 @@ public class AppManager {
     }
 
     /**
+     * 结束除 LoginActivity和MainActivity 之外的所有其他Activity
+     */
+    public void finishAllActivityExceptLoginAndMain() {
+        for (int i = 0, size = list_activity.size(); i < size; i++) {
+            if (null != list_activity.get(i)) {
+                if (!list_activity.get(i).getClass().equals(LoginActivity.class) && !list_activity.get(i).getClass().equals(MainActivity.class)) {
+                    list_activity.get(i).finish();
+                }
+
+            }
+        }
+        list_activity.clear();
+    }
+
+    /**
      * activity 启动
      *
      * @param activity
@@ -181,9 +196,9 @@ public class AppManager {
     /**
      * 注销当前账户
      */
-    public void appLogout() {
+    public void logout() {
         try {
-            finishAllActivityExceptLogin();
+            finishAllActivityExceptLoginAndMain();
         } catch (Exception e) {
         }
     }

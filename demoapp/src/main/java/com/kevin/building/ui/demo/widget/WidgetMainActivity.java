@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BtnBaseActivity;
+import com.kevin.building.ui.demo.widget.dialog.DialogActivity;
 import com.kevin.building.ui.demo.widget.draggridview.DragGridViewActivity;
 import com.kevin.building.ui.demo.widget.searchbar.SearchActivity;
 import com.kevin.building.utils.ActivityUtils;
@@ -25,7 +26,7 @@ public class WidgetMainActivity extends BtnBaseActivity{
 
         btn1.setText("拖拽按钮示例");
         btn2.setText("搜索框示例");
-//        btn3.setText("网络");
+        btn3.setText("Dialog");
 //        btn4.setText("数据库");
 //        btn5.setText("文件");
 //        btn6.setText("传感器");
@@ -61,6 +62,7 @@ public class WidgetMainActivity extends BtnBaseActivity{
                 break;
 
             case R.id.btn3:
+                ActivityUtils.startActivity(this, DialogActivity.class);
 
 
                 break;

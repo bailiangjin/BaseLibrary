@@ -3,9 +3,8 @@ package com.kevin.building;
 import android.os.Message;
 import android.view.View;
 
+import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
-import com.kevin.baselibrary.config.ConfigUtils;
-import com.kevin.baselibrary.instance.jni.NdkJniUtils;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.ui.activity.LoginActivity;
@@ -13,7 +12,6 @@ import com.kevin.building.ui.demo.fragmentdemo.MyFragmentActivity;
 import com.kevin.building.ui.demo.launchmode.LaunchModeActivity1;
 import com.kevin.building.ui.demo.networkdemo.NetworkActivity;
 import com.kevin.building.ui.demo.widget.WidgetMainActivity;
-import com.kevin.building.ui.demo.widget.searchbar.SearchActivity;
 import com.kevin.building.utils.ActivityUtils;
 
 /**
@@ -52,10 +50,10 @@ public class MainActivity extends BtnBaseActivity {
         btn6.setVisibility(View.VISIBLE);
         btn7.setVisibility(View.VISIBLE);
         btn8.setVisibility(View.VISIBLE);
-        NdkJniUtils jni = new NdkJniUtils();
-        show("jni:" + jni.getCLanguageString());
+//        NdkJniUtils jni = new NdkJniUtils();
+//        show("jni:" + jni.getCLanguageString());
 
-        show(ConfigUtils.getValueByKey("testkey"));
+//        show(ConfigUtils.getValueByKey("testkey"));
     }
 
     @Override
@@ -105,11 +103,10 @@ public class MainActivity extends BtnBaseActivity {
                 ActivityUtils.startActivity(this, LaunchModeActivity1.class);
 
 
-
                 break;
 
             case R.id.btn8:
-                ActivityUtils.startActivity(this, SearchActivity.class);
+               show("点击了当前测试");
 
 
                 break;
@@ -124,5 +121,16 @@ public class MainActivity extends BtnBaseActivity {
     @Override
     protected void handleMsg(Message msg) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        //再点一次退出应用
+        if (AppUtils.oneMoreClickExitApp(MainActivity.this)) {
+          //不退出应用 打出提示
+        } else {
+            //TODO:添加退出应用相关逻辑
+            super.onBackPressed();
+        }
     }
 }

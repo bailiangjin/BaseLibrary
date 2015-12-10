@@ -33,11 +33,12 @@
             android:name=".MainActivity"
             android:label="@string/main_page"></activity>
 
-
-        <!--网络相关demo-->
+        <!--widget控件demos-->
         <activity
-            android:name=".ui.demo.networkdemo.NetworkActivity"
-            android:label="@string/network" />
+            android:name=".ui.demo.widget.dialog.DialogActivity"
+
+            android:label="弹窗" />
+
         <!--拖拽按钮demo-->
         <activity
             android:name=".ui.demo.widget.draggridview.DragGridViewActivity"
@@ -48,6 +49,24 @@
             android:name=".ui.demo.widget.searchbar.SearchActivity"
 
             android:label="@string/search_demo" />
+
+        <activity
+            android:name=".ui.demo.widget.WidgetMainActivity"
+            android:label="@string/ui_demo"
+            android:theme="@android:style/Theme.NoTitleBar" />
+
+
+        <!--网络相关demo-->
+        <activity
+            android:name=".ui.demo.networkdemo.NetworkActivity"
+            android:label="@string/network" />
+
+        <activity
+            android:name=".ui.demo.fragmentdemo.MyFragmentActivity"
+            android:label="@string/fragment" />
+        <activity
+            android:name=".ui.demo.dbtest.DatabaseActivity"
+            android:label="@string/database" />
 
         <!--启动模式测试-->
 
@@ -78,16 +97,6 @@
             android:label="@string/login"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".ui.demo.widget.WidgetMainActivity"
-            android:label="@string/ui_demo"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name=".ui.demo.fragmentdemo.MyFragmentActivity"
-            android:label="@string/fragment" />
-        <activity
-            android:name=".ui.demo.dbtest.DatabaseActivity"
-            android:label="@string/database" />
-        <activity
             android:name=".ui.activity.AddFriendActivity"
             android:label="@string/addcontacts" />
         <activity
@@ -102,6 +111,8 @@
         <activity
             android:name=".ui.activity.LogoutActivity"
             android:label="@string/logout" />
+
+
 
 
     </application>

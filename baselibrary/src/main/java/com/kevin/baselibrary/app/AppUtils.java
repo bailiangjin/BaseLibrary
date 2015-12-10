@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * android 应用程序工具
  *
- * @author qianjunping
+ * @author bailiangjin
  */
 public class AppUtils {
 
@@ -46,18 +46,21 @@ public class AppUtils {
      */
     private static long lastTouchTime = 0;
 
-    public static void oneMoreClickExitApp(Activity activity) {
+    /**
+     * 再点一次退出应用
+     * @param activity
+     * @return boolean 是否消耗本次事件
+     */
+    public static boolean oneMoreClickExitApp(Activity activity) {
         //间隔时间 阈值 毫秒
         final long gapTime = 2000;
-
         long currentTime = System.currentTimeMillis();
         if (currentTime - lastTouchTime > gapTime) {
             ToastUtils.show(R.string.one_more_click_exit);
             lastTouchTime = currentTime;
-            return;
+            return true;
         } else {
-            activity.finish();
-            AppUtils.exit();
+            return false;
         }
     }
 

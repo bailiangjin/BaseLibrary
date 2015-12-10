@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.kevin.baselibrary.constant.SuperSPKey;
 import com.kevin.baselibrary.utils.SPUtils;
@@ -16,6 +17,7 @@ import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.constants.LoginResult;
 import com.kevin.building.ui.activity.logicutils.AccountUtils;
+import com.kevin.building.utils.ActivityUtils;
 
 /**
  * 登录
@@ -26,6 +28,7 @@ public class LoginActivity extends BaseActivity {
     private EditText et_password;// 密码
     private Button btn_login;// 登录按钮
     private CheckBox cb_save_password;
+    private TextView tv_register;
     private String userName = null;
     private String passWord = null;
     private boolean isSavePassword;
@@ -56,8 +59,11 @@ public class LoginActivity extends BaseActivity {
         et_username = (EditText) findViewById(R.id.et_username);
         et_password = (EditText) findViewById(R.id.et_password);
         btn_login = (Button) findViewById(R.id.btn_login);
-        btn_login.setOnClickListener(this);
+        tv_register = (TextView) findViewById(R.id.tv_register);
         cb_save_password = (CheckBox) findViewById(R.id.cb_save_password);
+
+        btn_login.setOnClickListener(this);
+        tv_register.setOnClickListener(this);
 
     }
 
@@ -106,7 +112,10 @@ public class LoginActivity extends BaseActivity {
                 //调用登录
                 login(userName, passWord);
                 break;
-
+            case R.id.tv_register://点击注册
+                //跳转到注册页
+                ActivityUtils.startActivity(LoginActivity.this, RegistActivity.class);
+                this.finish();
             default:
                 break;
 

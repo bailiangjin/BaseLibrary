@@ -6,12 +6,19 @@ import android.view.View;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.utils.ActivityUtils;
 
 /**
  * 注册
  */
 public class RegistActivity extends BaseActivity
 {
+
+	@Override
+	protected int getLayoutResId()
+	{
+		return R.layout.activity_regist;
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -34,11 +41,7 @@ public class RegistActivity extends BaseActivity
 	}
 
 
-	@Override
-	protected int getLayoutResId()
-	{
-		return R.layout.activity_regist;
-	}
+
 
 	@Override
 	protected void handleMsg(Message msg)
@@ -53,8 +56,9 @@ public class RegistActivity extends BaseActivity
 		switch (v.getId())
 		{
 			case R.id.btn_regist:
-				show("点击了注册");
-
+				show("注册成功 回调到登录页");
+				ActivityUtils.startActivity(RegistActivity.this,LoginActivity.class);
+				this.finish();
 				break;
 
 			default:
