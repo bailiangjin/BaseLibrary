@@ -54,7 +54,7 @@ public class OKHttpUtils {
             LogUtils.e("h2asyncGet:error=" + e.getMessage());
             e.printStackTrace();
 
-            httpCallback.onFailed(e.getMessage());
+            httpCallback.onError(e.getMessage());
         }
     }
 
@@ -99,7 +99,7 @@ public class OKHttpUtils {
                 } catch (Exception e) {
                     LogUtils.e("h2asyncPost:error=" + e.getMessage());
                     e.printStackTrace();
-                    httpCallback.onFailed(e.getMessage());
+                    httpCallback.onError(e.getMessage());
                 }
             }
         }).start();
