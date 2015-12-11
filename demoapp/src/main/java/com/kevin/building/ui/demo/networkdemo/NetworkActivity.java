@@ -6,8 +6,12 @@ import android.widget.Button;
 
 import com.kevin.baselibrary.interfaze.callback.HttpCallback;
 import com.kevin.baselibrary.net.OKHttpUtils;
+import com.kevin.baselibrary.utils.GsonUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.ui.demo.networkdemo.weather.Example;
+import com.kevin.building.ui.demo.networkdemo.weather.WeatherRequest;
 
 import java.util.HashMap;
 
@@ -59,7 +63,7 @@ public class NetworkActivity extends BaseActivity {
 
     @Override
     protected void initLogic() {
-        btn1.setText("测试get");
+        btn1.setText("获取北京天气信息");
         btn2.setText("测试post");
 
     }
@@ -69,15 +73,22 @@ public class NetworkActivity extends BaseActivity {
 
         switch (v.getId()) {
             case R.id.btn1:
-                OKHttpUtils.asyncGet("http://ip.jsontest.com/", new HashMap<String, Object>(), new HttpCallback() {
+                String cityId="101091001";
+                WeatherRequest weatherRequestBean = new WeatherRequest(cityId);
+                OKHttpUtils.asyncGet(weatherRequestBean.getCityInfoUrl(), new HashMap<String, Object>(), new HttpCallback() {
                     @Override
                     public void onSucess(final String json) {
 
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                longShow("onSucess:"+json);
+                                LogUtils.e("success:" + json);
+                                longShow("onSucess:" + json);
 
+
+                                Example weatherInfoBean =  GsonUtils.getInstance().toObj(json,Example.class);
+                                LogUtils.e("weatherInfo:" + weatherInfoBean.getWeatherinfo().getCity());
+//                                LogUtils.e("weatherInfo:" + weatherInfoBean.getWeatherinfo().toJson());
                             }
                         });
                     }
@@ -193,6 +204,8 @@ public class NetworkActivity extends BaseActivity {
         }
 
     }
+
+
 
     @Override
     protected void handleMsg(Message msg) {
