@@ -93,6 +93,14 @@
         <item name="android:background">@drawable/btn_base_selector</item>
     </style>
 
+    <!--通屏幕宽度按钮 央视-->
+    <style name="btn_full_style" parent="@style/btn_base_style">
+        <item name="android:textSize">@dimen/tv_size_xlarge</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/btn_full_margin</item>
+        <item name="android:layout_marginRight">@dimen/btn_full_margin</item>
+
+    </style>
     <style name="btn_xlarge_style" parent="@style/btn_base_style">
         <item name="android:textSize">@dimen/tv_size_xlarge</item>
     </style>
