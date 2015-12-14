@@ -39,6 +39,12 @@
 
             android:label="弹窗" />
 
+        <!--WebView demos-->
+        <activity
+            android:name=".ui.demo.WebviewActivity"
+
+            android:label="WebView" />
+
         <!--拖拽按钮demo-->
         <activity
             android:name=".ui.demo.widget.draggridview.DragGridViewActivity"

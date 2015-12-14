@@ -1,5 +1,7 @@
 package com.kevin.building.ui.demo.networkdemo.weather;
 
+import com.kevin.building.ui.demo.networkdemo.weather.config.WeatherConfig;
+
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
