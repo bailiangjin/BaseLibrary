@@ -22,13 +22,6 @@ public abstract class BaseActivity extends SuperBaseActivity
 	protected TitleView titleView;
 
 	@Override
-	protected void onNewIntent(Intent intent)
-	{
-		LogUtils.d("Activity:::-->>onNewIntent");
-		super.onNewIntent(intent);
-	}
-
-	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		LogUtils.d("Activity:::-->>onCreate");
@@ -69,7 +62,6 @@ public abstract class BaseActivity extends SuperBaseActivity
 		Bugtags.onPause(this);
 	}
 
-
 	@Override
 	protected void onStop()
 	{
@@ -84,6 +76,14 @@ public abstract class BaseActivity extends SuperBaseActivity
 		super.onDestroy();
 
 	}
+
+	@Override
+	protected void onNewIntent(Intent intent)
+	{
+		LogUtils.d("Activity:::-->>onNewIntent");
+		super.onNewIntent(intent);
+	}
+
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)

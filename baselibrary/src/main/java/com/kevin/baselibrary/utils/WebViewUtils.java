@@ -1,5 +1,7 @@
 package com.kevin.baselibrary.utils;
 
+import android.os.Build;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -23,6 +25,7 @@ public class WebViewUtils {
        webView.getSettings().setAppCacheEnabled(true);
        // 设置缓存模式
        webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+//       webView.
        //使用自定义的WebViewClient
        webView.setWebViewClient(new WebViewClient() {
            //覆盖shouldOverrideUrlLoading 方法
@@ -33,6 +36,11 @@ public class WebViewUtils {
            }
        });
 
+       webView.setWebChromeClient(new WebChromeClient());
+
        webView.loadUrl(url);
-    }
+       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+           webView.onResume();
+       }
+   }
 }

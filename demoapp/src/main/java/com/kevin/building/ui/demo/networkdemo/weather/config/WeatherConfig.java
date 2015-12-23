@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.networkdemo.weather;
+package com.kevin.building.ui.demo.networkdemo.weather.config;
 
 /**
  * Author:  liangjin.bai

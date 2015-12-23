@@ -4,6 +4,10 @@
     <item android:drawable="@drawable/btn_green_pressed_bg" android:state_pressed="true"></item>
     <item android:drawable="@drawable/btn_green_pressed_bg" android:state_focused="true"></item>
     <item android:drawable="@drawable/btn_green_pressed_bg" android:state_selected="true"></item>
+    <!--<item android:drawable="@drawable/btn_green_enabled_bg" android:state_enabled="true"></item>-->
     <item android:drawable="@drawable/btn_green_normal_bg"></item>
+
+    <!--enabled 可配合实现三种效果-->
+
 
 </selector>

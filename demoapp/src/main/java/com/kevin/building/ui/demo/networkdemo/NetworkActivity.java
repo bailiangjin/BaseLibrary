@@ -10,8 +10,8 @@ import com.kevin.baselibrary.utils.GsonUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.demo.networkdemo.weather.Example;
 import com.kevin.building.ui.demo.networkdemo.weather.WeatherRequest;
+import com.kevin.building.ui.demo.networkdemo.weather.model.WeatherSK;
 
 import java.util.HashMap;
 
@@ -63,7 +63,7 @@ public class NetworkActivity extends BaseActivity {
 
     @Override
     protected void initLogic() {
-        btn1.setText("获取北京天气信息");
+        btn1.setText("获取天气信息");
         btn2.setText("测试post");
 
     }
@@ -75,7 +75,7 @@ public class NetworkActivity extends BaseActivity {
             case R.id.btn1:
                 String cityId="101091001";
                 WeatherRequest weatherRequestBean = new WeatherRequest(cityId);
-                OKHttpUtils.asyncGet(weatherRequestBean.getCityInfoUrl(), new HashMap<String, Object>(), new HttpCallback() {
+                OKHttpUtils.asyncGet(weatherRequestBean.getSkUrl(), new HashMap<String, Object>(), new HttpCallback() {
                     @Override
                     public void onSucess(final String json) {
 
@@ -86,7 +86,7 @@ public class NetworkActivity extends BaseActivity {
                                 longShow("onSucess:" + json);
 
 
-                                Example weatherInfoBean =  GsonUtils.getInstance().toObj(json,Example.class);
+                                WeatherSK weatherInfoBean =  GsonUtils.getInstance().toObj(json,WeatherSK.class);
                                 LogUtils.e("weatherInfo:" + weatherInfoBean.getWeatherinfo().getCity());
 //                                LogUtils.e("weatherInfo:" + weatherInfoBean.getWeatherinfo().toJson());
                             }
