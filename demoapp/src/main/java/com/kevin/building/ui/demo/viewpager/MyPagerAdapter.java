@@ -13,17 +13,21 @@ import java.util.List;
  */
 public class MyPagerAdapter extends PagerAdapter {
 
-    private List<VpBean> pageList;
+    private List<ViewPagerBean> pageList;
     private int pageCount;
 
-    public MyPagerAdapter(List<VpBean> pageList) {
+    public MyPagerAdapter(List<ViewPagerBean> pageList) {
         this.pageList = pageList;
         pageCount=pageList.size();
     }
 
     @Override
     public int getCount() {
-        return null == pageList ? -1 : pageList.size();
+        if (PageUtil.isCycle) {
+            return pageList == null ? 0 : Integer.MAX_VALUE;
+        } else {
+            return pageList == null ? 0 : pageList.size();
+        }
     }
 
     @Override

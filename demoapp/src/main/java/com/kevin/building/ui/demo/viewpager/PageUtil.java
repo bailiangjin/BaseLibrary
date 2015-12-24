@@ -17,36 +17,22 @@ public class PageUtil {
     public static final boolean isCycle = true;
 
     /**
-     * 获取ViewPage List
+     * 获取ViewPage适配器数据 ViewPage List
      *
      * @return
      */
-    public static List<VpBean> getPageList() {
-        List<VpBean> pageList = new ArrayList<VpBean>();
+    public static List<ViewPagerBean> getPageList(Context context) {
+        List<ViewPagerBean> pageList = new ArrayList<ViewPagerBean>();
         for (int i = 0; i < 5; i++) {
-            VpBean vpBean = new VpBean();
-            vpBean.setTitle("Pager" + (i+1));
-            vpBean.setLayoutResId(R.drawable.icon_user);
-            pageList.add(vpBean);
-        }
-        return pageList;
-    }
-
-    /**
-     * 获取ViewPage适配器数据
-     *
-     * @param context
-     * @return
-     */
-    public static List<VpBean> getPageList(Context context) {
-        List<VpBean> vpList = getPageList();
-        List<VpBean> pageList = new ArrayList<VpBean>();
-        for (VpBean vpBean : vpList) {
+            ViewPagerBean vpBean = new ViewPagerBean();
+            vpBean.setTitle("Page" + (i + 1));
+            vpBean.setLayoutResId(R.drawable.linear_login);
             vpBean.setView(getPageView(context, vpBean.getLayoutResId()));
             pageList.add(vpBean);
         }
         return pageList;
     }
+
 
     /**
      * 构造ViewPage页面
@@ -62,21 +48,6 @@ public class PageUtil {
         imgPage.setImageResource(imgResId);
         return pageView;
     }
-
-//    private static View getPageView4Last(final Context context, int imgResId) {
-//        LayoutInflater inflater = LayoutInflater.from(context);
-//        View pageView = inflater.inflate(R.layout.idendify_guide3, null);
-//        Button startpage_btn = (Button) pageView.findViewById(R.id.startpage_btn);
-//        pageView.setBackgroundResource(imgResId);
-//        startpage_btn.setOnClickListener(new OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-//        return pageView;
-//    }
 
 
 }

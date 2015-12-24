@@ -12,13 +12,13 @@ import android.view.WindowManager;
 
 import com.kevin.baselibrary.base.SuperBaseFragment;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.demo.viewpager.BaseViewPagerFragment;
+import com.kevin.building.ui.fragment.Fragment1;
 import com.kevin.building.ui.fragment.Fragment2;
 
 public class MyFragmentActivity extends BaseActivity
 {
 
-	private BaseViewPagerFragment fragment1;
+	private Fragment1 fragment1;
 	private Fragment2 fragment2;
 
 	private static final int FRAGMENT_1_MSG_WHAT = 0;
@@ -101,38 +101,38 @@ public class MyFragmentActivity extends BaseActivity
 	protected void onStart()
 	{
 		super.onStart();
-//		new Thread(new Runnable()
-//		{
-//
-//			@Override
-//			public void run()
-//			{
-//				for (int i = 0; i < 10000; i++)
-//				{
-//					if (i % 2 == 1)
-//					{
-//						Message msg = handler.obtainMessage(FRAGMENT_1_MSG_WHAT);
-//						handler.sendMessage(msg);
-//					}
-//					else
-//					{
-//						Message msg = handler.obtainMessage(FRAGMENT_2_MSG_WHAT);
-//						handler.sendMessage(msg);
-//					}
-//					try
-//					{
-//						Thread.sleep(2000);
-//					}
-//					catch (InterruptedException e)
-//					{
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//
-//				}
-//
-//			}
-//		}).start();
+		new Thread(new Runnable()
+		{
+
+			@Override
+			public void run()
+			{
+				for (int i = 0; i < 10000; i++)
+				{
+					if (i % 2 == 1)
+					{
+						Message msg = handler.obtainMessage(FRAGMENT_1_MSG_WHAT);
+						handler.sendMessage(msg);
+					}
+					else
+					{
+						Message msg = handler.obtainMessage(FRAGMENT_2_MSG_WHAT);
+						handler.sendMessage(msg);
+					}
+					try
+					{
+						Thread.sleep(2000);
+					}
+					catch (InterruptedException e)
+					{
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+				}
+
+			}
+		}).start();
 
 	}
 
@@ -144,11 +144,11 @@ public class MyFragmentActivity extends BaseActivity
 		fragmentTransaction.commit();
 	}
 
-	public BaseViewPagerFragment getFragment1()
+	public Fragment1 getFragment1()
 	{
 		if (fragment1 == null)
 		{
-			fragment1 = new BaseViewPagerFragment();
+			fragment1 = new Fragment1();
 		}
 		return fragment1;
 	}

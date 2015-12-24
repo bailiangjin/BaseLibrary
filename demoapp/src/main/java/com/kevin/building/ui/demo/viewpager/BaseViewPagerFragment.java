@@ -37,7 +37,7 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
     /**
      * viewpager item list
      */
-    private List<VpBean> vpBeanList;
+    private List<ViewPagerBean> vpBeanList;
 
     /**
      * ViewPager 下方点  数组
@@ -56,15 +56,25 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
         mViewPager = (ViewPager) rootView.findViewById(R.id.vp_images);
         ll_dot = (LinearLayout) rootView.findViewById(R.id.ll_dot);
         mViewPager.addOnPageChangeListener(this);
+
+        vpBeanList = getVpBeanList();
+        mViewPager.setAdapter(new MyPagerAdapter(vpBeanList));
+
+        tv_vp_title.setText(vpBeanList.get(0).getTitle());
+        initDots(getActivity(), vpBeanList.size());
+
+        if (PageUtil.isCycle) {
+            /*
+             * 此处设置当前页的显示位置,设置在100(随便什么数,稍微大点就行)就 可以实现向左循环,当然是有限制的,不过一般情况下没啥问题
+             */
+            mViewPager.setCurrentItem(Integer.MAX_VALUE/2);
+        }
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        vpBeanList = PageUtil.getPageList(getActivity());
-        mViewPager.setAdapter(new MyPagerAdapter(vpBeanList));
-        tv_vp_title.setText(vpBeanList.get(0).getTitle());
-        initDots(getActivity(), vpBeanList.size());
+
     }
 
     @Override
@@ -77,6 +87,8 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
 
     }
 
+    //viewPager事件监听-------------------------------------------------
+
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -84,6 +96,8 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
 
     @Override
     public void onPageSelected(int position) {
+
+        position = position % vpBeanList.size();
         LogUtils.e("onPageSelected:" + position);
         tv_vp_title.setText(vpBeanList.get(position).getTitle());
 
@@ -101,6 +115,19 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
 
     }
 
+    protected List<ViewPagerBean> getVpBeanList() {
+        return PageUtil.getPageList(getActivity());
+
+    }
+
+    //-----------------------------------------------------------------
+
+    /**
+     * 初始化 点布局
+     *
+     * @param context
+     * @param dotNum
+     */
     private void initDots(Context context, int dotNum) {
         this.imgDots = SuperViewUtils.getDotImageViews(context, dotNum);
         SuperViewUtils.addDot2Layout(ll_dot, imgDots);

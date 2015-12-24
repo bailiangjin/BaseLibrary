@@ -7,7 +7,7 @@ import android.view.View;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/24 14:09
  */
-public class VpBean {
+public class ViewPagerBean {
     /**
      * 标题
      */
