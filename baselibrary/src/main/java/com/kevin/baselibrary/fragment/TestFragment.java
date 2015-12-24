@@ -1,5 +1,7 @@
 package com.kevin.baselibrary.fragment;
 
+import android.view.View;
+
 import com.kevin.baselibrary.base.SuperBaseFragment;
 
 /**
@@ -13,5 +15,10 @@ public class TestFragment  extends SuperBaseFragment {
     @Override
     protected int getLayoutResId() {
         return 0;
+    }
+
+    @Override
+    protected void onViewClick(View v) {
+
     }
 }

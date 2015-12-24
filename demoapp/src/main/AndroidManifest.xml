@@ -33,6 +33,11 @@
             android:name=".MainActivity"
             android:label="@string/main_page"></activity>
 
+        <!--ViewPagerDemo-->
+        <activity
+            android:name=".ui.demo.viewpager.ViewPagerDemoActivity"
+
+            android:label="ViewPagerDemo" />
         <!--widget控件demos-->
         <activity
             android:name=".ui.demo.widget.dialog.DialogActivity"

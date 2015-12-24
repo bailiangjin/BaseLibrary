@@ -2,12 +2,22 @@ package com.kevin.baselibrary.utils;
 
 import android.content.Context;
 
+import com.kevin.baselibrary.app.AppUtils;
+
 /**
  * dp与px转换工具
  * 
  */
 public class DensityUtils
 {
+
+	/**
+	 * 根据手机的分辨率从 dip 的单位 转成为 px(像素)
+	 */
+	public static int dip2px( float dpValue)
+	{
+		return dip2px(AppUtils.getContext(),dpValue);
+	}
 	/**
 	 * 根据手机的分辨率从 dip 的单位 转成为 px(像素)
 	 */
