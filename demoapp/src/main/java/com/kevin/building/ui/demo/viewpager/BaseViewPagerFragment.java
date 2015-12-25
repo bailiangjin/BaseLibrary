@@ -52,35 +52,21 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        tv_vp_title = (TextView) rootView.findViewById(R.id.tv_vp_title);
-        mViewPager = (ViewPager) rootView.findViewById(R.id.vp_images);
-        ll_dot = (LinearLayout) rootView.findViewById(R.id.ll_dot);
-        mViewPager.addOnPageChangeListener(this);
+        initView();
 
-        vpBeanList = getVpBeanList();
-        mViewPager.setAdapter(new MyPagerAdapter(vpBeanList));
-
-        tv_vp_title.setText(vpBeanList.get(0).getTitle());
-        initDots(getActivity(), vpBeanList.size());
-
-        if (PageUtil.isCycle) {
-            /*
-             * 此处设置当前页的显示位置,设置在100(随便什么数,稍微大点就行)就 可以实现向左循环,当然是有限制的,不过一般情况下没啥问题
-             */
-            mViewPager.setCurrentItem(Integer.MAX_VALUE/2);
-        }
+        initData();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-
     }
 
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_viewpager_demo;
     }
+
 
     @Override
     protected void onViewClick(View v) {
@@ -115,12 +101,36 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
 
     }
 
-    protected List<ViewPagerBean> getVpBeanList() {
-        return PageUtil.getPageList(getActivity());
+    //-----------------------------------------------------------------
 
+
+    /**
+     * 初始化页面
+     */
+    private void initView() {
+        tv_vp_title = (TextView) rootView.findViewById(R.id.tv_vp_title);
+        mViewPager = (ViewPager) rootView.findViewById(R.id.vp_images);
+        ll_dot = (LinearLayout) rootView.findViewById(R.id.ll_dot);
+        mViewPager.addOnPageChangeListener(this);
     }
 
-    //-----------------------------------------------------------------
+    /**
+     * 初始化数据
+     */
+    private void initData() {
+        vpBeanList = getVpBeanList();
+        mViewPager.setAdapter(new MyPagerAdapter(vpBeanList));
+
+        tv_vp_title.setText(vpBeanList.get(0).getTitle());
+        initDots(getActivity(), vpBeanList.size());
+
+        if (PageUtil.isCycle) {
+            /*
+             * 此处设置当前页的显示位置,设置在100(随便什么数,稍微大点就行)就 可以实现向左循环,当然是有限制的,不过一般情况下没啥问题
+             */
+            mViewPager.setCurrentItem(Integer.MAX_VALUE / 2);
+        }
+    }
 
     /**
      * 初始化 点布局
@@ -129,9 +139,23 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
      * @param dotNum
      */
     private void initDots(Context context, int dotNum) {
-        this.imgDots = SuperViewUtils.getDotImageViews(context, dotNum);
+        //清空原有的View
+        ll_dot.removeAllViewsInLayout();
+        imgDots = SuperViewUtils.getDotImageViews(context, dotNum);
         SuperViewUtils.addDot2Layout(ll_dot, imgDots);
     }
+
+    /**
+     * 获取ViewPager 数据list
+     * @return
+     */
+    protected List<ViewPagerBean> getVpBeanList() {
+        return PageUtil.getPageList(getActivity());
+
+    }
+
+
+
 
 
 }
