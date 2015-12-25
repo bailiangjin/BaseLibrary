@@ -33,6 +33,11 @@
             android:name=".MainActivity"
             android:label="@string/main_page"></activity>
 
+        <!--FragmentAdapterDemos-->
+        <activity
+            android:name=".ui.demo.fragmentdemo.FragmentAdapterDemos"
+
+            android:label="FragmentAdapterDemos" />
         <!--ViewPagerDemo-->
         <activity
             android:name=".ui.demo.viewpager.ViewPagerDemoActivity"

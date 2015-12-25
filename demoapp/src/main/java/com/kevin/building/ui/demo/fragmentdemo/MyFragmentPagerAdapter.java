@@ -5,6 +5,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
+import com.kevin.building.ui.demo.viewpager.BaseViewPagerFragment;
+import com.kevin.building.ui.fragment.Fragment1;
+import com.kevin.building.ui.fragment.Fragment2;
+
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
@@ -28,11 +32,20 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return null;
+        switch (position) {
+            case 0:
+                return new Fragment1();
+            case 1:
+                return new Fragment2();
+            case 2:
+                return new BaseViewPagerFragment();
+            default:
+                return null;
+        }
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return 3;
     }
 }

@@ -2,9 +2,10 @@ package com.kevin.building.ui.demo.fragmentdemo;
 
 import android.os.Message;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 
+import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
 /**
@@ -14,22 +15,25 @@ import com.kevin.building.base.BaseActivity;
  */
 public class FragmentAdapterDemos  extends BaseActivity{
 
-
+    private ViewPager vp_images;
 
     @Override
     protected int getLayoutResId() {
-        return 0;
+        return R.layout.fragment_viewpager_demo;
     }
 
     @Override
     protected void initView() {
-
+        vp_images = (ViewPager) findViewById(R.id.vp_images);
         FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        vp_images.setAdapter(new MyFragmentPagerAdapter(fm));
 
-//        fragmentTransaction.replace(android.R.id.content, getFragment1());
 
-        fragmentTransaction.commit();
+//        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+//
+////        fragmentTransaction.replace(android.R.id.content, getFragment1());
+//
+//        fragmentTransaction.commit();
 
     }
 
