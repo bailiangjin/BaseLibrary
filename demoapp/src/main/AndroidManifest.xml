@@ -38,6 +38,12 @@
             android:name=".ui.demo.fragmentdemo.FragmentAdapterDemos"
 
             android:label="FragmentAdapterDemos" />
+        <!--DynamicPageActivity-->
+        <activity
+            android:name=".ui.demo.dynamicpage.DynamicPageActivity"
+
+            android:label="DynamicPageActivity" />
+
         <!--ViewPagerDemo-->
         <activity
             android:name=".ui.demo.viewpager.ViewPagerDemoActivity"
@@ -127,8 +133,6 @@
         <activity
             android:name=".ui.activity.LogoutActivity"
             android:label="@string/logout" />
-
-
 
 
     </application>

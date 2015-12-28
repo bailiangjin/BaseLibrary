@@ -14,7 +14,7 @@ public class PageUtil {
     /**
      * 是否循环
      */
-    public static final boolean isCycle = true;
+    public static final boolean isCycle = false;
 
     /**
      * 获取ViewPage适配器数据 ViewPage List

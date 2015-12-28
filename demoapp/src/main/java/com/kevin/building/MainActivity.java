@@ -8,7 +8,7 @@ import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.ui.activity.LoginActivity;
-import com.kevin.building.ui.demo.fragmentdemo.FragmentAdapterDemos;
+import com.kevin.building.ui.demo.dynamicpage.DynamicPageActivity;
 import com.kevin.building.ui.demo.fragmentdemo.MyFragmentActivity;
 import com.kevin.building.ui.demo.launchmode.LaunchModeActivity1;
 import com.kevin.building.ui.demo.networkdemo.NetworkActivity;
@@ -108,7 +108,7 @@ public class MainActivity extends BtnBaseActivity {
 
             case R.id.btn8:
                show("点击了当前测试");
-                ActivityUtils.startActivity(this, FragmentAdapterDemos.class);
+                ActivityUtils.startActivity(this, DynamicPageActivity.class);
 
                 break;
 
