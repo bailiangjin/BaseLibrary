@@ -8,7 +8,7 @@ import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.ui.activity.LoginActivity;
-import com.kevin.building.ui.demo.dynamicpage.DynamicPageActivity;
+import com.kevin.building.ui.demo.dynamic.DynamicPageActivity;
 import com.kevin.building.ui.demo.fragmentdemo.MyFragmentActivity;
 import com.kevin.building.ui.demo.launchmode.LaunchModeActivity1;
 import com.kevin.building.ui.demo.networkdemo.NetworkActivity;

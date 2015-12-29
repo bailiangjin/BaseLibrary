@@ -40,7 +40,7 @@
             android:label="FragmentAdapterDemos" />
         <!--DynamicPageActivity-->
         <activity
-            android:name=".ui.demo.dynamicpage.DynamicPageActivity"
+            android:name=".ui.demo.dynamic.DynamicPageActivity"
 
             android:label="DynamicPageActivity" />
 
