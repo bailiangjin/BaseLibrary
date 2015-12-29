@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.kevin.building.R;
+import com.kevin.building.ui.demo.dynamic.bean.EssentialItem;
 
 import java.util.List;
 
@@ -49,14 +50,7 @@ public class EssentialAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         convertView = mInflater.inflate(R.layout.item_essential_gridview, null);
         TextView mTextView = (TextView) convertView.findViewById(R.id.tv_name);
-
         mTextView.setText((CharSequence) list.get(position).getTxtName());
-
-//        if(position == mHidePosition){
-//            convertView.setVisibility(View.INVISIBLE);
-//        }
-
         return convertView;
-//        return null;
     }
 }

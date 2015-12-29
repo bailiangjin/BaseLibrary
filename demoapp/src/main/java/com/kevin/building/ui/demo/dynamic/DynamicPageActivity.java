@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic;
 
 import android.os.Message;
-import android.view.Gravity;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridView;
@@ -10,8 +10,13 @@ import android.widget.TextView;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.ui.demo.dynamic.bean.EssentialItem;
+import com.kevin.building.ui.demo.dynamic.bean.IndexPageDataBean;
+import com.kevin.building.ui.demo.dynamic.bean.enumtype.ItemType;
+import com.kevin.building.utils.ActivityUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -28,8 +33,9 @@ public class DynamicPageActivity extends BaseActivity {
     private EssentialAdapter essentialAdapter;
 
     private List<EssentialItem> essentialItemList = new ArrayList<>();
+    private List<EssentialItem> inessentialItemList = new ArrayList<>();
 
-    private  LayoutInflater layoutInflater;
+    private LayoutInflater layoutInflater;
 
 
     @Override
@@ -39,29 +45,53 @@ public class DynamicPageActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
         layoutInflater = LayoutInflater.from(this);
-
-        // 创建LinearLayout对象
-        LinearLayout mLinearLayout = (LinearLayout) layoutInflater.inflate(R.layout.ctn_ll,null);
-
-
+        // 创建LinearLayout 作为根View
+        LinearLayout mLinearLayout = (LinearLayout) layoutInflater.inflate(R.layout.ctn_ll, null);
         setContentView(mLinearLayout);
 
-        // 创建TextView对象
-        TextView mTextView = (TextView) layoutInflater.inflate(R.layout.ctn_textview,null);
-        // 设置文字
-        mTextView.setText("hello world");
-        mTextView.setGravity(Gravity.CENTER_HORIZONTAL);
-        // 在父类布局中添加它，及布局样式
-        mLinearLayout.addView(mTextView);
-
-        gv_essential = (GridView) layoutInflater.inflate(R.layout.ctn_gridview, null);
-        mLinearLayout.addView(gv_essential);
-
+        TextView tv_must = DynamicViewGenerater.getTitleTextView(this, "必拍");
+        TextView tv_not_must = DynamicViewGenerater.getTitleTextView(this, "非必拍");
         initData();
 
+        IndexPageDataBean bean = new IndexPageDataBean();
+        bean.setEssentialList(essentialItemList);
+        bean.setInessentialList(inessentialItemList);
+
+        bean.setEsTitle("必拍");
+        bean.setEsTitle("非必拍");
+
+        ClickCallback esCallback = getClickCallback(this,essentialItemList);
+        ClickCallback inesCallback = getClickCallback(this,inessentialItemList);
+
+        gv_essential = DynamicViewGenerater.getGridView(this,esCallback);
+        gv_inessential = DynamicViewGenerater.getGridView(this,inesCallback);
+
+
+        // 在父类布局中添加它，及布局样式
+        mLinearLayout.addView(tv_must);
+        mLinearLayout.addView(gv_essential);
+        mLinearLayout.addView(tv_not_must);
+
+        mLinearLayout.addView(gv_inessential);
         gv_essential.setAdapter(new EssentialAdapter(DynamicPageActivity.this, essentialItemList));
+        gv_inessential.setAdapter(new EssentialAdapter(DynamicPageActivity.this, inessentialItemList));
+
+
+    }
+
+    @NonNull
+    private ClickCallback getClickCallback(final BaseActivity activity,final List<EssentialItem> list) {
+        return new ClickCallback() {
+                @Override
+                public void onClick(int position) {
+                   EssentialItem item = list.get(position);
+                    HashMap<String,String> paramMap = new HashMap<>();
+                    paramMap.put("name",item.getTxtName());
+                    ActivityUtils.startActivity(activity, DetailActivity.class,paramMap);
+
+                }
+            };
     }
 
     private void initData() {
@@ -70,8 +100,15 @@ public class DynamicPageActivity extends BaseActivity {
         for (int i = 0; i < 4; i++) {
             EssentialItem essentialItem = new EssentialItem();
             essentialItem.setItemType(ItemType.BUTTON);
-            essentialItem.setTxtName("按钮" + (i + 1));
+            essentialItem.setTxtName("必拍" + (i + 1));
             essentialItemList.add(essentialItem);
+        }
+        inessentialItemList.clear();
+        for (int i = 0; i < 7; i++) {
+            EssentialItem essentialItem = new EssentialItem();
+            essentialItem.setItemType(ItemType.BUTTON);
+            essentialItem.setTxtName("非必拍" + (i + 1));
+            inessentialItemList.add(essentialItem);
         }
     }
 

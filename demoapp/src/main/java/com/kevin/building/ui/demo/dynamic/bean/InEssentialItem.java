@@ -1,6 +1,4 @@
-package com.kevin.building.ui.demo.dynamic;
-
-import com.kevin.building.ui.demo.dynamic.EssentialItem;
+package com.kevin.building.ui.demo.dynamic.bean;
 
 /**
  * 非必须条目

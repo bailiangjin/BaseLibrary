@@ -33,6 +33,11 @@
             android:name=".MainActivity"
             android:label="@string/main_page"></activity>
 
+        <!--DetailActivity-->
+        <activity
+            android:name=".ui.demo.dynamic.DetailActivity"
+
+            android:label="DetailActivity" />
         <!--FragmentAdapterDemos-->
         <activity
             android:name=".ui.demo.fragmentdemo.FragmentAdapterDemos"

@@ -1,6 +1,8 @@
-package com.kevin.building.ui.demo.dynamic;
+package com.kevin.building.ui.demo.dynamic.bean;
 
 import android.view.View;
+
+import com.kevin.building.ui.demo.dynamic.bean.enumtype.ItemType;
 
 /**
  * Author:  liangjin.bai

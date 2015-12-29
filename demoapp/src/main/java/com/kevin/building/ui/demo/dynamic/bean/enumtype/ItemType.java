@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic;
+package com.kevin.building.ui.demo.dynamic.bean.enumtype;
 
 /**
  * Author:  liangjin.bai
@@ -9,6 +9,8 @@ public enum ItemType {
     BUTTON("BUTTON"),
     RADIO_BUTTON("RADIO_BUTTON"),
     CHECKBOX("CHECKBOX"),
+    GRIDVIEW("GRIDVIEW"),
+    EDITTEXT("EDITTEXT"),
     TEXTVIEW("TEXTVIEW");
 
     private String value;

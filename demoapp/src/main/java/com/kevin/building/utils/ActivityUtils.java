@@ -3,9 +3,12 @@ package com.kevin.building.utils;
 import android.content.Intent;
 
 import com.kevin.building.MainActivity;
-import com.kevin.building.ui.demo.dbtest.DatabaseActivity;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.ui.demo.dbtest.DatabaseActivity;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 
@@ -30,6 +33,19 @@ public class ActivityUtils
 	public static void startActivity(BaseActivity context,Class activityClass)
 	{
 		Intent intent = new Intent(context, activityClass);
+		startActivity(context, intent);
+	}
+
+	public static void startActivity(BaseActivity context,Class activityClass,HashMap<String,String> paramMap)
+	{
+		Intent intent = new Intent(context, activityClass);
+		String key,value;
+		for (Map.Entry<String,String> entry:paramMap.entrySet()) {
+			key=entry.getKey();
+			value= entry.getValue();
+			intent.putExtra(key,value);
+		}
+
 		startActivity(context, intent);
 	}
 
