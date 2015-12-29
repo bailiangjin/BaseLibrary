@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.demo.dynamicpage.EssentialAdapter;
-import com.kevin.building.ui.demo.dynamicpage.EssentialItem;
-import com.kevin.building.ui.demo.dynamicpage.ItemType;
 
 import java.util.ArrayList;
 import java.util.List;
