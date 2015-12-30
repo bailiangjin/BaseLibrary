@@ -1,9 +1,9 @@
 package com.kevin.building.ui.demo.dynamic.bean;
 
-import com.kevin.building.ui.demo.dynamic.bean.enumtype.ItemType;
-import com.kevin.building.ui.demo.dynamic.bean.enumtype.view.BaseEditText;
-import com.kevin.building.ui.demo.dynamic.bean.enumtype.view.BaseGridView;
-import com.kevin.building.ui.demo.dynamic.bean.enumtype.view.BaseTextView;
+import com.kevin.building.ui.demo.dynamic.enumtype.ItemType;
+import com.kevin.building.ui.demo.dynamic.view.BaseEditText;
+import com.kevin.building.ui.demo.dynamic.view.BaseGridView;
+import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
 
 /**
  * Author:  liangjin.bai

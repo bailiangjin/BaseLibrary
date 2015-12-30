@@ -6,13 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.ui.demo.dynamic.bean.EssentialItem;
 import com.kevin.building.ui.demo.dynamic.bean.IndexPageDataBean;
-import com.kevin.building.ui.demo.dynamic.bean.enumtype.ItemType;
+import com.kevin.building.ui.demo.dynamic.enumtype.ItemType;
+import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
 import com.kevin.building.utils.ActivityUtils;
 
 import java.util.ArrayList;
@@ -50,8 +50,8 @@ public class DynamicPageActivity extends BaseActivity {
         LinearLayout mLinearLayout = (LinearLayout) layoutInflater.inflate(R.layout.ctn_ll, null);
         setContentView(mLinearLayout);
 
-        TextView tv_must = DynamicViewGenerater.getTitleTextView(this, "必拍");
-        TextView tv_not_must = DynamicViewGenerater.getTitleTextView(this, "非必拍");
+        BaseTextView tv_must = DynamicViewGenerater.getTitleTextView(this, "必拍");
+        BaseTextView tv_not_must = DynamicViewGenerater.getTitleTextView(this, "非必拍");
         initData();
 
         IndexPageDataBean bean = new IndexPageDataBean();

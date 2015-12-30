@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean.enumtype;
+package com.kevin.building.ui.demo.dynamic.enumtype;
 
 /**
  * Author:  liangjin.bai

@@ -1,4 +1,6 @@
-package com.kevin.building.ui.demo.dynamic.bean.enumtype.view;
+package com.kevin.building.ui.demo.dynamic.view;
+
+import android.content.Context;
 
 import java.util.List;
 
@@ -10,6 +12,25 @@ import java.util.List;
 public class BaseGridView extends BaseView {
 
     private List<BaseButton> btnList;
+
+    public BaseGridView(Context context) {
+        super(context);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return 0;
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initLogic() {
+
+    }
 
     public List<BaseButton> getBtnList() {
         return btnList;

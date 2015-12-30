@@ -2,7 +2,7 @@ package com.kevin.building.ui.demo.dynamic.bean;
 
 import android.view.View;
 
-import com.kevin.building.ui.demo.dynamic.bean.enumtype.ItemType;
+import com.kevin.building.ui.demo.dynamic.enumtype.ItemType;
 
 /**
  * Author:  liangjin.bai

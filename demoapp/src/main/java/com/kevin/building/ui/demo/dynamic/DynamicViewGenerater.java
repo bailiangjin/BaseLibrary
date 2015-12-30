@@ -1,16 +1,15 @@
 package com.kevin.building.ui.demo.dynamic;
 
 import android.content.Context;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
 
 import com.kevin.building.R;
 import com.kevin.building.ui.demo.dynamic.bean.BaseItem;
-import com.kevin.building.ui.demo.dynamic.bean.enumtype.ItemType;
+import com.kevin.building.ui.demo.dynamic.enumtype.ItemType;
+import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
 
 /**
  * Author:  liangjin.bai
@@ -25,8 +24,7 @@ public class DynamicViewGenerater {
             case TEXTVIEW:
                 return getTitleTextView(context, baseItem.getBaseTextView().getTextContent());
             case GRIDVIEW:
-                return getTitleTextView(context, baseItem.getBaseTextView().getTextContent());
-
+                return new BaseTextView(context, baseItem.getBaseTextView().getTextContent());
             default:
                 return null;
         }
@@ -34,15 +32,17 @@ public class DynamicViewGenerater {
 
     }
 
-    public static TextView getTitleTextView(Context context, String title) {
+    public static BaseTextView getTitleTextView(Context context, String title) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        // 创建TextView对象
-        TextView mTextView = (TextView) layoutInflater.inflate(R.layout.ctn_textview, null);
-        // 设置文字
-        mTextView.setText(title);
-        mTextView.setGravity(Gravity.CENTER_HORIZONTAL);
-        return mTextView;
+//        LayoutInflater layoutInflater = LayoutInflater.from(context);
+//        // 创建TextView对象
+//        TextView mTextView = (TextView) layoutInflater.inflate(R.layout.ctn_textview, null);
+//        // 设置文字
+//        mTextView.setText(title);
+//        mTextView.setGravity(Gravity.CENTER_HORIZONTAL);
+//        return mTextView;
+
+        return new BaseTextView(context, title);
     }
 
 
