@@ -5,10 +5,11 @@ import android.content.Context;
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
- * Create Time: 2015/12/29 15:35
+ * Create Time: 2016/1/4 17:48
  */
-public class BaseRadieoButton extends BaseView{
-    public BaseRadieoButton(Context context) {
+public class MyCheckboxGroup extends BaseView {
+
+    public MyCheckboxGroup(Context context) {
         super(context);
     }
 

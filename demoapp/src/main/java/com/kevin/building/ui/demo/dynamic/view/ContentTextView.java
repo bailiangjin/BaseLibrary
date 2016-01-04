@@ -8,6 +8,7 @@ import android.content.Context;
  * Create Time: 2015/12/29 14:09
  */
 public class ContentTextView extends BaseTextView {
+
     public ContentTextView(Context context) {
         super(context);
     }
