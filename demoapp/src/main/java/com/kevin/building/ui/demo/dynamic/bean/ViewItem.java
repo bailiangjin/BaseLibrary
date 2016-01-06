@@ -10,9 +10,9 @@ import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 12:57
  */
-public class BaseItem {
+public class ViewItem {
 
-    private ItemType type;
+    private ItemType itemType;
 
     private BaseGridView gridView;
 
@@ -21,12 +21,12 @@ public class BaseItem {
     private BaseEditText baseEditText;
 
 
-    public ItemType getType() {
-        return type;
+    public ItemType getItemType() {
+        return itemType;
     }
 
-    public void setType(ItemType type) {
-        this.type = type;
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
     }
 
     public BaseGridView getGridView() {

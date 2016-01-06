@@ -7,7 +7,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.kevin.building.R;
-import com.kevin.building.ui.demo.dynamic.bean.BaseItem;
+import com.kevin.building.ui.demo.dynamic.bean.ViewItem;
 import com.kevin.building.ui.demo.dynamic.enumtype.ItemType;
 import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
 
@@ -18,8 +18,8 @@ import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
  */
 public class DynamicViewGenerater {
 
-    public static View getView(Context context, BaseItem baseItem) {
-        ItemType itemType = baseItem.getType();
+    public static View getView(Context context, ViewItem baseItem) {
+        ItemType itemType = baseItem.getItemType();
         switch (itemType) {
             case TEXTVIEW:
                 return getTitleTextView(context, baseItem.getBaseTextView().getTextContent());
