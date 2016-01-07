@@ -25,6 +25,8 @@ public class Test {
         testPinyin();
         testTimes(5);
 
+        System.out.println("" + (1 << 30));
+
         testJson();
     }
 
@@ -38,7 +40,7 @@ public class Test {
             viewBean.setItemType(type);
             switch (type) {
                 case ItemType.TEXT:
-                   TextItem textItem =  new TextItem();
+                    TextItem textItem = new TextItem();
                     viewBean.setTextItem(textItem);
                     break;
                 case ItemType.ET:
@@ -50,7 +52,7 @@ public class Test {
                 case ItemType.BTN_GROUP:
                     BtnGroup btnGroup = new BtnGroup();
 
-                    List<BtnItem> btnItemList =new ArrayList<>();
+                    List<BtnItem> btnItemList = new ArrayList<>();
                     btnItemList.add(new BtnItem());
                     btnItemList.add(new BtnItem());
                     btnItemList.add(new BtnItem());
@@ -73,7 +75,7 @@ public class Test {
             list.add(viewBean);
         }
 
-       String json=  GsonUtils.getInstance().toJson(list);
+        String json = GsonUtils.getInstance().toJson(list);
 
         System.out.println(json);
     }
