@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.view.viewbean.constants;
+package com.kevin.building.ui.demo.dynamic.viewbean.constants;
 
 /**
  * Author:  liangjin.bai

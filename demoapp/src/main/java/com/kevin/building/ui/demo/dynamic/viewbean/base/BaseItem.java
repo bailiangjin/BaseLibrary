@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.view.viewbean.base;
+package com.kevin.building.ui.demo.dynamic.viewbean.base;
 
 /**
  * Author:  liangjin.bai

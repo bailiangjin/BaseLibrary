@@ -1,8 +1,8 @@
-package com.kevin.building.ui.demo.dynamic.view.viewbean.group;
+package com.kevin.building.ui.demo.dynamic.viewbean.group;
 
-import com.kevin.building.ui.demo.dynamic.view.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.constants.ViewType;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.item.CBItem;
+import com.kevin.building.ui.demo.dynamic.viewbean.base.BaseItem;
+import com.kevin.building.ui.demo.dynamic.viewbean.constants.ViewType;
+import com.kevin.building.ui.demo.dynamic.viewbean.item.CBItem;
 
 import java.util.List;
 

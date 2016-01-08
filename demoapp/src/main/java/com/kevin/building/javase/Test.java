@@ -2,14 +2,14 @@ package com.kevin.building.javase;
 
 import com.kevin.baselibrary.utils.GsonUtils;
 import com.kevin.baselibrary.utils.PinyinUtils;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.ViewBean;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.constants.ItemType;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.group.BtnGroup;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.group.CBGroup;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.group.RBGroup;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.item.BtnItem;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.item.EditTextItem;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.item.TextItem;
+import com.kevin.building.ui.demo.dynamic.viewbean.ViewBean;
+import com.kevin.building.ui.demo.dynamic.viewbean.constants.ItemType;
+import com.kevin.building.ui.demo.dynamic.viewbean.group.BtnGroup;
+import com.kevin.building.ui.demo.dynamic.viewbean.group.CBGroup;
+import com.kevin.building.ui.demo.dynamic.viewbean.group.RBGroup;
+import com.kevin.building.ui.demo.dynamic.viewbean.item.BtnItem;
+import com.kevin.building.ui.demo.dynamic.viewbean.item.EditTextItem;
+import com.kevin.building.ui.demo.dynamic.viewbean.item.TextItem;
 
 import java.util.ArrayList;
 import java.util.List;

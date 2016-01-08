@@ -1,8 +1,8 @@
-package com.kevin.building.ui.demo.dynamic.view.viewbean.group;
+package com.kevin.building.ui.demo.dynamic.viewbean.group;
 
-import com.kevin.building.ui.demo.dynamic.view.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.constants.ViewType;
-import com.kevin.building.ui.demo.dynamic.view.viewbean.item.BtnItem;
+import com.kevin.building.ui.demo.dynamic.viewbean.base.BaseItem;
+import com.kevin.building.ui.demo.dynamic.viewbean.constants.ViewType;
+import com.kevin.building.ui.demo.dynamic.viewbean.item.BtnItem;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 16:12
  */
-public class BtnGroup extends BaseItem{
+public class BtnGroup extends BaseItem {
 
     private List<BtnItem> btnList;
 
