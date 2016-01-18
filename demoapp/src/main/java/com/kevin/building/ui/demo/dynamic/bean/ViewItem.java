@@ -1,6 +1,5 @@
 package com.kevin.building.ui.demo.dynamic.bean;
 
-import com.kevin.building.ui.demo.dynamic.enumtype.ItemType;
 import com.kevin.building.ui.demo.dynamic.view.BaseEditText;
 import com.kevin.building.ui.demo.dynamic.view.BaseGridView;
 import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
@@ -12,7 +11,7 @@ import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
  */
 public class ViewItem {
 
-    private ItemType itemType;
+    private int itemType;
 
     private BaseGridView gridView;
 
@@ -21,11 +20,11 @@ public class ViewItem {
     private BaseEditText baseEditText;
 
 
-    public ItemType getItemType() {
+    public int getItemType() {
         return itemType;
     }
 
-    public void setItemType(ItemType itemType) {
+    public void setItemType(int itemType) {
         this.itemType = itemType;
     }
 

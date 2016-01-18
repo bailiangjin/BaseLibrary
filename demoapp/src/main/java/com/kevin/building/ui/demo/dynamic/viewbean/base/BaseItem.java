@@ -50,9 +50,10 @@ public abstract class BaseItem {
     }
 
     public void setDefaultData() {
-        setId(String.valueOf(System.currentTimeMillis()));
-        setIndex("view说明");
+//        setId(String.valueOf(System.currentTimeMillis()));
+//        setIndex("view说明");
         setParamJson("Json参数");
+
     }
 
     abstract public void setDefaultViewType();

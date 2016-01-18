@@ -2,6 +2,9 @@ package com.kevin.building.ui.demo.dynamic.view;
 
 import android.content.Context;
 
+import com.kevin.building.ui.demo.dynamic.view.base.BaseButton;
+import com.kevin.building.ui.demo.dynamic.view.base.BaseView;
+
 import java.util.List;
 
 /**

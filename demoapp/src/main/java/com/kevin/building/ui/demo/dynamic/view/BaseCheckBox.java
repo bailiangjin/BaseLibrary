@@ -2,6 +2,8 @@ package com.kevin.building.ui.demo.dynamic.view;
 
 import android.content.Context;
 
+import com.kevin.building.ui.demo.dynamic.view.base.BaseView;
+
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com

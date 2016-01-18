@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.view;
+package com.kevin.building.ui.demo.dynamic.view.base;
 
 import android.content.Context;
 import android.view.LayoutInflater;

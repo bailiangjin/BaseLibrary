@@ -4,13 +4,14 @@ import android.content.Context;
 import android.widget.TextView;
 
 import com.kevin.building.R;
+import com.kevin.building.ui.demo.dynamic.view.base.BaseView;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 14:05
  */
-public class BaseTextView extends BaseView{
+public class BaseTextView extends BaseView {
 
     private TextView tv_index;
 

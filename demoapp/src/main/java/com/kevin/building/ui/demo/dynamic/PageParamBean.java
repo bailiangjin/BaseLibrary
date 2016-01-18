@@ -1,4 +1,6 @@
-package com.kevin.building.ui.demo.dynamic.viewbean;
+package com.kevin.building.ui.demo.dynamic;
+
+import com.kevin.building.ui.demo.dynamic.viewbean.ViewBean;
 
 import java.util.List;
 

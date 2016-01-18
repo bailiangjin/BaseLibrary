@@ -2,6 +2,8 @@ package com.kevin.building.ui.demo.dynamic.view;
 
 import android.content.Context;
 
+import com.kevin.building.ui.demo.dynamic.view.base.BaseView;
+
 import java.util.List;
 
 /**
@@ -9,7 +11,7 @@ import java.util.List;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 15:34
  */
-public class MyRadioGroup extends BaseView{
+public class MyRadioGroup extends BaseView {
 
     private List<BaseRadioButton> rbList;
 
