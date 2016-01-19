@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
+
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
@@ -15,9 +17,10 @@ abstract public class BaseView extends FrameLayout {
     private String textContent;
     private String paramJson;
 
-    public BaseView(Context context) {
+    public BaseView(Context context, BaseItem baseItem) {
         super(context);
         LayoutInflater.from(context).inflate(getLayoutId(), this);
+        initBase(baseItem);
         initView();
         initLogic();
     }
@@ -47,6 +50,8 @@ abstract public class BaseView extends FrameLayout {
     }
 
     abstract protected int getLayoutId();
+
+    abstract protected void initBase(BaseItem baseItem);
 
     abstract protected void initView();
 

@@ -2,6 +2,7 @@ package com.kevin.building.ui.demo.dynamic.view;
 
 import android.content.Context;
 
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.ui.demo.dynamic.view.base.BaseView;
 
 /**
@@ -11,13 +12,19 @@ import com.kevin.building.ui.demo.dynamic.view.base.BaseView;
  */
 public class MyCheckboxGroup extends BaseView {
 
-    public MyCheckboxGroup(Context context) {
-        super(context);
+
+    public MyCheckboxGroup(Context context, BaseItem baseItem) {
+        super(context, baseItem);
     }
 
     @Override
     protected int getLayoutId() {
         return 0;
+    }
+
+    @Override
+    protected void initBase(BaseItem baseItem) {
+
     }
 
     @Override

@@ -1,7 +1,8 @@
-package com.kevin.building.ui.demo.dynamic.view;
+package com.kevin.building.ui.demo.dynamic.view.base;
 
 import android.content.Context;
 
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.ui.demo.dynamic.view.base.BaseButton;
 import com.kevin.building.ui.demo.dynamic.view.base.BaseView;
 
@@ -16,13 +17,19 @@ public class BaseGridView extends BaseView {
 
     private List<BaseButton> btnList;
 
-    public BaseGridView(Context context) {
-        super(context);
+    public BaseGridView(Context context, BaseItem baseItem) {
+        super(context, baseItem);
     }
+
 
     @Override
     protected int getLayoutId() {
         return 0;
+    }
+
+    @Override
+    protected void initBase(BaseItem baseItem) {
+
     }
 
     @Override

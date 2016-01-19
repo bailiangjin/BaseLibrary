@@ -9,7 +9,21 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
  * Create Time: 2016/1/6 15:57
  */
 public class TextItem extends BaseItem {
+    /**
+     * 文本类型
+     */
     private int txtType;
+
+    /**
+     * 居中17=Gravity.CENTER 靠左3=Gravity.LEFT 靠右5=Gravity.RIGHT
+     */
+    private  int gravity;
+
+    /**
+     * 文字大小 dp
+     */
+    private  int textSize;
+
 
     public int getTxtType() {
         return txtType;
@@ -17,6 +31,22 @@ public class TextItem extends BaseItem {
 
     public void setTxtType(int txtType) {
         this.txtType = txtType;
+    }
+
+    public int getGravity() {
+        return gravity;
+    }
+
+    public void setGravity(int gravity) {
+        this.gravity = gravity;
+    }
+
+    public int getTextSize() {
+        return textSize;
+    }
+
+    public void setTextSize(int textSize) {
+        this.textSize = textSize;
     }
 
     @Override

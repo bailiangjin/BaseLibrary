@@ -10,12 +10,26 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
  */
 public class EditTextItem extends BaseItem {
     private String content;
-
+    private String hint;
 
     @Override
     public void setDefaultViewType() {
         setViewType(ViewType.ET);
     }
 
+    public String getContent() {
+        return content;
+    }
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getHint() {
+        return hint;
+    }
+
+    public void setHint(String hint) {
+        this.hint = hint;
+    }
 }

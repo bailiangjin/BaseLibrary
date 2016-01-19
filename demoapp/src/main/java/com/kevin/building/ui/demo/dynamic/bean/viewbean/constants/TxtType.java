@@ -21,7 +21,7 @@ public class TxtType {
     public static final int CLASS_NAME =1;
 
     /**
-     * 详细描述样式 居中 小字体
+     * 详细内容文本样式 居中 小字体
      */
-    public static final int DESCRIPTION =2;
+    public static final int CONTENT =2;
 }

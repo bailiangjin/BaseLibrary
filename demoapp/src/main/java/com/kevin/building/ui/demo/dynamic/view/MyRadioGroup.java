@@ -2,6 +2,8 @@ package com.kevin.building.ui.demo.dynamic.view;
 
 import android.content.Context;
 
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
+import com.kevin.building.ui.demo.dynamic.view.base.BaseRadioButton;
 import com.kevin.building.ui.demo.dynamic.view.base.BaseView;
 
 import java.util.List;
@@ -15,14 +17,19 @@ public class MyRadioGroup extends BaseView {
 
     private List<BaseRadioButton> rbList;
 
-
-    public MyRadioGroup(Context context) {
-        super(context);
+    public MyRadioGroup(Context context, BaseItem baseItem) {
+        super(context, baseItem);
     }
+
 
     @Override
     protected int getLayoutId() {
         return 0;
+    }
+
+    @Override
+    protected void initBase(BaseItem baseItem) {
+
     }
 
     @Override

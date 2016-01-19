@@ -1,7 +1,11 @@
 package com.kevin.building.ui.demo.dynamic.view.base;
 
 import android.content.Context;
-import android.view.View;
+import android.widget.TextView;
+
+import com.kevin.building.R;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 
 /**
  * Author:  liangjin.bai
@@ -10,21 +14,30 @@ import android.view.View;
  */
 public class BaseButton extends BaseView {
 
-    private String text;
-    private View.OnClickListener onClickListener;
+    private TextView tv_index;
 
+    private BtnItem btnItem;
 
-    public BaseButton(Context context) {
-        super(context);
+    public BaseButton(Context context, BaseItem baseItem) {
+        super(context, baseItem);
     }
+
 
     @Override
     protected int getLayoutId() {
-        return 0;
+        return R.layout.ctn_button;
+    }
+
+    @Override
+    protected void initBase(BaseItem baseItem) {
+        btnItem= (BtnItem) baseItem;
     }
 
     @Override
     protected void initView() {
+        tv_index= (TextView) findViewById(R.id.tv_index);
+
+        tv_index.setText(btnItem.getIndex());
 
     }
 

@@ -8,12 +8,20 @@ import android.widget.GridView;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.demo.dynamic.callback.ClickCallback;
 import com.kevin.building.ui.demo.dynamic.adapter.BtnSkipGroupAdapter;
-import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.TxtType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
+import com.kevin.building.ui.demo.dynamic.callback.ClickCallback;
+import com.kevin.building.ui.demo.dynamic.view.base.AbsBaseTextView;
+import com.kevin.building.ui.demo.dynamic.view.base.BaseButton;
+import com.kevin.building.ui.demo.dynamic.view.base.BaseEditText;
+import com.kevin.building.ui.demo.dynamic.view.textview.ClassNameTextView;
+import com.kevin.building.ui.demo.dynamic.view.textview.ContentTextView;
+import com.kevin.building.ui.demo.dynamic.view.textview.TitleTextView;
 
 import java.util.List;
 
@@ -36,9 +44,14 @@ public class DynamicViewGenerator {
         int itemType = viewBean.getItemType();
         switch (itemType) {
             case ItemType.TEXT:
-                return getTitleTextView(context, viewBean.getTextItem().getIndex());
+                return getTitleTextView(context, viewBean.getTextItem());
             case ItemType.BTN_GROUP:
                 return getBtnGroup(context, viewBean);
+            case ItemType.ET:
+                return getEditText(context, viewBean.getEditTextItem());
+
+            case ItemType.BTN:
+                return getButton(context, viewBean.getBtnItem());
             default:
                 return null;
         }
@@ -47,9 +60,40 @@ public class DynamicViewGenerator {
     }
 
 
-    private static BaseTextView getTitleTextView(Context context, String title) {
+    private static BaseButton getButton(Context context, BtnItem btnItem) {
 
-        return new BaseTextView(context, title);
+        if (null == btnItem || null == context) {
+            return null;
+        }
+        return new BaseButton(context, btnItem);
+    }
+
+    private static BaseEditText getEditText(Context context, EditTextItem editTextItem) {
+
+        if (null == editTextItem || null == context) {
+            return null;
+        }
+        return new BaseEditText(context, editTextItem);
+    }
+
+    private static AbsBaseTextView getTitleTextView(Context context, TextItem textItem) {
+
+        if (null == textItem || null == context) {
+            return null;
+        }
+        switch (textItem.getTxtType()) {
+            case TxtType.TITLE:
+                return new TitleTextView(context, textItem);
+
+            case TxtType.CLASS_NAME:
+                return new ClassNameTextView(context, textItem);
+
+            case TxtType.CONTENT:
+                return new ContentTextView(context, textItem);
+
+            default:
+                return null;
+        }
     }
 
 

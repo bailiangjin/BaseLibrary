@@ -12,14 +12,16 @@ import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.ui.demo.dynamic.bean.PageInfo;
 import com.kevin.building.ui.demo.dynamic.bean.PageParamBean;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.TxtType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
 import com.kevin.building.ui.demo.dynamic.generater.DynamicViewGenerator;
 import com.kevin.building.ui.demo.dynamic.generater.PagerBeanGenerator;
 import com.kevin.building.ui.demo.dynamic.generater.ViewBeanGenerator;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,22 +80,35 @@ public class DynamicPageActivity extends BaseActivity {
         }
 
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 4; i++) {
             BtnItem essentialItem = new BtnItem();
             essentialItem.setViewType(ItemType.BTN);
             essentialItem.setIndex("非必拍" + (i + 1));
             inessentialItemList.add(essentialItem);
         }
 
+        TextItem textTitle = new TextItem();
+        textTitle.setIndex("拍小区");
+        textTitle.setTxtType(TxtType.TITLE);
+        ViewBean txtTitle = ViewBeanGenerator.getViewBean(textTitle);
+
         TextItem textItemMust = new TextItem();
         textItemMust.setIndex("必拍");
+        textItemMust.setTxtType(TxtType.CLASS_NAME);
         ViewBean txtMust = ViewBeanGenerator.getViewBean(textItemMust);
+
         TextItem textItemNoMust = new TextItem();
         textItemNoMust.setIndex("非必拍");
+        textItemNoMust.setTxtType(TxtType.CLASS_NAME);
         ViewBean txtNoMust = ViewBeanGenerator.getViewBean(textItemNoMust);
 
         TextItem textItemNoMust1 = new TextItem();
-        textItemNoMust1.setIndex("爱拍不怕");
+        textItemNoMust1.setIndex("爱拍不拍爱拍不拍爱拍不拍爱拍不拍爱拍不拍爱拍不拍");
+        textItemNoMust1.setTxtType(TxtType.CONTENT);
+//        textItemNoMust1.setGravity(Gravity.RIGHT);
+        textItemNoMust1.setTextSize(12);
+
+
         ViewBean txtNoMust1 = ViewBeanGenerator.getViewBean(textItemNoMust1);
 
 
@@ -105,13 +120,28 @@ public class DynamicPageActivity extends BaseActivity {
         btnGroup_nomust.setBtnList(inessentialItemList);
         ViewBean viewBean_btnGroupNoMust = ViewBeanGenerator.getViewBean(btnGroup_nomust);
 
+        EditTextItem et1 = new EditTextItem();
+        et1.setViewType(ItemType.ET);
+        et1.setIndex("楼栋数");
+        et1.setHint("请输入楼栋数");
+        ViewBean viewBean_et = ViewBeanGenerator.getViewBean(et1);
+
+        BtnItem btn1 = new BtnItem();
+        btn1.setViewType(ItemType.BTN);
+        btn1.setIndex("保存");
+        ViewBean viewBean_btn1 = ViewBeanGenerator.getViewBean(btn1);
+
+
         List<ViewBean> viewBeanList = new ArrayList<>();
 
+        viewBeanList.add(txtTitle);
         viewBeanList.add(txtMust);
         viewBeanList.add(viewBean_btnGroupMust);
         viewBeanList.add(txtNoMust);
         viewBeanList.add(viewBean_btnGroupNoMust);
         viewBeanList.add(txtNoMust1);
+        viewBeanList.add(viewBean_et);
+        viewBeanList.add(viewBean_btn1);
 
         PageInfo pageInfo = new PageInfo();
 
