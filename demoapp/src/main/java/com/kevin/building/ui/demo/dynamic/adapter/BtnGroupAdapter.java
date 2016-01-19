@@ -17,7 +17,7 @@ import java.util.List;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/28 16:09
  */
-public class EssentialAdapter extends BaseAdapter {
+public class BtnGroupAdapter extends BaseAdapter {
 
     private LayoutInflater mInflater;
 
@@ -25,7 +25,7 @@ public class EssentialAdapter extends BaseAdapter {
 
 
 
-    public EssentialAdapter(Context context, List<BtnItem> list){
+    public BtnGroupAdapter(Context context, List<BtnItem> list){
         this.list = list;
         mInflater = LayoutInflater.from(context);
     }

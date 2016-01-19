@@ -9,7 +9,7 @@ import android.widget.GridView;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.ui.demo.dynamic.ClickCallback;
-import com.kevin.building.ui.demo.dynamic.adapter.EssentialAdapter;
+import com.kevin.building.ui.demo.dynamic.adapter.BtnGroupAdapter;
 import com.kevin.building.ui.demo.dynamic.bean.ViewItem;
 import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
 import com.kevin.building.ui.demo.dynamic.viewbean.ViewBean;
@@ -85,7 +85,7 @@ public class DynamicViewGenerater {
         List<BtnItem> btnItemList = viewBean.getBtnGroup().getBtnList();
         ClickCallback inesCallback = CallBackGenerater.getClickCallback(baseActivity, btnItemList);
         gridView = DynamicViewGenerater.getGridView(baseActivity, inesCallback);
-        gridView.setAdapter(new EssentialAdapter(baseActivity, btnItemList));
+        gridView.setAdapter(new BtnGroupAdapter(baseActivity, btnItemList));
         return gridView;
     }
 }
