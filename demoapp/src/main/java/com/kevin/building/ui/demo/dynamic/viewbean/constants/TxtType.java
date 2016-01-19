@@ -11,17 +11,17 @@ package com.kevin.building.ui.demo.dynamic.viewbean.constants;
 public class TxtType {
 
     /**
-     * 标题样式
+     * 标题样式 居中
      */
     public static final int TITLE =0;
 
     /**
-     * 小类名样式
+     * 分类名样式 靠左
      */
-    public static final int Index =2;
+    public static final int CLASS_NAME =1;
 
     /**
-     * 详细描述样式
+     * 详细描述样式 居中 小字体
      */
-    public static final int DESCRIPTION =3;
+    public static final int DESCRIPTION =2;
 }

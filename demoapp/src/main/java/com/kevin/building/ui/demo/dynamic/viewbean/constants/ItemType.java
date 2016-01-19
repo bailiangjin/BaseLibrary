@@ -1,6 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.viewbean.constants;
 
 /**
+ * ViewBean Item类型 数据相关 UI无关
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 17:08

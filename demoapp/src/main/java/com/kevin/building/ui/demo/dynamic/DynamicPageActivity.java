@@ -68,10 +68,11 @@ public class DynamicPageActivity extends BaseActivity {
         List<BtnItem> inessentialItemList = new ArrayList<>();
 
         for (int i = 0; i < 4; i++) {
-            BtnItem essentialItem = new BtnItem();
-            essentialItem.setViewType(ItemType.BTN);
-            essentialItem.setIndex("必拍" + (i + 1));
-            essentialItemList.add(essentialItem);
+            BtnItem btnItem = new BtnItem();
+            btnItem.setViewType(ItemType.BTN);
+            btnItem.setBtnType(ItemType.BTN);
+            btnItem.setIndex("必拍" + (i + 1));
+            essentialItemList.add(btnItem);
         }
 
 

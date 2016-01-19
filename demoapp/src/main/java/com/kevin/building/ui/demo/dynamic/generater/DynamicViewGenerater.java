@@ -10,7 +10,6 @@ import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.ui.demo.dynamic.ClickCallback;
 import com.kevin.building.ui.demo.dynamic.adapter.BtnGroupAdapter;
-import com.kevin.building.ui.demo.dynamic.bean.ViewItem;
 import com.kevin.building.ui.demo.dynamic.view.BaseTextView;
 import com.kevin.building.ui.demo.dynamic.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.viewbean.constants.ItemType;
@@ -39,29 +38,9 @@ public class DynamicViewGenerater {
 
     }
 
-    public static View getView(Context context, ViewItem baseItem) {
-        int itemType = baseItem.getItemType();
-        switch (itemType) {
-            case ItemType.TEXT:
-                return getTitleTextView(context, baseItem.getBaseTextView().getTextContent());
-            case  ItemType.BTN_GROUP:
-                return new BaseTextView(context, baseItem.getBaseTextView().getTextContent());
-            default:
-                return null;
-        }
 
-
-    }
 
     public static BaseTextView getTitleTextView(Context context, String title) {
-
-//        LayoutInflater layoutInflater = LayoutInflater.from(context);
-//        // 创建TextView对象
-//        TextView mTextView = (TextView) layoutInflater.inflate(R.layout.ctn_textview, null);
-//        // 设置文字
-//        mTextView.setText(title);
-//        mTextView.setGravity(Gravity.CENTER_HORIZONTAL);
-//        return mTextView;
 
         return new BaseTextView(context, title);
     }
