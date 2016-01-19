@@ -10,14 +10,16 @@ import com.kevin.baselibrary.utils.GsonUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.demo.dynamic.generater.DynamicViewGenerater;
-import com.kevin.building.ui.demo.dynamic.generater.PagerBeanGenerater;
-import com.kevin.building.ui.demo.dynamic.generater.ViewBeanGenerater;
-import com.kevin.building.ui.demo.dynamic.viewbean.ViewBean;
-import com.kevin.building.ui.demo.dynamic.viewbean.constants.ItemType;
-import com.kevin.building.ui.demo.dynamic.viewbean.group.BtnGroup;
-import com.kevin.building.ui.demo.dynamic.viewbean.item.BtnItem;
-import com.kevin.building.ui.demo.dynamic.viewbean.item.TextItem;
+import com.kevin.building.ui.demo.dynamic.bean.PageInfo;
+import com.kevin.building.ui.demo.dynamic.bean.PageParamBean;
+import com.kevin.building.ui.demo.dynamic.generater.DynamicViewGenerator;
+import com.kevin.building.ui.demo.dynamic.generater.PagerBeanGenerator;
+import com.kevin.building.ui.demo.dynamic.generater.ViewBeanGenerator;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +58,7 @@ public class DynamicPageActivity extends BaseActivity {
 
         List<ViewBean> viewBeanList = pageParamBean.getViewBeanList();
         for (ViewBean viewBean : viewBeanList) {
-            mLinearLayout.addView(DynamicViewGenerater.getView(DynamicPageActivity.this, viewBean));
+            mLinearLayout.addView(DynamicViewGenerator.getView(DynamicPageActivity.this, viewBean));
         }
 
     }
@@ -85,23 +87,23 @@ public class DynamicPageActivity extends BaseActivity {
 
         TextItem textItemMust = new TextItem();
         textItemMust.setIndex("必拍");
-        ViewBean txtMust = ViewBeanGenerater.getViewBean(textItemMust);
+        ViewBean txtMust = ViewBeanGenerator.getViewBean(textItemMust);
         TextItem textItemNoMust = new TextItem();
         textItemNoMust.setIndex("非必拍");
-        ViewBean txtNoMust = ViewBeanGenerater.getViewBean(textItemNoMust);
+        ViewBean txtNoMust = ViewBeanGenerator.getViewBean(textItemNoMust);
 
         TextItem textItemNoMust1 = new TextItem();
         textItemNoMust1.setIndex("爱拍不怕");
-        ViewBean txtNoMust1 = ViewBeanGenerater.getViewBean(textItemNoMust1);
+        ViewBean txtNoMust1 = ViewBeanGenerator.getViewBean(textItemNoMust1);
 
 
         BtnGroup btnGroup_must = new BtnGroup();
         btnGroup_must.setBtnList(essentialItemList);
-        ViewBean viewBean_btnGroupMust = ViewBeanGenerater.getViewBean(btnGroup_must);
+        ViewBean viewBean_btnGroupMust = ViewBeanGenerator.getViewBean(btnGroup_must);
 
         BtnGroup btnGroup_nomust = new BtnGroup();
         btnGroup_nomust.setBtnList(inessentialItemList);
-        ViewBean viewBean_btnGroupNoMust = ViewBeanGenerater.getViewBean(btnGroup_nomust);
+        ViewBean viewBean_btnGroupNoMust = ViewBeanGenerator.getViewBean(btnGroup_nomust);
 
         List<ViewBean> viewBeanList = new ArrayList<>();
 
@@ -111,9 +113,11 @@ public class DynamicPageActivity extends BaseActivity {
         viewBeanList.add(viewBean_btnGroupNoMust);
         viewBeanList.add(txtNoMust1);
 
+        PageInfo pageInfo = new PageInfo();
 
-        pageParamBean = PagerBeanGenerater.getViewBean(viewBeanList);
-        LogUtils.e("myjson:"+GsonUtils.getInstance().toJson(pageParamBean));
+
+        pageParamBean = PagerBeanGenerator.getViewBean(pageInfo, viewBeanList);
+        LogUtils.e("pageParamBeanJson:" + GsonUtils.getInstance().toJson(pageParamBean));
 
     }
 

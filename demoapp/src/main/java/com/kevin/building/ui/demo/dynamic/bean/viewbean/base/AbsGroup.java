@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.viewbean.base;
+package com.kevin.building.ui.demo.dynamic.bean.viewbean.base;
 
 /**
  * 作者：bailiangjin  bailiangjin@gmail.com

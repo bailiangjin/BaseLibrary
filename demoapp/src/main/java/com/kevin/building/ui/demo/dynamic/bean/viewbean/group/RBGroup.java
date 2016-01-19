@@ -1,12 +1,13 @@
-package com.kevin.building.ui.demo.dynamic.viewbean.group;
+package com.kevin.building.ui.demo.dynamic.bean.viewbean.group;
 
-import com.kevin.building.ui.demo.dynamic.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.viewbean.constants.ViewType;
-import com.kevin.building.ui.demo.dynamic.viewbean.item.RBItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.RBItem;
 
 import java.util.List;
 
 /**
+ * RadioButton Group
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 16:08

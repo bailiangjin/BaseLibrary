@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.viewbean.constants;
+package com.kevin.building.ui.demo.dynamic.bean.viewbean.constants;
 
 /**
  * ViewBean Item类型 数据相关 UI无关

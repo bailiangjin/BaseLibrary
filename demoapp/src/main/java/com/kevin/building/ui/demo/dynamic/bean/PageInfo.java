@@ -1,18 +1,14 @@
-package com.kevin.building.ui.demo.dynamic;
-
-import com.kevin.building.ui.demo.dynamic.viewbean.ViewBean;
-
-import java.util.List;
+package com.kevin.building.ui.demo.dynamic.bean;
 
 /**
+ * 页面基本信息类
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
- * Create Time: 2015/12/28 14:23
+ * Create Time: 2016/1/19 10:32
  */
-public class PageParamBean {
+public class PageInfo {
 
-
-   /* {
+     /* {
         "baseId":"683848708101509120",
             "basePackageId":"683848707761770496",
             "basePackageName":"软件园(测试超市)22",
@@ -100,11 +96,6 @@ public class PageParamBean {
      * 最大采集次数
      */
     private int maxCount;
-
-    /**
-     * 界面元素列表
-     */
-    private List<ViewBean> viewBeanList;
 
     public String getOwnerId() {
         return ownerId;
@@ -210,11 +201,4 @@ public class PageParamBean {
         this.maxCount = maxCount;
     }
 
-    public List<ViewBean> getViewBeanList() {
-        return viewBeanList;
-    }
-
-    public void setViewBeanList(List<ViewBean> viewBeanList) {
-        this.viewBeanList = viewBeanList;
-    }
 }

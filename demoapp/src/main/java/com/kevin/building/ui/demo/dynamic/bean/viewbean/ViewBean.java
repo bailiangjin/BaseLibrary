@@ -1,11 +1,11 @@
-package com.kevin.building.ui.demo.dynamic.viewbean;
+package com.kevin.building.ui.demo.dynamic.bean.viewbean;
 
-import com.kevin.building.ui.demo.dynamic.viewbean.group.BtnGroup;
-import com.kevin.building.ui.demo.dynamic.viewbean.group.CBGroup;
-import com.kevin.building.ui.demo.dynamic.viewbean.group.RBGroup;
-import com.kevin.building.ui.demo.dynamic.viewbean.item.BtnItem;
-import com.kevin.building.ui.demo.dynamic.viewbean.item.EditTextItem;
-import com.kevin.building.ui.demo.dynamic.viewbean.item.TextItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.RBGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 
 /**
  * Author:  liangjin.bai

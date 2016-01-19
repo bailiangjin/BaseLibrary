@@ -1,12 +1,13 @@
-package com.kevin.building.ui.demo.dynamic.viewbean.group;
+package com.kevin.building.ui.demo.dynamic.bean.viewbean.group;
 
-import com.kevin.building.ui.demo.dynamic.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.viewbean.constants.ViewType;
-import com.kevin.building.ui.demo.dynamic.viewbean.item.BtnItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 
 import java.util.List;
 
 /**
+ * 按钮群组 GridView
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 16:12

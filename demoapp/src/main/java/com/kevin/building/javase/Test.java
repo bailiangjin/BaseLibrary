@@ -2,14 +2,14 @@
 //
 //import com.kevin.baselibrary.utils.GsonUtils;
 //import com.kevin.baselibrary.utils.PinyinUtils;
-//import com.kevin.building.ui.demo.dynamic.viewbean.ViewBean;
-//import com.kevin.building.ui.demo.dynamic.viewbean.constants.ItemType;
+//import ViewBean;
+//import ItemType;
 //import com.kevin.building.ui.demo.dynamic.viewbean.BtnGroup;
 //import com.kevin.building.ui.demo.dynamic.viewbean.CBGroup;
-//import com.kevin.building.ui.demo.dynamic.viewbean.group.RBGroup;
-//import com.kevin.building.ui.demo.dynamic.viewbean.item.BtnItem;
-//import com.kevin.building.ui.demo.dynamic.viewbean.item.EditTextItem;
-//import com.kevin.building.ui.demo.dynamic.viewbean.item.TextItem;
+//import RBGroup;
+//import BtnItem;
+//import EditTextItem;
+//import TextItem;
 //
 //import java.util.ArrayList;
 //import java.util.List;
