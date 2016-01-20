@@ -17,5 +17,6 @@ public class ViewType {
 
     public static final int BTN_GROUP = 5;
     public static final int RB_Group = 6;
-    public static final int CB_Group = 7;
+    public static final int PHOTO_BTN_GROUP = 7;
+
 }

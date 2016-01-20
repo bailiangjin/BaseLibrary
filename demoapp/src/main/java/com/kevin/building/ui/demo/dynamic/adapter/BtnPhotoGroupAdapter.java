@@ -22,7 +22,7 @@ public class BtnPhotoGroupAdapter extends AbsBaseBtnGroupAdapter {
 
     @Override
     protected int getItemLayoutResId() {
-        return R.layout.item_btn_skip_gridview;
+        return R.layout.item_btn_photo_gridview;
     }
 
     @Override

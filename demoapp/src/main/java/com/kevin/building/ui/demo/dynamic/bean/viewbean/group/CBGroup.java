@@ -27,6 +27,6 @@ public class CBGroup extends BaseItem {
 
     @Override
     public void setDefaultViewType() {
-        setViewType(ViewType.CB_Group);
+        setViewType(ViewType.CB);
     }
 }

@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 
 import com.kevin.baselibrary.utils.GsonUtils;
 import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.ui.demo.dynamic.bean.PageInfo;
@@ -16,6 +17,7 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.TxtType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.PhotoBtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
@@ -53,15 +55,44 @@ public class DynamicPageActivity extends BaseActivity {
     protected void initView() {
         layoutInflater = LayoutInflater.from(this);
         // 创建LinearLayout 作为根View
+//        ScrollView scrollView = (ScrollView) layoutInflater.inflate(R.layout.ctn_scrollview, null);
+//        setContentView(scrollView);
+//        LinearLayout mLinearLayout = (LinearLayout) findViewById(R.id.ll_container);
+
         LinearLayout mLinearLayout = (LinearLayout) layoutInflater.inflate(R.layout.ctn_ll, null);
         setContentView(mLinearLayout);
 
+
         initData();
 
-        List<ViewBean> viewBeanList = pageParamBean.getViewBeanList();
+        String jsonData = GsonUtils.getInstance().toJson(pageParamBean);
+
+        long startTime = System.currentTimeMillis();
+        PageParamBean pageParamBeanNew = GsonUtils.getInstance().toObj(jsonData, PageParamBean.class);
+//        Type type = new TypeToken<ArrayList<ViewBean>>() {
+//        }.getType();
+
+//       Gson gson =  GsonUtils.getInstance().getGson();
+//
+//        List<ViewBean> list = gson.fromJson(jsonData, type);
+
+
+        List<ViewBean> viewBeanList = pageParamBeanNew.getViewBeanList();
         for (ViewBean viewBean : viewBeanList) {
-            mLinearLayout.addView(DynamicViewGenerator.getView(DynamicPageActivity.this, viewBean));
+            View view = DynamicViewGenerator.getView(DynamicPageActivity.this, viewBean);
+//            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+//            layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+//            view.setLayoutParams(layoutParams);
+            mLinearLayout.addView(view);
         }
+
+        long endTime = System.currentTimeMillis();
+
+        long gapTime = endTime - startTime;
+
+        LogUtils.e("gaptime:" + gapTime);
+
+        ToastUtils.show("页面加载耗时：" + gapTime+"毫秒");
 
     }
 
@@ -70,8 +101,9 @@ public class DynamicPageActivity extends BaseActivity {
 
         List<BtnItem> essentialItemList = new ArrayList<>();
         List<BtnItem> inessentialItemList = new ArrayList<>();
+        List<BtnItem> photoItemList = new ArrayList<>();
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 2; i++) {
             BtnItem btnItem = new BtnItem();
             btnItem.setViewType(ItemType.BTN);
             btnItem.setBtnType(ItemType.BTN);
@@ -80,11 +112,18 @@ public class DynamicPageActivity extends BaseActivity {
         }
 
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 2; i++) {
             BtnItem essentialItem = new BtnItem();
             essentialItem.setViewType(ItemType.BTN);
             essentialItem.setIndex("非必拍" + (i + 1));
             inessentialItemList.add(essentialItem);
+        }
+
+        for (int i = 0; i < 2; i++) {
+            BtnItem essentialItem = new BtnItem();
+            essentialItem.setViewType(ItemType.BTN);
+            essentialItem.setIndex("拍照" + (i + 1));
+            photoItemList.add(essentialItem);
         }
 
         TextItem textTitle = new TextItem();
@@ -120,6 +159,13 @@ public class DynamicPageActivity extends BaseActivity {
         btnGroup_nomust.setBtnList(inessentialItemList);
         ViewBean viewBean_btnGroupNoMust = ViewBeanGenerator.getViewBean(btnGroup_nomust);
 
+
+        PhotoBtnGroup photoBtnGroup = new PhotoBtnGroup();
+        photoBtnGroup.setViewType(ItemType.PHOTO_BTN_GROUP);
+        photoBtnGroup.setBtnList(photoItemList);
+        ViewBean viewBean_photoBtnGroup = ViewBeanGenerator.getViewBean(photoBtnGroup);
+
+
         EditTextItem et1 = new EditTextItem();
         et1.setViewType(ItemType.ET);
         et1.setIndex("楼栋数");
@@ -140,6 +186,7 @@ public class DynamicPageActivity extends BaseActivity {
         viewBeanList.add(txtNoMust);
         viewBeanList.add(viewBean_btnGroupNoMust);
         viewBeanList.add(txtNoMust1);
+        viewBeanList.add(viewBean_photoBtnGroup);
         viewBeanList.add(viewBean_et);
         viewBeanList.add(viewBean_btn1);
 
@@ -148,6 +195,7 @@ public class DynamicPageActivity extends BaseActivity {
 
         pageParamBean = PagerBeanGenerator.getViewBean(pageInfo, viewBeanList);
         LogUtils.e("pageParamBeanJson:" + GsonUtils.getInstance().toJson(pageParamBean));
+
 
     }
 

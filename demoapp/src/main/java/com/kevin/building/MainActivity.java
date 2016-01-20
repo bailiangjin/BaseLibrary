@@ -41,15 +41,15 @@ public class MainActivity extends BtnBaseActivity {
         btn5.setText("Fragment模块");
 //        btn6.setText("用户信息");
         btn7.setText("启动模式");
-        btn8.setText("当前测试");
+        btn8.setText("测试动态加载页面");
 
-        btn1.setVisibility(View.VISIBLE);
-        btn2.setVisibility(View.VISIBLE);
-        btn3.setVisibility(View.VISIBLE);
-        btn4.setVisibility(View.VISIBLE);
-        btn5.setVisibility(View.VISIBLE);
-        btn6.setVisibility(View.VISIBLE);
-        btn7.setVisibility(View.VISIBLE);
+//        btn1.setVisibility(View.VISIBLE);
+//        btn2.setVisibility(View.VISIBLE);
+//        btn3.setVisibility(View.VISIBLE);
+//        btn4.setVisibility(View.VISIBLE);
+//        btn5.setVisibility(View.VISIBLE);
+//        btn6.setVisibility(View.VISIBLE);
+//        btn7.setVisibility(View.VISIBLE);
         btn8.setVisibility(View.VISIBLE);
 //        NdkJniUtils jni = new NdkJniUtils();
 //        show("jni:" + jni.getCLanguageString());
@@ -107,7 +107,7 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn8:
-               show("点击了当前测试");
+//               show("点击了当前测试");
                 ActivityUtils.startActivity(this, DynamicPageActivity.class);
 
                 break;

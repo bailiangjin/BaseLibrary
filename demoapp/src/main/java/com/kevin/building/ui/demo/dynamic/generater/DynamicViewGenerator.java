@@ -6,8 +6,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.ui.demo.dynamic.adapter.BtnPhotoGroupAdapter;
 import com.kevin.building.ui.demo.dynamic.adapter.BtnSkipGroupAdapter;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
@@ -47,6 +49,9 @@ public class DynamicViewGenerator {
                 return getTitleTextView(context, viewBean.getTextItem());
             case ItemType.BTN_GROUP:
                 return getBtnGroup(context, viewBean);
+            case ItemType.PHOTO_BTN_GROUP:
+                LogUtils.e("PHOTO_BTN_GOUP");
+                return getPhotoBtnGroup(context, viewBean);
             case ItemType.ET:
                 return getEditText(context, viewBean.getEditTextItem());
 
@@ -116,6 +121,15 @@ public class DynamicViewGenerator {
         ClickCallback inesCallback = CallBackGenerator.getSkipCallback(baseActivity, btnItemList);
         gridView = getGridView(baseActivity, inesCallback);
         gridView.setAdapter(new BtnSkipGroupAdapter(baseActivity, btnItemList));
+        return gridView;
+    }
+
+    private static View getPhotoBtnGroup(BaseActivity baseActivity, ViewBean viewBean) {
+        GridView gridView;
+        List<BtnItem> btnItemList = viewBean.getBtnGroup().getBtnList();
+        ClickCallback inesCallback = CallBackGenerator.getSkipCallback(baseActivity, btnItemList);
+        gridView = getGridView(baseActivity, inesCallback);
+        gridView.setAdapter(new BtnPhotoGroupAdapter(baseActivity, btnItemList));
         return gridView;
     }
 }

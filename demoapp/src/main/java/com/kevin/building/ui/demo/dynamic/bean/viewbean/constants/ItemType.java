@@ -12,6 +12,8 @@ public class ItemType {
     public static final int ET = 1;
     public static final int BTN = 2;
     public static final int BTN_GROUP = 3;
+
     public static final int RB_GROUP = 4;
     public static final int CB_GROUP = 5;
+    public static final int PHOTO_BTN_GROUP = 6;
 }

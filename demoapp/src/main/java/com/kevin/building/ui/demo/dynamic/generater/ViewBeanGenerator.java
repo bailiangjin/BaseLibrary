@@ -5,6 +5,7 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.PhotoBtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.RBGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
@@ -35,6 +36,9 @@ public class ViewBeanGenerator {
         } else if (item instanceof BtnItem) {
             viewBean.setBtnItem((BtnItem) item);
             viewBean.setItemType(ItemType.BTN);
+        } else if (item instanceof PhotoBtnGroup) {
+            viewBean.setBtnGroup((BtnGroup) item);
+            viewBean.setItemType(ItemType.PHOTO_BTN_GROUP);
         } else if (item instanceof BtnGroup) {
             viewBean.setBtnGroup((BtnGroup) item);
             viewBean.setItemType(ItemType.BTN_GROUP);
