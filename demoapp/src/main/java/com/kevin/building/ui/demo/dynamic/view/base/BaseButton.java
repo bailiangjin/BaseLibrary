@@ -37,7 +37,7 @@ public class BaseButton extends BaseView {
     protected void initView() {
         tv_index= (TextView) findViewById(R.id.tv_index);
 
-        tv_index.setText(btnItem.getIndex());
+        tv_index.setText(btnItem.getIndexText());
 
     }
 

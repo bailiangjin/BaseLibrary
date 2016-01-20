@@ -33,7 +33,7 @@ public class CallBackGenerator {
             public void onClick(int position) {
                 BtnItem item = list.get(position);
                 HashMap<String, String> paramMap = new HashMap<>();
-                paramMap.put("name", item.getIndex());
+                paramMap.put("name", item.getIndexText());
                 ActivityUtils.startActivity(activity, DetailActivity.class, paramMap);
 
             }
@@ -47,7 +47,7 @@ public class CallBackGenerator {
             public void onClick(int position) {
                 BtnItem item = list.get(position);
                 HashMap<String, String> paramMap = new HashMap<>();
-                paramMap.put("name", item.getIndex());
+                paramMap.put("name", item.getIndexText());
                 ActivityUtils.startActivity(activity, DetailActivity.class, paramMap);
 
             }

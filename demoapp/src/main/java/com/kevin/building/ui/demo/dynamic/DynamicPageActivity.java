@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 
+import com.kevin.baselibrary.utils.FilePathUtil;
+import com.kevin.baselibrary.utils.FileUtils;
 import com.kevin.baselibrary.utils.GsonUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
@@ -17,14 +19,19 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.TxtType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.PhotoBtnGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.RBGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.CBItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.RBItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
 import com.kevin.building.ui.demo.dynamic.generater.DynamicViewGenerator;
 import com.kevin.building.ui.demo.dynamic.generater.PagerBeanGenerator;
 import com.kevin.building.ui.demo.dynamic.generater.ViewBeanGenerator;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,14 +90,16 @@ public class DynamicPageActivity extends BaseActivity {
 //            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
 //            layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
 //            view.setLayoutParams(layoutParams);
-            mLinearLayout.addView(view);
+            if (null!=view){
+                mLinearLayout.addView(view);
+            }
+
         }
 
         long endTime = System.currentTimeMillis();
 
         long gapTime = endTime - startTime;
 
-        LogUtils.e("gaptime:" + gapTime);
 
         ToastUtils.show("页面加载耗时：" + gapTime+"毫秒");
 
@@ -102,12 +111,14 @@ public class DynamicPageActivity extends BaseActivity {
         List<BtnItem> essentialItemList = new ArrayList<>();
         List<BtnItem> inessentialItemList = new ArrayList<>();
         List<BtnItem> photoItemList = new ArrayList<>();
+        List<CBItem> cbItemList = new ArrayList<>();
+        List<RBItem> rbItemList = new ArrayList<>();
 
         for (int i = 0; i < 2; i++) {
             BtnItem btnItem = new BtnItem();
             btnItem.setViewType(ItemType.BTN);
             btnItem.setBtnType(ItemType.BTN);
-            btnItem.setIndex("必拍" + (i + 1));
+            btnItem.setIndexText("必拍" + (i + 1));
             essentialItemList.add(btnItem);
         }
 
@@ -115,37 +126,51 @@ public class DynamicPageActivity extends BaseActivity {
         for (int i = 0; i < 2; i++) {
             BtnItem essentialItem = new BtnItem();
             essentialItem.setViewType(ItemType.BTN);
-            essentialItem.setIndex("非必拍" + (i + 1));
+            essentialItem.setIndexText("非必拍" + (i + 1));
             inessentialItemList.add(essentialItem);
         }
 
         for (int i = 0; i < 2; i++) {
             BtnItem essentialItem = new BtnItem();
             essentialItem.setViewType(ItemType.BTN);
-            essentialItem.setIndex("拍照" + (i + 1));
+            essentialItem.setIndexText("拍照" + (i + 1));
             photoItemList.add(essentialItem);
         }
 
+        for (int i = 0; i < 2; i++) {
+            CBItem essentialItem = new CBItem();
+            essentialItem.setViewType(ItemType.BTN);
+            essentialItem.setIndexText("多选框" + (i + 1));
+            cbItemList.add(essentialItem);
+        }
+
+        for (int i = 0; i < 2; i++) {
+            RBItem essentialItem = new RBItem();
+            essentialItem.setViewType(ItemType.BTN);
+            essentialItem.setIndexText("RadioButoon" + (i + 1));
+            rbItemList.add(essentialItem);
+        }
+
         TextItem textTitle = new TextItem();
-        textTitle.setIndex("拍小区");
+        textTitle.setIndexText("拍小区");
         textTitle.setTxtType(TxtType.TITLE);
         ViewBean txtTitle = ViewBeanGenerator.getViewBean(textTitle);
 
         TextItem textItemMust = new TextItem();
-        textItemMust.setIndex("必拍");
+        textItemMust.setIndexText("必拍");
         textItemMust.setTxtType(TxtType.CLASS_NAME);
         ViewBean txtMust = ViewBeanGenerator.getViewBean(textItemMust);
 
         TextItem textItemNoMust = new TextItem();
-        textItemNoMust.setIndex("非必拍");
+        textItemNoMust.setIndexText("非必拍");
         textItemNoMust.setTxtType(TxtType.CLASS_NAME);
         ViewBean txtNoMust = ViewBeanGenerator.getViewBean(textItemNoMust);
 
         TextItem textItemNoMust1 = new TextItem();
-        textItemNoMust1.setIndex("爱拍不拍爱拍不拍爱拍不拍爱拍不拍爱拍不拍爱拍不拍");
+        textItemNoMust1.setIndexText("拍摄注意事项");
         textItemNoMust1.setTxtType(TxtType.CONTENT);
 //        textItemNoMust1.setGravity(Gravity.RIGHT);
-        textItemNoMust1.setTextSize(12);
+        textItemNoMust1.setIndexTextSize(12);
 
 
         ViewBean txtNoMust1 = ViewBeanGenerator.getViewBean(textItemNoMust1);
@@ -165,16 +190,26 @@ public class DynamicPageActivity extends BaseActivity {
         photoBtnGroup.setBtnList(photoItemList);
         ViewBean viewBean_photoBtnGroup = ViewBeanGenerator.getViewBean(photoBtnGroup);
 
+        CBGroup cbGroup = new CBGroup();
+        cbGroup.setViewType(ItemType.CB_GROUP);
+        cbGroup.setCbList(cbItemList);
+        ViewBean viewBean_cbGroup = ViewBeanGenerator.getViewBean(cbGroup);
+
+        RBGroup rbGroup = new RBGroup();
+        rbGroup.setViewType(ItemType.RB_GROUP);
+        rbGroup.setRbList(rbItemList);
+        ViewBean viewBean_rbGroup = ViewBeanGenerator.getViewBean(rbGroup);
+
 
         EditTextItem et1 = new EditTextItem();
         et1.setViewType(ItemType.ET);
-        et1.setIndex("楼栋数");
+        et1.setIndexText("楼栋数");
         et1.setHint("请输入楼栋数");
         ViewBean viewBean_et = ViewBeanGenerator.getViewBean(et1);
 
         BtnItem btn1 = new BtnItem();
         btn1.setViewType(ItemType.BTN);
-        btn1.setIndex("保存");
+        btn1.setIndexText("保存");
         ViewBean viewBean_btn1 = ViewBeanGenerator.getViewBean(btn1);
 
 
@@ -185,16 +220,34 @@ public class DynamicPageActivity extends BaseActivity {
         viewBeanList.add(viewBean_btnGroupMust);
         viewBeanList.add(txtNoMust);
         viewBeanList.add(viewBean_btnGroupNoMust);
+        viewBeanList.add(viewBean_cbGroup);
+        viewBeanList.add(viewBean_rbGroup);
         viewBeanList.add(txtNoMust1);
         viewBeanList.add(viewBean_photoBtnGroup);
         viewBeanList.add(viewBean_et);
         viewBeanList.add(viewBean_btn1);
 
         PageInfo pageInfo = new PageInfo();
+        pageInfo.setBaseId("baseId");
+        pageInfo.setBasePackageId("BasePackageId");
+        pageInfo.setBasePackageName("BasePackageName");
+        pageInfo.setCollectClassId("CollectClassId");
+        pageInfo.setCollectClassParentId("CollectClassParentId");
+        pageInfo.setDataName("采集小区111");
+        pageInfo.setDeviceInfo("DeviceInfo");
+        pageInfo.setEntranceStatus("1");
+        pageInfo.setUserName("user001");
+        pageInfo.setOwnerId("3");
+        pageInfo.setTaskId("TaskId");
+        pageInfo.setMaxCount(1);
+
 
 
         pageParamBean = PagerBeanGenerator.getViewBean(pageInfo, viewBeanList);
-        LogUtils.e("pageParamBeanJson:" + GsonUtils.getInstance().toJson(pageParamBean));
+        String json = GsonUtils.getInstance().toJson(pageParamBean);
+        LogUtils.e("pageParamBeanJson:" + json);
+
+        FileUtils.saveStringToFile(FilePathUtil.getSdcardPath()+ File.separator+"json.txt",json,false);
 
 
     }

@@ -58,7 +58,7 @@ public abstract class AbsBaseBtnGroupAdapter extends BaseAdapter {
         //找到条目的文本字段 给该TV设置文本内容 如没有文本条目 子类 getItemTvResId 请返回-1
         if (0 != itemTvResId && -1 != itemTvResId) {
             TextView mTextView = (TextView) convertView.findViewById(itemTvResId);
-            mTextView.setText((CharSequence) list.get(position).getIndex());
+            mTextView.setText((CharSequence) list.get(position).getIndexText());
         }
 
         return convertView;

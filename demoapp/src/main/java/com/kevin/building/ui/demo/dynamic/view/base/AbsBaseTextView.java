@@ -20,7 +20,7 @@ public abstract class AbsBaseTextView extends BaseView {
 
     public AbsBaseTextView(Context context, TextItem textItem) {
         super(context, textItem);
-        setTvContent(textItem.getIndex());
+        setTvContent(textItem.getIndexText());
     }
 
     @Override
@@ -47,7 +47,7 @@ public abstract class AbsBaseTextView extends BaseView {
         int gravity = 0 != textItem.getGravity() && -1 != textItem.getGravity() ? textItem.getGravity() : getGravity();
         tv_index.setGravity(gravity);
 
-        int textSize = (0 != textItem.getTextSize() && -1 != textItem.getTextSize()) ? textItem.getTextSize() : getTextSize();
+        int textSize = (0 != textItem.getIndexTextSize() && -1 != textItem.getIndexTextSize()) ? textItem.getIndexTextSize() : getTextSize();
         tv_index.setTextSize(textSize);
 
 

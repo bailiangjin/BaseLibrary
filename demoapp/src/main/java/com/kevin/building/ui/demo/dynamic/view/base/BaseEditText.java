@@ -43,7 +43,7 @@ public class BaseEditText extends BaseView {
         editText = (EditText) findViewById(R.id.et_input);
 
 
-        tv_index.setText(editTextItem.getIndex());
+        tv_index.setText(editTextItem.getIndexText());
         editText.setText(editTextItem.getContent());
         editText.setHint(editTextItem.getHint());
     }
