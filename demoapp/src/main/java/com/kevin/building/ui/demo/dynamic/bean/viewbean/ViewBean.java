@@ -14,6 +14,9 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
  */
 public class ViewBean {
 
+    /**
+     *  ViewBean 类型
+     */
     private int viewBeanType;
 
     private TextItem textItem;
