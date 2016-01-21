@@ -2,7 +2,7 @@ package com.kevin.building.ui.demo.dynamic.bean.constants;
 
 /**
  *
- * 具体View 类型 UI基本控件元素类型
+ * View基本元素 类型
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 17:08

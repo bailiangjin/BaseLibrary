@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.constants;
 
 /**
- * ViewBean 实际条目类型：基于基本元素扩展出的类型
+ * ViewBean 实际条目类型类：基于基本元素组合扩展出的实际使用类型类
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 17:08
@@ -35,12 +35,12 @@ public class ViewBeanType {
     public static final int CB_GROUP = 4;
 
     /**
-     * 跳转按钮 列表
+     * 跳转按钮 列表 基于基本元素类型 ViewType.BTN_GROUP 扩展出的具体类型
      */
     public static final int SKIP_BTN_GROUP = 5;
 
     /**
-     * 拍照按钮 列表
+     * 拍照按钮 列表 基于基本元素类型 ViewType.BTN_GROUP 扩展出的具体类型
      */
     public static final int PHOTO_BTN_GROUP = 6;
 }
