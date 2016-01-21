@@ -8,6 +8,7 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 
 /**
+ * 页面每一行条目对应类实体
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 16:14
@@ -17,7 +18,7 @@ public class ViewBean {
     /**
      *  ViewBean 类型
      */
-    private int viewBeanType;
+    private int viewBeanType;//
 
     private TextItem textItem;
 
