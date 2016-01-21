@@ -16,8 +16,8 @@ import com.kevin.building.base.BaseActivity;
 import com.kevin.building.ui.demo.dynamic.bean.PageInfo;
 import com.kevin.building.ui.demo.dynamic.bean.PageParamBean;
 import com.kevin.building.ui.demo.dynamic.bean.constants.BtnGroupType;
+import com.kevin.building.ui.demo.dynamic.bean.constants.BtnType;
 import com.kevin.building.ui.demo.dynamic.bean.constants.TxtType;
-import com.kevin.building.ui.demo.dynamic.bean.constants.ViewBeanType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;
@@ -116,7 +116,7 @@ public class DynamicPageActivity extends BaseActivity {
 
         for (int i = 0; i < 2; i++) {
             BtnItem btnItem = new BtnItem();
-            btnItem.setBtnType(ViewBeanType.BTN);
+            btnItem.setBtnType(BtnType.SKIP);
             btnItem.setIndexText("必拍" + (i + 1));
             essentialItemList.add(btnItem);
         }
@@ -124,12 +124,14 @@ public class DynamicPageActivity extends BaseActivity {
 
         for (int i = 0; i < 2; i++) {
             BtnItem essentialItem = new BtnItem();
+            essentialItem.setBtnType(BtnType.SKIP);
             essentialItem.setIndexText("非必拍" + (i + 1));
             inessentialItemList.add(essentialItem);
         }
 
         for (int i = 0; i < 2; i++) {
             BtnItem essentialItem = new BtnItem();
+            essentialItem.setBtnType(BtnType.PHOTO);
             essentialItem.setIndexText("拍照" + (i + 1));
             photoItemList.add(essentialItem);
         }
