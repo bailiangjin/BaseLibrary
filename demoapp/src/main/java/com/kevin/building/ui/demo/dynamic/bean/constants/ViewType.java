@@ -2,7 +2,7 @@ package com.kevin.building.ui.demo.dynamic.bean.constants;
 
 /**
  *
- * 具体View 类型 UI相关
+ * 具体View 类型 UI基本控件元素类型
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 17:08
@@ -31,15 +31,15 @@ public class ViewType {
     public static final int CB = 4;
 
     /**
-     * Button 群组
+     * Button 群组 元素
      */
     public static final int BTN_GROUP = 5;
     /**
-     * RadioButton 群组
+     * RadioButton 群组 元素
      */
     public static final int RB_GROUP = 6;
     /**
-     * CheckBox 群组
+     * CheckBox 群组 元素
      */
     public static final int CB_GROUP = 7;
 

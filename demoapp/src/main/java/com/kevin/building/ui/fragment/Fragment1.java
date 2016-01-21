@@ -11,16 +11,6 @@ public class Fragment1 extends BaseFragment
 {
 
 	@Override
-	protected int getLayoutResId() {
-		return R.layout.fragment1;
-	}
-
-	@Override
-	protected void onViewClick(View v) {
-
-	}
-
-	@Override
 	public void onAttach(Activity activity)
 	{
 		// TODO Auto-generated method stub
@@ -33,7 +23,6 @@ public class Fragment1 extends BaseFragment
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 	}
-
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState)
@@ -91,6 +80,15 @@ public class Fragment1 extends BaseFragment
 		super.onDetach();
 	}
 
+	@Override
+	protected int getLayoutResId() {
+		return R.layout.fragment1;
+	}
+
+	@Override
+	protected void onViewClick(View v) {
+
+	}
 
 
 }

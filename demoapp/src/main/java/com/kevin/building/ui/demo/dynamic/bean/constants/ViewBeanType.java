@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.constants;
 
 /**
- * ViewBean 类型 数据相关 UI无关
+ * ViewBean 实际条目类型：基于基本元素扩展出的类型
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 17:08
