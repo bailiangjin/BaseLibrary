@@ -28,12 +28,12 @@ public abstract class BaseItem {
     /**
      * index 文字大小 dp
      */
-    private int indexTextSize;
+    private transient  int indexTextSize;
 
-    /**
-     * index 文字颜色
-     */
-    private int indexTextColor;
+//    /**
+//     * index 文字颜色
+//     */
+//    private int indexTextColor;
 
     /**
      * 是否必须
@@ -44,13 +44,13 @@ public abstract class BaseItem {
     /**
      * 对齐方式 居中17=Gravity.CENTER 靠左3=Gravity.LEFT 靠右5=Gravity.RIGHT
      */
-    private int gravity;
+    private transient int gravity;
 
 
     /**
      * 扩展字段
      */
-    private ExtraParam paramJson;
+    private ExtraParam extraParam;
 
     public BaseItem() {
         setDefaultViewType();
@@ -106,22 +106,22 @@ public abstract class BaseItem {
         this.indexTextSize = indexTextSize;
     }
 
-    public int getIndexTextColor() {
-        return indexTextColor;
+//    public int getIndexTextColor() {
+//        return indexTextColor;
+//    }
+//
+//    public void setIndexTextColor(int indexTextColor) {
+//        this.indexTextColor = indexTextColor;
+//    }
+
+
+
+    public ExtraParam getExtraParam() {
+        return extraParam;
     }
 
-    public void setIndexTextColor(int indexTextColor) {
-        this.indexTextColor = indexTextColor;
-    }
-
-
-
-    public ExtraParam getParamJson() {
-        return paramJson;
-    }
-
-    public void setParamJson(ExtraParam paramJson) {
-        this.paramJson = paramJson;
+    public void setExtraParam(ExtraParam extraParam) {
+        this.extraParam = extraParam;
     }
 
 
@@ -131,10 +131,10 @@ public abstract class BaseItem {
         setIndexText("默认文本");
         setIndexTextSize(14);
         setIsMust(true);
-        setIndexTextColor(888);
-        ExtraParam paramJson = new ExtraParam();
-        paramJson.setExtra1("扩展参数1");
-        setParamJson(paramJson);
+//        setIndexTextColor(888);
+        ExtraParam extraParam = new ExtraParam();
+        extraParam.setExtra1("扩展参数1");
+        setExtraParam(extraParam);
 
     }
 

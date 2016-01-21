@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.viewbean.item;
 
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.AbsSelectedItem;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
+import com.kevin.building.ui.demo.dynamic.bean.constants.ViewType;
 
 /**
  * Author:  liangjin.bai

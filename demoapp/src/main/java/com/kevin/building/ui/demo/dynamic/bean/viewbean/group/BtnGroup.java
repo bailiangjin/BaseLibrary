@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.viewbean.group;
 
+import com.kevin.building.ui.demo.dynamic.bean.constants.ViewType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 
 import java.util.List;
@@ -12,7 +12,9 @@ import java.util.List;
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 16:12
  */
-public class BtnGroup extends BaseItem {
+public  class BtnGroup extends BaseItem {
+
+    private int btnGroupType;
 
     private List<BtnItem> btnList;
 
@@ -24,9 +26,19 @@ public class BtnGroup extends BaseItem {
         this.btnList = btnList;
     }
 
+    public int getBtnGroupType() {
+        return btnGroupType;
+    }
+
+    public void setBtnGroupType(int btnGroupType) {
+        this.btnGroupType = btnGroupType;
+    }
+
     @Override
     public void setDefaultViewType() {
 
         setViewType(ViewType.BTN_GROUP);
     }
+
+
 }

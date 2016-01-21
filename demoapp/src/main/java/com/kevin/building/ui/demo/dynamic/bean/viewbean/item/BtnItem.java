@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.viewbean.item;
 
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
+import com.kevin.building.ui.demo.dynamic.bean.constants.ViewType;
 
 /**
  * Author:  liangjin.bai
@@ -14,6 +14,12 @@ public class BtnItem extends BaseItem {
      * 按钮类型
      */
     private int btnType;
+
+    /**
+     * 跳转目的页ID
+     */
+    private String skipToId;
+
     /**
      * 定位类型
      */
@@ -24,24 +30,6 @@ public class BtnItem extends BaseItem {
      */
     private int compressType;
 
-    /**
-     * 按钮背景颜色
-     */
-    private int  bkgColor ;
-
-
-    @Override
-    public void setDefaultViewType() {
-        setViewType(ViewType.BTN);
-    }
-
-    public int getBtnType() {
-        return btnType;
-    }
-
-    public void setBtnType(int btnType) {
-        this.btnType = btnType;
-    }
 
     public int getLocationType() {
         return locationType;
@@ -59,11 +47,42 @@ public class BtnItem extends BaseItem {
         this.compressType = compressType;
     }
 
-    public int getBkgColor() {
-        return bkgColor;
+
+    public String getSkipToId() {
+        return skipToId;
     }
 
-    public void setBkgColor(int bkgColor) {
-        this.bkgColor = bkgColor;
+    public void setSkipToId(String skipToId) {
+        this.skipToId = skipToId;
     }
+
+
+    @Override
+    public void setDefaultViewType() {
+        setViewType(ViewType.BTN);
+    }
+
+    public int getBtnType() {
+        return btnType;
+    }
+
+    public void setBtnType(int btnType) {
+        this.btnType = btnType;
+    }
+
+
+//    /**
+//     * 按钮背景颜色
+//     */
+//    private int  bkgColor ;
+
+//    public int getBkgColor() {
+//        return bkgColor;
+//    }
+//
+//    public void setBkgColor(int bkgColor) {
+//        this.bkgColor = bkgColor;
+//    }
+
+
 }

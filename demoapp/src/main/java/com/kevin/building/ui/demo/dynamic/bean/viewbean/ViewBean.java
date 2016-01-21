@@ -14,7 +14,7 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
  */
 public class ViewBean {
 
-    private int itemType;
+    private int viewBeanType;
 
     private TextItem textItem;
 
@@ -28,12 +28,12 @@ public class ViewBean {
 
     private CBGroup cbGroup;
 
-    public int getItemType() {
-        return itemType;
+    public int getViewBeanType() {
+        return viewBeanType;
     }
 
-    public void setItemType(int itemType) {
-        this.itemType = itemType;
+    public void setViewBeanType(int viewBeanType) {
+        this.viewBeanType = viewBeanType;
     }
 
     public TextItem getTextItem() {

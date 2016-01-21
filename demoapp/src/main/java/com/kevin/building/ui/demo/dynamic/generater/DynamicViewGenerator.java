@@ -12,8 +12,8 @@ import com.kevin.building.base.BaseActivity;
 import com.kevin.building.ui.demo.dynamic.adapter.BtnPhotoGroupAdapter;
 import com.kevin.building.ui.demo.dynamic.adapter.BtnSkipGroupAdapter;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.TxtType;
+import com.kevin.building.ui.demo.dynamic.bean.constants.ViewBeanType;
+import com.kevin.building.ui.demo.dynamic.bean.constants.TxtType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
@@ -43,19 +43,19 @@ public class DynamicViewGenerator {
      * @return View
      */
     public static View getView(BaseActivity context, ViewBean viewBean) {
-        int itemType = viewBean.getItemType();
+        int itemType = viewBean.getViewBeanType();
         switch (itemType) {
-            case ItemType.TEXT:
+            case ViewBeanType.TEXT:
                 return getTitleTextView(context, viewBean.getTextItem());
-            case ItemType.BTN_GROUP:
+            case ViewBeanType.SKIP_BTN_GROUP:
                 return getBtnGroup(context, viewBean);
-            case ItemType.PHOTO_BTN_GROUP:
+            case ViewBeanType.PHOTO_BTN_GROUP:
                 LogUtils.e("PHOTO_BTN_GOUP");
                 return getPhotoBtnGroup(context, viewBean);
-            case ItemType.ET:
+            case ViewBeanType.ET:
                 return getEditText(context, viewBean.getEditTextItem());
 
-            case ItemType.BTN:
+            case ViewBeanType.BTN:
                 return getButton(context, viewBean.getBtnItem());
             default:
                 return null;

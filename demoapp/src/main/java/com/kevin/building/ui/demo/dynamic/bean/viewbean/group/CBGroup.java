@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.viewbean.group;
 
+import com.kevin.building.ui.demo.dynamic.bean.constants.ViewType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.CBItem;
 
 import java.util.List;
@@ -27,6 +27,6 @@ public class CBGroup extends BaseItem {
 
     @Override
     public void setDefaultViewType() {
-        setViewType(ViewType.CB);
+        setViewType(ViewType.CB_GROUP);
     }
 }

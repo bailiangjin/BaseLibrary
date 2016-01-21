@@ -31,6 +31,7 @@ public abstract class AbsBaseTextView extends BaseView {
 
     /**
      * 将父类转为子类 加载初始化View之前的逻辑
+     *
      * @param baseItem
      */
     @Override
@@ -43,12 +44,16 @@ public abstract class AbsBaseTextView extends BaseView {
         tv_index = (TextView) findViewById(R.id.tv_index);
 //        tv_index.setGravity(Gravity.CENTER_HORIZONTAL);
 
+//
+//        int gravity = 0 != textItem.getGravity() && -1 != textItem.getGravity() ? textItem.getGravity() : getGravity();
+//        tv_index.setGravity(gravity);
+//
+//        int textSize = (0 != textItem.getIndexTextSize() && -1 != textItem.getIndexTextSize()) ? textItem.getIndexTextSize() : getTextSize();
+//        tv_index.setTextSize(textSize);
 
-        int gravity = 0 != textItem.getGravity() && -1 != textItem.getGravity() ? textItem.getGravity() : getGravity();
-        tv_index.setGravity(gravity);
+        tv_index.setGravity(getGravity());
 
-        int textSize = (0 != textItem.getIndexTextSize() && -1 != textItem.getIndexTextSize()) ? textItem.getIndexTextSize() : getTextSize();
-        tv_index.setTextSize(textSize);
+        tv_index.setTextSize(getTextSize());
 
 
     }
@@ -65,13 +70,15 @@ public abstract class AbsBaseTextView extends BaseView {
     }
 
     /**
-     *  获取默认 重力方向
+     * 获取默认 重力方向
+     *
      * @return
      */
     protected abstract int getGravity();
 
     /**
      * 获取默认文字大小
+     *
      * @return
      */
     protected abstract int getTextSize();

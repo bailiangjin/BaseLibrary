@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.viewbean.item;
 
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ViewType;
+import com.kevin.building.ui.demo.dynamic.bean.constants.ViewType;
 
 /**
  * Author:  liangjin.bai
@@ -13,9 +13,6 @@ public class TextItem extends BaseItem {
      * 文本类型
      */
     private int txtType;
-
-
-
 
     public int getTxtType() {
         return txtType;

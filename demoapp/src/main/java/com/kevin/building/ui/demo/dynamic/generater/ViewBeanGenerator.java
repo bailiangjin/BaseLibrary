@@ -1,12 +1,12 @@
 package com.kevin.building.ui.demo.dynamic.generater;
 
+import com.kevin.building.ui.demo.dynamic.bean.constants.BtnGroupType;
+import com.kevin.building.ui.demo.dynamic.bean.constants.ViewBeanType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.constants.ItemType;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.PhotoBtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.RBGroup;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
@@ -29,25 +29,34 @@ public class ViewBeanGenerator {
         ViewBean viewBean = new ViewBean();
         if (item instanceof TextItem) {
             viewBean.setTextItem((TextItem) item);
-            viewBean.setItemType(ItemType.TEXT);
+            viewBean.setViewBeanType(ViewBeanType.TEXT);
         } else if (item instanceof EditTextItem) {
             viewBean.setEditTextItem((EditTextItem) item);
-            viewBean.setItemType(ItemType.ET);
+            viewBean.setViewBeanType(ViewBeanType.ET);
         } else if (item instanceof BtnItem) {
             viewBean.setBtnItem((BtnItem) item);
-            viewBean.setItemType(ItemType.BTN);
-        } else if (item instanceof PhotoBtnGroup) {
-            viewBean.setBtnGroup((BtnGroup) item);
-            viewBean.setItemType(ItemType.PHOTO_BTN_GROUP);
+            viewBean.setViewBeanType(ViewBeanType.BTN);
         } else if (item instanceof BtnGroup) {
-            viewBean.setBtnGroup((BtnGroup) item);
-            viewBean.setItemType(ItemType.BTN_GROUP);
+            BtnGroup btnGroup = (BtnGroup) item;
+            viewBean.setBtnGroup(btnGroup);
+            switch (btnGroup.getBtnGroupType()) {
+                case BtnGroupType.SKIP_BTN_GROUP:
+                    viewBean.setViewBeanType(ViewBeanType.SKIP_BTN_GROUP);
+                    break;
+                case BtnGroupType.PHOTO_BTN_GROUP:
+                    viewBean.setViewBeanType(ViewBeanType.PHOTO_BTN_GROUP);
+                    break;
+                default:
+                    viewBean.setViewBeanType(ViewBeanType.SKIP_BTN_GROUP);
+                    break;
+            }
+
         } else if (item instanceof CBGroup) {
             viewBean.setCbGroup((CBGroup) item);
-            viewBean.setItemType(ItemType.CB_GROUP);
+            viewBean.setViewBeanType(ViewBeanType.CB_GROUP);
         } else if (item instanceof RBGroup) {
             viewBean.setRbGroup((RBGroup) item);
-            viewBean.setItemType(ItemType.RB_GROUP);
+            viewBean.setViewBeanType(ViewBeanType.RB_GROUP);
         }
 
 

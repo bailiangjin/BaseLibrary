@@ -25,6 +25,6 @@ public class ContentTextView extends AbsBaseTextView {
 
     @Override
     protected int getTextSize() {
-        return 20;
+        return 14;
     }
 }

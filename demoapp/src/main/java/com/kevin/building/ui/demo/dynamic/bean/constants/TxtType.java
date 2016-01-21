@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean.viewbean.constants;
+package com.kevin.building.ui.demo.dynamic.bean.constants;
 
 /**
  *
@@ -24,4 +24,5 @@ public class TxtType {
      * 详细内容文本样式 居中 小字体
      */
     public static final int CONTENT =2;
+    public static final int CONTENT1 =3;
 }

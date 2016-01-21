@@ -3,7 +3,7 @@
 //import com.kevin.baselibrary.utils.GsonUtils;
 //import com.kevin.baselibrary.utils.PinyinUtils;
 //import ViewBean;
-//import ItemType;
+//import ViewBeanType;
 //import com.kevin.building.ui.demo.dynamic.viewbean.BtnGroup;
 //import com.kevin.building.ui.demo.dynamic.viewbean.CBGroup;
 //import RBGroup;
@@ -37,19 +37,19 @@
 //        for (int i = 0; i < 10; i++) {
 //            viewBean = new ViewBean();
 //            int type = i % 6;
-//            viewBean.setItemType(type);
+//            viewBean.setViewBeanType(type);
 //            switch (type) {
-//                case ItemType.TEXT:
+//                case ViewBeanType.TEXT:
 //                    TextItem textItem = new TextItem();
 //                    viewBean.setTextItem(textItem);
 //                    break;
-//                case ItemType.ET:
+//                case ViewBeanType.ET:
 //                    viewBean.setEditTextItem(new EditTextItem());
 //                    break;
-//                case ItemType.BTN:
+//                case ViewBeanType.BTN:
 //                    viewBean.setBtnItem(new BtnItem());
 //                    break;
-//                case ItemType.BTN_GROUP:
+//                case ViewBeanType.BTN_GROUP:
 //                    BtnGroup btnGroup = new BtnGroup();
 //
 //                    List<BtnItem> btnItemList = new ArrayList<>();
@@ -60,10 +60,10 @@
 //                    btnGroup.setBtnList(btnItemList);
 //                    viewBean.setBtnGroup(btnGroup);
 //                    break;
-//                case ItemType.RB_GROUP:
+//                case ViewBeanType.RB_GROUP:
 //                    viewBean.setRbGroup(new RBGroup());
 //                    break;
-//                case ItemType.CB_GROUP:
+//                case ViewBeanType.CB_GROUP:
 //                    viewBean.setCbGroup(new CBGroup());
 //                    break;
 //

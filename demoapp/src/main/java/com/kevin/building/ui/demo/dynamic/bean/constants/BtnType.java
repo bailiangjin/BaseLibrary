@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean.viewbean.constants;
+package com.kevin.building.ui.demo.dynamic.bean.constants;
 
 /**
  * 按钮类型
