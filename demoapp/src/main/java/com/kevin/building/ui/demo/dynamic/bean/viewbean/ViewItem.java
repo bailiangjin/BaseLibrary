@@ -21,7 +21,7 @@ public class ViewItem {
     private int viewItemType;
 
     /**
-     * 顺序 从上到下第几个条目
+     * 排序顺序 从上到下第几个条目
      */
     private int order;
 
