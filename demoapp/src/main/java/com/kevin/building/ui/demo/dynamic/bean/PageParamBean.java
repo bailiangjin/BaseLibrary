@@ -1,6 +1,6 @@
 package com.kevin.building.ui.demo.dynamic.bean;
 
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewItem;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class PageParamBean {
     /**
      * 界面元素列表
      */
-    private List<ViewBean> viewBeanList;
+    private List<ViewItem> viewItemList;
 
 
 
@@ -33,11 +33,11 @@ public class PageParamBean {
         this.pageInfo = pageInfo;
     }
 
-    public List<ViewBean> getViewBeanList() {
-        return viewBeanList;
+    public List<ViewItem> getViewItemList() {
+        return viewItemList;
     }
 
-    public void setViewBeanList(List<ViewBean> viewBeanList) {
-        this.viewBeanList = viewBeanList;
+    public void setViewItemList(List<ViewItem> viewItemList) {
+        this.viewItemList = viewItemList;
     }
 }

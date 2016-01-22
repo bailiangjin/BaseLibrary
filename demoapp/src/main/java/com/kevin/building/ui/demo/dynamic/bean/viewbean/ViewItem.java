@@ -8,17 +8,22 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
 
 /**
- * 页面每一行条目对应类实体
+ * 页面每一行 界面元素
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 16:14
  */
-public class ViewBean {
+public class ViewItem {
 
     /**
-     *  ViewBean 类型
+     *  ViewItem 类型
      */
-    private int viewBeanType;//
+    private int viewItemType;
+
+    /**
+     * 顺序 从上到下第几个条目
+     */
+    private int order;
 
     private TextItem textItem;
 
@@ -32,12 +37,12 @@ public class ViewBean {
 
     private CBGroup cbGroup;
 
-    public int getViewBeanType() {
-        return viewBeanType;
+    public int getViewItemType() {
+        return viewItemType;
     }
 
-    public void setViewBeanType(int viewBeanType) {
-        this.viewBeanType = viewBeanType;
+    public void setViewItemType(int viewItemType) {
+        this.viewItemType = viewItemType;
     }
 
     public TextItem getTextItem() {
@@ -86,5 +91,13 @@ public class ViewBean {
 
     public void setCbGroup(CBGroup cbGroup) {
         this.cbGroup = cbGroup;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public void setOrder(int order) {
+        this.order = order;
     }
 }
