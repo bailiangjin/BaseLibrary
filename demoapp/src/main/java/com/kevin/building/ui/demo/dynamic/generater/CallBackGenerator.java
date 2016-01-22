@@ -40,17 +40,5 @@ public class CallBackGenerator {
         };
     }
 
-    @NonNull
-    public static ClickCallback getClickCallback1(final BaseActivity activity, final List<BtnItem> list) {
-        return new ClickCallback() {
-            @Override
-            public void onClick(int position) {
-                BtnItem item = list.get(position);
-                HashMap<String, String> paramMap = new HashMap<>();
-                paramMap.put("name", item.getIndexText());
-                ActivityUtils.startActivity(activity, DetailActivity.class, paramMap);
 
-            }
-        };
-    }
 }
