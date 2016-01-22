@@ -1,1 +1,1 @@
-include ':baselibrary', ':demoapp', ':demo_5.1.1', ':xutils3demo'
+include ':baselibrary', ':demoapp', ':demo_5.1.1', ':xutils3demo', ':architecture'
