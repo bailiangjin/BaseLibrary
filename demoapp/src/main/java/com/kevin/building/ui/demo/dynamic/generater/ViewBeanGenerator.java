@@ -26,40 +26,40 @@ public class ViewBeanGenerator {
      * @return ViewItem
      */
     public static ViewItem getViewBean(BaseItem item) {
-        ViewItem viewBean = new ViewItem();
+        ViewItem viewItem = new ViewItem();
         if (item instanceof TextItem) {
-            viewBean.setTextItem((TextItem) item);
-            viewBean.setViewItemType(ViewBeanType.TEXT);
+            viewItem.setTextItem((TextItem) item);
+            viewItem.setViewItemType(ViewBeanType.TEXT);
         } else if (item instanceof EditTextItem) {
-            viewBean.setEditTextItem((EditTextItem) item);
-            viewBean.setViewItemType(ViewBeanType.ET);
+            viewItem.setEditTextItem((EditTextItem) item);
+            viewItem.setViewItemType(ViewBeanType.ET);
         } else if (item instanceof BtnItem) {
-            viewBean.setBtnItem((BtnItem) item);
-            viewBean.setViewItemType(ViewBeanType.BTN);
+            viewItem.setBtnItem((BtnItem) item);
+            viewItem.setViewItemType(ViewBeanType.BTN);
         } else if (item instanceof BtnGroup) {
             BtnGroup btnGroup = (BtnGroup) item;
-            viewBean.setBtnGroup(btnGroup);
+            viewItem.setBtnGroup(btnGroup);
             switch (btnGroup.getBtnGroupType()) {
                 case BtnGroupType.SKIP_BTN_GROUP:
-                    viewBean.setViewItemType(ViewBeanType.SKIP_BTN_GROUP);
+                    viewItem.setViewItemType(ViewBeanType.SKIP_BTN_GROUP);
                     break;
                 case BtnGroupType.PHOTO_BTN_GROUP:
-                    viewBean.setViewItemType(ViewBeanType.PHOTO_BTN_GROUP);
+                    viewItem.setViewItemType(ViewBeanType.PHOTO_BTN_GROUP);
                     break;
                 default:
-                    viewBean.setViewItemType(ViewBeanType.SKIP_BTN_GROUP);
+                    viewItem.setViewItemType(ViewBeanType.SKIP_BTN_GROUP);
                     break;
             }
 
         } else if (item instanceof CBGroup) {
-            viewBean.setCbGroup((CBGroup) item);
-            viewBean.setViewItemType(ViewBeanType.CB_GROUP);
+            viewItem.setCbGroup((CBGroup) item);
+            viewItem.setViewItemType(ViewBeanType.CB_GROUP);
         } else if (item instanceof RBGroup) {
-            viewBean.setRbGroup((RBGroup) item);
-            viewBean.setViewItemType(ViewBeanType.RB_GROUP);
+            viewItem.setRbGroup((RBGroup) item);
+            viewItem.setViewItemType(ViewBeanType.RB_GROUP);
         }
 
 
-        return viewBean;
+        return viewItem;
     }
 }
