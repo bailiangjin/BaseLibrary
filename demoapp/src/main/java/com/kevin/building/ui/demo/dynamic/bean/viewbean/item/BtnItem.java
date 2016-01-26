@@ -88,19 +88,27 @@ public class BtnItem extends BaseItem {
         this.btnType = btnType;
     }
 
+    public boolean isUseFence() {
+        return useFence;
+    }
 
-//    /**
-//     * 按钮背景颜色
-//     */
-//    private int  bkgColor ;
+    public void setUseFence(boolean useFence) {
+        this.useFence = useFence;
+    }
 
-//    public int getBkgColor() {
-//        return bkgColor;
-//    }
-//
-//    public void setBkgColor(int bkgColor) {
-//        this.bkgColor = bkgColor;
-//    }
+    public boolean isCheckDuplicate() {
+        return checkDuplicate;
+    }
 
+    public void setCheckDuplicate(boolean checkDuplicate) {
+        this.checkDuplicate = checkDuplicate;
+    }
 
+    public int getDupDistance() {
+        return dupDistance;
+    }
+
+    public void setDupDistance(int dupDistance) {
+        this.dupDistance = dupDistance;
+    }
 }

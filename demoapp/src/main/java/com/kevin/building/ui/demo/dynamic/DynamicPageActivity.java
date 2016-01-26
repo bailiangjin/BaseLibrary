@@ -3,7 +3,6 @@ package com.kevin.building.ui.demo.dynamic;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.LinearLayout;
 
 import com.kevin.baselibrary.utils.FilePathUtil;
@@ -13,8 +12,10 @@ import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.ui.demo.dynamic.bean.ClassDataBean;
 import com.kevin.building.ui.demo.dynamic.bean.PageInfo;
 import com.kevin.building.ui.demo.dynamic.bean.PageParamBean;
+import com.kevin.building.ui.demo.dynamic.bean.ProjectDataBean;
 import com.kevin.building.ui.demo.dynamic.bean.constants.BtnGroupType;
 import com.kevin.building.ui.demo.dynamic.bean.constants.BtnType;
 import com.kevin.building.ui.demo.dynamic.bean.constants.TxtType;
@@ -42,9 +43,6 @@ import java.util.List;
  * Create Time: 2015/12/28 14:21
  */
 public class DynamicPageActivity extends BaseActivity {
-
-    private GridView gv_essential;
-    private GridView gv_inessential;
 
 
     private PageParamBean pageParamBean;
@@ -90,7 +88,7 @@ public class DynamicPageActivity extends BaseActivity {
 //            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
 //            layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
 //            view.setLayoutParams(layoutParams);
-            if (null!=view){
+            if (null != view) {
                 mLinearLayout.addView(view);
             }
 
@@ -101,7 +99,7 @@ public class DynamicPageActivity extends BaseActivity {
         long gapTime = endTime - startTime;
 
 
-        ToastUtils.show("页面加载耗时：" + gapTime+"毫秒");
+        ToastUtils.show("页面加载耗时：" + gapTime + "毫秒");
 
     }
 
@@ -206,6 +204,7 @@ public class DynamicPageActivity extends BaseActivity {
         EditTextItem et1 = new EditTextItem();
         et1.setIndexText("楼栋数");
         et1.setHint("请输入楼栋数");
+        et1.setName("loudongshu");
         ViewBean viewBean_et = ViewBeanGenerator.getViewBean(et1);
 
         BtnItem btn1 = new BtnItem();
@@ -252,14 +251,35 @@ public class DynamicPageActivity extends BaseActivity {
         pageInfo.setOwnerId("3");
         pageInfo.setTaskId("TaskId");
         pageInfo.setMaxCount(1);
-
+        pageInfo.setVersionNo("1111");
 
 
         pageParamBean = PagerBeanGenerator.getViewBean(pageInfo, viewBeanList);
+        PageParamBean pageParamBean2 = PagerBeanGenerator.getViewBean(pageInfo, viewBeanList);
         String json = GsonUtils.getInstance().toJson(pageParamBean);
         LogUtils.e("pageParamBeanJson:" + json);
 
-        FileUtils.saveStringToFile(FilePathUtil.getSdcardPath()+ File.separator+"json.txt",json,false);
+        FileUtils.saveStringToFile(FilePathUtil.getSdcardPath() + File.separator + "json.txt", json, false);
+
+        ProjectDataBean projectDataBean = new ProjectDataBean();
+        projectDataBean.setVersionNo("123");
+
+        List<ClassDataBean> classDataBeanList = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            ClassDataBean classDataBean = new ClassDataBean();
+            classDataBean.setName("采集大类" + i);
+            List<PageParamBean> pageParamBeanList = new ArrayList<>();
+            pageParamBeanList.add(pageParamBean);
+            pageParamBeanList.add(pageParamBean2);
+            classDataBean.setPageParamBeanList(pageParamBeanList);
+            classDataBeanList.add(classDataBean);
+        }
+
+        String jsonPro = GsonUtils.getInstance().toJson(projectDataBean);
+
+        FileUtils.saveStringToFile(FilePathUtil.getSdcardPath() + File.separator + "json_pro.txt", json, false);
+        LogUtils.e("pageParamBeanJson:" + jsonPro);
 
 
     }

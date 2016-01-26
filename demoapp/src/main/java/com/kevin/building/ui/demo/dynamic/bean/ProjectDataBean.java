@@ -11,16 +11,22 @@ import java.util.List;
  */
 public class ProjectDataBean {
 
-    private String version;
+    /**
+     * 版本号
+     */
+    private String versionNo;
 
+    /**
+     *  拍摄大类 List
+     */
     private List<ClassDataBean> classPackageBeanList;
 
-    public String getVersion() {
-        return version;
+    public String getVersionNo() {
+        return versionNo;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setVersionNo(String versionNo) {
+        this.versionNo = versionNo;
     }
 
     public List<ClassDataBean> getClassPackageBeanList() {

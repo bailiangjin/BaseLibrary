@@ -21,6 +21,11 @@ public abstract class BaseItem {
     private String id;
 
     /**
+     * name 数据库使用字段
+     */
+    private String name;
+
+    /**
      * 文字 Button的文字/Text的文字内容/输入框前的导引文字/CheckBox 对应的说明文字/RadioButton对应的说明文字
      */
     private String indexText;
@@ -55,6 +60,14 @@ public abstract class BaseItem {
     public BaseItem() {
         setDefaultViewType();
         setDefaultData();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getId() {
@@ -133,6 +146,7 @@ public abstract class BaseItem {
         ExtraParam extraParam = new ExtraParam();
         extraParam.setExtra1("扩展参数1");
         setExtraParam(extraParam);
+        setIsRead(false);
 
     }
 
