@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.constants;
 
 /**
- * ViewItem 实际条目类型类：基于基本元素组合扩展出的实际使用类型类
+ * ViewBean 实际条目类型类：基于基本元素组合扩展出的实际使用类型类
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 17:08

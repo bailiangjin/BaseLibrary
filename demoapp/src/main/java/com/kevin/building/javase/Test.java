@@ -2,7 +2,7 @@
 //
 //import com.kevin.baselibrary.utils.GsonUtils;
 //import com.kevin.baselibrary.utils.PinyinUtils;
-//import ViewItem;
+//import ViewBean;
 //import ViewBeanType;
 //import com.kevin.building.ui.demo.dynamic.viewbean.BtnGroup;
 //import com.kevin.building.ui.demo.dynamic.viewbean.CBGroup;
@@ -31,11 +31,11 @@
 //    }
 //
 //    private static void testJson() {
-//        List<ViewItem> list = new ArrayList<>();
-//        ViewItem viewBean = null;
+//        List<ViewBean> list = new ArrayList<>();
+//        ViewBean viewBean = null;
 //
 //        for (int i = 0; i < 10; i++) {
-//            viewBean = new ViewItem();
+//            viewBean = new ViewBean();
 //            int type = i % 6;
 //            viewBean.setViewItemType(type);
 //            switch (type) {

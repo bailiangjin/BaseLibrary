@@ -11,7 +11,7 @@ import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.ui.demo.dynamic.adapter.BtnPhotoGroupAdapter;
 import com.kevin.building.ui.demo.dynamic.adapter.BtnSkipGroupAdapter;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.constants.ViewBeanType;
 import com.kevin.building.ui.demo.dynamic.bean.constants.TxtType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
@@ -28,7 +28,7 @@ import com.kevin.building.ui.demo.dynamic.view.textview.TitleTextView;
 import java.util.List;
 
 /**
- * ViewItem 动态解析器 用于将ViewBean解析为相应的View 并返回
+ * ViewBean 动态解析器 用于将ViewBean解析为相应的View 并返回
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 10:39
@@ -39,10 +39,10 @@ public class DynamicViewGenerator {
      * 动态解析方法  动态解析ViewBean 返回View元素
      *
      * @param context  上下文 BaseActivity
-     * @param viewBean ViewItem
+     * @param viewBean ViewBean
      * @return View
      */
-    public static View getView(BaseActivity context, ViewItem viewBean) {
+    public static View getView(BaseActivity context, ViewBean viewBean) {
         int itemType = viewBean.getViewItemType();
         switch (itemType) {
             case ViewBeanType.TEXT:
@@ -115,7 +115,7 @@ public class DynamicViewGenerator {
         return gridView;
     }
 
-    private static View getBtnGroup(BaseActivity baseActivity, ViewItem viewBean) {
+    private static View getBtnGroup(BaseActivity baseActivity, ViewBean viewBean) {
         GridView gridView;
         List<BtnItem> btnItemList = viewBean.getBtnGroup().getBtnList();
         ClickCallback inesCallback = CallBackGenerator.getSkipCallback(baseActivity, btnItemList);
@@ -124,7 +124,7 @@ public class DynamicViewGenerator {
         return gridView;
     }
 
-    private static View getPhotoBtnGroup(BaseActivity baseActivity, ViewItem viewBean) {
+    private static View getPhotoBtnGroup(BaseActivity baseActivity, ViewBean viewBean) {
         GridView gridView;
         List<BtnItem> btnItemList = viewBean.getBtnGroup().getBtnList();
         ClickCallback inesCallback = CallBackGenerator.getSkipCallback(baseActivity, btnItemList);

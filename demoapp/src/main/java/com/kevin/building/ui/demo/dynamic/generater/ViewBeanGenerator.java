@@ -2,7 +2,7 @@ package com.kevin.building.ui.demo.dynamic.generater;
 
 import com.kevin.building.ui.demo.dynamic.bean.constants.BtnGroupType;
 import com.kevin.building.ui.demo.dynamic.bean.constants.ViewBeanType;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.RBGroup;
@@ -12,7 +12,7 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.EditTextItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.TextItem;
 
 /**
- * ViewItem 包装类 将一个BaseItem 按类型包装为相应的 ViewItem
+ * ViewBean 包装类 将一个BaseItem 按类型包装为相应的 ViewBean
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/18 17:50
@@ -23,10 +23,10 @@ public class ViewBeanGenerator {
      * 根据传入的BaseItem 对象类型 包装返回ViewBean对象
      *
      * @param item BaseItem
-     * @return ViewItem
+     * @return ViewBean
      */
-    public static ViewItem getViewBean(BaseItem item) {
-        ViewItem viewItem = new ViewItem();
+    public static ViewBean getViewBean(BaseItem item) {
+        ViewBean viewItem = new ViewBean();
         if (item instanceof TextItem) {
             viewItem.setTextItem((TextItem) item);
             viewItem.setViewItemType(ViewBeanType.TEXT);

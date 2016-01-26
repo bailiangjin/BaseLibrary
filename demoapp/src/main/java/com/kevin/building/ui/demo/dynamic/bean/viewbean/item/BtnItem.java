@@ -18,7 +18,7 @@ public class BtnItem extends BaseItem {
     /**
      * 跳转目的页ID
      */
-    private String skipToId;
+    private String skipId;
 
     /**
      * 定位类型
@@ -29,6 +29,24 @@ public class BtnItem extends BaseItem {
      * 照片压缩方式
      */
     private int compressType;
+
+    /**
+     * 是否 开启电子围栏校验
+     */
+    private boolean useFence;
+
+    /**
+     * 是否 校验排重
+     */
+    private boolean checkDuplicate;
+
+    /**
+     * 排重距离
+     */
+    private int dupDistance;
+
+
+
 
 
     public int getLocationType() {
@@ -48,12 +66,12 @@ public class BtnItem extends BaseItem {
     }
 
 
-    public String getSkipToId() {
-        return skipToId;
+    public String getSkipId() {
+        return skipId;
     }
 
-    public void setSkipToId(String skipToId) {
-        this.skipToId = skipToId;
+    public void setSkipId(String skipId) {
+        this.skipId = skipId;
     }
 
 

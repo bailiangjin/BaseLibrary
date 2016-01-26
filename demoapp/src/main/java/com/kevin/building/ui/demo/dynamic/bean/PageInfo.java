@@ -47,6 +47,11 @@ public class PageInfo {
      * 用户名
      */
     private String userName;
+
+    /**
+     * 页面标题
+     */
+    private String title;
     /**
      * 手机设备信息
      */
@@ -90,7 +95,7 @@ public class PageInfo {
     /**
      * 版本号
      */
-    private String versionN0;
+    private String versionNo;
 
     /**
      * 最大采集次数
@@ -185,12 +190,12 @@ public class PageInfo {
         this.entranceStatus = entranceStatus;
     }
 
-    public String getVersionN0() {
-        return versionN0;
+    public String getVersionNo() {
+        return versionNo;
     }
 
-    public void setVersionN0(String versionN0) {
-        this.versionN0 = versionN0;
+    public void setVersionNo(String versionNo) {
+        this.versionNo = versionNo;
     }
 
     public int getMaxCount() {
@@ -201,4 +206,11 @@ public class PageInfo {
         this.maxCount = maxCount;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

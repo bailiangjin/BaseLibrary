@@ -28,17 +28,17 @@ public abstract class BaseItem {
     /**
      * index 文字大小 dp
      */
-    private transient  int indexTextSize;
-
-//    /**
-//     * index 文字颜色
-//     */
-//    private int indexTextColor;
+    private transient int indexTextSize;
 
     /**
      * 是否必须
      */
     private boolean isMust;
+
+    /**
+     * 是否为只读状态 只读状态不可编辑
+     */
+    private boolean isRead;
 
 
     /**
@@ -106,15 +106,6 @@ public abstract class BaseItem {
         this.indexTextSize = indexTextSize;
     }
 
-//    public int getIndexTextColor() {
-//        return indexTextColor;
-//    }
-//
-//    public void setIndexTextColor(int indexTextColor) {
-//        this.indexTextColor = indexTextColor;
-//    }
-
-
 
     public ExtraParam getExtraParam() {
         return extraParam;
@@ -124,6 +115,13 @@ public abstract class BaseItem {
         this.extraParam = extraParam;
     }
 
+    public boolean isRead() {
+        return isRead;
+    }
+
+    public void setIsRead(boolean isRead) {
+        this.isRead = isRead;
+    }
 
     public void setDefaultData() {
         setId(String.valueOf(System.currentTimeMillis()));

@@ -13,10 +13,10 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.BtnItem;
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 16:14
  */
-public class ViewItem {
+public class ViewBean {
 
     /**
-     *  ViewItem 类型
+     *  ViewBean 类型
      */
     private int viewItemType;
 

@@ -12,11 +12,6 @@ public class EditTextItem extends BaseItem {
     private String content;
     private String hint;
 
-    /**
-     * 输入框文字大小 sp
-     */
-    private  int contentTextSize;
-
 
     @Override
     public void setDefaultViewType() {
@@ -39,11 +34,5 @@ public class EditTextItem extends BaseItem {
         this.hint = hint;
     }
 
-    public int getContentTextSize() {
-        return contentTextSize;
-    }
 
-    public void setContentTextSize(int contentTextSize) {
-        this.contentTextSize = contentTextSize;
-    }
 }

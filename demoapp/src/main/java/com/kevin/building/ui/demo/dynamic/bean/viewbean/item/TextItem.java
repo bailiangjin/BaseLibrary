@@ -9,10 +9,16 @@ import com.kevin.building.ui.demo.dynamic.bean.constants.ViewType;
  * Create Time: 2016/1/6 15:57
  */
 public class TextItem extends BaseItem {
+
     /**
-     * 文本类型
+     * 文本样式类型
      */
     private int txtType;
+
+    /**
+     * 内容类型 普通文本/邮箱/密码 等等
+     */
+    private int contentType;
 
     public int getTxtType() {
         return txtType;
@@ -21,9 +27,6 @@ public class TextItem extends BaseItem {
     public void setTxtType(int txtType) {
         this.txtType = txtType;
     }
-
-
-
 
 
     @Override

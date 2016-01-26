@@ -18,7 +18,7 @@ import com.kevin.building.ui.demo.dynamic.bean.PageParamBean;
 import com.kevin.building.ui.demo.dynamic.bean.constants.BtnGroupType;
 import com.kevin.building.ui.demo.dynamic.bean.constants.BtnType;
 import com.kevin.building.ui.demo.dynamic.bean.constants.TxtType;
-import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewItem;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.RBGroup;
@@ -76,16 +76,16 @@ public class DynamicPageActivity extends BaseActivity {
 
         long startTime = System.currentTimeMillis();
         PageParamBean pageParamBeanNew = GsonUtils.getInstance().toObj(jsonData, PageParamBean.class);
-//        Type type = new TypeToken<ArrayList<ViewItem>>() {
+//        Type type = new TypeToken<ArrayList<ViewBean>>() {
 //        }.getType();
 
 //       Gson gson =  GsonUtils.getInstance().getGson();
 //
-//        List<ViewItem> list = gson.fromJson(jsonData, type);
+//        List<ViewBean> list = gson.fromJson(jsonData, type);
 
 
-        List<ViewItem> viewBeanList = pageParamBeanNew.getViewItemList();
-        for (ViewItem viewBean : viewBeanList) {
+        List<ViewBean> viewBeanList = pageParamBeanNew.getViewItemList();
+        for (ViewBean viewBean : viewBeanList) {
             View view = DynamicViewGenerator.getView(DynamicPageActivity.this, viewBean);
 //            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
 //            layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -151,17 +151,17 @@ public class DynamicPageActivity extends BaseActivity {
         TextItem textTitle = new TextItem();
         textTitle.setIndexText("拍小区");
         textTitle.setTxtType(TxtType.TITLE);
-        ViewItem txtTitle = ViewBeanGenerator.getViewBean(textTitle);
+        ViewBean txtTitle = ViewBeanGenerator.getViewBean(textTitle);
 
         TextItem textItemMust = new TextItem();
         textItemMust.setIndexText("必拍");
         textItemMust.setTxtType(TxtType.CLASS_NAME);
-        ViewItem txtMust = ViewBeanGenerator.getViewBean(textItemMust);
+        ViewBean txtMust = ViewBeanGenerator.getViewBean(textItemMust);
 
         TextItem textItemNoMust = new TextItem();
         textItemNoMust.setIndexText("非必拍");
         textItemNoMust.setTxtType(TxtType.CLASS_NAME);
-        ViewItem txtNoMust = ViewBeanGenerator.getViewBean(textItemNoMust);
+        ViewBean txtNoMust = ViewBeanGenerator.getViewBean(textItemNoMust);
 
         TextItem textItemNoMust1 = new TextItem();
         textItemNoMust1.setIndexText("拍摄注意事项");
@@ -170,50 +170,50 @@ public class DynamicPageActivity extends BaseActivity {
         textItemNoMust1.setIndexTextSize(12);
 
 
-        ViewItem txtNoMust1 = ViewBeanGenerator.getViewBean(textItemNoMust1);
+        ViewBean txtNoMust1 = ViewBeanGenerator.getViewBean(textItemNoMust1);
 
 
         BtnGroup btnGroup_must = new BtnGroup();
         btnGroup_must.setIndexText("必拍列表");
         btnGroup_must.setBtnGroupType(BtnGroupType.SKIP_BTN_GROUP);
         btnGroup_must.setBtnList(essentialItemList);
-        ViewItem viewBean_btnGroupMust = ViewBeanGenerator.getViewBean(btnGroup_must);
+        ViewBean viewBean_btnGroupMust = ViewBeanGenerator.getViewBean(btnGroup_must);
 
         BtnGroup btnGroup_nomust = new BtnGroup();
         btnGroup_nomust.setIndexText("非必拍列表");
         btnGroup_nomust.setBtnGroupType(BtnGroupType.SKIP_BTN_GROUP);
         btnGroup_nomust.setBtnList(inessentialItemList);
-        ViewItem viewBean_btnGroupNoMust = ViewBeanGenerator.getViewBean(btnGroup_nomust);
+        ViewBean viewBean_btnGroupNoMust = ViewBeanGenerator.getViewBean(btnGroup_nomust);
 
 
         BtnGroup photoBtnGroup = new BtnGroup();
         photoBtnGroup.setIndexText("拍照按钮列表");
         photoBtnGroup.setBtnGroupType(BtnGroupType.PHOTO_BTN_GROUP);
         photoBtnGroup.setBtnList(photoItemList);
-        ViewItem viewBean_photoBtnGroup = ViewBeanGenerator.getViewBean(photoBtnGroup);
+        ViewBean viewBean_photoBtnGroup = ViewBeanGenerator.getViewBean(photoBtnGroup);
 
         CBGroup cbGroup = new CBGroup();
         cbGroup.setIndexText("多选框列表");
         cbGroup.setCbList(cbItemList);
-        ViewItem viewBean_cbGroup = ViewBeanGenerator.getViewBean(cbGroup);
+        ViewBean viewBean_cbGroup = ViewBeanGenerator.getViewBean(cbGroup);
 
         RBGroup rbGroup = new RBGroup();
         rbGroup.setIndexText("单选框列表");
         rbGroup.setRbList(rbItemList);
-        ViewItem viewBean_rbGroup = ViewBeanGenerator.getViewBean(rbGroup);
+        ViewBean viewBean_rbGroup = ViewBeanGenerator.getViewBean(rbGroup);
 
 
         EditTextItem et1 = new EditTextItem();
         et1.setIndexText("楼栋数");
         et1.setHint("请输入楼栋数");
-        ViewItem viewBean_et = ViewBeanGenerator.getViewBean(et1);
+        ViewBean viewBean_et = ViewBeanGenerator.getViewBean(et1);
 
         BtnItem btn1 = new BtnItem();
         btn1.setIndexText("保存");
-        ViewItem viewBean_btn1 = ViewBeanGenerator.getViewBean(btn1);
+        ViewBean viewBean_btn1 = ViewBeanGenerator.getViewBean(btn1);
 
 
-        List<ViewItem> viewBeanList = new ArrayList<>();
+        List<ViewBean> viewBeanList = new ArrayList<>();
 
         txtTitle.setOrder(1);
         viewBeanList.add(txtTitle);
