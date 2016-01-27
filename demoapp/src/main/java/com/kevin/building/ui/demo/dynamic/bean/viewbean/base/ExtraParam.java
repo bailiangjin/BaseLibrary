@@ -1,12 +1,14 @@
 package com.kevin.building.ui.demo.dynamic.bean.viewbean.base;
 
 /**
- * 扩展字段
+ * 扩展字段 类 以后改动的扩展字段可以统一从此处添加
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/20 11:19
  */
 public class ExtraParam {
+
+
 
 
     private String extra1;

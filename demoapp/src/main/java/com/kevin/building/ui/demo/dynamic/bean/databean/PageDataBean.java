@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean.projectbean;
+package com.kevin.building.ui.demo.dynamic.bean.databean;
 
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 
@@ -6,13 +6,13 @@ import java.util.List;
 
 /**
  *
- * 页面完整参数类  该类对应一个完整的动态页面
+ * 页面完整参数Bean 该类对应一个完整的动态页面
  *
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/28 14:23
  */
-public class PageParamBean {
+public class PageDataBean {
 
     /**
      * 页面基本参数
@@ -22,7 +22,7 @@ public class PageParamBean {
     /**
      * 界面元素列表
      */
-    private List<ViewBean> viewItemList;
+    private List<ViewBean> viewBeanList;
 
 
 
@@ -34,11 +34,11 @@ public class PageParamBean {
         this.pageInfo = pageInfo;
     }
 
-    public List<ViewBean> getViewItemList() {
-        return viewItemList;
+    public List<ViewBean> getViewBeanList() {
+        return viewBeanList;
     }
 
-    public void setViewItemList(List<ViewBean> viewItemList) {
-        this.viewItemList = viewItemList;
+    public void setViewBeanList(List<ViewBean> viewBeanList) {
+        this.viewBeanList = viewBeanList;
     }
 }

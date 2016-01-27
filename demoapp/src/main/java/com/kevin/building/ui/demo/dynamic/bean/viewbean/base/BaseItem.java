@@ -46,6 +46,8 @@ public abstract class BaseItem {
 
     /**
      * 对齐方式 居中17=Gravity.CENTER 靠左3=Gravity.LEFT 靠右5=Gravity.RIGHT
+     *
+     * 添加transient标识的字段不会转化到json结构 对于json可忽略
      */
     private transient int gravity;
 

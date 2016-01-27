@@ -1,9 +1,9 @@
-package com.kevin.building.ui.demo.dynamic.bean.projectbean;
+package com.kevin.building.ui.demo.dynamic.bean.databean;
 
 import java.util.List;
 
 /**
- * 拍摄大类 Json数据 实体类
+ * 采集大类 Json数据 实体类
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/26 15:54
@@ -22,7 +22,7 @@ public class ClassDataBean {
     /**
      * 该采集类包含的小类采集页面 List
      */
-    private List<PageParamBean> pageParamBeanList;
+    private List<PageDataBean> pageDataBeanList;
 
     public String getId() {
         return id;
@@ -40,11 +40,11 @@ public class ClassDataBean {
         this.name = name;
     }
 
-    public List<PageParamBean> getPageParamBeanList() {
-        return pageParamBeanList;
+    public List<PageDataBean> getPageDataBeanList() {
+        return pageDataBeanList;
     }
 
-    public void setPageParamBeanList(List<PageParamBean> pageParamBeanList) {
-        this.pageParamBeanList = pageParamBeanList;
+    public void setPageDataBeanList(List<PageDataBean> pageDataBeanList) {
+        this.pageDataBeanList = pageDataBeanList;
     }
 }

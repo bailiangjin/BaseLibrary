@@ -4,6 +4,7 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.ViewType;
 
 /**
+ * 按钮类
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/6 16:02
@@ -11,7 +12,7 @@ import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.ViewType;
 public class BtnItem extends BaseItem {
 
     /**
-     * 按钮类型
+     * 按钮类型 不同值分别对应 跳转按钮/保存按钮/拍照按钮
      */
     private int btnType;
 
@@ -21,14 +22,24 @@ public class BtnItem extends BaseItem {
     private String skipId;
 
     /**
+     * 照片压缩方式
+     */
+    private int compressType;
+
+    /**
      * 定位类型
      */
     private int locationType;
 
     /**
-     * 照片压缩方式
+     * 定位成功消息
      */
-    private int compressType;
+    private String locateSuccessMsg;
+
+    /**
+     *  定位失败消息
+     */
+    private String locateFailMsg;
 
     /**
      * 是否 开启电子围栏校验
@@ -44,9 +55,6 @@ public class BtnItem extends BaseItem {
      * 排重距离
      */
     private int dupDistance;
-
-
-
 
 
     public int getLocationType() {
@@ -110,5 +118,21 @@ public class BtnItem extends BaseItem {
 
     public void setDupDistance(int dupDistance) {
         this.dupDistance = dupDistance;
+    }
+
+    public String getLocateSuccessMsg() {
+        return locateSuccessMsg;
+    }
+
+    public void setLocateSuccessMsg(String locateSuccessMsg) {
+        this.locateSuccessMsg = locateSuccessMsg;
+    }
+
+    public String getLocateFailMsg() {
+        return locateFailMsg;
+    }
+
+    public void setLocateFailMsg(String locateFailMsg) {
+        this.locateFailMsg = locateFailMsg;
     }
 }

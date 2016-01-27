@@ -1,9 +1,9 @@
-package com.kevin.building.ui.demo.dynamic.bean.projectbean;
+package com.kevin.building.ui.demo.dynamic.bean.databean;
 
 import java.util.List;
 
 /**
- * 项目整体json对应 实体类
+ * 采集项目Bean
  *
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
@@ -24,7 +24,7 @@ public class ProjectDataBean {
     /**
      *  拍摄大类 List
      */
-    private List<ClassDataBean> classPackageBeanList;
+    private List<ClassDataBean> classDataBeanList;
 
     public String getId() {
         return id;
@@ -42,11 +42,11 @@ public class ProjectDataBean {
         this.versionNo = versionNo;
     }
 
-    public List<ClassDataBean> getClassPackageBeanList() {
-        return classPackageBeanList;
+    public List<ClassDataBean> getClassDataBeanList() {
+        return classDataBeanList;
     }
 
-    public void setClassPackageBeanList(List<ClassDataBean> classPackageBeanList) {
-        this.classPackageBeanList = classPackageBeanList;
+    public void setClassDataBeanList(List<ClassDataBean> classDataBeanList) {
+        this.classDataBeanList = classDataBeanList;
     }
 }

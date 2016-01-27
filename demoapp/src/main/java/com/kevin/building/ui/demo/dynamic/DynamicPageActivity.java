@@ -12,10 +12,10 @@ import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.demo.dynamic.bean.projectbean.ClassDataBean;
-import com.kevin.building.ui.demo.dynamic.bean.projectbean.PageInfo;
-import com.kevin.building.ui.demo.dynamic.bean.projectbean.PageParamBean;
-import com.kevin.building.ui.demo.dynamic.bean.projectbean.ProjectDataBean;
+import com.kevin.building.ui.demo.dynamic.bean.databean.ClassDataBean;
+import com.kevin.building.ui.demo.dynamic.bean.databean.PageInfo;
+import com.kevin.building.ui.demo.dynamic.bean.databean.PageDataBean;
+import com.kevin.building.ui.demo.dynamic.bean.databean.ProjectDataBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.BtnGroupType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.BtnType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.TxtType;
@@ -45,7 +45,7 @@ import java.util.List;
 public class DynamicPageActivity extends BaseActivity {
 
 
-    private PageParamBean pageParamBean;
+    private PageDataBean pageParamBean;
 
 
     private LayoutInflater layoutInflater;
@@ -73,7 +73,7 @@ public class DynamicPageActivity extends BaseActivity {
         String jsonData = GsonUtils.getInstance().toJson(pageParamBean);
 
         long startTime = System.currentTimeMillis();
-        PageParamBean pageParamBeanNew = GsonUtils.getInstance().toObj(jsonData, PageParamBean.class);
+        PageDataBean pageParamBeanNew = GsonUtils.getInstance().toObj(jsonData, PageDataBean.class);
 //        Type type = new TypeToken<ArrayList<ViewBean>>() {
 //        }.getType();
 
@@ -82,7 +82,7 @@ public class DynamicPageActivity extends BaseActivity {
 //        List<ViewBean> list = gson.fromJson(jsonData, type);
 
 
-        List<ViewBean> viewBeanList = pageParamBeanNew.getViewItemList();
+        List<ViewBean> viewBeanList = pageParamBeanNew.getViewBeanList();
         for (ViewBean viewBean : viewBeanList) {
             View view = DynamicViewGenerator.getView(DynamicPageActivity.this, viewBean);
 //            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -258,7 +258,7 @@ public class DynamicPageActivity extends BaseActivity {
 
 
         pageParamBean = PagerBeanGenerator.getViewBean(pageInfo, viewBeanList);
-        PageParamBean pageParamBean2 = PagerBeanGenerator.getViewBean(pageInfo, viewBeanList);
+        PageDataBean pageParamBean2 = PagerBeanGenerator.getViewBean(pageInfo, viewBeanList);
         String json = GsonUtils.getInstance().toJson(pageParamBean);
         LogUtils.e("pageParamBeanJson:" + json);
 
@@ -274,14 +274,14 @@ public class DynamicPageActivity extends BaseActivity {
             ClassDataBean classDataBean = new ClassDataBean();
             classDataBean.setName("采集大类" + i);
             classDataBean.setId("collectClassId" + i);
-            List<PageParamBean> pageParamBeanList = new ArrayList<>();
+            List<PageDataBean> pageParamBeanList = new ArrayList<>();
             pageParamBeanList.add(pageParamBean);
             pageParamBeanList.add(pageParamBean2);
-            classDataBean.setPageParamBeanList(pageParamBeanList);
+            classDataBean.setPageDataBeanList(pageParamBeanList);
             classDataBeanList.add(classDataBean);
         }
 
-        projectDataBean.setClassPackageBeanList(classDataBeanList);
+        projectDataBean.setClassDataBeanList(classDataBeanList);
 
         String jsonPro = GsonUtils.getInstance().toJson(projectDataBean);
 

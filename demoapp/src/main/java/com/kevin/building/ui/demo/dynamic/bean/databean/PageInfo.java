@@ -1,7 +1,7 @@
-package com.kevin.building.ui.demo.dynamic.bean.projectbean;
+package com.kevin.building.ui.demo.dynamic.bean.databean;
 
 /**
- * 页面基本信息类
+ * 页面基本信息Bean
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2016/1/19 10:32

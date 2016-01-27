@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.generater;
 
-import com.kevin.building.ui.demo.dynamic.bean.projectbean.PageInfo;
-import com.kevin.building.ui.demo.dynamic.bean.projectbean.PageParamBean;
+import com.kevin.building.ui.demo.dynamic.bean.databean.PageInfo;
+import com.kevin.building.ui.demo.dynamic.bean.databean.PageDataBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 
 import java.util.List;
@@ -13,10 +13,10 @@ import java.util.List;
  */
 public class PagerBeanGenerator {
 
-    public static PageParamBean getViewBean(PageInfo pageInfo, List<ViewBean> viewBeanList) {
-        PageParamBean pageParamBean = new PageParamBean();
+    public static PageDataBean getViewBean(PageInfo pageInfo, List<ViewBean> viewBeanList) {
+        PageDataBean pageParamBean = new PageDataBean();
         pageParamBean.setPageInfo(pageInfo);
-        pageParamBean.setViewItemList(viewBeanList);
+        pageParamBean.setViewBeanList(viewBeanList);
         return pageParamBean;
 
     }
