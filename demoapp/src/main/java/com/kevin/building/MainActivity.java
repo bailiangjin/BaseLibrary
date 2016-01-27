@@ -7,12 +7,13 @@ import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.base.BtnBaseActivity;
+import com.kevin.building.demo.viewpager.ViewPagerDemoActivity;
 import com.kevin.building.ui.activity.LoginActivity;
-import com.kevin.building.ui.demo.dynamic.DynamicPageActivity;
-import com.kevin.building.ui.demo.fragmentdemo.MyFragmentActivity;
-import com.kevin.building.ui.demo.launchmode.LaunchModeActivity1;
-import com.kevin.building.ui.demo.networkdemo.NetworkActivity;
-import com.kevin.building.ui.demo.widget.WidgetMainActivity;
+import com.kevin.building.demo.dynamic.DynamicPageActivity;
+import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
+import com.kevin.building.demo.launchmode.LaunchModeActivity1;
+import com.kevin.building.demo.networkdemo.NetworkActivity;
+import com.kevin.building.demo.widget.WidgetMainActivity;
 import com.kevin.building.utils.ActivityUtils;
 
 /**
@@ -39,17 +40,17 @@ public class MainActivity extends BtnBaseActivity {
         btn3.setText("网络模块");
         btn4.setText("数据库模块");
         btn5.setText("Fragment模块");
-//        btn6.setText("用户信息");
+        btn6.setText("ViewPagerDemo");
         btn7.setText("启动模式");
         btn8.setText("测试动态加载页面");
 
-//        btn1.setVisibility(View.VISIBLE);
-//        btn2.setVisibility(View.VISIBLE);
-//        btn3.setVisibility(View.VISIBLE);
-//        btn4.setVisibility(View.VISIBLE);
-//        btn5.setVisibility(View.VISIBLE);
-//        btn6.setVisibility(View.VISIBLE);
-//        btn7.setVisibility(View.VISIBLE);
+        btn1.setVisibility(View.VISIBLE);
+        btn2.setVisibility(View.VISIBLE);
+        btn3.setVisibility(View.VISIBLE);
+        btn4.setVisibility(View.VISIBLE);
+        btn5.setVisibility(View.VISIBLE);
+        btn6.setVisibility(View.VISIBLE);
+        btn7.setVisibility(View.VISIBLE);
         btn8.setVisibility(View.VISIBLE);
 //        NdkJniUtils jni = new NdkJniUtils();
 //        show("jni:" + jni.getCLanguageString());
@@ -95,21 +96,17 @@ public class MainActivity extends BtnBaseActivity {
 
             case R.id.btn6:
                 //TODO:待添加模块
-                show("点击了测试6");
-
-
+                //show("点击了测试6");
+                ActivityUtils.startActivity(this, ViewPagerDemoActivity.class);
                 break;
 
             case R.id.btn7:
                 ActivityUtils.startActivity(this, LaunchModeActivity1.class);
-
-
                 break;
 
             case R.id.btn8:
 //               show("点击了当前测试");
                 ActivityUtils.startActivity(this, DynamicPageActivity.class);
-
                 break;
 
 

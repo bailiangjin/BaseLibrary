@@ -35,85 +35,85 @@
 
         <!--DetailActivity-->
         <activity
-            android:name=".ui.demo.dynamic.DetailActivity"
+            android:name=".demo.dynamic.DetailActivity"
 
             android:label="DetailActivity" />
         <!--FragmentAdapterDemos-->
         <activity
-            android:name=".ui.demo.fragmentdemo.FragmentAdapterDemos"
+            android:name=".demo.fragmentdemo.FragmentAdapterDemos"
 
             android:label="FragmentAdapterDemos" />
         <!--DynamicPageActivity-->
         <activity
-            android:name=".ui.demo.dynamic.DynamicPageActivity"
+            android:name=".demo.dynamic.DynamicPageActivity"
 
             android:label="DynamicPageActivity" />
 
         <!--ViewPagerDemo-->
         <activity
-            android:name=".ui.demo.viewpager.ViewPagerDemoActivity"
+            android:name=".demo.viewpager.ViewPagerDemoActivity"
 
             android:label="ViewPagerDemo" />
         <!--widget控件demos-->
         <activity
-            android:name=".ui.demo.widget.dialog.DialogActivity"
+            android:name=".demo.widget.dialog.DialogActivity"
 
             android:label="弹窗" />
 
         <!--WebView demos-->
         <activity
-            android:name=".ui.demo.WebviewActivity"
+            android:name=".demo.WebviewActivity"
 
             android:label="WebView" />
 
         <!--拖拽按钮demo-->
         <activity
-            android:name=".ui.demo.widget.draggridview.DragGridViewActivity"
+            android:name=".demo.widget.draggridview.DragGridViewActivity"
 
             android:label="@string/drag_gridveiw_demo" />
 
         <activity
-            android:name=".ui.demo.widget.searchbar.SearchActivity"
+            android:name=".demo.widget.searchbar.SearchActivity"
 
             android:label="@string/search_demo" />
 
         <activity
-            android:name=".ui.demo.widget.WidgetMainActivity"
+            android:name=".demo.widget.WidgetMainActivity"
             android:label="@string/ui_demo"
             android:theme="@android:style/Theme.NoTitleBar" />
 
 
         <!--网络相关demo-->
         <activity
-            android:name=".ui.demo.networkdemo.NetworkActivity"
+            android:name=".demo.networkdemo.NetworkActivity"
             android:label="@string/network" />
 
         <activity
-            android:name=".ui.demo.fragmentdemo.MyFragmentActivity"
+            android:name=".demo.fragmentdemo.MyFragmentActivity"
             android:label="@string/fragment" />
         <activity
-            android:name=".ui.demo.dbtest.DatabaseActivity"
+            android:name=".demo.dbtest.DatabaseActivity"
             android:label="@string/database" />
 
         <!--启动模式测试-->
 
         <activity
-            android:name=".ui.demo.launchmode.LaunchModeActivity1"
+            android:name=".demo.launchmode.LaunchModeActivity1"
 
             android:label="@string/launch_mode" />
         <activity
-            android:name=".ui.demo.launchmode.LaunchModeActivity2"
+            android:name=".demo.launchmode.LaunchModeActivity2"
             android:label="@string/launch_mode"
             android:launchMode="singleInstance" />
 
 
         <activity
-            android:name=".ui.demo.launchmode.LaunchModeActivity3"
+            android:name=".demo.launchmode.LaunchModeActivity3"
             android:label="@string/launch_mode" />
 
 
         <activity
-            android:name=".ui.demo.launchmode.LaunchModeActivity4"
+            android:name=".demo.launchmode.LaunchModeActivity4"
             android:label="@string/launch_mode"
             android:launchMode="standard" />
 
