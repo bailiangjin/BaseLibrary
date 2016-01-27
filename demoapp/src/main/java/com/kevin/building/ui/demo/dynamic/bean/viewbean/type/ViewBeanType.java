@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean.constants;
+package com.kevin.building.ui.demo.dynamic.bean.viewbean.type;
 
 /**
  * ViewBean 实际条目类型类：基于基本元素组合扩展出的实际使用类型类

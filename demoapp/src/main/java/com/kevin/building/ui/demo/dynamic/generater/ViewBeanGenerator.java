@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.generater;
 
-import com.kevin.building.ui.demo.dynamic.bean.constants.BtnGroupType;
-import com.kevin.building.ui.demo.dynamic.bean.constants.ViewBeanType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.BtnGroupType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.ViewBeanType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;

@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean;
+package com.kevin.building.ui.demo.dynamic.bean.projectbean;
 
 import java.util.List;
 
@@ -12,6 +12,11 @@ import java.util.List;
 public class ProjectDataBean {
 
     /**
+     * 项目id
+     */
+    private String id;
+
+    /**
      * 版本号
      */
     private String versionNo;
@@ -20,6 +25,14 @@ public class ProjectDataBean {
      *  拍摄大类 List
      */
     private List<ClassDataBean> classPackageBeanList;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getVersionNo() {
         return versionNo;

@@ -12,13 +12,13 @@ import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.demo.dynamic.bean.ClassDataBean;
-import com.kevin.building.ui.demo.dynamic.bean.PageInfo;
-import com.kevin.building.ui.demo.dynamic.bean.PageParamBean;
-import com.kevin.building.ui.demo.dynamic.bean.ProjectDataBean;
-import com.kevin.building.ui.demo.dynamic.bean.constants.BtnGroupType;
-import com.kevin.building.ui.demo.dynamic.bean.constants.BtnType;
-import com.kevin.building.ui.demo.dynamic.bean.constants.TxtType;
+import com.kevin.building.ui.demo.dynamic.bean.projectbean.ClassDataBean;
+import com.kevin.building.ui.demo.dynamic.bean.projectbean.PageInfo;
+import com.kevin.building.ui.demo.dynamic.bean.projectbean.PageParamBean;
+import com.kevin.building.ui.demo.dynamic.bean.projectbean.ProjectDataBean;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.BtnGroupType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.BtnType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.TxtType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.group.CBGroup;
@@ -116,6 +116,7 @@ public class DynamicPageActivity extends BaseActivity {
             BtnItem btnItem = new BtnItem();
             btnItem.setBtnType(BtnType.SKIP);
             btnItem.setIndexText("必拍" + (i + 1));
+            btnItem.setSkipId("skipId" + (i + 1));
             essentialItemList.add(btnItem);
         }
 
@@ -124,6 +125,7 @@ public class DynamicPageActivity extends BaseActivity {
             BtnItem essentialItem = new BtnItem();
             essentialItem.setBtnType(BtnType.SKIP);
             essentialItem.setIndexText("非必拍" + (i + 1));
+            essentialItem.setSkipId("skipId" + (i + 1));
             inessentialItemList.add(essentialItem);
         }
 
@@ -161,14 +163,14 @@ public class DynamicPageActivity extends BaseActivity {
         textItemNoMust.setTxtType(TxtType.CLASS_NAME);
         ViewBean txtNoMust = ViewBeanGenerator.getViewBean(textItemNoMust);
 
-        TextItem textItemNoMust1 = new TextItem();
-        textItemNoMust1.setIndexText("拍摄注意事项");
-        textItemNoMust1.setTxtType(TxtType.CONTENT);
+        TextItem textNotice = new TextItem();
+        textNotice.setIndexText("拍摄注意事项");
+        textNotice.setTxtType(TxtType.CONTENT);
 //        textItemNoMust1.setGravity(Gravity.RIGHT);
-        textItemNoMust1.setIndexTextSize(12);
+        textNotice.setIndexTextSize(12);
 
 
-        ViewBean txtNoMust1 = ViewBeanGenerator.getViewBean(textItemNoMust1);
+        ViewBean viewBean_NoticeTxt = ViewBeanGenerator.getViewBean(textNotice);
 
 
         BtnGroup btnGroup_must = new BtnGroup();
@@ -207,9 +209,9 @@ public class DynamicPageActivity extends BaseActivity {
         et1.setName("loudongshu");
         ViewBean viewBean_et = ViewBeanGenerator.getViewBean(et1);
 
-        BtnItem btn1 = new BtnItem();
-        btn1.setIndexText("保存");
-        ViewBean viewBean_btn1 = ViewBeanGenerator.getViewBean(btn1);
+        BtnItem btn_save = new BtnItem();
+        btn_save.setIndexText("保存");
+        ViewBean viewBean_btn_save = ViewBeanGenerator.getViewBean(btn_save);
 
 
         List<ViewBean> viewBeanList = new ArrayList<>();
@@ -221,21 +223,21 @@ public class DynamicPageActivity extends BaseActivity {
         viewBean_btnGroupMust.setOrder(3);
         viewBeanList.add(viewBean_btnGroupMust);
         txtNoMust.setOrder(4);
-        viewBeanList.add(txtNoMust);
-        viewBean_btnGroupNoMust.setOrder(5);
-        viewBeanList.add(viewBean_btnGroupNoMust);
+//        viewBeanList.add(txtNoMust);
+//        viewBean_btnGroupNoMust.setOrder(5);
+//        viewBeanList.add(viewBean_btnGroupNoMust);
         viewBean_cbGroup.setOrder(6);
         viewBeanList.add(viewBean_cbGroup);
         viewBean_rbGroup.setOrder(7);
         viewBeanList.add(viewBean_rbGroup);
-        txtNoMust1.setOrder(8);
-        viewBeanList.add(txtNoMust1);
+        viewBean_NoticeTxt.setOrder(8);
+        viewBeanList.add(viewBean_NoticeTxt);
         viewBean_photoBtnGroup.setOrder(9);
         viewBeanList.add(viewBean_photoBtnGroup);
         viewBean_et.setOrder(10);
         viewBeanList.add(viewBean_et);
-        viewBean_btn1.setOrder(11);
-        viewBeanList.add(viewBean_btn1);
+        viewBean_btn_save.setOrder(11);
+        viewBeanList.add(viewBean_btn_save);
 
 
         PageInfo pageInfo = new PageInfo();
@@ -245,6 +247,7 @@ public class DynamicPageActivity extends BaseActivity {
         pageInfo.setCollectClassId("CollectClassId");
         pageInfo.setCollectClassParentId("CollectClassParentId");
         pageInfo.setDataName("采集小区111");
+        pageInfo.setTitle("页面标题：采集小区111");
         pageInfo.setDeviceInfo("DeviceInfo");
         pageInfo.setEntranceStatus("1");
         pageInfo.setUserName("user001");
@@ -263,12 +266,14 @@ public class DynamicPageActivity extends BaseActivity {
 
         ProjectDataBean projectDataBean = new ProjectDataBean();
         projectDataBean.setVersionNo("123");
+        projectDataBean.setId("projectId");
 
         List<ClassDataBean> classDataBeanList = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
             ClassDataBean classDataBean = new ClassDataBean();
             classDataBean.setName("采集大类" + i);
+            classDataBean.setId("collectClassId" + i);
             List<PageParamBean> pageParamBeanList = new ArrayList<>();
             pageParamBeanList.add(pageParamBean);
             pageParamBeanList.add(pageParamBean2);
@@ -276,9 +281,11 @@ public class DynamicPageActivity extends BaseActivity {
             classDataBeanList.add(classDataBean);
         }
 
+        projectDataBean.setClassPackageBeanList(classDataBeanList);
+
         String jsonPro = GsonUtils.getInstance().toJson(projectDataBean);
 
-        FileUtils.saveStringToFile(FilePathUtil.getSdcardPath() + File.separator + "json_pro.txt", json, false);
+        FileUtils.saveStringToFile(FilePathUtil.getSdcardPath() + File.separator + "json_pro.txt", jsonPro, false);
         LogUtils.e("pageParamBeanJson:" + jsonPro);
 
 

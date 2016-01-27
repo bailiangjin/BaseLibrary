@@ -2,8 +2,6 @@ package com.kevin.building.ui.demo.dynamic.bean.viewbean.base;
 
 import android.view.Gravity;
 
-import com.kevin.building.ui.demo.dynamic.bean.ExtraParam;
-
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com

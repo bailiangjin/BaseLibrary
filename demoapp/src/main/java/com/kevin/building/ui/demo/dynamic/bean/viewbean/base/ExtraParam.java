@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean;
+package com.kevin.building.ui.demo.dynamic.bean.viewbean.base;
 
 /**
  * 扩展字段

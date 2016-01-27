@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean.constants;
+package com.kevin.building.ui.demo.dynamic.bean.viewbean.type;
 
 /**
  * 按钮 Group 类型

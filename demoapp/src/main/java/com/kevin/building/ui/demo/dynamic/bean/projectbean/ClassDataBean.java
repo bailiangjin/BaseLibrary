@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean;
+package com.kevin.building.ui.demo.dynamic.bean.projectbean;
 
 import java.util.List;
 
@@ -11,6 +11,11 @@ import java.util.List;
 public class ClassDataBean {
 
     /**
+     * 采集品类id
+     */
+    private  String id;
+
+    /**
      * 采集大类名称
      */
     private  String name;
@@ -18,6 +23,14 @@ public class ClassDataBean {
      * 该采集类包含的小类采集页面 List
      */
     private List<PageParamBean> pageParamBeanList;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

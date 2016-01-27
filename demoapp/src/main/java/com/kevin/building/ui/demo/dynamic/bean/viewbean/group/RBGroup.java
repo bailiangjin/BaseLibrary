@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.bean.viewbean.group;
 
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.base.BaseItem;
-import com.kevin.building.ui.demo.dynamic.bean.constants.ViewType;
+import com.kevin.building.ui.demo.dynamic.bean.viewbean.type.ViewType;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.item.RBItem;
 
 import java.util.List;

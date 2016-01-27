@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean;
+package com.kevin.building.ui.demo.dynamic.bean.projectbean;
 
 /**
  * 页面基本信息类
@@ -8,37 +8,6 @@ package com.kevin.building.ui.demo.dynamic.bean;
  */
 public class PageInfo {
 
-     /* {
-        "baseId":"683848708101509120",
-            "basePackageId":"683848707761770496",
-            "basePackageName":"软件园(测试超市)22",
-            "collectClassId":"644017440660914176",
-            "collectClassParentId":"643695198416666624",
-            "dataName":"软件园(测试超市)22",
-            "deviceInfo":"865410018610977",
-            "deviceinfo":"865410018610977",
-            "entranceStatus":"1",
-            "ownerId":"3",
-            "taskId":"660036016022745091",
-            "userName":"a4000201",
-            "versionNo":"666908636098076672"
-    }*/
-
-   /* "baseId":"683848712765571072",
-            "basePackageId":"683848712450998272",
-            "basePackageName":"软件园(测试商场)66",
-            "collectClassId":"644038200045600768",
-            "collectClassParentId":"643695219715342336",
-            "dataName":"软件园(测试商场)66",
-            "deviceInfo":"865410018610977",
-            "deviceinfo":"865410018610977",
-            "ownerId":"3",
-            "taskId":"660036015817224193",
-            "userName":"a4000201",
-            "versionNo":"666909163636662272",
-            "event":"644038200045600768_click",
-            "uuid":null,
-            "maxCount":"1"*/
     /**
      * 采集项目id
      */
@@ -74,11 +43,11 @@ public class PageInfo {
      */
     private String dataName;
     /**
-     * 类id
+     * 当前采集小类id
      */
     private String collectClassId;
     /**
-     * 父类id
+     * 采集大类id
      */
     private String collectClassParentId;
 

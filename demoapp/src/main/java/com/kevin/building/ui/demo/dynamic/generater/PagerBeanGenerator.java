@@ -1,7 +1,7 @@
 package com.kevin.building.ui.demo.dynamic.generater;
 
-import com.kevin.building.ui.demo.dynamic.bean.PageInfo;
-import com.kevin.building.ui.demo.dynamic.bean.PageParamBean;
+import com.kevin.building.ui.demo.dynamic.bean.projectbean.PageInfo;
+import com.kevin.building.ui.demo.dynamic.bean.projectbean.PageParamBean;
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 
 import java.util.List;

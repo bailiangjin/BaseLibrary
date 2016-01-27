@@ -1,4 +1,4 @@
-package com.kevin.building.ui.demo.dynamic.bean;
+package com.kevin.building.ui.demo.dynamic.bean.projectbean;
 
 import com.kevin.building.ui.demo.dynamic.bean.viewbean.ViewBean;
 
@@ -7,6 +7,7 @@ import java.util.List;
 /**
  *
  * 页面完整参数类  该类对应一个完整的动态页面
+ *
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/28 14:23
