@@ -133,6 +133,8 @@ public class DynamicPageActivity extends BaseActivity {
             BtnItem essentialItem = new BtnItem();
             essentialItem.setBtnType(BtnType.PHOTO);
             essentialItem.setIndexText("拍照" + (i + 1));
+            essentialItem.setLocateSuccessMsg("定位成功");
+            essentialItem.setLocateFailMsg("定位失败");
             photoItemList.add(essentialItem);
         }
 
