@@ -32,12 +32,17 @@ public class BtnItem extends BaseItem {
     private int locationType;
 
     /**
+     * 是否定位成功 客户端专用字段 序列化时不会保存到json结构
+     */
+    private transient boolean isLocateSuccess;
+
+    /**
      * 定位成功消息
      */
     private String locateSuccessMsg;
 
     /**
-     *  定位失败消息
+     * 定位失败消息
      */
     private String locateFailMsg;
 
@@ -134,5 +139,13 @@ public class BtnItem extends BaseItem {
 
     public void setLocateFailMsg(String locateFailMsg) {
         this.locateFailMsg = locateFailMsg;
+    }
+
+    public boolean isLocateSuccess() {
+        return isLocateSuccess;
+    }
+
+    public void setIsLocateSuccess(boolean isLocateSuccess) {
+        this.isLocateSuccess = isLocateSuccess;
     }
 }
