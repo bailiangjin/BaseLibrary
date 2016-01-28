@@ -7,13 +7,14 @@ import android.widget.TextView;
 import com.kevin.building.R;
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.EditTextItem;
+import com.kevin.building.demo.dynamic.view.root.BaseView;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 15:32
  */
-public class BaseEditText extends BaseView {
+public abstract class BaseEditText extends BaseView {
 
     private TextView tv_index;
     private EditText editText;

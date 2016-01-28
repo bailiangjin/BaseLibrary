@@ -3,6 +3,7 @@ package com.kevin.building.demo.dynamic.view.base;
 import android.content.Context;
 
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
+import com.kevin.building.demo.dynamic.view.root.BaseView;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 14:07
  */
-public class BaseGridView extends BaseView {
+public abstract class BaseGridView extends BaseView {
 
     private List<BaseButton> btnList;
 

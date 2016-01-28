@@ -1,30 +1,30 @@
-package com.kevin.building.demo.dynamic.view.textview;
+package com.kevin.building.demo.dynamic.view.impl.textview;
 
 import android.content.Context;
 import android.view.Gravity;
 
 import com.kevin.building.demo.dynamic.bean.viewbean.item.TextItem;
-import com.kevin.building.demo.dynamic.view.base.AbsBaseTextView;
+import com.kevin.building.demo.dynamic.view.base.BaseTextView;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
- * Create Time: 2015/12/29 14:09
+ * Create Time: 2016/1/19 15:19
  */
-public class ContentTextView extends AbsBaseTextView {
+public class ClassNameTextView extends BaseTextView {
 
 
-    public ContentTextView(Context context, TextItem textItem) {
+    public ClassNameTextView(Context context, TextItem textItem) {
         super(context, textItem);
     }
 
     @Override
     protected int getGravity() {
-        return Gravity.CENTER;
+        return Gravity.LEFT;
     }
 
     @Override
     protected int getTextSize() {
-        return 14;
+        return 16;
     }
 }

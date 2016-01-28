@@ -1,26 +1,21 @@
-package com.kevin.building.demo.dynamic.view;
+package com.kevin.building.demo.dynamic.view.impl;
 
 import android.content.Context;
 
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
-import com.kevin.building.demo.dynamic.view.base.BaseRadioButton;
-import com.kevin.building.demo.dynamic.view.base.BaseView;
-
-import java.util.List;
+import com.kevin.building.demo.dynamic.view.root.BaseView;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
- * Create Time: 2015/12/29 15:34
+ * Create Time: 2016/1/4 17:48
  */
-public class MyRadioGroup extends BaseView {
+public class MyCheckboxGroup extends BaseView {
 
-    private List<BaseRadioButton> rbList;
 
-    public MyRadioGroup(Context context, BaseItem baseItem) {
+    public MyCheckboxGroup(Context context, BaseItem baseItem) {
         super(context, baseItem);
     }
-
 
     @Override
     protected int getLayoutId() {

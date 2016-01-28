@@ -1,12 +1,14 @@
-package com.kevin.building.demo.dynamic.view.base;
+package com.kevin.building.demo.dynamic.view.root;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 
+import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
 
 /**
+ * 所有View的基类 根类
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 13:11
@@ -17,8 +19,13 @@ abstract public class BaseView extends FrameLayout {
     private String textContent;
     private String paramJson;
 
+    protected BaseActivity baseActivity;
+
     public BaseView(Context context, BaseItem baseItem) {
         super(context);
+        if (context instanceof BaseActivity) {
+            this.baseActivity = (BaseActivity) context;
+        }
         LayoutInflater.from(context).inflate(getLayoutId(), this);
         initBase(baseItem);
         initView();

@@ -2,27 +2,26 @@ package com.kevin.building.demo.dynamic.generater;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.GridView;
 
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.demo.dynamic.adapter.BtnPhotoGroupAdapter;
-import com.kevin.building.demo.dynamic.adapter.BtnSkipGroupAdapter;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.CBGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.RBGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.BtnItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.EditTextItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.TextItem;
+import com.kevin.building.demo.dynamic.bean.viewbean.type.BtnType;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.TxtType;
-import com.kevin.building.demo.dynamic.callback.ClickCallback;
-import com.kevin.building.demo.dynamic.view.base.AbsBaseTextView;
+import com.kevin.building.demo.dynamic.view.base.BaseTextView;
 import com.kevin.building.demo.dynamic.view.base.BaseButton;
 import com.kevin.building.demo.dynamic.view.base.BaseEditText;
-import com.kevin.building.demo.dynamic.view.textview.ClassNameTextView;
-import com.kevin.building.demo.dynamic.view.textview.ContentTextView;
-import com.kevin.building.demo.dynamic.view.textview.TitleTextView;
-
-import java.util.List;
+import com.kevin.building.demo.dynamic.view.impl.button.SaveButton;
+import com.kevin.building.demo.dynamic.view.impl.et.CommonEditText;
+import com.kevin.building.demo.dynamic.view.impl.group.PhotoBtnGridView;
+import com.kevin.building.demo.dynamic.view.impl.group.SkipBtnGridView;
+import com.kevin.building.demo.dynamic.view.impl.textview.ClassNameTextView;
+import com.kevin.building.demo.dynamic.view.impl.textview.ContentTextView;
+import com.kevin.building.demo.dynamic.view.impl.textview.TitleTextView;
 
 /**
  * ViewBean 动态解析器 用于将ViewBean解析为相应的View 并返回
@@ -39,12 +38,19 @@ public class ViewTools {
      * @param btnItem
      * @return
      */
-    public static BaseButton getButton(Context context,  BtnItem btnItem) {
+    public static BaseButton getButton(Context context, BtnItem btnItem) {
 
         if (null == btnItem || null == context) {
             return null;
         }
-        return new BaseButton(context, btnItem);
+
+        switch (btnItem.getBtnType()) {
+            case BtnType.SAVE:
+                return new SaveButton(context, btnItem);
+            default:
+                return null;
+        }
+
     }
 
 
@@ -59,7 +65,7 @@ public class ViewTools {
         if (null == editTextItem || null == context) {
             return null;
         }
-        return new BaseEditText(context, editTextItem);
+        return new CommonEditText(context, editTextItem);
     }
 
     /**
@@ -69,7 +75,7 @@ public class ViewTools {
      * @param textItem
      * @return
      */
-    public static AbsBaseTextView getTextView(Context context,  TextItem textItem) {
+    public static BaseTextView getTextView(Context context, TextItem textItem) {
         if (null == textItem || null == context) {
             return null;
         }
@@ -98,15 +104,11 @@ public class ViewTools {
      */
     public static View getSkipBtnGroup(BaseActivity baseActivity, BtnGroup btnGroup) {
 
-        if (null==btnGroup||null==baseActivity){
+        if (null == btnGroup || null == baseActivity) {
             return null;
         }
-        GridView gridView;
-        List<BtnItem> btnItemList = btnGroup.getBtnList();
-        ClickCallback inesCallback = CallBackGenerator.getSkipCallback(baseActivity, btnItemList);
-        gridView = ViewToolNonLogic.getGridView(baseActivity, inesCallback);
-        gridView.setAdapter(new BtnSkipGroupAdapter(baseActivity, btnItemList));
-        return gridView;
+
+        return new SkipBtnGridView(baseActivity, btnGroup);
     }
 
 
@@ -118,15 +120,11 @@ public class ViewTools {
      * @return
      */
     public static View getPhotoBtnGroup(BaseActivity baseActivity, BtnGroup btnGroup) {
-        if (null==btnGroup||null==baseActivity){
+        if (null == btnGroup || null == baseActivity) {
             return null;
         }
-        GridView gridView;
-        List<BtnItem> btnItemList = btnGroup.getBtnList();
-        ClickCallback inesCallback = CallBackGenerator.getSkipCallback(baseActivity, btnItemList);
-        gridView = ViewToolNonLogic.getGridView(baseActivity, inesCallback);
-        gridView.setAdapter(new BtnPhotoGroupAdapter(baseActivity, btnItemList));
-        return gridView;
+
+        return new PhotoBtnGridView(baseActivity, btnGroup);
     }
 
 
@@ -138,7 +136,7 @@ public class ViewTools {
      * @return
      */
     public static View getRbGroup(Context context, RBGroup rbGroup) {
-        if (null==rbGroup||null==context){
+        if (null == rbGroup || null == context) {
             return null;
         }
         return null;
@@ -153,7 +151,7 @@ public class ViewTools {
      */
     public static View getCbGroup(Context context, CBGroup cbGroup) {
 
-        if (null==cbGroup||null==context){
+        if (null == cbGroup || null == context) {
             return null;
         }
         return null;

@@ -6,21 +6,21 @@ import android.widget.TextView;
 import com.kevin.building.R;
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.TextItem;
+import com.kevin.building.demo.dynamic.view.root.BaseView;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 14:05
  */
-public abstract class AbsBaseTextView extends BaseView {
+public abstract class BaseTextView extends BaseView {
 
     private TextView tv_index;
     private TextItem textItem;
 
 
-    public AbsBaseTextView(Context context, TextItem textItem) {
+    public BaseTextView(Context context, TextItem textItem) {
         super(context, textItem);
-        setTvContent(textItem.getIndexText());
     }
 
     @Override
@@ -55,6 +55,8 @@ public abstract class AbsBaseTextView extends BaseView {
 
         tv_index.setTextSize(getTextSize());
 
+        tv_index.setText(textItem.getIndexText());
+
 
     }
 
@@ -62,11 +64,6 @@ public abstract class AbsBaseTextView extends BaseView {
     protected void initLogic() {
 
 
-    }
-
-
-    public void setTvContent(String content) {
-        tv_index.setText(content);
     }
 
     /**

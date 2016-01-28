@@ -6,13 +6,14 @@ import android.widget.TextView;
 import com.kevin.building.R;
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.BtnItem;
+import com.kevin.building.demo.dynamic.view.root.BaseView;
 
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 13:01
  */
-public class BaseButton extends BaseView {
+public abstract class BaseButton extends BaseView {
 
     private TextView tv_index;
 
