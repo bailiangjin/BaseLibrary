@@ -1,4 +1,4 @@
-package com.kevin.building.ui.activity;
+package com.kevin.building.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.kevin.building.R;
+import com.kevin.building.activity.logicutils.AccountUtils;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.activity.logicutils.AccountUtils;
 
 public class LogoutActivity extends BaseActivity {
 

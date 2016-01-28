@@ -1,4 +1,4 @@
-package com.kevin.building.ui.activity;
+package com.kevin.building.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import android.widget.TextView;
 import com.kevin.baselibrary.constant.SuperSPKey;
 import com.kevin.baselibrary.utils.SPUtils;
 import com.kevin.building.R;
+import com.kevin.building.activity.logicutils.AccountUtils;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.constants.LoginResult;
-import com.kevin.building.ui.activity.logicutils.AccountUtils;
 import com.kevin.building.utils.ActivityUtils;
 
 /**

@@ -1,4 +1,4 @@
-package com.kevin.building.ui.activity;
+package com.kevin.building.activity;
 
 import android.os.Bundle;
 import android.os.Message;

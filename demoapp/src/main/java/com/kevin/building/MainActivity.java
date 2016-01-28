@@ -8,7 +8,7 @@ import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.viewpager.ViewPagerDemoActivity;
-import com.kevin.building.ui.activity.LoginActivity;
+import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.demo.dynamic.DynamicPageActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
 import com.kevin.building.demo.launchmode.LaunchModeActivity1;

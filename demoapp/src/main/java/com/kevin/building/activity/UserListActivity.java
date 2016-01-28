@@ -1,4 +1,4 @@
-package com.kevin.building.ui.activity;
+package com.kevin.building.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

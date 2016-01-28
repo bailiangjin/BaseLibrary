@@ -1,4 +1,4 @@
-package com.kevin.building.ui.fragment;
+package com.kevin.building.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,8 +7,19 @@ import android.view.View;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseFragment;
 
-public class Fragment1 extends BaseFragment
+public class Fragment2 extends BaseFragment
 {
+
+
+	@Override
+	protected int getLayoutResId() {
+		return R.layout.fragment2;
+	}
+
+	@Override
+	protected void onViewClick(View v) {
+
+	}
 
 	@Override
 	public void onAttach(Activity activity)
@@ -23,6 +34,8 @@ public class Fragment1 extends BaseFragment
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 	}
+
+
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState)
@@ -78,16 +91,6 @@ public class Fragment1 extends BaseFragment
 	{
 		// TODO Auto-generated method stub
 		super.onDetach();
-	}
-
-	@Override
-	protected int getLayoutResId() {
-		return R.layout.fragment1;
-	}
-
-	@Override
-	protected void onViewClick(View v) {
-
 	}
 
 

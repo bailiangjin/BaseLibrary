@@ -6,7 +6,7 @@ import android.content.Intent;
 import com.kevin.building.MainActivity;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.building.ui.activity.LoginActivity;
+import com.kevin.building.activity.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;

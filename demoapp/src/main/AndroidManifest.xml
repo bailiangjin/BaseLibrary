@@ -18,7 +18,7 @@
         tools:replace="android:icon">
 
         <activity
-            android:name=".ui.activity.SplashActivity"
+            android:name=".activity.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -120,23 +120,23 @@
         <!--应用界面demo-->
 
         <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name=".activity.LoginActivity"
             android:label="@string/login"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".ui.activity.AddFriendActivity"
+            android:name=".activity.AddFriendActivity"
             android:label="@string/addcontacts" />
         <activity
-            android:name=".ui.activity.UserListActivity"
+            android:name=".activity.UserListActivity"
             android:label="@string/user_list" />
         <activity
-            android:name=".ui.activity.RegistActivity"
+            android:name=".activity.RegistActivity"
             android:label="@string/register" />
         <activity
-            android:name=".ui.activity.UserInfoActivity"
+            android:name=".activity.UserInfoActivity"
             android:label="@string/user_info" />
         <activity
-            android:name=".ui.activity.LogoutActivity"
+            android:name=".activity.LogoutActivity"
             android:label="@string/logout" />
 
 

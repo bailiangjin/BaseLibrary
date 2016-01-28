@@ -1,4 +1,4 @@
-package com.kevin.building.ui.activity.logicutils;
+package com.kevin.building.activity.logicutils;
 
 import com.kevin.baselibrary.constant.SuperSPKey;
 import com.kevin.baselibrary.utils.SPUtils;

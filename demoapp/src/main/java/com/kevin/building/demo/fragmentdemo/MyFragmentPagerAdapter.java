@@ -6,8 +6,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
 import com.kevin.building.demo.viewpager.BaseViewPagerFragment;
-import com.kevin.building.ui.fragment.Fragment1;
-import com.kevin.building.ui.fragment.Fragment2;
+import com.kevin.building.fragment.Fragment1;
+import com.kevin.building.fragment.Fragment2;
 
 /**
  * Author:  liangjin.bai
