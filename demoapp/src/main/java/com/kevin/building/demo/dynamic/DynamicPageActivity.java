@@ -28,7 +28,7 @@ import com.kevin.building.demo.dynamic.bean.viewbean.item.TextItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.BtnGroupType;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.BtnType;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.TxtType;
-import com.kevin.building.demo.dynamic.generater.DynamicViewGenerator;
+import com.kevin.building.demo.dynamic.generater.ViewGeneratorImpl;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -82,7 +82,7 @@ public class DynamicPageActivity extends BaseActivity {
 
         List<ViewBean> viewBeanList = pageParamBeanNew.getViewBeanList();
         for (ViewBean viewBean : viewBeanList) {
-            View view = DynamicViewGenerator.getView(DynamicPageActivity.this, viewBean);
+            View view = new ViewGeneratorImpl(DynamicPageActivity.this, viewBean).getView();
 //            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
 //            layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT;
 //            view.setLayoutParams(layoutParams);
