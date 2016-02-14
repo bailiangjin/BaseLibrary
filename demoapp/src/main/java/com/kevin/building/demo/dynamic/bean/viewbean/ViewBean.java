@@ -19,7 +19,7 @@ import com.kevin.building.demo.dynamic.bean.viewbean.type.ViewBeanType;
 public class ViewBean {
 
     /**
-     *  ViewBean 类型
+     * ViewBean 类型
      */
     private int viewItemType;
 
@@ -39,46 +39,47 @@ public class ViewBean {
     private RBGroup rbGroup;
 
     private CBGroup cbGroup;
-    
-    public ViewBean(){
-        
-    }
-public ViewBean(BaseItem item){
 
-    if (item instanceof TextItem) {
-        this.textItem=(TextItem) item;
-        this.viewItemType=ViewBeanType.TEXT;
-    } else if (item instanceof EditTextItem) {
-        this.editTextItem=(EditTextItem) item;
-        this.viewItemType=ViewBeanType.ET;
-    } else if (item instanceof BtnItem) {
-        this.btnItem=(BtnItem) item;
-        this.viewItemType=ViewBeanType.BTN;
-    } else if (item instanceof BtnGroup) {
-        BtnGroup btnGroup = (BtnGroup) item;
-      this.btnGroup=(btnGroup);
-        switch (btnGroup.getBtnGroupType()) {
-            case BtnGroupType.SKIP_BTN_GROUP:
-                this.viewItemType=(ViewBeanType.SKIP_BTN_GROUP);
-                break;
-            case BtnGroupType.PHOTO_BTN_GROUP:
-                this.viewItemType=(ViewBeanType.PHOTO_BTN_GROUP);
-                break;
-            default:
-                this.viewItemType=(ViewBeanType.SKIP_BTN_GROUP);
-                break;
+    public ViewBean() {
+
+    }
+
+    public ViewBean(BaseItem item) {
+
+        if (item instanceof TextItem) {
+            this.textItem = (TextItem) item;
+            this.viewItemType = ViewBeanType.TEXT;
+        } else if (item instanceof EditTextItem) {
+            this.editTextItem = (EditTextItem) item;
+            this.viewItemType = ViewBeanType.ET;
+        } else if (item instanceof BtnItem) {
+            this.btnItem = (BtnItem) item;
+            this.viewItemType = ViewBeanType.BTN;
+        } else if (item instanceof BtnGroup) {
+            BtnGroup btnGroup = (BtnGroup) item;
+            this.btnGroup = (btnGroup);
+            switch (btnGroup.getBtnGroupType()) {
+                case BtnGroupType.SKIP_BTN_GROUP:
+                    this.viewItemType = (ViewBeanType.SKIP_BTN_GROUP);
+                    break;
+                case BtnGroupType.PHOTO_BTN_GROUP:
+                    this.viewItemType = (ViewBeanType.PHOTO_BTN_GROUP);
+                    break;
+                default:
+                    this.viewItemType = (ViewBeanType.SKIP_BTN_GROUP);
+                    break;
+            }
+
+        } else if (item instanceof CBGroup) {
+            this.cbGroup = (CBGroup) item;
+            this.viewItemType = (ViewBeanType.CB_GROUP);
+        } else if (item instanceof RBGroup) {
+            this.rbGroup = (RBGroup) item;
+            this.viewItemType = (ViewBeanType.RB_GROUP);
         }
 
-    } else if (item instanceof CBGroup) {
-        this.cbGroup=(CBGroup) item;
-        this.viewItemType=(ViewBeanType.CB_GROUP);
-    } else if (item instanceof RBGroup) {
-        this.rbGroup=(RBGroup) item;
-        this.viewItemType=(ViewBeanType.RB_GROUP);
+
     }
-
-
-}
 
     public int getViewItemType() {
         return viewItemType;

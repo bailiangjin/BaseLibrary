@@ -6,7 +6,7 @@ import com.kevin.building.demo.dynamic.adapter.AbsBaseBtnGroupAdapter;
 import com.kevin.building.demo.dynamic.adapter.BtnPhotoGroupAdapter;
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.BtnItem;
-import com.kevin.building.demo.dynamic.callback.ClickCallback;
+import com.kevin.building.demo.dynamic.callback.MyOnClickListener;
 import com.kevin.building.demo.dynamic.view.base.BaseGridViewNew;
 import com.kevin.building.utils.ActivityUtils;
 
@@ -27,8 +27,8 @@ public class PhotoBtnGridView extends BaseGridViewNew {
 
 
     @Override
-    protected ClickCallback getOnClickCallback(final BaseActivity baseActivity, final List<BtnItem> btnItemList) {
-        return new ClickCallback() {
+    protected MyOnClickListener getOnClickCallback(final BaseActivity baseActivity, final List<BtnItem> btnItemList) {
+        return new MyOnClickListener() {
             @Override
             public void onClick(int position) {
                 BtnItem item = btnItemList.get(position);

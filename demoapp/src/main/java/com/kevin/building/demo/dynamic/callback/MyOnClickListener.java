@@ -6,7 +6,7 @@ package com.kevin.building.demo.dynamic.callback;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/29 11:17
  */
-public interface ClickCallback {
+public interface MyOnClickListener {
 
     /**
      * 点击事件

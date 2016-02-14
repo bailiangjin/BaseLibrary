@@ -95,7 +95,6 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn6:
-                //TODO:待添加模块
                 //show("点击了测试6");
                 ActivityUtils.startActivity(this, ViewPagerDemoActivity.class);
                 break;

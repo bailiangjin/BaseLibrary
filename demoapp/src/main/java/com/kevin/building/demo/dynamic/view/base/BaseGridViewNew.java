@@ -10,7 +10,7 @@ import com.kevin.building.demo.dynamic.adapter.AbsBaseBtnGroupAdapter;
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.BtnItem;
-import com.kevin.building.demo.dynamic.callback.ClickCallback;
+import com.kevin.building.demo.dynamic.callback.MyOnClickListener;
 import com.kevin.building.demo.dynamic.view.root.BaseView;
 
 import java.util.List;
@@ -47,11 +47,11 @@ public abstract class BaseGridViewNew extends BaseView {
     protected void initView() {
         gv_container = (GridView) findViewById(R.id.gv_container);
 
-        final ClickCallback clickCallback = getOnClickCallback(baseActivity, btnGroup.getBtnList());
+        final MyOnClickListener onClickListener = getOnClickCallback(baseActivity, btnGroup.getBtnList());
         gv_container.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                clickCallback.onClick(position);
+                onClickListener.onClick(position);
             }
         });
 
@@ -69,7 +69,7 @@ public abstract class BaseGridViewNew extends BaseView {
      * @param btnItemList
      * @return
      */
-    protected abstract ClickCallback getOnClickCallback(BaseActivity baseActivity, List<BtnItem> btnItemList);
+    protected abstract MyOnClickListener getOnClickCallback(BaseActivity baseActivity, List<BtnItem> btnItemList);
 
     /**
      *  获取GridView Adapter适配器
