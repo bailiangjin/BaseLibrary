@@ -17,22 +17,25 @@ import java.util.List;
 public abstract class SuperBaseAdapter<T> extends BaseAdapter {
     protected final Context context;
     protected final LayoutInflater mLayoutInflater;
-    protected List<T> mListData;
+    protected List<T> dataList;
     protected int itemResId = getItemLayoutResId();
 
-    public SuperBaseAdapter(Context context) {
+
+    public SuperBaseAdapter(Context context,List<T> dataList) {
         this.context = context;
+        this.dataList = dataList;
         mLayoutInflater = LayoutInflater.from(this.context);
+
     }
 
     @Override
     public int getCount() {
-        return mListData == null ? 0 : mListData.size();
+        return dataList == null ? 0 : dataList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mListData == null ? null : mListData.get(position);
+        return dataList == null ? null : dataList.get(position);
     }
 
     @Override
@@ -54,8 +57,8 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
     public abstract int getItemLayoutResId();
 
 
-    public void setListData(List<T> mListData) {
-        this.mListData = mListData;
+    public void setListData(List<T> dataList) {
+        this.dataList = dataList;
         notifyDataSetChanged();
     }
 

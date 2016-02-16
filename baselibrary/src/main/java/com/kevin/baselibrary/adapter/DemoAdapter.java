@@ -15,19 +15,15 @@ import java.util.List;
  * Create Time: 2015/10/9 18:25
  */
 public class DemoAdapter extends SuperBaseAdapter {
-    public DemoAdapter(Context context) {
-        super(context);
-    }
+
 
     public DemoAdapter(Context context, List<String> list) {
-        super(context);
-        setListData(list);
+        super(context,list);
     }
-
 
     @Override
     public View myGetView(int position, View convertView, ViewGroup viewGroup) {
-        String itemStr = (String) mListData.get(position);
+        String itemStr = (String) dataList.get(position);
 
         View view = View.inflate(context, itemResId, null);
 
