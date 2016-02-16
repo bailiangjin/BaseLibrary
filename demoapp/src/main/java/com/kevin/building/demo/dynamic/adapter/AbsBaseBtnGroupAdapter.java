@@ -72,7 +72,7 @@ public abstract class AbsBaseBtnGroupAdapter extends BaseAdapter {
     protected abstract int getItemLayoutResId();
 
     /**
-     * 获取条目 文本id
+     * 获取条目 文本id 如没有文本条目 子类 getItemTvResId 请返回-1
      *
      * @return
      */
