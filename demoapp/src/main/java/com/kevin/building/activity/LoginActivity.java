@@ -10,12 +10,11 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.kevin.baselibrary.constant.SuperSPKey;
-import com.kevin.baselibrary.utils.SPUtils;
 import com.kevin.building.R;
 import com.kevin.building.activity.logicutils.AccountUtils;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.constants.IntentKey;
 import com.kevin.building.constants.LoginResult;
 import com.kevin.building.utils.ActivityUtils;
 
@@ -77,13 +76,26 @@ public class LoginActivity extends BaseActivity {
      * 初始化数据
      */
     private void initData() {
-        String userName = SPUtils.getString(SuperSPKey.USER_NAME);
+        String isNnewUser;
+        String userName;
+        String passWord;
+        boolean isChecked;
+
+        isNnewUser = getIntent().getStringExtra(IntentKey.IS_NEW_USER);
+
+        //是否为新注册页面跳转过来
+        if ("true".equals(isNnewUser)) {
+            userName = getIntent().getStringExtra(IntentKey.USER_NAME);
+            passWord = getIntent().getStringExtra(IntentKey.PASSWORD);
+            isChecked = false;
+        } else {
+            userName = AccountUtils.getUserName();
+            passWord = AccountUtils.getPassword();
+            isChecked = AccountUtils.isSavePassword();
+        }
+
         et_username.setText(TextUtils.isEmpty(userName) ? "" : userName);
-
-        String passWord = SPUtils.getString(SuperSPKey.PASSWORD);
         et_password.setText(TextUtils.isEmpty(passWord) ? "" : passWord);
-
-        boolean isChecked = SPUtils.getBoolean(SuperSPKey.SAVEPWD);
         cb_save_password.setChecked(isChecked);
     }
 

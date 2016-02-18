@@ -40,4 +40,16 @@ public class AccountUtils {
         SPUtils.putBoolean(SuperSPKey.SAVEPWD, isSavePassword);
 
     }
+
+    public static String getUserName() {
+        return SPUtils.getString(SuperSPKey.USER_NAME);
+    }
+
+    public static String getPassword() {
+        return SPUtils.getString(SuperSPKey.PASSWORD);
+    }
+
+    public static boolean isSavePassword() {
+        return SPUtils.getBoolean(SuperSPKey.SAVEPWD);
+    }
 }
