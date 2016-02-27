@@ -599,21 +599,21 @@ public class FileUtils {
      * 从assets目录中复制整个文件夹内容
      *
      * @param context Context 使用CopyFiles类的Activity
-     * @param oldPath String  原文件路径  如：/aa
-     * @param newPath String  复制后路径  如：xx:/bb/cc
+     * @param assetsFilePath String  原文件路径  如：assets/aa 传参为 aa
+     * @param desFilePath String  复制后路径  如：xx:/bb/cc
      */
-    public static boolean copyFilesFassets(Context context, String oldPath, String newPath) {
+    public static boolean copyFilesFassets(Context context, String assetsFilePath, String desFilePath) {
         try {
-            String fileNames[] = context.getAssets().list(oldPath);//获取assets目录下的所有文件及目录名
+            String fileNames[] = context.getAssets().list(assetsFilePath);//获取assets目录下的所有文件及目录名
             if (fileNames.length > 0) {//如果是目录
-                File file = new File(newPath);
+                File file = new File(desFilePath);
                 file.mkdirs();//如果文件夹不存在，则递归
                 for (String fileName : fileNames) {
-                    copyFilesFassets(context, oldPath + "/" + fileName, newPath + "/" + fileName);
+                    copyFilesFassets(context, assetsFilePath + "/" + fileName, desFilePath + "/" + fileName);
                 }
             } else {//如果是文件
-                InputStream is = context.getAssets().open(oldPath);
-                FileOutputStream fos = new FileOutputStream(new File(newPath));
+                InputStream is = context.getAssets().open(assetsFilePath);
+                FileOutputStream fos = new FileOutputStream(new File(desFilePath));
                 byte[] buffer = new byte[1024];
                 int byteCount = 0;
                 while ((byteCount = is.read(buffer)) != -1) {//循环从输入流读取 buffer字节
