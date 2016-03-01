@@ -102,13 +102,30 @@ public class FileUtils {
     }
 
     /**
+     * 读取UTF-8 格式文件内容为字符串
+     * @param filePath
+     * @return
+     */
+    public static StringBuilder readUTF8File(String filePath) {
+        return readFile(filePath, CharsetType.UTF_8);
+    }
+    /**
+     * 以默认文件格式读取文件内容为字符串
+     * @param filePath
+     * @return
+     */
+    public static StringBuilder readFile(String filePath) {
+        return readFile(filePath, null);
+    }
+
+    /**
      * read file
      *
      * @param filePath </code>charset<code>
      * @return if file not exist, return null, else return content of file
      * @throws RuntimeException if an error occurs while operator BufferedReader
      */
-    public static StringBuilder readFile(String filePath) {
+    public static StringBuilder readFile(String filePath, String charSet) {
         File file = new File(filePath);
         StringBuilder fileContent = new StringBuilder("");
         if (file == null || !file.isFile()) {
@@ -117,7 +134,8 @@ public class FileUtils {
 
         BufferedReader reader = null;
         try {
-            InputStreamReader is = new InputStreamReader(new FileInputStream(file));
+
+            InputStreamReader is = StringUtils.isEmpty(charSet) ? new InputStreamReader(new FileInputStream(file)) : new InputStreamReader(new FileInputStream(file), charSet);
             reader = new BufferedReader(is);
             String line = null;
             while ((line = reader.readLine()) != null) {
