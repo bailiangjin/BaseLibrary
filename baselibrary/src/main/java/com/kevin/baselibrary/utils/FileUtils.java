@@ -1,7 +1,8 @@
 package com.kevin.baselibrary.utils;
 
-import android.content.Context;
 import android.text.TextUtils;
+
+import com.kevin.baselibrary.constant.CharsetType;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,7 +19,6 @@ import java.util.List;
 
 /**
  * File Utils
- * <ul>
  * Read or write file
  *
  * @author <a href="http://www.trinea.cn" target="_blank">Trinea</a> 2012-5-12
@@ -28,11 +28,11 @@ public class FileUtils {
     public final static String FILE_EXTENSION_SEPARATOR = ".";
 
 
-
     /**
      * 更改文件名
+     *
      * @param oldPath 原来的文件名
-     * @param newPath  新文件名
+     * @param newPath 新文件名
      */
     public static void renameFile(String oldPath, String newPath) {
         try {
@@ -48,21 +48,46 @@ public class FileUtils {
     }
 
     /**
-     * 写文件
+     * 写文件 默认编码格式
      *
      * @param filePath 文件名
      * @param content  文本
      * @param isAppend 是否累加
+     */
+    public static boolean saveStringToFileByUTF8(String filePath, String content, boolean isAppend) {
+        return saveStringToFile(filePath, content, CharsetType.UTF_8, isAppend);
+    }
+
+    /**
+     * 写文件 默认编码格式
      *
+     * @param filePath 文件名
+     * @param content  文本
+     * @param isAppend 是否累加
      */
     public static boolean saveStringToFile(String filePath, String content, boolean isAppend) {
+        return saveStringToFile(filePath, content, null, isAppend);
+    }
+
+    /**
+     * 将字符串写入文件
+     *
+     * @param filePath 保存文件路径
+     * @param content  文本内容
+     * @param charSet  文件编码格式
+     * @param isAppend 是否追加到文件末尾
+     * @return
+     */
+    public static boolean saveStringToFile(String filePath, String content, String charSet, boolean isAppend) {
         try {
             File textFile = new File(filePath);
             if (!isAppend && textFile.exists()) {
                 textFile.delete();
             }
             FileOutputStream os = new FileOutputStream(textFile);
-            os.write(content.getBytes("UTF-8"));
+            //判断编码格式 无设置编码格式用默认
+            byte[] bytes = StringUtils.isEmpty(charSet) ? content.getBytes() : content.getBytes(charSet);
+            os.write(bytes);
             os.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -333,7 +358,7 @@ public class FileUtils {
 
     /**
      * get file name from path, not include suffix
-     * <p/>
+     * <p>
      * <pre>
      *      getFileNameWithoutExtension(null)               =   null
      *      getFileNameWithoutExtension("")                 =   ""
@@ -373,7 +398,7 @@ public class FileUtils {
 
     /**
      * get file name from path, include suffix
-     * <p/>
+     * <p>
      * <pre>
      *      getFileName(null)               =   null
      *      getFileName("")                 =   ""
@@ -403,7 +428,7 @@ public class FileUtils {
 
     /**
      * get folder name from path
-     * <p/>
+     * <p>
      * <pre>
      *      getFolderName(null)               =   null
      *      getFolderName("")                 =   ""
@@ -435,7 +460,7 @@ public class FileUtils {
 
     /**
      * get suffix of file from path
-     * <p/>
+     * <p>
      * <pre>
      *      getFileExtension(null)               =   ""
      *      getFileExtension("")                 =   ""
@@ -596,10 +621,9 @@ public class FileUtils {
     }
 
 
-
     /* 遍历接收一个文件路径，然后把文件子目录中的所有文件遍历并输出来  */
-    public static List<String>  getAllFiles(File root) {
-        List<String> li=new ArrayList<String>();
+    public static List<String> getAllFiles(File root) {
+        List<String> li = new ArrayList<String>();
         File files[] = root.listFiles();
         if (files != null) {
             for (File f : files) {

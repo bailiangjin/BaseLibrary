@@ -26,6 +26,36 @@ android {
     }
 }
 
+//dependsOn 可根据实际需要增加或更改
+task buildJar(dependsOn: ['compileReleaseJava'], type: Jar) {
+
+    appendix = "demo"
+    baseName = "baseLibrary"
+    version = "1.0.0"
+    classifier = "release"
+
+    //后缀名
+    extension = "jar"
+    //最终的 Jar 包名，如果没设置，默认为 [baseName]-[appendix]-[version]-[classifier].[extension]
+    archiveName = "BaseLibrary.jar"
+
+    //需打包的资源所在的路径集
+    def srcClassDir = [project.buildDir.absolutePath + "/intermediates/classes/release"];
+    //初始化资源路径集
+    from srcClassDir
+
+    //去除路径集下部分的资源
+    exclude "org/chaos/demo/jar/BuildConfig.class"
+    exclude "org/chaos/demo/jar/BuildConfig\$*.class"
+    exclude "**/R.class"
+    exclude "**/R\$*.class"
+
+    //只导入资源路径集下的部分资源
+    include "org/chaos/demo/jar/**/*.class"
+
+    //注: exclude include 支持可变长参数
+}
+
 dependencies {
     compile 'com.android.support:support-v4:22.2.1'
     compile 'com.google.code.gson:gson:2.4'
@@ -33,4 +63,5 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.6.0'
     compile files('libs/nineoldanimatin.jar')
     compile files('libs/jpinyin-1.0.jar')
+    compile files('libs/javabase64-1.3.1.jar')
 }
