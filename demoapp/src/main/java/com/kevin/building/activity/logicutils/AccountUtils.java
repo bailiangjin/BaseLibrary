@@ -1,7 +1,7 @@
 package com.kevin.building.activity.logicutils;
 
 import com.kevin.baselibrary.constant.SuperSPKey;
-import com.kevin.baselibrary.utils.SPUtils;
+import com.kevin.baselibrary.utils.android.SPUtils;
 import com.kevin.building.constants.SPKey;
 
 /**

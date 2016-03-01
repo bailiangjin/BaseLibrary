@@ -12,7 +12,7 @@ import android.util.Log;
 import com.kevin.baselibrary.app.SuperApplication;
 import com.kevin.baselibrary.enums.NetworkTypeEnum;
 import com.kevin.baselibrary.enums.ProviderTypeEnum;
-import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.java.LogUtils;
 
 public class NetUtils {
 

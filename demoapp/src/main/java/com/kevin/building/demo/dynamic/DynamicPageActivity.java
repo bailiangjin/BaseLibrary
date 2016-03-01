@@ -5,11 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.kevin.baselibrary.utils.FilePathUtil;
-import com.kevin.baselibrary.utils.FileUtils;
-import com.kevin.baselibrary.utils.GsonUtils;
-import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.ToastUtils;
+import com.kevin.baselibrary.utils.android.FilePathUtil;
+import com.kevin.baselibrary.utils.java.FileUtils;
+import com.kevin.baselibrary.utils.java.GsonUtils;
+import com.kevin.baselibrary.utils.java.LogUtils;
+import com.kevin.baselibrary.utils.android.ToastUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dynamic.bean.databean.ClassDataBean;

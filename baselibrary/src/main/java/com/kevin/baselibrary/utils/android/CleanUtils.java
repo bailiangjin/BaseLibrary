@@ -1,9 +1,11 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.utils.android;
 
 
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.enums.SPKeyEnum;
+import com.kevin.baselibrary.utils.java.FileUtils;
+import com.kevin.baselibrary.utils.java.LogUtils;
 
 /**
  * Author:  liangjin.bai

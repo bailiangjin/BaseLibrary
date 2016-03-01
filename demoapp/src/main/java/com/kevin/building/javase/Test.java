@@ -1,7 +1,7 @@
 //package com.kevin.building.javase;
 //
-//import com.kevin.baselibrary.utils.GsonUtils;
-//import com.kevin.baselibrary.utils.PinyinUtils;
+//import com.kevin.baselibrary.utils.java.GsonUtils;
+//import com.kevin.baselibrary.utils.java.PinyinUtils;
 //import ViewBean;
 //import ViewBeanType;
 //import com.kevin.building.ui.demo.dynamic.viewbean.BtnGroup;

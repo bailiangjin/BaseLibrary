@@ -7,8 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.ToastUtils;
+import com.kevin.baselibrary.utils.java.LogUtils;
+import com.kevin.baselibrary.utils.android.ToastUtils;
 
 public abstract class SuperBaseFragment extends Fragment implements View.OnClickListener {
 

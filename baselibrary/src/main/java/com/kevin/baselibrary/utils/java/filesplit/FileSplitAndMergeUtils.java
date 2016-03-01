@@ -1,10 +1,10 @@
-package com.kevin.baselibrary.utils.filesplit;
+package com.kevin.baselibrary.utils.java.filesplit;
 
 import android.annotation.TargetApi;
 import android.os.Build;
 
-import com.kevin.baselibrary.utils.FileUtils;
-import com.kevin.baselibrary.utils.enc.AESUtils;
+import com.kevin.baselibrary.utils.java.FileUtils;
+import com.kevin.baselibrary.utils.java.enc.AESUtils;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.utils.android;
 
 import android.app.Activity;
 import android.view.ViewGroup;

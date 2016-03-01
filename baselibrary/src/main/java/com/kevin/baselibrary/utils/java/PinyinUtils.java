@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.utils.java;
 
 import opensource.jpinyin.PinyinFormat;
 import opensource.jpinyin.PinyinHelper;

@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.utils.java;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

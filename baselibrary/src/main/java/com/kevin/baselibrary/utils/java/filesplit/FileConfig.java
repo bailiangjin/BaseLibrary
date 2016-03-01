@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils.filesplit;
+package com.kevin.baselibrary.utils.java.filesplit;
 
 /**
  * 作者：bailiangjin  bailiangjin@gmail.com

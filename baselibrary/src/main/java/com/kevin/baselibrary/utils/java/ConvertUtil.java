@@ -1,12 +1,12 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.utils.java;
+
+import android.util.Base64;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-
-import android.util.Base64;
 
 /**
  * 功能：转码工具

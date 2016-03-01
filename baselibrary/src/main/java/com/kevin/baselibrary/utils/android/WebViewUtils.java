@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.utils.android;
 
 import android.os.Build;
 import android.webkit.WebChromeClient;

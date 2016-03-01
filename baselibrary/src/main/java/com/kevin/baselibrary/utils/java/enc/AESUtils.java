@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils.enc;
+package com.kevin.baselibrary.utils.java.enc;
 
 import java.io.File;
 import java.io.FileInputStream;

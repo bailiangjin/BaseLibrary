@@ -1,7 +1,7 @@
 package com.kevin.baselibrary.net;
 
 import com.kevin.baselibrary.interfaze.callback.HttpCallback;
-import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.java.LogUtils;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;

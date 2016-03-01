@@ -3,7 +3,7 @@ package com.kevin.architecture;
 import android.os.Bundle;
 
 import com.kevin.architecture.activity.BaseActivity;
-import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.java.LogUtils;
 
 /**
  * Author:  liangjin.bai

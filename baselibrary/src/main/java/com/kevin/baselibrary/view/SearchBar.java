@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.interfaze.listener.SearchBarListener;
-import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.ToastUtils;
+import com.kevin.baselibrary.utils.java.LogUtils;
+import com.kevin.baselibrary.utils.android.ToastUtils;
 
 /**
  * Author:  liangjin.bai
