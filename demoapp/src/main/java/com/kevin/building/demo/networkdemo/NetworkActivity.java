@@ -6,12 +6,12 @@ import android.widget.Button;
 
 import com.kevin.baselibrary.interfaze.callback.HttpCallback;
 import com.kevin.baselibrary.net.OKHttpUtils;
-import com.kevin.baselibrary.utils.java.GsonUtils;
-import com.kevin.baselibrary.utils.java.LogUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.networkdemo.weather.WeatherRequest;
 import com.kevin.building.demo.networkdemo.weather.model.WeatherSK;
+import com.kevin.javabaselib.utils.GsonUtils;
 
 import java.util.HashMap;
 

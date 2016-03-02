@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 
 import com.bugtags.library.Bugtags;
 import com.kevin.baselibrary.base.SuperBaseActivity;
-import com.kevin.baselibrary.utils.java.LogUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.view.TitleView;
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;

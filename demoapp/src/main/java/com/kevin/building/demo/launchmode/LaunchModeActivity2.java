@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 
-import com.kevin.baselibrary.utils.java.LogUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 
 /**
  * Author:  liangjin.bai

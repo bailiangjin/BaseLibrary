@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils.android;
+package com.kevin.baselibrary.utils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

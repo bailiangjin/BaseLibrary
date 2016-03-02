@@ -21,8 +21,8 @@ import android.util.Log;
 import android.view.WindowManager;
 
 import com.kevin.baselibrary.R;
-import com.kevin.baselibrary.utils.java.LogUtils;
-import com.kevin.baselibrary.utils.android.ToastUtils;
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

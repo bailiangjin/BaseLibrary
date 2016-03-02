@@ -4,7 +4,7 @@ import android.os.Message;
 import android.view.View;
 import android.webkit.WebView;
 
-import com.kevin.baselibrary.utils.android.WebViewUtils;
+import com.kevin.baselibrary.utils.WebViewUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 

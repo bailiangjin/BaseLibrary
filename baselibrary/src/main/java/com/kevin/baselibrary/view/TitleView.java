@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.interfaze.listener.TitleViewListener;
-import com.kevin.baselibrary.utils.java.LogUtils;
-import com.kevin.baselibrary.utils.android.ToastUtils;
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 
 
 public class TitleView extends FrameLayout {

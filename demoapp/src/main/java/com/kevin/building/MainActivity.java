@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
-import com.kevin.baselibrary.utils.android.CleanUtils;
+import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.viewpager.ViewPagerDemoActivity;
 import com.kevin.building.activity.LoginActivity;

@@ -1,9 +1,8 @@
-package com.kevin.baselibrary.utils.java;
+package com.kevin.baselibrary.utils;
 
 import android.util.Log;
 
 import com.kevin.baselibrary.R;
-import com.kevin.baselibrary.utils.android.ResUtils;
 
 /**
  * @author blj

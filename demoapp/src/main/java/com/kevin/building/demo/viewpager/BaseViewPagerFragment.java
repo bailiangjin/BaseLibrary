@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.kevin.baselibrary.utils.java.LogUtils;
-import com.kevin.baselibrary.utils.android.SuperViewUtils;
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.SuperViewUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseFragment;
 

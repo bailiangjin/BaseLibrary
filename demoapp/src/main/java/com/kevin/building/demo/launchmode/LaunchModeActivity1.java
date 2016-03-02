@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
-import com.kevin.baselibrary.utils.java.LogUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BtnBaseActivity;
 

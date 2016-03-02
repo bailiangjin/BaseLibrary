@@ -18,9 +18,9 @@ import android.view.ViewConfiguration;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.kevin.baselibrary.utils.android.KeyBoardUtils;
-import com.kevin.baselibrary.utils.java.LogUtils;
-import com.kevin.baselibrary.utils.android.ToastUtils;
+import com.kevin.baselibrary.utils.KeyBoardUtils;
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 
 import java.lang.reflect.Field;
 

@@ -7,7 +7,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Build;
 
-import com.kevin.baselibrary.utils.java.LogUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 
 import java.util.List;
 

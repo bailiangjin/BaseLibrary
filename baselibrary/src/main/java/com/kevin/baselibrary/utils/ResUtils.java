@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils.android;
+package com.kevin.baselibrary.utils;
 
 import com.kevin.baselibrary.app.AppUtils;
 
