@@ -62,7 +62,7 @@
 
         <!--WebView demos-->
         <activity
-            android:name=".demo.WebviewActivity"
+            android:name=".demo.WebViewActivity"
 
             android:label="WebView" />
 
@@ -115,6 +115,11 @@
         <activity
             android:name=".demo.launchmode.LaunchModeActivity4"
             android:label="@string/launch_mode"
+            android:launchMode="standard" />
+
+        <activity
+            android:name=".demo.keylistener.KeyListenerActivity"
+            android:label="按键监听"
             android:launchMode="standard" />
 
         <!--应用界面demo-->
