@@ -12,7 +12,7 @@ import com.kevin.building.base.BaseActivity;
  * 作者：bailiangjin  bailiangjin@gmail.com
  * 创建时间：15/12/13 01:00
  */
-public class WebviewActivity extends BaseActivity {
+public class WebviewActivity1 extends BaseActivity {
 
     private WebView webView;
     @Override
