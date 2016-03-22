@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.kevin.building">
 
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.REORDER_TASKS" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
@@ -120,6 +121,10 @@
         <activity
             android:name=".demo.keylistener.KeyListenerActivity"
             android:label="按键监听"
+            android:launchMode="standard" />
+        <activity
+            android:name=".demo.switchnetworkstate.SwitchNetWorkStateActivity"
+            android:label="网络状态"
             android:launchMode="standard" />
 
         <!--应用界面demo-->
