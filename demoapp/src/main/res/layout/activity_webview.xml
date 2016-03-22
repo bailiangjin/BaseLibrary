@@ -4,6 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/title_view" />
+
+
     <WebView
         android:id="@+id/webview_test"
         android:layout_width="match_parent"

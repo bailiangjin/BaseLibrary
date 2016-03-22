@@ -8,9 +8,9 @@ import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.base.BtnBaseActivity;
+import com.kevin.building.demo.WebViewActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
 import com.kevin.building.demo.keylistener.KeyListenerActivity;
-import com.kevin.building.demo.launchmode.LaunchModeActivity1;
 import com.kevin.building.demo.networkdemo.NetworkActivity;
 import com.kevin.building.demo.viewpager.ViewPagerDemoActivity;
 import com.kevin.building.demo.widget.WidgetMainActivity;
@@ -41,7 +41,7 @@ public class MainActivity extends BtnBaseActivity {
         btn4.setText("数据库模块");
         btn5.setText("Fragment模块");
         btn6.setText("ViewPagerDemo");
-        btn7.setText("启动模式");
+        btn7.setText("测试WebView");
         btn8.setText("测试按键监听");
 
         btn1.setVisibility(View.VISIBLE);
@@ -100,7 +100,7 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn7:
-                ActivityUtils.startActivity(this, LaunchModeActivity1.class);
+                ActivityUtils.startActivity(this, WebViewActivity.class);
                 break;
 
             case R.id.btn8:
