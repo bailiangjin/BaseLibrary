@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.kevin.clipboard.clipboard.ClipboardManagerCompat;
 import com.kevin.clipboard.utils.BootCompletedReceiver;
@@ -23,9 +24,21 @@ public final class ListenClipboardService extends Service implements TipViewCont
     private TipViewController mTipViewController;
     private ClipboardManagerCompat.OnPrimaryClipChangedListener mOnPrimaryClipChangedListener = new ClipboardManagerCompat.OnPrimaryClipChangedListener() {
         public void onPrimaryClipChanged() {
-            performClipboardCheck();
+//            performClipboardCheck();
+
+            doTask();
         }
     };
+
+    private void doTask() {
+        CharSequence content = mClipboardWatcher.getText();
+        if ("是".equals(content)){
+            Toast.makeText(ListenClipboardService.this, "符合条件 执行任务："+content, Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(ListenClipboardService.this, "不符合条件，不执行任务："+content, Toast.LENGTH_SHORT).show();
+        }
+
+    }
 
     public static void start(Context context) {
         Intent serviceIntent = new Intent(context, ListenClipboardService.class);
