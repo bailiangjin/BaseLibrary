@@ -85,8 +85,8 @@ public class WebViewActivity extends BaseActivity {
             return true;
         } else {
             showBackToSourceDialog();
+            return true;
         }
-        return false;
     }
 
     private void showBackToSourceDialog() {
