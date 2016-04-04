@@ -1,19 +1,15 @@
 package com.kevin.clipboard;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.kevin.clipboard.utils.Utils;
 
-public final class MainActivity extends AppCompatActivity {
+public final class MainActivity extends Activity {
 
     private final static String KEY_CONTENT = "content";
     private TextView mTextView;
@@ -30,11 +26,11 @@ public final class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        setContentView(R.layout.activity_main);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
-        mTextView = (TextView) findViewById(R.id.text_view);
+//        mTextView = (TextView) findViewById(R.id.text_view);
 
         Intent intent = getIntent();
         Utils.printIntent("MainActivity::onCreate()", intent);
@@ -59,23 +55,5 @@ public final class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_about) {
-            String url = "https://github.com/liaohuqiu/android-UCToast";
-            Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            startActivity(myIntent);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }
