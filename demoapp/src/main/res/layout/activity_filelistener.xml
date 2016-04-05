@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:text="文本内容"
+        android:textColor="@color/gray"
+        style="@style/title_tv_style" />
+
+    <Button
+
+        android:layout_marginTop="30dp"
+        android:text="写文件"
+
+        android:onClick="onClick_writeFile"
+        style="@style/btn_base_style"/>
+
+
+</LinearLayout>

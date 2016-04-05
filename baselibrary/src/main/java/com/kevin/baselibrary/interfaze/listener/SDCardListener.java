@@ -1,7 +1,8 @@
 package com.kevin.baselibrary.interfaze.listener;
 
 import android.os.FileObserver;
-import android.util.Log;
+
+import com.kevin.baselibrary.utils.LogUtils;
 
 /**
  * SD卡监听类
@@ -28,12 +29,15 @@ public class SDCardListener extends FileObserver {
 
     @Override
     public void onEvent(int event, String path) {
+
+        LogUtils.e("文件监听:所有事件");
         switch(event) {
             case FileObserver.ALL_EVENTS:
-                Log.d("all", "path:" + path);
+
+                LogUtils.e("文件监听:所有事件");
                 break;
             case FileObserver.CREATE:
-                Log.d("Create", "path:"+ path);
+                LogUtils.e("文件监听:创建文件");
                 break;
         }
     }

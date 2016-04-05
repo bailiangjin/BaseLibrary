@@ -9,8 +9,8 @@ import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.activity.LoginActivity;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.WebViewActivity;
+import com.kevin.building.demo.filelistener.FileListenerActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
-import com.kevin.building.demo.keylistener.KeyListenerActivity;
 import com.kevin.building.demo.networkdemo.NetworkActivity;
 import com.kevin.building.demo.switchnetworkstate.SwitchNetWorkStateActivity;
 import com.kevin.building.demo.widget.WidgetMainActivity;
@@ -43,7 +43,7 @@ public class MainActivity extends BtnBaseActivity {
 //        btn6.setText("ViewPagerDemo");
         btn6.setText("改变网络状态");
         btn7.setText("测试WebView");
-        btn8.setText("测试按键监听");
+        btn8.setText("测试文件监听");
 
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);
@@ -107,7 +107,7 @@ public class MainActivity extends BtnBaseActivity {
 
             case R.id.btn8:
 //               show("点击了当前测试");
-                ActivityUtils.startActivity(this, KeyListenerActivity.class);
+                ActivityUtils.startActivity(this, FileListenerActivity.class);
                 break;
 
 
