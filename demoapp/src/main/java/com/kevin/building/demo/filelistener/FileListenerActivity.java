@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
+import android.widget.TextView;
 
-import com.kevin.baselibrary.interfaze.listener.SDCardListener;
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
@@ -19,37 +19,20 @@ import java.io.File;
  */
 public class FileListenerActivity  extends BaseActivity{
 
-    private SDCardListener mFileObserver;
-//    private MultiFileObserver multiFileObserver;
+    private String filePath = FilePathUtil.getAppPath()+ File.separator+"test.txt";
+
+    private TextView tv_content;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-//        if(null == mFileObserver) {
-//            mFileObserver = new SDCardListener(FilePathUtil.getAppPath()+"/",FileObserver.ALL_EVENTS);
-//            mFileObserver.startWatching(); //开始监听
-//            LogUtils.e("开始文件监听");
-//        }
-
-//        if(null == multiFileObserver) {
-//            multiFileObserver = new MultiFileObserver(FilePathUtil.getAppPath(), FileObserver.ALL_EVENTS);
-//            multiFileObserver.startWatching(); //开始监听
-//        }
-
-        startService(new Intent(FileListenerActivity.this,FileListenerService.class));
+        tv_content = (TextView) findViewById(R.id.tv_desc);
+        startService(new Intent(FileListenerActivity.this, FileListenerService.class));
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        if(null != mFileObserver){
-//            mFileObserver.stopWatching(); //停止监听
-//        }
-
-//        if(null != multiFileObserver){
-//            multiFileObserver.stopWatching(); //停止监听
-//        }
     }
 
     @Override
@@ -77,6 +60,11 @@ public class FileListenerActivity  extends BaseActivity{
 
     }
 
+
+    /**
+     * 创建 写文件
+     * @param v
+     */
     public void onClick_writeFile(View v){
         LogUtils.e("点击了写文件");
         show("点击了写文件");
@@ -84,9 +72,51 @@ public class FileListenerActivity  extends BaseActivity{
         new Thread(new Runnable() {
             @Override
             public void run() {
-                String filePath = FilePathUtil.getAppPath()+ File.separator+"test.txt";
                 LogUtils.e("文件路径:" + filePath);
-                FileUtils.saveStringToFile(filePath,"测试写文件",false);
+                FileUtils.saveStringToFile(filePath, "测试写文件", false);
+            }
+        }).start();
+    }
+
+    /**
+     * 读取文件
+     * @param v
+     */
+    public void onClick_readFile(View v){
+        LogUtils.e("点击了读文件");
+        show("点击了读文件");
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                LogUtils.e("文件路径:" + filePath);
+                final String content = FileUtils.readFile(filePath).toString();
+                LogUtils.e("fileContent:" + content);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        tv_content.setText(content);
+                    }
+                });
+
+
+            }
+        }).start();
+    }
+
+    /***
+     *修改文件
+     * @param v
+     */
+    public void onClick_modifyFile(View v){
+        LogUtils.e("点击了修改文件");
+        show("点击了修改文件");
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                LogUtils.e("文件路径:" + filePath);
+                FileUtils.saveStringToFile(filePath, "add", true);
             }
         }).start();
     }

@@ -20,5 +20,20 @@
         android:onClick="onClick_writeFile"
         style="@style/btn_base_style"/>
 
+    <Button
+        android:layout_marginTop="30dp"
+        android:text="读文件"
+        android:onClick="onClick_readFile"
+        style="@style/btn_base_style"/>
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:text="修改文件"
+        android:onClick="onClick_modifyFile"
+        style="@style/btn_base_style"/>
+
+
+
+
 
 </LinearLayout>

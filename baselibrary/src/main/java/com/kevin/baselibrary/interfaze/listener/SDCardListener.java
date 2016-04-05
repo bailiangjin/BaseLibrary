@@ -30,8 +30,10 @@ public class SDCardListener extends FileObserver {
     @Override
     public void onEvent(int event, String path) {
 
-        LogUtils.e("文件监听:所有事件");
         switch(event) {
+            case FileObserver.ACCESS:
+                LogUtils.e("文件监听:读文件");
+                break;
             case FileObserver.ALL_EVENTS:
 
                 LogUtils.e("文件监听:所有事件");

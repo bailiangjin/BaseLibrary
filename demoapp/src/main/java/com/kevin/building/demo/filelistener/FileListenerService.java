@@ -2,10 +2,10 @@ package com.kevin.building.demo.filelistener;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.FileObserver;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.kevin.baselibrary.interfaze.listener.MultiFileObserver;
 import com.kevin.baselibrary.interfaze.listener.SDCardListener;
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
@@ -13,9 +13,11 @@ import com.kevin.baselibrary.utils.LogUtils;
 /**
  * Created by bailiangjin on 16/4/5.
  */
-public class FileListenerService  extends Service{
+public class FileListenerService extends Service {
 
-    private SDCardListener mFileObserver;
+    private SDCardListener sdCardListener;
+    private MultiFileObserver multiFileObserver;
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -27,11 +29,18 @@ public class FileListenerService  extends Service{
     public void onCreate() {
         super.onCreate();
 
-        if(null == mFileObserver) {
-            mFileObserver = new SDCardListener(FilePathUtil.getAppPath()+"/", FileObserver.ALL_EVENTS);
-            mFileObserver.startWatching(); //开始监听
-            LogUtils.e("开始文件监听:service");
+//        if (null == sdCardListener) {
+//            sdCardListener = new SDCardListener(FilePathUtil.getAppPath() + "/");
+//            sdCardListener.startWatching(); //开始监听
+//            LogUtils.e("开始文件监听:service");
+//        }
+
+        if(null == multiFileObserver) {
+            multiFileObserver = new MultiFileObserver(FilePathUtil.getAppPath()+"/");
+            multiFileObserver.startWatching(); //开始监听
+            LogUtils.e("开始文件目录监听:service");
         }
+
     }
 
     @Override
@@ -43,8 +52,12 @@ public class FileListenerService  extends Service{
     public void onDestroy() {
         super.onDestroy();
 
-        if(null != mFileObserver){
-            mFileObserver.stopWatching(); //停止监听
+        if (null != sdCardListener) {
+            sdCardListener.stopWatching(); //停止监听
+        }
+
+        if (null != multiFileObserver) {
+            multiFileObserver.stopWatching(); //停止监听
         }
     }
 

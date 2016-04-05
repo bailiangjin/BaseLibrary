@@ -148,7 +148,51 @@ public class MultiFileObserver extends FileObserver {
         @Override
         public void onEvent(int event, String path) {
             String newPath = mPath + "/" + path;
-            //RecursiveFileObserver.this.onEvent(event, newPath);
+//            SingleFileObserver.this.onEvent(event, newPath);
+
+//            LogUtils.e("filePath:"+path);
+
+            switch (event) {
+                case FileObserver.ACCESS:
+                    Log.i("RecursiveFileObserver", "ACCESS: " + path);
+                    break;
+                case FileObserver.ATTRIB:
+                    Log.i("RecursiveFileObserver", "ATTRIB: " + path);
+                    break;
+                case FileObserver.CLOSE_NOWRITE:
+                    Log.i("RecursiveFileObserver", "CLOSE_NOWRITE: " + path);
+                    break;
+                case FileObserver.CLOSE_WRITE:
+                    Log.i("RecursiveFileObserver", "CLOSE_WRITE: " + path);
+                    break;
+                case FileObserver.CREATE:
+                    Log.i("RecursiveFileObserver", "CREATE: " + path);
+                    break;
+                case FileObserver.DELETE:
+                    Log.i("RecursiveFileObserver", "DELETE: " + path);
+                    break;
+                case FileObserver.DELETE_SELF:
+                    Log.i("RecursiveFileObserver", "DELETE_SELF: " + path);
+                    break;
+                case FileObserver.MODIFY:
+                    Log.i("RecursiveFileObserver", "MODIFY: " + path);
+                    break;
+                case FileObserver.MOVE_SELF:
+                    Log.i("RecursiveFileObserver", "MOVE_SELF: " + path);
+                    break;
+                case FileObserver.MOVED_FROM:
+                    Log.i("RecursiveFileObserver", "MOVED_FROM: " + path);
+                    break;
+                case FileObserver.MOVED_TO:
+                    Log.i("RecursiveFileObserver", "MOVED_TO: " + path);
+                    break;
+                case FileObserver.OPEN:
+                    Log.i("RecursiveFileObserver", "OPEN: " + path);
+                    break;
+                default:
+                    Log.i("RecursiveFileObserver", "DEFAULT(" + event + " : " + path);
+                    break;
+            }
         }
     }
 } 
