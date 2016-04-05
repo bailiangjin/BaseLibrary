@@ -1,11 +1,11 @@
 package com.kevin.building.demo.filelistener;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
+import com.kevin.baselibrary.utils.FileListenerUtils;
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
@@ -27,8 +27,10 @@ public class FileListenerActivity  extends BaseActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         tv_content = (TextView) findViewById(R.id.tv_desc);
-        startService(new Intent(FileListenerActivity.this, FileListenerService.class));
+        FileListenerUtils.startFileListenerService(FileListenerActivity.this);
     }
+
+
 
     @Override
     protected void onDestroy() {
