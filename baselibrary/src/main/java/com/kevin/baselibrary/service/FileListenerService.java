@@ -1,22 +1,21 @@
 package com.kevin.baselibrary.service;
 
-import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.kevin.baselibrary.base.SuperBaseService;
 import com.kevin.baselibrary.interfaze.listener.IFileListener;
 import com.kevin.baselibrary.interfaze.listener.MultiFileObserver;
-import com.kevin.baselibrary.interfaze.listener.SDCardListener;
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 
 /**
  * Created by bailiangjin on 16/4/5.
  */
-public class FileListenerService extends Service {
+public class FileListenerService extends SuperBaseService {
 
-    private SDCardListener sdCardListener;
+//    private SDCardListener sdCardListener;
     private MultiFileObserver multiFileObserver;
 
     @Nullable
@@ -37,7 +36,7 @@ public class FileListenerService extends Service {
 //        }
 
         if(null == multiFileObserver) {
-            multiFileObserver = new MultiFileObserver(FilePathUtil.getAppPath() + "/", new IFileListener() {
+            multiFileObserver = new MultiFileObserver(FilePathUtil.getSdcardPath() + "/", new IFileListener() {
                 @Override
                 public void onCreate(String filePath) {
                     LogUtils.e("创建:"+filePath);
@@ -96,9 +95,9 @@ public class FileListenerService extends Service {
     public void onDestroy() {
         super.onDestroy();
 
-        if (null != sdCardListener) {
-            sdCardListener.stopWatching(); //停止监听
-        }
+//        if (null != sdCardListener) {
+//            sdCardListener.stopWatching(); //停止监听
+//        }
 
         if (null != multiFileObserver) {
             multiFileObserver.stopWatching(); //停止监听

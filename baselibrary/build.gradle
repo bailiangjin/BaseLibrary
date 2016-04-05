@@ -62,4 +62,5 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.6.0'
     compile files('libs/nineoldanimatin.jar')
     compile files('libs/AJavaBaseLib.jar')
+    compile 'org.greenrobot:eventbus:3.0.0'
 }
