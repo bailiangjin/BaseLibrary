@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.kevin.baselibrary.interfaze.listener.IFileListener;
 import com.kevin.baselibrary.interfaze.listener.MultiFileObserver;
 import com.kevin.baselibrary.interfaze.listener.SDCardListener;
 import com.kevin.baselibrary.utils.FilePathUtil;
@@ -36,7 +37,50 @@ public class FileListenerService extends Service {
 //        }
 
         if(null == multiFileObserver) {
-            multiFileObserver = new MultiFileObserver(FilePathUtil.getAppPath()+"/");
+            multiFileObserver = new MultiFileObserver(FilePathUtil.getAppPath() + "/", new IFileListener() {
+                @Override
+                public void onCreate(String filePath) {
+                    LogUtils.e("创建:"+filePath);
+                }
+
+                @Override
+                public void onModify(String filePath) {
+                    LogUtils.e("修改:"+filePath);
+                }
+
+                @Override
+                public void onDelete(String filePath) {
+                    LogUtils.e("删除:"+filePath);
+
+                }
+
+                @Override
+                public void onRead(String filePath) {
+                    LogUtils.e("读取:"+filePath);
+
+                }
+
+                @Override
+                public void onWrite(String filePath) {
+                    LogUtils.e("写文件:"+filePath);
+
+                }
+
+                @Override
+                public void onOpen(String filePath) {
+                    LogUtils.e("打开文件:"+filePath);
+                }
+
+                @Override
+                public void onCloseWrite(String filePath) {
+                    LogUtils.e("写文件关闭:"+filePath);
+                }
+
+                @Override
+                public void onCloseNoWrite(String filePath) {
+                    LogUtils.e("非写文件关闭:"+filePath);
+                }
+            });
             multiFileObserver.startWatching(); //开始监听
             LogUtils.e("开始文件目录监听:service");
         }
