@@ -8,14 +8,16 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.kevin.baselibrary.constant.SuperBroadcastAction;
 import com.kevin.baselibrary.interfaze.listener.UIHandlerListener;
 import com.kevin.baselibrary.model.art.HomeEventListener;
 import com.kevin.baselibrary.model.art.UIHandler;
-import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.net.NetUtils;
+import com.kevin.baselibrary.utils.KeyBoardUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 
 import java.util.Set;
@@ -95,6 +97,25 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     @Override
     public void onClick(View v) {
         onViewClick(v);
+    }
+
+    /**
+     * 全局事件分发 实现 触摸非输入框控件 隐藏键盘
+     * @param motionEvent
+     * @return
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+
+            // 获得当前得到焦点的View，一般情况下就是EditText（特殊情况就是轨迹求或者实体案件会移动焦点）
+            View view = getCurrentFocus();
+
+            if (KeyBoardUtils.isShouldHideInput(view, motionEvent)) {
+                KeyBoardUtils.closeKeybord(view);
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
 
