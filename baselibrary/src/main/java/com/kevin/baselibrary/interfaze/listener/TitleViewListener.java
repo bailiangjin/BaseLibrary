@@ -7,6 +7,11 @@ package com.kevin.baselibrary.interfaze.listener;
  */
 public interface TitleViewListener {
 
+
+    boolean onLeftImgClick();
+
+    boolean onRightImgClick();
+
     boolean onLeftBtnClick();
 
     boolean onRightBtnClick();

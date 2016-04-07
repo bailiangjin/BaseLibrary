@@ -1,102 +1,91 @@
 package com.kevin.baselibrary.view;
 
-import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.kevin.baselibrary.R;
-import com.kevin.baselibrary.interfaze.listener.TitleViewListener;
-import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.ToastUtils;
 
 
-public class TitleView extends FrameLayout {
+public class TitleView extends BaseTitleView {
 
-    private TextView tv_title;
-    private Button btn_left;
-    private Button btn_right;
-
-    private TitleViewListener titleViewListener;
 
     public TitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater.from(context).inflate(R.layout.my_title_view, this);
-        tv_title = (TextView) findViewById(R.id.tv_title);
-        btn_left = (Button) findViewById(R.id.btn_left);
-        btn_right = (Button) findViewById(R.id.btn_right);
-        btn_left.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //如果监听为空 或未覆盖事件 则结束Activity
-                if (!isListenerInit() || !titleViewListener.onLeftBtnClick()) {
-                    ((Activity) getContext()).finish();
-                    return;
-                }
-
-
-            }
-        });
-        btn_right.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!isListenerInit()) {
-                    return;
-                }
-                if (titleViewListener.onRightBtnClick()) {
-                    return;
-                } else {
-                    ToastUtils.show("点击了" + btn_right.getText().toString());
-                }
-
-            }
-        });
-
-
     }
 
-    private boolean isListenerInit() {
-        if (null == titleViewListener) {
-            LogUtils.e("please set titleView listener");
-            return false;
-        }
+    @Override
+    protected int getTitleBackgroundResId() {
+        return R.drawable.title_gradient_bg;
+    }
+
+    @Override
+    protected int getTitleTvSize() {
+        return 18;
+    }
+
+    @Override
+    protected int getBtnTvSize() {
+        return 14;
+    }
+
+    @Override
+    protected int getTitleTvColor() {
+        return R.color.white;
+    }
+
+    @Override
+    protected int getBtnTvColor() {
+        return R.color.white;
+    }
+
+    @Override
+    protected int getLeftImageResId() {
+        return R.drawable.ic_arrow_back_white_36dp;
+    }
+
+    @Override
+    protected int getRightImageResId() {
+        return 0;
+    }
+
+    @Override
+    protected int getLeftBtnResId() {
+        return R.drawable.btn_for_title_selector;
+    }
+
+    @Override
+    protected int getRightBtnResId() {
+        return R.drawable.btn_for_title_selector;
+    }
+
+    @Override
+    protected int getBtnWidth() {
+        return 68;
+    }
+
+    @Override
+    protected int getBtnHeight() {
+        return 36;
+    }
+
+    @Override
+    protected boolean getLeftImgVisibility() {
         return true;
     }
 
-    public void setTitleViewListener(TitleViewListener titleViewListener) {
-        this.titleViewListener = titleViewListener;
+    @Override
+    protected boolean getRightImgVisibility() {
+        return false;
     }
 
-    public void setTitleText(String text) {
-        tv_title.setText(text);
+    @Override
+    protected boolean getRightBtnVisibility() {
+        return true;
     }
 
-    public void setLeftBtnText(String text) {
-        btn_left.setText(text);
-    }
-
-    public void setRightBtnText(String text) {
-        btn_right.setText(text);
-    }
-
-    public void setLeftButtonListener(OnClickListener onClickListener) {
-        btn_left.setOnClickListener(onClickListener);
-    }
-
-    public void setRightButtonListener(OnClickListener onClickListener) {
-        btn_right.setOnClickListener(onClickListener);
-    }
-
-    public void setLeftBtnVisibility(int visibility) {
-        btn_left.setVisibility(visibility);
-    }
-
-    public void setRightBtnVisibility(int visibility) {
-        btn_right.setVisibility(visibility);
+    @Override
+    protected boolean getLeftBtnVisibility() {
+        return false;
     }
 
 }
