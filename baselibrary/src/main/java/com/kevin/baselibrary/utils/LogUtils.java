@@ -2,13 +2,13 @@ package com.kevin.baselibrary.utils;
 
 import android.util.Log;
 
-import com.kevin.baselibrary.R;
+import com.kevin.baselibrary.app.SuperApplication;
 
 /**
  * @author blj
  */
 public class LogUtils {
-    private static String TAG = ResUtils.getString(R.string.app_name);
+    private static String TAG = SuperApplication.getAppName();
     private static String INFO = "-->>";
     private static String INIO = "::";
     private static int DEBUG = 0;

@@ -1,25 +1,13 @@
 package com.kevin.baselibrary.app;
 
-import android.app.Application;
-import android.content.Context;
-
 /**
  * 作者：bailiangjin  bailiangjin@gmail.com
  * 创建时间：15/9/8 00:09
  */
-public  class SuperApplication extends Application {
-
-    protected static Context context;
+public  class SuperApplication extends AbsSuperApplication {
 
     @Override
-    public void onCreate() {
-        super.onCreate();
-        context = this.getApplicationContext();
+    protected String getAppNameFromSub() {
+        return "baseLibrary";
     }
-    public static Context getContext() {
-        return context;
-    }
-
-
-
 }

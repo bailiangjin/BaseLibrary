@@ -21,6 +21,11 @@ public class MyApplication extends SuperApplication {
 
     }
 
+    @Override
+    protected String getAppNameFromSub() {
+        return "demoApp";
+    }
+
     /**
      * 初始化Bugstags
      */
