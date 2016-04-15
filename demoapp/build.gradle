@@ -76,8 +76,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
-
-//    compile 'com.github.bailiangjin:BaseLibrary:1.0'
-//    compile 'com.github.bailiangjin:BaseLibrary:-SNAPSHOT'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
