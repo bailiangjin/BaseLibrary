@@ -44,6 +44,9 @@ public class MainActivity extends BtnBaseActivity {
         btn6.setText("改变网络状态");
         btn7.setText("测试WebView");
         btn8.setText("测试文件监听");
+        if (true){
+            show("闪电更改");
+        }
 
         btn1.setVisibility(View.VISIBLE);
         btn2.setVisibility(View.VISIBLE);

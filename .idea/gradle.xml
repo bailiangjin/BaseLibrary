@@ -10,23 +10,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/architecture" />
             <option value="$PROJECT_DIR$/baselibrary" />
-            <option value="$PROJECT_DIR$/clipboard" />
-            <option value="$PROJECT_DIR$/demo_5.1.1" />
             <option value="$PROJECT_DIR$/demoapp" />
-            <option value="$PROJECT_DIR$/xutils3demo" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/architecture" />
             <option value="$PROJECT_DIR$/baselibrary" />
-            <option value="$PROJECT_DIR$/clipboard" />
-            <option value="$PROJECT_DIR$/demo_5.1.1" />
             <option value="$PROJECT_DIR$/demoapp" />
-            <option value="$PROJECT_DIR$/xutils3demo" />
           </set>
         </option>
       </GradleProjectSettings>
