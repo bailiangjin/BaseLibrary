@@ -492,6 +492,24 @@ public class AppUtils {
     }
 
     /**
+     * 根据桌面launcher 启动任意应用
+     * @param pkgName
+     * @return
+     */
+    public static boolean startAnyApp(String pkgName){
+        try{
+            Intent LaunchIntent = getContext().getPackageManager().getLaunchIntentForPackage(pkgName);
+            getContext().startActivity(LaunchIntent);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            LogUtils.e("startAppError:"+e.getMessage());
+
+        }
+        return false;
+    }
+
+    /**
      * 根据包名启动应用
      */
     public static void startApp(String packageName) {
