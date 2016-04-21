@@ -460,7 +460,21 @@ public class AppUtils {
 
         Intent intent = new Intent(Intent.ACTION_DELETE, Uri.parse("package:"
                 + packageName));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getContext().startActivity(intent);
+    }
+
+    /**
+     * 手动卸载App
+     * @param context Context
+     * @param pkgName 要卸载的应用包名
+     */
+    private static void uninstallAppByClick(Context context,String pkgName) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_DELETE);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setData(Uri.parse("package:"+pkgName));
+        context.startActivity(intent);
     }
 
     public static boolean isWorked() {
