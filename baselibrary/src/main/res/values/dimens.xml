@@ -37,6 +37,12 @@
     <dimen name="btn_full_margin">240dp</dimen>
 
 
+    <!-- 按钮边距 -->
+    <dimen name="btn_margin_large">10dp</dimen>
+    <dimen name="btn_margin_middle">8dp</dimen>
+    <dimen name="btn_margin_small">4dp</dimen>
+
+
     <!-- 输入框 -->
     <!-- 登录页输入框 宽度 -->
     <dimen name="et_login_width">250dp</dimen>
@@ -50,10 +56,7 @@
     <dimen name="et_padding_middle">8dp</dimen>
     <dimen name="et_padding_large">10dp</dimen>
 
-    <!-- 按钮边距 -->
-    <dimen name="btn_margin_large">10dp</dimen>
-    <dimen name="btn_margin_middle">8dp</dimen>
-    <dimen name="btn_margin_small">4dp</dimen>
+
 
     <!-- 通长按钮边距 -->
     <dimen name="total_btn_margin">16dp</dimen>
