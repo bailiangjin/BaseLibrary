@@ -47,7 +47,7 @@ public class OKHttpUtils {
                 }
 
                 public void onResponse(Response response_) throws IOException {
-                    httpCallback.onSucess(response_.body().string());
+                    httpCallback.onSuccess(response_.body().string());
                 }
             });
         } catch (Exception e) {
@@ -93,7 +93,7 @@ public class OKHttpUtils {
 
                         @Override
                         public void onResponse(Response response) throws IOException {
-                            httpCallback.onSucess(response.body().string());
+                            httpCallback.onSuccess(response.body().string());
                         }
                     });
                 } catch (Exception e) {

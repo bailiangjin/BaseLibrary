@@ -7,7 +7,7 @@ public interface HttpCallback {
      * @param json
      *            返回参数
      */
-    public void onSucess(final String json);
+    public void onSuccess(final String json);
 
     /**
      * 请求失败
