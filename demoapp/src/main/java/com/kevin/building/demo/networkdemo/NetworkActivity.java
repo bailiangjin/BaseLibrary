@@ -77,7 +77,7 @@ public class NetworkActivity extends BaseActivity {
                 WeatherRequest weatherRequestBean = new WeatherRequest(cityId);
                 OKHttpUtils.asyncGet(weatherRequestBean.getSkUrl(), new HashMap<String, Object>(), new HttpCallback() {
                     @Override
-                    public void onSucess(final String json) {
+                    public void onSuccess(final String json) {
 
                         runOnUiThread(new Runnable() {
                             @Override
@@ -128,7 +128,7 @@ public class NetworkActivity extends BaseActivity {
 
                 OKHttpUtils.asyncPost("http://www.baidu.com", new HashMap<String, Object>(), new HttpCallback() {
                     @Override
-                    public void onSucess(final String json) {
+                    public void onSuccess(final String json) {
 
                         runOnUiThread(new Runnable() {
                             @Override

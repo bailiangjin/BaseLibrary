@@ -7,7 +7,7 @@ import android.view.View;
 import android.webkit.WebView;
 
 import com.kevin.baselibrary.utils.WebViewUtils;
-import com.kevin.baselibrary.widget.callback.PNDialogListener;
+import com.kevin.baselibrary.widget.listener.PNDialogListener;
 import com.kevin.baselibrary.widget.utils.DialogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;

@@ -4,8 +4,8 @@ import android.content.DialogInterface;
 import android.os.Message;
 import android.view.View;
 
+import com.kevin.baselibrary.widget.listener.PNDialogListener;
 import com.kevin.baselibrary.widget.utils.DialogUtils;
-import com.kevin.baselibrary.widget.callback.PNDialogListener;
 import com.kevin.building.R;
 import com.kevin.building.base.BtnBaseActivity;
 
