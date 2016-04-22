@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.interfaze.listener;
+package com.kevin.baselibrary.tools;
 
 /**
  * Created by bailiangjin on 16/4/5.
@@ -6,6 +6,8 @@ package com.kevin.baselibrary.interfaze.listener;
 
 import android.os.FileObserver;
 import android.util.Log;
+
+import com.kevin.baselibrary.interfaze.listener.IFileListener;
 
 import java.io.File;
 import java.util.ArrayList;
