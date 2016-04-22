@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.kevin.baselibrary.R;
+import com.kevin.baselibrary.view.base.BaseTitleView;
 
 
 public class TitleView extends BaseTitleView {

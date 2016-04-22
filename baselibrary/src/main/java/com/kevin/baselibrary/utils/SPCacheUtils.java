@@ -11,10 +11,10 @@ import java.lang.reflect.Type;
  */
 public class SPCacheUtils {
 
-    /**
-     * 去医院界面信息缓存 SP Key
-     */
-    private static final String HOSPITAL_CACHE_KEY = "gotoHospitalCache";
+//    /**
+//     * 去医院界面信息缓存 SP Key
+//     */
+//    private static final String HOSPITAL_CACHE_KEY = "gotoHospitalCache";
 
 
 //    /**

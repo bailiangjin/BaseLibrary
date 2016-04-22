@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.view;
+package com.kevin.baselibrary.view.base;
 
 import android.app.Activity;
 import android.content.Context;

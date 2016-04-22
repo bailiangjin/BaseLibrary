@@ -6,7 +6,7 @@ import android.support.v7.app.AlertDialog;
 
 import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.app.CtxtUtils;
-import com.kevin.baselibrary.widget.callback.PNDialogListener;
+import com.kevin.baselibrary.widget.listener.PNDialogListener;
 
 /**
  * Dialog 工具类
