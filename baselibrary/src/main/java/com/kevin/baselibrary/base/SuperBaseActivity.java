@@ -32,7 +32,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     /**
      * Handler 消息处理
      */
-    protected static UIHandler handler = new UIHandler(Looper.getMainLooper());
+    protected  UIHandler handler = new UIHandler(Looper.getMainLooper());
 
     /**
      * Home键时间监听
@@ -77,7 +77,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     protected void onResume() {
         super.onResume();
         homeEventListener.startWatch();
-        registBroadCastReceiver();
+        registerBroadCastReceiver();
     }
 
 
@@ -85,7 +85,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     protected void onPause() {
         super.onPause();
         homeEventListener.stopWatch();
-        unRegistBroadCastReceiver();
+        unRegisterBroadCastReceiver();
     }
 
     @Override
@@ -157,7 +157,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     /**
      * 注册广播监听
      */
-    private void registBroadCastReceiver() {
+    private void registerBroadCastReceiver() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(SuperBroadcastAction.NETWORK_CHANGE_ACTION);
         //注册子类广播
@@ -179,7 +179,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     /**
      * 注销广播监听
      */
-    private void unRegistBroadCastReceiver() {
+    private void unRegisterBroadCastReceiver() {
         if (null != broadcastReceiver) {
             unregisterReceiver(broadcastReceiver);
         }
