@@ -11,7 +11,7 @@ import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.WebViewActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
 import com.kevin.building.demo.networkdemo.NetworkActivity;
-import com.kevin.building.demo.switchnetworkstate.SwitchNetWorkStateActivity;
+import com.kevin.building.demo.viewpager.ViewPagerDemoActivity;
 import com.kevin.building.demo.widget.WidgetMainActivity;
 import com.kevin.building.utils.ActivityUtils;
 
@@ -40,7 +40,7 @@ public class MainActivity extends BtnBaseActivity {
         btn4.setText("数据库模块");
         btn5.setText("Fragment模块");
 //        btn6.setText("ViewPagerDemo");
-        btn6.setText("改变网络状态");
+        btn6.setText("ViewPagerDemo");
         btn7.setText("测试WebView");
         btn8.setText("测试文件监听");
 
@@ -97,8 +97,8 @@ public class MainActivity extends BtnBaseActivity {
 
             case R.id.btn6:
                 //show("点击了测试6");
-//                ActivityUtils.startActivity(this, ViewPagerDemoActivity.class);
-                ActivityUtils.startActivity(this, SwitchNetWorkStateActivity.class);
+                ActivityUtils.startActivity(this, ViewPagerDemoActivity.class);
+//                ActivityUtils.startActivity(this, SwitchNetWorkStateActivity.class);
                 break;
 
             case R.id.btn7:

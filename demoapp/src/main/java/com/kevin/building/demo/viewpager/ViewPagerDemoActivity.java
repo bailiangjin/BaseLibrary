@@ -12,9 +12,9 @@ import com.kevin.building.base.BaseActivity;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/24 10:27
  */
-public class ViewPagerDemoActivity extends BaseActivity  {
+public class ViewPagerDemoActivity extends BaseActivity {
 
-    private  BaseViewPagerFragment fragment1;
+    private BaseViewPagerFragment fragment1;
 
     @Override
     protected int getLayoutResId() {
@@ -27,7 +27,7 @@ public class ViewPagerDemoActivity extends BaseActivity  {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
 
-            fragmentTransaction.replace(android.R.id.content, getFragment1());
+        fragmentTransaction.replace(android.R.id.content, getFragment1());
 
         fragmentTransaction.commit();
 
@@ -50,13 +50,8 @@ public class ViewPagerDemoActivity extends BaseActivity  {
     }
 
 
-
-
-
-    public BaseViewPagerFragment getFragment1()
-    {
-        if (fragment1 == null)
-        {
+    public BaseViewPagerFragment getFragment1() {
+        if (fragment1 == null) {
             fragment1 = new BaseViewPagerFragment();
         }
         return fragment1;
