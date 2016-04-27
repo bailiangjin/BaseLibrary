@@ -126,4 +126,14 @@
         <item name="android:width">10dp</item>
     </style>
 
+    <style name="lv_base_style" >
+        <item name="android:listSelector">@null</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:scrollingCache">@null</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:fadingEdgeLength">0dp</item>
+    </style>
+
+
+
 </resources>
