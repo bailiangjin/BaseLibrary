@@ -138,12 +138,18 @@
 
     <!--GridView常用参数-->
     <style name="gv_base_style" >
+        <item name="android:listSelector">@null</item>
+        <item name="android:cacheColorHint">@color/white</item>
         <item name="android:numColumns">auto_fit</item>
         <item name="android:stretchMode">columnWidth</item>
         <item name="android:fadingEdge">none</item>
         <item name="android:fadingEdgeLength">2dp</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadeScrollbars">true</item>
         <item name="android:horizontalSpacing">10dp</item>
         <item name="android:verticalSpacing">10dp</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:transcriptMode">alwaysScroll</item>
     </style>
 
 
