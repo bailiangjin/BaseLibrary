@@ -76,15 +76,15 @@ public class LoginActivity extends BaseActivity {
      * 初始化数据
      */
     private void initData() {
-        String isNnewUser;
+        String isNewUser;
         String userName;
         String passWord;
         boolean isChecked;
 
-        isNnewUser = getIntent().getStringExtra(IntentKey.IS_NEW_USER);
+        isNewUser = getIntent().getStringExtra(IntentKey.IS_NEW_USER);
 
         //是否为新注册页面跳转过来
-        if ("true".equals(isNnewUser)) {
+        if ("true".equals(isNewUser)) {
             userName = getIntent().getStringExtra(IntentKey.USER_NAME);
             passWord = getIntent().getStringExtra(IntentKey.PASSWORD);
             isChecked = false;

@@ -16,13 +16,6 @@ public class UserInfoActivity extends BaseActivity
 
 	private Button btn_userinfo_back;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		// TODO Auto-generated method stub
-		super.onCreate(savedInstanceState);
-
-	}
 
 	@Override
 	protected void initView() {

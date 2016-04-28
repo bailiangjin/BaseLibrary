@@ -1,6 +1,5 @@
 package com.kevin.building.activity;
 
-import android.os.Bundle;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
@@ -28,13 +27,6 @@ public class RegistActivity extends BaseActivity
 		return R.layout.activity_regist;
 	}
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState)
-	{
-		// TODO Auto-generated method stub
-		super.onCreate(savedInstanceState);
-
-	}
 
 	@Override
 	protected void initView() {
