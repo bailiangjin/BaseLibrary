@@ -77,4 +77,13 @@ publish {
     publishVersion = '1.0.1'//版本号
     desc = 'android develop base library by geekkevin'//描述，不重要
     website = 'https://github.com/bailiangjin/BaseLibrary'//网站，不重要
+    licences = ['Apache-2.0']
+
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    artifactId = rootProject.artifactId
+    publishVersion = rootProject.publishVersion
+    desc = rootProject.description
+    website = rootProject.website
+    licences = rootProject.licences
 }

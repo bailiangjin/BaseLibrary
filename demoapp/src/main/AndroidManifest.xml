@@ -131,6 +131,11 @@
             android:name=".demo.filelistener.FileListenerActivity"
             android:label="文件监听"
             android:launchMode="standard" />
+
+        <activity
+            android:name=".activity.TestActivity"
+            android:label="公用测试"
+            android:launchMode="standard" />
         <!--应用界面demo-->
 
         <activity

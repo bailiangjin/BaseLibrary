@@ -7,6 +7,7 @@ import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.activity.LoginActivity;
+import com.kevin.building.activity.TestActivity;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.WebViewActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
@@ -107,9 +108,9 @@ public class MainActivity extends BtnBaseActivity {
 
             case R.id.btn8:
 //               show("点击了当前测试");
-//                ActivityUtils.startActivity(this, FileListenerActivity.class);
+                ActivityUtils.startActivity(this, TestActivity.class);
 
-                AppUtils.startAnyApp("com.xywy.flydoctor");
+//                AppUtils.startAnyApp("com.xywy.flydoctor");
 //                AppUtils.unInstallApp("com.xywy.flydoctor");
                 break;
 
