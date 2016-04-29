@@ -1,24 +1,20 @@
-package com.kevin.baselibrary.model.art;
+package com.kevin.baselibrary.model.art.text;
 
 import android.text.TextUtils;
 
 /**
  * Created by bailiangjin on 16/4/28.
  */
-public class ColorText {
-
-
+public class BaseText {
 
     private String content;
     private int length;
-    private int color;
 
-    public ColorText(String content, int color) {
-
+    public BaseText(String content) {
         this.content = content;
-        this.color = color;
         setLength(content);
     }
+
 
     public String getContent() {
         return content;
@@ -39,11 +35,4 @@ public class ColorText {
         return length;
     }
 
-    public int getColor() {
-        return color;
-    }
-
-    public void setColor(int color) {
-        this.color = color;
-    }
 }

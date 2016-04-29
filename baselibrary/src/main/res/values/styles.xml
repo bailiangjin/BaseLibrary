@@ -58,6 +58,16 @@
         <item name="android:textSize">@dimen/tv_size_middle</item>
     </style>
 
+    <style name="green_tv_style" parent="@style/tv_base_style">
+        <item name="android:textSize">@dimen/tv_size_middle</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="red_tv_style" parent="@style/tv_base_style">
+        <item name="android:textSize">@dimen/tv_size_large</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
     <!-- EditText 样式 -->
     <style name="et_base_style">
         <item name="android:layout_width">wrap_content</item>
