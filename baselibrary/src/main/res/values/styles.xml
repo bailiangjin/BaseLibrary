@@ -143,6 +143,7 @@
         <item name="android:listDivider">@null</item>
         <item name="android:scrollingCache">@null</item>
         <item name="android:fadingEdge">none</item>
+        <item name="android:clipToPadding">false</item>
         <item name="android:fadingEdgeLength">0dp</item>
     </style>
 
@@ -155,6 +156,7 @@
         <item name="android:fadingEdge">none</item>
         <item name="android:fadingEdgeLength">2dp</item>
         <item name="android:scrollbars">none</item>
+        <item name="android:clipToPadding">false</item>
         <item name="android:fadeScrollbars">true</item>
         <item name="android:horizontalSpacing">10dp</item>
         <item name="android:verticalSpacing">10dp</item>
