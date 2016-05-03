@@ -32,7 +32,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     /**
      * Handler 消息处理
      */
-    protected  UIHandler handler = new UIHandler(Looper.getMainLooper());
+    protected UIHandler handler = new UIHandler(Looper.getMainLooper());
 
     /**
      * Home键时间监听
@@ -101,6 +101,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
 
     /**
      * 全局事件分发 实现 触摸非输入框控件 隐藏键盘
+     *
      * @param motionEvent
      * @return
      */
@@ -254,7 +255,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      * @param string
      */
     protected void show(String string) {
-        ToastUtils.shortShow(SuperBaseActivity.this, string);
+        ToastUtils.shortShow(string);
     }
 
     /**
@@ -263,7 +264,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      * @param resId
      */
     protected void show(int resId) {
-        ToastUtils.shortShow(SuperBaseActivity.this, resId);
+        ToastUtils.show(resId);
     }
 
     /**
@@ -272,7 +273,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      * @param string
      */
     protected void longShow(String string) {
-        ToastUtils.longShow(SuperBaseActivity.this, string);
+        ToastUtils.longShow(string);
     }
 
     /**
@@ -281,7 +282,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      * @param resId
      */
     protected void longShow(int resId) {
-        ToastUtils.longShow(SuperBaseActivity.this, resId);
+        ToastUtils.longShow(resId);
     }
 
 
@@ -292,6 +293,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
 
     /**
      * 广播回调事件
+     *
      * @param intent
      */
     protected void onBroadcast(Intent intent) {

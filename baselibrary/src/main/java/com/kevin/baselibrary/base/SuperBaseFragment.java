@@ -13,6 +13,7 @@ import com.kevin.baselibrary.utils.ToastUtils;
 public abstract class SuperBaseFragment extends Fragment implements View.OnClickListener {
 
     protected View rootView;
+
     @Override
     public void onAttach(Activity activity) {
         LogUtils.d("Fragment:::-->>onAttach");
@@ -106,7 +107,7 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
      * @param string
      */
     protected void show(String string) {
-        ToastUtils.shortShow(getActivity(), string);
+        ToastUtils.shortShow(string);
     }
 
     /**
@@ -115,7 +116,7 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
      * @param resId
      */
     protected void show(int resId) {
-        ToastUtils.shortShow(getActivity(), resId);
+        ToastUtils.shortShow(resId);
     }
 
     /**
@@ -124,7 +125,7 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
      * @param string
      */
     protected void longShow(String string) {
-        ToastUtils.longShow(getActivity(), string);
+        ToastUtils.longShow(string);
     }
 
     /**
@@ -133,7 +134,7 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
      * @param resId
      */
     protected void longShow(int resId) {
-        ToastUtils.longShow(getActivity(), resId);
+        ToastUtils.longShow( resId);
     }
 
 }

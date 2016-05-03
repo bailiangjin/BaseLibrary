@@ -7,69 +7,66 @@ import com.kevin.baselibrary.app.SuperApplication;
 
 /**
  * Toast 工具类
- *
+ * <p>
  * 使用自定义Toast类 防止多次点击重复生成多个Toast 长时间显示问题
  *
  * @author blj
  */
 public class ToastUtils {
 
+
     public static void show(int resId) {
-        shortShow(SuperApplication.getContext(), resId);
+        shortShow(resId);
     }
-    public static void show(String  str) {
-        shortShow(SuperApplication.getContext(), str);
+
+    public static void show(String str) {
+        shortShow(str);
     }
 
     /**
      * 短提示 by resId
      *
-     * @param context
      * @param resId
      */
-    public static void shortShow(Context context, int resId) {
-        showResId(context, resId, Toast.LENGTH_SHORT);
+    public static void shortShow(int resId) {
+        showResId(SuperApplication.getContext(), resId, Toast.LENGTH_SHORT);
     }
 
     /**
      * 长提示 by resId
      *
-     * @param context
      * @param resId
      */
-    public static void longShow(Context context, int resId) {
-        showResId(context, resId, Toast.LENGTH_LONG);
+    public static void longShow(int resId) {
+        showResId(SuperApplication.getContext(), resId, Toast.LENGTH_LONG);
     }
 
     /**
      * 短提示 by String
      *
-     * @param context
      * @param string
      */
-    public static void shortShow(Context context, String string) {
-        showString(context, string, Toast.LENGTH_SHORT);
+    public static void shortShow(String string) {
+        showString(string, Toast.LENGTH_SHORT);
     }
 
     /**
      * 常提示 by String
      *
-     * @param context
      * @param string
      */
-    public static void longShow(Context context, String string) {
-        showString(context, string, Toast.LENGTH_LONG);
+    public static void longShow(String string) {
+        showString(string, Toast.LENGTH_LONG);
     }
 
     /**
      * 判断时间间隔提示Toast by String
      *
-     * @param context
      * @param str      文字
      * @param showTime
      */
-    private static void showString(Context context, String str, int showTime) {
-        MyToast.getToast(context, str, showTime).show();
+    private static void showString( String str, int showTime) {
+        MyToast.getToast(SuperApplication.getContext(), str, showTime).show();
     }
 
     /**
