@@ -53,7 +53,7 @@ public class ScreenUtils
 	 * @return
 	 */
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-	public static int getScreenheight(Activity activity) {
+	public static int getScreenHeight(Activity activity) {
 		//获取手机系统版本号
 		int deviceApiVersion = DeviceUtils.getCurrentApiVersion();
 		DisplayMetrics dm = new DisplayMetrics();

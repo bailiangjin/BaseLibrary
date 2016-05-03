@@ -36,7 +36,7 @@ public class LayoutUtils {
     public LayoutUtils(Activity activity) {
 
         screenWidth = ScreenUtils.getScreenWidth(activity);// 宽度
-        screenHeight = ScreenUtils.getScreenheight(activity);// 高度
+        screenHeight = ScreenUtils.getScreenHeight(activity);// 高度
 
         //实际设备显示区域宽高比
         deviceWHRatio = screenWidth / screenHeight;
