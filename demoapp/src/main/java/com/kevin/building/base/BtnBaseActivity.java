@@ -65,6 +65,6 @@ public abstract class BtnBaseActivity extends BaseActivity{
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         LogUtils.e("onActivityResult:" + getLocalClassName() + ":" + getTaskId());
-        show("onActivityResult:" + getLocalClassName() + ":" + getTaskId());
+        shortToast("onActivityResult:" + getLocalClassName() + ":" + getTaskId());
     }
 }

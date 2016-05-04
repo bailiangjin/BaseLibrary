@@ -21,7 +21,7 @@ public class DetailActivity extends BaseActivity {
     protected void initView() {
 //        getIntent().getStringExtra("name");
 
-        show("detail page:" + getIntent().getStringExtra("name"));
+        shortToast("detail page:" + getIntent().getStringExtra("name"));
 
     }
 

@@ -83,7 +83,7 @@ public class NetworkActivity extends BaseActivity {
                             @Override
                             public void run() {
                                 LogUtils.e("success:" + json);
-                                longShow("onSucess:" + json);
+                                longToast("onSucess:" + json);
 
 
                                 WeatherSK weatherInfoBean =  GsonUtils.getInstance().toObj(json,WeatherSK.class);
@@ -100,7 +100,7 @@ public class NetworkActivity extends BaseActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                longShow("onFailed:" + json);
+                                longToast("onFailed:" + json);
 
                             }
                         });
@@ -114,7 +114,7 @@ public class NetworkActivity extends BaseActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                longShow("onError:" + json);
+                                longToast("onError:" + json);
 
                             }
                         });
@@ -133,7 +133,7 @@ public class NetworkActivity extends BaseActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                longShow("onSucess:" + json);
+                                longToast("onSucess:" + json);
 
                             }
                         });
@@ -146,7 +146,7 @@ public class NetworkActivity extends BaseActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                longShow("onFailed:" + json);
+                                longToast("onFailed:" + json);
 
                             }
                         });
@@ -160,7 +160,7 @@ public class NetworkActivity extends BaseActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                longShow("onError:" + json);
+                                longToast("onError:" + json);
 
                             }
                         });
@@ -182,7 +182,7 @@ public class NetworkActivity extends BaseActivity {
 
             case R.id.btn6:
                 //TODO:待添加模块
-                show("点击了测试6");
+                shortToast("点击了测试6");
 
 
                 break;
@@ -193,7 +193,7 @@ public class NetworkActivity extends BaseActivity {
                 break;
 
             case R.id.btn8:
-                show("点击了当前测试");
+                shortToast("点击了当前测试");
 
 
                 break;

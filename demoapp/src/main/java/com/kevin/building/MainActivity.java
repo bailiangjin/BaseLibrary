@@ -55,9 +55,9 @@ public class MainActivity extends BtnBaseActivity {
         btn7.setVisibility(View.VISIBLE);
         btn8.setVisibility(View.VISIBLE);
 //        NdkJniUtils jni = new NdkJniUtils();
-//        show("jni:" + jni.getCLanguageString());
+//        shortToast("jni:" + jni.getCLanguageString());
 
-//        show(ConfigUtils.getValueByKey("testkey"));
+//        shortToast(ConfigUtils.getValueByKey("testkey"));
     }
 
     @Override
@@ -97,7 +97,7 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn6:
-                //show("点击了测试6");
+                //shortToast("点击了测试6");
                 ActivityUtils.startActivity(this, ViewPagerDemoActivity.class);
 //                ActivityUtils.startActivity(this, SwitchNetWorkStateActivity.class);
                 break;
@@ -107,7 +107,7 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn8:
-//               show("点击了当前测试");
+//               shortToast("点击了当前测试");
                 ActivityUtils.startActivity(this, TestActivity.class);
 
 //                AppUtils.startAnyApp("com.xywy.flydoctor");

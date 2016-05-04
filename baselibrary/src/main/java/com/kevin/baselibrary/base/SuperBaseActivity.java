@@ -250,21 +250,21 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      */
 
     /**
-     * show toast by string
+     * shortToast toast by string
      *
      * @param string
      */
-    protected void show(String string) {
-        ToastUtils.shortShow(string);
+    protected void shortToast(String string) {
+        ToastUtils.shortToast(string);
     }
 
     /**
-     * show toast by res id
+     * shortToast toast by res id
      *
      * @param resId
      */
-    protected void show(int resId) {
-        ToastUtils.show(resId);
+    protected void shortToast(int resId) {
+        ToastUtils.shortToast(resId);
     }
 
     /**
@@ -272,8 +272,8 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      *
      * @param string
      */
-    protected void longShow(String string) {
-        ToastUtils.longShow(string);
+    protected void longToast(String string) {
+        ToastUtils.longToast(string);
     }
 
     /**
@@ -281,8 +281,8 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      *
      * @param resId
      */
-    protected void longShow(int resId) {
-        ToastUtils.longShow(resId);
+    protected void longToast(int resId) {
+        ToastUtils.longToast(resId);
     }
 
 
@@ -324,14 +324,14 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
 //        } else {
 //            connectType = "手机网络";
 //        }
-//        show("网络已经连接 连接类型：" + connectType);
+//        shortToast("网络已经连接 连接类型：" + connectType);
     }
 
     /**
      * 网络断开 回调方法
      */
     protected void onNetDisConnected() {
-        show("网络已经断开");
+        shortToast("网络已经断开");
     }
 
 

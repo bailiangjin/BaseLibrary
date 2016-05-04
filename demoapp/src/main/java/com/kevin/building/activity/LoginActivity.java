@@ -100,7 +100,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void login(String userName, String passWord) {
-        show("点击了登录按钮");
+        shortToast("点击了登录按钮");
         // TODO:执行登录逻辑
         //暂时模拟 每次都成功
         handler.sendEmptyMessage(LoginResult.SUCCESS);
@@ -118,7 +118,7 @@ public class LoginActivity extends BaseActivity {
                 //获取记住密码框勾选状态
                 isSavePassword = cb_save_password.isChecked();
                 if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(passWord)) {
-                    show(R.string.username_pwd_cannot_be_null);
+                    shortToast(R.string.username_pwd_cannot_be_null);
                     return;
                 }
                 //调用登录
@@ -138,7 +138,7 @@ public class LoginActivity extends BaseActivity {
     protected void handleMsg(Message msg) {
         switch (msg.what) {
             case LoginResult.SUCCESS:
-                show("登录成功");
+                shortToast("登录成功");
                 // TODO:密码加密后存放
                 //保存登录信息到SP
                 AccountUtils.saveLoginInfo(userName, passWord, isSavePassword);
@@ -149,11 +149,11 @@ public class LoginActivity extends BaseActivity {
                 this.finish();
                 break;
             case LoginResult.FAILED:
-                show("登录失败");
+                shortToast("登录失败");
                 // TODO:登录失败 给出原因
                 break;
             case LoginResult.ERRROR:
-                show("登录异常");
+                shortToast("登录异常");
                 // TODO:登录异常 给出提示
                 break;
             default:

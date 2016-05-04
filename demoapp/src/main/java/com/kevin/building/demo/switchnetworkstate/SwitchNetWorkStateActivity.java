@@ -38,22 +38,22 @@ public class SwitchNetWorkStateActivity extends BaseActivity{
 
 
     public void onClick_Switch_WiFi_open(View v){
-        show("打开 WiFi");
+        shortToast("打开 WiFi");
         NetUtils.toggleWiFi(this, true);
     }
 
     public void onClick_Switch_WiFi_close(View v){
-        show("关闭 WiFi");
+        shortToast("关闭 WiFi");
         NetUtils.toggleWiFi(this, false);
     }
 
     public void onClick_Switch_mobile_open(View v){
-        show("打开 移动网络");
+        shortToast("打开 移动网络");
         NetUtils.toggleMobileData(this, true);
     }
 
     public void onClick_Switch_mobile_close(View v){
-        show("关闭 移动网络");
+        shortToast("关闭 移动网络");
         NetUtils.toggleMobileData(this, false);
     }
 

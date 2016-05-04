@@ -102,21 +102,21 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
 
 
     /**
-     * show toast by string
+     * shortToast toast by string
      *
      * @param string
      */
     protected void show(String string) {
-        ToastUtils.shortShow(string);
+        ToastUtils.shortToast(string);
     }
 
     /**
-     * show toast by res id
+     * shortToast toast by res id
      *
      * @param resId
      */
     protected void show(int resId) {
-        ToastUtils.shortShow(resId);
+        ToastUtils.shortToast(resId);
     }
 
     /**
@@ -125,7 +125,7 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
      * @param string
      */
     protected void longShow(String string) {
-        ToastUtils.longShow(string);
+        ToastUtils.longToast(string);
     }
 
     /**
@@ -134,7 +134,7 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
      * @param resId
      */
     protected void longShow(int resId) {
-        ToastUtils.longShow( resId);
+        ToastUtils.longToast( resId);
     }
 
 }

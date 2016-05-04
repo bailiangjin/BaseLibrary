@@ -145,7 +145,7 @@ public abstract class BaseTitleView extends FrameLayout {
                 if (titleViewListener.onLeftBtnClick()) {
                     return;
                 } else {
-                    //ToastUtils.show("点击了" + btn_right.getText().toString());
+                    //ToastUtils.shortToast("点击了" + btn_right.getText().toString());
                 }
 
 
@@ -160,7 +160,7 @@ public abstract class BaseTitleView extends FrameLayout {
                 if (titleViewListener.onRightBtnClick()) {
                     return;
                 } else {
-                    //ToastUtils.show("点击了" + btn_right.getText().toString());
+                    //ToastUtils.shortToast("点击了" + btn_right.getText().toString());
                 }
 
             }

@@ -94,10 +94,10 @@ public class AddFriendActivity extends BaseActivity
 	{
 		switch(v.getId()){
 			case R.id.btn_add:
-				show("添加");
+				shortToast("添加");
 				break;
 			case R.id.btn_logout:
-				show("登出");
+				shortToast("登出");
 				ActivityUtils.startActivity(AddFriendActivity.this, LogoutActivity.class);
 				break;
 

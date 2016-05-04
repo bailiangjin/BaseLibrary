@@ -14,31 +14,13 @@ import com.kevin.baselibrary.app.SuperApplication;
  */
 public class ToastUtils {
 
-
-    public static void show(int resId) {
-        shortShow(resId);
-    }
-
-    public static void show(String str) {
-        shortShow(str);
-    }
-
     /**
      * 短提示 by resId
      *
      * @param resId
      */
-    public static void shortShow(int resId) {
-        showResId(SuperApplication.getContext(), resId, Toast.LENGTH_SHORT);
-    }
-
-    /**
-     * 长提示 by resId
-     *
-     * @param resId
-     */
-    public static void longShow(int resId) {
-        showResId(SuperApplication.getContext(), resId, Toast.LENGTH_LONG);
+    public static void shortToast(int resId) {
+        toastResId( resId, Toast.LENGTH_SHORT);
     }
 
     /**
@@ -46,8 +28,17 @@ public class ToastUtils {
      *
      * @param string
      */
-    public static void shortShow(String string) {
-        showString(string, Toast.LENGTH_SHORT);
+    public static void shortToast(String string) {
+        toastString(string, Toast.LENGTH_SHORT);
+    }
+
+    /**
+     * 长提示 by resId
+     *
+     * @param resId
+     */
+    public static void longToast(int resId) {
+        toastResId(resId, Toast.LENGTH_LONG);
     }
 
     /**
@@ -55,8 +46,8 @@ public class ToastUtils {
      *
      * @param string
      */
-    public static void longShow(String string) {
-        showString(string, Toast.LENGTH_LONG);
+    public static void longToast(String string) {
+        toastString(string, Toast.LENGTH_LONG);
     }
 
     /**
@@ -65,19 +56,17 @@ public class ToastUtils {
      * @param str      文字
      * @param showTime
      */
-    private static void showString( String str, int showTime) {
+    private static void toastString(String str, int showTime) {
         MyToast.getToast(SuperApplication.getContext(), str, showTime).show();
     }
 
     /**
      * 判断时间间隔提示Toast by resId
-     *
-     * @param context
      * @param resId
      * @param showTime
      */
-    private static void showResId(Context context, int resId, int showTime) {
-        MyToast.getToast(context, context.getString(resId), showTime).show();
+    private static void toastResId(int resId, int showTime) {
+        MyToast.getToast(SuperApplication.getContext(), SuperApplication.getContext().getString(resId), showTime).show();
     }
 
     /**

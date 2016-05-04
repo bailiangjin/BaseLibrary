@@ -69,7 +69,7 @@ public class FileListenerActivity  extends BaseActivity{
      */
     public void onClick_writeFile(View v){
         LogUtils.e("点击了写文件");
-        show("点击了写文件");
+        shortToast("点击了写文件");
 
         new Thread(new Runnable() {
             @Override
@@ -86,7 +86,7 @@ public class FileListenerActivity  extends BaseActivity{
      */
     public void onClick_readFile(View v){
         LogUtils.e("点击了读文件");
-        show("点击了读文件");
+        shortToast("点击了读文件");
 
         new Thread(new Runnable() {
             @Override
@@ -112,7 +112,7 @@ public class FileListenerActivity  extends BaseActivity{
      */
     public void onClick_modifyFile(View v){
         LogUtils.e("点击了修改文件");
-        show("点击了修改文件");
+        shortToast("点击了修改文件");
 
         new Thread(new Runnable() {
             @Override

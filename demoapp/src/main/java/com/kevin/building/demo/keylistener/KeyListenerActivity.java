@@ -37,7 +37,7 @@ public class KeyListenerActivity extends BaseActivity{
     }
 
     public void onClick_testListen(View v){
-        show("点击了测试");
+        shortToast("点击了测试");
     }
 
     @Override
@@ -45,20 +45,20 @@ public class KeyListenerActivity extends BaseActivity{
         switch (keyCode) {
 //            int i = getCurrentRingValue ();   //获取手机当前音量值
             case KeyEvent.KEYCODE_VOLUME_DOWN:
-                show("音量-");
+                shortToast("音量-");
                 break;
                 
             case KeyEvent.KEYCODE_VOLUME_UP:
-                show("音量+");
+                shortToast("音量+");
                 break;
             case KeyEvent.KEYCODE_BACK:
-                show("返回");
+                shortToast("返回");
                 break;
             case KeyEvent.KEYCODE_MENU:
-                show("菜单");
+                shortToast("菜单");
                 break;
             case KeyEvent.KEYCODE_HOME:
-                show("Home键盘");
+                shortToast("Home键盘");
                 //invalid...
                 break;
             default:

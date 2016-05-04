@@ -23,7 +23,7 @@ public class MediaUtils {
         try {
             File videoFile = new File(filePtath);
             if (!videoFile.exists()) {
-                ToastUtils.show("Video File not exist!");
+                ToastUtils.shortToast("Video File not exist!");
                 return;
             }
             // 调用系统程序打开文件.

@@ -51,7 +51,7 @@ public class DemoActivity extends SuperBaseActivity {
     protected void onStart() {
         super.onStart();
 
-        show("测试");
+        shortToast("测试");
     }
 
 

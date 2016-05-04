@@ -102,7 +102,7 @@ public class SearchBar extends FrameLayout {
 
     private boolean isListenerInit() {
         if (null == searchBarListener) {
-            ToastUtils.show("please set Listener");
+            ToastUtils.shortToast("please set Listener");
             LogUtils.e("please set Listener");
             return false;
         }

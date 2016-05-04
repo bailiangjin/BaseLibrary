@@ -60,7 +60,7 @@ public class DialogActivity extends BtnBaseActivity {
 
                     @Override
                     public void onNegative(DialogInterface dialog, int which) {
-                        show("点击了取消");
+                        shortToast("点击了取消");
 
                     }
                 });
@@ -68,7 +68,7 @@ public class DialogActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn2:
-                show("点击了测试2");
+                shortToast("点击了测试2");
 
                 break;
 
@@ -86,7 +86,7 @@ public class DialogActivity extends BtnBaseActivity {
 
             case R.id.btn6:
                 //TODO:待添加模块
-                show("点击了测试6");
+                shortToast("点击了测试6");
 
 
                 break;
@@ -97,7 +97,7 @@ public class DialogActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn8:
-                show("点击了测试8");
+                shortToast("点击了测试8");
 
 
                 break;

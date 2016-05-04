@@ -19,14 +19,14 @@ public class LaunchModeActivity2 extends LaunchModeActivity1 {
         super.onNewIntent(intent);
         LogUtils.e("onNewIntent:test");
         LogUtils.e("taskId:" + getLocalClassName() + ":" + getTaskId());
-        show("onNewIntent");
+        shortToast("onNewIntent");
 //        lastTaskId = getIntent().getIntExtra("lastTaskId", -1);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        show("onCreate");
+        shortToast("onCreate");
 //        lastTaskId = getIntent().getIntExtra("lastTaskId", -1);
     }
 

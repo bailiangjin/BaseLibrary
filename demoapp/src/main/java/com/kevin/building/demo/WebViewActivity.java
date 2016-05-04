@@ -81,7 +81,7 @@ public class WebViewActivity extends BaseActivity {
     private boolean onWebViewBack() {
         if (webView.canGoBack()) {
             webView.goBack();// 返回前一个页面
-            show("返回上一页");
+            shortToast("返回上一页");
             return true;
         } else {
             showBackToSourceDialog();
@@ -93,7 +93,7 @@ public class WebViewActivity extends BaseActivity {
         DialogUtils.showPNDialog(WebViewActivity.this, "确定关闭当前页面？", true, new PNDialogListener() {
             @Override
             public void onPositive(DialogInterface dialog, int which) {
-                show("返回源页面");
+                shortToast("返回源页面");
                 //关闭当前Activity
                 WebViewActivity.this.finish();
             }

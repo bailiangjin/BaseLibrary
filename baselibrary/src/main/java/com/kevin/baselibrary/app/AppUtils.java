@@ -56,7 +56,7 @@ public class AppUtils {
         final long gapTime = 2000;
         long currentTime = System.currentTimeMillis();
         if (currentTime - lastTouchTime > gapTime) {
-            ToastUtils.show(R.string.one_more_click_exit);
+            ToastUtils.shortToast(R.string.one_more_click_exit);
             lastTouchTime = currentTime;
             return true;
         } else {

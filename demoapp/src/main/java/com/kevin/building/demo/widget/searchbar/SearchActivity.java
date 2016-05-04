@@ -56,7 +56,7 @@ public class SearchActivity extends BaseActivity {
 
             @Override
             public boolean onRightBtnClick() {
-                show("点击了设置");
+                shortToast("点击了设置");
                 return false;
             }
         });
@@ -65,20 +65,20 @@ public class SearchActivity extends BaseActivity {
         searchBar.setSearchBarListener(new SearchBarListener() {
             @Override
             public boolean onSearch(String searchKey) {
-                show("点击了搜索");
+                shortToast("点击了搜索");
                 return false;
             }
 
             @Override
             public boolean onTextChange(String curTextStr) {
-                show("内容变化");
+                shortToast("内容变化");
                 return true;
 
             }
 
             @Override
             public boolean onCancelClick() {
-                show("点击了取消");
+                shortToast("点击了取消");
                 return true;
             }
         });

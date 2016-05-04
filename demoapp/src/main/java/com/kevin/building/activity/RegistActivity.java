@@ -65,20 +65,20 @@ public class RegistActivity extends BaseActivity
 				String confirm_password= et_confirm_pwd.getText().toString().trim();
 
 				if (TextUtils.isEmpty(userName)){
-					show("用户名不能为空");
+					shortToast("用户名不能为空");
 					break;
 				}
 				if (TextUtils.isEmpty(password)){
-					show("密码不能为空");
+					shortToast("密码不能为空");
 					break;
 				}
 				if (!password.equals(confirm_password)){
-					show("两次输入密码不一致");
+					shortToast("两次输入密码不一致");
 					break;
 				}
 
 
-				show("注册成功 回调到登录页");
+				shortToast("注册成功 回调到登录页");
 
 				HashMap<String,String> paramMap= new HashMap<>();
 				paramMap.put(IntentKey.IS_NEW_USER,"true");

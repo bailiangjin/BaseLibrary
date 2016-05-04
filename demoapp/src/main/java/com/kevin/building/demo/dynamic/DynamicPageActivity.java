@@ -7,7 +7,6 @@ import android.widget.LinearLayout;
 
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dynamic.bean.databean.ClassDataBean;
@@ -97,7 +96,7 @@ public class DynamicPageActivity extends BaseActivity {
         long gapTime = endTime - startTime;
 
 
-        ToastUtils.show("页面加载耗时：" + gapTime + "毫秒");
+        shortToast("页面加载耗时：" + gapTime + "毫秒");
 
     }
 
