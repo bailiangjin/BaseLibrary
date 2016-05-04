@@ -7,7 +7,7 @@ import com.kevin.baselibrary.app.SuperApplication;
 
 /**
  * Toast 工具类
- * <p>
+ *
  * 使用自定义Toast类 防止多次点击重复生成多个Toast 长时间显示问题
  *
  * @author blj
