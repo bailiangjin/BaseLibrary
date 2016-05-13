@@ -38,7 +38,13 @@ public class SerializeTools {
         File file = new File(context.getFilesDir(), fileName);
         Object obj;
         if (file.exists()) {
-            obj = deserialization(file.getAbsolutePath());
+            try{
+                obj = deserialization(file.getAbsolutePath());
+            }catch (Exception e){
+                e.printStackTrace();
+                LogUtils.e("反序列化异常:"+e.getMessage().toString());
+                return null;
+            }
             T result = Primitives.wrap(classOfT).cast(obj);
             if (null == result) {
                 //删除脏数据
@@ -72,6 +78,31 @@ public class SerializeTools {
         }
 
     }
+
+    /**
+     * 删除对象
+     * @param context
+     * @param fileNameKey
+     * @return
+     */
+    public static boolean deleteObj(Context context, String fileNameKey) {
+        if (TextUtils.isEmpty(fileNameKey)) {
+            return false;
+        }
+        try {
+            File file = new File(context.getFilesDir(), fileNameKey);
+            if(file.exists()&&file.isFile()){
+                file.delete();
+            }
+            return true;
+        } catch (Exception e) {
+            LogUtils.e("serialization:deleteObjError:" + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
 
     /**
      * Deserialization object from file.
@@ -117,19 +148,6 @@ public class SerializeTools {
             throw new RuntimeException("IOException occurred. ", e);
         } finally {
             IOUtils.close(outputStream);
-        }
-    }
-
-    /**
-     * 删除文件
-     *
-     * @param filePath
-     */
-    public static void deletePath(String filePath) {
-        File file = new File(filePath);
-        if (file != null) {
-            if (file.isFile())
-                file.delete();
         }
     }
 
