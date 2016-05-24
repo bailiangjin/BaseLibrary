@@ -20,6 +20,9 @@ public class SPUtils {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
+
+
+
     public static void put(String key, Object obj) {
         put(SuperApplication.getContext(), key, obj);
     }
@@ -92,8 +95,12 @@ public class SPUtils {
      * @return
      */
     public static boolean getBoolean(Context context, String key) {
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
         return sp.getBoolean(key, false);
+    }
+
+    private static SharedPreferences getSp(Context context) {
+        return context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
     }
 
 
@@ -108,7 +115,7 @@ public class SPUtils {
         if (null == str) {
             return;
         }
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key, str);
         SharedPreferencesCompat.apply(editor);
@@ -124,7 +131,7 @@ public class SPUtils {
      * @return
      */
     public static String getStringDef(Context context, String key, String defaltStr) {
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
 
         return sp.getString(key, defaltStr);
     }
@@ -137,7 +144,7 @@ public class SPUtils {
      * @return
      */
     public static String getString(Context context, String key) {
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
         return sp.getString(key, null);
     }
 
@@ -148,7 +155,7 @@ public class SPUtils {
      * @param key
      */
     public static void remove(Context context, String key) {
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
         SharedPreferences.Editor editor = sp.edit();
         editor.remove(key);
         SharedPreferencesCompat.apply(editor);
@@ -160,7 +167,7 @@ public class SPUtils {
      * @param context
      */
     public static void clear(Context context) {
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
         SharedPreferences.Editor editor = sp.edit();
         editor.clear();
         SharedPreferencesCompat.apply(editor);
@@ -174,7 +181,7 @@ public class SPUtils {
      * @return
      */
     public static boolean contains(Context context, String key) {
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
         return sp.contains(key);
     }
 
@@ -185,7 +192,7 @@ public class SPUtils {
      * @return
      */
     public static Map<String, ?> getAll(Context context) {
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
         return sp.getAll();
     }
 
@@ -199,7 +206,7 @@ public class SPUtils {
      */
     public static void put(Context context, String key, Object obj) {
 
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
         SharedPreferences.Editor editor = sp.edit();
 
         if (obj instanceof String) {
@@ -228,7 +235,7 @@ public class SPUtils {
      * @return
      */
     public static Object get(Context context, String key, Object defaultObj) {
-        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences sp = getSp(context);
 
         if (defaultObj instanceof String) {
             return sp.getString(key, (String) defaultObj);
