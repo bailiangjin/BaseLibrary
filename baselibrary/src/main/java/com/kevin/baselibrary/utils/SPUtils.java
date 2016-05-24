@@ -20,22 +20,6 @@ public class SPUtils {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
-
-
-
-    public static void put(String key, Object obj) {
-        put(SuperApplication.getContext(), key, obj);
-    }
-
-    public static void putString(String key, String value) {
-        putString(SuperApplication.getContext(), key, value);
-    }
-
-    public static String getString(String key) {
-        return getString(SuperApplication.getContext(), key);
-    }
-
-
     public static void putInt(String key, int value) {
         put(key, value);
     }
@@ -47,9 +31,8 @@ public class SPUtils {
 
 
     public static int getInt(String key, int defaultValue) {
-        return (int) get(SuperApplication.getContext(), key, -1);
+        return (int) get(key, -1);
     }
-
 
     /**
      * 保存boolean数据的方法
@@ -57,7 +40,7 @@ public class SPUtils {
      * @param key
      */
     public static void putBoolean(String key, boolean value) {
-        putBoolean(SuperApplication.getContext(), key, value);
+        put(key, value);
     }
 
     /**
@@ -67,55 +50,22 @@ public class SPUtils {
      * @return
      */
     public static boolean getBoolean(String key) {
-
-        return (Boolean) get(SuperApplication.getContext(), key, false);
-    }
-
-
-    public static void remove(String key) {
-        remove(SuperApplication.getContext(), key);
-    }
-
-
-    /**
-     * 保存boolean数据的方法
-     *
-     * @param context
-     * @param key
-     */
-    public static void putBoolean(Context context, String key, boolean value) {
-        put(context, key, value);
-    }
-
-    /**
-     * 获取boolean 方法
-     *
-     * @param context
-     * @param key
-     * @return
-     */
-    public static boolean getBoolean(Context context, String key) {
-        SharedPreferences sp = getSp(context);
+        SharedPreferences sp = getSp();
         return sp.getBoolean(key, false);
-    }
-
-    private static SharedPreferences getSp(Context context) {
-        return context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
     }
 
 
     /**
      * 保存String的方法
      *
-     * @param context
      * @param key
      * @param str
      */
-    public static void putString(Context context, String key, String str) {
+    public static void putString(String key, String str) {
         if (null == str) {
             return;
         }
-        SharedPreferences sp = getSp(context);
+        SharedPreferences sp = getSp();
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key, str);
         SharedPreferencesCompat.apply(editor);
@@ -125,37 +75,34 @@ public class SPUtils {
     /**
      * 获取String 方法
      *
-     * @param context
      * @param key
-     * @param defaltStr
+     * @param defaultStr
      * @return
      */
-    public static String getStringDef(Context context, String key, String defaltStr) {
-        SharedPreferences sp = getSp(context);
+    public static String getStringDef(String key, String defaultStr) {
+        SharedPreferences sp = getSp();
 
-        return sp.getString(key, defaltStr);
+        return sp.getString(key, defaultStr);
     }
 
     /**
      * 获取String 方法
      *
-     * @param context
      * @param key
      * @return
      */
-    public static String getString(Context context, String key) {
-        SharedPreferences sp = getSp(context);
+    public static String getString(String key) {
+        SharedPreferences sp = getSp();
         return sp.getString(key, null);
     }
 
     /**
      * 移除某个key值已经对应的值
      *
-     * @param context
      * @param key
      */
-    public static void remove(Context context, String key) {
-        SharedPreferences sp = getSp(context);
+    public static void remove(String key) {
+        SharedPreferences sp = getSp();
         SharedPreferences.Editor editor = sp.edit();
         editor.remove(key);
         SharedPreferencesCompat.apply(editor);
@@ -163,11 +110,9 @@ public class SPUtils {
 
     /**
      * 清除所有数据
-     *
-     * @param context
      */
-    public static void clear(Context context) {
-        SharedPreferences sp = getSp(context);
+    public static void clear() {
+        SharedPreferences sp = getSp();
         SharedPreferences.Editor editor = sp.edit();
         editor.clear();
         SharedPreferencesCompat.apply(editor);
@@ -176,23 +121,21 @@ public class SPUtils {
     /**
      * 查询某个key是否已经存在
      *
-     * @param context
      * @param key
      * @return
      */
-    public static boolean contains(Context context, String key) {
-        SharedPreferences sp = getSp(context);
+    public static boolean contains(String key) {
+        SharedPreferences sp = getSp();
         return sp.contains(key);
     }
 
     /**
      * 返回所有的键值对
      *
-     * @param context
      * @return
      */
-    public static Map<String, ?> getAll(Context context) {
-        SharedPreferences sp = getSp(context);
+    public static Map<String, ?> getAll() {
+        SharedPreferences sp = getSp();
         return sp.getAll();
     }
 
@@ -200,13 +143,12 @@ public class SPUtils {
     /**
      * 保存数据的方法，我们需要拿到保存数据的具体类型，然后根据类型调用不同的保存方法
      *
-     * @param context
      * @param key
      * @param obj
      */
-    public static void put(Context context, String key, Object obj) {
+    public static void put(String key, Object obj) {
 
-        SharedPreferences sp = getSp(context);
+        SharedPreferences sp = getSp();
         SharedPreferences.Editor editor = sp.edit();
 
         if (obj instanceof String) {
@@ -229,13 +171,12 @@ public class SPUtils {
     /**
      * 得到保存数据的方法，我们根据默认值得到保存的数据的具体类型，然后调用相对于的方法获取值
      *
-     * @param context
      * @param key
      * @param defaultObj
      * @return
      */
-    public static Object get(Context context, String key, Object defaultObj) {
-        SharedPreferences sp = getSp(context);
+    public static Object get(String key, Object defaultObj) {
+        SharedPreferences sp = getSp();
 
         if (defaultObj instanceof String) {
             return sp.getString(key, (String) defaultObj);
@@ -251,6 +192,12 @@ public class SPUtils {
 
         return null;
     }
+
+
+    private static SharedPreferences getSp() {
+        return SuperApplication.getContext().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+    }
+
 
     /**
      * 创建一个解决SharedPreferencesCompat.apply方法的一个兼容类
