@@ -12,7 +12,7 @@ public class LogUtils {
     private static String INFO = "-->>";
     private static String INIO = "::";
     private static int DEBUG = 0;
-    public final static int LOG_DUBEG = 0;
+    public final static int LOG_DEBUG = 0;
     public final static int LOG_INFO = 1;
     public final static int LOG_WARN = 2;
     public final static int LOG_ERROR = 3;
@@ -36,7 +36,7 @@ public class LogUtils {
     }
 
     public final static void d(String message) {
-        if (DEBUG <= LOG_DUBEG) {
+        if (DEBUG <= LOG_DEBUG) {
             StackTraceElement stackTrace = new Throwable().getStackTrace()[1];
             Log.d(TAG,
                     stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
