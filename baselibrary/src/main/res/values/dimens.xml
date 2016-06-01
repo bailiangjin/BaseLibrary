@@ -34,7 +34,7 @@
 
 
     <dimen name="btn_full_height">48dp</dimen>
-    <dimen name="btn_full_margin">240dp</dimen>
+    <dimen name="btn_full_margin">16dp</dimen>
 
 
     <!-- 按钮边距 -->
