@@ -11,7 +11,7 @@ import com.kevin.baselibrary.app.AppUtils;
 /**
  * 打开或关闭软键盘
  * 
- * @author zhy
+ * @author blj
  * 
  */
 public class KeyBoardUtils
