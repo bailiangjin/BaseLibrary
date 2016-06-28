@@ -11,7 +11,7 @@ import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.networkdemo.weather.WeatherRequest;
 import com.kevin.building.demo.networkdemo.weather.model.WeatherSK;
-import com.kevin.javabaselib.utils.GsonUtils;
+import com.bailiangjin.javabaselib.utils.GsonUtils;
 
 import java.util.HashMap;
 

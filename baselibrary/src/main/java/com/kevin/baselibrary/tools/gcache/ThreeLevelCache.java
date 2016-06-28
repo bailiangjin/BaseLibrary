@@ -2,7 +2,7 @@ package com.kevin.baselibrary.tools.gcache;
 
 import android.support.v4.util.LruCache;
 
-import com.kevin.javabaselib.utils.StringUtils;
+import com.bailiangjin.javabaselib.utils.StringUtils;
 
 /**
  *  万能的 三级缓存类
