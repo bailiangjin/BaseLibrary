@@ -50,6 +50,11 @@ public class SearchActivity extends BaseActivity {
             }
 
             @Override
+            public boolean onRightImg2Click() {
+                return false;
+            }
+
+            @Override
             public boolean onLeftBtnClick() {
                 return false;
             }

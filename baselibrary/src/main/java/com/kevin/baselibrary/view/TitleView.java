@@ -50,6 +50,11 @@ public class TitleView extends BaseTitleView {
     }
 
     @Override
+    protected int getRightImage2ResId() {
+        return 0;
+    }
+
+    @Override
     protected int getLeftBtnResId() {
         return R.drawable.btn_for_title_selector;
     }
@@ -76,6 +81,11 @@ public class TitleView extends BaseTitleView {
 
     @Override
     protected boolean getRightImgVisibility() {
+        return false;
+    }
+
+    @Override
+    protected boolean getRightImg2Visibility() {
         return false;
     }
 

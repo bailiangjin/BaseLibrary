@@ -12,6 +12,12 @@ public interface TitleViewListener {
 
     boolean onRightImgClick();
 
+    /**
+     * 右侧数 第二个img 点击回调
+     * @return
+     */
+    boolean onRightImg2Click();
+
     boolean onLeftBtnClick();
 
     boolean onRightBtnClick();
