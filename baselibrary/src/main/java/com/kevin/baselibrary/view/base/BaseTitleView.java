@@ -2,6 +2,8 @@ package com.kevin.baselibrary.view.base;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -192,8 +194,24 @@ public abstract class BaseTitleView extends FrameLayout {
 
             }
         });
+//        parseAttrs(context,attrs);
 
+    }
 
+    private void parseAttrs(Context context, AttributeSet attrs) {
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.HelpItemView);
+
+//        int resId = typedArray.getResourceId(R.styleable.HelpItemView_iconScr, -1);
+//
+//        if (resId != -1) {
+//            iv_icon.setImageResource(resId);
+//        }
+//        String name = typedArray.getString(R.styleable.HelpItemView_text_name);
+//
+//        if (!TextUtils.isEmpty(name)) {
+//            tv_name.setText(name);
+//        }
+        typedArray.recycle();
     }
 
     private void setLeftBtnSize(int width,int height) {

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PageIndicator的自定义属性-->
+    <declare-styleable name="PageIndicatorView">
+        <attr name="indicatorsCount" format="integer"/>
+        <attr name="selectedIndex" format="integer"/>
+        <attr name="selectedDrawable" format="reference"/>
+        <attr name="unselectedDrawable" format="reference"/>
+        <attr name="backgroundDrawable" format="reference"/>
+        <attr name="indicatorRadius" format="dimension"/>
+        <attr name="indicatorMarginHorizontal" format="dimension"/>
+        <attr name="indicatorMarginVertical" format="dimension"/>
+        <attr name="indicatorPaddingHorizontal" format="dimension"/>
+    </declare-styleable>
+
+    <!-- TabIconView的自定义属性-->
+    <declare-styleable name="TabIconView">
+        <attr name="iconLogoSelector" format="reference"/>
+        <attr name="iconLogoDefault" format="reference"/>
+        <attr name="iconLogoPressed" format="reference"/>
+        <attr name="textColorSelector" format="reference"/>
+        <attr name="textColorDefault" format="color"/>
+        <attr name="textColorPressed" format="color"/>
+        <attr name="backgroundSelector" format="reference"/>
+        <attr name="backgroundDefault" format="reference"/>
+        <attr name="backgroundPressed" format="reference"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="text" format="string"/>
+        <attr name="imageSize" format="dimension"/>
+        <attr name="iconPaddingHorizontal" format="dimension"/>
+        <attr name="iconPaddingVertical" format="dimension"/>
+        <attr name="iconTextMargin" format="dimension"/>
+        <attr name="pressEffect" format="boolean"/>
+    </declare-styleable>
+
+    <!--自定义环形图属性-->
+    <declare-styleable name="CircleView">
+        <attr name="circlePadding" format="dimension" />
+        <attr name="circleWidth" format="dimension" />
+        <attr name="stepTextSize" format="dimension" />
+        <attr name="topTextSize" format="dimension" />
+        <attr name="targetTextSize" format="dimension" />
+        <attr name="backCircleColor" format="color|reference" />
+        <attr name="stepTextColor" format="color|reference" />
+        <attr name="TopTextColor" format="color|reference" />
+        <attr name="targetTextColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="lwvWheelView">
+        <attr name="lwvHighlightColor" format="color|reference"/>
+        <attr name="lwvMarkColor" format="color|reference"/>
+        <attr name="lwvMarkTextColor" format="color|reference"/>
+        <attr name="lwvIntervalFactor" format="float"/>
+        <attr name="lwvMarkRatio" format="float"/>
+        <attr name="lwvCursorSize" format="dimension"/>
+        <attr name="lwvMarkTextSize" format="dimension"/>
+        <attr name="lwvCenterMarkTextSize" format="dimension"/>
+        <attr name="lwvAdditionalCenterMark" format="string|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="HelpItemView">
+        <attr name="iconScr" format="color|reference"/>
+        <attr name="text_name" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="BaseTitleView">
+        <!--标题栏背景-->
+        <attr name="root_background" format="color|reference"/>
+        <!--文字内容-->
+        <attr name="title_text" format="string|reference"/>
+        <attr name="left_btn_text" format="string|reference"/>
+        <attr name="right_btn_text" format="string|reference"/>
+        <!--文字大小-->
+        <attr name="title_text_size" format="dimension"/>
+        <attr name="left_btn_text_size" format="dimension"/>
+        <attr name="right_btn_text_size" format="dimension"/>
+        <!--View背景-->
+        <attr name="left_iv_background" format="color|reference"/>
+        <attr name="right_iv_background" format="color|reference"/>
+        <attr name="right_iv2_background" format="color|reference"/>
+        <attr name="left_btn_background" format="color|reference"/>
+        <attr name="right_btn_background" format="color|reference"/>
+        <!--控件可见性-->
+        <attr name="left_btn_visibility" format="boolean"/>
+        <attr name="right_btn_visibility" format="boolean"/>
+        <attr name="left_iv_visibility" format="boolean"/>
+        <attr name="right_iv_visibility" format="boolean"/>
+        <attr name="right_iv2_visibility" format="boolean"/>
+    </declare-styleable>
+</resources>
