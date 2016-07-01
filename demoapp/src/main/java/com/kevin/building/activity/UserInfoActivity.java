@@ -1,6 +1,5 @@
 package com.kevin.building.activity;
 
-import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
@@ -19,8 +18,8 @@ public class UserInfoActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		titleView.setTitleText(getString(R.string.friend_info));
-		titleView.setRightBtnVisibility(View.GONE);
+		commonTitleView.setTitleText(getString(R.string.friend_info));
+		commonTitleView.setRightBtnVisibility(View.GONE);
 		btn_userinfo_back = (Button) findViewById(R.id.btn_userinfo_back);
 		btn_userinfo_back.setOnClickListener(this);
 	}

@@ -38,7 +38,7 @@ public class NetworkActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        titleView.setTitleText("网络模块");
+        commonTitleView.setTitleText("网络模块");
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);

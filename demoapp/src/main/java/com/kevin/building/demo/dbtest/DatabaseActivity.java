@@ -36,7 +36,7 @@ public class DatabaseActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		titleView.setTitleText("测试数据库");
+		commonTitleView.setTitleText("测试数据库");
 	}
 
 	@Override

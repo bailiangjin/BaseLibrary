@@ -8,7 +8,6 @@ import android.view.MotionEvent;
 import com.bugtags.library.Bugtags;
 import com.kevin.baselibrary.base.SuperBaseActivity;
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.view.TitleView;
 import com.kevin.building.R;
 import com.kevin.building.app.AppManager;
 import com.kevin.building.constants.BroadcastAction;
@@ -18,9 +17,6 @@ import java.util.Set;
 
 public abstract class BaseActivity extends SuperBaseActivity
 {
-
-	protected TitleView titleView;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -103,7 +99,6 @@ public abstract class BaseActivity extends SuperBaseActivity
 	@Override
 	protected void initBaseUI()
 	{
-		titleView = (TitleView) findViewById(R.id.title_view);
 	}
 
 	@Override

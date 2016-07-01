@@ -34,8 +34,8 @@ public class AddFriendActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		titleView.setTitleText(getString(R.string.addcontacts));
-		titleView.setRightBtnText(getString(R.string.user_info));
+		commonTitleView.setTitleText(getString(R.string.addcontacts));
+		commonTitleView.setRightBtnText(getString(R.string.user_info));
 
 		btn_add = (Button) findViewById(R.id.btn_add);
 		btn_logout = (Button) findViewById(R.id.btn_logout);
@@ -43,7 +43,7 @@ public class AddFriendActivity extends BaseActivity
 		btn_add.setOnClickListener(this);
 		btn_logout.setOnClickListener(this);
 
-		titleView.setRightButtonListener(new OnClickListener()
+		commonTitleView.setRightButtonListener(new OnClickListener()
 		{
 
 			@Override

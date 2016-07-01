@@ -55,7 +55,7 @@ public class LaunchModeActivity2 extends LaunchModeActivity1 {
     @Override
     protected void initView() {
         super.initView();
-        titleView.setTitleText("Activity2");
+        commonTitleView.setTitleText("Activity2");
     }
 
 

@@ -20,8 +20,8 @@ public class DialogActivity extends BtnBaseActivity {
     protected void initView() {
         super.initView();
 
-        titleView.setTitleText("DialogDemos");
-        titleView.setLeftBtnVisibility(View.GONE);
+        commonTitleView.setTitleText("DialogDemos");
+        commonTitleView.setLeftBtnVisibility(View.GONE);
 
         btn1.setText("退出应用Dialog");
         btn2.setText("Dialog2");

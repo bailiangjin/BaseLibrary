@@ -37,8 +37,8 @@ public class SearchActivity extends BaseActivity {
     @Override
     protected void initView() {
 
-        titleView.setTitleText("搜索");
-        titleView.setTitleViewListener(new TitleViewListener() {
+        commonTitleView.setTitleText("搜索");
+        commonTitleView.setTitleViewListener(new TitleViewListener() {
             @Override
             public boolean onLeftImgClick() {
                 return false;
