@@ -147,13 +147,13 @@ public abstract class BaseTitleView extends FrameLayout {
         });
 
         //按钮监听事件
-        iv_right.setOnClickListener(new OnClickListener() {
+        iv_right2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!isListenerInit()) {
                     return;
                 }
-                if (titleViewListener.onRightImgClick()) {
+                if (titleViewListener.onRightImg2Click()) {
                     return;
                 } else {
                     //do some thing
