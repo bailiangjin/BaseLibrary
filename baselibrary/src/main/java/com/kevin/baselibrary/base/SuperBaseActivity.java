@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 
+import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.constant.SuperBroadcastAction;
 import com.kevin.baselibrary.interfaze.listener.UIHandlerListener;
 import com.kevin.baselibrary.model.art.HomeEventListener;
@@ -19,6 +22,7 @@ import com.kevin.baselibrary.net.NetUtils;
 import com.kevin.baselibrary.utils.KeyBoardUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
+import com.kevin.baselibrary.view.TitleView;
 
 import java.util.Set;
 
@@ -50,10 +54,17 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
 
     };
 
+    private LayoutInflater layoutInflater;
+
+    protected FrameLayout baseContainer;
+
+    protected TitleView commonTitleView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //初始化根类UI
         initSuperUI();
         //初始化 子类BaseActivity UI
@@ -94,6 +105,42 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
 
     }
 
+
+    /**
+     * 将子activity的view 加入到baseactivity 中
+     *
+     * @param layoutResID
+     */
+    @Override
+    public void setContentView(int layoutResID) {
+        if (layoutInflater == null) {
+            layoutInflater = LayoutInflater.from(SuperBaseActivity.this);
+
+        }
+        View ChildView = layoutInflater.inflate(layoutResID, null);
+        baseContainer.removeAllViews();
+        baseContainer.addView(ChildView);
+    }
+
+    /**
+     * 隐藏公共title
+     */
+    protected void hideCommonBaseTitle() {
+        if (commonTitleView != null) {
+            commonTitleView.setVisibility(View.GONE);
+        }
+    }
+
+    /**
+     * 显示公共的title
+     */
+    protected void showCommonBaseTitle() {
+
+        if (commonTitleView != null) {
+            commonTitleView.setVisibility(View.VISIBLE);
+        }
+    }
+
     @Override
     public void onClick(View v) {
         onViewClick(v);
@@ -129,8 +176,11 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      * 初始化父类UI
      */
     private void initSuperUI() {
+        super.setContentView(R.layout.activity_base_xml);
+        baseContainer = (FrameLayout) findViewById(R.id.baseContainer);
+        commonTitleView= (TitleView) findViewById(R.id.title_view);
         //初始化根布局
-        initRootLayout();
+        initSubLayout();
     }
 
     /**
@@ -147,7 +197,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     /**
      * 初始化根布局
      */
-    private void initRootLayout() {
+    private void initSubLayout() {
 
         int rootLayoutResId = getLayoutResId();
         if (0 != rootLayoutResId && -1 != rootLayoutResId) {

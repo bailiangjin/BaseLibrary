@@ -6,8 +6,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <include layout="@layout/title_view" >
-    </include>
 
     <ListView
         android:id="@+id/lv_userlist"

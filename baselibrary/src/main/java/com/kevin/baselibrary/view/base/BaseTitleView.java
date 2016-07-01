@@ -239,10 +239,7 @@ public abstract class BaseTitleView extends FrameLayout {
         return true;
     }
 
-    public void setTitleViewListener(TitleViewListener titleViewListener) {
-        this.titleViewListener = titleViewListener;
-    }
-
+    //文本设置
     public void setTitleText(String text) {
         tv_title.setText(text);
     }
@@ -255,6 +252,11 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_right.setText(text);
     }
 
+    //监听设置
+    public void setTitleViewListener(TitleViewListener titleViewListener) {
+        this.titleViewListener = titleViewListener;
+    }
+
     public void setLeftButtonListener(OnClickListener onClickListener) {
         btn_left.setOnClickListener(onClickListener);
     }
@@ -263,11 +265,16 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_right.setOnClickListener(onClickListener);
     }
 
+
+    //可见性设置
     public void setLeftImageVisibility(int visibility) {
         iv_left.setVisibility(visibility);
     }
 
     public void setRightImageVisibility(int visibility) {
+        iv_right.setVisibility(visibility);
+    }
+    public void setRightImage2Visibility(int visibility) {
         iv_right.setVisibility(visibility);
     }
 
@@ -279,11 +286,8 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_right.setVisibility(visibility);
     }
 
-    public void setBackBtnClickable(boolean clickable) {
-        iv_left.setClickable(clickable);
-    }
 
-
+    //是否可点击
     public void setLeftBtnClickable(boolean clickable) {
         btn_left.setClickable(clickable);
     }
@@ -292,6 +296,16 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_right.setClickable(clickable);
     }
 
+    public void setLeftImagelickable(boolean clickable) {
+        iv_left.setClickable(clickable);
+    }
+
+    public void setRightImagClickable(boolean clickable) {
+        btn_right.setClickable(clickable);
+    }
+    public void setRightImag2Clickable(boolean clickable) {
+        btn_right.setClickable(clickable);
+    }
 
     /**
      * 标题栏整体背景

@@ -5,8 +5,6 @@
     android:background="@drawable/demo_common_gradient_bg"
     android:orientation="vertical" >
 
-    <include layout="@layout/title_view" >
-    </include>
 
     <LinearLayout
         android:layout_width="match_parent"
