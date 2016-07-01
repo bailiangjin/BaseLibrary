@@ -19,7 +19,6 @@ public class UserInfoActivity extends BaseActivity
 	@Override
 	protected void initView() {
 		commonTitleView.setTitleText(getString(R.string.friend_info));
-		commonTitleView.setRightBtnVisibility(View.GONE);
 		btn_userinfo_back = (Button) findViewById(R.id.btn_userinfo_back);
 		btn_userinfo_back.setOnClickListener(this);
 	}

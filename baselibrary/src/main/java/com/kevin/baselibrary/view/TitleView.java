@@ -91,7 +91,7 @@ public class TitleView extends BaseTitleView {
 
     @Override
     protected boolean getRightBtnVisibility() {
-        return true;
+        return false;
     }
 
     @Override

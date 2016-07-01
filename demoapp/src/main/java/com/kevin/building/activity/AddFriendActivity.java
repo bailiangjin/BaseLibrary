@@ -36,6 +36,7 @@ public class AddFriendActivity extends BaseActivity
 	protected void initView() {
 		commonTitleView.setTitleText(getString(R.string.addcontacts));
 		commonTitleView.setRightBtnText(getString(R.string.user_info));
+		commonTitleView.setRightBtnVisibility(View.VISIBLE);
 
 		btn_add = (Button) findViewById(R.id.btn_add);
 		btn_logout = (Button) findViewById(R.id.btn_logout);

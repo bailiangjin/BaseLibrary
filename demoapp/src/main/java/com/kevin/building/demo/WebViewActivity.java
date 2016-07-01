@@ -29,6 +29,7 @@ public class WebViewActivity extends BaseActivity {
     protected void initView() {
         commonTitleView.setTitleText("测试WebView");
         commonTitleView.setRightBtnText("关闭");
+        commonTitleView.setRightBtnVisibility(View.VISIBLE);
         commonTitleView.setRightButtonListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

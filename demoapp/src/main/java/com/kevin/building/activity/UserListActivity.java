@@ -20,6 +20,7 @@ public class UserListActivity extends BaseActivity
 	protected void initView() {
 		commonTitleView.setTitleText(getString(R.string.contacts));
 		commonTitleView.setRightBtnText(getString(R.string.add));
+		commonTitleView.setRightBtnVisibility(View.VISIBLE);
 		commonTitleView.setRightButtonListener(new View.OnClickListener()
 		{
 
