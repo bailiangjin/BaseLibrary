@@ -15,10 +15,10 @@ public class LaunchModeActivity4 extends LaunchModeActivity1 {
     @Override
     protected void initView() {
         super.initView();
-        titleView.setTitleText("Activity4");
-        titleView.setRightBtnText("onResult");
-        titleView.setRightBtnVisibility(View.VISIBLE);
-        titleView.setRightButtonListener(new View.OnClickListener() {
+        commonTitleView.setTitleText("Activity4");
+        commonTitleView.setRightBtnText("onResult");
+        commonTitleView.setRightBtnVisibility(View.VISIBLE);
+        commonTitleView.setRightButtonListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();

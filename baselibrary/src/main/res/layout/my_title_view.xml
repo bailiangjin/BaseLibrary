@@ -39,6 +39,15 @@
         android:text="右侧按钮"
         android:layout_marginRight="10dp"
         android:textColor="@color/white" />
+    <ImageView
+        android:id="@+id/iv_right2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/iv_right"
+        android:layout_marginRight="12dp"
+        android:background="@color/transparent"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/iv_right"

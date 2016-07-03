@@ -1,7 +1,7 @@
 package com.kevin.baselibrary.utils;
 
 import com.google.gson.internal.Primitives;
-import com.kevin.javabaselib.utils.GsonUtils;
+import com.bailiangjin.javabaselib.utils.GsonUtils;
 
 import java.lang.reflect.Type;
 

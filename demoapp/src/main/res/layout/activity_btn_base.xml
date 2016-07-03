@@ -5,7 +5,6 @@
     android:background="@drawable/demo_common_gradient_bg"
     tools:context="com.kevin.baselibrary.activity.DemoActivity">
 
-    <include layout="@layout/title_view" />
 
     <include layout="@layout/btn_base_body" />
 

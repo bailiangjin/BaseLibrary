@@ -27,9 +27,10 @@ public class WebViewActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        titleView.setTitleText("测试WebView");
-        titleView.setRightBtnText("关闭");
-        titleView.setRightButtonListener(new View.OnClickListener() {
+        commonTitleView.setTitleText("测试WebView");
+        commonTitleView.setRightBtnText("关闭");
+        commonTitleView.setRightBtnVisibility(View.VISIBLE);
+        commonTitleView.setRightButtonListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -37,7 +38,7 @@ public class WebViewActivity extends BaseActivity {
             }
         });
 
-        titleView.setLeftButtonListener(new View.OnClickListener() {
+        commonTitleView.setLeftButtonListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onWebViewBack();

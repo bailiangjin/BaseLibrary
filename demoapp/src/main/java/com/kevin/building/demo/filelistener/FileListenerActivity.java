@@ -10,7 +10,7 @@ import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
-import com.kevin.javabaselib.utils.FileUtils;
+import com.bailiangjin.javabaselib.utils.FileUtils;
 
 import java.io.File;
 

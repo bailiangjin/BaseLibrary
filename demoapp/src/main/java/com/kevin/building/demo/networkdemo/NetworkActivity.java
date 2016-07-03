@@ -11,7 +11,7 @@ import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.networkdemo.weather.WeatherRequest;
 import com.kevin.building.demo.networkdemo.weather.model.WeatherSK;
-import com.kevin.javabaselib.utils.GsonUtils;
+import com.bailiangjin.javabaselib.utils.GsonUtils;
 
 import java.util.HashMap;
 
@@ -38,7 +38,7 @@ public class NetworkActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        titleView.setTitleText("网络模块");
+        commonTitleView.setTitleText("网络模块");
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);

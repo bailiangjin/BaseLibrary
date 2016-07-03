@@ -6,7 +6,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <include layout="@layout/title_view" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"

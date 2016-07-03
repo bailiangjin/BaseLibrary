@@ -1,7 +1,6 @@
 package com.kevin.building.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
@@ -19,9 +18,10 @@ public class UserListActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		titleView.setTitleText(getString(R.string.contacts));
-		titleView.setRightBtnText(getString(R.string.add));
-		titleView.setRightButtonListener(new View.OnClickListener()
+		commonTitleView.setTitleText(getString(R.string.contacts));
+		commonTitleView.setRightBtnText(getString(R.string.add));
+		commonTitleView.setRightBtnVisibility(View.VISIBLE);
+		commonTitleView.setRightButtonListener(new View.OnClickListener()
 		{
 
 			@Override

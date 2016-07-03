@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/title_view"></include>
     <include layout="@layout/search_bar"></include>
 
 </LinearLayout>

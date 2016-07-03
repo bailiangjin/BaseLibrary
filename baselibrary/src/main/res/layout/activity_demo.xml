@@ -8,8 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.kevin.baselibrary.activity.DemoActivity" >
-    <include layout="@layout/title_view"
-         />
     <include layout="@layout/btn_base_body"
          />
 

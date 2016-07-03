@@ -2,6 +2,8 @@ package com.kevin.baselibrary.view.base;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -27,6 +29,10 @@ public abstract class BaseTitleView extends FrameLayout {
     private TextView tv_title;
     private ImageView iv_left;
     private ImageView iv_right;
+    /**
+     * 标题栏从右侧数 第二个图标
+     */
+    private ImageView iv_right2;
     private Button btn_left;
     private Button btn_right;
 
@@ -39,14 +45,14 @@ public abstract class BaseTitleView extends FrameLayout {
         tv_title = (TextView) findViewById(R.id.tv_title);
         iv_left = (ImageView) findViewById(R.id.iv_left);
         iv_right = (ImageView) findViewById(R.id.iv_right);
+        iv_right2 = (ImageView) findViewById(R.id.iv_right2);
         btn_left = (Button) findViewById(R.id.btn_left);
         btn_right = (Button) findViewById(R.id.btn_right);
 
         //整体背景
         if (0 != getTitleBackgroundResId()) {
-            rl_root.setBackground(getResources().getDrawable(getTitleBackgroundResId()));
+                rl_root.setBackground(getResources().getDrawable(getTitleBackgroundResId()));
         }
-
 
         //按钮背景
         if (0 != getLeftImageResId()) {
@@ -55,6 +61,10 @@ public abstract class BaseTitleView extends FrameLayout {
 
         if (0 != getRightImageResId()) {
             iv_right.setImageResource(getRightImageResId());//该种方式动态设置背景 不会变形
+        }
+
+        if (0 != getRightImage2ResId()) {
+            iv_right2.setImageResource(getRightImage2ResId());//该种方式动态设置背景 不会变形
         }
         if (0 != getLeftBtnResId()) {
             btn_left.setBackground(getResources().getDrawable(getLeftBtnResId()));
@@ -100,6 +110,7 @@ public abstract class BaseTitleView extends FrameLayout {
         //按钮可见性
         iv_left.setVisibility(getLeftImgVisibility() ? View.VISIBLE : View.GONE);
         iv_right.setVisibility(getRightImgVisibility() ? View.VISIBLE : View.GONE);
+        iv_right2.setVisibility(getRightImg2Visibility() ? View.VISIBLE : View.GONE);
         btn_left.setVisibility(getLeftBtnVisibility() ? View.VISIBLE : View.GONE);
         btn_right.setVisibility(getRightBtnVisibility() ? View.VISIBLE : View.GONE);
 
@@ -136,6 +147,24 @@ public abstract class BaseTitleView extends FrameLayout {
         });
 
         //按钮监听事件
+        iv_right2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isListenerInit()) {
+                    return;
+                }
+                if (titleViewListener.onRightImg2Click()) {
+                    return;
+                } else {
+                    //do some thing
+                }
+
+
+            }
+        });
+
+
+        //按钮监听事件
         btn_left.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,8 +194,24 @@ public abstract class BaseTitleView extends FrameLayout {
 
             }
         });
+//        parseAttrs(context,attrs);
 
+    }
 
+    private void parseAttrs(Context context, AttributeSet attrs) {
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.HelpItemView);
+
+//        int resId = typedArray.getResourceId(R.styleable.HelpItemView_iconScr, -1);
+//
+//        if (resId != -1) {
+//            iv_icon.setImageResource(resId);
+//        }
+//        String name = typedArray.getString(R.styleable.HelpItemView_text_name);
+//
+//        if (!TextUtils.isEmpty(name)) {
+//            tv_name.setText(name);
+//        }
+        typedArray.recycle();
     }
 
     private void setLeftBtnSize(int width,int height) {
@@ -194,10 +239,7 @@ public abstract class BaseTitleView extends FrameLayout {
         return true;
     }
 
-    public void setTitleViewListener(TitleViewListener titleViewListener) {
-        this.titleViewListener = titleViewListener;
-    }
-
+    //文本设置
     public void setTitleText(String text) {
         tv_title.setText(text);
     }
@@ -210,6 +252,11 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_right.setText(text);
     }
 
+    //监听设置
+    public void setTitleViewListener(TitleViewListener titleViewListener) {
+        this.titleViewListener = titleViewListener;
+    }
+
     public void setLeftButtonListener(OnClickListener onClickListener) {
         btn_left.setOnClickListener(onClickListener);
     }
@@ -218,11 +265,16 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_right.setOnClickListener(onClickListener);
     }
 
+
+    //可见性设置
     public void setLeftImageVisibility(int visibility) {
         iv_left.setVisibility(visibility);
     }
 
     public void setRightImageVisibility(int visibility) {
+        iv_right.setVisibility(visibility);
+    }
+    public void setRightImage2Visibility(int visibility) {
         iv_right.setVisibility(visibility);
     }
 
@@ -234,11 +286,8 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_right.setVisibility(visibility);
     }
 
-    public void setBackBtnClickable(boolean clickable) {
-        iv_left.setClickable(clickable);
-    }
 
-
+    //是否可点击
     public void setLeftBtnClickable(boolean clickable) {
         btn_left.setClickable(clickable);
     }
@@ -247,6 +296,16 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_right.setClickable(clickable);
     }
 
+    public void setLeftImagelickable(boolean clickable) {
+        iv_left.setClickable(clickable);
+    }
+
+    public void setRightImagClickable(boolean clickable) {
+        btn_right.setClickable(clickable);
+    }
+    public void setRightImag2Clickable(boolean clickable) {
+        btn_right.setClickable(clickable);
+    }
 
     /**
      * 标题栏整体背景
@@ -297,6 +356,12 @@ public abstract class BaseTitleView extends FrameLayout {
      * @return
      */
     protected abstract int getRightImageResId();
+    /**
+     * 右侧图标2背景 资源文件id
+     *
+     * @return
+     */
+    protected abstract int getRightImage2ResId();
 
     /**
      * 左侧按钮背景
@@ -339,6 +404,13 @@ public abstract class BaseTitleView extends FrameLayout {
      * @return
      */
     protected abstract boolean getRightImgVisibility();
+
+    /**
+     * 右侧侧图标2可见性
+     *
+     * @return
+     */
+    protected abstract boolean getRightImg2Visibility();
 
     /**
      * 右侧按钮可见性

@@ -26,8 +26,8 @@ import com.kevin.building.demo.dynamic.bean.viewbean.type.BtnGroupType;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.BtnType;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.TxtType;
 import com.kevin.building.demo.dynamic.generater.ViewGeneratorImpl;
-import com.kevin.javabaselib.utils.FileUtils;
-import com.kevin.javabaselib.utils.GsonUtils;
+import com.bailiangjin.javabaselib.utils.FileUtils;
+import com.bailiangjin.javabaselib.utils.GsonUtils;
 
 import java.io.File;
 import java.util.ArrayList;
