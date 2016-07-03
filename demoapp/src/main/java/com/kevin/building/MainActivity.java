@@ -32,7 +32,7 @@ public class MainActivity extends BtnBaseActivity {
     protected void initView() {
         super.initView();
 
-        commonTitleView.setTitleText("主页面");
+//        commonTitleView.setTitleText("主页面");
         commonTitleView.setLeftBtnVisibility(View.GONE);
 
         btn1.setText("控件模块");
