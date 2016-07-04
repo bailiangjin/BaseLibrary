@@ -51,7 +51,7 @@ public abstract class BaseTitleView extends FrameLayout {
 
         //整体背景
         if (0 != getTitleBackgroundResId()) {
-                rl_root.setBackground(getResources().getDrawable(getTitleBackgroundResId()));
+            rl_root.setBackground(getResources().getDrawable(getTitleBackgroundResId()));
         }
 
         //按钮背景
@@ -86,9 +86,9 @@ public abstract class BaseTitleView extends FrameLayout {
         }
 
         //按钮宽度
-        if (getBtnWidth() > 0&& getBtnHeight()>0) {
-            setLeftBtnSize(getBtnWidth(),getBtnHeight());
-            setRightBtnSize(getBtnWidth(),getBtnHeight());
+        if (getBtnWidth() > 0 && getBtnHeight() > 0) {
+            setLeftBtnSize(getBtnWidth(), getBtnHeight());
+            setRightBtnSize(getBtnWidth(), getBtnHeight());
         }
 
         if (getBtnTvSize() > 0) {
@@ -194,27 +194,76 @@ public abstract class BaseTitleView extends FrameLayout {
 
             }
         });
-//        parseAttrs(context,attrs);
+        parseAttrs(context, attrs);
 
     }
 
     private void parseAttrs(Context context, AttributeSet attrs) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.HelpItemView);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.BaseTitleView);
 
-//        int resId = typedArray.getResourceId(R.styleable.HelpItemView_iconScr, -1);
-//
-//        if (resId != -1) {
-//            iv_icon.setImageResource(resId);
-//        }
-//        String name = typedArray.getString(R.styleable.HelpItemView_text_name);
-//
-//        if (!TextUtils.isEmpty(name)) {
-//            tv_name.setText(name);
-//        }
+
+        setViewBackground(rl_root, R.styleable.BaseTitleView_root_background, typedArray);
+        setViewBackground(btn_left, R.styleable.BaseTitleView_left_btn_background, typedArray);
+        setViewBackground(btn_right, R.styleable.BaseTitleView_right_btn_background, typedArray);
+
+        setImageRes(iv_left, R.styleable.BaseTitleView_left_iv_background, typedArray);
+        setImageRes(iv_right, R.styleable.BaseTitleView_right_iv_background, typedArray);
+        setImageRes(iv_right2, R.styleable.BaseTitleView_right_iv2_background, typedArray);
+
+        setTvContent(tv_title, R.styleable.BaseTitleView_title_text, typedArray);
+        setTvContent(btn_left, R.styleable.BaseTitleView_left_btn_text, typedArray);
+        setTvContent(btn_right, R.styleable.BaseTitleView_right_btn_text, typedArray);
+
+        setTextSize(tv_title, R.styleable.BaseTitleView_title_text_size, typedArray);
+        setTextSize(btn_left, R.styleable.BaseTitleView_left_btn_text_size, typedArray);
+        setTextSize(btn_right, R.styleable.BaseTitleView_right_btn_text_size, typedArray);
+
+        setViewVisibility(btn_left, R.styleable.BaseTitleView_left_btn_visibility, typedArray);
+        setViewVisibility(btn_right, R.styleable.BaseTitleView_right_btn_visibility, typedArray);
+        setViewVisibility(iv_right, R.styleable.BaseTitleView_right_iv_visibility, typedArray);
+        setViewVisibility(iv_right2, R.styleable.BaseTitleView_right_iv2_visibility, typedArray);
+        setViewVisibility(iv_left, R.styleable.BaseTitleView_left_iv_visibility, typedArray);
+
         typedArray.recycle();
     }
 
-    private void setLeftBtnSize(int width,int height) {
+    private void setViewVisibility(View v, int styleableId, TypedArray typedArray) {
+        boolean visiable = typedArray.getBoolean(styleableId, false);
+        v.setVisibility(visiable ? VISIBLE : INVISIBLE);
+    }
+
+    private void setTextSize(TextView textView, int styleableId, TypedArray typedArray) {
+        float textSize = typedArray.getDimension(styleableId, -1f);
+        if (textSize != -1f) {
+            textView.setTextSize(textSize);
+        }
+    }
+
+    private void setImageRes(ImageView iv, int styleableId, TypedArray typedArray) {
+        int resId = typedArray.getResourceId(styleableId, -1);
+        if (resId != -1) {
+            iv.setImageResource(resId);
+        }
+
+    }
+
+    private void setViewBackground(View v, int styleableId, TypedArray typedArray) {
+        int resId = typedArray.getResourceId(styleableId, -1);
+        if (resId != -1) {
+            v.setBackgroundResource(resId);
+        }
+
+    }
+
+
+    private void setTvContent(TextView tv, int styleableId, TypedArray typedArray) {
+        String str = typedArray.getString(styleableId);
+        if (!TextUtils.isEmpty(str)) {
+            tv.setText(str);
+        }
+    }
+
+    private void setLeftBtnSize(int width, int height) {
         ViewGroup.LayoutParams layoutParams;
         layoutParams = btn_left.getLayoutParams();
         layoutParams.height = DensityUtils.dip2px(height);
@@ -222,7 +271,7 @@ public abstract class BaseTitleView extends FrameLayout {
         btn_left.setLayoutParams(layoutParams);
     }
 
-    private void setRightBtnSize(int width,int height) {
+    private void setRightBtnSize(int width, int height) {
         ViewGroup.LayoutParams layoutParams;
         layoutParams = btn_right.getLayoutParams();
         layoutParams.height = DensityUtils.dip2px(height);
@@ -274,6 +323,7 @@ public abstract class BaseTitleView extends FrameLayout {
     public void setRightImageVisibility(int visibility) {
         iv_right.setVisibility(visibility);
     }
+
     public void setRightImage2Visibility(int visibility) {
         iv_right.setVisibility(visibility);
     }
@@ -303,6 +353,7 @@ public abstract class BaseTitleView extends FrameLayout {
     public void setRightImagClickable(boolean clickable) {
         btn_right.setClickable(clickable);
     }
+
     public void setRightImag2Clickable(boolean clickable) {
         btn_right.setClickable(clickable);
     }
@@ -356,6 +407,7 @@ public abstract class BaseTitleView extends FrameLayout {
      * @return
      */
     protected abstract int getRightImageResId();
+
     /**
      * 右侧图标2背景 资源文件id
      *
