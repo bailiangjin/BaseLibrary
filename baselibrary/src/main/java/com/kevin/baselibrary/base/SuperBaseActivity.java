@@ -160,7 +160,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
             View view = getCurrentFocus();
 
             if (KeyBoardUtils.isShouldHideInput(view, motionEvent)) {
-                KeyBoardUtils.closeKeybord(view);
+                KeyBoardUtils.closeKeyboard(view);
             }
         }
         return super.dispatchTouchEvent(motionEvent);

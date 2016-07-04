@@ -37,7 +37,7 @@ public class KeyBoardUtils
 	 * @param view
 	 *            输入框
 	 */
-	public static void closeKeybord(View view)
+	public static void closeKeyboard(View view)
 	{
 		InputMethodManager imm = (InputMethodManager) AppUtils.getContext()
 				.getSystemService(Context.INPUT_METHOD_SERVICE);
