@@ -1,5 +1,6 @@
 package com.kevin.baselibrary.base;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import java.util.List;
 
 
 /**
+ * BaseAdapter for listView gridView
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/9 18:23
@@ -18,11 +20,9 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
     protected final Context context;
     protected final LayoutInflater mLayoutInflater;
     protected List<T> dataList;
-    protected int itemResId = getItemLayoutResId();
 
-
-    public SuperBaseAdapter(Context context,List<T> dataList) {
-        this.context = context;
+    public SuperBaseAdapter(Activity activity, List<T> dataList) {
+        this.context = activity;
         this.dataList = dataList;
         mLayoutInflater = LayoutInflater.from(this.context);
 
@@ -34,7 +34,7 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public T getItem(int position) {
         return dataList == null ? null : dataList.get(position);
     }
 
@@ -45,29 +45,75 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return myGetView(position, convertView, parent);
+        ViewHelper viewHelper = new ViewHelper(convertView, parent).invoke();
+        convertView = viewHelper.getConvertView();
+        T item = getItem(position);
+        Object holder = viewHelper.getHolder();
+        setItemData(item, holder);
+        return convertView;
     }
-
-
-
-    /**
-     * get item layout ResId
-     * @return int item layout resid
-     */
-    public abstract int getItemLayoutResId();
-
 
     public void setListData(List<T> dataList) {
         this.dataList = dataList;
         notifyDataSetChanged();
     }
 
+
     /**
-     * 抽象方法 获取View
-     * @param position
-     * @param convertView
-     * @param viewGroup
+     * get item layout ResId
+     *
+     * @return int item layout resid
+     */
+    public abstract int getItemLayoutResId();
+
+    /**
+     * 获取 ViewHolder ViewHolder自身实现初始化
+     *
+     * @param rootView
      * @return
      */
-    public abstract View myGetView(int position, View convertView, ViewGroup viewGroup);
+    public abstract Object getViewHolder(View rootView);
+
+    /**
+     * 设置item数据
+     *
+     * @param dataItem
+     * @param viewHolder
+     */
+    public abstract void setItemData(T dataItem, Object viewHolder);
+
+
+    /**
+     * 实现中间环节的调用辅助类
+     */
+    private class ViewHelper {
+        private View convertView;
+        private ViewGroup viewGroup;
+        private Object holder;
+
+        public ViewHelper(View convertView, ViewGroup viewGroup) {
+            this.convertView = convertView;
+            this.viewGroup = viewGroup;
+        }
+
+        public View getConvertView() {
+            return convertView;
+        }
+
+
+        public Object getHolder() {
+            return holder;
+        }
+
+        public ViewHelper invoke() {
+            if (convertView == null) {
+                convertView = mLayoutInflater.inflate(getItemLayoutResId(), viewGroup, false);
+                holder = getViewHolder(convertView);
+                convertView.setTag(holder);
+            } else {
+                holder = convertView.getTag();
+            }
+            return this;
+        }
+    }
 }
