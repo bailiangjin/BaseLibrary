@@ -60,7 +60,7 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
 
 
     /**
-     * get item layout ResId
+     * 获取 item layout ResId
      *
      * @return int item layout resid
      */
@@ -106,11 +106,14 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
         }
 
         public ViewHelper invoke() {
+            //covertView 复用的逻辑在这里呢  再也不用一遍一遍的写这个逻辑了
             if (convertView == null) {
+                //新建 convertView
                 convertView = mLayoutInflater.inflate(getItemLayoutResId(), viewGroup, false);
                 holder = getViewHolder(convertView);
                 convertView.setTag(holder);
             } else {
+                //复用 convertView
                 holder = convertView.getTag();
             }
             return this;
