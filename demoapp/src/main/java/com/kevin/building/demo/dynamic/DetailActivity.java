@@ -26,7 +26,7 @@ public class DetailActivity extends BaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 

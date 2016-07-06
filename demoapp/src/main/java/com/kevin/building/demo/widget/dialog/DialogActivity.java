@@ -43,7 +43,7 @@ public class DialogActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 

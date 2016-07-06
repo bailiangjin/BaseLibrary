@@ -31,6 +31,11 @@ public class AddFriendActivity extends BaseActivity
 		return R.layout.activity_addfriend;
 	}
 
+	@Override
+	protected void initIntentData() {
+
+	}
+
 
 	@Override
 	protected void initView() {
@@ -62,7 +67,7 @@ public class AddFriendActivity extends BaseActivity
 	}
 
 	@Override
-	protected void initLogic() {
+	protected void initData() {
 
 	}
 

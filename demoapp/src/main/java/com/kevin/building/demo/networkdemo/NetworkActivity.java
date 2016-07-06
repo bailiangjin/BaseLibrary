@@ -62,7 +62,7 @@ public class NetworkActivity extends BaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
         btn1.setText("获取天气信息");
         btn2.setText("测试post");
 

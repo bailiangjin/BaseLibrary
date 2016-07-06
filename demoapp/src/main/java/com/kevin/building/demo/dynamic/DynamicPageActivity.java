@@ -65,7 +65,7 @@ public class DynamicPageActivity extends BaseActivity {
         setContentView(mLinearLayout);
 
 
-        initData();
+        initMyData();
 
         String jsonData = GsonUtils.getInstance().toJson(pageParamBean);
 
@@ -101,7 +101,7 @@ public class DynamicPageActivity extends BaseActivity {
     }
 
 
-    private void initData() {
+    private void initMyData() {
 
         List<BtnItem> essentialItemList = new ArrayList<>();
         List<BtnItem> inessentialItemList = new ArrayList<>();
@@ -291,7 +291,7 @@ public class DynamicPageActivity extends BaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 

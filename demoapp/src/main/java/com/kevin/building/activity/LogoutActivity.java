@@ -36,7 +36,7 @@ public class LogoutActivity extends BaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 

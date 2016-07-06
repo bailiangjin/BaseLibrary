@@ -34,7 +34,7 @@ public class ViewPagerDemoActivity extends BaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
 
     }

@@ -38,7 +38,7 @@ public class RegistActivity extends BaseActivity
 	}
 
 	@Override
-	protected void initLogic() {
+	protected void initData() {
 
 	}
 

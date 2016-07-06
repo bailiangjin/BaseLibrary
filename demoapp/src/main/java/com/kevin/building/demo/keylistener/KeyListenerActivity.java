@@ -22,7 +22,7 @@ public class KeyListenerActivity extends BaseActivity{
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 

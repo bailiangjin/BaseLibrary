@@ -42,7 +42,7 @@ public class LaunchModeActivity1 extends BtnBaseActivity {
 
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
     }
 
     @Override

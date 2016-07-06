@@ -22,7 +22,7 @@ public class SwitchNetWorkStateActivity extends BaseActivity{
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 

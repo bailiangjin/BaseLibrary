@@ -19,6 +19,12 @@ public class DemoActivity extends SuperBaseActivity {
     }
 
     @Override
+    protected void initIntentData() {
+
+    }
+
+
+    @Override
     protected void initView() {
         //TODO: 初始化UI
 
@@ -30,14 +36,10 @@ public class DemoActivity extends SuperBaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
         //TODO: 初始化逻辑
     }
 
-    @Override
-    protected void startLogic() {
-        //TODO: 开始执行业务逻辑 耗时操作等 不适合放到 onCreate 中的逻辑 放到此处执行
-    }
 
 
     @Override
@@ -45,6 +47,7 @@ public class DemoActivity extends SuperBaseActivity {
         //TODO: 初始化页面根布局
         return R.layout.activity_demo;
     }
+
 
 
     @Override

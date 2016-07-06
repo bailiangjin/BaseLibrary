@@ -53,7 +53,7 @@ public class SplashActivity extends BaseActivity
 	}
 
 	@Override
-	protected void initLogic() {
+	protected void initData() {
 		tv_app_version_name.setText(AppUtils.getCurrentAppVersionName());
 	}
 

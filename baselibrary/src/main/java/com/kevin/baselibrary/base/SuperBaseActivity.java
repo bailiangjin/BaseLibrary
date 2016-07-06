@@ -64,7 +64,8 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //初始化 intent 传入数据
+        initIntentData();
         //初始化根类UI
         initSuperUI();
         //初始化 子类BaseActivity UI
@@ -74,14 +75,12 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
         //初始化父类逻辑
         initSuperLogic();
         //初始化子类逻辑
-        initLogic();
+        initData();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        //开始执行子类逻辑
-        startLogic();
     }
 
     @Override
@@ -340,7 +339,6 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      * 子类可override的回调方法---------------------------------start----------------------------------
      */
 
-
     /**
      * 广播回调事件
      *
@@ -396,6 +394,10 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      */
     protected abstract int getLayoutResId();
 
+    /**
+     * 初始化Intent 传入数据
+     */
+    protected abstract void initIntentData();
 
     /**
      * 初始化 子类(BaseActivity) UI
@@ -412,12 +414,8 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
     /**
      * 初始化子类逻辑
      */
-    protected abstract void initLogic();
+    protected abstract void initData();
 
-    /**
-     * 执行子类逻辑 耗时等不建议放到 onCreate的操作在此执行
-     */
-    protected abstract void startLogic();
 
 
     /**

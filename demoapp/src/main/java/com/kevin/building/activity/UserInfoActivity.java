@@ -24,7 +24,7 @@ public class UserInfoActivity extends BaseActivity
 	}
 
 	@Override
-	protected void initLogic() {
+	protected void initData() {
 
 	}
 

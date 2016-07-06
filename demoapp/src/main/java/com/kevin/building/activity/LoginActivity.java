@@ -39,14 +39,14 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        initData();
+        initMyData();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initData();
+        initMyData();
         // LogUtils.d("手机型号：" + android.os.Build.MODEL);
         // longToastString("手机型号：" + android.os.Build.MODEL);
     }
@@ -67,7 +67,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 
@@ -75,7 +75,7 @@ public class LoginActivity extends BaseActivity {
     /**
      * 初始化数据
      */
-    private void initData() {
+    private void initMyData() {
         String isNewUser;
         String userName;
         String passWord;

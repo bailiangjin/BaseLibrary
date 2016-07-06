@@ -33,7 +33,7 @@ public class RecyclerViewDemoActivity extends BaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 

@@ -62,7 +62,7 @@ public class MainActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
         //建造者模式 设置应用启动时的清理项
         CleanOptions cleanOptions = new CleanOptions.Builder()
                 .cleanRootDir(false)

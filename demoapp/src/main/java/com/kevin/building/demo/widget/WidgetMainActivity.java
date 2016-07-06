@@ -44,7 +44,7 @@ public class WidgetMainActivity extends BtnBaseActivity{
     }
 
     @Override
-    protected void initLogic() {
+    protected void initData() {
 
     }
 

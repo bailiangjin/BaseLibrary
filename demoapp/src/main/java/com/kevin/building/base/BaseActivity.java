@@ -102,8 +102,8 @@ public abstract class BaseActivity extends SuperBaseActivity
 	}
 
 	@Override
-	protected void startLogic() {
-		//TODO：暂时放到此处 子类以后有需要 需在子类中实现 而不是基类中去实现
+	protected void initIntentData() {
+
 	}
 
 	@Override
