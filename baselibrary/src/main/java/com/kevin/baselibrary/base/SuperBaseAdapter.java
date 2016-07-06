@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,13 +20,15 @@ import java.util.List;
 public abstract class SuperBaseAdapter<T> extends BaseAdapter {
     protected final Context context;
     protected final LayoutInflater mLayoutInflater;
-    protected List<T> dataList;
+    protected List<T> dataList = new ArrayList<>();
 
     public SuperBaseAdapter(Activity activity, List<T> dataList) {
         this.context = activity;
-        this.dataList = dataList;
+        if (null != dataList && !dataList.isEmpty()) {
+            this.dataList.clear();
+            this.dataList.addAll(dataList);
+        }
         mLayoutInflater = LayoutInflater.from(this.context);
-
     }
 
     @Override
@@ -49,13 +52,15 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
         convertView = viewHelper.getConvertView();
         T item = getItem(position);
         Object holder = viewHelper.getHolder();
-        setItemData(item, holder);
+        setItemData(position,item, holder);
         return convertView;
     }
 
-    public void setListData(List<T> dataList) {
-        this.dataList = dataList;
-        notifyDataSetChanged();
+    public void setData(List<T> dataList) {
+        if (null != dataList && !dataList.isEmpty()) {
+            this.dataList.clear();
+            this.dataList.addAll(dataList);
+        }
     }
 
 
@@ -76,11 +81,11 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
 
     /**
      * 设置item数据
-     *
+     * @param position
      * @param dataItem
      * @param viewHolder
      */
-    public abstract void setItemData(T dataItem, Object viewHolder);
+    public abstract void setItemData(final int position,final T dataItem, final Object viewHolder);
 
 
     /**

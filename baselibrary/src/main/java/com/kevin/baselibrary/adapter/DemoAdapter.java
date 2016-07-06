@@ -23,9 +23,8 @@ public class DemoAdapter extends SuperBaseAdapter {
 
 
     public DemoAdapter(Activity context, List<GroupModel> list) {
-        super(context,list);
+        super(context, list);
     }
-
 
 
     @Override
@@ -40,7 +39,7 @@ public class DemoAdapter extends SuperBaseAdapter {
     }
 
     @Override
-    public void setItemData(Object dataItem, Object viewHolder) {
+    public void setItemData(final int position, final Object dataItem, final Object viewHolder) {
         GroupModel groupModel = (GroupModel) dataItem;
         //将holder 转为自己holder
         ViewHolder myHolder = (ViewHolder) viewHolder;
@@ -51,7 +50,7 @@ public class DemoAdapter extends SuperBaseAdapter {
     }
 
     /**
-     *  ViewHolder 通过构造方法中 实现具体view的绑定的方式 创建一个自实现绑定View的ViewHolder
+     * ViewHolder 通过构造方法中 实现具体view的绑定的方式 创建一个自实现绑定View的ViewHolder
      * Created by bailiangjin on 16/7/5.
      */
     public static class ViewHolder {
@@ -68,7 +67,6 @@ public class DemoAdapter extends SuperBaseAdapter {
 
         }
     }
-
 
 
 }
