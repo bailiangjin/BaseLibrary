@@ -30,10 +30,6 @@ public class DemoActivity extends SuperBaseActivity {
 
     }
 
-    @Override
-    protected void initBaseUI() {
-        //TODO: 初始化BaseActivity UI 具体Activity 不需要实现
-    }
 
     @Override
     protected void initData() {

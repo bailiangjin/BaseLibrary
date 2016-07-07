@@ -95,12 +95,6 @@ public abstract class BaseActivity extends SuperBaseActivity
 		return super.dispatchTouchEvent(event);
 	}
 
-
-	@Override
-	protected void initBaseUI()
-	{
-	}
-
 	@Override
 	protected void initIntentData() {
 

@@ -68,12 +68,10 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
         initIntentData();
         //初始化根类UI
         initSuperUI();
-        //初始化 子类BaseActivity UI
-        initBaseUI();
-        //初始化子类(具体Activity)布局
-        initView();
         //初始化父类逻辑
         initSuperLogic();
+        //初始化子类(具体Activity)布局
+        initView();
         //初始化子类逻辑
         initData();
     }
@@ -399,10 +397,7 @@ public abstract class SuperBaseActivity extends FragmentActivity implements View
      */
     protected abstract void initIntentData();
 
-    /**
-     * 初始化 子类(BaseActivity) UI
-     */
-    protected abstract void initBaseUI();
+
 
     /**
      * 初始化子类(具体Activity)UI
