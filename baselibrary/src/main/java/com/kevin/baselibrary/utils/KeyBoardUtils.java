@@ -1,5 +1,6 @@
 package com.kevin.baselibrary.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.kevin.baselibrary.app.AppUtils;
+
 
 /**
  * 打开或关闭软键盘
@@ -70,4 +72,30 @@ public class KeyBoardUtils
 		// 如果焦点不是EditText则忽略，这个发生在视图刚绘制完，第一个焦点不在EditView上，和用户用轨迹球选择其他的焦点
 		return false;
 	}
+
+	/**
+	 * 判断View 是否为 EditText
+	 * @param view
+	 * @return
+     */
+	public static boolean isViewEditText(View view) {
+		if (view != null && (view instanceof EditText)) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * 当当前焦点不为 EditText时 关闭键盘
+	 * @param activity
+	 * @param motionEvent
+     */
+	public static void closeKeyboardWhenCurFocusIsNotEt(Activity activity, MotionEvent motionEvent) {
+		// 获得当前得到焦点的View，一般情况下就是EditText（特殊情况就是轨迹求或者实体案件会移动焦点）
+		View view = activity.getCurrentFocus();
+		if (KeyBoardUtils.isShouldHideInput(view, motionEvent)) {
+			KeyBoardUtils.closeKeyboard(view);
+		}
+	}
+
 }
