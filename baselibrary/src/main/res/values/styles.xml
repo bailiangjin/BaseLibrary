@@ -147,6 +147,12 @@
         <item name="android:fadingEdgeLength">0dp</item>
     </style>
 
+    <!--ListView Item 常用参数-->
+    <style name="item_lv_base_style" >
+        <!--处理 子view获取父View焦点问题-->
+        <item name="android:descendantFocusability">blocksDescendants</item>
+    </style>
+
     <!--GridView常用参数-->
     <style name="gv_base_style" >
         <item name="android:listSelector">@null</item>
