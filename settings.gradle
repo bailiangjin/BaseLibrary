@@ -1,1 +1,1 @@
-include ':baselibrary', ':demoapp'
+include ':baselibrary', ':demoapp', ':ImageLoadDemo'
