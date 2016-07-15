@@ -17,6 +17,16 @@ import com.kevin.baselibrary.widget.listener.PNDialogListener;
 public class DialogUtils {
 
 
+    /**
+     * 展示 dialog 方法 标题为 “提示” 按钮文字为 确认vs取消
+     *
+     * @param activity
+     * @param message  内容描述
+     * @param listener 按钮点击监听回调
+     */
+    public static void showPNDialog(final Activity activity, String message, final PNDialogListener listener) {
+        showPNDialog(activity, activity.getString(R.string.notice), message, activity.getString(R.string.confirm), activity.getString(R.string.cancel), true, listener);
+    }
 
     /**
      * 展示 dialog 方法 标题为 “提示” 按钮文字为 确认vs取消
@@ -26,7 +36,7 @@ public class DialogUtils {
      * @param listener 按钮点击监听回调
      */
     public static void showPNDialog(final Activity activity, String message, boolean cancelable, final PNDialogListener listener) {
-        showPNDialog(activity, CtxtUtils.getString(R.string.notice), message, CtxtUtils.getString(R.string.confirm), CtxtUtils.getString(R.string.cancel), cancelable, listener);
+        showPNDialog(activity, activity.getString(R.string.notice), message, activity.getString(R.string.confirm), activity.getString(R.string.cancel), cancelable, listener);
     }
 
     /**
