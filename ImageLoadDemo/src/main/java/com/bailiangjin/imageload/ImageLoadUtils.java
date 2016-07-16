@@ -48,7 +48,7 @@ public enum ImageLoadUtils {
         circleBitmapDisplayer = new CircleBitmapDisplayer();
         circleOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, circleBitmapDisplayer);
 
-        roundedBitmapDisplayer = new RoundedBitmapDisplayer(cornerRadiusDp);
+        roundedBitmapDisplayer = new RoundedBitmapDisplayer(dip2px(MyApplication.getContext(),cornerRadiusDp));
         roundedOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, roundedBitmapDisplayer);
 
     }
