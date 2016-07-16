@@ -1,9 +1,48 @@
 package com.bailiangjin.imageload;
 
+import android.graphics.Color;
+import android.widget.ImageView;
+
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
+
 /**
  * Created by bailiangjin on 16/7/13.
  */
 public class ImageLoadUtils {
+
+   static DisplayImageOptions circleOptions = new DisplayImageOptions.Builder()
+            .showImageOnLoading(R.drawable.icon_user)
+            .showImageForEmptyUri(R.drawable.icon_user)
+            .showImageOnFail(R.drawable.icon_user)
+            .cacheInMemory(true)
+            .cacheOnDisk(true)
+            .considerExifParams(true)
+            .displayer(new CircleBitmapDisplayer())
+            .build();
+
+   static DisplayImageOptions roundedOptions = new DisplayImageOptions.Builder()
+            .showImageOnLoading(R.drawable.icon_user)
+            .showImageForEmptyUri(R.drawable.icon_user)
+            .showImageOnFail(R.drawable.icon_user)
+            .cacheInMemory(true)
+            .cacheOnDisk(true)
+            .considerExifParams(true)
+            .displayer(new RoundedBitmapDisplayer(8))
+            .build();
+
+
+    public static void loadCircleImageView(ImageView iv, String url){
+        ImageLoader.getInstance().displayImage(url, iv, circleOptions);
+    }
+
+
+    public static void loadRoundedImageView(ImageView iv,String url){
+        ImageLoader.getInstance().displayImage(url, iv, roundedOptions);
+    }
+
 
 
 //    File cacheDir = StorageUtils.getCacheDirectory(context);
