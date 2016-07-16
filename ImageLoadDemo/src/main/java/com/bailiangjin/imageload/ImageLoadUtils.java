@@ -1,19 +1,31 @@
 package com.bailiangjin.imageload;
 
-import android.graphics.Color;
 import android.widget.ImageView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.display.CircleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
+import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 
 /**
  * Created by bailiangjin on 16/7/13.
  */
 public class ImageLoadUtils {
 
-   static DisplayImageOptions circleOptions = new DisplayImageOptions.Builder()
+
+    static DisplayImageOptions normalOptions = new DisplayImageOptions.Builder()
+            .showImageOnLoading(R.drawable.icon_user)
+            .showImageForEmptyUri(R.drawable.icon_user)
+            .showImageOnFail(R.drawable.icon_user)
+            .cacheInMemory(true)
+            .cacheOnDisk(true)
+            .considerExifParams(true)
+            .displayer(new SimpleBitmapDisplayer())
+            .build();
+
+
+    static DisplayImageOptions circleOptions = new DisplayImageOptions.Builder()
             .showImageOnLoading(R.drawable.icon_user)
             .showImageForEmptyUri(R.drawable.icon_user)
             .showImageOnFail(R.drawable.icon_user)
@@ -30,8 +42,12 @@ public class ImageLoadUtils {
             .cacheInMemory(true)
             .cacheOnDisk(true)
             .considerExifParams(true)
-            .displayer(new RoundedBitmapDisplayer(8))
+            .displayer(new RoundedBitmapDisplayer(10))
             .build();
+
+    public static void loadImageView(ImageView iv, String url){
+        ImageLoader.getInstance().displayImage(url, iv, normalOptions);
+    }
 
 
     public static void loadCircleImageView(ImageView iv, String url){

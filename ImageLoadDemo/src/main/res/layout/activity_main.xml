@@ -17,6 +17,11 @@
         android:text="Hello World!" />
 
     <ImageView
+        android:id="@+id/iv_org"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <ImageView
         android:id="@+id/iv_round"
         android:layout_width="80dp"
         android:layout_height="80dp" />
