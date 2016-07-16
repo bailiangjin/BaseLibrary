@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
         iv_rounded_rectangle = (ImageView) findViewById(R.id.iv_rounded_rectangle);
 
 
-        ImageLoadUtils.loadImageView(iv_org,picUrl);
+        ImageLoadUtils.INSTANCE.loadImageView(iv_org,picUrl);
 
-        ImageLoadUtils.loadCircleImageView(iv_round,picUrl);
+        ImageLoadUtils.INSTANCE.loadCircleImageView(iv_round,picUrl);
 
-        ImageLoadUtils.loadRoundedImageView(iv_rounded_rectangle,picUrl);
+        ImageLoadUtils.INSTANCE.loadRoundedImageView(iv_rounded_rectangle,picUrl);
 
 
     }
