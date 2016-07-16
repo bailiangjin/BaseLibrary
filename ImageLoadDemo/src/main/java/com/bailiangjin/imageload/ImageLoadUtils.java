@@ -15,35 +15,45 @@ import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 
 /**
  * 基于Universal imageLoader 封装的 图片加载工具类
+ * 枚举形式 实现单例
  * Created by bailiangjin on 16/7/16.
  */
 public enum ImageLoadUtils {
-
     INSTANCE;
-
-
     private DisplayImageOptions normalOptions;
     private DisplayImageOptions circleOptions;
     private DisplayImageOptions roundedOptions;
 
+
+    private BitmapDisplayer simpleBitmapDisplayer;
+    private BitmapDisplayer circleBitmapDisplayer;
+    private BitmapDisplayer roundedBitmapDisplayer;
+
+    private int onLoadingImageResId;
+    private int onEmptyImageResId;
+    private int onFailedImageResId;
+
+
     private ImageLoadUtils() {
+        //初始化 全局默认图片
+        onLoadingImageResId = R.drawable.icon_user;
+        onEmptyImageResId = R.drawable.icon_user;
+        onFailedImageResId = R.drawable.icon_user;
+        //圆角图片 圆角半径dp
+        int cornerRadiusDp = 10;
 
-        int onLoadingImageResId=R.drawable.icon_user;
-        int onEmptyImageResId=R.drawable.icon_user;
-        int onFailedImageResId=R.drawable.icon_user;
+        simpleBitmapDisplayer = new SimpleBitmapDisplayer();
+        normalOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, simpleBitmapDisplayer);
 
-        BitmapDisplayer simpleBitmapDisplayer =new SimpleBitmapDisplayer();
-        normalOptions =getOption(onLoadingImageResId,onEmptyImageResId, onFailedImageResId, simpleBitmapDisplayer);
+        circleBitmapDisplayer = new CircleBitmapDisplayer();
+        circleOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, circleBitmapDisplayer);
 
-        BitmapDisplayer circleBitmapDisplayer =new CircleBitmapDisplayer();
-        circleOptions = getOption(onLoadingImageResId,onEmptyImageResId, onFailedImageResId, circleBitmapDisplayer);
-
-        BitmapDisplayer roundedBitmapDisplayer =new RoundedBitmapDisplayer(10);
-        roundedOptions = getOption(onLoadingImageResId,onEmptyImageResId, onFailedImageResId, roundedBitmapDisplayer);
+        roundedBitmapDisplayer = new RoundedBitmapDisplayer(cornerRadiusDp);
+        roundedOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, roundedBitmapDisplayer);
 
     }
 
-    private DisplayImageOptions getOption(int onLoadingImageResId,int onEmptyImageResId, int onFailedImageResId, BitmapDisplayer bitmapDisplayer) {
+    private DisplayImageOptions getOption(int onLoadingImageResId, int onEmptyImageResId, int onFailedImageResId, BitmapDisplayer bitmapDisplayer) {
         return new DisplayImageOptions.Builder()
                 .showImageOnLoading(onLoadingImageResId)
                 .showImageForEmptyUri(onEmptyImageResId)
@@ -60,19 +70,38 @@ public enum ImageLoadUtils {
         ImageLoader.getInstance().displayImage(url, iv, normalOptions);
     }
 
-
     public void loadCircleImageView(ImageView iv, String url) {
         ImageLoader.getInstance().displayImage(url, iv, circleOptions);
     }
-
 
     public void loadRoundedImageView(ImageView iv, String url) {
         ImageLoader.getInstance().displayImage(url, iv, roundedOptions);
     }
 
+//    private void loadImageView(ImageView iv, String url, int defaultImageResId) {
+//        DisplayImageOptions normalOptions = getOption(defaultImageResId, defaultImageResId, defaultImageResId, simpleBitmapDisplayer);
+//        ImageLoader.getInstance().displayImage(url, iv, normalOptions);
+//    }
+//
+//    private void loadCircleImageView(ImageView iv, String url, int defaultImageResId) {
+//        DisplayImageOptions circleOptions = getOption(defaultImageResId, defaultImageResId, defaultImageResId, circleBitmapDisplayer);
+//
+//        ImageLoader.getInstance().displayImage(url, iv, circleOptions);
+//    }
+//
+//    private void loadRoundedImageView(ImageView iv, String url, int defaultImageResId, int cornerRadiusDp) {
+//        BitmapDisplayer roundedBitmapDisplayer = new RoundedBitmapDisplayer(dip2px(iv.getContext(), cornerRadiusDp));
+//        DisplayImageOptions roundedOptions = getOption(defaultImageResId, defaultImageResId, defaultImageResId, roundedBitmapDisplayer);
+//        ImageLoader.getInstance().displayImage(url, iv, roundedOptions);
+//    }
+
+    public static int dip2px(Context context, float dpValue) {
+        final float density = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * density + 0.5f);
+    }
 
 
-    public  void init(Context context) {
+    public void init(Context context) {
         // This configuration tuning is custom. You can tune every option, you may tune some of them,
         // or you can create default configuration by
         //  ImageLoaderConfiguration.createDefault(this);
@@ -88,9 +117,6 @@ public enum ImageLoadUtils {
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config.build());
     }
-
-
-
 
     //    File cacheDir = StorageUtils.getCacheDirectory(context);
 //    ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
