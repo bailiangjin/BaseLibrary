@@ -15,6 +15,8 @@ public class MyApplication extends Application{
         super.onCreate();
         context=getApplicationContext();
 
+        //初始化 ImageLoad工具类
+        // 只在Application中初始化一次 全局可使用
         ImageLoadUtils.INSTANCE.init(this);
     }
 

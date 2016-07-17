@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+/**
+ * @author bailiangjin
+ */
 public class MainActivity extends AppCompatActivity {
 
     ImageView iv_org;
@@ -22,13 +25,11 @@ public class MainActivity extends AppCompatActivity {
         iv_round = (ImageView) findViewById(R.id.iv_round);
         iv_rounded_rectangle = (ImageView) findViewById(R.id.iv_rounded_rectangle);
 
-
+        //普通加载效果
         ImageLoadUtils.INSTANCE.loadImageView(iv_org,picUrl);
-
+        //圆形图片加载效果
         ImageLoadUtils.INSTANCE.loadCircleImageView(iv_round,picUrl);
-
+        //圆角加载效果
         ImageLoadUtils.INSTANCE.loadRoundedImageView(iv_rounded_rectangle,picUrl);
-
-
     }
 }
