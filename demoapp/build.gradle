@@ -20,6 +20,9 @@ android {
             resValue("string", "app_name", "Kevin资源库")
             resValue("string", "collectUrl", "http://123.56.44.160:8080/collect-web")
             resValue("string", "ccUrl", "http://123.57.213.15:10080/cc-web/")
+            //打包地址 服务端基准URL
+            buildConfigField "String", "APP_BASE_URL", "\"http://yimai.api.xywy.com\""
+
 
         }
 
@@ -31,6 +34,9 @@ android {
             resValue("string", "app_name", "Kevin资源库测试")
             resValue("string", "collectUrl", "http://123.57.213.13:8080/collect-web")
             resValue("string", "ccUrl", "http://123.57.213.15:10080/cc-web/")
+
+            //打包地址 服务端基准URL
+            buildConfigField "String", "APP_BASE_URL", "\"http://yimai.api.xywy.com\""
 
 
         }
