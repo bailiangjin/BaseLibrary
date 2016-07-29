@@ -20,6 +20,9 @@ public abstract class AbsSuperApplication extends Application {
     protected static Context context;
     protected static String appName;
 
+    /**
+     * 维护Activity 的list
+     */
     private static List<Activity> mActivitys = Collections
             .synchronizedList(new LinkedList<Activity>());
 
@@ -190,7 +193,9 @@ public abstract class AbsSuperApplication extends Application {
             registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
                 @Override
                 public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-                    //Activity 入栈
+                    /**
+                     *  监听到 Activity创建事件 将该 Activity 加入list
+                     */
                     pushActivity(activity);
 
                 }
@@ -226,6 +231,9 @@ public abstract class AbsSuperApplication extends Application {
                         return;
                     }
                     if (mActivitys.contains(activity)){
+                        /**
+                         *  监听到 Activity销毁事件 将该Activity 从list中移除
+                         */
                         popActivity(activity);
                     }
                 }
