@@ -21,7 +21,7 @@ android {
             resValue("string", "collectUrl", "http://192.168.1.2:8080/collect-web")
             resValue("string", "ccUrl", "http://192.168.1.2:10080/cc-web/")
             //打包地址 服务端基准URL
-            buildConfigField "String", "APP_BASE_URL", "\"http://kevin.api.xywy.com\"";
+            buildConfigField "String", "APP_BASE_URL", "\"http://kevin.api.kevin.com\"";
 
         }
 
@@ -35,7 +35,7 @@ android {
             resValue("string", "ccUrl", "http://192.168.1.1:10080/cc-web/")
 
             //打包地址 服务端基准URL
-            buildConfigField "String", "APP_BASE_URL", "\"http://test.kevin.api.xywy.com\""
+            buildConfigField "String", "APP_BASE_URL", "\"http://test.kevin.api.kevin.com\""
 
 
         }
