@@ -8,8 +8,8 @@ import android.view.View;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
 import com.kevin.baselibrary.interfaze.listener.SearchBarListener;
-import com.kevin.baselibrary.interfaze.listener.TitleViewListener;
 import com.kevin.baselibrary.view.SearchBar;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
@@ -38,24 +38,10 @@ public class SearchActivity extends BaseActivity {
     protected void initView() {
 
         commonTitleView.setTitleText("搜索");
-        commonTitleView.setTitleViewListener(new TitleViewListener() {
-            @Override
-            public boolean onLeftImgClick() {
-                return false;
-            }
+        commonTitleView.setTitleViewListener(new CommonTitleListener() {
 
             @Override
             public boolean onRightImgClick() {
-                return false;
-            }
-
-            @Override
-            public boolean onRightImg2Click() {
-                return false;
-            }
-
-            @Override
-            public boolean onLeftBtnClick() {
                 return false;
             }
 
