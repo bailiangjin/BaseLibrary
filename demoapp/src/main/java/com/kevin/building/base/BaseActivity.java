@@ -3,6 +3,7 @@ package com.kevin.building.base;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.MotionEvent;
 
 import com.bugtags.library.Bugtags;
@@ -148,6 +149,14 @@ public abstract class BaseActivity extends SuperBaseActivity
 		{ // 可能发现新版本
 			// VersionDialog 可能是版本提示是否需要下载的对话框
 		}
+	}
+
+
+	@Override
+	protected void handleMsg(Message msg)
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 

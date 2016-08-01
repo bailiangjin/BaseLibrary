@@ -2,7 +2,6 @@ package com.kevin.building.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
@@ -66,10 +65,5 @@ public class SplashActivity extends BaseActivity
 
 	}
 
-	@Override
-	protected void handleMsg(Message msg)
-	{
-		// TODO Auto-generated method stub
 
-	}
 }

@@ -1,7 +1,6 @@
 package com.kevin.building.activity;
 
 import android.content.Intent;
-import android.os.Message;
 import android.view.View;
 
 import com.kevin.building.R;
@@ -45,12 +44,7 @@ public class UserListActivity extends BaseActivity
 		return R.layout.activity_userlist;
 	}
 
-	@Override
-	protected void handleMsg(Message msg)
-	{
-		// TODO Auto-generated method stub
 
-	}
 
 	@Override
 	protected void onViewClick(View v)

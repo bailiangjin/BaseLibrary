@@ -1,6 +1,5 @@
 package com.kevin.building.activity;
 
-import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -42,15 +41,6 @@ public class RegistActivity extends BaseActivity
 
 	}
 
-
-
-
-	@Override
-	protected void handleMsg(Message msg)
-	{
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	protected void onViewClick(View v)

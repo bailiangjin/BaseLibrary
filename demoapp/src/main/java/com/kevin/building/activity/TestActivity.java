@@ -1,7 +1,6 @@
 package com.kevin.building.activity;
 
 import android.graphics.Color;
-import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
@@ -46,8 +45,5 @@ public class TestActivity extends BaseActivity{
 
     }
 
-    @Override
-    protected void handleMsg(Message msg) {
 
-    }
 }
