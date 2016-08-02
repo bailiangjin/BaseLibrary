@@ -1,4 +1,4 @@
-package com.kevin.building.constants.enums;
+package com.kevin.baselibrary.constant.enums;
 
 /**
  * 枚举示例
