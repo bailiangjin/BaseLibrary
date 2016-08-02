@@ -13,6 +13,11 @@ import com.kevin.building.base.BaseActivity;
 public class UserListActivity extends BaseActivity
 {
 
+	@Override
+	protected int getLayoutResId()
+	{
+		return R.layout.activity_userlist;
+	}
 
 
 	@Override
@@ -38,11 +43,6 @@ public class UserListActivity extends BaseActivity
 	}
 
 
-	@Override
-	protected int getLayoutResId()
-	{
-		return R.layout.activity_userlist;
-	}
 
 
 

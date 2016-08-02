@@ -1,6 +1,5 @@
 package com.kevin.baselibrary.activity;
 
-import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
@@ -12,22 +11,23 @@ import com.kevin.baselibrary.base.SuperBaseActivity;
  */
 public class DemoActivity extends SuperBaseActivity {
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //TODO: 子类不必须覆盖 父类 onCreate 方法 但需 实现以下几个方法
+    protected int getLayoutResId() {
+        //TODO: 返回页面layout xml 文件
+        return R.layout.activity_demo;
     }
+
 
     @Override
     protected void initIntentData() {
-
+        //TODO: 出事化Intent 传入的参数
     }
 
 
     @Override
     protected void initView() {
         //TODO: 初始化UI
-
     }
 
 
@@ -39,25 +39,8 @@ public class DemoActivity extends SuperBaseActivity {
 
 
     @Override
-    protected int getLayoutResId() {
-        //TODO: 初始化页面根布局
-        return R.layout.activity_demo;
-    }
-
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        shortToast("测试");
-    }
-
-
-    @Override
     protected void onViewClick(View v) {
         //TODO: 全局点击事件 回调监听处
-
     }
 
     @Override
