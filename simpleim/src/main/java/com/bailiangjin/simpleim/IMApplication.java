@@ -16,6 +16,11 @@ public class IMApplication extends SuperApplication{
         initBugstags();
     }
 
+    @Override
+    protected String getAppNameFromSub() {
+        return "simpleim";
+    }
+
     /**
      * 初始化Bugstags
      */
