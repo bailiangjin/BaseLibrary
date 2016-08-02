@@ -13,7 +13,7 @@
 
         <TextView
             style="@style/tv_base_style"
-            android:text="简信"
+            android:text="@string/app_name"
             android:textSize="60dp" />
     </LinearLayout>
 
