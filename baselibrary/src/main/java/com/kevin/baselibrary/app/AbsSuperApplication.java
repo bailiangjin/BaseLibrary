@@ -192,6 +192,7 @@ public abstract class AbsSuperApplication extends Application {
         try {
             LogUtils.e("app exit");
             finishAllActivity();
+            onAppExit();
         } catch (Exception e) {
         }
     }

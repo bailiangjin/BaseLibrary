@@ -2,7 +2,6 @@ package com.bailiangjin.simpleim.appui.account;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,10 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bailiangjin.simpleim.R;
-import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
-import com.bailiangjin.simpleim.engine.logicutils.LoginResult;
 import com.bailiangjin.simpleim.base.BaseActivity;
 import com.bailiangjin.simpleim.constants.IntentKey;
+import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
+import com.bailiangjin.simpleim.engine.logicutils.LoginResult;
 
 
 /**
@@ -47,19 +46,11 @@ public class LoginActivity extends BaseActivity {
         initMyData();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        initMyData();
-        // LogUtils.d("手机型号：" + android.os.Build.MODEL);
-        // longToastString("手机型号：" + android.os.Build.MODEL);
-    }
 
     @Override
     protected void initView() {
-
-
+        commonTitleView.setTitleText("登录简信");
         et_username = (EditText) findViewById(R.id.et_username);
         et_password = (EditText) findViewById(R.id.et_password);
         btn_login = (Button) findViewById(R.id.btn_login);
@@ -73,7 +64,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
+        initMyData();
     }
 
 
