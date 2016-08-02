@@ -5,9 +5,8 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
-import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.IMApplication;
-import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
+import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.base.BaseActivity;
 
 
@@ -53,9 +52,8 @@ public class LogoutActivity extends BaseActivity {
                 break;
             case R.id.btn_set_logout:
                 // 用户登出逻辑添加
-                AccountUtils.logout();
                 //Activity登出
-                IMApplication.finishAllActivity();
+                IMApplication.getInstance().appExit();
                 //打开登录页
                 LoginActivity.start(LogoutActivity.this);
                 this.finish();

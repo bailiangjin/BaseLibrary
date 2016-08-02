@@ -20,6 +20,8 @@ public abstract class AbsSuperApplication extends Application {
     protected static Context context;
     protected static String appName;
 
+    protected static AbsSuperApplication instance;
+
     /**
      * 维护Activity 的list
      */
@@ -29,10 +31,17 @@ public abstract class AbsSuperApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        instance =this;
         context = this.getApplicationContext();
         appName =  getAppNameFromSub();
         registerActivityListener();
     }
+
+    public static AbsSuperApplication getInstance() {
+        return instance;
+    }
+
+
 
     public static String getAppName() {
         return appName;
@@ -179,13 +188,16 @@ public abstract class AbsSuperApplication extends Application {
     /**
      * 退出应用程序
      */
-    public  static void appExit() {
+    public void appExit() {
         try {
             LogUtils.e("app exit");
             finishAllActivity();
         } catch (Exception e) {
         }
     }
+
+    abstract protected void onAppExit();
+
 
 
     private void registerActivityListener() {

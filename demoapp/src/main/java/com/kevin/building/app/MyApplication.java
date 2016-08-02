@@ -45,4 +45,9 @@ public class MyApplication extends SuperApplication {
 
 
     }
+
+    @Override
+    protected void onAppExit() {
+
+    }
 }

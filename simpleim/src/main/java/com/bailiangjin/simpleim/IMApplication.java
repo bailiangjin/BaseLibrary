@@ -1,5 +1,6 @@
 package com.bailiangjin.simpleim;
 
+import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
 import com.kevin.baselibrary.app.SuperApplication;
@@ -31,7 +32,10 @@ public class IMApplication extends SuperApplication{
         //BTGInvocationEventShake(摇一摇)
         //BTGInvocationEventNone(静默)
         Bugtags.start(BUGTAGS_APP_KEY, this, Bugtags.BTGInvocationEventNone, options);
+    }
 
-
+    @Override
+    protected void onAppExit() {
+        AccountUtils.logout();
     }
 }
