@@ -1,9 +1,9 @@
 package com.kevin.building.activity;
 
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.utils.ActivityUtils;
@@ -46,17 +46,22 @@ public class AddFriendActivity extends BaseActivity {
         btn_add.setOnClickListener(this);
         btn_logout.setOnClickListener(this);
 
-        commonTitleView.setRightButtonListener(new OnClickListener() {
+        commonTitleView.setTitleViewListener(new CommonTitleListener() {
 
             @Override
-            public void onClick(View v) {
+            public boolean onRightImgClick() {
+                return false;
+            }
+
+            @Override
+            public boolean onRightBtnClick() {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         ActivityUtils.startActivity(AddFriendActivity.this, UserInfoActivity.class);
                     }
                 });
-
+                return true;
             }
         });
     }
@@ -65,8 +70,6 @@ public class AddFriendActivity extends BaseActivity {
     protected void initData() {
 
     }
-
-
 
 
     @Override

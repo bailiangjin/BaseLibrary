@@ -51,7 +51,7 @@ public abstract class BaseTitleView extends FrameLayout {
 
         //整体背景
         if (0 != getTitleBackgroundResId()) {
-            rl_root.setBackground(getResources().getDrawable(getTitleBackgroundResId()));
+            rl_root.setBackgroundResource(getTitleBackgroundResId());
         }
 
         //按钮背景
@@ -67,11 +67,11 @@ public abstract class BaseTitleView extends FrameLayout {
             iv_right2.setImageResource(getRightImage2ResId());//该种方式动态设置背景 不会变形
         }
         if (0 != getLeftBtnResId()) {
-            btn_left.setBackground(getResources().getDrawable(getLeftBtnResId()));
+            btn_left.setBackgroundResource(getLeftBtnResId());
         }
 
         if (0 != getRightBtnResId()) {
-            btn_right.setBackground(getResources().getDrawable(getRightBtnResId()));
+            btn_right.setBackgroundResource(getRightBtnResId());
         }
 
 
@@ -305,15 +305,6 @@ public abstract class BaseTitleView extends FrameLayout {
     public void setTitleViewListener(TitleViewListener titleViewListener) {
         this.titleViewListener = titleViewListener;
     }
-
-    public void setLeftButtonListener(OnClickListener onClickListener) {
-        btn_left.setOnClickListener(onClickListener);
-    }
-
-    public void setRightButtonListener(OnClickListener onClickListener) {
-        btn_right.setOnClickListener(onClickListener);
-    }
-
 
     //可见性设置
     public void setLeftImageVisibility(int visibility) {

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Message;
 import android.view.View;
 
+import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
+
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
@@ -18,12 +20,19 @@ public class LaunchModeActivity4 extends LaunchModeActivity1 {
         commonTitleView.setTitleText("Activity4");
         commonTitleView.setRightBtnText("onResult");
         commonTitleView.setRightBtnVisibility(View.VISIBLE);
-        commonTitleView.setRightButtonListener(new View.OnClickListener() {
+
+        commonTitleView.setTitleViewListener(new CommonTitleListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onRightImgClick() {
+                return false;
+            }
+
+            @Override
+            public boolean onRightBtnClick() {
                 Intent intent = new Intent();
                 setResult(1,intent);
                 LaunchModeActivity4.this.finish();
+                return true;
             }
         });
 

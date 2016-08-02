@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
 
+import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
 import com.kevin.baselibrary.utils.WebViewUtils;
 import com.kevin.baselibrary.widget.listener.PNDialogListener;
 import com.kevin.baselibrary.widget.utils.DialogUtils;
@@ -30,18 +31,22 @@ public class WebViewActivity extends BaseActivity {
         commonTitleView.setTitleText("测试WebView");
         commonTitleView.setRightBtnText("关闭");
         commonTitleView.setRightBtnVisibility(View.VISIBLE);
-        commonTitleView.setRightButtonListener(new View.OnClickListener() {
+        commonTitleView.setTitleViewListener(new CommonTitleListener() {
             @Override
-            public void onClick(View v) {
-
-                showBackToSourceDialog();
+            public boolean onRightImgClick() {
+                return false;
             }
-        });
 
-        commonTitleView.setLeftButtonListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public boolean onLeftImgClick() {
                 onWebViewBack();
+               return true;
+            }
+
+            @Override
+            public boolean onRightBtnClick() {
+                showBackToSourceDialog();
+                return true;
             }
         });
         webView = (WebView) findViewById(R.id.webview_test);
