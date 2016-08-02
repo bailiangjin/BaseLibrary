@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon"
-        android:name=".app.MyApplication">
-        <activity android:name=".appui.SplashActivity">
+        android:name=".IMApplication">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

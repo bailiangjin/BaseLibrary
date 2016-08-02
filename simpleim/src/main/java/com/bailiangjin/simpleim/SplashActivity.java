@@ -1,11 +1,10 @@
-package com.bailiangjin.simpleim.appui;
+package com.bailiangjin.simpleim;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
-import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appui.account.LoginActivity;
 import com.bailiangjin.simpleim.base.BaseActivity;
 import com.kevin.baselibrary.app.AppUtils;
