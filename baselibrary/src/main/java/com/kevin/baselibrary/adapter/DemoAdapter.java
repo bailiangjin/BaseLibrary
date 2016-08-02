@@ -19,7 +19,7 @@ import java.util.List;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/9 18:25
  */
-public class DemoAdapter extends SuperBaseAdapter {
+public class DemoAdapter extends SuperBaseAdapter<GroupModel> {
 
 
     public DemoAdapter(Activity context, List<GroupModel> list) {
@@ -39,8 +39,7 @@ public class DemoAdapter extends SuperBaseAdapter {
     }
 
     @Override
-    public void setItemData(final int position, final Object dataItem, final Object viewHolder) {
-        GroupModel groupModel = (GroupModel) dataItem;
+    public void setItemData(final int position, final GroupModel groupModel, final Object viewHolder) {
         //将holder 转为自己holder
         ViewHolder myHolder = (ViewHolder) viewHolder;
         myHolder.tv_group_name.setText(TextUtils.isEmpty(groupModel.getContactName()) ? "" : groupModel.getContactName());
