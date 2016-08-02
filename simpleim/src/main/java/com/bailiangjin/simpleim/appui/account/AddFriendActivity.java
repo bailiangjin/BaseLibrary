@@ -1,12 +1,13 @@
-package com.kevin.building.activity;
+package com.bailiangjin.simpleim.appui.account;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
+import com.bailiangjin.simpleim.R;
+import com.bailiangjin.simpleim.base.BaseActivity;
 import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
-import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
-import com.kevin.building.utils.ActivityUtils;
 
 /**
  * 添加联系人
@@ -21,6 +22,12 @@ public class AddFriendActivity extends BaseActivity {
      * 退出按钮
      */
     private Button btn_logout;
+
+
+    public static void start(Activity activity){
+        Intent intent = new Intent(activity,AddFriendActivity.class);
+        activity.startActivity(intent);
+    }
 
 
     @Override
@@ -58,7 +65,7 @@ public class AddFriendActivity extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        ActivityUtils.startActivity(AddFriendActivity.this, UserInfoActivity.class);
+                        UserInfoActivity.start(AddFriendActivity.this);
                     }
                 });
                 return true;
@@ -80,7 +87,7 @@ public class AddFriendActivity extends BaseActivity {
                 break;
             case R.id.btn_logout:
                 shortToast("登出");
-                ActivityUtils.startActivity(AddFriendActivity.this, LogoutActivity.class);
+                LogoutActivity.start(AddFriendActivity.this);
                 break;
 
             default:

@@ -1,5 +1,6 @@
-package com.kevin.building.activity;
+package com.bailiangjin.simpleim.appui.account;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
@@ -10,13 +11,12 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.kevin.building.R;
-import com.kevin.building.activity.logicutils.AccountUtils;
-import com.kevin.building.app.AppManager;
-import com.kevin.building.base.BaseActivity;
-import com.kevin.building.constants.IntentKey;
-import com.kevin.building.constants.LoginResult;
-import com.kevin.building.utils.ActivityUtils;
+import com.bailiangjin.simpleim.R;
+import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
+import com.bailiangjin.simpleim.engine.logicutils.LoginResult;
+import com.bailiangjin.simpleim.base.BaseActivity;
+import com.bailiangjin.simpleim.constants.IntentKey;
+
 
 /**
  * 登录
@@ -31,6 +31,11 @@ public class LoginActivity extends BaseActivity {
     private String userName = null;
     private String passWord = null;
     private boolean isSavePassword;
+
+    public static void start(Activity activity){
+        Intent intent = new Intent(activity,LoginActivity.class);
+        activity.startActivity(intent);
+    }
 
     protected int getLayoutResId() {
         return R.layout.activity_login;
@@ -126,7 +131,7 @@ public class LoginActivity extends BaseActivity {
                 break;
             case R.id.tv_register://点击注册
                 //跳转到注册页
-                ActivityUtils.startActivity(LoginActivity.this, RegistActivity.class);
+                RegistActivity.start(LoginActivity.this);
                 this.finish();
             default:
                 break;
@@ -143,8 +148,7 @@ public class LoginActivity extends BaseActivity {
                 //保存登录信息到SP
                 AccountUtils.saveLoginInfo(userName, passWord, isSavePassword);
                 //进入下一个界面
-                Intent intent = new Intent(this, UserListActivity.class);
-                AppManager.getInstance().startActivity(LoginActivity.this, intent);
+                UserListActivity.start(this);
                 //结束当前界面
                 this.finish();
                 break;

@@ -1,13 +1,13 @@
 package com.kevin.building;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Message;
 import android.view.View;
 
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
-import com.kevin.building.activity.LoginActivity;
-import com.kevin.building.activity.TestActivity;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.WebViewActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
@@ -23,6 +23,12 @@ import com.kevin.building.utils.ActivityUtils;
  * Create Time: 2015/10/20 10:40
  */
 public class MainActivity extends BtnBaseActivity {
+
+
+    public static void start(Activity activity){
+        Intent intent = new Intent(activity,MainActivity.class);
+        activity.startActivity(intent);
+    }
 
     @Override
     protected int getLayoutResId() {
@@ -81,7 +87,7 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn2:
-                ActivityUtils.startActivity(this, LoginActivity.class);
+//                ActivityUtils.startActivity(this, LoginActivity.class);
 
                 break;
 

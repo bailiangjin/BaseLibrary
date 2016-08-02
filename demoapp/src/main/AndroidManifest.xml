@@ -18,17 +18,14 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity
-            android:name=".activity.SplashActivity"
-            android:label="@string/app_name"
-            android:theme="@style/SplashTheme">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
 
         <activity
             android:name=".MainActivity"
@@ -144,25 +141,6 @@
             android:launchMode="standard" />
         <!--应用界面demo-->
 
-        <activity
-            android:name=".activity.LoginActivity"
-            android:label="@string/login"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name=".activity.AddFriendActivity"
-            android:label="@string/addcontacts" />
-        <activity
-            android:name=".activity.UserListActivity"
-            android:label="@string/user_list" />
-        <activity
-            android:name=".activity.RegistActivity"
-            android:label="@string/register" />
-        <activity
-            android:name=".activity.UserInfoActivity"
-            android:label="@string/user_info" />
-        <activity
-            android:name=".activity.LogoutActivity"
-            android:label="@string/logout" />
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data

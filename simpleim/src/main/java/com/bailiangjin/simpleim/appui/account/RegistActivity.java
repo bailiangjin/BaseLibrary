@@ -1,13 +1,15 @@
-package com.kevin.building.activity;
+package com.bailiangjin.simpleim.appui.account;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
-import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
-import com.kevin.building.constants.IntentKey;
-import com.kevin.building.utils.ActivityUtils;
+import com.bailiangjin.simpleim.R;
+import com.bailiangjin.simpleim.base.BaseActivity;
+import com.bailiangjin.simpleim.constants.IntentKey;
+import com.bailiangjin.simpleim.utils.ActivityUtils;
 
 import java.util.HashMap;
 
@@ -19,6 +21,12 @@ public class RegistActivity extends BaseActivity
 	private EditText et_username;
 	private EditText et_password;
 	private EditText et_confirm_pwd;
+
+
+	public static void start(Activity activity){
+		Intent intent = new Intent(activity,RegistActivity.class);
+		activity.startActivity(intent);
+	}
 
 	@Override
 	protected int getLayoutResId()

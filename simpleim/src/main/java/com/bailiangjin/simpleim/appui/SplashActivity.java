@@ -1,14 +1,14 @@
-package com.kevin.building.activity;
+package com.bailiangjin.simpleim.appui;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bailiangjin.simpleim.R;
+import com.bailiangjin.simpleim.appui.account.LoginActivity;
+import com.bailiangjin.simpleim.base.BaseActivity;
 import com.kevin.baselibrary.app.AppUtils;
-import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
-import com.kevin.building.utils.ActivityUtils;
 
 /**
  * Splash页
@@ -33,11 +33,10 @@ public class SplashActivity extends BaseActivity
 		//跳转到 主页
 		new Handler().postDelayed(new Runnable()
 		{
-
 			@Override
 			public void run()
 			{
-				ActivityUtils.startAMainActivity(SplashActivity.this);
+				LoginActivity.start(SplashActivity.this);
 				SplashActivity.this.finish();
 
 			}
@@ -47,7 +46,7 @@ public class SplashActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-
+		hideCommonBaseTitle();
 		tv_app_version_name = (TextView) findViewById(R.id.tv_app_version_name);
 	}
 

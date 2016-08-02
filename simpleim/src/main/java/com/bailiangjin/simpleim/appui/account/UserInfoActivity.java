@@ -1,10 +1,13 @@
-package com.kevin.building.activity;
+package com.bailiangjin.simpleim.appui.account;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
-import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
+import com.bailiangjin.simpleim.R;
+import com.bailiangjin.simpleim.base.BaseActivity;
+
 
 /**
  * 用户信息页
@@ -13,6 +16,12 @@ public class UserInfoActivity extends BaseActivity
 {
 
 	private Button btn_userinfo_back;
+
+
+	public static void start(Activity activity){
+		Intent intent = new Intent(activity,UserInfoActivity.class);
+		activity.startActivity(intent);
+	}
 
 
 	@Override

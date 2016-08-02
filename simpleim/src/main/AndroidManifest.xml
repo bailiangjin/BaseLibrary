@@ -9,14 +9,39 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon">
-        <activity android:name=".MainActivity">
+        tools:replace="android:icon"
+        android:name=".app.MyApplication">
+        <activity android:name=".appui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".appui.MainActivity"/>
+
+        <!--应用界面demo-->
+
+        <activity
+            android:name=".appui.account.LoginActivity"
+            android:label="@string/login"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".appui.account.AddFriendActivity"
+            android:label="@string/addcontacts" />
+        <activity
+            android:name=".appui.account.UserListActivity"
+            android:label="@string/user_list" />
+        <activity
+            android:name=".appui.account.RegistActivity"
+            android:label="@string/register" />
+        <activity
+            android:name=".appui.account.UserInfoActivity"
+            android:label="@string/user_info" />
+        <activity
+            android:name=".appui.account.LogoutActivity"
+            android:label="@string/logout" />
     </application>
 
 </manifest>

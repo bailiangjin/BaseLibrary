@@ -10,7 +10,6 @@ import com.bugtags.library.Bugtags;
 import com.kevin.baselibrary.base.SuperBaseActivity;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
-import com.kevin.building.app.AppManager;
 import com.kevin.building.constants.BroadcastAction;
 
 import java.util.HashSet;
@@ -24,7 +23,6 @@ public abstract class BaseActivity extends SuperBaseActivity
 		LogUtils.d("Activity:::-->>onCreate");
 		super.onCreate(savedInstanceState);
 
-		AppManager.getInstance().addActivity(this);
 	}
 
 	@Override
