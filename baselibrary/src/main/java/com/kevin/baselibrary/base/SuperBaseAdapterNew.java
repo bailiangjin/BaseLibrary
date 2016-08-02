@@ -59,7 +59,7 @@ abstract public class SuperBaseAdapterNew<T> extends BaseAdapter {
         }
         T itemData = getItem(position);
         holder.setData(itemData);
-        holder.show();
+        holder.show(position);
         return view;
     }
 
@@ -97,15 +97,15 @@ abstract public class SuperBaseAdapterNew<T> extends BaseAdapter {
             this.rootView = rootView;
         }
 
-        public void show() {
+        public void show(int position) {
             if(null==data){
                 LogUtils.e("条目数据未初始化");
                 return;
             }
-            show(data);
+            show(position,data);
         }
 
-        public abstract void show(T data);
+        public abstract void show(int position,T data);
 
         public ViewHolder setData(T data) {
             this.data = data;

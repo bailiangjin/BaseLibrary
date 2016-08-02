@@ -47,7 +47,7 @@ public class DemoAdpaterNew extends SuperBaseAdapterNew<GroupModel> {
         }
 
         @Override
-        public void show(GroupModel groupModel) {
+        public void show(int position,GroupModel groupModel) {
             this.tv_group_name.setText(TextUtils.isEmpty(groupModel.getContactName()) ? "" : groupModel.getContactName());
             this.iv_group_no_disturb.setVisibility(groupModel.getIsDisturb() == 1 ? View.VISIBLE : View.GONE);
             //ImageLoadUtils.loadImage(myHolder.iv_group_avatar, groupModel.getHeadUrl());
