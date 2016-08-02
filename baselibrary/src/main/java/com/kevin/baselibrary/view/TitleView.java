@@ -56,12 +56,12 @@ public class TitleView extends BaseTitleView {
 
     @Override
     protected int getLeftBtnResId() {
-        return R.drawable.btn_for_title_selector;
+        return R.color.transparent;
     }
 
     @Override
     protected int getRightBtnResId() {
-        return R.drawable.btn_for_title_selector;
+        return R.color.transparent;
     }
 
     @Override
