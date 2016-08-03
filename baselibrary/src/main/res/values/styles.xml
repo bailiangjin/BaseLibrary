@@ -100,7 +100,7 @@
         <item name="android:minWidth">@dimen/btn_min_width</item>
         <item name="android:minHeight">@dimen/btn_min_height</item>
         <item name="android:textColor">@drawable/text_color_selector_white_gray</item>
-        <item name="android:background">@drawable/btn_base_selector</item>
+        <item name="android:background">@drawable/btn_base_selector_new</item>
     </style>
 
     <!--通屏幕宽度按钮 样式-->

@@ -75,4 +75,10 @@
     <color name="btn_brown_pressed">#5D4037</color>
     <color name="gray_normal">#666667</color>
 
+
+
+    <color name="app_base_color">#4DBB65</color>
+    <color name="app_base_color_pressed">#4D9A65</color>
+
+
 </resources>

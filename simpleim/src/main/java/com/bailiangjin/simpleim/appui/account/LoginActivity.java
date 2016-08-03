@@ -50,6 +50,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        commonTitleView.setLeftImageVisibility(View.GONE);
         commonTitleView.setTitleText("登录简信");
         et_username = (EditText) findViewById(R.id.et_username);
         et_password = (EditText) findViewById(R.id.et_password);

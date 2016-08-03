@@ -17,5 +17,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:id="@+id/btn_test"
+        android:layout_marginTop="20dp"
+        style="@style/btn_base_style"
+        android:text="测试Style"
+        android:textColor="@drawable/tv_color_selector_white_gray"
+        android:background="@drawable/simple_demo_selector"
+        />
+
 
 </LinearLayout>

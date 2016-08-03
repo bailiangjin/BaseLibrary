@@ -8,6 +8,7 @@ import android.view.View;
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
+import com.kevin.building.activity.TestActivity;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.WebViewActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
@@ -38,16 +39,15 @@ public class MainActivity extends BtnBaseActivity {
     @Override
     protected void initView() {
         super.initView();
-
-//        commonTitleView.setTitleText("主页面");
-        commonTitleView.setLeftBtnVisibility(View.GONE);
+        commonTitleView.setTitleText("首页");
+        commonTitleView.setLeftImageVisibility(View.GONE);
 
         btn1.setText("控件模块");
-        btn2.setText("App流程模块");
+        btn2.setText("AppStyle");
         btn3.setText("网络模块");
         btn4.setText("数据库模块");
         btn5.setText("Fragment模块");
-//        btn6.setText("ViewPagerDemo");
+        //btn6.setText("ViewPagerDemo");
         btn6.setText("ViewPagerDemo");
         btn7.setText("测试WebView");
         btn8.setText("测试文件监听");
@@ -88,6 +88,7 @@ public class MainActivity extends BtnBaseActivity {
 
             case R.id.btn2:
 //                ActivityUtils.startActivity(this, LoginActivity.class);
+                TestActivity.start(this);
 
                 break;
 

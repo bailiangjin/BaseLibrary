@@ -1,7 +1,10 @@
 package com.kevin.building.activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.model.art.text.ColorText;
@@ -17,6 +20,13 @@ public class TestActivity extends BaseActivity{
 
     private TextView tv_content;
     private TextView tv_style_content;
+    private Button btn_test;
+
+
+    public static void start(Activity activity){
+        Intent intent= new Intent(activity,TestActivity.class);
+        activity.startActivity(intent);
+    }
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_test;
@@ -32,6 +42,9 @@ public class TestActivity extends BaseActivity{
 
         StyleText[] textsStyle = {new StyleText("样式", R.style.green_tv_style),new StyleText("测试", R.style.red_tv_style)};
         TVUtils.setContentWithStyle(tv_style_content,textsStyle);
+
+        btn_test= (Button) findViewById(R.id.btn_test);
+        btn_test.setText("测试Style");
 
     }
 
