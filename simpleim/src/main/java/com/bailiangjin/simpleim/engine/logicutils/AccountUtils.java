@@ -1,7 +1,7 @@
 package com.bailiangjin.simpleim.engine.logicutils;
 
 import com.bailiangjin.simpleim.constants.SPKey;
-import com.bailiangjin.simpleim.db.RealmService;
+import com.bailiangjin.simpleim.db.ImDbUtils;
 import com.bailiangjin.simpleim.modle.User;
 import com.kevin.baselibrary.constant.SuperSPKey;
 import com.kevin.baselibrary.utils.LogUtils;
@@ -49,8 +49,8 @@ public class AccountUtils {
         curUser.setId(userName);
         curUser.setName(userName);
 
-        RealmService.INSTANCE.saveOrUpdateObj(curUser);
-        User newUser=RealmService.INSTANCE.findUser(curUser);
+        ImDbUtils.saveOrUpdateUser(curUser);
+        User newUser= ImDbUtils.findUser(curUser);
 
         LogUtils.e("curUser:"+newUser.getId());
         LogUtils.e("curUser:"+newUser.getName());

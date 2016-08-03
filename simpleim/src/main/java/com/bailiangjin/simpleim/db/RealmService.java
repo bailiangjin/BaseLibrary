@@ -1,14 +1,17 @@
 package com.bailiangjin.simpleim.db;
 
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
-import com.bailiangjin.simpleim.modle.User;
 import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.LogUtils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmObject;
+import io.realm.RealmQuery;
 import io.realm.RealmResults;
 
 /**
@@ -28,32 +31,99 @@ public enum RealmService {
     }
 
 
-    public void saveOrUpdateObj(RealmObject realmObject) {
+    /**
+     * 存储list
+     * @param list
+     * @param <T>
+     */
+    public<T extends RealmObject>  void saveOrUpdateList(List<T> list) {
         realm.beginTransaction();
-        realm.copyToRealmOrUpdate(realmObject);
+        realm.copyToRealmOrUpdate(list);
         realm.commitTransaction();
     }
 
-    public User findUser(User user) {
-        return findObj("id", user.getId(), User.class);
+    /**
+     * 存储obj
+     * @param t
+     * @param <T>
+     */
+    public<T extends RealmObject>  void saveOrUpdateObj(T t) {
+        realm.beginTransaction();
+        realm.copyToRealmOrUpdate(t);
+        realm.commitTransaction();
     }
 
-    public <T extends RealmObject> T findObj(String key, String value, Class<T> clazz) {
+    /**
+     * 按条件查找 首个
+     * @param key
+     * @param value
+     * @param clazz
+     * @param <T>
+     * @return
+     */
+    public <T extends RealmObject> T findObj(String key,String value, Class<T> clazz) {
+
+        Map<String,Object> map= new HashMap<>();
+        map.put(key,value);
+        return findObj(map,clazz);
+    }
+
+
+    /**
+     * 按条件查找 首个
+     * @param map key value map
+     * @param clazz
+     * @param <T>
+     * @return
+     */
+    public <T extends RealmObject> T findObj(Map<String,Object> map, Class<T> clazz) {
         T result = null;
         realm.beginTransaction();
-        result = realm.where(clazz).equalTo(key, value).findFirst();
+        RealmQuery<T> realmQuery= realm.where(clazz);
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            String key = entry.getKey();
+            String value = (String) entry.getValue();
+            LogUtils.e("searchKey:" + key + "=" + value);
+            realmQuery=realmQuery.equalTo(key,value);
+        }
+        result=realmQuery.findFirst();
         realm.commitTransaction();
         return result;
     }
 
 
-
-
+    /**
+     * 按条件查找 多个
+     * @param key
+     * @param value
+     * @param clazz
+     * @param <T>
+     * @return
+     */
     public <T extends RealmObject> List<T> findObjs(String key, String value, Class<T> clazz) {
+        Map<String,Object> map= new HashMap<>();
+        map.put(key,value);
+        return findObjs(map,clazz);
+    }
+
+    /**
+     * 按条件查找 多个
+     * @param map key value map
+     * @param clazz
+     * @param <T>
+     * @return
+     */
+    public <T extends RealmObject> List<T> findObjs(Map<String,Object> map, Class<T> clazz) {
         List<T> resultList = null;
         realm.beginTransaction();
-        resultList = realm.where(clazz).equalTo(key, value).findAll();
-        realm.commitTransaction();
+        RealmQuery<T> realmQuery= realm.where(clazz);
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            String key = entry.getKey();
+            String value = (String) entry.getValue();
+            LogUtils.e("searchKey:" + key + "=" + value);
+            realmQuery=realmQuery.equalTo(key,value);
+        }
+        resultList=realmQuery.findAll();
         return resultList;
     }
 
@@ -62,7 +132,7 @@ public enum RealmService {
      * 删除满足条件的元素
      * @param key
      * @param value
-     * @param clazz
+     * @param clazz 类型
      * @param <T>
      * @return
      */
@@ -79,6 +149,11 @@ public enum RealmService {
         return false;
     }
 
+    /**
+     * 删除某一类对象
+     * @param clazz
+     * @param <T>
+     */
     public <T extends RealmObject> void deleteClass(Class<T> clazz) {
         realm.beginTransaction();
         realm.delete(clazz);
