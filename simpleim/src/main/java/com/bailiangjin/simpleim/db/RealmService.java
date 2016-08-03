@@ -25,7 +25,9 @@ public enum RealmService {
     private Realm realm;
 
     private RealmService() {
-        realmConfig = new RealmConfiguration.Builder(AppUtils.getContext()).deleteRealmIfMigrationNeeded().name(String.valueOf(AccountUtils.getCurrentUserId())).build();
+        realmConfig = new RealmConfiguration.Builder(AppUtils.getContext())
+                .deleteRealmIfMigrationNeeded()
+                .name(String.valueOf(AccountUtils.getCurrentUserId())).build();
         // Open the Realm for the UI thread.
         realm = Realm.getInstance(realmConfig);
     }
