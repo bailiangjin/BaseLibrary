@@ -1,7 +1,10 @@
 package com.bailiangjin.simpleim.engine.logicutils;
 
 import com.bailiangjin.simpleim.constants.SPKey;
+import com.bailiangjin.simpleim.db.RealmService;
+import com.bailiangjin.simpleim.modle.User;
 import com.kevin.baselibrary.constant.SuperSPKey;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.SPUtils;
 
 /**
@@ -10,6 +13,10 @@ import com.kevin.baselibrary.utils.SPUtils;
  * Create Time: 2015/12/10 14:09
  */
 public class AccountUtils {
+
+    public static String  getCurrentUserId(){
+        return getUserName();
+    }
 
     /**
      * 账户信息登出
@@ -38,7 +45,15 @@ public class AccountUtils {
         SPUtils.putString(SuperSPKey.USER_NAME, userName);
         SPUtils.putString(SuperSPKey.PASSWORD, isSavePassword ? password : "");
         SPUtils.putBoolean(SuperSPKey.SAVEPWD, isSavePassword);
+        User curUser= new User();
+        curUser.setId(userName);
+        curUser.setName(userName);
 
+        RealmService.INSTANCE.saveOrUpdateObj(curUser);
+        User newUser=RealmService.INSTANCE.findUser(curUser);
+
+        LogUtils.e("curUser:"+newUser.getId());
+        LogUtils.e("curUser:"+newUser.getName());
     }
 
     public static String getUserName() {
