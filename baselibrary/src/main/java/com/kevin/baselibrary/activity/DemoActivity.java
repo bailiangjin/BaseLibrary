@@ -24,6 +24,11 @@ public class DemoActivity extends SuperBaseActivity {
         //TODO: 出事化Intent 传入的参数
     }
 
+    @Override
+    protected void initBaseView() {
+
+    }
+
 
     @Override
     protected void initView() {

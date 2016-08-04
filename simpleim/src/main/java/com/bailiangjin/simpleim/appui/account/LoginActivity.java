@@ -16,17 +16,26 @@ import com.bailiangjin.simpleim.constants.IntentKey;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
 import com.bailiangjin.simpleim.engine.logicutils.LoginResult;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 
 /**
  * 登录
  */
 public class LoginActivity extends BaseActivity {
 
-    private EditText et_username;// 用户名
-    private EditText et_password;// 密码
-    private Button btn_login;// 登录按钮
-    private CheckBox cb_save_password;
-    private TextView tv_register;
+    @BindView(R.id.et_username)
+    protected EditText et_username;// 用户名
+    @BindView(R.id.et_password)
+    protected EditText et_password;// 密码
+    @BindView(R.id.btn_login)
+    protected Button btn_login;// 登录按钮
+    @BindView(R.id.cb_save_password)
+    protected CheckBox cb_save_password;
+    @BindView(R.id.tv_register)
+    protected TextView tv_register;
+
     private String userName = null;
     private String passWord = null;
     private boolean isSavePassword;
@@ -41,6 +50,11 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
+    protected void initIntentData() {
+
+    }
+
+    @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         initMyData();
@@ -52,15 +66,6 @@ public class LoginActivity extends BaseActivity {
     protected void initView() {
         commonTitleView.setLeftImageVisibility(View.GONE);
         commonTitleView.setTitleText("登录简信");
-        et_username = (EditText) findViewById(R.id.et_username);
-        et_password = (EditText) findViewById(R.id.et_password);
-        btn_login = (Button) findViewById(R.id.btn_login);
-        tv_register = (TextView) findViewById(R.id.tv_register);
-        cb_save_password = (CheckBox) findViewById(R.id.cb_save_password);
-
-        btn_login.setOnClickListener(this);
-        tv_register.setOnClickListener(this);
-
     }
 
     @Override
@@ -104,8 +109,10 @@ public class LoginActivity extends BaseActivity {
 
     }
 
-    @Override
-    public void onViewClick(View v) {
+
+    @OnClick({R.id.btn_login, R.id.tv_register})
+    public void onClick(View v) {
+        super.onClick(v);
         switch (v.getId()) {
             case R.id.btn_login://登录成功
                 //获取用户名
@@ -130,6 +137,8 @@ public class LoginActivity extends BaseActivity {
 
         }
     }
+
+
 
     @Override
     protected void handleMsg(Message msg) {

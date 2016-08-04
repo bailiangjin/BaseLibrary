@@ -43,6 +43,10 @@ public class UserInfoActivity extends BaseActivity
 		return R.layout.activity_user_info;
 	}
 
+	@Override
+	protected void initIntentData() {
+
+	}
 
 
 	@Override

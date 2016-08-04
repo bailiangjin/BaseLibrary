@@ -23,6 +23,11 @@ public class SplashActivity extends BaseActivity
 		return R.layout.activity_splash;
 	}
 
+	@Override
+	protected void initIntentData() {
+
+	}
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)

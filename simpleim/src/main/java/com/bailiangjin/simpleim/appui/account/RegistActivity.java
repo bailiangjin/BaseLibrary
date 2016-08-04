@@ -34,6 +34,11 @@ public class RegistActivity extends BaseActivity
 		return R.layout.activity_regist;
 	}
 
+	@Override
+	protected void initIntentData() {
+
+	}
+
 
 	@Override
 	protected void initView() {

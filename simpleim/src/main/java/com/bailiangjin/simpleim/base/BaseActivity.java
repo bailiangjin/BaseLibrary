@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.MotionEvent;
+import android.view.View;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.constants.BroadcastAction;
@@ -14,6 +15,8 @@ import com.kevin.baselibrary.utils.LogUtils;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends SuperBaseActivity
 {
@@ -95,8 +98,8 @@ public abstract class BaseActivity extends SuperBaseActivity
 	}
 
 	@Override
-	protected void initIntentData() {
-
+	protected void initBaseView() {
+		ButterKnife.bind(this);
 	}
 
 	@Override
@@ -157,8 +160,8 @@ public abstract class BaseActivity extends SuperBaseActivity
 
 	}
 
+	@Override
+	protected void onViewClick(View v) {
 
-
-
-
+	}
 }

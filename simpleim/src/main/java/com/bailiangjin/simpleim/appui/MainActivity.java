@@ -2,12 +2,12 @@ package com.bailiangjin.simpleim.appui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.bailiangjin.simpleim.R;
+import com.bailiangjin.simpleim.base.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     public static void start(Activity activity){
         Intent intent = new Intent(activity,MainActivity.class);
@@ -15,8 +15,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayoutResId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initIntentData() {
+
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void onViewClick(View v) {
+
     }
 }

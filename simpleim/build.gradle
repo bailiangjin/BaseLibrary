@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
+apply plugin: 'android-apt'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -51,4 +52,7 @@ dependencies {
     compile project(path: ':baselibrary')
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+
 }

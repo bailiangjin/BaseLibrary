@@ -25,6 +25,11 @@ public class LogoutActivity extends BaseActivity {
         return R.layout.activity_logout;
     }
 
+    @Override
+    protected void initIntentData() {
+
+    }
+
 
     @Override
     protected void initView() {

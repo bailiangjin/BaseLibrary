@@ -151,11 +151,18 @@ public abstract class BaseActivity extends SuperBaseActivity
 
 
 	@Override
+	protected void initBaseView() {
+
+	}
+
+	@Override
 	protected void handleMsg(Message msg)
 	{
 		// TODO Auto-generated method stub
 
 	}
+
+
 
 
 

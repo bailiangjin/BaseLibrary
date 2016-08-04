@@ -24,6 +24,11 @@ public class UserListActivity extends BaseActivity {
         return R.layout.activity_userlist;
     }
 
+    @Override
+    protected void initIntentData() {
+
+    }
+
 
     @Override
     protected void initView() {
