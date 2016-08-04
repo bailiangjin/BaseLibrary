@@ -1,10 +1,9 @@
-package com.bailiangjin.simpleim.appui;
+package com.bailiangjin.simpleim;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 
-import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {

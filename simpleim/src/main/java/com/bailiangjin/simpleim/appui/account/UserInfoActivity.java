@@ -4,65 +4,67 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.base.BaseActivity;
+import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
+
+import butterknife.BindView;
+import butterknife.OnClick;
 
 
 /**
  * 用户信息页
  */
-public class UserInfoActivity extends BaseActivity
-{
+public class UserInfoActivity extends BaseActivity {
 
-	private Button btn_userinfo_back;
-
-
-	public static void start(Activity activity){
-		Intent intent = new Intent(activity,UserInfoActivity.class);
-		activity.startActivity(intent);
-	}
+    @BindView(R.id.btn_userinfo_back)
+    Button btn_userinfo_back;
+    @BindView(R.id.tv_userinfo_userid)
+    TextView tv_userinfo_userid;
 
 
-	@Override
-	protected void initView() {
-		commonTitleView.setTitleText(getString(R.string.friend_info));
-		btn_userinfo_back = (Button) findViewById(R.id.btn_userinfo_back);
-		btn_userinfo_back.setOnClickListener(this);
-	}
-
-	@Override
-	protected void initData() {
-
-	}
+    public static void start(Activity activity) {
+        Intent intent = new Intent(activity, UserInfoActivity.class);
+        activity.startActivity(intent);
+    }
 
 
-	@Override
-	protected int getLayoutResId()
-	{
-		return R.layout.activity_user_info;
-	}
+    @Override
+    protected void initView() {
+        commonTitleView.setTitleText(getString(R.string.friend_info));
+    }
 
-	@Override
-	protected void initIntentData() {
+    @Override
+    protected void initData() {
+        tv_userinfo_userid.setText(AccountUtils.getUserName());
 
-	}
+    }
 
 
-	@Override
-	protected void onViewClick(View v)
-	{
-		switch (v.getId())
-		{
-			case R.id.btn_userinfo_back:
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_user_info;
+    }
 
-				this.finish();
-				break;
+    @Override
+    protected void initIntentData() {
 
-			default:
-				break;
-		}
+    }
 
-	}
+
+    @OnClick( R.id.btn_userinfo_back)
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_userinfo_back:
+                this.finish();
+                break;
+
+            default:
+                break;
+        }
+
+    }
 
 }

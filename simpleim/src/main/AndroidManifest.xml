@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".appui.MainActivity"/>
+        <activity android:name=".MainActivity"/>
 
         <!--应用界面demo-->
 
