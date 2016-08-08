@@ -4,13 +4,13 @@
     <string name="app_name">基础资源库</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    
-        <!-- 登录相关 -->
+
+    <!-- 登录相关 -->
     <string name="username">用户名</string>
     <string name="password">密码</string>
     <string name="login">登录</string>
     <string name="please_input_user_name">请输入用户名</string>
-  
+
     <string name="please_input_password">请输入密码</string>
     <string name="username_pwd_cannot_be_null">用户名密码不能为空</string>
     <string name="getbackpwd">忘记密码？</string>

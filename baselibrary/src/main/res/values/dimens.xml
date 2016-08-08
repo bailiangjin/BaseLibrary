@@ -3,9 +3,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    
-    
-       <!-- 字体大小 -->
+
+
+    <!-- 字体大小 -->
     <!-- 标题栏文字大小 -->
     <dimen name="title_tv_size">20dp</dimen>
     <dimen name="tv_size_xxxlarge">24dp</dimen>
@@ -57,9 +57,8 @@
     <dimen name="et_padding_large">10dp</dimen>
 
 
-
     <!-- 通长按钮边距 -->
     <dimen name="total_btn_margin">16dp</dimen>
-    
+
 
 </resources>

@@ -7,17 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.kevin.baselibrary.utils.LogUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
- * BaseAdapter for listView gridView
- * Author:  liangjin.bai
- * Email: bailiangjin@gmail.com
- * Create Time: 2015/10/9 18:23
+ * Created by bailiangjin on 16/8/1.
  */
-public abstract class SuperBaseAdapter<T> extends BaseAdapter {
+abstract public class SuperBaseAdapter<T> extends BaseAdapter {
+
     protected final Context context;
     protected final LayoutInflater mLayoutInflater;
     protected List<T> dataList = new ArrayList<>();
@@ -48,12 +47,18 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHelper viewHelper = new ViewHelper(convertView, parent).invoke();
-        convertView = viewHelper.getConvertView();
-        T item = getItem(position);
-        Object holder = viewHelper.getHolder();
-        setItemData(position,item, holder);
-        return convertView;
+        View view;
+        BaseViewHolder holder;
+        if (convertView == null) {
+            view = View.inflate(context, getItemLayoutResId(), null);
+            holder = getViewHolder(view);
+            view.setTag(holder);
+        } else {
+            view = convertView;
+            holder = (BaseViewHolder) view.getTag();
+        }
+        holder.show(position);
+        return view;
     }
 
     public void setData(List<T> dataList) {
@@ -77,51 +82,29 @@ public abstract class SuperBaseAdapter<T> extends BaseAdapter {
      * @param rootView
      * @return
      */
-    public abstract Object getViewHolder(View rootView);
+    protected abstract BaseViewHolder getViewHolder(View rootView);
 
     /**
-     * 设置item数据
-     * @param position
-     * @param dataItem
-     * @param viewHolder
+     * ViewHolder基类
      */
-    public abstract void setItemData(final int position,final T dataItem, final Object viewHolder);
+    public abstract class BaseViewHolder<T> {
+        public View rootView;
 
-
-    /**
-     * 实现中间环节的调用辅助类
-     */
-    private class ViewHelper {
-        private View convertView;
-        private ViewGroup viewGroup;
-        private Object holder;
-
-        public ViewHelper(View convertView, ViewGroup viewGroup) {
-            this.convertView = convertView;
-            this.viewGroup = viewGroup;
+        public BaseViewHolder(View rootView) {
+            this.rootView = rootView;
         }
 
-        public View getConvertView() {
-            return convertView;
-        }
-
-
-        public Object getHolder() {
-            return holder;
-        }
-
-        public ViewHelper invoke() {
-            //covertView 复用的逻辑在这里呢  再也不用一遍一遍的写这个逻辑了
-            if (convertView == null) {
-                //新建 convertView
-                convertView = mLayoutInflater.inflate(getItemLayoutResId(), viewGroup, false);
-                holder = getViewHolder(convertView);
-                convertView.setTag(holder);
-            } else {
-                //复用 convertView
-                holder = convertView.getTag();
+        public void show(int position) {
+            T data= (T) dataList.get(position);
+            if(null==data){
+                LogUtils.e("条目数据未初始化");
+                return;
             }
-            return this;
+            show(position,data);
         }
+
+        public abstract void show(int position,T data);
+
     }
+
 }
