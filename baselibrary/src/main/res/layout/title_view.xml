@@ -12,8 +12,7 @@
         app:title_text="默认标题"
         app:right_btn_visibility="false"
         app:left_iv_visibility="true"
-        app:root_background="@drawable/title_gradient_bg"
-        >
+        app:root_background="@drawable/title_gradient_bg">
     </com.kevin.baselibrary.view.TitleView>
 
 </LinearLayout>
