@@ -6,13 +6,24 @@
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
         android:title="搜索"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/action_notification"
         android:icon="@android:drawable/ic_notification_overlay"
         android:title="通知"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_search2"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="搜索"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_search3"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="搜索"
+        app:showAsAction="always" />
 
 
 </menu>
