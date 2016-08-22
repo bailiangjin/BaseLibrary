@@ -1,7 +1,5 @@
 package com.kevin.baselibrary.javase;
 
-import android.net.Uri;
-
 /**
  * Author:  liangjin.bai
  * Email: bailiangjin@gmail.com
@@ -19,7 +17,9 @@ public class Test {
 //        System.out.println(threeLevelCache.get("1",String.class));
 //        System.out.println(threeLevelCache2.get("1",Integer.class));
 
+        System.out.println(""+System.currentTimeMillis());
 
-        System.out.println(Uri.encode("hxid=did_68245897,doctorid=93,doctorname=老徐,headurl=http://xs3.op.xywy.com/oss.wenkang.cn/oss_family_doctor_picture_1464845846.jpg"));
+
+//        System.out.println(Uri.encode("hxid=did_68245897,doctorid=93,doctorname=老徐,headurl=http://xs3.op.xywy.com/oss.wenkang.cn/oss_family_doctor_picture_1464845846.jpg"));
     }
 }
