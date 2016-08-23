@@ -18,12 +18,12 @@
         android:id="@+id/action_search2"
         android:icon="@android:drawable/ic_menu_search"
         android:title="搜索"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_search3"
         android:icon="@android:drawable/ic_menu_search"
         android:title="搜索"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
 
 </menu>

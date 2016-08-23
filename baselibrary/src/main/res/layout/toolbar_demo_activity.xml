@@ -7,13 +7,18 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        toolbar:logo="@drawable/ic_launcher"
-        toolbar:subtitle="456"
-        toolbar:title="123"
-        toolbar:popupTheme="@style/Widget.AppCompat.Toolbar">
+        android:background="@color/blue"
+        toolbar:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        toolbar:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="标题" />
 
     </android.support.v7.widget.Toolbar>
 

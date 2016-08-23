@@ -50,7 +50,7 @@ public class MainActivity extends BtnBaseActivity {
         //btn6.setText("ViewPagerDemo");
         btn6.setText("ViewPagerDemo");
         btn7.setText("测试WebView");
-        btn8.setText("测试文件监听");
+        btn8.setText("当前测试");
 
 
         btn1.setVisibility(View.VISIBLE);
