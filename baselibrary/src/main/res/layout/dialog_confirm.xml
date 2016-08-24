@@ -17,7 +17,7 @@
         android:paddingRight="12dp"
         android:paddingTop="16dp"
         android:text="提示"
-        android:textColor="@color/gray" />
+        android:textColor="@color/black" />
 
     <ImageView
         android:id="@+id/iv_line_h1"
@@ -39,7 +39,7 @@
         android:paddingRight="12dp"
         android:paddingTop="10dp"
         android:text="提示内容"
-        android:textColor="@color/gray" />
+        android:textColor="@color/black" />
 
     <ImageView
         android:id="@+id/iv_line"
@@ -56,8 +56,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:padding="10dp"
-        android:text="知道了 继续答题"
-        android:textColor="@color/gray" />
+        android:text="确认"
+        android:textColor="@color/black" />
 
 
 </RelativeLayout>
