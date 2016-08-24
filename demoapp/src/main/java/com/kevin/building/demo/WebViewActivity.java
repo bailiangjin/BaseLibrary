@@ -1,6 +1,5 @@
 package com.kevin.building.demo;
 
-import android.content.DialogInterface;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
@@ -8,8 +7,7 @@ import android.webkit.WebView;
 
 import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
 import com.kevin.baselibrary.utils.WebViewUtils;
-import com.kevin.baselibrary.widget.listener.PNDialogListener;
-import com.kevin.baselibrary.widget.utils.DialogUtils;
+import com.kevin.baselibrary.widget.utils.PNDialog;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
@@ -96,19 +94,21 @@ public class WebViewActivity extends BaseActivity {
     }
 
     private void showBackToSourceDialog() {
-        DialogUtils.showPNDialog(WebViewActivity.this, "确定关闭当前页面？", true, new PNDialogListener() {
+
+        new PNDialog.Builder().setContent("确定关闭当前页面？").create(WebViewActivity.this, new com.kevin.baselibrary.widget.utils.PNDialogListener() {
             @Override
-            public void onPositive(DialogInterface dialog, int which) {
+            public void onPositive() {
                 shortToast("返回源页面");
                 //关闭当前Activity
                 WebViewActivity.this.finish();
             }
 
             @Override
-            public void onNegative(DialogInterface dialog, int which) {
-                //不做处理
+            public void onNegative() {
+
             }
-        });
+        }).show();
+
     }
 
 

@@ -1,11 +1,9 @@
 package com.kevin.building.demo.widget.dialog;
 
-import android.content.DialogInterface;
 import android.os.Message;
 import android.view.View;
 
-import com.kevin.baselibrary.widget.listener.PNDialogListener;
-import com.kevin.baselibrary.widget.utils.DialogUtils;
+import com.kevin.baselibrary.widget.utils.PNDialog;
 import com.kevin.building.R;
 import com.kevin.building.base.BtnBaseActivity;
 
@@ -52,18 +50,18 @@ public class DialogActivity extends BtnBaseActivity {
 
         switch (v.getId()) {
             case R.id.btn1:
-                DialogUtils.showPNDialog(DialogActivity.this, getString(R.string.exit_app) + "?", false, new PNDialogListener() {
+
+                new PNDialog.Builder().setContent(getString(R.string.exit_app) + "?").setCancelable(false).create(DialogActivity.this, new com.kevin.baselibrary.widget.utils.PNDialogListener() {
                     @Override
-                    public void onPositive(DialogInterface dialog, int which) {
+                    public void onPositive() {
                         DialogActivity.this.finish();
                     }
 
                     @Override
-                    public void onNegative(DialogInterface dialog, int which) {
+                    public void onNegative() {
                         shortToast("点击了取消");
-
                     }
-                });
+                }).show();
 
                 break;
 
