@@ -64,6 +64,7 @@
             android:textColor="@color/black" />
 
         <ImageView
+            android:id="@+id/iv_vertical_line"
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
             android:background="#CCCCCC" />
