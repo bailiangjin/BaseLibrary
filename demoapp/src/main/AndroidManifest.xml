@@ -141,7 +141,7 @@
             android:launchMode="standard" />
 
         <activity
-            android:name=".demo.databinding.TestDataBindingActivity"
+            android:name=".demo.databinding.DataBindingActivity"
             android:label="TestDataBindingActivity"
             />
         <!--应用界面demo-->
