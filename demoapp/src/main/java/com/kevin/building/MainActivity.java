@@ -11,11 +11,11 @@ import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.activity.TestActivity;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.WebViewActivity;
+import com.kevin.building.demo.databinding.DataBindingActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
 import com.kevin.building.demo.networkdemo.NetworkActivity;
 import com.kevin.building.demo.viewpager.ViewPagerDemoActivity;
 import com.kevin.building.demo.widget.WidgetMainActivity;
-import com.kevin.building.demo.widget.dialog.DialogActivity;
 import com.kevin.building.utils.ActivityUtils;
 
 /**
@@ -117,7 +117,7 @@ public class MainActivity extends BtnBaseActivity {
             case R.id.btn8:
 //               shortToast("点击了当前测试");
 //                ActivityUtils.startActivity(this, ToolBarBaseActivity.class);
-                ActivityUtils.startActivity(this, DialogActivity.class);
+                ActivityUtils.startActivity(this, DataBindingActivity.class);
 
 //                AppUtils.startAnyApp("com.xywy.flydoctor");
 //                AppUtils.unInstallApp("com.xywy.flydoctor");

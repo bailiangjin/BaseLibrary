@@ -4,6 +4,10 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
+    dataBinding {
+        enabled true
+    }
+
     defaultConfig {
         applicationId "com.kevin.building"
         minSdkVersion 15
