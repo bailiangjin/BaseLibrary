@@ -139,6 +139,11 @@
             android:name=".demo.recycleview.RecyclerViewDemoActivity"
             android:label="RecyclerViewDemoActivity"
             android:launchMode="standard" />
+
+        <activity
+            android:name=".demo.databinding.TestDataBindingActivity"
+            android:label="TestDataBindingActivity"
+            />
         <!--应用界面demo-->
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
