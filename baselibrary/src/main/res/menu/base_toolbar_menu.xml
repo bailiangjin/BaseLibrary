@@ -4,28 +4,24 @@
 
     <item
         android:id="@+id/item1"
-        android:icon="@android:drawable/ic_menu_search"
         android:title="按钮1"
         android:visible="false"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/item2"
-        android:icon="@android:drawable/ic_menu_share"
         android:title="按钮2"
         android:visible="false"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/item3"
-        android:icon="@android:drawable/ic_notification_overlay"
         android:title="按钮3"
         android:visible="false"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/item4"
-        android:icon="@android:drawable/ic_notification_overlay"
         android:title="按钮4"
         android:visible="false"
         app:showAsAction="never" />
@@ -33,7 +29,6 @@
     <item
         android:id="@+id/item5"
         android:visible="false"
-        android:icon="@android:drawable/ic_notification_overlay"
         android:title="按钮5"
         app:showAsAction="never" />
 

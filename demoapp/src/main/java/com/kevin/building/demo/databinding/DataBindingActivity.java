@@ -23,10 +23,17 @@ public class DataBindingActivity extends DataBindingBaseActivity<ActivityDataBin
     @Override
     protected void initView() {
         tv_title.setText("测试绑定绑定绑定绑定绑定绑定绑定");
+
         addSearchMenuItem(new ItemClickListener() {
             @Override
             public void onClick() {
                 ToastUtils.shortToast("点击了搜索");
+            }
+        });
+        addItem("添加", -1, new ItemClickListener() {
+            @Override
+            public void onClick() {
+
             }
         });
         addShareMenuItem(new ItemClickListener() {
@@ -41,12 +48,7 @@ public class DataBindingActivity extends DataBindingBaseActivity<ActivityDataBin
 
             }
         });
-        addItem("测试2", R.drawable.ic_search_white, new ItemClickListener() {
-            @Override
-            public void onClick() {
 
-            }
-        });
         addItem("测试3", R.drawable.ic_search_white, new ItemClickListener() {
             @Override
             public void onClick() {

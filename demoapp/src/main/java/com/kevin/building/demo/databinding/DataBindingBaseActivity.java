@@ -2,6 +2,7 @@ package com.kevin.building.demo.databinding;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -170,7 +171,12 @@ public abstract class DataBindingBaseActivity<T extends ViewDataBinding> extends
 
     private void addMenuItem(Menu menu, int itemResId, MyMenuItem myMenuItem) {
         menu.findItem(itemResId).setVisible(true);
-        menu.findItem(itemResId).setIcon(myMenuItem.getIconResId());
+        if(myMenuItem.getIconResId()>0){
+            menu.findItem(itemResId).setIcon(myMenuItem.getIconResId());
+        }else {
+            menu.findItem(itemResId).setIcon(0);
+        }
+
         menu.findItem(itemResId).setTitle(myMenuItem.getTitle());
     }
 
