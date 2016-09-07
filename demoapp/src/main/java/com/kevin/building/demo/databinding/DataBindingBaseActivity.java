@@ -48,6 +48,7 @@ public abstract class DataBindingBaseActivity<T extends ViewDataBinding> extends
                 finish();
             }
         });
+
         toolbar.inflateMenu(com.kevin.baselibrary.R.menu.base_toolbar_menu);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -62,8 +63,6 @@ public abstract class DataBindingBaseActivity<T extends ViewDataBinding> extends
                 return false;
             }
         });
-
-        setSupportActionBar(toolbar);
 
     }
 
