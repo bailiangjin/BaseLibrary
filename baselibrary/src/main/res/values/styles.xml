@@ -50,6 +50,7 @@
     </style>
 
     <style name="title_tv_style" parent="@style/tv_base_style">
+        <item name="android:singleLine">true</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/title_tv_size</item>

@@ -40,10 +40,10 @@ public class ToolBarBaseActivity extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 int menuItemId = item.getItemId();
-                if (menuItemId == R.id.action_search) {
+                if (menuItemId == R.id.item1) {
                     ToastUtils.shortToast("点击了搜索");
 
-                } else if (menuItemId == R.id.action_notification) {
+                } else if (menuItemId == R.id.item2) {
                     ToastUtils.shortToast("点击了通知");
                 }
                 return false;
