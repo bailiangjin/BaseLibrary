@@ -16,7 +16,7 @@ public class ToolbarBindingActivity extends ToolbarBindingBaseActivity<ActivityD
 
 
     @Override
-    protected int getLayoutId() {
+    protected int getLayoutResId() {
         return R.layout.activity_data_binding;
     }
 
@@ -58,6 +58,11 @@ public class ToolbarBindingActivity extends ToolbarBindingBaseActivity<ActivityD
             }
         }).build();
 
+
+    }
+
+    @Override
+    protected void initData() {
 
     }
 
