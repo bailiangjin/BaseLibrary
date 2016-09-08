@@ -1,4 +1,4 @@
-package com.kevin.building.demo.databinding;
+package com.kevin.baselibrary.base.tools;
 
 import android.app.Activity;
 import android.support.v7.widget.Toolbar;
@@ -7,10 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.activity.ItemClickListener;
 import com.kevin.baselibrary.activity.MyMenuItem;
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.building.R;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -22,7 +22,7 @@ import java.util.Map;
 public class TitleBarBuilder {
 
     private static final int defaultBgResId = R.drawable.title_gradient_bg;
-    private static final int defaultBackIconResId = com.kevin.baselibrary.R.drawable.ic_arrow_back_white_36dp;
+    private static final int defaultBackIconResId = R.drawable.ic_arrow_back_white_36dp;
 
     Map<String, MyMenuItem> itemLinkedHashMap = new LinkedHashMap<>();
 

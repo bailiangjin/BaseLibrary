@@ -1,4 +1,4 @@
-package com.kevin.building.demo.databinding;
+package com.kevin.building.base;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.kevin.baselibrary.base.tools.BaseActivityInterface;
+import com.kevin.baselibrary.base.tools.TitleBarBuilder;
 import com.kevin.baselibrary.constant.SuperBroadcastAction;
 import com.kevin.baselibrary.interfaze.listener.UIHandlerListener;
 import com.kevin.baselibrary.model.art.HomeEventListener;

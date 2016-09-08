@@ -1,4 +1,4 @@
-package com.kevin.building.demo.databinding;
+package com.kevin.baselibrary.base.tools;
 
 /**
  * Created by bailiangjin on 16/9/8.

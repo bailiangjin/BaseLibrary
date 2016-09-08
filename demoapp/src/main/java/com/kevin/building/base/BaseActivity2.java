@@ -12,7 +12,6 @@ import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
 import com.kevin.building.constants.BroadcastAction;
-import com.kevin.building.demo.databinding.ToolbarBindingBaseActivity;
 
 import java.util.HashSet;
 import java.util.Set;
