@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.MotionEvent;
+import android.view.View;
 
 import com.bugtags.library.Bugtags;
 import com.kevin.baselibrary.base.SuperBaseActivity;
@@ -162,10 +163,8 @@ public abstract class BaseActivity extends SuperBaseActivity
 
 	}
 
+	@Override
+	protected void onViewClick(View v) {
 
-
-
-
-
-
+	}
 }

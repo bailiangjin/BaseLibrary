@@ -33,8 +33,5 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onViewClick(View v) {
 
-    }
 }

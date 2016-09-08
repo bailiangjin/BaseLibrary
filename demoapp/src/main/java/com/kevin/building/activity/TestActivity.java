@@ -53,10 +53,7 @@ public class TestActivity extends BaseActivity{
 
     }
 
-    @Override
-    protected void onViewClick(View v) {
 
-    }
 
 
 }

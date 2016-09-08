@@ -16,10 +16,7 @@ public class Fragment2 extends BaseFragment
 		return R.layout.fragment2;
 	}
 
-	@Override
-	protected void onViewClick(View v) {
 
-	}
 
 	@Override
 	public void onAttach(Activity activity)

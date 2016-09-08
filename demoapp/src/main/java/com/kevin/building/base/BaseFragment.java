@@ -1,5 +1,7 @@
 package com.kevin.building.base;
 
+import android.view.View;
+
 import com.kevin.baselibrary.base.SuperBaseFragment;
 
 /**
@@ -10,6 +12,8 @@ import com.kevin.baselibrary.base.SuperBaseFragment;
 public abstract class BaseFragment extends SuperBaseFragment {
 
 
+    @Override
+    protected void onViewClick(View v) {
 
-
+    }
 }

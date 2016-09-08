@@ -57,10 +57,5 @@ public class UserListActivity extends BaseActivity {
     }
 
 
-    @Override
-    protected void onViewClick(View v) {
-        // TODO Auto-generated method stub
-
-    }
 
 }

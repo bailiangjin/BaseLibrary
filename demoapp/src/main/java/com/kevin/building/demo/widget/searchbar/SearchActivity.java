@@ -81,10 +81,7 @@ public class SearchActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onViewClick(View v) {
 
-    }
 
     @Override
     protected void handleMsg(Message msg) {

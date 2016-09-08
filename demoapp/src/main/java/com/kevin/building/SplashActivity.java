@@ -6,11 +6,12 @@ import android.widget.TextView;
 
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.base.BaseActivity2;
 
 /**
  * Splash页
  */
-public class SplashActivity extends BaseActivity
+public class SplashActivity extends BaseActivity2
 {
 
 	private TextView tv_app_version_name;
@@ -19,6 +20,11 @@ public class SplashActivity extends BaseActivity
 	protected int getLayoutResId()
 	{
 		return R.layout.activity_splash;
+	}
+
+	@Override
+	protected void initIntentData() {
+
 	}
 
 
@@ -48,12 +54,6 @@ public class SplashActivity extends BaseActivity
 
 
 
-	@Override
-	public void onViewClick(View v)
-	{
-		// TODO Auto-generated method stub
-
-	}
 
 
 }

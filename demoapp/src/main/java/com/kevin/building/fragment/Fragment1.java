@@ -85,10 +85,7 @@ public class Fragment1 extends BaseFragment
 		return R.layout.fragment1;
 	}
 
-	@Override
-	protected void onViewClick(View v) {
 
-	}
 
 
 }

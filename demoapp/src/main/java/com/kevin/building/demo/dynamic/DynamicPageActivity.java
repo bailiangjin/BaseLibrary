@@ -295,10 +295,7 @@ public class DynamicPageActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onViewClick(View v) {
 
-    }
 
     @Override
     protected void handleMsg(Message msg) {

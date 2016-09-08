@@ -68,10 +68,7 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
     }
 
 
-    @Override
-    protected void onViewClick(View v) {
 
-    }
 
     //viewPager事件监听-------------------------------------------------
 

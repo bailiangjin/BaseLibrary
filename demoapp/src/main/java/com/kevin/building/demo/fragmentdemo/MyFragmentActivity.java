@@ -7,15 +7,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.view.WindowManager;
 
 import com.kevin.baselibrary.base.SuperBaseFragment;
-import com.kevin.building.base.BaseActivity;
+import com.kevin.building.base.BaseActivity2;
 import com.kevin.building.fragment.Fragment1;
 import com.kevin.building.fragment.Fragment2;
 
-public class MyFragmentActivity extends BaseActivity
+public class MyFragmentActivity extends BaseActivity2
 {
 
 	private Fragment1 fragment1;
@@ -63,14 +62,13 @@ public class MyFragmentActivity extends BaseActivity
 	}
 
 	@Override
-	protected void onViewClick(View v) {
+	protected void initIntentData() {
 
 	}
 
-	@Override
-	protected void handleMsg(Message msg) {
 
-	}
+
+
 
 	Handler handler = new Handler()
 	{
