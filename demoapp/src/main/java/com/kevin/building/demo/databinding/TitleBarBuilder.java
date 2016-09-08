@@ -61,6 +61,7 @@ public class TitleBarBuilder {
         });
     }
 
+
     public Toolbar build() {
         setMyMenu(toolbar.getMenu());
         return toolbar;
@@ -73,7 +74,20 @@ public class TitleBarBuilder {
     }
 
     /**
+     * 设置 标题栏北京
+     * @param backGroundResId
+     * @return
+     */
+    public TitleBarBuilder setBackGround(int backGroundResId) {
+        toolbar.setBackgroundResource(backGroundResId);
+        return this;
+    }
+
+
+
+    /**
      * 自定义返回键
+     *
      * @param description
      * @param iconResId
      * @param listener

@@ -12,13 +12,13 @@ import android.widget.FrameLayout;
  */
 public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> extends AppCompatActivity implements BaseActivityInterface{
 
-    Toolbar toolbar;
+   private Toolbar toolbar;
 
-    TitleBarBuilder titleBarBuilder;
+   protected TitleBarBuilder titleBarBuilder;
 
     T binding;
 
-    protected FrameLayout baseContainer;
+    private FrameLayout baseContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
