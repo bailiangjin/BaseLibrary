@@ -2,7 +2,6 @@ package com.kevin.building.demo.databinding;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,15 +14,11 @@ import android.widget.TextView;
 import com.kevin.baselibrary.activity.ItemClickListener;
 import com.kevin.baselibrary.activity.MyMenuItem;
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.baselibrary.view.TitleView;
 import com.kevin.building.R;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,7 +28,6 @@ public abstract class DataBindingBaseActivity<T extends ViewDataBinding> extends
 
     Toolbar toolbar;
     TextView tv_title;
-    int visiableMenuCount = 0;
 
     Map<String, MyMenuItem> itemLinkedHashMap = new LinkedHashMap<>();
 
@@ -77,16 +71,14 @@ public abstract class DataBindingBaseActivity<T extends ViewDataBinding> extends
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-               MyMenuItem item1= itemLinkedHashMap.get(item.getTitle());
-                if(null!=item1&&null!=item1.getItemClickListener()) {
+                MyMenuItem item1 = itemLinkedHashMap.get(item.getTitle());
+                if (null != item1 && null != item1.getItemClickListener()) {
                     item1.getItemClickListener().onClick();
                     return true;
                 }
                 return false;
             }
         });
-
-
 
 
     }
@@ -135,7 +127,9 @@ public abstract class DataBindingBaseActivity<T extends ViewDataBinding> extends
                     addMenuItem(menu, R.id.item5, item);
                     break;
                 default:
-                    LogUtils.e("menu item size is full ");
+                    menu.add(item.getTitle());
+                    //menu.add(1,-menuCount,0,item.getTitle());
+                    LogUtils.e("menu item size is over 5 ");
                     break;
             }
 
@@ -152,28 +146,27 @@ public abstract class DataBindingBaseActivity<T extends ViewDataBinding> extends
         setMyMenu(toolbar.getMenu());
     }
 
-    protected void addItem(String title, int iconResId,ItemClickListener listener) {
-        MyMenuItem menuItem = new MyMenuItem(title, iconResId, MyMenuItem.Type.OTHER,listener);
+    protected void addItem(String title, int iconResId, ItemClickListener listener) {
+        MyMenuItem menuItem = new MyMenuItem(title, iconResId, MyMenuItem.Type.OTHER, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
     }
 
     protected void addShareMenuItem(ItemClickListener listener) {
-        MyMenuItem menuItem = new MyMenuItem("分享",R.drawable.ic_share_white, MyMenuItem.Type.SHARE,listener);
+        MyMenuItem menuItem = new MyMenuItem("分享", R.drawable.ic_share_white, MyMenuItem.Type.SHARE, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
     }
 
     protected void addSearchMenuItem(ItemClickListener listener) {
-        MyMenuItem menuItem = new MyMenuItem("搜索",R.drawable.ic_search_white, MyMenuItem.Type.SEARCH,listener);
+        MyMenuItem menuItem = new MyMenuItem("搜索", R.drawable.ic_search_white, MyMenuItem.Type.SEARCH, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
     }
 
 
-
     private void addMenuItem(Menu menu, int itemResId, MyMenuItem myMenuItem) {
         menu.findItem(itemResId).setVisible(true);
-        if(myMenuItem.getIconResId()>0){
+        if (myMenuItem.getIconResId() > 0) {
             menu.findItem(itemResId).setIcon(myMenuItem.getIconResId());
-        }else {
+        } else {
             menu.findItem(itemResId).setIcon(0);
         }
 

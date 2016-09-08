@@ -36,25 +36,33 @@ public class DataBindingActivity extends DataBindingBaseActivity<ActivityDataBin
 
             }
         });
-//        addShareMenuItem(new ItemClickListener() {
-//            @Override
-//            public void onClick() {
-//                ToastUtils.shortToast("点击分享");
-//            }
-//        });
-//        addItem("测试1", R.drawable.ic_search_white, new ItemClickListener() {
-//            @Override
-//            public void onClick() {
-//
-//            }
-//        });
-//
-//        addItem("测试3", R.drawable.ic_search_white, new ItemClickListener() {
-//            @Override
-//            public void onClick() {
-//
-//            }
-//        });
+        addShareMenuItem(new ItemClickListener() {
+            @Override
+            public void onClick() {
+                ToastUtils.shortToast("点击分享");
+            }
+        });
+        addItem("测试1", R.drawable.ic_search_white, new ItemClickListener() {
+            @Override
+            public void onClick() {
+
+            }
+        });
+
+        addItem("测试3", R.drawable.ic_search_white, new ItemClickListener() {
+            @Override
+            public void onClick() {
+
+            }
+        });
+
+        addItem("测试4", R.drawable.ic_search_white, new ItemClickListener() {
+            @Override
+            public void onClick() {
+
+                ToastUtils.shortToast("点击了测试4");
+            }
+        });
         buildMenu();
 
 
