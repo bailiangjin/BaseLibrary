@@ -32,7 +32,7 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
 
     protected TitleBarBuilder titleBarBuilder;
 
-    T binding;
+    public T binding;
 
     private FrameLayout baseContainer;
 

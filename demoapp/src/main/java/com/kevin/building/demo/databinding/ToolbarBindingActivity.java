@@ -5,19 +5,25 @@ import android.view.View;
 import com.kevin.baselibrary.activity.ItemClickListener;
 import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
+import com.kevin.building.base.BaseActivity2;
 import com.kevin.building.databinding.ActivityDataBindingBinding;
 import com.kevin.building.model.TaskItemBean;
 
 /**
  * Created by bailiangjin on 16/9/7.
  */
-public class ToolbarBindingActivity extends ToolbarBindingBaseActivity<ActivityDataBindingBinding> {
+public class ToolbarBindingActivity extends BaseActivity2<ActivityDataBindingBinding> {
     TaskItemBean itemBean;
 
 
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_data_binding;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override
@@ -73,7 +79,8 @@ public class ToolbarBindingActivity extends ToolbarBindingBaseActivity<ActivityD
         itemBean.setId("1");
         itemBean.setName("初始名");
         itemBean.setOrder(1);
-        binding.setUser(itemBean);
+        ActivityDataBindingBinding mybinding = (ActivityDataBindingBinding) binding;
+        mybinding.setUser(itemBean);
         itemBean.setName("更改后的名字" + System.currentTimeMillis());
         invalidateOptionsMenu();
     }

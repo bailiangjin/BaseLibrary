@@ -17,7 +17,7 @@ import com.kevin.building.demo.databinding.ToolbarBindingBaseActivity;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class BaseActivity2<T extends ViewDataBinding> extends ToolbarBindingBaseActivity
+public abstract class BaseActivity2<E extends ViewDataBinding> extends ToolbarBindingBaseActivity
 {
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
