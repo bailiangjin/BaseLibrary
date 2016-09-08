@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 /**
  * Created by bailiangjin on 16/9/7.
  */
-public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> extends AppCompatActivity {
+public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> extends AppCompatActivity implements BaseActivityInterface{
 
     Toolbar toolbar;
 
@@ -46,4 +46,33 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
     }
 
 
+    @Override
+    public void shortToast(String string) {
+
+    }
+
+    @Override
+    public void shortToast(int resId) {
+
+    }
+
+    @Override
+    public void longToast(String string) {
+
+    }
+
+    @Override
+    public void longToast(int resId) {
+
+    }
+
+    @Override
+    public void hideCommonBaseTitle() {
+
+    }
+
+    @Override
+    public void showCommonBaseTitle() {
+
+    }
 }
