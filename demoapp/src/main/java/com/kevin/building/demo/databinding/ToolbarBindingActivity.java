@@ -74,13 +74,11 @@ public class ToolbarBindingActivity extends BaseActivity2<ActivityDataBindingBin
 
 
     public void onClick_change(View v) {
-
         itemBean = new TaskItemBean();
         itemBean.setId("1");
         itemBean.setName("初始名");
         itemBean.setOrder(1);
-        ActivityDataBindingBinding mybinding = (ActivityDataBindingBinding) binding;
-        mybinding.setUser(itemBean);
+        getBinding().setUser(itemBean);
         itemBean.setName("更改后的名字" + System.currentTimeMillis());
         invalidateOptionsMenu();
     }

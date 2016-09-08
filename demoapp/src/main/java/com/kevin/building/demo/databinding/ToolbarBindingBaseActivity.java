@@ -266,5 +266,7 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
      */
     protected abstract void handleMsg(Message msg);
 
-
+    public T getBinding() {
+        return binding;
+    }
 }
