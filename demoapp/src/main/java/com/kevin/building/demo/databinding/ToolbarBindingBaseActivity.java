@@ -14,7 +14,7 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
 
     Toolbar toolbar;
 
-    ToolbarBuilder toolbarBuilder;
+    TitleBarBuilder titleBarBuilder;
 
     T binding;
 
@@ -26,11 +26,14 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
         initSuperUI();
         binding = DataBindingUtil.inflate(getLayoutInflater(), getLayoutId(), baseContainer, true);
         initView();
+        initData();
     }
 
     protected abstract int getLayoutId();
 
     protected abstract void initView();
+
+    protected abstract void initData();
 
     /**
      * 初始化父类UI
@@ -39,9 +42,8 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
         super.setContentView(com.kevin.baselibrary.R.layout.activity_binding_base_xml);
         baseContainer = (FrameLayout) findViewById(com.kevin.baselibrary.R.id.baseContainer);
         toolbar = (Toolbar) findViewById(com.kevin.baselibrary.R.id.toolbar);
-        toolbarBuilder=new ToolbarBuilder(this,toolbar);
+        titleBarBuilder = new TitleBarBuilder(this, toolbar);
     }
-
 
 
 }

@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * @author bailiangjin
  */
-public class ToolbarBuilder {
+public class TitleBarBuilder {
 
     private static final int defaultBgResId = R.drawable.title_gradient_bg;
     private static final int defaultBackIconResId = com.kevin.baselibrary.R.drawable.ic_arrow_back_white_36dp;
@@ -29,7 +29,7 @@ public class ToolbarBuilder {
     Toolbar toolbar;
     TextView tv_title;
 
-    public ToolbarBuilder(final Activity activity, Toolbar toolbar) {
+    public TitleBarBuilder(final Activity activity, Toolbar toolbar) {
         this.toolbar = toolbar;
 
         tv_title = (TextView) toolbar.findViewById(R.id.tv_title);
@@ -67,7 +67,7 @@ public class ToolbarBuilder {
     }
 
 
-    public ToolbarBuilder setTitle(String title) {
+    public TitleBarBuilder setTitle(String title) {
         tv_title.setText(title);
         return this;
     }
@@ -79,7 +79,7 @@ public class ToolbarBuilder {
      * @param listener
      * @return
      */
-    public ToolbarBuilder setBackIcon(String description, int iconResId, final ItemClickListener listener) {
+    public TitleBarBuilder setBackIcon(String description, int iconResId, final ItemClickListener listener) {
         toolbar.setNavigationIcon(iconResId);
         toolbar.setNavigationContentDescription(description);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -91,31 +91,31 @@ public class ToolbarBuilder {
         return this;
     }
 
-    public ToolbarBuilder addMenuItem(MyMenuItem menuItem) {
+    public TitleBarBuilder addMenuItem(MyMenuItem menuItem) {
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
         return this;
     }
 
 
-    public ToolbarBuilder addItem(String title, ItemClickListener listener) {
+    public TitleBarBuilder addItem(String title, ItemClickListener listener) {
         MyMenuItem menuItem = new MyMenuItem(title, -1, MyMenuItem.Type.OTHER, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
         return this;
     }
 
-    public ToolbarBuilder addItem(String title, int iconResId, ItemClickListener listener) {
+    public TitleBarBuilder addItem(String title, int iconResId, ItemClickListener listener) {
         MyMenuItem menuItem = new MyMenuItem(title, iconResId, MyMenuItem.Type.OTHER, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
         return this;
     }
 
-    public ToolbarBuilder addShareMenuItem(ItemClickListener listener) {
+    public TitleBarBuilder addShareMenuItem(ItemClickListener listener) {
         MyMenuItem menuItem = new MyMenuItem("分享", R.drawable.ic_share_white, MyMenuItem.Type.SHARE, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
         return this;
     }
 
-    public ToolbarBuilder addSearchMenuItem(ItemClickListener listener) {
+    public TitleBarBuilder addSearchMenuItem(ItemClickListener listener) {
         MyMenuItem menuItem = new MyMenuItem("搜索", R.drawable.ic_search_white, MyMenuItem.Type.SEARCH, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
         return this;

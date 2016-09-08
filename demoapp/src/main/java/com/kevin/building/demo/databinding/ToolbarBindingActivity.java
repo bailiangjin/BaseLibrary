@@ -23,7 +23,7 @@ public class ToolbarBindingActivity extends ToolbarBindingBaseActivity<ActivityD
     @Override
     protected void initView() {
 
-        toolbarBuilder
+        titleBarBuilder
                 .setTitle("测试绑定绑定绑定绑定绑定绑定绑定")
                 .addSearchMenuItem(new ItemClickListener() {
                     @Override
