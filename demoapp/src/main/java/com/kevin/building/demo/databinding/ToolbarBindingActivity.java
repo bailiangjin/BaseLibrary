@@ -11,7 +11,7 @@ import com.kevin.building.model.TaskItemBean;
 /**
  * Created by bailiangjin on 16/9/7.
  */
-public class DataBindingActivity extends DataBindingBaseActivity<ActivityDataBindingBinding> {
+public class ToolbarBindingActivity extends ToolbarBindingBaseActivity<ActivityDataBindingBinding> {
     TaskItemBean itemBean;
 
 
@@ -22,48 +22,41 @@ public class DataBindingActivity extends DataBindingBaseActivity<ActivityDataBin
 
     @Override
     protected void initView() {
-        tv_title.setText("测试绑定绑定绑定绑定绑定绑定绑定");
 
-        addSearchMenuItem(new ItemClickListener() {
+        toolbarBuilder
+                .setTitle("测试绑定绑定绑定绑定绑定绑定绑定")
+                .addSearchMenuItem(new ItemClickListener() {
+                    @Override
+                    public void onClick() {
+                        ToastUtils.shortToast("点击了搜索");
+                    }
+                }).addItem("添加", new ItemClickListener() {
             @Override
             public void onClick() {
-                ToastUtils.shortToast("点击了搜索");
-            }
-        });
-        addItem("添加", -1, new ItemClickListener() {
-            @Override
-            public void onClick() {
 
             }
-        });
-        addShareMenuItem(new ItemClickListener() {
+        }).addShareMenuItem(new ItemClickListener() {
             @Override
             public void onClick() {
                 ToastUtils.shortToast("点击分享");
             }
-        });
-        addItem("测试1", R.drawable.ic_search_white, new ItemClickListener() {
+        }).addItem("测试1", R.drawable.ic_search_white, new ItemClickListener() {
             @Override
             public void onClick() {
 
             }
-        });
-
-        addItem("测试3", R.drawable.ic_search_white, new ItemClickListener() {
+        }).addItem("测试3", R.drawable.ic_search_white, new ItemClickListener() {
             @Override
             public void onClick() {
 
             }
-        });
-
-        addItem("测试4", R.drawable.ic_search_white, new ItemClickListener() {
+        }).addItem("测试4", R.drawable.ic_search_white, new ItemClickListener() {
             @Override
             public void onClick() {
 
                 ToastUtils.shortToast("点击了测试4");
             }
-        });
-        buildMenu();
+        }).build();
 
 
     }
