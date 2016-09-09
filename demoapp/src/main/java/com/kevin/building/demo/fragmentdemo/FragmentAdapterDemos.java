@@ -3,7 +3,6 @@ package com.kevin.building.demo.fragmentdemo;
 import android.os.Message;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
@@ -13,13 +12,18 @@ import com.kevin.building.base.BaseActivity;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/25 15:23
  */
-public class FragmentAdapterDemos  extends BaseActivity{
+public class FragmentAdapterDemos  extends BaseActivity {
 
     private ViewPager vp_images;
 
     @Override
     protected int getLayoutResId() {
         return R.layout.fragment_viewpager_demo;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override

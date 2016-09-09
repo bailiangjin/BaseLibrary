@@ -2,16 +2,15 @@ package com.kevin.building.demo.recycleview;
 
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 import com.kevin.building.databinding.ActivityRecycleviewBinding;
 
 /**
  * Created by bailiangjin on 16/7/4.
  */
-public class RecyclerViewDemoActivity extends BaseActivity2<ActivityRecycleviewBinding> {
+public class RecyclerViewDemoActivity extends BaseActivity<ActivityRecycleviewBinding> {
 
     @Override
     protected int getLayoutResId() {

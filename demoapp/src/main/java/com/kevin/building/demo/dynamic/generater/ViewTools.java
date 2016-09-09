@@ -1,9 +1,9 @@
 package com.kevin.building.demo.dynamic.generater;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 
-import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.CBGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.RBGroup;
@@ -12,9 +12,9 @@ import com.kevin.building.demo.dynamic.bean.viewbean.item.EditTextItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.item.TextItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.BtnType;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.TxtType;
-import com.kevin.building.demo.dynamic.view.base.BaseTextView;
 import com.kevin.building.demo.dynamic.view.base.BaseButton;
 import com.kevin.building.demo.dynamic.view.base.BaseEditText;
+import com.kevin.building.demo.dynamic.view.base.BaseTextView;
 import com.kevin.building.demo.dynamic.view.impl.button.SaveButton;
 import com.kevin.building.demo.dynamic.view.impl.et.CommonEditText;
 import com.kevin.building.demo.dynamic.view.impl.group.PhotoBtnGridView;
@@ -98,33 +98,33 @@ public class ViewTools {
     /**
      * 生成跳转按钮组
      *
-     * @param baseActivity
+     * @param context
      * @param btnGroup
      * @return
      */
-    public static View getSkipBtnGroup(BaseActivity baseActivity, BtnGroup btnGroup) {
+    public static View getSkipBtnGroup(Activity context, BtnGroup btnGroup) {
 
-        if (null == btnGroup || null == baseActivity) {
+        if (null == btnGroup || null == context) {
             return null;
         }
 
-        return new SkipBtnGridView(baseActivity, btnGroup);
+        return new SkipBtnGridView(context, btnGroup);
     }
 
 
     /**
      * 生成拍照按钮组
      *
-     * @param baseActivity
+     * @param context
      * @param btnGroup
      * @return
      */
-    public static View getPhotoBtnGroup(BaseActivity baseActivity, BtnGroup btnGroup) {
-        if (null == btnGroup || null == baseActivity) {
+    public static View getPhotoBtnGroup(Activity context, BtnGroup btnGroup) {
+        if (null == btnGroup || null == context) {
             return null;
         }
 
-        return new PhotoBtnGridView(baseActivity, btnGroup);
+        return new PhotoBtnGridView(context, btnGroup);
     }
 
 

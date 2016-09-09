@@ -9,7 +9,7 @@ import com.kevin.baselibrary.interfaze.callback.HttpCallback;
 import com.kevin.baselibrary.net.OKHttpUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.networkdemo.weather.WeatherRequest;
 import com.kevin.building.demo.networkdemo.weather.model.WeatherSK;
 
@@ -20,7 +20,7 @@ import java.util.HashMap;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/10 10:53
  */
-public class NetworkActivity extends BaseActivity2 implements View.OnClickListener{
+public class NetworkActivity extends BaseActivity implements View.OnClickListener{
 
     protected Button btn1;
     protected Button btn2;

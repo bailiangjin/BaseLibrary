@@ -1,7 +1,6 @@
 package com.kevin.baselibrary.activity;
 
 import android.os.Message;
-import android.view.View;
 
 import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.base.SuperBaseActivity;
@@ -43,14 +42,46 @@ public class DemoActivity extends SuperBaseActivity {
 
 
 
-    @Override
-    protected void onViewClick(View v) {
-        //TODO: 全局点击事件 回调监听处
-    }
+
 
     @Override
     protected void handleMsg(Message msg) {
         //TODO: handler msg 回调处理处
+
+    }
+
+    @Override
+    public void shortToast(String string) {
+
+    }
+
+    @Override
+    public void shortToast(int resId) {
+
+    }
+
+    @Override
+    public void longToast(String string) {
+
+    }
+
+    @Override
+    public void longToast(int resId) {
+
+    }
+
+    @Override
+    public void showLoadDataDialog() {
+
+    }
+
+    @Override
+    public void showProgressDialog(String content) {
+
+    }
+
+    @Override
+    public void hideProgressDialog() {
 
     }
 }

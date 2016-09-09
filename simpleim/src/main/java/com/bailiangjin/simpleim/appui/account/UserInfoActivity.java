@@ -33,7 +33,7 @@ public class UserInfoActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        commonTitleView.setTitleText(getString(R.string.friend_info));
+        titleBarBuilder.setTitleText(getString(R.string.friend_info));
     }
 
     @Override

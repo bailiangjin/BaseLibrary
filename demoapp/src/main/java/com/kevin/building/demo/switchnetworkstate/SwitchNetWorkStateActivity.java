@@ -10,10 +10,15 @@ import com.kevin.building.base.BaseActivity;
 /**
  * Created by bailiangjin on 16/3/22.
  */
-public class SwitchNetWorkStateActivity extends BaseActivity{
+public class SwitchNetWorkStateActivity extends BaseActivity {
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_switch_network_state;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override

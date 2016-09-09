@@ -10,11 +10,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.WindowManager;
 
 import com.kevin.baselibrary.base.SuperBaseFragment;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 import com.kevin.building.fragment.Fragment1;
 import com.kevin.building.fragment.Fragment2;
 
-public class MyFragmentActivity extends BaseActivity2
+public class MyFragmentActivity extends BaseActivity
 {
 
 	private Fragment1 fragment1;

@@ -3,12 +3,10 @@ package com.kevin.building.demo.widget.searchbar;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
-import android.view.View;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
 import com.kevin.baselibrary.interfaze.listener.SearchBarListener;
 import com.kevin.baselibrary.view.SearchBar;
 import com.kevin.building.R;
@@ -35,22 +33,16 @@ public class SearchActivity extends BaseActivity {
     }
 
     @Override
+    protected void initIntentData() {
+
+    }
+
+    @Override
     protected void initView() {
 
-        commonTitleView.setTitleText("搜索");
-        commonTitleView.setTitleViewListener(new CommonTitleListener() {
+        titleBarBuilder.setTitleText("搜索");
 
-            @Override
-            public boolean onRightImgClick() {
-                return false;
-            }
 
-            @Override
-            public boolean onRightBtnClick() {
-                shortToast("点击了设置");
-                return false;
-            }
-        });
         searchBar = (SearchBar) findViewById(R.id.search_bar);
         searchBar.setHint("请输入关键词搜索");
         searchBar.setSearchBarListener(new SearchBarListener() {

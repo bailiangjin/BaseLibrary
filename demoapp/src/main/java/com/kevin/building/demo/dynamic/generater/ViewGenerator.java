@@ -1,9 +1,9 @@
 package com.kevin.building.demo.dynamic.generater;
 
 
+import android.app.Activity;
 import android.view.View;
 
-import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.CBGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.RBGroup;
@@ -26,7 +26,7 @@ public interface ViewGenerator {
      * @param textItem
      * @return
      */
-    public View getTextView(BaseActivity context, TextItem textItem);
+    public View getTextView(Activity context, TextItem textItem);
 
     /**
      * 获取 输入框条目View
@@ -34,7 +34,7 @@ public interface ViewGenerator {
      * @param editTextItem
      * @return
      */
-    public View getEditText(BaseActivity context, EditTextItem editTextItem);
+    public View getEditText(Activity context, EditTextItem editTextItem);
 
     /**
      * 获取 按钮条目View
@@ -42,7 +42,7 @@ public interface ViewGenerator {
      * @param btnItem
      * @return
      */
-    public View getButton(BaseActivity context, BtnItem btnItem);
+    public View getButton(Activity context, BtnItem btnItem);
 
     /**
      * 获取 跳转按钮组条目View
@@ -50,7 +50,7 @@ public interface ViewGenerator {
      * @param btnGroup
      * @return
      */
-    public View getSkipBtnGroup(BaseActivity context, BtnGroup btnGroup);
+    public View getSkipBtnGroup(Activity context, BtnGroup btnGroup);
 
     /**
      * 获取 拍照按钮组条目View
@@ -58,7 +58,7 @@ public interface ViewGenerator {
      * @param btnGroup
      * @return
      */
-    public View getPhotoBtnGroup(BaseActivity context, BtnGroup btnGroup);
+    public View getPhotoBtnGroup(Activity context, BtnGroup btnGroup);
 
     /**
      * 获取 单选按钮组条目View
@@ -66,7 +66,7 @@ public interface ViewGenerator {
      * @param rbGroup
      * @return
      */
-    public View getRbGroup(BaseActivity context, RBGroup rbGroup);
+    public View getRbGroup(Activity context, RBGroup rbGroup);
 
     /**
      * 获取 多选按钮组条目View
@@ -74,5 +74,5 @@ public interface ViewGenerator {
      * @param cbGroup
      * @return
      */
-    public View getCbGroup(BaseActivity context, CBGroup cbGroup);
+    public View getCbGroup(Activity context, CBGroup cbGroup);
 }

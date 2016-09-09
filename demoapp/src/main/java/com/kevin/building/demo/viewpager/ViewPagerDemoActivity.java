@@ -3,7 +3,6 @@ package com.kevin.building.demo.viewpager;
 import android.os.Message;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 
 import com.kevin.building.base.BaseActivity;
 
@@ -19,6 +18,11 @@ public class ViewPagerDemoActivity extends BaseActivity {
     @Override
     protected int getLayoutResId() {
         return 0;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override
@@ -39,10 +43,6 @@ public class ViewPagerDemoActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onViewClick(View v) {
-
-    }
 
     @Override
     protected void handleMsg(Message msg) {

@@ -4,12 +4,12 @@ import android.os.Handler;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.app.AppUtils;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 
 /**
  * Splash页
  */
-public class SplashActivity extends BaseActivity2
+public class SplashActivity extends BaseActivity
 {
 
 	private TextView tv_app_version_name;

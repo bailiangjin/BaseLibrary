@@ -1,11 +1,11 @@
 package com.kevin.building.demo.dynamic.view.base;
 
+import android.app.Activity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dynamic.adapter.AbsBaseBtnGroupAdapter;
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.BtnGroup;
@@ -29,7 +29,7 @@ public abstract class BaseGridViewNew extends BaseView {
     //    public BaseGridViewNew(Context context, BaseItem baseItem) {
 //        super(context, baseItem);
 //    }
-    public BaseGridViewNew(BaseActivity baseActivity, BaseItem baseItem) {
+    public BaseGridViewNew(Activity baseActivity, BaseItem baseItem) {
         super(baseActivity, baseItem);
     }
 
@@ -69,7 +69,7 @@ public abstract class BaseGridViewNew extends BaseView {
      * @param btnItemList
      * @return
      */
-    protected abstract MyOnClickListener getOnClickCallback(BaseActivity baseActivity, List<BtnItem> btnItemList);
+    protected abstract MyOnClickListener getOnClickCallback(Activity baseActivity, List<BtnItem> btnItemList);
 
     /**
      *  获取GridView Adapter适配器
@@ -77,5 +77,5 @@ public abstract class BaseGridViewNew extends BaseView {
      * @param btnItemList
      * @return
      */
-    protected abstract AbsBaseBtnGroupAdapter getAdapter(BaseActivity baseActivity, List<BtnItem> btnItemList);
+    protected abstract AbsBaseBtnGroupAdapter getAdapter(Activity baseActivity, List<BtnItem> btnItemList);
 }

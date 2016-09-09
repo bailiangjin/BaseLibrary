@@ -10,12 +10,12 @@ import com.kevin.baselibrary.model.art.text.ColorText;
 import com.kevin.baselibrary.model.art.text.StyleText;
 import com.kevin.baselibrary.utils.TVUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 
 /**
  * Created by bailiangjin on 16/4/28.
  */
-public class TestActivity extends BaseActivity2 {
+public class TestActivity extends BaseActivity {
 
     private TextView tv_content;
     private TextView tv_style_content;

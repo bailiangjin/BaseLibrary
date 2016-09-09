@@ -1,6 +1,7 @@
 package com.kevin.building.demo.dynamic.view.impl.group;
 
-import com.kevin.building.base.BaseActivity;
+import android.app.Activity;
+
 import com.kevin.building.demo.dynamic.DetailActivity;
 import com.kevin.building.demo.dynamic.adapter.AbsBaseBtnGroupAdapter;
 import com.kevin.building.demo.dynamic.adapter.BtnPhotoGroupAdapter;
@@ -21,13 +22,13 @@ import java.util.List;
 public class PhotoBtnGridView extends BaseGridViewNew {
 
 
-    public PhotoBtnGridView(BaseActivity baseActivity, BaseItem baseItem) {
-        super(baseActivity, baseItem);
+    public PhotoBtnGridView(Activity context, BaseItem baseItem) {
+        super(context, baseItem);
     }
 
 
     @Override
-    protected MyOnClickListener getOnClickCallback(final BaseActivity baseActivity, final List<BtnItem> btnItemList) {
+    protected MyOnClickListener getOnClickCallback(final Activity baseActivity, final List<BtnItem> btnItemList) {
         return new MyOnClickListener() {
             @Override
             public void onClick(int position) {
@@ -41,7 +42,7 @@ public class PhotoBtnGridView extends BaseGridViewNew {
     }
 
     @Override
-    protected AbsBaseBtnGroupAdapter getAdapter(BaseActivity baseActivity, List<BtnItem> btnItemList) {
+    protected AbsBaseBtnGroupAdapter getAdapter(Activity context, List<BtnItem> btnItemList) {
         return new BtnPhotoGroupAdapter(baseActivity, btnItemList);
     }
 }

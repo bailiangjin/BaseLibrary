@@ -1,8 +1,8 @@
 package com.kevin.building.demo.dynamic.generater;
 
+import android.app.Activity;
 import android.view.View;
 
-import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dynamic.bean.viewbean.ViewBean;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.BtnGroup;
 import com.kevin.building.demo.dynamic.bean.viewbean.group.CBGroup;
@@ -26,7 +26,7 @@ public class ViewGeneratorImpl implements ViewGenerator {
     private View view;
 
 
-    public ViewGeneratorImpl(BaseActivity context, ViewBean viewBean) {
+    public ViewGeneratorImpl(Activity context, ViewBean viewBean) {
         int itemType = viewBean.getViewItemType();
         switch (itemType) {
             case ViewBeanType.TEXT:
@@ -74,38 +74,38 @@ public class ViewGeneratorImpl implements ViewGenerator {
 
 
     @Override
-    public View getTextView(BaseActivity context, TextItem textItem) {
+    public View getTextView(Activity context, TextItem textItem) {
         return ViewTools.getTextView(context, textItem);
 
     }
 
     @Override
-    public View getEditText(BaseActivity context, EditTextItem editTextItem) {
+    public View getEditText(Activity context, EditTextItem editTextItem) {
         return ViewTools.getEditText(context, editTextItem);
     }
 
     @Override
-    public View getButton(BaseActivity context, BtnItem btnItem) {
+    public View getButton(Activity context, BtnItem btnItem) {
         return ViewTools.getButton(context, btnItem);
     }
 
     @Override
-    public View getSkipBtnGroup(BaseActivity context, BtnGroup btnGroup) {
+    public View getSkipBtnGroup(Activity context, BtnGroup btnGroup) {
         return ViewTools.getSkipBtnGroup(context, btnGroup);
     }
 
     @Override
-    public View getPhotoBtnGroup(BaseActivity context, BtnGroup btnGroup) {
+    public View getPhotoBtnGroup(Activity context, BtnGroup btnGroup) {
         return ViewTools.getPhotoBtnGroup(context, btnGroup);
     }
 
     @Override
-    public View getRbGroup(BaseActivity context, RBGroup rbGroup) {
+    public View getRbGroup(Activity context, RBGroup rbGroup) {
         return ViewTools.getRbGroup(context, rbGroup);
     }
 
     @Override
-    public View getCbGroup(BaseActivity context, CBGroup cbGroup) {
+    public View getCbGroup(Activity context, CBGroup cbGroup) {
         return ViewTools.getCbGroup(context, cbGroup);
     }
 }

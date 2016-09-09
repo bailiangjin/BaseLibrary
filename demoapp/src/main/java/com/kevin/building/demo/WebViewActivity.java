@@ -8,13 +8,13 @@ import com.kevin.baselibrary.activity.ItemClickListener;
 import com.kevin.baselibrary.utils.WebViewUtils;
 import com.kevin.baselibrary.widget.utils.PNDialog;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 
 /**
  * 作者：bailiangjin  bailiangjin@gmail.com
  * 创建时间：15/12/13 01:00
  */
-public class WebViewActivity extends BaseActivity2 {
+public class WebViewActivity extends BaseActivity {
 
     private WebView webView;
 

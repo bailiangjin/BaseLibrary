@@ -1,6 +1,7 @@
 package com.kevin.building.demo.dynamic.view.impl.group;
 
-import com.kevin.building.base.BaseActivity;
+import android.app.Activity;
+
 import com.kevin.building.demo.dynamic.DetailActivity;
 import com.kevin.building.demo.dynamic.adapter.AbsBaseBtnGroupAdapter;
 import com.kevin.building.demo.dynamic.adapter.BtnSkipGroupAdapter;
@@ -21,27 +22,27 @@ import java.util.List;
 public class SkipBtnGridView extends BaseGridViewNew {
 
 
-    public SkipBtnGridView(BaseActivity baseActivity, BaseItem baseItem) {
-        super(baseActivity, baseItem);
+    public SkipBtnGridView(Activity context, BaseItem baseItem) {
+        super(context, baseItem);
     }
 
 
     @Override
-    protected MyOnClickListener getOnClickCallback(final BaseActivity baseActivity, final List<BtnItem> btnItemList) {
+    protected MyOnClickListener getOnClickCallback(final Activity context, final List<BtnItem> btnItemList) {
         return new MyOnClickListener() {
             @Override
             public void onClick(int position) {
                 BtnItem item = btnItemList.get(position);
                 HashMap<String, String> paramMap = new HashMap<>();
                 paramMap.put("name", item.getIndexText());
-                ActivityUtils.startActivity(baseActivity, DetailActivity.class, paramMap);
+                ActivityUtils.startActivity(context, DetailActivity.class, paramMap);
 
             }
         };
     }
 
     @Override
-    protected AbsBaseBtnGroupAdapter getAdapter(BaseActivity baseActivity, List<BtnItem> btnItemList) {
-        return new BtnSkipGroupAdapter(baseActivity, btnItemList);
+    protected AbsBaseBtnGroupAdapter getAdapter(Activity context, List<BtnItem> btnItemList) {
+        return new BtnSkipGroupAdapter(context, btnItemList);
     }
 }

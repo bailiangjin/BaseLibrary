@@ -12,7 +12,7 @@ import com.kevin.building.R;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/14 14:44
  */
-public abstract class BtnBaseActivity extends BaseActivity2 implements View.OnClickListener{
+public abstract class BtnBaseActivity extends BaseActivity implements View.OnClickListener{
     protected Button btn1;
     protected Button btn2;
     protected Button btn3;

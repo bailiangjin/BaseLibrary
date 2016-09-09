@@ -26,7 +26,7 @@
         <activity
             android:name=".appui.account.LoginActivity"
             android:label="@string/login"
-            android:theme="@android:style/Theme.NoTitleBar" />
+            />
         <activity
             android:name=".appui.account.AddFriendActivity"
             android:label="@string/addcontacts" />

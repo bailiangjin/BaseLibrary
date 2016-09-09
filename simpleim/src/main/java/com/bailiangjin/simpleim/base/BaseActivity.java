@@ -2,6 +2,7 @@ package com.bailiangjin.simpleim.base;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.MotionEvent;
@@ -12,13 +13,14 @@ import com.bailiangjin.simpleim.constants.BroadcastAction;
 import com.bugtags.library.Bugtags;
 import com.kevin.baselibrary.base.SuperBaseActivity;
 import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseActivity extends SuperBaseActivity {
+public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         LogUtils.d("Activity:::-->>onCreate");
@@ -138,13 +140,83 @@ public abstract class BaseActivity extends SuperBaseActivity {
     }
 
 
+    /**
+     * shortToast toast by string
+     *
+     * @param string
+     */
+    public void shortToast(String string) {
+        ToastUtils.shortToast(string);
+    }
+
+    /**
+     * shortToast toast by res id
+     *
+     * @param resId
+     */
+    public void shortToast(int resId) {
+        ToastUtils.shortToast(resId);
+    }
+
+    /**
+     * long toast
+     *
+     * @param string
+     */
+    public void longToast(String string) {
+        ToastUtils.longToast(string);
+    }
+
+    /**
+     * long toast
+     *
+     * @param resId
+     */
+    public void longToast(int resId) {
+        ToastUtils.longToast(resId);
+    }
+
+
+    /**
+     * 显示进度dialog
+     *
+     * @param content 提示文字内容
+     */
+    public void showProgressDialog(String content) {
+
+    }
+
+    /**
+     * 隐藏进度dialog
+     */
+    public void hideProgressDialog() {
+    }
+
+    /**
+     * 显示正在加载数据进度dialog
+     */
+    public void showLoadDataDialog() {
+        showProgressDialog("正在加载数据...");
+    }
+
+
+
+
+    public T getBinding() {
+        return (T) super.getBinding();
+    }
+
+
     @Override
     protected void handleMsg(Message msg) {
-        // TODO Auto-generated method stub
 
     }
 
     @Override
+    public void onClick(View v) {
+        onViewClick(v);
+    }
+
     protected void onViewClick(View v) {
 
     }

@@ -42,7 +42,7 @@ public class RegistActivity extends BaseActivity
 
 	@Override
 	protected void initView() {
-		commonTitleView.setTitleText(getString(R.string.register));
+		titleBarBuilder.setTitleText(getString(R.string.register));
 		findViewById(R.id.btn_regist).setOnClickListener(this);
 		et_username= (EditText) findViewById(R.id.et_username);
 		et_password= (EditText) findViewById(R.id.et_pwd);

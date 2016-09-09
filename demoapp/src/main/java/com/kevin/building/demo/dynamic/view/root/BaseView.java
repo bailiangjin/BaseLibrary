@@ -1,10 +1,10 @@
 package com.kevin.building.demo.dynamic.view.root;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
 
-import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dynamic.bean.viewbean.base.BaseItem;
 
 /**
@@ -19,12 +19,12 @@ abstract public class BaseView extends FrameLayout {
     private String textContent;
     private String paramJson;
 
-    protected BaseActivity baseActivity;
+    protected Activity baseActivity;
 
     public BaseView(Context context, BaseItem baseItem) {
         super(context);
-        if (context instanceof BaseActivity) {
-            this.baseActivity = (BaseActivity) context;
+        if (context instanceof Activity) {
+            this.baseActivity = (Activity) context;
         }
         LayoutInflater.from(context).inflate(getLayoutId(), this);
         initBase(baseItem);

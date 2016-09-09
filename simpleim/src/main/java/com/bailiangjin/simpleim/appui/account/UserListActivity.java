@@ -2,11 +2,10 @@ package com.bailiangjin.simpleim.appui.account;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.view.View;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.base.BaseActivity;
-import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
+import com.kevin.baselibrary.activity.ItemClickListener;
 
 /**
  * 用户列表页
@@ -32,23 +31,14 @@ public class UserListActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        commonTitleView.setTitleText(getString(R.string.contacts));
-        commonTitleView.setRightBtnText(getString(R.string.add));
-        commonTitleView.setRightBtnVisibility(View.VISIBLE);
-
-        commonTitleView.setTitleViewListener(new CommonTitleListener() {
-
+        titleBarBuilder.setTitleText(getString(R.string.contacts));
+        titleBarBuilder.addMenuItem("添加", new ItemClickListener() {
             @Override
-            public boolean onRightImgClick() {
-                return false;
-            }
-
-            @Override
-            public boolean onRightBtnClick() {
+            public void onClick() {
                 AddFriendActivity.start(UserListActivity.this);
-                return true;
             }
-        });
+        }).build();
+
     }
 
     @Override

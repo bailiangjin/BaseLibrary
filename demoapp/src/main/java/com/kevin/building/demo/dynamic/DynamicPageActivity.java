@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.bailiangjin.javabaselib.utils.FileUtils;
+import com.bailiangjin.javabaselib.utils.GsonUtils;
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
@@ -26,8 +28,6 @@ import com.kevin.building.demo.dynamic.bean.viewbean.type.BtnGroupType;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.BtnType;
 import com.kevin.building.demo.dynamic.bean.viewbean.type.TxtType;
 import com.kevin.building.demo.dynamic.generater.ViewGeneratorImpl;
-import com.bailiangjin.javabaselib.utils.FileUtils;
-import com.bailiangjin.javabaselib.utils.GsonUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -51,6 +51,11 @@ public class DynamicPageActivity extends BaseActivity {
     @Override
     protected int getLayoutResId() {
         return -1;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override

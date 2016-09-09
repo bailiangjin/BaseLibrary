@@ -10,14 +10,14 @@ import com.kevin.baselibrary.utils.FileListenerUtils;
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 
 import java.io.File;
 
 /**
  * Created by bailiangjin on 16/4/5.
  */
-public class FileListenerActivity  extends BaseActivity2 {
+public class FileListenerActivity  extends BaseActivity {
 
     private String filePath = FilePathUtil.getAppPath()+ File.separator+"test.txt";
 

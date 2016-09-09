@@ -5,14 +5,14 @@ import android.view.View;
 import com.kevin.baselibrary.activity.ItemClickListener;
 import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 import com.kevin.building.databinding.ActivityDataBindingBinding;
 import com.kevin.building.model.TaskItemBean;
 
 /**
  * Created by bailiangjin on 16/9/7.
  */
-public class ToolbarBindingActivity extends BaseActivity2<ActivityDataBindingBinding> {
+public class ToolbarBindingActivity extends BaseActivity<ActivityDataBindingBinding> {
     TaskItemBean itemBean;
 
 

@@ -5,12 +5,12 @@ import android.view.View;
 
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity2;
+import com.kevin.building.base.BaseActivity;
 import com.kevin.building.databinding.ActivityDataBindingBinding;
 import com.kevin.building.db.dao.PersonDao;
 import com.kevin.building.db.modle.Person;
 
-public class DatabaseActivity extends BaseActivity2<ActivityDataBindingBinding> {
+public class DatabaseActivity extends BaseActivity<ActivityDataBindingBinding> {
 
 
     private static final int INSERT_USER_MSG_WHAT = 101;
