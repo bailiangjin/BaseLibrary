@@ -5,19 +5,19 @@ import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bailiangjin.javabaselib.utils.FileUtils;
 import com.kevin.baselibrary.utils.FileListenerUtils;
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
-import com.bailiangjin.javabaselib.utils.FileUtils;
+import com.kevin.building.base.BaseActivity2;
 
 import java.io.File;
 
 /**
  * Created by bailiangjin on 16/4/5.
  */
-public class FileListenerActivity  extends BaseActivity{
+public class FileListenerActivity  extends BaseActivity2 {
 
     private String filePath = FilePathUtil.getAppPath()+ File.separator+"test.txt";
 
@@ -40,6 +40,11 @@ public class FileListenerActivity  extends BaseActivity{
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_filelistener;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override

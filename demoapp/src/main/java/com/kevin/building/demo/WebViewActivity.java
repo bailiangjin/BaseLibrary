@@ -2,20 +2,19 @@ package com.kevin.building.demo;
 
 import android.os.Message;
 import android.view.KeyEvent;
-import android.view.View;
 import android.webkit.WebView;
 
-import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
+import com.kevin.baselibrary.activity.ItemClickListener;
 import com.kevin.baselibrary.utils.WebViewUtils;
 import com.kevin.baselibrary.widget.utils.PNDialog;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
+import com.kevin.building.base.BaseActivity2;
 
 /**
  * 作者：bailiangjin  bailiangjin@gmail.com
  * 创建时间：15/12/13 01:00
  */
-public class WebViewActivity extends BaseActivity {
+public class WebViewActivity extends BaseActivity2 {
 
     private WebView webView;
 
@@ -25,28 +24,27 @@ public class WebViewActivity extends BaseActivity {
     }
 
     @Override
+    protected void initIntentData() {
+
+    }
+
+    @Override
     protected void initView() {
-        commonTitleView.setTitleText("测试WebView");
-        commonTitleView.setRightBtnText("关闭");
-        commonTitleView.setRightBtnVisibility(View.VISIBLE);
-        commonTitleView.setTitleViewListener(new CommonTitleListener() {
+        titleBarBuilder.setTitleText("测试WebView");
+        titleBarBuilder.addMenuItem("关闭", new ItemClickListener() {
             @Override
-            public boolean onRightImgClick() {
-                return false;
-            }
-
-            @Override
-            public boolean onLeftImgClick() {
-                onWebViewBack();
-               return true;
-            }
-
-            @Override
-            public boolean onRightBtnClick() {
+            public void onClick() {
                 showBackToSourceDialog();
-                return true;
+            }
+        }).build();
+
+        titleBarBuilder.setBackIcon("返回", titleBarBuilder.defaultBackIconResId, new ItemClickListener() {
+            @Override
+            public void onClick() {
+                onWebViewBack();
             }
         });
+
         webView = (WebView) findViewById(R.id.webview_test);
         //WebViewUtils.load(webView,"file:///android_asset/html/test.html");
         WebViewUtils.load(webView, "http://www.baidu.com");

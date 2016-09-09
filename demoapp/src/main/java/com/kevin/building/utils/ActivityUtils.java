@@ -1,10 +1,10 @@
 package com.kevin.building.utils;
 
+import android.app.Activity;
 import android.content.Intent;
 
 import com.kevin.building.MainActivity;
 import com.kevin.building.app.AppManager;
-import com.kevin.building.base.BaseActivity;
 import com.kevin.building.demo.dbtest.DatabaseActivity;
 
 import java.util.HashMap;
@@ -20,23 +20,23 @@ import java.util.Map;
 public class ActivityUtils
 {
 
-	private static void startActivity(BaseActivity context, Intent intent)
+	private static void startActivity(Activity context, Intent intent)
 	{
 		AppManager.getInstance().startActivity(context, intent);
 	}
 
-	public static void startAMainActivity(BaseActivity context)
+	public static void startAMainActivity(Activity context)
 	{
 		Intent intent = new Intent(context, MainActivity.class);
 		startActivity(context, intent);
 	}
-	public static void startActivity(BaseActivity context,Class activityClass)
+	public static void startActivity(Activity context,Class activityClass)
 	{
 		Intent intent = new Intent(context, activityClass);
 		startActivity(context, intent);
 	}
 
-	public static void startActivity(BaseActivity context,Class activityClass,HashMap<String,String> paramMap)
+	public static void startActivity(Activity context,Class activityClass,HashMap<String,String> paramMap)
 	{
 		Intent intent = new Intent(context, activityClass);
 		String key,value;
@@ -49,7 +49,7 @@ public class ActivityUtils
 		startActivity(context, intent);
 	}
 
-	public static void startDatabaseActivity(BaseActivity context)
+	public static void startDatabaseActivity(Activity context)
 	{
 		Intent intent = new Intent(context, DatabaseActivity.class);
 		startActivity(context, intent);

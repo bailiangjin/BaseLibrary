@@ -192,15 +192,15 @@ public abstract class BaseActivity2<T extends ViewDataBinding> extends ToolbarBi
     }
 
 
-    @Override
-    protected void handleMsg(Message msg) {
-        // TODO Auto-generated method stub
 
-    }
 
     public T getBinding() {
         return (T) super.getBinding();
     }
 
 
+    @Override
+    protected void handleMsg(Message msg) {
+
+    }
 }

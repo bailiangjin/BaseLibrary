@@ -26,9 +26,14 @@ public class LaunchModeActivity1 extends BtnBaseActivity {
     }
 
     @Override
+    protected void initIntentData() {
+
+    }
+
+    @Override
     protected void initView() {
         super.initView();
-        commonTitleView.setTitleText("Activity1");
+        titleBarBuilder.setTitleText("Activity1");
         btn1.setText("跳转到Launch1");
         btn2.setText("跳转到Launch2");
         btn3.setText("跳转到Launch3");

@@ -30,7 +30,7 @@ public class DatabaseActivity extends BaseActivity2<ActivityDataBindingBinding> 
 
     @Override
     protected void initView() {
-        titleBarBuilder.setTitle("测试数据库");
+        titleBarBuilder.setTitleText("测试数据库");
     }
 
     @Override

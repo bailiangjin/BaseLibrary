@@ -30,13 +30,13 @@ public class ToolbarBindingActivity extends BaseActivity2<ActivityDataBindingBin
     protected void initView() {
 
         titleBarBuilder
-                .setTitle("测试绑定绑定绑定绑定绑定绑定绑定")
+                .setTitleText("测试绑定绑定绑定绑定绑定绑定绑定")
                 .addSearchMenuItem(new ItemClickListener() {
                     @Override
                     public void onClick() {
                         ToastUtils.shortToast("点击了搜索");
                     }
-                }).addItem("添加", new ItemClickListener() {
+                }).addMenuItem("添加", new ItemClickListener() {
             @Override
             public void onClick() {
 
@@ -46,17 +46,17 @@ public class ToolbarBindingActivity extends BaseActivity2<ActivityDataBindingBin
             public void onClick() {
                 ToastUtils.shortToast("点击分享");
             }
-        }).addItem("测试1", R.drawable.ic_search_white, new ItemClickListener() {
+        }).addMenuItem("测试1", R.drawable.ic_search_white, new ItemClickListener() {
             @Override
             public void onClick() {
 
             }
-        }).addItem("测试3", R.drawable.ic_search_white, new ItemClickListener() {
+        }).addMenuItem("测试3", R.drawable.ic_search_white, new ItemClickListener() {
             @Override
             public void onClick() {
 
             }
-        }).addItem("测试4", R.drawable.ic_search_white, new ItemClickListener() {
+        }).addMenuItem("测试4", R.drawable.ic_search_white, new ItemClickListener() {
             @Override
             public void onClick() {
 

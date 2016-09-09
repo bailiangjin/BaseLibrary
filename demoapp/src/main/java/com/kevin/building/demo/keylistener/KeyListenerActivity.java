@@ -5,15 +5,20 @@ import android.view.KeyEvent;
 import android.view.View;
 
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
+import com.kevin.building.base.BaseActivity2;
 
 /**
  * Created by bailiangjin on 16/3/22.
  */
-public class KeyListenerActivity extends BaseActivity{
+public class KeyListenerActivity extends BaseActivity2 {
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_keylistener;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override

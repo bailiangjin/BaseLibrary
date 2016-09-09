@@ -1,11 +1,9 @@
 package com.kevin.building;
 
 import android.os.Handler;
-import android.view.View;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.app.AppUtils;
-import com.kevin.building.base.BaseActivity;
 import com.kevin.building.base.BaseActivity2;
 
 /**

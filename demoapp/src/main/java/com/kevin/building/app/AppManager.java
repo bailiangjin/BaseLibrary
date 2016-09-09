@@ -1,9 +1,9 @@
 package com.kevin.building.app;
 
+import android.app.Activity;
 import android.content.Intent;
 
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
 
 /**
  * 应用程序Activity管理类：用于Activity管理和应用程序
@@ -158,7 +158,7 @@ public class AppManager {
      * @param activity
      * @param intent
      */
-    public void startActivity(BaseActivity activity, Intent intent) {
+    public void startActivity(Activity activity, Intent intent) {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         // appIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         activity.startActivity(intent);

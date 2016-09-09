@@ -4,14 +4,14 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 
+import com.bailiangjin.javabaselib.utils.GsonUtils;
 import com.kevin.baselibrary.interfaze.callback.HttpCallback;
 import com.kevin.baselibrary.net.OKHttpUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
+import com.kevin.building.base.BaseActivity2;
 import com.kevin.building.demo.networkdemo.weather.WeatherRequest;
 import com.kevin.building.demo.networkdemo.weather.model.WeatherSK;
-import com.bailiangjin.javabaselib.utils.GsonUtils;
 
 import java.util.HashMap;
 
@@ -20,7 +20,7 @@ import java.util.HashMap;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/12/10 10:53
  */
-public class NetworkActivity extends BaseActivity {
+public class NetworkActivity extends BaseActivity2 implements View.OnClickListener{
 
     protected Button btn1;
     protected Button btn2;
@@ -37,8 +37,13 @@ public class NetworkActivity extends BaseActivity {
     }
 
     @Override
+    protected void initIntentData() {
+
+    }
+
+    @Override
     protected void initView() {
-        commonTitleView.setTitleText("网络模块");
+        titleBarBuilder.setTitleText("网络模块");
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -69,7 +74,7 @@ public class NetworkActivity extends BaseActivity {
     }
 
     @Override
-    protected void onViewClick(View v) {
+    public void onClick(View v) {
 
         switch (v.getId()) {
             case R.id.btn1:
@@ -211,4 +216,6 @@ public class NetworkActivity extends BaseActivity {
     protected void handleMsg(Message msg) {
 
     }
+
+
 }

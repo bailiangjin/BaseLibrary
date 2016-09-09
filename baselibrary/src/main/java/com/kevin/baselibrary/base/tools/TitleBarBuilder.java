@@ -23,9 +23,9 @@ import java.util.Map;
 public class TitleBarBuilder {
 
     private static final int defaultBgResId = R.drawable.title_gradient_bg;
-    private static final int defaultBackIconResId = R.drawable.ic_arrow_back_white_36dp;
-    private static final int defaultSearchIconResId = R.drawable.ic_search_white;
-    private static final int defaultShareIconResId = R.drawable.ic_share_white;
+    public static final int defaultBackIconResId = R.drawable.ic_arrow_back_white_36dp;
+    public static final int defaultSearchIconResId = R.drawable.ic_search_white;
+    public static final int defaultShareIconResId = R.drawable.ic_share_white;
 
     Map<String, MyMenuItem> itemLinkedHashMap = new LinkedHashMap<>();
 
@@ -71,7 +71,7 @@ public class TitleBarBuilder {
     }
 
 
-    public TitleBarBuilder setTitle(String title) {
+    public TitleBarBuilder setTitleText(String title) {
         tv_title.setText(title);
         return this;
     }
@@ -141,13 +141,13 @@ public class TitleBarBuilder {
     }
 
 
-    public TitleBarBuilder addItem(String title, ItemClickListener listener) {
+    public TitleBarBuilder addMenuItem(String title, ItemClickListener listener) {
         MyMenuItem menuItem = new MyMenuItem(title, -1, MyMenuItem.Type.OTHER, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
         return this;
     }
 
-    public TitleBarBuilder addItem(String title, int iconResId, ItemClickListener listener) {
+    public TitleBarBuilder addMenuItem(String title, int iconResId, ItemClickListener listener) {
         MyMenuItem menuItem = new MyMenuItem(title, iconResId, MyMenuItem.Type.OTHER, listener);
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
         return this;

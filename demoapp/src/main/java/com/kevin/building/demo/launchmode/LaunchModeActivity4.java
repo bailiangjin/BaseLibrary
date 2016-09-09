@@ -2,9 +2,8 @@ package com.kevin.building.demo.launchmode;
 
 import android.content.Intent;
 import android.os.Message;
-import android.view.View;
 
-import com.kevin.baselibrary.interfaze.listener.CommonTitleListener;
+import com.kevin.baselibrary.activity.ItemClickListener;
 
 /**
  * Author:  liangjin.bai
@@ -17,25 +16,16 @@ public class LaunchModeActivity4 extends LaunchModeActivity1 {
     @Override
     protected void initView() {
         super.initView();
-        commonTitleView.setTitleText("Activity4");
-        commonTitleView.setRightBtnText("onResult");
-        commonTitleView.setRightBtnVisibility(View.VISIBLE);
+        titleBarBuilder.setTitleText("Activity4");
 
-        commonTitleView.setTitleViewListener(new CommonTitleListener() {
+        titleBarBuilder.addMenuItem("onResult", new ItemClickListener() {
             @Override
-            public boolean onRightImgClick() {
-                return false;
-            }
-
-            @Override
-            public boolean onRightBtnClick() {
+            public void onClick() {
                 Intent intent = new Intent();
                 setResult(1,intent);
                 LaunchModeActivity4.this.finish();
-                return true;
             }
-        });
-
+        }).build();
     }
 
 

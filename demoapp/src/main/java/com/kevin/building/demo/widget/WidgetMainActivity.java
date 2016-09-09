@@ -22,7 +22,7 @@ public class WidgetMainActivity extends BtnBaseActivity{
     protected void initView() {
         super.initView();
 
-        commonTitleView.setTitleText("控件主页面");
+        titleBarBuilder.setTitleText("控件主页面");
 
         btn1.setText("拖拽按钮示例");
         btn2.setText("搜索框示例");

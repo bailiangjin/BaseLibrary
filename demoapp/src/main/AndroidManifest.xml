@@ -78,7 +78,7 @@
         <activity
             android:name=".demo.widget.WidgetMainActivity"
             android:label="@string/ui_demo"
-            android:theme="@android:style/Theme.NoTitleBar" />
+             />
 
 
         <!--网络相关demo-->

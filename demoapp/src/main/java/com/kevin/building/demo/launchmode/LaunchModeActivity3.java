@@ -13,7 +13,7 @@ public class LaunchModeActivity3 extends LaunchModeActivity1 {
     @Override
     protected void initView() {
         super.initView();
-        commonTitleView.setTitleText("Activity3");
+        titleBarBuilder.setTitleText("Activity3");
 
     }
 

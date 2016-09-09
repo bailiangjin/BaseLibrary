@@ -3,7 +3,6 @@ package com.kevin.building.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -11,12 +10,12 @@ import com.kevin.baselibrary.model.art.text.ColorText;
 import com.kevin.baselibrary.model.art.text.StyleText;
 import com.kevin.baselibrary.utils.TVUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
+import com.kevin.building.base.BaseActivity2;
 
 /**
  * Created by bailiangjin on 16/4/28.
  */
-public class TestActivity extends BaseActivity{
+public class TestActivity extends BaseActivity2 {
 
     private TextView tv_content;
     private TextView tv_style_content;
@@ -30,6 +29,11 @@ public class TestActivity extends BaseActivity{
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_test;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override

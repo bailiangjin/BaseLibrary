@@ -39,8 +39,7 @@ public class MainActivity extends BtnBaseActivity {
     @Override
     protected void initView() {
         super.initView();
-        commonTitleView.setTitleText("首页");
-        commonTitleView.setLeftImageVisibility(View.GONE);
+        titleBarBuilder.setTitleText("首页");
 
         btn1.setText("控件模块");
         btn2.setText("AppStyle");

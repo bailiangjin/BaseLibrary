@@ -12,7 +12,7 @@ import com.kevin.building.R;
  * Email: bailiangjin@gmail.com
  * Create Time: 2015/10/14 14:44
  */
-public abstract class BtnBaseActivity extends BaseActivity{
+public abstract class BtnBaseActivity extends BaseActivity2 implements View.OnClickListener{
     protected Button btn1;
     protected Button btn2;
     protected Button btn3;
@@ -26,6 +26,11 @@ public abstract class BtnBaseActivity extends BaseActivity{
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_btn_base;
+    }
+
+    @Override
+    protected void initIntentData() {
+
     }
 
     @Override
@@ -66,5 +71,15 @@ public abstract class BtnBaseActivity extends BaseActivity{
         super.onActivityResult(requestCode, resultCode, data);
         LogUtils.e("onActivityResult:" + getLocalClassName() + ":" + getTaskId());
         shortToast("onActivityResult:" + getLocalClassName() + ":" + getTaskId());
+    }
+
+    @Override
+    public void onClick(View v) {
+        onViewClick(v);
+    }
+
+
+    protected void onViewClick(View v){
+
     }
 }

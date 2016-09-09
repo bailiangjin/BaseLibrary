@@ -76,7 +76,9 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
         initIntentData();
         initSuperUI();
         initSuperLogic();
-        binding = DataBindingUtil.inflate(getLayoutInflater(), getLayoutResId(), baseContainer, true);
+        if(getLayoutResId()>0){
+            binding = DataBindingUtil.inflate(getLayoutInflater(), getLayoutResId(), baseContainer, true);
+        }
         initView();
         initData();
     }
