@@ -1,15 +1,19 @@
-package com.kevin.baselibrary.activity;
+package com.kevin.baselibrary.base.tools;
 
+
+import com.kevin.baselibrary.activity.ItemClickListener;
 
 /**
  * Created by bailiangjin on 16/9/7.
  */
 public class MyMenuItem {
 
+    private int id;
     private String title;
     private int iconResId;
     private Type type;
     private ItemClickListener itemClickListener;
+
 
 
 
@@ -21,7 +25,13 @@ public class MyMenuItem {
     }
 
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

@@ -11,6 +11,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -21,6 +22,7 @@ import com.kevin.baselibrary.interfaze.listener.UIHandlerListener;
 import com.kevin.baselibrary.model.art.HomeEventListener;
 import com.kevin.baselibrary.model.art.UIHandler;
 import com.kevin.baselibrary.net.NetUtils;
+import com.kevin.baselibrary.utils.KeyBoardUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 
 import java.util.Set;
@@ -70,7 +72,9 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initIntentData();
         initSuperUI();
+        initSuperLogic();
         binding = DataBindingUtil.inflate(getLayoutInflater(), getLayoutResId(), baseContainer, true);
         initView();
         initData();
@@ -93,6 +97,17 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
         toolbar = (Toolbar) findViewById(com.kevin.baselibrary.R.id.toolbar);
         titleBarBuilder = new TitleBarBuilder(this, toolbar);
     }
+
+
+    /**
+     * 初始化根类逻辑
+     */
+    private void initSuperLogic() {
+
+        //设置handler 监听
+        setHandlerListener();
+    }
+
 
 
 
@@ -228,6 +243,23 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
         //调用子类广播回调
         onBroadcast(intent);
 
+    }
+
+
+
+
+    /**
+     * 全局事件分发 实现 触摸非输入框控件 隐藏键盘
+     *
+     * @param motionEvent
+     * @return
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+            KeyBoardUtils.closeKeyboardWhenCurFocusIsNotEt(ToolbarBindingBaseActivity.this, motionEvent);
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
     /**
