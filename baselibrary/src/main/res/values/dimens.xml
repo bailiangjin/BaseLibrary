@@ -7,7 +7,7 @@
 
     <!-- 字体大小 -->
     <!-- 标题栏文字大小 -->
-    <dimen name="title_tv_size">20dp</dimen>
+    <dimen name="title_tv_size">18dp</dimen>
     <dimen name="tv_size_xxxlarge">24dp</dimen>
     <dimen name="tv_size_xxlarge">22dp</dimen>
     <dimen name="tv_size_xlarge">20dp</dimen>
