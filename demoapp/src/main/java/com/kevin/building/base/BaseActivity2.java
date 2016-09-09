@@ -8,6 +8,7 @@ import android.os.Message;
 import android.view.MotionEvent;
 
 import com.bugtags.library.Bugtags;
+import com.kevin.baselibrary.base.ToolbarBindingBaseActivity;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;

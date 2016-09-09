@@ -1,4 +1,4 @@
-package com.kevin.building.base;
+package com.kevin.baselibrary.base;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -15,6 +15,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.base.tools.BaseActivityInterface;
 import com.kevin.baselibrary.base.tools.TitleBarBuilder;
 import com.kevin.baselibrary.constant.SuperBroadcastAction;
@@ -92,8 +93,8 @@ public abstract class ToolbarBindingBaseActivity<T extends ViewDataBinding> exte
      * 初始化父类UI
      */
     private void initSuperUI() {
-        super.setContentView(com.kevin.baselibrary.R.layout.activity_binding_base_xml);
-        baseContainer = (FrameLayout) findViewById(com.kevin.baselibrary.R.id.baseContainer);
+        super.setContentView(R.layout.activity_binding_base_xml);
+        baseContainer = (FrameLayout) findViewById(R.id.baseContainer);
         toolbar = (Toolbar) findViewById(com.kevin.baselibrary.R.id.toolbar);
         titleBarBuilder = new TitleBarBuilder(this, toolbar);
     }
