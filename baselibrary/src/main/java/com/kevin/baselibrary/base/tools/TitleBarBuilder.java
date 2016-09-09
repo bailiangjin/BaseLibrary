@@ -135,6 +135,16 @@ public class TitleBarBuilder {
         return this;
     }
 
+    /**
+     * 隐藏返回按钮
+     *
+     * @return
+     */
+    public TitleBarBuilder hideBackIcon() {
+        toolbar.setNavigationIcon(null);
+        return this;
+    }
+
     public TitleBarBuilder addMenuItem(MyMenuItem menuItem) {
         itemLinkedHashMap.put(menuItem.getTitle(), menuItem);
         return this;

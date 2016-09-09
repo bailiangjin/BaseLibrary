@@ -40,6 +40,7 @@ public class MainActivity extends BtnBaseActivity {
     protected void initView() {
         super.initView();
         titleBarBuilder.setTitleText("首页");
+        titleBarBuilder.hideBackIcon();
 
         btn1.setText("控件模块");
         btn2.setText("AppStyle");
