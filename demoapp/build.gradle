@@ -14,11 +14,15 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.2"
+
+
     }
     buildTypes {
         release {
 
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             resValue("string", "app_name", "资源库")
@@ -31,7 +35,10 @@ android {
 
         debug {
 
-            minifyEnabled false
+            shrinkResources true//去除未引用的资源
+            minifyEnabled true//减少不必要的类
+            zipAlignEnabled true//打包对齐
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             resValue("string", "app_name", "资源库")
@@ -47,25 +54,25 @@ android {
     productFlavors {
         armv7_debug {
             ndk {
-                abiFilters "armeabi-v7a", ""
+                abiFilters "armeabi-v7a"
             }
 
         }
         armv7_release {
             ndk {
-                abiFilters "armeabi-v7a", ""
+                abiFilters "armeabi-v7a"
             }
 
         }
         x86_debug {
             ndk {
-                abiFilters "x86", ""
+                abiFilters "x86"
             }
 
         }
         x86_release {
             ndk {
-                abiFilters "x86", ""
+                abiFilters "x86"
             }
 
         }
