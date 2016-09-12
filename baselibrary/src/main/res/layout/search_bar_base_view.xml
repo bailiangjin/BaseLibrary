@@ -41,6 +41,7 @@
                 android:singleLine="true"
                 android:imeOptions="actionSearch"
                 android:background="@null"
+                android:textCursorDrawable="@color/black"
                 android:hint="@string/search"
                 android:textColor="@color/black_half_translucent"
                 android:textSize="14dp" />
