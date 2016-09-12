@@ -2,7 +2,6 @@ package com.kevin.building.demo.widget.searchbar;
 
 import android.os.Message;
 
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.kevin.baselibrary.interfaze.listener.SearchBarListener;
 import com.kevin.baselibrary.view.SearchBar;
 import com.kevin.building.R;
@@ -16,12 +15,6 @@ import com.kevin.building.base.BaseActivity;
 public class SearchActivity extends BaseActivity {
 
     private SearchBar searchBar;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
-
 
     @Override
     protected int getLayoutResId() {
