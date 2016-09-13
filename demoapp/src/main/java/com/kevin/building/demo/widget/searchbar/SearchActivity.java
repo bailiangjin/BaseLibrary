@@ -43,7 +43,7 @@ public class SearchActivity extends BaseActivity {
 
             @Override
             public boolean onTextChange(String curTextStr) {
-                shortToast("内容变化");
+                shortToast("内容变化:" + curTextStr);
                 return true;
 
             }
@@ -61,7 +61,6 @@ public class SearchActivity extends BaseActivity {
     protected void initData() {
 
     }
-
 
 
     @Override
