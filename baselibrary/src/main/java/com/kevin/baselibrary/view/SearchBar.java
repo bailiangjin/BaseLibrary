@@ -71,18 +71,11 @@ public class SearchBar extends FrameLayout {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                searchBarListener.onTextChange(null == s ? "" : s.toString());
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                String textString = et_search.getText().toString();
-                if (!isListenerInit()) {
-                    return;
-                }
-                searchBarListener.onTextChange(textString);
-
-
             }
         });
 
