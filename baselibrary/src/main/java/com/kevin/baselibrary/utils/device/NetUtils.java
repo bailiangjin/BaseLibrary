@@ -1,6 +1,5 @@
-package com.kevin.baselibrary.net;
+package com.kevin.baselibrary.utils.device;
 
-import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -9,6 +8,7 @@ import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.app.SuperApplication;
 import com.kevin.baselibrary.enums.NetworkTypeEnum;
 import com.kevin.baselibrary.enums.ProviderTypeEnum;
@@ -22,13 +22,21 @@ public class NetUtils {
 
     private static String macAddr;
 
+    private static Context getContext(){
+        return AppUtils.getContext();
+    }
+
+    public static boolean isConnect() {
+        return isConnect(AppUtils.getContext());
+    }
+
     /**
      * 当前手机是否有可用网络 (所有网络类型)
      *
      * @param context
      * @return
      */
-    public static boolean isConnect(Context context) {
+    private static boolean isConnect(Context context) {
         // 获取手机所有连接管理对象（包括对wi-fi,net等连接的管理）
         try {
             ConnectivityManager connectivity = (ConnectivityManager) context
@@ -54,13 +62,17 @@ public class NetUtils {
         return false;
     }
 
+    public static boolean isWifiConnect() {
+        return isWifiConnect(AppUtils.getContext());
+    }
+
     /**
      * 当前 环境是否wifi已连接
      *
      * @param context
      * @return
      */
-    public static boolean isWifiConnect(Context context) {
+    private static boolean isWifiConnect(Context context) {
         // 获取手机所有连接管理对象
         try {
             ConnectivityManager connectivity = (ConnectivityManager) context
@@ -81,11 +93,10 @@ public class NetUtils {
     /**
      * 获取 wifi 信号强度
      *
-     * @param context
      * @return
      */
-    public static int getWifiRssi(Context context) {
-        WifiManager mWifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+    public static int getWifiRssi() {
+        WifiManager mWifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = mWifiManager.getConnectionInfo();
         int wifi = wifiInfo.getRssi(); // 取 wifi 信号强度
         return wifi;
@@ -101,10 +112,10 @@ public class NetUtils {
     }
 
     // 在wifi未开启状态下，仍然可以获取MAC地址，但是IP地址必须在已连接状态下否则为0
-    public static String getMacAddress(Activity activity) {
+    public static String getMacAddress() {
         if (macAddr.equals("")) {
             String macAddress = null, ip = null;
-            WifiManager wifiManager = (WifiManager) activity.getSystemService(Context.WIFI_SERVICE);
+            WifiManager wifiManager = (WifiManager) getContext().getSystemService(Context.WIFI_SERVICE);
             WifiInfo info = (null == wifiManager ? null : wifiManager.getConnectionInfo());
             if (null != info) {
                 macAddress = info.getMacAddress();
@@ -217,19 +228,22 @@ public class NetUtils {
         return false;
     }
 
+
+
     /**
      * WIFI网络开关	 */
-    public static void toggleWiFi(Context context, boolean enabled) {
-        WifiManager wm = (WifiManager) context
+    public static void toggleWiFi( boolean enabled) {
+        WifiManager wm = (WifiManager) getContext()
                 .getSystemService(Context.WIFI_SERVICE);
         wm.setWifiEnabled(enabled);
     }
 
+
     /**
      * 移动网络开关
      */
-    public static void toggleMobileData(Context context, boolean enabled) {
-        ConnectivityManager conMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    public static void toggleMobileData( boolean enabled) {
+        ConnectivityManager conMgr = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         Class<?> conMgrClass = null; // ConnectivityManager类
         Field iConMgrField = null; // ConnectivityManager类中的字段
         Object iConMgr = null; // IConnectivityManager类的引用
@@ -268,6 +282,8 @@ public class NetUtils {
             e.printStackTrace();
         }
     }
+
+
 
 
 }

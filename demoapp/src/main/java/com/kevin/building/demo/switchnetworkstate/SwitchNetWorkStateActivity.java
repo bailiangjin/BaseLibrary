@@ -3,7 +3,7 @@ package com.kevin.building.demo.switchnetworkstate;
 import android.os.Message;
 import android.view.View;
 
-import com.kevin.baselibrary.net.NetUtils;
+import com.kevin.baselibrary.utils.device.NetUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
@@ -32,31 +32,30 @@ public class SwitchNetWorkStateActivity extends BaseActivity {
     }
 
 
-
     @Override
     protected void handleMsg(Message msg) {
 
     }
 
 
-    public void onClick_Switch_WiFi_open(View v){
+    public void onClick_Switch_WiFi_open(View v) {
         shortToast("打开 WiFi");
-        NetUtils.toggleWiFi(this, true);
+        NetUtils.toggleWiFi(true);
     }
 
-    public void onClick_Switch_WiFi_close(View v){
+    public void onClick_Switch_WiFi_close(View v) {
         shortToast("关闭 WiFi");
-        NetUtils.toggleWiFi(this, false);
+        NetUtils.toggleWiFi(false);
     }
 
-    public void onClick_Switch_mobile_open(View v){
+    public void onClick_Switch_mobile_open(View v) {
         shortToast("打开 移动网络");
-        NetUtils.toggleMobileData(this, true);
+        NetUtils.toggleMobileData(true);
     }
 
-    public void onClick_Switch_mobile_close(View v){
+    public void onClick_Switch_mobile_close(View v) {
         shortToast("关闭 移动网络");
-        NetUtils.toggleMobileData(this, false);
+        NetUtils.toggleMobileData(false);
     }
 
 

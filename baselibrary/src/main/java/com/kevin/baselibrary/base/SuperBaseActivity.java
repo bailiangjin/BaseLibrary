@@ -22,7 +22,7 @@ import com.kevin.baselibrary.constant.SuperBroadcastAction;
 import com.kevin.baselibrary.interfaze.listener.UIHandlerListener;
 import com.kevin.baselibrary.model.art.HomeEventListener;
 import com.kevin.baselibrary.model.art.UIHandler;
-import com.kevin.baselibrary.net.NetUtils;
+import com.kevin.baselibrary.utils.device.NetUtils;
 import com.kevin.baselibrary.utils.KeyBoardUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 
@@ -240,13 +240,12 @@ public abstract class SuperBaseActivity<T extends ViewDataBinding> extends AppCo
         String action = intent.getAction();
         if (SuperBroadcastAction.NETWORK_CHANGE_ACTION.equals(action)) { // 网络发生变化
             LogUtils.d("网络状况变化");
-            if (NetUtils.isConnect(getApplicationContext())) {
+            if (NetUtils.isConnect()) {
                 onNetConnected();
             } else {
                 onNetDisConnected();
             }
         }
-
         //调用子类广播回调
         onBroadcast(intent);
 
