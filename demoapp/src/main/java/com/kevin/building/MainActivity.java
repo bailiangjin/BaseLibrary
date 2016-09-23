@@ -47,7 +47,6 @@ public class MainActivity extends BtnBaseActivity {
         btn3.setText("网络模块");
         btn4.setText("数据库模块");
         btn5.setText("Fragment模块");
-        //btn6.setText("ViewPagerDemo");
         btn6.setText("ViewPagerDemo");
         btn7.setText("测试WebView");
         btn8.setText("当前测试");
@@ -105,7 +104,7 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn6:
-                //shortToast("点击了测试6");
+                shortToast("点击了测试6");
                 ActivityUtils.startActivity(this, ViewPagerDemoActivity.class);
 //                ActivityUtils.startActivity(this, SwitchNetWorkStateActivity.class);
                 break;
