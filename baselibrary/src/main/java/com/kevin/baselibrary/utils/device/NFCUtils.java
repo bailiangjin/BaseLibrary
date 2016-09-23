@@ -12,9 +12,6 @@ import com.kevin.baselibrary.app.AppUtils;
 
 public class NFCUtils {
 
-
-
-
     public static boolean isNFCOpen() {
         NfcManager nfcManager = (NfcManager) AppUtils.getContext()
                 .getSystemService(Context.NFC_SERVICE);
