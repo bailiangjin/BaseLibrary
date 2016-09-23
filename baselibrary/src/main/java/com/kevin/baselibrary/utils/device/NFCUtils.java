@@ -15,7 +15,7 @@ public class NFCUtils {
 
 
 
-    public static boolean isNFCpen() {
+    public static boolean isNFCOpen() {
         NfcManager nfcManager = (NfcManager) AppUtils.getContext()
                 .getSystemService(Context.NFC_SERVICE);
         return nfcManager.getDefaultAdapter().isEnabled();

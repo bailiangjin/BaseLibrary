@@ -11,8 +11,7 @@ import com.kevin.baselibrary.model.art.text.ColorText;
 import com.kevin.baselibrary.model.art.text.StyleText;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.TVUtils;
-import com.kevin.baselibrary.utils.device.BluetoothUtils;
-import com.kevin.baselibrary.utils.device.LocationUtils;
+import com.kevin.baselibrary.utils.device.NFCUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
@@ -61,10 +60,10 @@ public class TestActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 LogUtils.d("更改GPS");
-                LogUtils.d("GPS是否开启:"+ LocationUtils.isGPSOpen());
+                LogUtils.d("NFC是否开启:"+ NFCUtils.isNFCOpen());
 //                LocationUtils.toSetLocation();
 //                DeviceSetUtils.toSetBluetooth();
-                BluetoothUtils.enableBluetooth();
+                NFCUtils.toSetNFC();
             }
         });
 
