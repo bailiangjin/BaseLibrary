@@ -3,12 +3,15 @@ package com.kevin.building.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.model.art.text.ColorText;
 import com.kevin.baselibrary.model.art.text.StyleText;
+import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.TVUtils;
+import com.kevin.baselibrary.utils.device.GPSUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
@@ -20,6 +23,8 @@ public class TestActivity extends BaseActivity {
     private TextView tv_content;
     private TextView tv_style_content;
     private Button btn_test;
+
+    private Button btn_test_gps;
 
 
     public static void start(Activity activity){
@@ -50,12 +55,23 @@ public class TestActivity extends BaseActivity {
         btn_test= (Button) findViewById(R.id.btn_test);
         btn_test.setText("测试Style");
 
+        btn_test_gps= (Button) findViewById(R.id.btn_test_gps);
+        btn_test_gps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LogUtils.d("更改GPS");
+                LogUtils.d("GPS是否开启:"+GPSUtils.isGPSOpen());
+                GPSUtils.changeGpsState();
+            }
+        });
+
     }
 
     @Override
     protected void initData() {
 
     }
+
 
 
 

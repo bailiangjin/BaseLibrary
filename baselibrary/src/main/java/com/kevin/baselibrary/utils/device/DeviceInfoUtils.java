@@ -1,4 +1,4 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.utils.device;
 
 import android.content.Context;
 import android.os.Build;
@@ -7,11 +7,11 @@ import android.telephony.TelephonyManager;
 import com.kevin.baselibrary.app.SuperApplication;
 
 /**
- * 设备相关工具类
+ * 设备信息工具类
  *
  * @author bailiangjin
  */
-public class DeviceUtils {
+public class DeviceInfoUtils {
 
     /**
      * 获取手机型号

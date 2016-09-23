@@ -26,5 +26,13 @@
         android:background="@drawable/simple_demo_selector"
         />
 
+    <Button
+        android:id="@+id/btn_test_gps"
+        android:layout_marginTop="20dp"
+        style="@style/btn_base_style"
+        android:text="测试开关GPS"
+        android:textColor="@drawable/tv_color_selector_white_gray"
+        android:background="@drawable/simple_demo_selector"
+        />
 
 </LinearLayout>

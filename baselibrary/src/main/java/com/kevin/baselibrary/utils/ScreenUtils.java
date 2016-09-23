@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.kevin.baselibrary.app.SuperApplication;
+import com.kevin.baselibrary.utils.device.DeviceInfoUtils;
 
 /**
  * 获得屏幕相关的辅助类
@@ -36,7 +37,7 @@ public class ScreenUtils
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 	public static int getScreenWidth(Activity activity) {
 		//获取手机系统版本号
-		int deviceApiVersion = DeviceUtils.getCurrentApiVersion();
+		int deviceApiVersion = DeviceInfoUtils.getCurrentApiVersion();
 		DisplayMetrics dm = new DisplayMetrics();
 		if (17 >= deviceApiVersion) {//获取没有虚拟按键的屏幕尺寸
 			activity.getWindowManager().getDefaultDisplay().getRealMetrics(dm);
@@ -55,7 +56,7 @@ public class ScreenUtils
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
 	public static int getScreenHeight(Activity activity) {
 		//获取手机系统版本号
-		int deviceApiVersion = DeviceUtils.getCurrentApiVersion();
+		int deviceApiVersion = DeviceInfoUtils.getCurrentApiVersion();
 		DisplayMetrics dm = new DisplayMetrics();
 		if (17 >= deviceApiVersion) {//获取没有虚拟按键的屏幕尺寸
 			activity.getWindowManager().getDefaultDisplay().getRealMetrics(dm);
