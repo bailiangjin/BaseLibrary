@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId "com.kevin.building"
         minSdkVersion 15
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.2"
 

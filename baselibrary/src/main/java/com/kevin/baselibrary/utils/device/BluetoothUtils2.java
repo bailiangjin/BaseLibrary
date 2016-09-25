@@ -11,7 +11,7 @@ import com.kevin.baselibrary.app.AppUtils;
  * Created by bailiangjin on 16/9/23.
  */
 
-public class BluetoothUtils {
+public class BluetoothUtils2 {
 
     public static boolean isBluetoothEnabled() {
 
