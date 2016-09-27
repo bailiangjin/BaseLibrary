@@ -11,6 +11,7 @@ import com.kevin.baselibrary.model.art.text.ColorText;
 import com.kevin.baselibrary.model.art.text.StyleText;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.TVUtils;
+import com.kevin.baselibrary.utils.device.BluetoothUtils;
 import com.kevin.baselibrary.utils.device.NFCUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
@@ -63,7 +64,8 @@ public class TestActivity extends BaseActivity {
                 LogUtils.d("NFC是否开启:"+ NFCUtils.isNFCOpen());
 //                LocationUtils.toSetLocation();
 //                DeviceSetUtils.toSetBluetooth();
-                NFCUtils.toSetNFC();
+//                NFCUtils.toSetNFC();
+                BluetoothUtils.enableBluetooth();
             }
         });
 

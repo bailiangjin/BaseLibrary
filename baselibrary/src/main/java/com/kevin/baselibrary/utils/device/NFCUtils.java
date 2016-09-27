@@ -24,6 +24,4 @@ public class NFCUtils {
         DeviceSetUtils.toSetByAction(action);
     }
 
-
-
 }
