@@ -8,7 +8,9 @@ import android.widget.Button;
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appui.account.LogoutActivity;
 import com.bailiangjin.simpleim.appui.account.UserInfoActivity;
+import com.bailiangjin.simpleim.appui.common.SettingActivity;
 import com.bailiangjin.simpleim.base.BaseActivity;
+import com.bailiangjin.simpleim.utils.ActivityUtils;
 import com.kevin.baselibrary.activity.ItemClickListener;
 
 /**
@@ -55,6 +57,13 @@ public class AddFriendActivity extends BaseActivity {
                         UserInfoActivity.start(AddFriendActivity.this);
                     }
                 });
+            }
+        }).build();
+
+        titleBarBuilder.addMenuItem("设置", new ItemClickListener() {
+            @Override
+            public void onClick() {
+                ActivityUtils.startActivity(AddFriendActivity.this, SettingActivity.class);
             }
         }).build();
 

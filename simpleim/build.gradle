@@ -21,7 +21,9 @@ android {
     buildTypes {
         release {
 
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             resValue("string", "app_name", "简信")
@@ -30,11 +32,18 @@ android {
             //打包地址 服务端基准URL
             buildConfigField "String", "APP_BASE_URL", "\"http://kevin.api.kevin.com\"";
 
+            ndk {
+                abiFilters "armeabi" //, "armeabi-v7a"
+            }
+
         }
 
         debug {
 
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
+            zipAlignEnabled true
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             resValue("string", "app_name", "简信")
@@ -44,6 +53,9 @@ android {
             //打包地址 服务端基准URL
             buildConfigField "String", "APP_BASE_URL", "\"http://test.kevin.api.kevin.com\""
 
+            ndk {
+                abiFilters "armeabi" //, "armeabi-v7a"
+            }
 
         }
     }

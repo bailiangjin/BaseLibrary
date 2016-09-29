@@ -1,5 +1,6 @@
 package com.bailiangjin.simpleim.appui.im.chat;
 
+import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.base.BaseActivity;
 
 /**
@@ -7,10 +8,10 @@ import com.bailiangjin.simpleim.base.BaseActivity;
  * Created by bailiangjin on 16/9/29.
  */
 
-public class ChatActivity extends BaseActivity{
+public class ChatActivity extends BaseActivity {
     @Override
     protected int getLayoutResId() {
-        return 0;
+        return R.layout.activity_chat;
     }
 
     @Override

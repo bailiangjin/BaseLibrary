@@ -4,13 +4,13 @@
     package="com.bailiangjin.simpleim">
 
     <application
+        android:name=".IMApplication"
         android:allowBackup="true"
         android:icon="@drawable/icon_app"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:icon"
-        android:name=".IMApplication">
+        tools:replace="android:icon">
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,32 +19,51 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
 
-        <!--应用界面demo-->
+        <!--应用系统界面-->
+        <activity
+            android:name=".appui.common.AboutActivity"
+            android:label="@string/about" />
+        <activity
+            android:name=".appui.common.SettingActivity"
+            android:label="@string/setting" />
+
+        <!--应用账户相关界面-->
 
         <activity
+            android:name=".appui.account.RegisterActivity"
+            android:label="@string/register" />
+        <activity
             android:name=".appui.account.LoginActivity"
-            android:label="@string/login"
-            />
+            android:label="@string/login" />
+
+        <activity
+            android:name=".appui.account.LogoutActivity"
+            android:label="@string/logout" />
+
+
+
+        <!--联系人相关页面-->
+
         <activity
             android:name=".appui.im.user.AddFriendActivity"
             android:label="@string/addcontacts" />
         <activity
             android:name=".appui.im.user.UserListActivity"
             android:label="@string/user_list" />
-        <activity
-            android:name=".appui.account.RegisterActivity"
-            android:label="@string/register" />
+
         <activity
             android:name=".appui.account.UserInfoActivity"
             android:label="@string/user_info" />
+
+        <!--IM 相关界面-->
+
         <activity
-            android:name=".appui.account.LogoutActivity"
-            android:label="@string/logout" />
-        <activity
-            android:name=".appui.common.AboutActivity"
-            android:label="@string/about" />
+            android:name=".appui.im.chat.ChatActivity"
+            android:label="会话" />
+
+
     </application>
 
 </manifest>
