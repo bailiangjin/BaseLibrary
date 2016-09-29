@@ -16,4 +16,10 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+    <!-- Button 样式 -->
+    <style name="app_common_bg">
+
+        <item name="android:background">@drawable/demo_common_gradient_bg</item>
+    </style>
+
 </resources>
