@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bailiangjin.simpleim.R;
+import com.bailiangjin.simpleim.appui.im.user.UserListActivity;
 import com.bailiangjin.simpleim.base.BaseActivity;
 import com.bailiangjin.simpleim.constants.IntentKey;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
@@ -130,7 +131,7 @@ public class LoginActivity extends BaseActivity {
                 break;
             case R.id.tv_register://点击注册
                 //跳转到注册页
-                RegistActivity.start(LoginActivity.this);
+                RegisterActivity.start(LoginActivity.this);
                 this.finish();
             default:
                 break;

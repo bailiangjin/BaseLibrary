@@ -1,4 +1,4 @@
-package com.bailiangjin.simpleim.appui.account;
+package com.bailiangjin.simpleim.appui.im.user;
 
 import android.app.Activity;
 import android.content.Intent;

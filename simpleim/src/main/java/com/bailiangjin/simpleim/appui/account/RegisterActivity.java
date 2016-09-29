@@ -16,7 +16,7 @@ import java.util.HashMap;
 /**
  * 注册
  */
-public class RegistActivity extends BaseActivity
+public class RegisterActivity extends BaseActivity
 {
 	private EditText et_username;
 	private EditText et_password;
@@ -24,7 +24,7 @@ public class RegistActivity extends BaseActivity
 
 
 	public static void start(Activity activity){
-		Intent intent = new Intent(activity,RegistActivity.class);
+		Intent intent = new Intent(activity,RegisterActivity.class);
 		activity.startActivity(intent);
 	}
 
@@ -87,7 +87,7 @@ public class RegistActivity extends BaseActivity
 				paramMap.put(IntentKey.USER_NAME,userName);
 				paramMap.put(IntentKey.PASSWORD,password);
 
-				ActivityUtils.startActivity(RegistActivity.this,LoginActivity.class,paramMap);
+				ActivityUtils.startActivity(RegisterActivity.this,LoginActivity.class,paramMap);
 				this.finish();
 				break;
 

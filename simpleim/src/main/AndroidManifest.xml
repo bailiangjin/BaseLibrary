@@ -28,13 +28,13 @@
             android:label="@string/login"
             />
         <activity
-            android:name=".appui.account.AddFriendActivity"
+            android:name=".appui.im.user.AddFriendActivity"
             android:label="@string/addcontacts" />
         <activity
-            android:name=".appui.account.UserListActivity"
+            android:name=".appui.im.user.UserListActivity"
             android:label="@string/user_list" />
         <activity
-            android:name=".appui.account.RegistActivity"
+            android:name=".appui.account.RegisterActivity"
             android:label="@string/register" />
         <activity
             android:name=".appui.account.UserInfoActivity"
@@ -42,6 +42,9 @@
         <activity
             android:name=".appui.account.LogoutActivity"
             android:label="@string/logout" />
+        <activity
+            android:name=".appui.common.AboutActivity"
+            android:label="@string/about" />
     </application>
 
 </manifest>
