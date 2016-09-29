@@ -1,1 +1,1 @@
-include ':baselibrary', ':demoapp', ':ImageLoadDemo', ':retrofit2demo', ':simpleim', ':test360'
+include ':baselibrary', ':demoapp', ':ImageLoadDemo', ':retrofit2demo', ':simpleim'
