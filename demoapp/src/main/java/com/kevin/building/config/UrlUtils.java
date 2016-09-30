@@ -1,7 +1,7 @@
 package com.kevin.building.config;
 
 import com.kevin.building.R;
-import com.kevin.building.app.MyApplication;
+import com.kevin.building.MyApplication;
 
 
 /**

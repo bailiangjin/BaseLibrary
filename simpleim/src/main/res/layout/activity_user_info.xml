@@ -37,7 +37,7 @@
                 android:id="@+id/tv_userinfo_indiction"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:text="好友账号："
+                android:text="当前账号："
                 android:textColor="#000000"
                 android:textSize="15sp"
                 android:textStyle="bold" />
