@@ -92,6 +92,7 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseA
     @Override
     protected void initBaseView() {
         ButterKnife.bind(this);
+        titleBarBuilder.setBackGround(R.color.common_title_bg_color);
     }
 
     @Override

@@ -91,7 +91,7 @@ public class TitleBarBuilder {
 
 
     /**
-     * 设置 标题栏北京
+     * 设置 标题栏背景
      * @param backGroundResId
      * @return
      */

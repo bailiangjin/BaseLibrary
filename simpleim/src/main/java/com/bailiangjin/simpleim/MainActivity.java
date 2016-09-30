@@ -29,7 +29,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     private FragmentTabHost mTabHost;
     private LayoutInflater layoutInflater;
     private Class fragmentArray[] = {HomeFragment.class, ContactFragment.class, SettingFragment.class};
-    private int imageViewArray[] = {R.drawable.icon_user, R.drawable.icon_user,R.drawable.icon_user};
+    private int imageViewArray[] = {R.drawable.ic_tab_home_selector, R.drawable.ic_tab_contact_selector,R.drawable.ic_tab_my_selector};
     private String textViewArray[] = {"首页", "联系人", "设置"};
     private List<Fragment> list = new ArrayList<Fragment>();
     private ViewPager vp;

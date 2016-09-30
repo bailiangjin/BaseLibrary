@@ -5,6 +5,10 @@
     <color name="colorAccent">#FF4081</color>
 
 
+    <!--微信标题栏背景颜色-->
+    <color name="common_title_bg_color">#393A3F</color>
+
+
     <!--<color name="app_base_color">#4DBB65</color>-->
     <!--<color name="app_base_color_pressed">#4D9A65</color>-->
 
