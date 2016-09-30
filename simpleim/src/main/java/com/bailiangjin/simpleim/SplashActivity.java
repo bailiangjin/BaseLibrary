@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
+import com.bailiangjin.simpleim.appui.account.LoginActivity;
 import com.bailiangjin.simpleim.base.BaseActivity;
+import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
 import com.kevin.baselibrary.app.AppUtils;
 
 /**
@@ -38,9 +40,12 @@ public class SplashActivity extends BaseActivity
 			@Override
 			public void run()
 			{
-				//LoginActivity.start(SplashActivity.this);
 
-				MainActivity.start(SplashActivity.this);
+				if(AccountUtils.isLoginStatus()){
+					MainActivity.start(SplashActivity.this);
+				}else {
+					LoginActivity.start(SplashActivity.this);
+				}
 				SplashActivity.this.finish();
 
 

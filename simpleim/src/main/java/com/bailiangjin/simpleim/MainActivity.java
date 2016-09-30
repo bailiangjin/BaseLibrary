@@ -18,6 +18,7 @@ import com.bailiangjin.simpleim.appui.common.fragment.ContactFragment;
 import com.bailiangjin.simpleim.appui.common.fragment.DiscoverFragment;
 import com.bailiangjin.simpleim.appui.common.fragment.HomeFragment;
 import com.bailiangjin.simpleim.appui.common.fragment.SettingFragment;
+import com.bailiangjin.simpleim.appui.im.user.UserListActivity;
 import com.bailiangjin.simpleim.base.BaseActivity;
 import com.kevin.baselibrary.activity.ItemClickListener;
 
@@ -57,6 +58,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         titleBarBuilder.addMenuItem("扫一扫", new ItemClickListener() {
             @Override
             public void onClick() {
+                UserListActivity.start(MainActivity.this);
                 shortToast("点击了扫一扫");
             }
         }).build();

@@ -67,7 +67,7 @@ public class LoginActivity extends BaseActivity {
     protected void initView() {
         hideCommonBaseTitle();
         if (AccountUtils.isLoginStatus()){
-            UserListActivity.start(this);
+            com.bailiangjin.simpleim.MainActivity.start(this);
             finish();
         }
         titleBarBuilder.setTitleText("登录简信");
