@@ -30,7 +30,13 @@ public class AccountUtils {
         SPUtils.remove(SPKey.PASSWORD);
         //清空是否清楚密码勾选框状态
         SPUtils.remove(SPKey.SAVEPWD);
+        //清除登录状态标识
+        SPUtils.remove(SPKey.IS_LOGINED);
         return true;
+    }
+
+    public static boolean isLoginStatus(){
+        return SPUtils.getBoolean(SPKey.IS_LOGINED);
     }
 
 
@@ -45,6 +51,7 @@ public class AccountUtils {
         SPUtils.putString(SuperSPKey.USER_NAME, userName);
         SPUtils.putString(SuperSPKey.PASSWORD, isSavePassword ? password : "");
         SPUtils.putBoolean(SuperSPKey.SAVEPWD, isSavePassword);
+        SPUtils.putBoolean(SPKey.IS_LOGINED, true);
         User curUser= new User();
         curUser.setId(userName);
         curUser.setName(userName);

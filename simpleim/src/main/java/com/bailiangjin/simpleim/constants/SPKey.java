@@ -11,4 +11,5 @@ import com.kevin.baselibrary.constant.SuperSPKey;
  */
 public class SPKey extends SuperSPKey
 {
+    public static final String IS_LOGINED="IS_LOGINED";
 }

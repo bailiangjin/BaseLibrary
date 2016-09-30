@@ -66,6 +66,10 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void initView() {
         hideCommonBaseTitle();
+        if (AccountUtils.isLoginStatus()){
+            UserListActivity.start(this);
+            finish();
+        }
         titleBarBuilder.setTitleText("登录简信");
     }
 
