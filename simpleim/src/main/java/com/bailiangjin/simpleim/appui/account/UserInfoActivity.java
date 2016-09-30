@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.base.BaseActivity;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
+import com.bailiangjin.simpleim.utils.ImageLoadUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -19,10 +21,16 @@ import butterknife.OnClick;
  */
 public class UserInfoActivity extends BaseActivity {
 
+    @BindView(R.id.iv_head)
+    ImageView iv_head;
     @BindView(R.id.btn_userinfo_back)
     Button btn_userinfo_back;
     @BindView(R.id.tv_userinfo_userid)
     TextView tv_userinfo_userid;
+
+    static String picUrl="https://raw.githubusercontent.com/bailiangjin/bailiangjin.github.io/master/dev/download/picture/HeadPortrait.jpeg";
+
+
 
 
     public static void start(Activity activity) {
@@ -33,7 +41,9 @@ public class UserInfoActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+
         titleBarBuilder.setTitleText(getString(R.string.friend_info));
+        ImageLoadUtils.INSTANCE.loadCircleImageView(iv_head,picUrl);
     }
 
     @Override

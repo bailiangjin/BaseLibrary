@@ -1,6 +1,7 @@
 package com.bailiangjin.simpleim;
 
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
+import com.bailiangjin.simpleim.utils.ImageLoadUtils;
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
 import com.kevin.baselibrary.app.SuperApplication;
@@ -14,6 +15,9 @@ public class IMApplication extends SuperApplication{
     public void onCreate() {
         super.onCreate();
         initBugstags();
+        //初始化 ImageLoad工具类
+        // 只在Application中初始化一次 全局可使用
+        ImageLoadUtils.INSTANCE.init(this);
     }
 
     @Override
