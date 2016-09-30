@@ -154,7 +154,7 @@ public class LoginActivity extends BaseActivity {
                 //保存登录信息到SP
                 AccountUtils.saveLoginInfo(userName, passWord, isSavePassword);
                 //进入下一个界面
-                UserListActivity.start(this);
+                com.bailiangjin.simpleim.MainActivity.start(this);
                 //结束当前界面
                 this.finish();
                 break;
