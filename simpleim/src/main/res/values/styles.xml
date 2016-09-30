@@ -22,4 +22,11 @@
         <item name="android:background">@drawable/demo_common_gradient_bg</item>
     </style>
 
+    <!-- TextView 样式 -->
+    <style name="tab_tv_style" parent="@style/tv_base_style">
+
+        <item name="android:textSize">@dimen/tv_size_xsmall</item>
+        <item name="android:textColor">@drawable/tv_color_selector_grey_green</item>
+    </style>
+
 </resources>

@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.bailiangjin.simpleim.appui.common.adapter.MainFragmentAdapter;
 import com.bailiangjin.simpleim.appui.common.fragment.ContactFragment;
+import com.bailiangjin.simpleim.appui.common.fragment.DiscoverFragment;
 import com.bailiangjin.simpleim.appui.common.fragment.HomeFragment;
 import com.bailiangjin.simpleim.appui.common.fragment.SettingFragment;
 import com.bailiangjin.simpleim.base.BaseActivity;
@@ -28,9 +29,9 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
     private FragmentTabHost mTabHost;
     private LayoutInflater layoutInflater;
-    private Class fragmentArray[] = {HomeFragment.class, ContactFragment.class, SettingFragment.class};
-    private int imageViewArray[] = {R.drawable.ic_tab_home_selector, R.drawable.ic_tab_contact_selector,R.drawable.ic_tab_my_selector};
-    private String textViewArray[] = {"首页", "联系人", "设置"};
+    private Class fragmentArray[] = {HomeFragment.class, ContactFragment.class, DiscoverFragment.class,SettingFragment.class};
+    private int imageViewArray[] = {R.drawable.ic_tab_home_selector, R.drawable.ic_tab_contact_selector,R.drawable.ic_tab_discover_selector,R.drawable.ic_tab_my_selector};
+    private String textViewArray[] = {"简信", "联系人", "发现","我"};
     private List<Fragment> list = new ArrayList<Fragment>();
     private ViewPager vp;
 
@@ -107,11 +108,14 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     private void initPage() {
         HomeFragment fragment1 = new HomeFragment();
         ContactFragment fragment2 = new ContactFragment();
-        SettingFragment fragment3 = new SettingFragment();
+        DiscoverFragment fragment3 = new DiscoverFragment();
+        SettingFragment fragment4 = new SettingFragment();
+
 
         list.add(fragment1);
         list.add(fragment2);
         list.add(fragment3);
+        list.add(fragment4);
 
         //绑定Fragment适配器
         vp.setAdapter(new MainFragmentAdapter(getSupportFragmentManager(), list));
