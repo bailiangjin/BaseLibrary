@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bailiangjin.simpleim.R;
-import com.bailiangjin.simpleim.appui.im.user.UserListActivity;
 import com.bailiangjin.simpleim.base.BaseActivity;
 import com.bailiangjin.simpleim.constants.IntentKey;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
