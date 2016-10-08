@@ -77,11 +77,11 @@
 
 
 
-    <!--<color name="app_base_color">#4DBB65</color>-->
-    <!--<color name="app_base_color_pressed">#4D9A65</color>-->
+    <color name="app_base_color">#4DBB65</color>
+    <color name="app_base_color_pressed">#4D9A65</color>
 
-    <color name="app_base_color">@color/red</color>
-    <color name="app_base_color_pressed">@color/red_pressed</color>
+    <!--<color name="app_base_color">@color/red</color>-->
+    <!--<color name="app_base_color_pressed">@color/red_pressed</color>-->
 
 
 </resources>
