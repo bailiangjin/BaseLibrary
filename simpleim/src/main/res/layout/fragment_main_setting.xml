@@ -15,7 +15,7 @@
         android:id="@+id/itv_user"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        app:item_left_iv_background="@drawable/icon_user"
+        app:left_iv_background="@drawable/icon_user"
         app:left_text="用户" />
 
     <com.bailiangjin.simpleim.base.view.ItemView
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="2dp"
-        app:item_left_iv_background="@drawable/ic_account_box_black"
+        app:left_iv_background="@drawable/ic_account_box_black"
         app:left_text="收藏" />
 
     <com.bailiangjin.simpleim.base.view.ItemView
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="2dp"
-        app:item_left_iv_background="@drawable/ic_settings_black"
+        app:left_iv_background="@drawable/ic_settings_black"
         app:left_text="设置" />
 
 

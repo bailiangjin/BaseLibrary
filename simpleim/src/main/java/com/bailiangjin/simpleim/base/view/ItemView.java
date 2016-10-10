@@ -39,9 +39,9 @@ public class ItemView extends FrameLayout {
 
     private void parseAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ItemView);
-        setViewBackground(rl_root, R.styleable.ItemView_item_root_background, typedArray);
-        setImageRes(iv_left, R.styleable.ItemView_item_left_iv_background, typedArray);
-        setImageRes(iv_right, R.styleable.ItemView_item_right_iv_background, typedArray);
+        setViewBackground(rl_root, R.styleable.ItemView_root_background, typedArray);
+        setImageRes(iv_left, R.styleable.ItemView_left_iv_background, typedArray);
+        setImageRes(iv_right, R.styleable.ItemView_right_iv_background, typedArray);
 
         setTvContent(tv_left, R.styleable.ItemView_left_text, typedArray);
         setTvContent(tv_right, R.styleable.ItemView_right_text, typedArray);
@@ -52,8 +52,8 @@ public class ItemView extends FrameLayout {
         setViewVisibility(tv_left, R.styleable.ItemView_left_text_visibility, typedArray,true);
         setViewVisibility(tv_right, R.styleable.ItemView_right_text_visibility, typedArray);
 
-        setViewVisibility(iv_left, R.styleable.ItemView_item_left_iv_visibility, typedArray,true);
-        setViewVisibility(iv_right, R.styleable.ItemView_item_right_iv_visibility, typedArray);
+        setViewVisibility(iv_left, R.styleable.ItemView_left_iv_visibility, typedArray,true);
+        setViewVisibility(iv_right, R.styleable.ItemView_right_iv_visibility, typedArray);
 
 
         typedArray.recycle();

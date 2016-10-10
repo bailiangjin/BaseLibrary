@@ -2,49 +2,59 @@
 <resources>
 
 
+    <!--声明共用属性-->
+    <attr name="left_iv_background" format="color|reference" />
+    <attr name="right_iv_background" format="color|reference" />
 
+    <attr name="left_iv_visibility" format="boolean" />
+    <attr name="right_iv_visibility" format="boolean" />
+
+    <attr name="root_background" format="color|reference" />
+
+
+    <!--控件可见性-->
 
     <declare-styleable name="BaseTitleView">
         <!--标题栏背景-->
-        <attr name="root_background" format="color|reference"/>
+        <attr name="root_background" />
         <!--文字内容-->
-        <attr name="title_text" format="string|reference"/>
-        <attr name="left_btn_text" format="string|reference"/>
-        <attr name="right_btn_text" format="string|reference"/>
+        <attr name="title_text" format="string|reference" />
+        <attr name="left_btn_text" format="string|reference" />
+        <attr name="right_btn_text" format="string|reference" />
         <!--文字大小-->
-        <attr name="title_text_size" format="dimension"/>
-        <attr name="left_btn_text_size" format="dimension"/>
-        <attr name="right_btn_text_size" format="dimension"/>
+        <attr name="title_text_size" format="dimension" />
+        <attr name="left_btn_text_size" format="dimension" />
+        <attr name="right_btn_text_size" format="dimension" />
         <!--View背景-->
-        <attr name="left_iv_background" format="color|reference"/>
-        <attr name="right_iv_background" format="color|reference"/>
-        <attr name="right_iv2_background" format="color|reference"/>
-        <attr name="left_btn_background" format="color|reference"/>
-        <attr name="right_btn_background" format="color|reference"/>
+        <attr name="left_iv_background" />
+        <attr name="right_iv_background" />
+        <attr name="right_iv2_background" format="color|reference" />
+        <attr name="left_btn_background" format="color|reference" />
+        <attr name="right_btn_background" format="color|reference" />
         <!--控件可见性-->
-        <attr name="left_btn_visibility" format="boolean"/>
-        <attr name="right_btn_visibility" format="boolean"/>
-        <attr name="left_iv_visibility" format="boolean"/>
-        <attr name="right_iv_visibility" format="boolean"/>
-        <attr name="right_iv2_visibility" format="boolean"/>
+        <attr name="left_btn_visibility" format="boolean" />
+        <attr name="right_btn_visibility" format="boolean" />
+        <attr name="left_iv_visibility" />
+        <attr name="right_iv_visibility" />
+        <attr name="right_iv2_visibility" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="ItemView">
         <!--标题栏背景-->
-        <attr name="item_root_background" format="color|reference"/>
+        <attr name="root_background" />
         <!--文字内容-->
-        <attr name="left_text" format="string|reference"/>
-        <attr name="right_text" format="string|reference"/>
+        <attr name="left_text" format="string|reference" />
+        <attr name="right_text" format="string|reference" />
         <!--文字大小-->
-        <attr name="left_text_size" format="dimension"/>
-        <attr name="right_text_size" format="dimension"/>
+        <attr name="left_text_size" format="dimension" />
+        <attr name="right_text_size" format="dimension" />
         <!--View背景-->
-        <attr name="item_left_iv_background" format="color|reference"/>
-        <attr name="item_right_iv_background" format="color|reference"/>
+        <attr name="left_iv_background" />
+        <attr name="right_iv_background" />
         <!--控件可见性-->
-        <attr name="item_left_iv_visibility" format="boolean"/>
-        <attr name="item_right_iv_visibility" format="boolean"/>
-        <attr name="left_text_visibility" format="boolean"/>
-        <attr name="right_text_visibility" format="boolean"/>
+        <attr name="left_iv_visibility" />
+        <attr name="right_iv_visibility" />
+        <attr name="left_text_visibility" format="boolean" />
+        <attr name="right_text_visibility" format="boolean" />
     </declare-styleable>
 </resources>
