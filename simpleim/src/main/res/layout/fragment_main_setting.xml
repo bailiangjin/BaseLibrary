@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/app_common_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,51 +11,28 @@
         style="@style/title_tv_style"
         android:text="设置" />
 
-    <RelativeLayout
-        android:id="@+id/rl_collect"
-        style="@style/setting_item_bg_style">
+    <com.bailiangjin.simpleim.base.view.ItemView
+        android:id="@+id/itv_user"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:item_left_iv_background="@drawable/icon_user"
+        app:left_text="用户" />
 
-        <ImageView
-            android:id="@+id/iv_collect"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:src="@drawable/ic_settings_black" />
-
-        <TextView
-            style="@style/setting_tv_style"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/iv_collect"
-            android:text="收藏" />
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:id="@+id/rl_setting"
+    <com.bailiangjin.simpleim.base.view.ItemView
+        android:id="@+id/itv_collect"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_marginTop="2dp"
-        style="@style/setting_item_bg_style">
+        app:item_left_iv_background="@drawable/ic_account_box_black"
+        app:left_text="收藏" />
 
-        <ImageView
-            android:id="@+id/iv_setting"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="16dp"
-            android:src="@drawable/ic_settings_black" />
-
-        <TextView
-            style="@style/setting_tv_style"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/iv_setting"
-            android:text="设置" />
-
-    </RelativeLayout>
+    <com.bailiangjin.simpleim.base.view.ItemView
+        android:id="@+id/itv_setting"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="2dp"
+        app:item_left_iv_background="@drawable/ic_settings_black"
+        app:left_text="设置" />
 
 
 </LinearLayout>

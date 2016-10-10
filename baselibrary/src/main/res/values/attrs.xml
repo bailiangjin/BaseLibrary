@@ -2,6 +2,8 @@
 <resources>
 
 
+
+
     <declare-styleable name="BaseTitleView">
         <!--标题栏背景-->
         <attr name="root_background" format="color|reference"/>
@@ -25,5 +27,24 @@
         <attr name="left_iv_visibility" format="boolean"/>
         <attr name="right_iv_visibility" format="boolean"/>
         <attr name="right_iv2_visibility" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ItemView">
+        <!--标题栏背景-->
+        <attr name="item_root_background" format="color|reference"/>
+        <!--文字内容-->
+        <attr name="left_text" format="string|reference"/>
+        <attr name="right_text" format="string|reference"/>
+        <!--文字大小-->
+        <attr name="left_text_size" format="dimension"/>
+        <attr name="right_text_size" format="dimension"/>
+        <!--View背景-->
+        <attr name="item_left_iv_background" format="color|reference"/>
+        <attr name="item_right_iv_background" format="color|reference"/>
+        <!--控件可见性-->
+        <attr name="item_left_iv_visibility" format="boolean"/>
+        <attr name="item_right_iv_visibility" format="boolean"/>
+        <attr name="left_text_visibility" format="boolean"/>
+        <attr name="right_text_visibility" format="boolean"/>
     </declare-styleable>
 </resources>
