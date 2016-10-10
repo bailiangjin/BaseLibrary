@@ -206,9 +206,9 @@ public abstract class BaseTitleView extends FrameLayout {
         setViewBackground(btn_left, R.styleable.BaseTitleView_left_btn_background, typedArray);
         setViewBackground(btn_right, R.styleable.BaseTitleView_right_btn_background, typedArray);
 
-        setImageRes(iv_left, R.styleable.BaseTitleView_left_iv_background, typedArray);
-        setImageRes(iv_right, R.styleable.BaseTitleView_right_iv_background, typedArray);
-        setImageRes(iv_right2, R.styleable.BaseTitleView_right_iv2_background, typedArray);
+        setImageRes(iv_left, R.styleable.BaseTitleView_left_iv_src, typedArray);
+        setImageRes(iv_right, R.styleable.BaseTitleView_right_iv_src, typedArray);
+        setImageRes(iv_right2, R.styleable.BaseTitleView_right_iv2_src, typedArray);
 
         setTvContent(tv_title, R.styleable.BaseTitleView_title_text, typedArray);
         setTvContent(btn_left, R.styleable.BaseTitleView_left_btn_text, typedArray);

@@ -7,31 +7,105 @@
     android:gravity="center_horizontal|top"
     android:orientation="vertical">
 
-    <TextView
-        style="@style/title_tv_style"
-        android:text="设置" />
-
-    <com.bailiangjin.simpleim.base.view.ItemView
-        android:id="@+id/itv_user"
+    <RelativeLayout
+        style="@style/setting_item_bg_style"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        app:left_iv_background="@drawable/icon_user"
-        app:left_text="用户" />
+        android:layout_height="100dp"
+        android:layout_marginTop="18dp">
 
-    <com.bailiangjin.simpleim.base.view.ItemView
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/icon_user" />
+
+        <ImageView
+            android:id="@+id/iv_qr_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/btg_icon_captcha" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/iv_qr_code"
+            android:layout_toRightOf="@id/iv_head"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <TextView
+                style="@style/guide_tv_style"
+                android:text="Kevin"
+                android:textColor="@color/black" />
+
+            <TextView
+                style="@style/guide_tv_style"
+                android:layout_marginTop="2dp"
+                android:text="简信id"
+                android:textColor="@color/gray_pressed" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.kevin.baselibrary.view.ItemView
+        android:id="@+id/itv_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:left_iv_src="@drawable/ic_settings_black"
+        app:left_text="相册" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="0.5dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@color/gray"/>
+
+    </RelativeLayout>
+
+    <com.kevin.baselibrary.view.ItemView
         android:id="@+id/itv_collect"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="2dp"
-        app:left_iv_background="@drawable/ic_account_box_black"
+        android:layout_height="wrap_content"
+        app:left_iv_src="@drawable/ic_account_box_black"
         app:left_text="收藏" />
 
-    <com.bailiangjin.simpleim.base.view.ItemView
+
+    <com.kevin.baselibrary.view.ItemView
+        android:id="@+id/itv_pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:left_iv_src="@drawable/icon_user"
+        app:left_text="钱包" />
+
+    <com.kevin.baselibrary.view.ItemView
+        android:id="@+id/itv_expression"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:left_iv_src="@drawable/ic_settings_black"
+        app:left_text="表情" />
+
+
+    <com.kevin.baselibrary.view.ItemView
         android:id="@+id/itv_setting"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="2dp"
-        app:left_iv_background="@drawable/ic_settings_black"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:left_iv_src="@drawable/ic_settings_black"
         app:left_text="设置" />
 
 

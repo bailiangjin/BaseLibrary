@@ -180,6 +180,15 @@
     </style>
 
 
+    <!-- Item 背景样式 -->
+    <style name="setting_item_bg_style" >
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/setting_bg_item_selector</item>
+    </style>
+
+
 
 
 

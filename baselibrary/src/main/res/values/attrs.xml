@@ -3,8 +3,8 @@
 
 
     <!--声明共用属性-->
-    <attr name="left_iv_background" format="color|reference" />
-    <attr name="right_iv_background" format="color|reference" />
+    <attr name="left_iv_src" format="color|reference" />
+    <attr name="right_iv_src" format="color|reference" />
 
     <attr name="left_iv_visibility" format="boolean" />
     <attr name="right_iv_visibility" format="boolean" />
@@ -26,9 +26,9 @@
         <attr name="left_btn_text_size" format="dimension" />
         <attr name="right_btn_text_size" format="dimension" />
         <!--View背景-->
-        <attr name="left_iv_background" />
-        <attr name="right_iv_background" />
-        <attr name="right_iv2_background" format="color|reference" />
+        <attr name="left_iv_src" />
+        <attr name="right_iv_src" />
+        <attr name="right_iv2_src" format="color|reference" />
         <attr name="left_btn_background" format="color|reference" />
         <attr name="right_btn_background" format="color|reference" />
         <!--控件可见性-->
@@ -49,8 +49,8 @@
         <attr name="left_text_size" format="dimension" />
         <attr name="right_text_size" format="dimension" />
         <!--View背景-->
-        <attr name="left_iv_background" />
-        <attr name="right_iv_background" />
+        <attr name="left_iv_src" />
+        <attr name="right_iv_src" />
         <!--控件可见性-->
         <attr name="left_iv_visibility" />
         <attr name="right_iv_visibility" />

@@ -1,4 +1,4 @@
-package com.bailiangjin.simpleim.base.view;
+package com.kevin.baselibrary.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bailiangjin.simpleim.R;
+import com.kevin.baselibrary.R;
 
 
 /**
@@ -40,8 +40,8 @@ public class ItemView extends FrameLayout {
     private void parseAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ItemView);
         setViewBackground(rl_root, R.styleable.ItemView_root_background, typedArray);
-        setImageRes(iv_left, R.styleable.ItemView_left_iv_background, typedArray);
-        setImageRes(iv_right, R.styleable.ItemView_right_iv_background, typedArray);
+        setImageRes(iv_left, R.styleable.ItemView_left_iv_src, typedArray);
+        setImageRes(iv_right, R.styleable.ItemView_right_iv_src, typedArray);
 
         setTvContent(tv_left, R.styleable.ItemView_left_text, typedArray);
         setTvContent(tv_right, R.styleable.ItemView_right_text, typedArray);
