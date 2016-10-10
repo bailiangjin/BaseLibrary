@@ -61,6 +61,12 @@
         <item name="android:textSize">@dimen/tv_size_middle</item>
     </style>
 
+    <style name="setting_tv_style" parent="@style/tv_base_style">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">@dimen/tv_size_middle</item>
+    </style>
+
     <style name="green_tv_style" parent="@style/tv_base_style">
         <item name="android:textSize">@dimen/tv_size_middle</item>
         <item name="android:textColor">@color/green</item>

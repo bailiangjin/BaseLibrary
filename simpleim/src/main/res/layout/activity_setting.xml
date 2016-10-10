@@ -1,18 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
     style="@style/app_common_bg"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal|top">
+    android:gravity="center_horizontal|top"
+    android:orientation="vertical">
 
 
     <TextView
         android:id="@+id/tv_about"
         style="@style/title_tv_style"
-        android:layout_marginTop="30dp"
-        android:text="@string/about"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/about" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_collect"
+        style="@style/setting_item_bg_style">
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_settings_black" />
+
+        <TextView
+            style="@style/setting_tv_style"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_collect"
+            android:text="收藏" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_setting"
+        android:layout_marginTop="2dp"
+        style="@style/setting_item_bg_style">
+
+        <ImageView
+            android:id="@+id/iv_setting"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/ic_settings_black" />
+
+        <TextView
+            style="@style/setting_tv_style"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_setting"
+            android:text="设置" />
+
+    </RelativeLayout>
+
 
 </LinearLayout>

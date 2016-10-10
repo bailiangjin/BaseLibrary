@@ -29,4 +29,14 @@
         <item name="android:textColor">@drawable/tv_color_selector_grey_green</item>
     </style>
 
+
+    <!-- TextView 样式 -->
+    <style name="setting_item_bg_style" >
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/setting_bg_item_selector</item>
+    </style>
+
+
 </resources>
