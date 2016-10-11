@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
-import com.bailiangjin.simpleim.appui.account.LoginActivity;
-import com.bailiangjin.simpleim.base.BaseActivity;
+import com.bailiangjin.simpleim.module.account.LoginActivity;
+import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
 import com.kevin.baselibrary.app.AppUtils;
 

@@ -1,7 +1,7 @@
 package com.bailiangjin.simpleim.engine.logicutils;
 
 import com.bailiangjin.simpleim.constants.SPKey;
-import com.bailiangjin.simpleim.db.ImDbUtils;
+import com.bailiangjin.simpleim.appcommon.db.ImDbUtils;
 import com.bailiangjin.simpleim.modle.User;
 import com.kevin.baselibrary.constant.SuperSPKey;
 import com.kevin.baselibrary.utils.LogUtils;

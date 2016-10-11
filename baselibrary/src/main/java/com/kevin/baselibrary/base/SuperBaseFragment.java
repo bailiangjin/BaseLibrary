@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 
-public abstract class SuperBaseFragment extends Fragment implements View.OnClickListener {
+public abstract class SuperBaseFragment extends Fragment  {
 
     protected View rootView;
 
@@ -30,6 +30,7 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LogUtils.d("Fragment:::-->>onCreateView");
         rootView = inflater.inflate(getLayoutResId(), container, false);
+        initView();
         return rootView;
     }
 
@@ -37,6 +38,8 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
     public void onActivityCreated(Bundle savedInstanceState) {
         LogUtils.d("Fragment:::-->>onActivityCreated");
         super.onActivityCreated(savedInstanceState);
+
+        initData();
     }
 
     @Override
@@ -81,10 +84,6 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
         super.onDetach();
     }
 
-    @Override
-    public void onClick(View v) {
-        onViewClick(v);
-    }
 
     /**
      * 设置layout ResId
@@ -93,12 +92,6 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
      */
     protected abstract int getLayoutResId();
 
-    /**
-     * 全局点击事件 回调方法
-     *
-     * @param v
-     */
-    protected abstract void onViewClick(View v);
 
 
     /**
@@ -136,5 +129,10 @@ public abstract class SuperBaseFragment extends Fragment implements View.OnClick
     protected void longToast(int resId) {
         ToastUtils.longToast( resId);
     }
+
+
+    protected abstract void initView();
+
+    protected abstract void initData();
 
 }

@@ -2,7 +2,7 @@ package com.bailiangjin.simpleim.utils;
 
 import android.content.Intent;
 
-import com.bailiangjin.simpleim.base.BaseActivity;
+import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 
 import java.util.HashMap;
 import java.util.Map;

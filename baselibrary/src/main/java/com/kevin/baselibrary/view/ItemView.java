@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.R;
+import com.kevin.baselibrary.activity.ItemClickListener;
 
 
 /**
@@ -156,6 +157,16 @@ public class ItemView extends FrameLayout {
 
     public void setRightIvSize(int width, int height) {
         setViewSize(iv_right, width, height);
+    }
+
+
+    public void setClickListener(final ItemClickListener listener){
+        rl_root.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick();
+            }
+        });
     }
 
 

@@ -3,7 +3,6 @@ package com.kevin.building.demo.viewpager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -44,23 +43,7 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
      */
     private ImageView[] imgDots;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        initView();
-
-        initData();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-    }
 
     @Override
     protected int getLayoutResId() {
@@ -104,7 +87,8 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
     /**
      * 初始化页面
      */
-    private void initView() {
+    @Override
+    protected void initView() {
         tv_vp_title = (TextView) rootView.findViewById(R.id.tv_vp_title);
         mViewPager = (ViewPager) rootView.findViewById(R.id.vp_images);
         ll_dot = (LinearLayout) rootView.findViewById(R.id.ll_dot);
@@ -114,7 +98,8 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
     /**
      * 初始化数据
      */
-    private void initData() {
+    @Override
+    protected void initData() {
         vpBeanList = getVpBeanList();
         mViewPager.setAdapter(new MyPagerAdapter(vpBeanList));
 

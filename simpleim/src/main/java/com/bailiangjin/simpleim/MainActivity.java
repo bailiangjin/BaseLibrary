@@ -13,13 +13,13 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
-import com.bailiangjin.simpleim.appui.common.adapter.MainFragmentAdapter;
-import com.bailiangjin.simpleim.appui.common.fragment.ContactFragment;
-import com.bailiangjin.simpleim.appui.common.fragment.DiscoverFragment;
-import com.bailiangjin.simpleim.appui.common.fragment.HomeFragment;
-import com.bailiangjin.simpleim.appui.common.fragment.SettingFragment;
-import com.bailiangjin.simpleim.appui.im.user.UserListActivity;
-import com.bailiangjin.simpleim.base.BaseActivity;
+import com.bailiangjin.simpleim.module.common.adapter.MainFragmentAdapter;
+import com.bailiangjin.simpleim.module.common.fragment.ContactFragment;
+import com.bailiangjin.simpleim.module.common.fragment.DiscoverFragment;
+import com.bailiangjin.simpleim.module.common.fragment.HomeFragment;
+import com.bailiangjin.simpleim.module.common.fragment.SettingFragment;
+import com.bailiangjin.simpleim.module.im.user.UserListActivity;
+import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 import com.kevin.baselibrary.activity.ItemClickListener;
 
 import java.util.ArrayList;

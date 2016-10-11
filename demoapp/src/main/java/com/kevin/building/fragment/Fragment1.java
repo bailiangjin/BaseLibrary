@@ -2,7 +2,6 @@ package com.kevin.building.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
 
 import com.kevin.building.R;
 import com.kevin.building.base.BaseFragment;
@@ -85,7 +84,15 @@ public class Fragment1 extends BaseFragment
 		return R.layout.fragment1;
 	}
 
+	@Override
+	protected void initView() {
 
+	}
+
+	@Override
+	protected void initData() {
+
+	}
 
 
 }

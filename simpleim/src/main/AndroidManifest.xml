@@ -11,35 +11,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <!--<activity android:name=".SplashActivity">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".MainActivity" />
 
         <!--应用系统界面-->
         <activity
-            android:name=".appui.common.AboutActivity"
+            android:name=".module.common.AboutActivity"
             android:label="@string/about" />
         <activity
-            android:name=".appui.common.SettingActivity"
+            android:name=".module.common.SettingActivity"
             android:label="@string/setting" />
 
         <!--应用账户相关界面-->
 
         <activity
-            android:name=".appui.account.RegisterActivity"
+            android:name=".module.account.RegisterActivity"
             android:label="@string/register" />
         <activity
-            android:name=".appui.account.LoginActivity"
+            android:name=".module.account.LoginActivity"
             android:label="@string/login" />
 
         <activity
-            android:name=".appui.account.LogoutActivity"
+            android:name=".module.account.LogoutActivity"
             android:label="@string/logout" />
 
 
@@ -47,35 +47,35 @@
         <!--联系人相关页面-->
 
         <activity
-            android:name=".appui.im.user.AddFriendActivity"
+            android:name=".module.im.user.AddFriendActivity"
             android:label="@string/addcontacts" />
         <activity
-            android:name=".appui.im.user.UserListActivity"
+            android:name=".module.im.user.UserListActivity"
             android:label="@string/user_list" />
 
         <activity
-            android:name=".appui.account.UserInfoActivity"
+            android:name=".module.account.UserInfoActivity"
             android:label="@string/user_info" />
 
         <!--IM 相关界面-->
 
         <activity
-            android:name=".appui.im.chat.ChatActivity"
+            android:name=".module.im.chat.ChatActivity"
             android:label="会话" />
 
 
         <!--简信-->
 
         <activity
-            android:name=".leancloud.LcLoginActivity"
+            android:name=".sdk.leancloud.LcLoginActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
         </activity>
 
-        <activity android:name=".leancloud.LcMainActivity"
+        <activity android:name=".sdk.leancloud.LcMainActivity"
             android:theme="@style/LCIMActivity.NoActionBar"/>
 
     </application>
