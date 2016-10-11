@@ -28,7 +28,7 @@ public class IMApplication extends SuperApplication {
         ImageLoadUtils.INSTANCE.init(this);
         LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
         AVOSCloud.setDebugLogEnabled(true);
-        LCChatKit.getInstance().init(getApplicationContext(), LCConfig.APP_ID, LCConfig.APP_KEY);
+        LCChatKit.getInstance().init(getApplicationContext(), LCConfig.TEST_IM_APP_ID, LCConfig.TEST_IM_APP_KEY);
     }
 
     @Override

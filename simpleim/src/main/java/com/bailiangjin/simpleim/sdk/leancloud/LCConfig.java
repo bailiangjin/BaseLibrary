@@ -8,8 +8,8 @@ package com.bailiangjin.simpleim.sdk.leancloud;
 public class LCConfig {
 
     //测试应用参数
-    private final String TEST_IM_APP_ID = "NmB2tYD8YmBODEg8MJTq5EoK-gzGzoHsz";
-    private final String TEST_IM_APP_KEY = "hulb7OOcmQkuy0FF4aqMUDfx";
+    public static final String TEST_IM_APP_ID = "NmB2tYD8YmBODEg8MJTq5EoK-gzGzoHsz";
+    public static final String TEST_IM_APP_KEY = "hulb7OOcmQkuy0FF4aqMUDfx";
 
 
     public static final String APP_ID = "dYRQ8YfHRiILshUnfFJu2eQM-gzGzoHsz";
