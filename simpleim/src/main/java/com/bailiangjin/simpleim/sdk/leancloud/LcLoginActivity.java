@@ -14,6 +14,7 @@ import com.avos.avoscloud.im.v2.AVIMClient;
 import com.avos.avoscloud.im.v2.AVIMException;
 import com.avos.avoscloud.im.v2.callback.AVIMClientCallback;
 import com.bailiangjin.simpleim.R;
+import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
 
 import cn.leancloud.chatkit.LCChatKit;
 
@@ -43,10 +44,12 @@ public class LcLoginActivity extends AppCompatActivity {
         onLoginClick();
       }
     });
+    loginButton.callOnClick();
   }
 
   public void onLoginClick() {
-    String clientId = nameView.getText().toString();
+//    String clientId = nameView.getText().toString();
+    String clientId = AccountUtils.getUserName();
     if (TextUtils.isEmpty(clientId.trim())) {
       Toast.makeText(this, "不能为空", Toast.LENGTH_SHORT).show();
       return;

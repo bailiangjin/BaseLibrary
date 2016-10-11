@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 
-public abstract class SuperBaseFragment extends Fragment  {
+public abstract class SuperBaseFragment extends Fragment {
 
     protected View rootView;
 
@@ -30,6 +30,7 @@ public abstract class SuperBaseFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LogUtils.d("Fragment:::-->>onCreateView");
         rootView = inflater.inflate(getLayoutResId(), container, false);
+        bindView(rootView);
         initView();
         return rootView;
     }
@@ -93,7 +94,6 @@ public abstract class SuperBaseFragment extends Fragment  {
     protected abstract int getLayoutResId();
 
 
-
     /**
      * shortToast toast by string
      *
@@ -127,12 +127,14 @@ public abstract class SuperBaseFragment extends Fragment  {
      * @param resId
      */
     protected void longToast(int resId) {
-        ToastUtils.longToast( resId);
+        ToastUtils.longToast(resId);
     }
 
 
     protected abstract void initView();
 
     protected abstract void initData();
+
+    protected abstract void bindView(View view);
 
 }

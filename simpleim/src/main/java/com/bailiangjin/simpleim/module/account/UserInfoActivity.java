@@ -28,9 +28,6 @@ public class UserInfoActivity extends BaseActivity {
     @BindView(R.id.tv_userinfo_userid)
     TextView tv_userinfo_userid;
 
-    static String picUrl="https://raw.githubusercontent.com/bailiangjin/bailiangjin.github.io/master/dev/download/picture/HeadPortrait.jpeg";
-
-
 
 
     public static void start(Activity activity) {
@@ -43,7 +40,7 @@ public class UserInfoActivity extends BaseActivity {
     protected void initView() {
 
         titleBarBuilder.setTitleText(getString(R.string.friend_info));
-        ImageLoadUtils.INSTANCE.loadCircleImageView(iv_head,picUrl);
+        ImageLoadUtils.INSTANCE.loadCircleImageView(iv_head,AccountUtils.defaultHeadUrl);
     }
 
     @Override

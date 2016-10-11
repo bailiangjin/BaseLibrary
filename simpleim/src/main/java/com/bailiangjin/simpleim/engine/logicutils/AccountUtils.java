@@ -14,7 +14,10 @@ import com.kevin.baselibrary.utils.SPUtils;
  */
 public class AccountUtils {
 
-    public static String  getCurrentUserId(){
+    public static final String defaultHeadUrl = "https://raw.githubusercontent.com/bailiangjin/bailiangjin.github.io/master/dev/download/picture/HeadPortrait.jpeg";
+
+
+    public static String getCurrentUserId() {
         return getUserName();
     }
 
@@ -35,7 +38,7 @@ public class AccountUtils {
         return true;
     }
 
-    public static boolean isLoginStatus(){
+    public static boolean isLoginStatus() {
         return SPUtils.getBoolean(SPKey.IS_LOGINED);
     }
 
@@ -52,15 +55,15 @@ public class AccountUtils {
         SPUtils.putString(SuperSPKey.PASSWORD, isSavePassword ? password : "");
         SPUtils.putBoolean(SuperSPKey.SAVEPWD, isSavePassword);
         SPUtils.putBoolean(SPKey.IS_LOGINED, true);
-        User curUser= new User();
+        User curUser = new User();
         curUser.setId(userName);
         curUser.setName(userName);
 
         ImDbUtils.saveOrUpdateUser(curUser);
-        User newUser= ImDbUtils.findUser(curUser);
+        User newUser = ImDbUtils.findUser(curUser);
 
-        LogUtils.e("curUser:"+newUser.getId());
-        LogUtils.e("curUser:"+newUser.getName());
+        LogUtils.e("curUser:" + newUser.getId());
+        LogUtils.e("curUser:" + newUser.getName());
     }
 
     public static String getUserName() {
