@@ -54,10 +54,9 @@
 
     </RelativeLayout>
 
-    <com.kevin.baselibrary.view.ItemView
+    <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_gallery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/my_item_view_style"
         android:layout_marginTop="18dp"
         app:left_iv_src="@drawable/ic_settings_black"
         app:left_text="相册" />
@@ -75,35 +74,31 @@
 
     </RelativeLayout>
 
-    <com.kevin.baselibrary.view.ItemView
+    <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_collect"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/my_item_view_style"
         app:left_iv_src="@drawable/ic_account_box_black"
         app:left_text="收藏" />
 
 
-    <com.kevin.baselibrary.view.ItemView
+    <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_pause"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/my_item_view_style"
         android:layout_marginTop="18dp"
         app:left_iv_src="@drawable/icon_user"
         app:left_text="钱包" />
 
-    <com.kevin.baselibrary.view.ItemView
+    <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_expression"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/my_item_view_style"
         android:layout_marginTop="18dp"
         app:left_iv_src="@drawable/ic_settings_black"
         app:left_text="表情" />
 
 
-    <com.kevin.baselibrary.view.ItemView
+    <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_setting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/my_item_view_style"
         android:layout_marginTop="18dp"
         app:left_iv_src="@drawable/ic_settings_black"
         app:left_text="设置" />

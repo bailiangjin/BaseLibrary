@@ -6,6 +6,12 @@
     <attr name="left_iv_src" format="color|reference" />
     <attr name="right_iv_src" format="color|reference" />
 
+    <attr name="left_iv_width" format="dimension" />
+    <attr name="left_iv_height" format="dimension" />
+
+    <attr name="right_iv_width" format="dimension" />
+    <attr name="right_iv_height" format="dimension" />
+
     <attr name="left_iv_visibility" format="boolean" />
     <attr name="right_iv_visibility" format="boolean" />
 
@@ -51,6 +57,13 @@
         <!--View背景-->
         <attr name="left_iv_src" />
         <attr name="right_iv_src" />
+
+        <!--控件大小-->
+        <attr name="left_iv_width" />
+        <attr name="left_iv_height" />
+
+        <attr name="right_iv_width" />
+        <attr name="right_iv_height" />
         <!--控件可见性-->
         <attr name="left_iv_visibility" />
         <attr name="right_iv_visibility" />

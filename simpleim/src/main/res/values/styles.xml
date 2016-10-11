@@ -29,6 +29,15 @@
         <item name="android:textColor">@drawable/tv_color_selector_grey_green</item>
     </style>
 
+    <!-- TextView 样式 -->
+    <style name="my_item_view_style" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="left_iv_width">26dp</item>
+        <item name="left_iv_height">26dp</item>
+    </style>
+
+
 
 
 
