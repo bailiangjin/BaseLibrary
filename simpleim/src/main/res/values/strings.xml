@@ -18,4 +18,6 @@
     <string name="test_launchmode">测试Launchmode</string>
     <string name="search_demo">搜索demo</string>
     <string name="drag_gridveiw_demo">拖动GridView Demo</string>
+
+    <string name="square">广场</string>
 </resources>

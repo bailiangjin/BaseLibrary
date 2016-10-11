@@ -1,15 +1,25 @@
 package com.bailiangjin.simpleim;
 
+import com.avos.avoscloud.AVOSCloud;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
+import com.bailiangjin.simpleim.leancloud.CustomUserProvider;
 import com.bailiangjin.simpleim.utils.ImageLoadUtils;
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
 import com.kevin.baselibrary.app.SuperApplication;
 
+import cn.leancloud.chatkit.LCChatKit;
+
 /**
  * Created by bailiangjin on 16/8/2.
  */
 public class IMApplication extends SuperApplication{
+
+
+    // 此 id 与 key 仅供测试使用
+    private final String APP_ID = "dYRQ8YfHRiILshUnfFJu2eQM-gzGzoHsz";
+    private final String APP_KEY = "ye24iIK6ys8IvaISMC4Bs5WK";
+
 
     @Override
     public void onCreate() {
@@ -18,6 +28,10 @@ public class IMApplication extends SuperApplication{
         //初始化 ImageLoad工具类
         // 只在Application中初始化一次 全局可使用
         ImageLoadUtils.INSTANCE.init(this);
+
+        LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
+        AVOSCloud.setDebugLogEnabled(true);
+        LCChatKit.getInstance().init(getApplicationContext(), APP_ID, APP_KEY);
     }
 
     @Override

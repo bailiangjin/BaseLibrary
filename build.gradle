@@ -3,6 +3,9 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
+        maven {
+            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
+        }
     }
 
     dependencies {
@@ -23,7 +26,11 @@ allprojects {
 
     repositories {
         jcenter()
+        maven {
+            url "http://mvn.leancloud.cn/nexus/content/repositories/public"
+        }
     }
+
 }
 
 
