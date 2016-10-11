@@ -77,6 +77,10 @@
 
 
 
+    <color name="we_chat_grey_pressed">#D9D9D9</color>
+    <color name="we_chat_grey_bg">#EBEBEB</color>
+
+
     <color name="app_base_color">#4DBB65</color>
     <color name="app_base_color_pressed">#4D9A65</color>
 

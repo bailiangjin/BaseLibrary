@@ -4,7 +4,7 @@
 
     <gradient
         android:angle="270"
-        android:endColor="#DDDDDD"
-        android:startColor="#CCCCCC" />
+        android:endColor="@color/we_chat_grey_bg"
+        android:startColor="@color/we_chat_grey_bg" />
 
 </shape>
