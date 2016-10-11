@@ -35,6 +35,8 @@ ext {
     desc = 'android develop base library by geekkevin'//描述，不重要
     website = 'https://github.com/bailiangjin/BaseLibrary'//网站，不重要
     licences = ['Apache-2.0']
+
+
 }
 
 
