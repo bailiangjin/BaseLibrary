@@ -18,7 +18,7 @@ import com.kevin.baselibrary.R;
 /**
  * 标题栏 抽象类
  */
-public abstract class ItemView extends FrameLayout {
+public class ItemView extends FrameLayout {
 
     private RelativeLayout rl_root;
     private TextView tv_left;
@@ -52,8 +52,8 @@ public abstract class ItemView extends FrameLayout {
         setTextSize(tv_left, R.styleable.ItemView_left_text_size, typedArray);
         setTextSize(tv_right, R.styleable.ItemView_right_text_size, typedArray);
 
-        setViewSize(iv_left, R.styleable.ItemView_left_iv_width, R.styleable.ItemView_left_iv_height,typedArray);
-        setViewSize(iv_right, R.styleable.ItemView_right_iv_width, R.styleable.ItemView_right_iv_height,typedArray);
+//        setViewSize(iv_left, R.styleable.ItemView_left_iv_width, R.styleable.ItemView_left_iv_height, typedArray);
+//        setViewSize(iv_right, R.styleable.ItemView_right_iv_width, R.styleable.ItemView_right_iv_height, typedArray);
 
         setViewVisibility(tv_left, R.styleable.ItemView_left_text_visibility, typedArray, true);
         setViewVisibility(tv_right, R.styleable.ItemView_right_text_visibility, typedArray);
@@ -111,56 +111,52 @@ public abstract class ItemView extends FrameLayout {
         if (width == -1 || height == -1) {
             return;
         }
-        setViewSize(view,width,height);
-
+        setViewSize(view, width, height);
     }
 
-    private void setLeftText(String text) {
-        if (TextUtils.isEmpty(text)) {
-            return;
-        }
-        tv_left.setText(text);
-    }
-
-    private void setRightText(String text) {
-        if (TextUtils.isEmpty(text)) {
-            return;
-        }
-        tv_right.setText(text);
-    }
-
-    private void setLeftIV(int resId) {
-        if (0 == resId || -1 == resId) {
-            return;
-        }
-        iv_left.setImageResource(resId);
-    }
-
-    private void setRightIV(int resId) {
-        if (0 == resId || -1 == resId) {
-            return;
-        }
-        iv_right.setImageResource(resId);
-    }
-
-
-    private void setViewSize(View view,int width, int height) {
+    private void setViewSize(View view, int width, int height) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         layoutParams.width = width;
         layoutParams.height = height;
         view.invalidate();
     }
 
-    private void setLeftIvSize(int width, int height) {
-        setViewSize(iv_left,width,height);
+
+    public void setLeftText(String text) {
+        if (TextUtils.isEmpty(text)) {
+            return;
+        }
+        tv_left.setText(text);
     }
 
-    private void setRightIvSize(int width, int height) {
-        setViewSize(iv_right,width,height);
+    public void setRightText(String text) {
+        if (TextUtils.isEmpty(text)) {
+            return;
+        }
+        tv_right.setText(text);
     }
 
+    public void setLeftIV(int resId) {
+        if (0 == resId || -1 == resId) {
+            return;
+        }
+        iv_left.setImageResource(resId);
+    }
 
+    public void setRightIV(int resId) {
+        if (0 == resId || -1 == resId) {
+            return;
+        }
+        iv_right.setImageResource(resId);
+    }
 
+    public void setLeftIvSize(int width, int height) {
+        setViewSize(iv_left, width, height);
+    }
+
+    public void setRightIvSize(int width, int height) {
+        setViewSize(iv_right, width, height);
+    }
 
 
 }

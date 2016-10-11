@@ -56,41 +56,46 @@
 
     <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_gallery"
-        style="@style/my_item_view_style"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_marginTop="18dp"
         app:left_iv_src="@drawable/ic_settings_black"
         app:left_text="相册" />
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="0.5dp">
+        android:layout_height="0.5dp"
+        android:background="@color/white">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:src="@color/gray"/>
+            android:src="@color/gray" />
 
     </RelativeLayout>
 
     <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_collect"
-        style="@style/my_item_view_style"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         app:left_iv_src="@drawable/ic_account_box_black"
         app:left_text="收藏" />
 
 
     <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_pause"
-        style="@style/my_item_view_style"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_marginTop="18dp"
         app:left_iv_src="@drawable/icon_user"
         app:left_text="钱包" />
 
     <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_expression"
-        style="@style/my_item_view_style"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_marginTop="18dp"
         app:left_iv_src="@drawable/ic_settings_black"
         app:left_text="表情" />
@@ -98,8 +103,9 @@
 
     <com.bailiangjin.simpleim.view.MyItemView
         android:id="@+id/itv_setting"
-        style="@style/my_item_view_style"
         android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:left_iv_src="@drawable/ic_settings_black"
         app:left_text="设置" />
 
