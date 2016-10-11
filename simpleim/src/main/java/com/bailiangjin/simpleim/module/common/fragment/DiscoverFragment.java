@@ -23,8 +23,6 @@ public class DiscoverFragment extends BaseFragment{
     @Override
     protected void initView() {
         itv_friend_circle= (MyItemView) rootView.findViewById(R.id.itv_friend_circle);
-
-        shortToast("is Null:"+(null==itv_friend_circle));
         itv_friend_circle.setClickListener(new ItemClickListener() {
             @Override
             public void onClick() {
