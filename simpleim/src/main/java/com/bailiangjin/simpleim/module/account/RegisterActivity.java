@@ -13,6 +13,8 @@ import com.bailiangjin.simpleim.utils.ActivityUtils;
 
 import java.util.HashMap;
 
+import butterknife.OnClick;
+
 /**
  * 注册
  */
@@ -43,7 +45,6 @@ public class RegisterActivity extends BaseActivity
 	@Override
 	protected void initView() {
 		titleBarBuilder.setTitleText(getString(R.string.register));
-		findViewById(R.id.btn_regist).setOnClickListener(this);
 		et_username= (EditText) findViewById(R.id.et_username);
 		et_password= (EditText) findViewById(R.id.et_pwd);
 		et_confirm_pwd= (EditText) findViewById(R.id.et_confirm_pwd);
@@ -55,8 +56,8 @@ public class RegisterActivity extends BaseActivity
 	}
 
 
-	@Override
-	protected void onViewClick(View v)
+	@OnClick({R.id.btn_regist,})
+	public void onViewClick(View v)
 	{
 		switch (v.getId())
 		{

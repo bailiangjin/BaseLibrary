@@ -36,7 +36,6 @@ public class SettingActivity extends BaseActivity{
 
     @OnClick({R.id.tv_about})
     public void onClick(View v) {
-        super.onClick(v);
         switch (v.getId()) {
             case R.id.tv_about://登录成功
                 ActivityUtils.startActivity(this,AboutActivity.class);

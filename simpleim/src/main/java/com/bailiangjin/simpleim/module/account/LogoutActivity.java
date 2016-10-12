@@ -9,17 +9,24 @@ import com.bailiangjin.simpleim.IMApplication;
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 
 public class LogoutActivity extends BaseActivity {
 
-    private Button btn_set_manageuser;
-    private Button btn_set_cancel;
-    private Button btn_set_logout;
+    @BindView(R.id.btn_set_manageuser)
+    Button btn_set_manageuser;
+    @BindView(R.id.btn_set_cancel)
+    Button btn_set_cancel;
+    @BindView(R.id.btn_set_logout)
+    Button btn_set_logout;
 
-    public static void start(Activity activity){
-        Intent intent = new Intent(activity,LogoutActivity.class);
+    public static void start(Activity activity) {
+        Intent intent = new Intent(activity, LogoutActivity.class);
         activity.startActivity(intent);
     }
+
     @Override
     protected int getLayoutResId() {
         return R.layout.activity_logout;
@@ -34,12 +41,6 @@ public class LogoutActivity extends BaseActivity {
     @Override
     protected void initView() {
         titleBarBuilder.setTitleText(getString(R.string.logout));
-        btn_set_manageuser = (Button) findViewById(R.id.btn_set_manageuser);
-        btn_set_cancel = (Button) findViewById(R.id.btn_set_cancel);
-        btn_set_logout = (Button) findViewById(R.id.btn_set_logout);
-        btn_set_manageuser.setOnClickListener(this);
-        btn_set_cancel.setOnClickListener(this);
-        btn_set_logout.setOnClickListener(this);
     }
 
     @Override
@@ -47,9 +48,8 @@ public class LogoutActivity extends BaseActivity {
 
     }
 
-
-    @Override
-    protected void onViewClick(View v) {
+    @OnClick({R.id.btn_set_cancel, R.id.btn_set_logout, R.id.btn_set_manageuser})
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_set_cancel:
                 this.finish();

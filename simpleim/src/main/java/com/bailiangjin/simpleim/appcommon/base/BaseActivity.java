@@ -6,7 +6,6 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.MotionEvent;
-import android.view.View;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.constants.BroadcastAction;
@@ -20,7 +19,7 @@ import java.util.Set;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseActivity implements View.OnClickListener {
+public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         LogUtils.d("Activity:::-->>onCreate");
@@ -201,8 +200,6 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseA
     }
 
 
-
-
     public T getBinding() {
         return (T) super.getBinding();
     }
@@ -210,15 +207,6 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseA
 
     @Override
     protected void handleMsg(Message msg) {
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        onViewClick(v);
-    }
-
-    protected void onViewClick(View v) {
 
     }
 }

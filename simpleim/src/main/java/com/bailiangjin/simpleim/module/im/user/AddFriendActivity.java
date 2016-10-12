@@ -13,6 +13,9 @@ import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 import com.bailiangjin.simpleim.utils.ActivityUtils;
 import com.kevin.baselibrary.activity.ItemClickListener;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 /**
  * 添加联系人
  */
@@ -21,15 +24,17 @@ public class AddFriendActivity extends BaseActivity {
     /**
      * 添加按钮
      */
-    private Button btn_add;
+    @BindView(R.id.btn_add)
+    Button btn_add;
     /**
      * 退出按钮
      */
-    private Button btn_logout;
+    @BindView(R.id.btn_logout)
+    Button btn_logout;
 
 
-    public static void start(Activity activity){
-        Intent intent = new Intent(activity,AddFriendActivity.class);
+    public static void start(Activity activity) {
+        Intent intent = new Intent(activity, AddFriendActivity.class);
         activity.startActivity(intent);
     }
 
@@ -67,12 +72,6 @@ public class AddFriendActivity extends BaseActivity {
             }
         }).build();
 
-        btn_add = (Button) findViewById(R.id.btn_add);
-        btn_logout = (Button) findViewById(R.id.btn_logout);
-
-        btn_add.setOnClickListener(this);
-        btn_logout.setOnClickListener(this);
-
     }
 
     @Override
@@ -81,8 +80,8 @@ public class AddFriendActivity extends BaseActivity {
     }
 
 
-    @Override
-    public void onViewClick(View v) {
+    @OnClick({R.id.btn_add, R.id.btn_logout})
+    public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_add:
                 shortToast("添加");

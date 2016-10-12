@@ -116,7 +116,6 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick({R.id.btn_login, R.id.tv_register})
     public void onClick(View v) {
-        super.onClick(v);
         switch (v.getId()) {
             case R.id.btn_login://登录成功
                 //获取用户名
