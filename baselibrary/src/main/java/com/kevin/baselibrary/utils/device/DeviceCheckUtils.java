@@ -1,6 +1,8 @@
 package com.kevin.baselibrary.utils.device;
 
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
 
 import com.kevin.baselibrary.app.AppUtils;
 
@@ -59,4 +61,25 @@ public class DeviceCheckUtils {
         PackageManager pm = AppUtils.getContext().getPackageManager();
         return pm.hasSystemFeature(PackageManager.FEATURE_NFC);
     }
+
+    /**
+     * 检测 麦克风是否被占用
+     * @param context
+     * @return
+     */
+    public static boolean isMcInUse(Context context) {
+
+        AudioManager manager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
+
+        int mcMode=manager.getMode();
+
+        switch (mcMode){
+            case AudioManager.MODE_IN_COMMUNICATION:
+            case AudioManager.MODE_IN_CALL:
+                return true;
+            default:
+                return false;
+        }
+    }
+
 }
