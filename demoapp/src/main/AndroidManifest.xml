@@ -151,6 +151,11 @@
             android:name=".demo.ImageLoadActivity"
             android:label="ImageLoadActivity"
             />
+
+        <activity
+            android:name=".activity.TestDeviceActivity"
+            android:label="TestDeviceActivity"
+            />
         <!--应用界面demo-->
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for

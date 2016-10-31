@@ -15,11 +15,12 @@ import com.kevin.baselibrary.utils.device.BluetoothUtils;
 import com.kevin.baselibrary.utils.device.NFCUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
+import com.kevin.building.base.BtnBaseActivity;
 
 /**
  * Created by bailiangjin on 16/4/28.
  */
-public class TestActivity extends BaseActivity {
+public class TestActivity extends BtnBaseActivity {
 
     private TextView tv_content;
     private TextView tv_style_content;

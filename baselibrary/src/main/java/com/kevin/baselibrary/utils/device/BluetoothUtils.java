@@ -19,11 +19,20 @@ public class BluetoothUtils {
             BluetoothManager bluetoothManager = (BluetoothManager) AppUtils.getContext()
                     .getSystemService(Context.BLUETOOTH_SERVICE);
             return bluetoothManager.getAdapter().isEnabled();
-        }else {
+        } else {
             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             return bluetoothAdapter.isEnabled();
 
         }
+    }
+
+    public static boolean toggleBluetooth(boolean isOn) {
+        if (isOn) {
+            return enableBluetooth();
+        } else {
+            return disableBluetooth();
+        }
+
     }
 
     public static boolean enableBluetooth() {
@@ -32,7 +41,7 @@ public class BluetoothUtils {
             BluetoothManager bluetoothManager = (BluetoothManager) AppUtils.getContext()
                     .getSystemService(Context.BLUETOOTH_SERVICE);
             return bluetoothManager.getAdapter().enable();
-        }else {
+        } else {
             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             return bluetoothAdapter.enable();
         }
@@ -44,10 +53,11 @@ public class BluetoothUtils {
             BluetoothManager bluetoothManager = (BluetoothManager) AppUtils.getContext()
                     .getSystemService(Context.BLUETOOTH_SERVICE);
             return bluetoothManager.getAdapter().disable();
-        }else {
+        } else {
             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
             return bluetoothAdapter.disable();
         }
     }
+
 
 }

@@ -9,6 +9,7 @@ import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.activity.TestActivity;
+import com.kevin.building.activity.TestDeviceActivity;
 import com.kevin.building.base.BtnBaseActivity;
 import com.kevin.building.demo.ImageLoadActivity;
 import com.kevin.building.demo.WebViewActivity;
@@ -115,8 +116,7 @@ public class MainActivity extends BtnBaseActivity {
 
             case R.id.btn8:
 //               shortToast("点击了当前测试");
-//                ActivityUtils.startActivity(this, ToolBarBaseActivity.class);
-                ActivityUtils.startActivity(this, ImageLoadActivity.class);
+                ActivityUtils.startActivity(this, TestDeviceActivity.class);
 
 //                AppUtils.startAnyApp("com.xywy.flydoctor");
 //                AppUtils.unInstallApp("com.xywy.flydoctor");
