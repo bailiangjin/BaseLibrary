@@ -5,22 +5,14 @@ import android.content.Intent;
 import android.os.Message;
 import android.view.View;
 
-import com.kevin.baselibrary.app.AppUtils;
-import com.kevin.baselibrary.config.CleanOptions;
-import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.baselibrary.utils.device.BluetoothUtils;
+import com.kevin.baselibrary.utils.device.CheckCameraUtils;
 import com.kevin.baselibrary.utils.device.LocationUtils;
 import com.kevin.baselibrary.utils.device.NFCUtils;
 import com.kevin.baselibrary.utils.device.NetUtils;
+import com.kevin.baselibrary.utils.device.RecorderUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BtnBaseActivity;
-import com.kevin.building.demo.ImageLoadActivity;
-import com.kevin.building.demo.WebViewActivity;
-import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
-import com.kevin.building.demo.networkdemo.NetworkActivity;
-import com.kevin.building.demo.viewpager.ViewPagerDemoActivity;
-import com.kevin.building.demo.widget.WidgetMainActivity;
-import com.kevin.building.utils.ActivityUtils;
 
 /**
  * Author:  liangjin.bai
@@ -30,11 +22,11 @@ import com.kevin.building.utils.ActivityUtils;
 public class TestDeviceActivity extends BtnBaseActivity {
 
 
-    private boolean mobileOn =true;
+    private boolean mobileOn = true;
 
 
-    public static void start(Activity activity){
-        Intent intent = new Intent(activity,TestDeviceActivity.class);
+    public static void start(Activity activity) {
+        Intent intent = new Intent(activity, TestDeviceActivity.class);
         activity.startActivity(intent);
     }
 
@@ -53,9 +45,9 @@ public class TestDeviceActivity extends BtnBaseActivity {
         btn3.setText("切换GPS");
         btn4.setText("设置NFC");
         btn5.setText("设置蓝牙");
-        btn6.setText("测试6");
-        btn7.setText("测试7");
-        btn8.setText("测试8");
+        btn6.setText("检查摄像头");
+        btn7.setText("检查麦克风");
+        btn8.setText("开始录音");
 
 
         btn1.setVisibility(View.VISIBLE);
@@ -80,8 +72,8 @@ public class TestDeviceActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn2:
-                mobileOn=!mobileOn;
-               NetUtils.toggleMobileData(mobileOn);
+                mobileOn = !mobileOn;
+                NetUtils.toggleMobileData(mobileOn);
 
                 break;
 
@@ -94,18 +86,22 @@ public class TestDeviceActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn5:
-               BluetoothUtils.toggleBluetooth(!BluetoothUtils.isBluetoothEnabled());
+                BluetoothUtils.toggleBluetooth(!BluetoothUtils.isBluetoothEnabled());
                 break;
 
             case R.id.btn6:
-                shortToast("点击了测试6");
+
+                shortToast("检查摄像头:" + CheckCameraUtils.isCameraInUse(TestDeviceActivity.this));
                 break;
 
             case R.id.btn7:
-                break;
 
+                shortToast("检查麦克风：" + RecorderUtils.INSTANCE.checkIsInUse());
+
+                break;
             case R.id.btn8:
-               shortToast("点击了当前测试");
+                shortToast("停止录音");
+
                 break;
 
 

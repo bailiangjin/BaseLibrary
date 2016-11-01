@@ -9,6 +9,9 @@ import android.hardware.camera2.CameraManager;
 import android.media.AudioManager;
 import android.os.Build;
 
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
+
 /**
  * Created by bailiangjin on 2016/10/18.
  */
@@ -70,6 +73,8 @@ public class CheckCameraUtils {
         AudioManager manager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
         int mcMode = manager.getMode();
+        ToastUtils.shortToast("mode:"+mcMode);
+        LogUtils.e("mcMode:"+mcMode);
 
         switch (mcMode) {
             case AudioManager.MODE_IN_COMMUNICATION:

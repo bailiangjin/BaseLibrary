@@ -5,19 +5,21 @@ import android.media.MediaRecorder;
 import com.kevin.baselibrary.utils.FilePathUtil;
 import com.kevin.baselibrary.utils.ToastUtils;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
  * Created by bailiangjin on 2016/10/18.
  */
 
-public class RecorderUtils {
+public enum RecorderUtils {
+    INSTANCE;
 
 // 录音
 
     private MediaRecorder recorder;
 
-    private Boolean bool = false;
+    private boolean isRecording = false;
 
     private String path;
 
@@ -27,25 +29,29 @@ public class RecorderUtils {
 
         recorder.setAudioSource(MediaRecorder.AudioSource.MIC); // 音频输入源
 
-        recorder.setOutputFormat(MediaRecorder.OutputFormat.AMR_WB);	//设置输出格式
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.AMR_WB);    //设置输出格式
 
-        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);	//设置编码格式
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_WB);    //设置编码格式
 
-        path = FilePathUtil.getAppPath()+"/db_demo/AudioFrequency/" + System.currentTimeMillis()+".amr";
+        path = FilePathUtil.getAppPath() + "/db_demo/AudioFrequency/" + System.currentTimeMillis() + ".amr";
 
-        recorder.setOutputFile(path);	//设置音频保存路径
+        File file = new File(path);
+
+        if (!file.exists()) {
+            file.getParentFile().mkdirs();
+        }
+        recorder.setOutputFile(file.getAbsolutePath());    //设置音频保存路径
 
     }
 
+
     /**
-
      * 开始录制音频
-
      */
 
-    public void startRecord() {
+    public boolean checkIsInUse() {
 
-        if( recorder == null ){
+        if (recorder == null) {
 
             recorder = new MediaRecorder();
 
@@ -53,7 +59,42 @@ public class RecorderUtils {
 
         }
 
-        if( bool == false ) {
+
+        try {
+            recorder.prepare();
+
+            recorder.start(); // 开始录制
+
+            ToastUtils.shortToast("开始录音");
+            stopRecord();
+
+            return false;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            ToastUtils.shortToast("录制音频出现异常");
+
+            return true;
+        }
+
+
+    }
+
+    /**
+     * 开始录制音频
+     */
+
+    public void startRecord() {
+
+        if (recorder == null) {
+
+            recorder = new MediaRecorder();
+
+            this.init();
+
+        }
+
+        if (isRecording == false) {
 
             try {
 
@@ -63,16 +104,17 @@ public class RecorderUtils {
 
                 ToastUtils.shortToast("开始录音");
 
-                bool = true;
+                isRecording = true;
 
             } catch (IOException e) {
+                e.printStackTrace();
 
                 ToastUtils.shortToast("录制音频出现异常");
 
 
             }
 
-        } else if(bool) {
+        } else if (isRecording) {
 
             ToastUtils.shortToast("当前正在录制音频");
 
@@ -81,14 +123,12 @@ public class RecorderUtils {
     }
 
     /**
-
      * 停止录制，资源释放
-
      */
 
-    public void stopRecord(){
+    public void stopRecord() {
 
-        if(recorder != null){
+        if (recorder != null) {
 
             recorder.stop();
 
@@ -98,9 +138,7 @@ public class RecorderUtils {
 
             ToastUtils.shortToast("已经结束,文件保存在");
 
-
-            bool = false;
-
+            isRecording = false;
         }
 
     }
