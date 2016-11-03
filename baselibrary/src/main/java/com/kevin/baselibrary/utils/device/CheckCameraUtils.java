@@ -3,6 +3,7 @@ package com.kevin.baselibrary.utils.device;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
@@ -56,9 +57,27 @@ public class CheckCameraUtils {
                 }
             }
         } else {
-            return false;
+
+            return isCameraCanUse();
         }
 
+    }
+
+    public static boolean isCameraCanUse() {
+        boolean canUse = true;
+        Camera mCamera = null;
+        try {
+            // TODO camera驱动挂掉,处理??
+            mCamera = Camera.open();
+        } catch (Exception e) {
+            canUse = false;
+        }
+        if (canUse) {
+            mCamera.release();
+            mCamera = null;
+        }
+
+        return canUse;
     }
 
 
