@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.ToastUtils;
 
 /**
  * Created by bailiangjin on 16/9/23.
@@ -39,6 +40,7 @@ public class NFCUtils {
             String action = Settings.ACTION_NFC_SETTINGS;
             DeviceSetUtils.toSetByAction(action);
         } else {
+            ToastUtils.shortToast("当前设备不支持NFC");
             LogUtils.e("当前设备不支持NFC");
         }
 

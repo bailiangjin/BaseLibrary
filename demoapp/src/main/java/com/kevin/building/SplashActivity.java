@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.building.activity.TestDeviceActivity;
 import com.kevin.building.base.BaseActivity;
 
 /**
@@ -43,7 +44,8 @@ public class SplashActivity extends BaseActivity
 			@Override
 			public void run()
 			{
-				MainActivity.start(SplashActivity.this);
+//				MainActivity.start(SplashActivity.this);
+				TestDeviceActivity.start(SplashActivity.this);
 				SplashActivity.this.finish();
 			}
 		}, 1000);

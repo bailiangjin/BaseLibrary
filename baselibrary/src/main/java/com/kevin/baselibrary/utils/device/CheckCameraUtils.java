@@ -58,7 +58,7 @@ public class CheckCameraUtils {
             }
         } else {
 
-            return isCameraCanUse();
+            return !isCameraCanUse();
         }
 
     }

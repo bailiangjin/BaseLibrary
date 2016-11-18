@@ -44,7 +44,7 @@ public class TestDeviceActivity extends BtnBaseActivity {
         btn2.setText("切换移动网络");
         btn3.setText("切换GPS");
         btn4.setText("设置NFC");
-        btn5.setText("设置蓝牙");
+        btn5.setText("切换蓝牙");
         btn6.setText("检查摄像头");
         btn7.setText("检查麦克风");
         btn8.setText("开始录音");
@@ -57,7 +57,7 @@ public class TestDeviceActivity extends BtnBaseActivity {
         btn5.setVisibility(View.VISIBLE);
         btn6.setVisibility(View.VISIBLE);
         btn7.setVisibility(View.VISIBLE);
-        btn8.setVisibility(View.VISIBLE);
+        btn8.setVisibility(View.GONE);
     }
 
     @Override
@@ -90,13 +90,16 @@ public class TestDeviceActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn6:
+                String isCameraInUse= CheckCameraUtils.isCameraInUse(TestDeviceActivity.this)? "正在使用":"未使用";
 
-                shortToast("检查摄像头:" + CheckCameraUtils.isCameraInUse(TestDeviceActivity.this));
+                shortToast("检查摄像头:" +isCameraInUse);
                 break;
 
             case R.id.btn7:
 
-                shortToast("检查麦克风：" + RecorderUtils.INSTANCE.checkIsInUse());
+                String isMCInUse=RecorderUtils.INSTANCE.checkIsInUse()? "正在使用":"未使用";
+
+                shortToast("检查麦克风：" +isMCInUse);
 
                 break;
             case R.id.btn8:
