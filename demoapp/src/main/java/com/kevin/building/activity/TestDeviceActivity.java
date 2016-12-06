@@ -42,7 +42,7 @@ public class TestDeviceActivity extends BtnBaseActivity {
 
         btn1.setText("切换WIFI");
         btn2.setText("切换移动网络");
-        btn3.setText("切换GPS");
+        btn3.setText("设置GPS");
         btn4.setText("设置NFC");
         btn5.setText("切换蓝牙");
         btn6.setText("检查摄像头");
