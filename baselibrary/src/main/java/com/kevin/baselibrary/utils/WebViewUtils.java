@@ -6,6 +6,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.kevin.baselibrary.interfaze.listener.MyWebViewDownLoadListener;
+
 /**
  * Created by bailiangjin on 15/8/19.
  */
@@ -36,6 +38,8 @@ public class WebViewUtils {
        });
 
        webView.setWebChromeClient(new WebChromeClient());
+       //文件下载监听
+       webView.setDownloadListener(new MyWebViewDownLoadListener());
 
        webView.loadUrl(url);
        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
