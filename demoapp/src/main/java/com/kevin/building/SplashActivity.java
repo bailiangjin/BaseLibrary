@@ -44,8 +44,7 @@ public class SplashActivity extends BaseActivity
 			@Override
 			public void run()
 			{
-//				MainActivity.start(SplashActivity.this);
-				TestDeviceActivity.start(SplashActivity.this);
+				MainActivity.start(SplashActivity.this);
 				SplashActivity.this.finish();
 			}
 		}, 1000);
