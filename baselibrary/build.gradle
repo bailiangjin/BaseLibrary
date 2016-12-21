@@ -3,7 +3,7 @@ apply plugin: 'com.novoda.bintray-release'//添加
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "23.0.0"
+    buildToolsVersion '25'
 
     dataBinding {
         enabled true
