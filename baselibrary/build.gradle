@@ -73,6 +73,7 @@ dependencies {
     compile files('libs/nineoldanimatin.jar')
     compile files('libs/AJavaBaseLib.jar')
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile project(':baseadapter-recyclerview')
 }
 
 //添加
