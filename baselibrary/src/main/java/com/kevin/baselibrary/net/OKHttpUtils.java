@@ -27,15 +27,15 @@ public class OKHttpUtils {
      */
     public
     static void asyncGet(final String url, final Map<String, Object> pairs, final HttpCallback httpCallback) {
-        LogUtils.e("localh2asyncPost:url=" + url);
+        LogUtils.e("asyncPost:url=" + url);
         String queryString = "";
         for (Map.Entry<String, Object> entry : pairs.entrySet()) {
             String key = entry.getKey();
             String value = (String) entry.getValue();
             queryString += key + "=" + value + "&";
-            LogUtils.e("h2asyncPost:" + key + "=" + value);
+            LogUtils.e("asyncPost:" + key + "=" + value);
         }
-        LogUtils.e("h2asyncGet:queryString=" + queryString);
+        LogUtils.e("asyncGet:queryString=" + queryString);
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url(url + "?" + queryString)
@@ -51,7 +51,7 @@ public class OKHttpUtils {
                 }
             });
         } catch (Exception e) {
-            LogUtils.e("h2asyncGet:error=" + e.getMessage());
+            LogUtils.e("asyncGet:error=" + e.getMessage());
             e.printStackTrace();
 
             httpCallback.onError(e.getMessage());
@@ -71,13 +71,13 @@ public class OKHttpUtils {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                LogUtils.e("localh2asyncPost:url=" + url);
+                LogUtils.e("asyncPost:url=" + url);
                 OkHttpClient client = new OkHttpClient();
                 FormEncodingBuilder formEncodingBuilder = new FormEncodingBuilder();
 
                 for (Map.Entry<String, Object> entry : pairs.entrySet()) {
                     formEncodingBuilder.add(entry.getKey(), (String) entry.getValue());
-                    LogUtils.e("h2asyncPost:" + entry.getKey() + "=" + (String) entry.getValue());
+                    LogUtils.e("asyncPost:" + entry.getKey() + "=" + (String) entry.getValue());
                 }
                 RequestBody formBody = formEncodingBuilder.build();
                 Request request = new Request.Builder()
@@ -97,7 +97,7 @@ public class OKHttpUtils {
                         }
                     });
                 } catch (Exception e) {
-                    LogUtils.e("h2asyncPost:error=" + e.getMessage());
+                    LogUtils.e("asyncPost:error=" + e.getMessage());
                     e.printStackTrace();
                     httpCallback.onError(e.getMessage());
                 }

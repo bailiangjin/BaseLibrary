@@ -54,7 +54,7 @@ android {
             buildConfigField "String", "APP_BASE_URL", "\"http://test.kevin.api.kevin.com\""
 
             ndk {
-                abiFilters "armeabi" //, "armeabi-v7a"
+                abiFilters "armeabi" , "armeabi-v7a" ,"x86"
             }
 
         }

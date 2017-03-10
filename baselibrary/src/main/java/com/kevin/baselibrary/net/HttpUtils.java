@@ -70,7 +70,6 @@ public class HttpUtils {
 
             }
 
-            ;
         }.start();
 
     }
