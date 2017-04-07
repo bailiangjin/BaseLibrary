@@ -61,9 +61,9 @@ public abstract class ListFragment<T extends RVMultiTypeBaseAdapter> extends Sup
      */
     private HSItemDecoration getItemDecoration() {
 
-        if (getDividerLineWidth() > 0 && getDividerColorResId() > 0) {
+        if (getDividerLineWidth() >=0 && getDividerColorResId() > 0) {
             return new HSItemDecoration(getActivity(), getDividerColorResId(), getDividerLineWidth());
-        } else if (getDividerLineWidth() > 0) {
+        } else if (getDividerLineWidth() >= 0) {
             return new HSItemDecoration(getActivity(), getDividerLineWidth());
         } else if (getDividerColorResId() > 0) {
             return new HSItemDecoration(getActivity(), getDividerColorResId());
@@ -109,7 +109,7 @@ public abstract class ListFragment<T extends RVMultiTypeBaseAdapter> extends Sup
      * @return
      */
     protected float getDividerLineWidth() {
-        return 0.5F;
+        return -1;
     }
 
     /**

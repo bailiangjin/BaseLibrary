@@ -62,9 +62,9 @@ public interface BaseActivityInterface {
      */
     void hideProgressDialog();
 
-    void bindView();
-
     void setStatusBar();
+
+    void bindView();
 
     void unbindView();
 }
