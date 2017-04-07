@@ -17,8 +17,8 @@ public class LoadMoreWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHo
 {
     public static final int ITEM_TYPE_LOAD_MORE = Integer.MAX_VALUE - 2;
 
-    private RecyclerView.Adapter mInnerAdapter;
-    private View mLoadMoreView;
+    protected RecyclerView.Adapter mInnerAdapter;
+    protected View mLoadMoreView;
     private int mLoadMoreLayoutId;
 
     public LoadMoreWrapper(RecyclerView.Adapter adapter)
@@ -32,7 +32,7 @@ public class LoadMoreWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
 
-    private boolean isShowLoadMore(int position)
+    protected boolean isShowLoadMore(int position)
     {
         return hasLoadMore() && (position >= mInnerAdapter.getItemCount());
     }
@@ -137,7 +137,7 @@ public class LoadMoreWrapper<T> extends RecyclerView.Adapter<RecyclerView.ViewHo
         void onLoadMoreRequested();
     }
 
-    private OnLoadMoreListener mOnLoadMoreListener;
+    protected OnLoadMoreListener mOnLoadMoreListener;
 
     public LoadMoreWrapper setOnLoadMoreListener(OnLoadMoreListener loadMoreListener)
     {

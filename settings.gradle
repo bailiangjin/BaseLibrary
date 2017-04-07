@@ -1,1 +1,1 @@
-include ':baselibrary', ':demoapp', ':simpleim', ':baseadapter-recyclerview'
+include ':baselibrary', ':demoapp', ':simpleim', ':baseadapter-recyclerview', ':android-ui-library'
