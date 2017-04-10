@@ -26,7 +26,7 @@ public class LaunchModeActivity1 extends BtnBaseActivity {
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 

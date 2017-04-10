@@ -14,14 +14,14 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 import com.bailiangjin.simpleim.module.common.adapter.MainFragmentAdapter;
 import com.bailiangjin.simpleim.module.common.fragment.ContactFragment;
 import com.bailiangjin.simpleim.module.common.fragment.DiscoverFragment;
 import com.bailiangjin.simpleim.module.common.fragment.HomeFragment;
 import com.bailiangjin.simpleim.module.common.fragment.SettingFragment;
 import com.bailiangjin.simpleim.module.im.user.UserListActivity;
-import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
-import com.kevin.baselibrary.activity.ItemClickListener;
+import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 
@@ -56,7 +56,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText("简信");
         titleBarBuilder.hideBackIcon();
-        titleBarBuilder.addMenuItem("扫一扫", new ItemClickListener() {
+        titleBarBuilder.addItem("扫一扫", new ItemClickListener() {
             @Override
             public void onClick() {
                 UserListActivity.start(MainActivity.this);
@@ -72,7 +72,6 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     protected void initData(Bundle savedInstanceState) {
 
     }
-
 
     //    控件初始化控件
     private void initFRView() {
@@ -163,6 +162,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         int position = mTabHost.getCurrentTab();
         vp.setCurrentItem(position);//把选中的Tab的位置赋给适配器，让它控制页面切换
     }
+
 
 
 }

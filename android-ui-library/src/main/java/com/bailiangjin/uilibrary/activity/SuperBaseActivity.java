@@ -68,10 +68,10 @@ public abstract class SuperBaseActivity extends AppCompatActivity implements Bas
      */
     private void initSuperUI() {
         super.setContentView(R.layout.activity_binding_base_xml);
-        baseContainer = (FrameLayout) findViewById(R.id.baseContainer);
-        toolbar = (Toolbar) findViewById(R.id.common_toolbar);
+        baseContainer = (FrameLayout) this.findViewById(R.id.baseContainer);
+        toolbar = (Toolbar) this.findViewById(R.id.common_toolbar);
         titleBarBuilder = new TitleBarBuilder(SuperBaseActivity.this, toolbar);
-        ll_root= (LinearLayout) findViewById(R.id.ll_root);
+        ll_root= (LinearLayout) this.findViewById(R.id.ll_root);
         if (layoutInflater == null) {
             layoutInflater = LayoutInflater.from(SuperBaseActivity.this);
 
@@ -103,12 +103,12 @@ public abstract class SuperBaseActivity extends AppCompatActivity implements Bas
             toolbar.setVisibility(View.GONE);
         }
     }
-    /**
-     * 设置隐藏状态栏高度
-     */
-    public void hideStatusBarHeight(){
-        ll_root.setFitsSystemWindows(false);
-    }
+//    /**
+//     * 设置隐藏状态栏高度
+//     */
+//    public void hideStatusBarHeight(){
+//        ll_root.setFitsSystemWindows(false);
+//    }
 
     /**
      * 显示公共的title

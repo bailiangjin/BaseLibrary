@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
-import com.kevin.baselibrary.activity.ItemClickListener;
+import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
 
 /**
  * 用户列表页
@@ -25,7 +25,7 @@ public class UserListActivity extends BaseActivity {
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 
@@ -33,7 +33,7 @@ public class UserListActivity extends BaseActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText(getString(R.string.contacts));
-        titleBarBuilder.addMenuItem("添加", new ItemClickListener() {
+        titleBarBuilder.addItem("添加", new ItemClickListener() {
             @Override
             public void onClick() {
                 AddFriendActivity.start(UserListActivity.this);

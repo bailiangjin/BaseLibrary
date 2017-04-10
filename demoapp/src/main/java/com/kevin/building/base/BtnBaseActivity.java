@@ -30,7 +30,7 @@ public abstract class BtnBaseActivity extends BaseActivity implements View.OnCli
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 

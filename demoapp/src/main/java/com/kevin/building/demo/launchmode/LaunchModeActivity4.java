@@ -4,7 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 
-import com.kevin.baselibrary.activity.ItemClickListener;
+import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
+
 
 /**
  * Author:  liangjin.bai
@@ -19,7 +20,7 @@ public class LaunchModeActivity4 extends LaunchModeActivity1 {
         super.initView(savedInstanceState);
         titleBarBuilder.setTitleText("Activity4");
 
-        titleBarBuilder.addMenuItem("onResult", new ItemClickListener() {
+        titleBarBuilder.addItem("onResult", new ItemClickListener() {
             @Override
             public void onClick() {
                 Intent intent = new Intent();

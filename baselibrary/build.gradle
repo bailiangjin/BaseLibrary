@@ -32,6 +32,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 ////dependsOn 可根据实际需要增加或更改

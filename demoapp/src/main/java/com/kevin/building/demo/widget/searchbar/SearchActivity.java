@@ -23,7 +23,7 @@ public class SearchActivity extends BaseActivity {
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 

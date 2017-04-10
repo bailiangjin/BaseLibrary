@@ -18,7 +18,7 @@ public class KeyListenerActivity extends BaseActivity {
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 

@@ -12,7 +12,8 @@ import com.bailiangjin.simpleim.module.account.UserInfoActivity;
 import com.bailiangjin.simpleim.module.common.SettingActivity;
 import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 import com.bailiangjin.simpleim.utils.ActivityUtils;
-import com.kevin.baselibrary.activity.ItemClickListener;
+import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
+
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -46,7 +47,7 @@ public class AddFriendActivity extends BaseActivity {
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 
@@ -54,7 +55,7 @@ public class AddFriendActivity extends BaseActivity {
     @Override
     protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText(getString(R.string.addcontacts));
-        titleBarBuilder.addMenuItem("用户信息", new ItemClickListener() {
+        titleBarBuilder.addItem("用户信息", new ItemClickListener() {
             @Override
             public void onClick() {
                 runOnUiThread(new Runnable() {
@@ -66,7 +67,7 @@ public class AddFriendActivity extends BaseActivity {
             }
         }).build();
 
-        titleBarBuilder.addMenuItem("设置", new ItemClickListener() {
+        titleBarBuilder.addItem("设置", new ItemClickListener() {
             @Override
             public void onClick() {
                 ActivityUtils.startActivity(AddFriendActivity.this, SettingActivity.class);

@@ -12,8 +12,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
 import com.kevin.baselibrary.R;
-import com.kevin.baselibrary.activity.ItemClickListener;
 
 
 /**

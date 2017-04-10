@@ -38,7 +38,7 @@ public class NetworkActivity extends BaseActivity implements View.OnClickListene
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 

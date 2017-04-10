@@ -4,7 +4,7 @@ import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseFragment;
 import com.bailiangjin.simpleim.sdk.leancloud.LcLoginActivity;
 import com.bailiangjin.simpleim.view.MyItemView;
-import com.kevin.baselibrary.activity.ItemClickListener;
+import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
 
 import butterknife.BindView;
 

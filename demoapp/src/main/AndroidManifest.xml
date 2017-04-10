@@ -140,16 +140,6 @@
 
 
         <activity
-            android:name=".demo.recycleview.RecyclerViewDemoActivity"
-            android:label="RecyclerViewDemoActivity"
-            android:launchMode="standard" />
-
-        <activity
-            android:name=".demo.databinding.ToolbarBindingActivity"
-            android:label="TestDataBindingActivity"
-            />
-
-        <activity
             android:name=".demo.ImageLoadActivity"
             android:label="ImageLoadActivity"
             />

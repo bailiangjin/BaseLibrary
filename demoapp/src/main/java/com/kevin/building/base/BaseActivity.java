@@ -2,28 +2,20 @@ package com.kevin.building.base;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.MotionEvent;
 
+import com.bailiangjin.uilibrary.activity.SuperBaseActivity;
 import com.bugtags.library.Bugtags;
-import com.kevin.baselibrary.base.SuperBaseActivity;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 import com.kevin.building.R;
-import com.kevin.building.constants.BroadcastAction;
-
-import java.util.HashSet;
-import java.util.Set;
-
-public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseActivity {
 
 
-    @Override
-    protected void initBaseView() {
+public abstract class BaseActivity extends SuperBaseActivity {
 
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,34 +101,34 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseA
     }
 
 
-    @Override
-    protected Set<String> getBroadCastAction() {
-        Set<String> actionSet = new HashSet<>();
-        //获取父类Action 避免覆盖父类添加的Action
-        if (null != super.getBroadCastAction()) {
-            actionSet.addAll(super.getBroadCastAction());
-        }
-        //添加当前类注册的广播监听事件
-        actionSet.add(BroadcastAction.PUSH_DATA_ACTION);
-        actionSet.add(BroadcastAction.NEW_VERSION_ACTION);
-        return actionSet;
-    }
-
-    @Override
-    protected void onBroadcast(Intent intent) {
-        super.onBroadcast(intent);
-        String action = intent.getAction();
-        if (BroadcastAction.PUSH_DATA_ACTION.equals(action)) { // 可能有新数据
-            // Bundle b = intent.getExtras();
-            // MData<Employee> mdata = (MData<Employee>) b.get("data");
-            // if (dataCallback != null)
-            // { // 数据通知
-            // dataCallback.onNewData(mdata);
-            // }
-        } else if (BroadcastAction.NEW_VERSION_ACTION.equals(action)) { // 可能发现新版本
-            // VersionDialog 可能是版本提示是否需要下载的对话框
-        }
-    }
+//    @Override
+//    protected Set<String> getBroadCastAction() {
+//        Set<String> actionSet = new HashSet<>();
+//        //获取父类Action 避免覆盖父类添加的Action
+//        if (null != super.getBroadCastAction()) {
+//            actionSet.addAll(super.getBroadCastAction());
+//        }
+//        //添加当前类注册的广播监听事件
+//        actionSet.add(BroadcastAction.PUSH_DATA_ACTION);
+//        actionSet.add(BroadcastAction.NEW_VERSION_ACTION);
+//        return actionSet;
+//    }
+//
+//    @Override
+//    protected void onBroadcast(Intent intent) {
+//        super.onBroadcast(intent);
+//        String action = intent.getAction();
+//        if (BroadcastAction.PUSH_DATA_ACTION.equals(action)) { // 可能有新数据
+//            // Bundle b = intent.getExtras();
+//            // MData<Employee> mdata = (MData<Employee>) b.get("data");
+//            // if (dataCallback != null)
+//            // { // 数据通知
+//            // dataCallback.onNewData(mdata);
+//            // }
+//        } else if (BroadcastAction.NEW_VERSION_ACTION.equals(action)) { // 可能发现新版本
+//            // VersionDialog 可能是版本提示是否需要下载的对话框
+//        }
+//    }
 
 
     /**
@@ -198,16 +190,29 @@ public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseA
         showProgressDialog("正在加载数据...");
     }
 
+    @Override
+    protected void handleMsg(Message msg) {
 
-
-
-    public T getBinding() {
-        return (T) super.getBinding();
     }
 
 
     @Override
-    protected void handleMsg(Message msg) {
+    protected boolean isHideBar() {
+        return false;
+    }
+
+    @Override
+    public void setStatusBar() {
+
+    }
+
+    @Override
+    public void bindView() {
+
+    }
+
+    @Override
+    public void unbindView() {
 
     }
 }

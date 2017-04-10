@@ -51,7 +51,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 
@@ -110,7 +110,7 @@ public class LoginActivity extends BaseActivity {
         shortToast("点击了登录按钮");
         // TODO:执行登录逻辑
         //暂时模拟 每次都成功
-        handler.sendEmptyMessage(LoginResult.SUCCESS);
+        uiHandler.sendEmptyMessage(LoginResult.SUCCESS);
 
     }
 

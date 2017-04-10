@@ -4,9 +4,9 @@ android {
     compileSdkVersion 23
     buildToolsVersion '25'
 
-    dataBinding {
-        enabled true
-    }
+//    dataBinding {
+//        enabled true
+//    }
 
     defaultConfig {
         applicationId "com.kevin.building"

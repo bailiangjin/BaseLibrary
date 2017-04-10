@@ -5,7 +5,7 @@ import android.os.Message;
 import android.view.KeyEvent;
 import android.webkit.WebView;
 
-import com.kevin.baselibrary.activity.ItemClickListener;
+import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
 import com.kevin.baselibrary.utils.WebViewUtils;
 import com.kevin.baselibrary.widget.utils.PNDialog;
 import com.kevin.building.R;
@@ -25,21 +25,21 @@ public class WebViewActivity extends BaseActivity {
     }
 
     @Override
-    protected void initIntentData(Bundle savedInstanceState) {
+    protected void beforeViewBind(Bundle savedInstanceState) {
 
     }
 
     @Override
     protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText("测试WebView");
-        titleBarBuilder.addMenuItem("关闭", new ItemClickListener() {
+        titleBarBuilder.addItem("关闭", new ItemClickListener() {
             @Override
             public void onClick() {
                 showBackToSourceDialog();
             }
         }).build();
 
-        titleBarBuilder.setBackIcon("返回", titleBarBuilder.defaultBackIconResId, new ItemClickListener() {
+        titleBarBuilder.setBackIconClickEvent(new ItemClickListener() {
             @Override
             public void onClick() {
                 onWebViewBack();
@@ -53,12 +53,10 @@ public class WebViewActivity extends BaseActivity {
     }
 
 
-
     @Override
     protected void initData(Bundle savedInstanceState) {
 
     }
-
 
 
     @Override
@@ -76,6 +74,7 @@ public class WebViewActivity extends BaseActivity {
 
     /**
      * WebView 返回事件
+     *
      * @return
      */
     private boolean onWebViewBack() {
