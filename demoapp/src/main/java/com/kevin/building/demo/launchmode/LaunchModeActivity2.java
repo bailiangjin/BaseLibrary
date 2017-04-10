@@ -53,8 +53,8 @@ public class LaunchModeActivity2 extends LaunchModeActivity1 {
     }
 
     @Override
-    protected void initView() {
-        super.initView();
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
         titleBarBuilder.setTitleText("Activity2");
     }
 

@@ -1,5 +1,6 @@
 package com.kevin.building.demo.recycleview;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -24,7 +25,7 @@ public class RecyclerViewDemoActivity extends BaseActivity<ActivityRecycleviewBi
 
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
 //        recyclerView= (RecyclerView) findViewById(R.id.recycler_view);
         getBinding().recyclerView.setLayoutManager(new LinearLayoutManager(this));//这里用线性显示 类似于listview
 //        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));//这里用线性宫格显示 类似于grid view
@@ -34,7 +35,7 @@ public class RecyclerViewDemoActivity extends BaseActivity<ActivityRecycleviewBi
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

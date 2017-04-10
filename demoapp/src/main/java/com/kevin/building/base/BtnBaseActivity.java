@@ -1,6 +1,7 @@
 package com.kevin.building.base;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -34,7 +35,7 @@ public abstract class BtnBaseActivity extends BaseActivity implements View.OnCli
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);

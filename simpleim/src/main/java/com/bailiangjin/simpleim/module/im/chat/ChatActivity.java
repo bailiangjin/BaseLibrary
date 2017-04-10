@@ -1,5 +1,7 @@
 package com.bailiangjin.simpleim.module.im.chat;
 
+import android.os.Bundle;
+
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 
@@ -20,12 +22,12 @@ public class ChatActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
 
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 }

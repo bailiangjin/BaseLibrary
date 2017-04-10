@@ -1,5 +1,6 @@
 package com.kevin.building.demo.launchmode;
 
+import android.os.Bundle;
 import android.os.Message;
 
 /**
@@ -11,8 +12,8 @@ public class LaunchModeActivity3 extends LaunchModeActivity1 {
 
 
     @Override
-    protected void initView() {
-        super.initView();
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
         titleBarBuilder.setTitleText("Activity3");
 
     }

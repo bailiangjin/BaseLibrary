@@ -1,5 +1,6 @@
 package com.kevin.building.demo;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.webkit.WebView;
@@ -29,7 +30,7 @@ public class WebViewActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText("测试WebView");
         titleBarBuilder.addMenuItem("关闭", new ItemClickListener() {
             @Override
@@ -54,7 +55,7 @@ public class WebViewActivity extends BaseActivity {
 
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

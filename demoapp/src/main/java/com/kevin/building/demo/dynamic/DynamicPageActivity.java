@@ -1,5 +1,6 @@
 package com.kevin.building.demo.dynamic;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,7 +60,7 @@ public class DynamicPageActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         layoutInflater = LayoutInflater.from(this);
         // 创建LinearLayout 作为根View
 //        ScrollView scrollView = (ScrollView) layoutInflater.inflate(R.layout.ctn_scrollview, null);
@@ -296,7 +297,7 @@ public class DynamicPageActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

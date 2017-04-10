@@ -31,8 +31,8 @@ public class LaunchModeActivity1 extends BtnBaseActivity {
     }
 
     @Override
-    protected void initView() {
-        super.initView();
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
         titleBarBuilder.setTitleText("Activity1");
         btn1.setText("跳转到Launch1");
         btn2.setText("跳转到Launch2");
@@ -47,7 +47,7 @@ public class LaunchModeActivity1 extends BtnBaseActivity {
 
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
     }
 
     @Override

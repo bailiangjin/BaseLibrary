@@ -1,5 +1,6 @@
 package com.kevin.building.demo;
 
+import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.kevin.building.R;
@@ -29,7 +30,7 @@ public class ImageLoadActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
 
         titleBarBuilder.setTitleText("图片加载示例");
         iv_org = (ImageView) findViewById(R.id.iv_org);
@@ -46,7 +47,7 @@ public class ImageLoadActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 }

@@ -1,5 +1,6 @@
 package com.kevin.building.demo.dbtest;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
@@ -29,12 +30,12 @@ public class DatabaseActivity extends BaseActivity<ActivityDataBindingBinding> {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText("测试数据库");
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

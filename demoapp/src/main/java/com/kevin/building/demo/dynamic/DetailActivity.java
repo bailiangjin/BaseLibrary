@@ -1,5 +1,6 @@
 package com.kevin.building.demo.dynamic;
 
+import android.os.Bundle;
 import android.os.Message;
 
 import com.kevin.building.R;
@@ -22,7 +23,7 @@ public class DetailActivity extends BaseActivity{
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
 //        getIntent().getStringExtra("name");
 
         shortToast("detail page:" + getIntent().getStringExtra("name"));
@@ -30,7 +31,7 @@ public class DetailActivity extends BaseActivity{
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

@@ -2,6 +2,7 @@ package com.kevin.building;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
@@ -11,7 +12,6 @@ import com.kevin.baselibrary.utils.CleanUtils;
 import com.kevin.building.activity.TestActivity;
 import com.kevin.building.activity.TestDeviceActivity;
 import com.kevin.building.base.BtnBaseActivity;
-import com.kevin.building.demo.ImageLoadActivity;
 import com.kevin.building.demo.WebViewActivity;
 import com.kevin.building.demo.fragmentdemo.MyFragmentActivity;
 import com.kevin.building.demo.networkdemo.NetworkActivity;
@@ -38,8 +38,8 @@ public class MainActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initView() {
-        super.initView();
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
         titleBarBuilder.setTitleText("首页");
         titleBarBuilder.hideBackIcon();
 
@@ -68,7 +68,7 @@ public class MainActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
         //建造者模式 设置应用启动时的清理项
         CleanOptions cleanOptions = new CleanOptions.Builder()
                 .cleanRootDir(false)

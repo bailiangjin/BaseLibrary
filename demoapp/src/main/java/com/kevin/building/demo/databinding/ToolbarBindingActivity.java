@@ -1,5 +1,6 @@
 package com.kevin.building.demo.databinding;
 
+import android.os.Bundle;
 import android.view.View;
 
 import com.kevin.baselibrary.activity.ItemClickListener;
@@ -27,7 +28,7 @@ public class ToolbarBindingActivity extends BaseActivity<ActivityDataBindingBind
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
 
         titleBarBuilder
                 .setTitleText("测试绑定绑定绑定绑定绑定绑定绑定")
@@ -68,7 +69,7 @@ public class ToolbarBindingActivity extends BaseActivity<ActivityDataBindingBind
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

@@ -1,5 +1,6 @@
 package com.kevin.building.demo.networkdemo;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,7 @@ public class NetworkActivity extends BaseActivity implements View.OnClickListene
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText("网络模块");
 
         btn1 = (Button) findViewById(R.id.btn1);
@@ -67,7 +68,7 @@ public class NetworkActivity extends BaseActivity implements View.OnClickListene
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
         btn1.setText("获取天气信息");
         btn2.setText("测试post");
 

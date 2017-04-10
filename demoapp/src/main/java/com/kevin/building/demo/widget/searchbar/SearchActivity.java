@@ -1,5 +1,6 @@
 package com.kevin.building.demo.widget.searchbar;
 
+import android.os.Bundle;
 import android.os.Message;
 
 import com.kevin.baselibrary.interfaze.listener.SearchBarListener;
@@ -27,7 +28,7 @@ public class SearchActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
 
         titleBarBuilder.setTitleText("搜索");
 
@@ -58,7 +59,7 @@ public class SearchActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

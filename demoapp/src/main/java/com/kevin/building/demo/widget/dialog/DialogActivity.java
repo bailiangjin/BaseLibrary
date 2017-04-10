@@ -1,5 +1,6 @@
 package com.kevin.building.demo.widget.dialog;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
@@ -15,8 +16,8 @@ import com.kevin.building.base.BtnBaseActivity;
 public class DialogActivity extends BtnBaseActivity {
 
     @Override
-    protected void initView() {
-        super.initView();
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
 
         titleBarBuilder.setTitleText("DialogDemos");
 
@@ -40,7 +41,7 @@ public class DialogActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

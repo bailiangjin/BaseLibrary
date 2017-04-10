@@ -2,6 +2,7 @@ package com.bailiangjin.simpleim.module.im.user;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -51,7 +52,7 @@ public class AddFriendActivity extends BaseActivity {
 
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText(getString(R.string.addcontacts));
         titleBarBuilder.addMenuItem("用户信息", new ItemClickListener() {
             @Override
@@ -75,7 +76,7 @@ public class AddFriendActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

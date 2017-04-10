@@ -2,6 +2,7 @@ package com.bailiangjin.simpleim.module.account;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -43,7 +44,7 @@ public class RegisterActivity extends BaseActivity
 
 
 	@Override
-	protected void initView() {
+	protected void initView(Bundle savedInstanceState) {
 		titleBarBuilder.setTitleText(getString(R.string.register));
 		et_username= (EditText) findViewById(R.id.et_username);
 		et_password= (EditText) findViewById(R.id.et_pwd);
@@ -51,7 +52,7 @@ public class RegisterActivity extends BaseActivity
 	}
 
 	@Override
-	protected void initData() {
+	protected void initData(Bundle savedInstanceState) {
 
 	}
 

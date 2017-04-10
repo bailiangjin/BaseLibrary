@@ -1,5 +1,6 @@
 package com.kevin.building.demo.widget;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
@@ -19,8 +20,8 @@ import com.kevin.building.utils.ActivityUtils;
 public class WidgetMainActivity extends BtnBaseActivity{
 
     @Override
-    protected void initView() {
-        super.initView();
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
 
         titleBarBuilder.setTitleText("控件主页面");
 
@@ -44,7 +45,7 @@ public class WidgetMainActivity extends BtnBaseActivity{
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

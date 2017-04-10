@@ -2,6 +2,7 @@ package com.kevin.building.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
@@ -36,8 +37,8 @@ public class TestDeviceActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initView() {
-        super.initView();
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
         titleBarBuilder.setTitleText("测试设备");
 
         btn1.setText("切换WIFI");
@@ -61,7 +62,7 @@ public class TestDeviceActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
     }
 
     @Override

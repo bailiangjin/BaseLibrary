@@ -2,6 +2,7 @@ package com.bailiangjin.simpleim.module.im.user;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
@@ -30,7 +31,7 @@ public class UserListActivity extends BaseActivity {
 
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText(getString(R.string.contacts));
         titleBarBuilder.addMenuItem("添加", new ItemClickListener() {
             @Override
@@ -42,7 +43,7 @@ public class UserListActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

@@ -3,6 +3,7 @@ package com.kevin.building.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,7 +15,6 @@ import com.kevin.baselibrary.utils.TVUtils;
 import com.kevin.baselibrary.utils.device.BluetoothUtils;
 import com.kevin.baselibrary.utils.device.NFCUtils;
 import com.kevin.building.R;
-import com.kevin.building.base.BaseActivity;
 import com.kevin.building.base.BtnBaseActivity;
 
 /**
@@ -44,7 +44,7 @@ public class TestActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
 
         tv_content= (TextView) findViewById(R.id.tv_content);
         tv_style_content= (TextView) findViewById(R.id.tv_style_content);
@@ -73,7 +73,7 @@ public class TestActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

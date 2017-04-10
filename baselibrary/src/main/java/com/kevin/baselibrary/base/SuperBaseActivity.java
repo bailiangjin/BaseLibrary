@@ -80,8 +80,8 @@ public abstract class SuperBaseActivity<T extends ViewDataBinding> extends AppCo
             binding = DataBindingUtil.inflate(getLayoutInflater(), getLayoutResId(), baseContainer, true);
         }
         initBaseView();
-        initView();
-        initData();
+        initView(null);
+        initData(null);
     }
 
     protected abstract void initBaseView();
@@ -91,9 +91,9 @@ public abstract class SuperBaseActivity<T extends ViewDataBinding> extends AppCo
 
     protected abstract void initIntentData();
 
-    protected abstract void initView();
+    protected abstract void initView(Bundle savedInstanceState);
 
-    protected abstract void initData();
+    protected abstract void initData(Bundle savedInstanceState);
 
     /**
      * 初始化父类UI

@@ -1,10 +1,10 @@
 package com.kevin.building;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.app.AppUtils;
-import com.kevin.building.activity.TestDeviceActivity;
 import com.kevin.building.base.BaseActivity;
 
 /**
@@ -28,14 +28,14 @@ public class SplashActivity extends BaseActivity
 
 
 	@Override
-	protected void initView() {
+	protected void initView(Bundle savedInstanceState) {
 
 		hideCommonBaseTitle();
 		tv_app_version_name = (TextView) findViewById(R.id.tv_app_version_name);
 	}
 
 	@Override
-	protected void initData() {
+	protected void initData(Bundle savedInstanceState) {
 		tv_app_version_name.setText(AppUtils.getCurrentAppVersionName());
 
 		//跳转到 主页

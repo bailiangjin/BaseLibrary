@@ -1,5 +1,6 @@
 package com.kevin.building.demo.keylistener;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
@@ -22,12 +23,12 @@ public class KeyListenerActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
 
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

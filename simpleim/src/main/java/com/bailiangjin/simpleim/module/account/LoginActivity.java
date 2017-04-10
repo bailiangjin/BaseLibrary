@@ -2,6 +2,7 @@ package com.bailiangjin.simpleim.module.account;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
@@ -63,7 +64,7 @@ public class LoginActivity extends BaseActivity {
 
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         hideCommonBaseTitle();
         if (AccountUtils.isLoginStatus()){
             com.bailiangjin.simpleim.MainActivity.start(this);
@@ -73,7 +74,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
         initMyData();
     }
 

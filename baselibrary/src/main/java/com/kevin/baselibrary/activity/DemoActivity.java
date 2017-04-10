@@ -1,5 +1,6 @@
 package com.kevin.baselibrary.activity;
 
+import android.os.Bundle;
 import android.os.Message;
 
 import com.kevin.baselibrary.R;
@@ -30,13 +31,13 @@ public class DemoActivity extends SuperBaseActivity {
 
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         //TODO: 初始化UI
     }
 
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
         //TODO: 初始化逻辑
     }
 

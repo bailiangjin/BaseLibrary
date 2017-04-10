@@ -1,6 +1,7 @@
 package com.kevin.building.demo.launchmode;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Message;
 
 import com.kevin.baselibrary.activity.ItemClickListener;
@@ -14,8 +15,8 @@ public class LaunchModeActivity4 extends LaunchModeActivity1 {
 
 
     @Override
-    protected void initView() {
-        super.initView();
+    protected void initView(Bundle savedInstanceState) {
+        super.initView(savedInstanceState);
         titleBarBuilder.setTitleText("Activity4");
 
         titleBarBuilder.addMenuItem("onResult", new ItemClickListener() {

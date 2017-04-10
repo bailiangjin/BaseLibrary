@@ -1,5 +1,6 @@
 package com.kevin.building.demo.fragmentdemo;
 
+import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -27,7 +28,7 @@ public class FragmentAdapterDemos  extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         vp_images = (ViewPager) findViewById(R.id.vp_images);
         FragmentManager fm = getSupportFragmentManager();
         vp_images.setAdapter(new MyFragmentPagerAdapter(fm));
@@ -42,7 +43,7 @@ public class FragmentAdapterDemos  extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

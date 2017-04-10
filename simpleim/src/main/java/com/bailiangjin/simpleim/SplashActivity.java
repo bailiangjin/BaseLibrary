@@ -48,13 +48,13 @@ public class SplashActivity extends BaseActivity {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         hideCommonBaseTitle();
         tv_app_version_name = (TextView) findViewById(R.id.tv_app_version_name);
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
         tv_app_version_name.setText(AppUtils.getCurrentAppVersionName());
     }
 

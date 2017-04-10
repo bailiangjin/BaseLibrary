@@ -1,5 +1,7 @@
 package com.bailiangjin.simpleim.module.common;
 
+import android.os.Bundle;
+
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 
@@ -19,12 +21,12 @@ public class AboutActivity extends BaseActivity{
     }
 
     @Override
-    protected void initView() {
+    protected void initView(Bundle savedInstanceState) {
         titleBarBuilder.setTitleText("关于");
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 }
