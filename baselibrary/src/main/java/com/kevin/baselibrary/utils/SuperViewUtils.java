@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kevin.baselibrary.R;
+import com.kevin.baselibrary.utils.ui.DensityUtils;
 
 /**
  * 通用ViewUtils

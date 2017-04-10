@@ -6,7 +6,7 @@ import android.view.KeyEvent;
 import android.webkit.WebView;
 
 import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
-import com.kevin.baselibrary.utils.WebViewUtils;
+import com.kevin.baselibrary.utils.ui.WebViewUtils;
 import com.kevin.baselibrary.widget.utils.PNDialog;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;

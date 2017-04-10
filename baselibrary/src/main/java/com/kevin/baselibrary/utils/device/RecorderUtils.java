@@ -2,7 +2,7 @@ package com.kevin.baselibrary.utils.device;
 
 import android.media.MediaRecorder;
 
-import com.kevin.baselibrary.utils.FilePathUtil;
+import com.kevin.baselibrary.utils.file.FilePathUtil;
 import com.kevin.baselibrary.utils.ToastUtils;
 
 import java.io.File;

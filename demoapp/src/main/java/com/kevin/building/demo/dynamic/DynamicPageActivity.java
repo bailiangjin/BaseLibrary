@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 import com.bailiangjin.javabaselib.utils.FileUtils;
 import com.bailiangjin.javabaselib.utils.GsonUtils;
-import com.kevin.baselibrary.utils.FilePathUtil;
+import com.kevin.baselibrary.utils.file.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;

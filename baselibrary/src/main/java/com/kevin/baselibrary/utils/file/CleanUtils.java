@@ -1,10 +1,12 @@
-package com.kevin.baselibrary.utils;
+package com.kevin.baselibrary.utils.file;
 
 
 import com.kevin.baselibrary.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.enums.SPKeyEnum;
 import com.bailiangjin.javabaselib.utils.FileUtils;
+import com.kevin.baselibrary.utils.LogUtils;
+import com.kevin.baselibrary.utils.SPUtils;
 
 /**
  * Author:  liangjin.bai

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.kevin.baselibrary.model.art.text.ColorText;
 import com.kevin.baselibrary.model.art.text.StyleText;
 import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.TVUtils;
+import com.kevin.baselibrary.utils.ui.TVUtils;
 import com.kevin.baselibrary.utils.device.BluetoothUtils;
 import com.kevin.baselibrary.utils.device.NFCUtils;
 import com.kevin.building.R;

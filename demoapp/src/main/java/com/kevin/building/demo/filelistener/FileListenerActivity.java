@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.bailiangjin.javabaselib.utils.FileUtils;
-import com.kevin.baselibrary.utils.FileListenerUtils;
-import com.kevin.baselibrary.utils.FilePathUtil;
+import com.kevin.baselibrary.utils.file.FileListenerUtils;
+import com.kevin.baselibrary.utils.file.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;

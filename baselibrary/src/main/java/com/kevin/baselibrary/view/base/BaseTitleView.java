@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.kevin.baselibrary.R;
 import com.kevin.baselibrary.interfaze.listener.TitleViewListener;
-import com.kevin.baselibrary.utils.DensityUtils;
+import com.kevin.baselibrary.utils.ui.DensityUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 
 /**
