@@ -57,7 +57,7 @@ public class UserInfoActivity extends BaseActivity {
     }
 
     @Override
-    protected void initIntentData() {
+    protected void initIntentData(Bundle savedInstanceState) {
 
     }
 

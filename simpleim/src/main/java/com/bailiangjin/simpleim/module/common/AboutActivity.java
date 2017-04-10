@@ -16,7 +16,7 @@ public class AboutActivity extends BaseActivity{
     }
 
     @Override
-    protected void initIntentData() {
+    protected void initIntentData(Bundle savedInstanceState) {
 
     }
 

@@ -39,7 +39,7 @@ public class TestActivity extends BtnBaseActivity {
     }
 
     @Override
-    protected void initIntentData() {
+    protected void initIntentData(Bundle savedInstanceState) {
 
     }
 

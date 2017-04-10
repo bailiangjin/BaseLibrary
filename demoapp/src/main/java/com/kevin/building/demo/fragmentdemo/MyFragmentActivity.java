@@ -62,7 +62,7 @@ public class MyFragmentActivity extends BaseActivity
 	}
 
 	@Override
-	protected void initIntentData() {
+	protected void initIntentData(Bundle savedInstanceState) {
 
 	}
 

@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     }
 
     @Override
-    protected void initIntentData() {
+    protected void initIntentData(Bundle savedInstanceState) {
 
     }
 

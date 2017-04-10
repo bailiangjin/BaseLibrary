@@ -23,7 +23,7 @@ public class ToolbarBindingActivity extends BaseActivity<ActivityDataBindingBind
     }
 
     @Override
-    protected void initIntentData() {
+    protected void initIntentData(Bundle savedInstanceState) {
 
     }
 

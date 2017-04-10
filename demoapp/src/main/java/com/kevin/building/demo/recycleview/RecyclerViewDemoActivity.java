@@ -19,7 +19,7 @@ public class RecyclerViewDemoActivity extends BaseActivity<ActivityRecycleviewBi
     }
 
     @Override
-    protected void initIntentData() {
+    protected void initIntentData(Bundle savedInstanceState) {
 
     }
 

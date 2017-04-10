@@ -25,7 +25,7 @@ public class DatabaseActivity extends BaseActivity<ActivityDataBindingBinding> {
     }
 
     @Override
-    protected void initIntentData() {
+    protected void initIntentData(Bundle savedInstanceState) {
 
     }
 

@@ -73,7 +73,7 @@ public abstract class SuperBaseActivity<T extends ViewDataBinding> extends AppCo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initIntentData();
+        initIntentData(null);
         initSuperUI();
         initSuperLogic();
         if(getLayoutResId()>0){
@@ -89,7 +89,7 @@ public abstract class SuperBaseActivity<T extends ViewDataBinding> extends AppCo
 
     protected abstract int getLayoutResId();
 
-    protected abstract void initIntentData();
+    protected abstract void initIntentData(Bundle savedInstanceState);
 
     protected abstract void initView(Bundle savedInstanceState);
 

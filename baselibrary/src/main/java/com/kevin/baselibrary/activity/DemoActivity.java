@@ -20,7 +20,7 @@ public class DemoActivity extends SuperBaseActivity {
 
 
     @Override
-    protected void initIntentData() {
+    protected void initIntentData(Bundle savedInstanceState) {
         //TODO: 出事化Intent 传入的参数
     }
 
