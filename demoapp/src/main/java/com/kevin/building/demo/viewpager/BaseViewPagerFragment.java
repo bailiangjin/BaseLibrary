@@ -97,9 +97,10 @@ public class BaseViewPagerFragment extends BaseFragment implements ViewPager.OnP
 
     /**
      * 初始化数据
+     * @param savedInstanceState
      */
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
         vpBeanList = getVpBeanList();
         mViewPager.setAdapter(new MyPagerAdapter(vpBeanList));
 

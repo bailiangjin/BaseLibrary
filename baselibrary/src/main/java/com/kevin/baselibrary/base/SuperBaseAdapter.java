@@ -15,6 +15,7 @@ import java.util.List;
 /**
  * Created by bailiangjin on 16/8/1.
  */
+@Deprecated
 abstract public class SuperBaseAdapter<T> extends BaseAdapter {
 
     protected final Context context;

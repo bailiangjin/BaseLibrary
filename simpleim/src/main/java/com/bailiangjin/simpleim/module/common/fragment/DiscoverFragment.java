@@ -1,5 +1,7 @@
 package com.bailiangjin.simpleim.module.common.fragment;
 
+import android.os.Bundle;
+
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseFragment;
 import com.bailiangjin.simpleim.sdk.leancloud.LcLoginActivity;
@@ -34,7 +36,7 @@ public class DiscoverFragment extends BaseFragment{
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 

@@ -1,6 +1,6 @@
 package com.bailiangjin.simpleim.module.common.fragment;
 
-import android.view.View;
+import android.os.Bundle;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseFragment;
@@ -23,7 +23,7 @@ public class ContactFragment extends BaseFragment{
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
 
     }
 }

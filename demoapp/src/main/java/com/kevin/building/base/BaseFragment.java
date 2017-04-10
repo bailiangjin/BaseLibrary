@@ -2,7 +2,8 @@ package com.kevin.building.base;
 
 import android.view.View;
 
-import com.kevin.baselibrary.base.SuperBaseFragment;
+import com.bailiangjin.uilibrary.fragment.SuperBaseFragment;
+
 
 /**
  * Author:  liangjin.bai
@@ -12,7 +13,25 @@ import com.kevin.baselibrary.base.SuperBaseFragment;
 public abstract class BaseFragment extends SuperBaseFragment {
 
     @Override
+    protected void beforeViewBind() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
     protected void bindView(View view) {
 
     }
+
+    @Override
+    protected void unBindView() {
+
+    }
+
+
 }
+

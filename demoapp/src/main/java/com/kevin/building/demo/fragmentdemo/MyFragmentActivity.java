@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.WindowManager;
 
-import com.kevin.baselibrary.base.SuperBaseFragment;
+import com.bailiangjin.uilibrary.fragment.SuperBaseFragment;
 import com.kevin.building.base.BaseActivity;
 import com.kevin.building.fragment.Fragment1;
 import com.kevin.building.fragment.Fragment2;

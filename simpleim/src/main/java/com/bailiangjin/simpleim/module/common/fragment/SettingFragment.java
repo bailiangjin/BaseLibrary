@@ -1,5 +1,6 @@
 package com.bailiangjin.simpleim.module.common.fragment;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -43,7 +44,7 @@ public class SettingFragment extends BaseFragment{
     }
 
     @Override
-    protected void initData() {
+    protected void initData(Bundle savedInstanceState) {
         tv_id.setText(AccountUtils.getCurrentUserId());
         tv_name.setText(AccountUtils.getCurrentUserId().toUpperCase());
         ImageLoadUtils.INSTANCE.loadCircleImageView(iv_head,AccountUtils.defaultHeadUrl);

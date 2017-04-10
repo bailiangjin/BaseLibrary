@@ -90,7 +90,7 @@ public class Fragment1 extends BaseFragment
 	}
 
 	@Override
-	protected void initData() {
+	protected void initData(Bundle savedInstanceState) {
 
 	}
 
