@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.bailiangjin.javabaselib.utils.GsonUtils;
-import com.kevin.baselibrary.interfaze.callback.HttpCallback;
-import com.kevin.baselibrary.net.OKHttpUtils;
+import com.kevin.building.net.HttpCallback;
+import com.kevin.building.net.OKHttpUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;

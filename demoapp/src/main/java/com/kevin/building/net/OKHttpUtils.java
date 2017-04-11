@@ -1,6 +1,5 @@
-package com.kevin.baselibrary.net;
+package com.kevin.building.net;
 
-import com.kevin.baselibrary.interfaze.callback.HttpCallback;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.FormEncodingBuilder;
