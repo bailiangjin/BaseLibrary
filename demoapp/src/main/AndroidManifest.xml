@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.kevin.building">
+    package="com.bailiangjin.building">
 
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -14,7 +14,7 @@
 
 
     <application
-        android:name=".MyApplication"
+        android:name="com.bailiangjin.building.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/icon_app"
         android:label="@string/app_name"
@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.bailiangjin.building.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,120 +32,120 @@
 
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.bailiangjin.building.MainActivity"
             android:label="@string/main_page"></activity>
 
         <!--DetailActivity-->
         <activity
-            android:name=".demo.dynamic.DetailActivity"
+            android:name="com.bailiangjin.building.demo.dynamic.DetailActivity"
 
             android:label="DetailActivity" />
         <!--FragmentAdapterDemos-->
         <activity
-            android:name=".demo.fragmentdemo.FragmentAdapterDemos"
+            android:name="com.bailiangjin.building.demo.fragmentdemo.FragmentAdapterDemos"
 
             android:label="FragmentAdapterDemos" />
         <!--DynamicPageActivity-->
         <activity
-            android:name=".demo.dynamic.DynamicPageActivity"
+            android:name="com.bailiangjin.building.demo.dynamic.DynamicPageActivity"
 
             android:label="DynamicPageActivity" />
 
         <!--ViewPagerDemo-->
         <activity
-            android:name=".demo.viewpager.ViewPagerDemoActivity"
+            android:name="com.bailiangjin.building.demo.viewpager.ViewPagerDemoActivity"
 
             android:label="ViewPagerDemo" />
         <!--widget控件demos-->
         <activity
-            android:name=".demo.widget.dialog.DialogActivity"
+            android:name="com.bailiangjin.building.demo.widget.dialog.DialogActivity"
 
             android:label="弹窗" />
 
         <!--WebView demos-->
         <activity
-            android:name=".demo.WebViewActivity"
+            android:name="com.bailiangjin.building.demo.WebViewActivity"
 
             android:label="WebView" />
 
         <!--拖拽按钮demo-->
         <activity
-            android:name=".demo.widget.draggridview.DragGridViewActivity"
+            android:name="com.bailiangjin.building.demo.widget.draggridview.DragGridViewActivity"
 
             android:label="@string/drag_gridveiw_demo" />
 
         <activity
-            android:name=".demo.widget.searchbar.SearchActivity"
+            android:name="com.bailiangjin.building.demo.widget.searchbar.SearchActivity"
 
             android:label="@string/search_demo" />
 
         <activity
-            android:name=".demo.widget.WidgetMainActivity"
+            android:name="com.bailiangjin.building.demo.widget.WidgetMainActivity"
             android:label="@string/ui_demo"
              />
 
 
         <!--网络相关demo-->
         <activity
-            android:name=".demo.networkdemo.NetworkActivity"
+            android:name="com.bailiangjin.building.demo.networkdemo.NetworkActivity"
             android:label="@string/network" />
 
         <activity
-            android:name=".demo.fragmentdemo.MyFragmentActivity"
+            android:name="com.bailiangjin.building.demo.fragmentdemo.MyFragmentActivity"
             android:label="@string/fragment" />
         <activity
-            android:name=".demo.dbtest.DatabaseActivity"
+            android:name="com.bailiangjin.building.demo.dbtest.DatabaseActivity"
             android:label="@string/database" />
 
         <!--启动模式测试-->
 
         <activity
-            android:name=".demo.launchmode.LaunchModeActivity1"
+            android:name="com.bailiangjin.building.demo.launchmode.LaunchModeActivity1"
 
             android:label="@string/launch_mode" />
         <activity
-            android:name=".demo.launchmode.LaunchModeActivity2"
+            android:name="com.bailiangjin.building.demo.launchmode.LaunchModeActivity2"
             android:label="@string/launch_mode"
             android:launchMode="singleInstance" />
 
 
         <activity
-            android:name=".demo.launchmode.LaunchModeActivity3"
+            android:name="com.bailiangjin.building.demo.launchmode.LaunchModeActivity3"
             android:label="@string/launch_mode" />
 
 
         <activity
-            android:name=".demo.launchmode.LaunchModeActivity4"
+            android:name="com.bailiangjin.building.demo.launchmode.LaunchModeActivity4"
             android:label="@string/launch_mode"
             android:launchMode="standard" />
 
         <activity
-            android:name=".demo.keylistener.KeyListenerActivity"
+            android:name="com.bailiangjin.building.demo.keylistener.KeyListenerActivity"
             android:label="按键监听"
             android:launchMode="standard" />
         <activity
-        android:name=".demo.switchnetworkstate.SwitchNetWorkStateActivity"
+        android:name="com.bailiangjin.building.demo.switchnetworkstate.SwitchNetWorkStateActivity"
         android:label="网络状态"
         android:launchMode="standard" />
 
         <activity
-            android:name=".demo.filelistener.FileListenerActivity"
+            android:name="com.bailiangjin.building.demo.filelistener.FileListenerActivity"
             android:label="文件监听"
             android:launchMode="standard" />
 
         <activity
-            android:name=".activity.TestActivity"
+            android:name="com.bailiangjin.building.activity.TestActivity"
             android:label="公用测试"
             android:launchMode="standard" />
 
 
         <activity
-            android:name=".demo.ImageLoadActivity"
+            android:name="com.bailiangjin.building.demo.ImageLoadActivity"
             android:label="ImageLoadActivity"
             />
 
         <activity
-            android:name=".activity.TestDeviceActivity"
+            android:name="com.bailiangjin.building.activity.TestDeviceActivity"
             android:label="TestDeviceActivity"
             />
         <!--应用界面demo-->

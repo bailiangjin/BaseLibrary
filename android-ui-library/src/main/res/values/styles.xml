@@ -52,21 +52,155 @@
         </attr>
     </declare-styleable>
 
+
     <!-- TextView 样式 -->
     <style name="tv_base_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/tv_size_middle</item>
     </style>
 
-    <!--标题栏文字样式-->
     <style name="title_tv_style" parent="@style/tv_base_style">
+        <item name="android:singleLine">true</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/title_tv_size</item>
     </style>
+
+    <style name="guide_tv_style" parent="@style/tv_base_style">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/tv_size_middle</item>
+    </style>
+
+    <style name="setting_tv_style" parent="@style/tv_base_style">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">@dimen/tv_size_middle</item>
+    </style>
+
+    <style name="green_tv_style" parent="@style/tv_base_style">
+        <item name="android:textSize">@dimen/tv_size_middle</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="red_tv_style" parent="@style/tv_base_style">
+        <item name="android:textSize">@dimen/tv_size_large</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <!-- EditText 样式 -->
+    <style name="et_base_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/et_input_bg</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:minWidth">@dimen/et_min_width</item>
+        <item name="android:minHeight">@dimen/et_min_height</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:textSize">@dimen/tv_size_large</item>
+    </style>
+
+    <style name="et_large_style" parent="et_base_style">
+        <item name="android:textSize">@dimen/tv_size_large</item>
+    </style>
+
+    <style name="et_middle_style" parent="et_base_style">
+        <item name="android:textSize">@dimen/tv_size_middle</item>
+    </style>
+
+    <!-- Button 样式 -->
+    <style name="btn_base_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">@dimen/btn_min_width</item>
+        <item name="android:minHeight">@dimen/btn_min_height</item>
+        <item name="android:textColor">@drawable/text_color_selector_white_gray</item>
+        <item name="android:background">@drawable/btn_base_selector_new</item>
+    </style>
+
+    <!--通屏幕宽度按钮 样式-->
+    <style name="btn_full_style" parent="@style/btn_base_style">
+        <item name="android:textSize">@dimen/tv_size_xlarge</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/btn_full_margin</item>
+        <item name="android:layout_marginRight">@dimen/btn_full_margin</item>
+
+    </style>
+    <style name="btn_xlarge_style" parent="@style/btn_base_style">
+        <item name="android:textSize">@dimen/tv_size_xlarge</item>
+    </style>
+
+    <style name="btn_large_style" parent="@style/btn_base_style">
+        <item name="android:textSize">@dimen/tv_size_large</item>
+        <item name="android:layout_width">@dimen/btn_common_width</item>
+    </style>
+
+    <style name="btn_middle_style" parent="@style/btn_base_style">
+        <item name="android:textSize">@dimen/tv_size_middle</item>
+        <item name="android:layout_width">@dimen/btn_common_width</item>
+    </style>
+
+    <style name="btn_small_style" parent="@style/btn_base_style">
+        <item name="android:minHeight">@dimen/btn_min_height_small</item>
+        <item name="android:minWidth">@dimen/btn_min_width_small</item>
+        <item name="android:textSize">@dimen/tv_size_small</item>
+    </style>
+
+    <style name="action_icon_style" >
+        <item name="android:height">10dp</item>
+        <item name="android:width">10dp</item>
+    </style>
+
+
+    <!--ListView 常用参数-->
+    <style name="lv_base_style" >
+        <item name="android:listSelector">@null</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:scrollingCache">@null</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:fadingEdgeLength">0dp</item>
+    </style>
+
+    <!--ListView Item 常用参数-->
+    <style name="item_lv_base_style" >
+        <!--处理 子view获取父View焦点问题-->
+        <item name="android:descendantFocusability">blocksDescendants</item>
+    </style>
+
+    <!--GridView常用参数-->
+    <style name="gv_base_style" >
+        <item name="android:listSelector">@null</item>
+        <item name="android:cacheColorHint">@color/white</item>
+        <item name="android:numColumns">auto_fit</item>
+        <item name="android:stretchMode">columnWidth</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:fadingEdgeLength">2dp</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:horizontalSpacing">10dp</item>
+        <item name="android:verticalSpacing">10dp</item>
+        <item name="android:drawSelectorOnTop">false</item>
+        <item name="android:transcriptMode">alwaysScroll</item>
+    </style>
+
+
+    <!-- Item 背景样式 -->
+    <style name="setting_item_bg_style" >
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/setting_bg_item_selector</item>
+    </style>
+
 
 
     <style name="tv_black_14_333" parent="@style/tv_base_style">

@@ -10,8 +10,8 @@ import android.view.MotionEvent;
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.uilibrary.activity.SuperBaseActivity;
 import com.bugtags.library.Bugtags;
-import com.kevin.baselibrary.utils.LogUtils;
-import com.kevin.baselibrary.utils.ToastUtils;
+import com.bailiangjin.utilslibrary.utils.LogUtils;
+import com.bailiangjin.utilslibrary.utils.ToastUtils;
 
 
 import butterknife.ButterKnife;

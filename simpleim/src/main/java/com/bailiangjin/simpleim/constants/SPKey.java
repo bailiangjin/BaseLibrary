@@ -1,6 +1,6 @@
 package com.bailiangjin.simpleim.constants;
 
-import com.kevin.baselibrary.constant.SuperSPKey;
+import com.bailiangjin.utilslibrary.constant.SuperSPKey;
 
 /**
  * 

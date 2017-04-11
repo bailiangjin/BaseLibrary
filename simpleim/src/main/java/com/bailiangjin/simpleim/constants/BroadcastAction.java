@@ -1,6 +1,6 @@
 package com.bailiangjin.simpleim.constants;
 
-import com.kevin.baselibrary.constant.SuperBroadcastAction;
+import com.bailiangjin.utilslibrary.constant.SuperBroadcastAction;
 
 /**
  * Author:  liangjin.bai

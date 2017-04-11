@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kevin.baselibrary"
+    package="com.bailiangjin.utilslibrary"
     android:versionCode="1"
     android:versionName="1.0">
 
@@ -33,7 +33,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
-        <service android:name=".service.FileListenerService" />
+        <service android:name="com.bailiangjin.utilslibrary.service.FileListenerService" />
 
     </application>
 

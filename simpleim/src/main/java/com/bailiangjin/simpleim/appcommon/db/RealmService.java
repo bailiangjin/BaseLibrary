@@ -1,8 +1,8 @@
 package com.bailiangjin.simpleim.appcommon.db;
 
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
-import com.kevin.baselibrary.utils.app.AppUtils;
-import com.kevin.baselibrary.utils.LogUtils;
+import com.bailiangjin.utilslibrary.utils.app.AppUtils;
+import com.bailiangjin.utilslibrary.utils.LogUtils;
 
 import java.util.HashMap;
 import java.util.List;

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/demo_common_gradient_bg"
-    tools:context="com.kevin.baselibrary.activity.DemoActivity">
+    tools:context="com.bailiangjin.utilslibrary.activity.DemoActivity">
 
 
     <include layout="@layout/btn_base_body" />
