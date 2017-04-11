@@ -2,21 +2,19 @@ package com.bailiangjin.simpleim.appcommon.base;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.MotionEvent;
 
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.uilibrary.activity.SuperBaseActivity;
-import com.bugtags.library.Bugtags;
 import com.bailiangjin.utilslibrary.utils.LogUtils;
 import com.bailiangjin.utilslibrary.utils.ToastUtils;
-
+import com.bugtags.library.Bugtags;
 
 import butterknife.ButterKnife;
 
-public abstract class BaseActivity<T extends ViewDataBinding> extends SuperBaseActivity {
+public abstract class BaseActivity extends SuperBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         LogUtils.d("Activity:::-->>onCreate");

@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bailiangjin.utilslibrary.utils.LogUtils;
-import com.bailiangjin.utilslibrary.utils.SuperViewUtils;
+import com.bailiangjin.demo.utils.SuperViewUtils;
 import com.bailiangjin.demo.R;
 import com.bailiangjin.demo.base.BaseFragment;
 

@@ -66,6 +66,6 @@ public class MyMenuItem {
     public enum Type {
         SEARCH,
         SHARE,
-        OTHER;
+        OTHER
     }
 }

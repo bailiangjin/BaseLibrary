@@ -1,4 +1,4 @@
-package com.bailiangjin.utilslibrary.utils;
+package com.bailiangjin.demo.utils;
 
 import android.content.Context;
 import android.graphics.Paint;
