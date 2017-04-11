@@ -85,7 +85,7 @@ android {
 }
 
 dependencies {
-    compile project(':baselibrary')
+    compile project(':android-utils-library')
 //    compile 'com.geekkevin:baselibrary:1.0.1.1'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'

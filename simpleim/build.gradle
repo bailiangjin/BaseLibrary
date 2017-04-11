@@ -64,7 +64,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':baselibrary')
+    compile project(':android-utils-library')
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.+'
     compile ('cn.leancloud.android:chatkit:1.0.0')
