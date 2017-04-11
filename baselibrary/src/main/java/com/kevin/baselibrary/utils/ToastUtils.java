@@ -3,7 +3,7 @@ package com.kevin.baselibrary.utils;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.kevin.baselibrary.app.SuperApplication;
+import com.kevin.baselibrary.api.UtilsLibrary;
 
 /**
  * Toast 工具类
@@ -57,7 +57,7 @@ public class ToastUtils {
      * @param showTime
      */
     private static void toastString(String str, int showTime) {
-        MyToast.getToast(SuperApplication.getContext(), str, showTime).show();
+        MyToast.getToast(UtilsLibrary.getAppContext(), str, showTime).show();
     }
 
     /**
@@ -66,7 +66,7 @@ public class ToastUtils {
      * @param showTime
      */
     private static void toastResId(int resId, int showTime) {
-        MyToast.getToast(SuperApplication.getContext(), SuperApplication.getContext().getString(resId), showTime).show();
+        MyToast.getToast(UtilsLibrary.getAppContext(), UtilsLibrary.getAppContext().getString(resId), showTime).show();
     }
 
     /**

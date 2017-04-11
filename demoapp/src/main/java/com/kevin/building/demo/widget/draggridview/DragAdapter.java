@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.kevin.baselibrary.view.draggridview.DragGridBaseAdapter;
+import com.bailiangjin.uilibrary.view.DragGridBaseAdapter;
 import com.kevin.building.R;
 import com.kevin.building.model.TaskItemBean;
 

@@ -14,9 +14,9 @@ import android.text.style.TextAppearanceSpan;
 import android.widget.TextView;
 
 
-import com.kevin.baselibrary.app.AppUtils;
-import com.kevin.baselibrary.model.art.text.ColorText;
-import com.kevin.baselibrary.model.art.text.StyleText;
+import com.kevin.baselibrary.utils.app.AppUtils;
+import com.kevin.baselibrary.utils.ui.textview.ColorText;
+import com.kevin.baselibrary.utils.ui.textview.StyleText;
 import com.kevin.baselibrary.utils.html.LinkMovementMethodExt;
 import com.kevin.baselibrary.utils.html.MTagHandler;
 import com.kevin.baselibrary.utils.html.TvLoadImageAst;

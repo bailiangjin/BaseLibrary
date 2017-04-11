@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
-import com.kevin.baselibrary.app.SuperApplication;
+import com.kevin.baselibrary.api.UtilsLibrary;
 
 /**
  * 设备信息工具类
@@ -34,7 +34,7 @@ public class DeviceInfoUtils {
      */
     public static String getIMei() {
 
-        return getIMei(SuperApplication.getContext());
+        return getIMei(UtilsLibrary.getAppContext());
     }
 
     /**

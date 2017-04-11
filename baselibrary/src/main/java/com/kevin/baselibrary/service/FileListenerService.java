@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.kevin.baselibrary.base.SuperBaseService;
+import com.kevin.baselibrary.app.SuperBaseService;
 import com.kevin.baselibrary.interfaze.listener.IFileListener;
-import com.kevin.baselibrary.tools.MultiFileObserver;
+import com.kevin.baselibrary.utils.file.MultiFileObserver;
 import com.kevin.baselibrary.utils.file.FilePathUtil;
 import com.kevin.baselibrary.utils.LogUtils;
 

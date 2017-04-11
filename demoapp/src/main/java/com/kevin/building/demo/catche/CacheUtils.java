@@ -1,7 +1,7 @@
 package com.kevin.building.demo.catche;
 
-import com.kevin.baselibrary.app.AppUtils;
-import com.kevin.baselibrary.tools.SerializeTools;
+import com.kevin.baselibrary.utils.app.AppUtils;
+import com.kevin.baselibrary.utils.file.SerializeTools;
 import com.kevin.building.model.TaskItemBean;
 
 /**

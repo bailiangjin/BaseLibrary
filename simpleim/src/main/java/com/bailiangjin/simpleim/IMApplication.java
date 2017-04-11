@@ -7,6 +7,7 @@ import com.bailiangjin.simpleim.sdk.leancloud.LCConfig;
 import com.bailiangjin.simpleim.utils.ImageLoadUtils;
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
+import com.kevin.baselibrary.api.UtilsLibrary;
 import com.kevin.baselibrary.app.SuperApplication;
 
 import cn.leancloud.chatkit.LCChatKit;
@@ -16,24 +17,17 @@ import cn.leancloud.chatkit.LCChatKit;
  */
 public class IMApplication extends SuperApplication {
 
-
-
-
     @Override
     public void onCreate() {
         super.onCreate();
         initBugstags();
         //初始化 ImageLoad工具类
         // 只在Application中初始化一次 全局可使用
+        UtilsLibrary.init(this);
         ImageLoadUtils.INSTANCE.init(this);
         LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
         AVOSCloud.setDebugLogEnabled(true);
         LCChatKit.getInstance().init(getApplicationContext(), LCConfig.TEST_IM_APP_ID, LCConfig.TEST_IM_APP_KEY);
-    }
-
-    @Override
-    protected String getAppNameFromSub() {
-        return "simpleim";
     }
 
     /**

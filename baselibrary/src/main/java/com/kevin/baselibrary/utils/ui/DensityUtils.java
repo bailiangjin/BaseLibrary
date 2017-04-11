@@ -2,7 +2,7 @@ package com.kevin.baselibrary.utils.ui;
 
 import android.content.Context;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 
 /**
  * dp与px转换工具

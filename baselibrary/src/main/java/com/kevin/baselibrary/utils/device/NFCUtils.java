@@ -5,7 +5,7 @@ import android.nfc.NfcManager;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 import com.kevin.baselibrary.utils.ToastUtils;
 

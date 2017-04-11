@@ -1,6 +1,6 @@
 package com.kevin.baselibrary.utils.file;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 
 /**
  * Author:  liangjin.bai

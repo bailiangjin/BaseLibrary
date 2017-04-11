@@ -8,8 +8,8 @@ import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-import com.kevin.baselibrary.app.AppUtils;
-import com.kevin.baselibrary.app.SuperApplication;
+import com.kevin.baselibrary.api.UtilsLibrary;
+import com.kevin.baselibrary.utils.app.AppUtils;
 import com.kevin.baselibrary.enums.NetworkTypeEnum;
 import com.kevin.baselibrary.enums.ProviderTypeEnum;
 import com.kevin.baselibrary.utils.LogUtils;
@@ -135,7 +135,7 @@ public class NetUtils {
      * @return ProviderTypeEnum 运营商类型
      */
     public static ProviderTypeEnum getProviderType() {
-        TelephonyManager telephonyManager = (TelephonyManager) SuperApplication.getContext().getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager telephonyManager = (TelephonyManager) UtilsLibrary.getAppContext().getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
         String imsi; // 返回唯一的用户ID;就是这张卡的编号神马的
         imsi = telephonyManager.getSubscriberId();
         String type= telephonyManager.getSimOperator();
@@ -165,7 +165,7 @@ public class NetUtils {
      * @return
      */
     public static NetworkTypeEnum getNetWorkType() {
-        NetworkInfo networkInfo = ((ConnectivityManager) SuperApplication.getContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+        NetworkInfo networkInfo = ((ConnectivityManager) UtilsLibrary.getAppContext().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
             if (networkInfo.getType() == ConnectivityManager.TYPE_WIFI) {
                 return NetworkTypeEnum.TYPE_WIFI;

@@ -4,7 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.provider.Settings;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 
 /**
  * Created by bailiangjin on 16/9/23.

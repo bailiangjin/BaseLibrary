@@ -2,6 +2,7 @@ package com.kevin.building;
 
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
+import com.kevin.baselibrary.api.UtilsLibrary;
 import com.kevin.baselibrary.app.SuperApplication;
 import com.kevin.building.utils.ImageLoadUtils;
 
@@ -23,12 +24,8 @@ public class MyApplication extends SuperApplication {
         //初始化 ImageLoad工具类
         // 只在Application中初始化一次 全局可使用
         ImageLoadUtils.INSTANCE.init(this);
+        UtilsLibrary.init(this);
 
-    }
-
-    @Override
-    protected String getAppNameFromSub() {
-        return "demoApp";
     }
 
     /**

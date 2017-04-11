@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 
 
 /**

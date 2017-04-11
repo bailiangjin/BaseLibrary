@@ -3,7 +3,7 @@ package com.kevin.baselibrary.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.kevin.baselibrary.app.SuperApplication;
+import com.kevin.baselibrary.api.UtilsLibrary;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -195,7 +195,7 @@ public class SPUtils {
 
 
     private static SharedPreferences getSp() {
-        return SuperApplication.getContext().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        return UtilsLibrary.getAppContext().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
     }
 
 

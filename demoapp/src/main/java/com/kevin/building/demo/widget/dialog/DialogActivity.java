@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
-import com.kevin.baselibrary.widget.utils.PNDialog;
+import com.bailiangjin.uilibrary.widget.PNDialog;
+import com.bailiangjin.uilibrary.widget.PNDialogListener;
 import com.kevin.building.R;
 import com.kevin.building.base.BtnBaseActivity;
 
@@ -51,7 +52,7 @@ public class DialogActivity extends BtnBaseActivity {
         switch (v.getId()) {
             case R.id.btn1:
 
-                new PNDialog.Builder().setContent(getString(R.string.exit_app) + "?").setCancelable(false).create(DialogActivity.this, new com.kevin.baselibrary.widget.utils.PNDialogListener() {
+                new PNDialog.Builder().setContent(getString(R.string.exit_app) + "?").setCancelable(false).create(DialogActivity.this, new PNDialogListener() {
                     @Override
                     public void onPositive() {
                         DialogActivity.this.finish();

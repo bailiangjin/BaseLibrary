@@ -10,7 +10,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.kevin.baselibrary.app.SuperApplication;
+import com.kevin.baselibrary.api.UtilsLibrary;
 import com.kevin.baselibrary.utils.device.DeviceInfoUtils;
 
 /**
@@ -74,7 +74,7 @@ public class ScreenUtils
 	public static int getDeviceScreenWidth()
 	{
 
-		return getDeviceScreenWidth(SuperApplication.getContext());
+		return getDeviceScreenWidth(UtilsLibrary.getAppContext());
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class ScreenUtils
 	 */
 	public static int getDeviceScreenHeight()
 	{
-		return getDeviceScreenHeight(SuperApplication.getContext());
+		return getDeviceScreenHeight(UtilsLibrary.getAppContext());
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class ScreenUtils
 	public static int getStatusHeight()
 	{
 
-		return getStatusHeight(SuperApplication.getContext());
+		return getStatusHeight(UtilsLibrary.getAppContext());
 	}/**
 	 * 获得屏幕高度
 	 *

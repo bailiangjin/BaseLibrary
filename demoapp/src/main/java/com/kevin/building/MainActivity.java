@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.utils.file.CleanUtils;
 import com.kevin.building.activity.TestActivity;

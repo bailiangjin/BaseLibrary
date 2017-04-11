@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.webkit.DownloadListener;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 import com.kevin.baselibrary.utils.LogUtils;
 
 /**

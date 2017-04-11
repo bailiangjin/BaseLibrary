@@ -3,8 +3,6 @@ package com.bailiangjin.simpleim.view;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.kevin.baselibrary.view.ItemView;
-
 /**
  * Created by bailiangjin on 16/10/11.
  */

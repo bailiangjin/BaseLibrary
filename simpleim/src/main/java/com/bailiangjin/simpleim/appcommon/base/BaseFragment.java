@@ -13,6 +13,11 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment extends SuperBaseFragment {
 
     @Override
+    protected void beforeViewBind() {
+
+    }
+
+    @Override
     protected void bindView(View view) {
         ButterKnife.bind(this, view);
     }

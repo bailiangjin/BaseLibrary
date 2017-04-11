@@ -3,7 +3,7 @@ package com.kevin.baselibrary.config;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 
 import java.io.IOException;
 import java.io.InputStream;

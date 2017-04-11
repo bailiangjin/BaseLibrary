@@ -1,7 +1,7 @@
 package com.kevin.baselibrary.utils.file;
 
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 import com.kevin.baselibrary.config.CleanOptions;
 import com.kevin.baselibrary.enums.SPKeyEnum;
 import com.bailiangjin.javabaselib.utils.FileUtils;

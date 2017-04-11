@@ -5,7 +5,7 @@ import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.os.Build;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 
 /**
  * Created by bailiangjin on 16/9/23.

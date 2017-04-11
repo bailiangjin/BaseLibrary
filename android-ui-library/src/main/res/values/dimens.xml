@@ -1,0 +1,64 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!-- 字体大小 -->
+    <!-- 标题栏文字大小 -->
+    <dimen name="title_tv_size">18dp</dimen>
+    <dimen name="tv_size_xxxlarge">24dp</dimen>
+    <dimen name="tv_size_xxlarge">22dp</dimen>
+    <dimen name="tv_size_xlarge">20dp</dimen>
+    <dimen name="tv_size_large">18dp</dimen>
+    <dimen name="tv_size_middle">16dp</dimen>
+    <dimen name="tv_size_small">14dp</dimen>
+    <dimen name="tv_size_xsmall">12dp</dimen>
+
+    <!-- 控件尺寸 -->
+    <!-- 登录按钮宽度 -->
+    <dimen name="btn_login_width">160dp</dimen>
+
+    <dimen name="btn_min_width">80dp</dimen>
+    <dimen name="btn_min_height">40dp</dimen>
+
+    <dimen name="btn_min_width_small">60dp</dimen>
+    <dimen name="btn_min_height_small">30dp</dimen>
+
+    <dimen name="btn_common_width">160dp</dimen>
+    <dimen name="btn_common_height">40dp</dimen>
+
+    <dimen name="btn_large_width">240dp</dimen>
+    <dimen name="btn_large_height">48dp</dimen>
+
+
+    <dimen name="btn_full_height">48dp</dimen>
+    <dimen name="btn_full_margin">16dp</dimen>
+
+
+    <!-- 按钮边距 -->
+    <dimen name="btn_margin_large">10dp</dimen>
+    <dimen name="btn_margin_middle">8dp</dimen>
+    <dimen name="btn_margin_small">4dp</dimen>
+
+
+    <!-- 输入框 -->
+    <!-- 登录页输入框 宽度 -->
+    <dimen name="et_login_width">250dp</dimen>
+    <dimen name="et_min_width">80dp</dimen>
+    <dimen name="et_min_width_small">60dp</dimen>
+    <dimen name="et_min_height">40dp</dimen>
+    <dimen name="et_min_height_small">30dp</dimen>
+
+    <!-- 输入框边距 -->
+    <dimen name="et_padding_small">5dp</dimen>
+    <dimen name="et_padding_middle">8dp</dimen>
+    <dimen name="et_padding_large">10dp</dimen>
+
+
+    <!-- 通长按钮边距 -->
+    <dimen name="total_btn_margin">16dp</dimen>
+
+
+</resources>

@@ -3,7 +3,7 @@ package com.kevin.building.demo.widget.draggridview;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.kevin.baselibrary.view.draggridview.DragGridView;
+import com.bailiangjin.uilibrary.view.DragGridView;
 import com.kevin.building.R;
 import com.kevin.building.model.TaskItemBean;
 

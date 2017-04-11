@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.bailiangjin.simpleim.module.account.LoginActivity;
 import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 
 /**
  * Splash页

@@ -6,8 +6,9 @@ import android.view.KeyEvent;
 import android.webkit.WebView;
 
 import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
+import com.bailiangjin.uilibrary.widget.PNDialogListener;
 import com.kevin.baselibrary.utils.ui.WebViewUtils;
-import com.kevin.baselibrary.widget.utils.PNDialog;
+import com.bailiangjin.uilibrary.widget.PNDialog;
 import com.kevin.building.R;
 import com.kevin.building.base.BaseActivity;
 
@@ -90,7 +91,7 @@ public class WebViewActivity extends BaseActivity {
 
     private void showBackToSourceDialog() {
 
-        new PNDialog.Builder().setContent("确定关闭当前页面？").create(WebViewActivity.this, new com.kevin.baselibrary.widget.utils.PNDialogListener() {
+        new PNDialog.Builder().setContent("确定关闭当前页面？").create(WebViewActivity.this, new PNDialogListener() {
             @Override
             public void onPositive() {
                 shortToast("返回源页面");

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.location.LocationManager;
 import android.provider.Settings;
 
-import com.kevin.baselibrary.app.AppUtils;
+import com.kevin.baselibrary.utils.app.AppUtils;
 
 /**
  * Created by bailiangjin on 16/9/23.
