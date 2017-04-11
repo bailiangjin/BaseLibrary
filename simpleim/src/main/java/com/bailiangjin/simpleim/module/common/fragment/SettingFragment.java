@@ -10,7 +10,7 @@ import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseFragment;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
 import com.bailiangjin.simpleim.module.account.UserInfoActivity;
-import com.bailiangjin.simpleim.utils.ImageLoadUtils;
+import com.bailiangjin.utilslibrary.utils.ui.ImageLoadUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;

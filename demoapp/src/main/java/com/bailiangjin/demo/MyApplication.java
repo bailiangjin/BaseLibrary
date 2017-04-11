@@ -1,10 +1,10 @@
 package com.bailiangjin.demo;
 
-import com.bugtags.library.Bugtags;
-import com.bugtags.library.BugtagsOptions;
 import com.bailiangjin.utilslibrary.api.UtilsLibrary;
 import com.bailiangjin.utilslibrary.app.SuperApplication;
-import com.bailiangjin.demo.utils.ImageLoadUtils;
+import com.bailiangjin.utilslibrary.utils.ui.ImageLoadUtils;
+import com.bugtags.library.Bugtags;
+import com.bugtags.library.BugtagsOptions;
 
 /**
  * Author:  liangjin.bai

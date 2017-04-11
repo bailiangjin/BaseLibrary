@@ -78,6 +78,8 @@ dependencies {
     compile files('libs/AJavaBaseLib.jar')
     compile 'org.greenrobot:eventbus:3.0.0'
     compile project(':android-ui-library')
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
 }
 
 //添加

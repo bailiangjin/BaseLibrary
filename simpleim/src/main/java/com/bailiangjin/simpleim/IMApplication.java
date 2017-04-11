@@ -4,7 +4,7 @@ import com.avos.avoscloud.AVOSCloud;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
 import com.bailiangjin.simpleim.sdk.leancloud.CustomUserProvider;
 import com.bailiangjin.simpleim.sdk.leancloud.LCConfig;
-import com.bailiangjin.simpleim.utils.ImageLoadUtils;
+import com.bailiangjin.utilslibrary.utils.ui.ImageLoadUtils;
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
 import com.bailiangjin.utilslibrary.api.UtilsLibrary;

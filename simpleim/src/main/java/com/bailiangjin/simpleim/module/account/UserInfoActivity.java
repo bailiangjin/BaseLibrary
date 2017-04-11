@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.bailiangjin.simpleim.R;
 import com.bailiangjin.simpleim.appcommon.base.BaseActivity;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
-import com.bailiangjin.simpleim.utils.ImageLoadUtils;
+import com.bailiangjin.utilslibrary.utils.ui.ImageLoadUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;

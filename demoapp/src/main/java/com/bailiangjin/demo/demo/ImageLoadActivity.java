@@ -5,7 +5,7 @@ import android.widget.ImageView;
 
 import com.bailiangjin.demo.R;
 import com.bailiangjin.demo.base.BaseActivity;
-import com.bailiangjin.demo.utils.ImageLoadUtils;
+import com.bailiangjin.utilslibrary.utils.ui.ImageLoadUtils;
 
 /**
  * @author bailiangjin

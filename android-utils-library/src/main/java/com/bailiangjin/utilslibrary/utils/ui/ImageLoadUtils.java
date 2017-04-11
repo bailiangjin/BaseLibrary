@@ -1,10 +1,10 @@
-package com.bailiangjin.simpleim.utils;
+package com.bailiangjin.utilslibrary.utils.ui;
 
 import android.content.Context;
 import android.widget.ImageView;
 
-import com.bailiangjin.simpleim.IMApplication;
-import com.bailiangjin.simpleim.R;
+import com.bailiangjin.utilslibrary.R;
+import com.bailiangjin.utilslibrary.api.UtilsLibrary;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -50,9 +50,9 @@ public enum ImageLoadUtils {
      */
     private ImageLoadUtils() {
         //初始化 全局默认图片
-        onLoadingImageResId = R.drawable.icon_user;
-        onEmptyImageResId = R.drawable.icon_user;
-        onFailedImageResId = R.drawable.icon_user;
+        onLoadingImageResId = R.drawable.icon_back;
+        onEmptyImageResId = R.drawable.icon_back;
+        onFailedImageResId = R.drawable.icon_back;
 
         simpleBitmapDisplayer = new SimpleBitmapDisplayer();
         normalOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, simpleBitmapDisplayer);
@@ -63,7 +63,7 @@ public enum ImageLoadUtils {
         //圆角图片 圆角半径dp
         int cornerRadiusDp = 10;
         //圆角大小通过 dp2px转换 使得 不同分辨率设备上呈现一致显示效果
-        roundedBitmapDisplayer = new RoundedBitmapDisplayer(dip2px(IMApplication.getContext(),cornerRadiusDp));
+        roundedBitmapDisplayer = new RoundedBitmapDisplayer(dip2px(UtilsLibrary.getAppContext(),cornerRadiusDp));
         roundedOptions = getOption(onLoadingImageResId, onEmptyImageResId, onFailedImageResId, roundedBitmapDisplayer);
 
     }
