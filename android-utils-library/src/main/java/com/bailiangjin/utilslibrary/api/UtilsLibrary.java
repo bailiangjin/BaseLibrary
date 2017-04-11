@@ -3,6 +3,8 @@ package com.bailiangjin.utilslibrary.api;
 import android.app.Application;
 import android.content.Context;
 
+import com.bailiangjin.utilslibrary.utils.ui.ImageLoadUtils;
+
 /**
  * Created by bailiangjin on 2017/4/10.
  */
@@ -13,6 +15,11 @@ public class UtilsLibrary {
 
     public static void init(Application application) {
         apiConfig = new ApiConfig(application);
+        onInit(application);
+    }
+
+    private static void onInit(Application application) {
+        ImageLoadUtils.INSTANCE.init(application);
     }
 
     public static Context getAppContext(){

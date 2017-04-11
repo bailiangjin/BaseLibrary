@@ -85,14 +85,11 @@ android {
 }
 
 dependencies {
-    compile project(':android-utils-library')
-//    compile 'com.geekkevin:baselibrary:1.0.1.1'
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:cardview-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile project(':android-utils-library')
 }

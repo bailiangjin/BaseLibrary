@@ -69,16 +69,12 @@ android {
 //}
 
 dependencies {
-    compile 'com.android.support:support-v4:23.3.0'
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'com.android.support:cardview-v7:23.3.0'
-    compile 'com.android.support:recyclerview-v7:23.3.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.squareup.okhttp:okhttp:2.6.0'
-    compile files('libs/nineoldanimatin.jar')
     compile files('libs/AJavaBaseLib.jar')
     compile 'org.greenrobot:eventbus:3.0.0'
     compile project(':android-ui-library')
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
 
 }
 

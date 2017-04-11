@@ -4,11 +4,10 @@ import com.avos.avoscloud.AVOSCloud;
 import com.bailiangjin.simpleim.engine.logicutils.AccountUtils;
 import com.bailiangjin.simpleim.sdk.leancloud.CustomUserProvider;
 import com.bailiangjin.simpleim.sdk.leancloud.LCConfig;
-import com.bailiangjin.utilslibrary.utils.ui.ImageLoadUtils;
-import com.bugtags.library.Bugtags;
-import com.bugtags.library.BugtagsOptions;
 import com.bailiangjin.utilslibrary.api.UtilsLibrary;
 import com.bailiangjin.utilslibrary.app.SuperApplication;
+import com.bugtags.library.Bugtags;
+import com.bugtags.library.BugtagsOptions;
 
 import cn.leancloud.chatkit.LCChatKit;
 
@@ -24,7 +23,6 @@ public class IMApplication extends SuperApplication {
         //初始化 ImageLoad工具类
         // 只在Application中初始化一次 全局可使用
         UtilsLibrary.init(this);
-        ImageLoadUtils.INSTANCE.init(this);
         LCChatKit.getInstance().setProfileProvider(CustomUserProvider.getInstance());
         AVOSCloud.setDebugLogEnabled(true);
         LCChatKit.getInstance().init(getApplicationContext(), LCConfig.TEST_IM_APP_ID, LCConfig.TEST_IM_APP_KEY);
