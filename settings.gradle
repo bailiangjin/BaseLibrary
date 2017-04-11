@@ -1,1 +1,6 @@
-include ':android-utils-library', ':demoapp', ':simpleim', ':baseadapter-recyclerview', ':android-ui-library'
+include ':demoapp',':android-utils-library', ':android-ui-library', ':baseadapter-recyclerview'
+
+
+project(':baseadapter-recyclerview').projectDir = new File(settingsDir, 'libs/AndroidRapidDevelopLibrarys/baseadapter-recyclerview')
+project(':android-ui-library').projectDir = new File(settingsDir, 'libs/AndroidRapidDevelopLibrarys/android-ui-library')
+project(':android-utils-library').projectDir = new File(settingsDir, 'libs/AndroidRapidDevelopLibrarys/android-utils-library')

@@ -1,0 +1,3 @@
+[submodule "libs/AndroidRapidDevelopLibrarys"]
+	path = libs/AndroidRapidDevelopLibrarys
+	url = https://github.com/bailiangjin/AndroidRapidDevelopLibrarys.git
