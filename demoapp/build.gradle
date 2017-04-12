@@ -95,5 +95,6 @@ dependencies {
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile 'com.jakewharton:butterknife:7.0.1'
+    compile project(':android-ui-library')
     compile project(':android-utils-library')
 }
