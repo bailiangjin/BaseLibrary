@@ -21,6 +21,7 @@ public abstract class BaseActivity extends SuperBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         LogUtils.d("Activity:::-->>onCreate");
         super.onCreate(savedInstanceState);
+        titleBarBuilder.setBackGround(R.drawable.title_gradient_bg);
 
     }
 
