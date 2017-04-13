@@ -7,7 +7,7 @@ import android.os.Message;
 import android.view.View;
 
 import com.bailiangjin.utilslibrary.utils.app.AppUtils;
-import com.bailiangjin.utilslibrary.config.CleanOptions;
+import com.bailiangjin.utilslibrary.utils.file.CleanOptions;
 import com.bailiangjin.utilslibrary.utils.file.CleanUtils;
 import com.bailiangjin.demo.activity.TestActivity;
 import com.bailiangjin.demo.activity.TestDeviceActivity;
