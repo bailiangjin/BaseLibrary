@@ -1,8 +1,7 @@
 package com.bailiangjin.demo;
 
 import com.bailiangjin.utilslibrary.api.UtilsLibrary;
-import com.bailiangjin.utilslibrary.app.SuperApplication;
-import com.bailiangjin.utilslibrary.utils.ui.ImageLoadUtils;
+import com.bailiangjin.uilibrary.app.SuperApplication;
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
 
