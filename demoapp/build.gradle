@@ -89,7 +89,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:cardview-v7:23.3.0'
     compile 'com.android.support:design:23.3.0'
     compile 'com.bugtags.library:bugtags-lib:latest.integration'
@@ -97,4 +97,5 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile project(':android-ui-library')
     compile project(':android-utils-library')
+    compile files('libs/tbs_sdk_thirdapp_v3.1.0.1034_43100_sharewithdownload_obfs_20170301_182143.jar')
 }

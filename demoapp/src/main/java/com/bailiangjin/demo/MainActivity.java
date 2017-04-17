@@ -6,18 +6,18 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
-import com.bailiangjin.utilslibrary.utils.app.AppUtils;
-import com.bailiangjin.utilslibrary.utils.file.CleanOptions;
-import com.bailiangjin.utilslibrary.utils.file.CleanUtils;
 import com.bailiangjin.demo.activity.TestActivity;
 import com.bailiangjin.demo.activity.TestDeviceActivity;
 import com.bailiangjin.demo.base.BtnBaseActivity;
-import com.bailiangjin.demo.demo.WebViewActivity;
+import com.bailiangjin.demo.demo.X5WebViewActivity;
 import com.bailiangjin.demo.demo.fragmentdemo.MyFragmentActivity;
 import com.bailiangjin.demo.demo.networkdemo.NetworkActivity;
 import com.bailiangjin.demo.demo.viewpager.ViewPagerDemoActivity;
 import com.bailiangjin.demo.demo.widget.WidgetMainActivity;
 import com.bailiangjin.demo.utils.ActivityUtils;
+import com.bailiangjin.utilslibrary.utils.app.AppUtils;
+import com.bailiangjin.utilslibrary.utils.file.CleanOptions;
+import com.bailiangjin.utilslibrary.utils.file.CleanUtils;
 
 /**
  * Author:  liangjin.bai
@@ -111,7 +111,7 @@ public class MainActivity extends BtnBaseActivity {
                 break;
 
             case R.id.btn7:
-                ActivityUtils.startActivity(this, WebViewActivity.class);
+                ActivityUtils.startActivity(this, X5WebViewActivity.class);
                 break;
 
             case R.id.btn8:

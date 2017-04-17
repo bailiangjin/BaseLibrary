@@ -1,9 +1,12 @@
 package com.bailiangjin.demo;
 
-import com.bailiangjin.utilslibrary.api.UtilsLibrary;
+import android.util.Log;
+
 import com.bailiangjin.uilibrary.app.SuperApplication;
+import com.bailiangjin.utilslibrary.api.UtilsLibrary;
 import com.bugtags.library.Bugtags;
 import com.bugtags.library.BugtagsOptions;
+import com.tencent.smtt.sdk.QbSdk;
 
 /**
  * Author:  liangjin.bai
@@ -23,6 +26,23 @@ public class MyApplication extends SuperApplication {
         //初始化 ImageLoad工具类
         // 只在Application中初始化一次 全局可使用
         UtilsLibrary.init(this);
+
+        QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
+
+            @Override
+            public void onViewInitFinished(boolean arg0) {
+                // TODO Auto-generated method stub
+                //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
+                Log.d("app", " onViewInitFinished is " + arg0);
+            }
+
+            @Override
+            public void onCoreInitFinished() {
+                // TODO Auto-generated method stub
+            }
+        };
+        //x5内核初始化接口
+        QbSdk.initX5Environment(getApplicationContext(),  cb);
 
 
 

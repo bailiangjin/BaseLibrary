@@ -67,6 +67,10 @@
             android:name="com.bailiangjin.demo.demo.WebViewActivity"
 
             android:label="WebView" />
+        <activity
+            android:name=".demo.X5WebViewActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:label="X5WebViewActivity" />
 
         <!--拖拽按钮demo-->
         <activity
@@ -155,6 +159,8 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <meta-data android:name="QBSDKAppKey" android:value="0n9lyL29YCv7mdlQ8jlSexUG"> </meta-data>
 
 
     </application>
