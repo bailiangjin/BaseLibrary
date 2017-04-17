@@ -3,14 +3,15 @@ package com.bailiangjin.demo.demo;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.webkit.WebView;
 
-import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
-import com.bailiangjin.uilibrary.widget.PNDialogListener;
-import com.bailiangjin.utilslibrary.utils.ui.WebViewUtils;
-import com.bailiangjin.uilibrary.widget.PNDialog;
 import com.bailiangjin.demo.R;
 import com.bailiangjin.demo.base.BaseActivity;
+import com.bailiangjin.uilibrary.titlebar.ItemClickListener;
+import com.bailiangjin.uilibrary.widget.PNDialog;
+import com.bailiangjin.uilibrary.widget.PNDialogListener;
+import com.bailiangjin.utilslibrary.utils.ui.WebViewUtils;
 
 /**
  * 作者：bailiangjin  bailiangjin@gmail.com
@@ -49,7 +50,8 @@ public class WebViewActivity extends BaseActivity {
 
         webView = (WebView) findViewById(R.id.webview_test);
         //WebViewUtils.load(webView,"file:///android_asset/html/test.html");
-        WebViewUtils.load(webView, "http://www.baidu.com");
+//        WebViewUtils.load(webView, "http://www.baidu.com");
+        WebViewUtils.load(webView, "http://m.so.xywy.com/comse.php?from=soapp&keyword=%E5%92%B3%E5%97%BD&src=m_so");
 
     }
 
@@ -105,6 +107,31 @@ public class WebViewActivity extends BaseActivity {
             }
         }).show();
 
+    }
+
+    private long lastMoveEventTime = -1;
+    private int eventTimeInterval = 40;
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+
+        long eventTime = ev.getEventTime();
+        int action = ev.getAction();
+
+        switch (action){
+            case MotionEvent.ACTION_MOVE: {
+                if ((eventTime - lastMoveEventTime) > eventTimeInterval){
+                    lastMoveEventTime = eventTime;
+                    return super.onTouchEvent(ev);
+                }
+                break;
+            }
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_UP: {
+                return super.onTouchEvent(ev);
+            }
+        }
+        return true;
     }
 
 
