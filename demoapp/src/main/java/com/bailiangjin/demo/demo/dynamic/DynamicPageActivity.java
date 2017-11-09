@@ -73,10 +73,10 @@ public class DynamicPageActivity extends BaseActivity {
 
         initMyData();
 
-        String jsonData = GsonUtils.getInstance().toJson(pageParamBean);
+        String jsonData = GsonUtils.INSTANCE.toJson(pageParamBean);
 
         long startTime = System.currentTimeMillis();
-        PageDataBean pageParamBeanNew = GsonUtils.getInstance().toObj(jsonData, PageDataBean.class);
+        PageDataBean pageParamBeanNew = GsonUtils.INSTANCE.toObj(jsonData, PageDataBean.class);
 //        Type type = new TypeToken<ArrayList<ViewBean>>() {
 //        }.getType();
 
@@ -264,7 +264,7 @@ public class DynamicPageActivity extends BaseActivity {
 
         pageParamBean = new PageDataBean(pageInfo, viewBeanList);
         PageDataBean pageParamBean2 = new PageDataBean(pageInfo, viewBeanList);
-        String json = GsonUtils.getInstance().toJson(pageParamBean);
+        String json = GsonUtils.INSTANCE.toJson(pageParamBean);
         LogUtils.e("pageParamBeanJson:" + json);
 
         FileUtils.saveStringToFile(FilePathUtil.getSdcardPath() + File.separator + "json.txt", json, false);
@@ -288,7 +288,7 @@ public class DynamicPageActivity extends BaseActivity {
 
         projectDataBean.setClassDataBeanList(classDataBeanList);
 
-        String jsonPro = GsonUtils.getInstance().toJson(projectDataBean);
+        String jsonPro = GsonUtils.INSTANCE.toJson(projectDataBean);
 
         FileUtils.saveStringToFile(FilePathUtil.getSdcardPath() + File.separator + "json_pro.txt", jsonPro, false);
         LogUtils.e("pageParamBeanJson:" + jsonPro);

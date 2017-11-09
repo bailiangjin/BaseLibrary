@@ -92,7 +92,7 @@ public class NetworkActivity extends BaseActivity implements View.OnClickListene
                                 longToast("onSucess:" + json);
 
 
-                                WeatherSK weatherInfoBean =  GsonUtils.getInstance().toObj(json,WeatherSK.class);
+                                WeatherSK weatherInfoBean =  GsonUtils.INSTANCE.toObj(json,WeatherSK.class);
                                 LogUtils.e("weatherInfo:" + weatherInfoBean.getWeatherinfo().getCity());
 //                                LogUtils.e("weatherInfo:" + weatherInfoBean.getWeatherinfo().toJson());
                             }
