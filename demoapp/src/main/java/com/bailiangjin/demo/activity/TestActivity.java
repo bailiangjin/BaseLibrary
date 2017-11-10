@@ -78,7 +78,13 @@ public class TestActivity extends BtnBaseActivity {
     }
 
 
+    @Override
+    public String getScreenId() {
+        return null;
+    }
 
+    @Override
+    public void onScreenResume(String screenId) {
 
-
+    }
 }

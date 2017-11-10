@@ -22,6 +22,12 @@ android {
             abiFilters "armeabi", "armeabi-v7a", "x86"    //输出指定三种abi体系结构下的so库。目前可有可无。
         }
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+
     }
     buildTypes {
         release {
@@ -57,26 +63,31 @@ android {
 
         }
     }
+    flavorDimensions "ndk"
     productFlavors {
         armv7_debug {
+            dimension "ndk"
             ndk {
                 abiFilters "armeabi-v7a"
             }
 
         }
         armv7_release {
+            dimension "ndk"
             ndk {
                 abiFilters "armeabi-v7a"
             }
 
         }
         x86_debug {
+            dimension "ndk"
             ndk {
                 abiFilters "x86"
             }
 
         }
         x86_release {
+            dimension "ndk"
             ndk {
                 abiFilters "x86"
             }
@@ -97,7 +108,7 @@ dependencies {
     implementation sdkVar.SupportDesign
     implementation sdkVar.Bugtags
     implementation sdkVar.GoogleGmsAppindexing
-    implementation 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
 
     implementation project(':android-ui-library')
     implementation project(':android-utils-library')

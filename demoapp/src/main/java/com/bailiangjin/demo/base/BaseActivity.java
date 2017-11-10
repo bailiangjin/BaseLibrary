@@ -15,7 +15,15 @@ import com.bailiangjin.demo.R;
 
 public abstract class BaseActivity extends SuperBaseActivity {
 
+    @Override
+    public String getScreenId() {
+        return null;
+    }
 
+    @Override
+    public void onScreenResume(String screenId) {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

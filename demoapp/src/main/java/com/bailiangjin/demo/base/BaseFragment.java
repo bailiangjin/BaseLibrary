@@ -13,6 +13,16 @@ import com.bailiangjin.uilibrary.fragment.SuperBaseFragment;
 public abstract class BaseFragment extends SuperBaseFragment {
 
     @Override
+    public String getScreenId() {
+        return null;
+    }
+
+    @Override
+    public void onScreenResume(String screenId) {
+
+    }
+
+    @Override
     protected void beforeViewBind() {
 
     }
