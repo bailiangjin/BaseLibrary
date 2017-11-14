@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_clear_im_download_file"
+        android:text="清理IM-OA下载文件"
+        style="@style/btn_full_style"/>
+
+    <Button
+        android:id="@+id/btn_clear_photo_file"
+        android:layout_marginTop="60dp"
+        android:text="清理相册文件"
+        style="@style/btn_full_style"/>
+
+</LinearLayout>

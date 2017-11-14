@@ -9,8 +9,8 @@
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.REORDER_TASKS" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
     <application
@@ -35,6 +35,17 @@
             android:name="com.bailiangjin.demo.MainActivity"
             android:label="@string/main_page"></activity>
 
+        <activity
+            android:name="com.bailiangjin.demo.demo.file.FileOperationActivity"
+            android:label="文件操作">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <!--DetailActivity-->
         <activity
             android:name="com.bailiangjin.demo.demo.dynamic.DetailActivity"
@@ -69,8 +80,8 @@
             android:label="WebView" />
         <activity
             android:name=".demo.X5WebViewActivity"
-            android:windowSoftInputMode="stateHidden|adjustResize"
-            android:label="X5WebViewActivity" />
+            android:label="X5WebViewActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
 
         <!--拖拽按钮demo-->
         <activity
@@ -85,8 +96,7 @@
 
         <activity
             android:name="com.bailiangjin.demo.demo.widget.WidgetMainActivity"
-            android:label="@string/ui_demo"
-             />
+            android:label="@string/ui_demo" />
 
 
         <!--网络相关demo-->
@@ -128,9 +138,9 @@
             android:label="按键监听"
             android:launchMode="standard" />
         <activity
-        android:name="com.bailiangjin.demo.demo.switchnetworkstate.SwitchNetWorkStateActivity"
-        android:label="网络状态"
-        android:launchMode="standard" />
+            android:name="com.bailiangjin.demo.demo.switchnetworkstate.SwitchNetWorkStateActivity"
+            android:label="网络状态"
+            android:launchMode="standard" />
 
         <activity
             android:name="com.bailiangjin.demo.demo.filelistener.FileListenerActivity"
@@ -145,13 +155,11 @@
 
         <activity
             android:name="com.bailiangjin.demo.demo.ImageLoadActivity"
-            android:label="ImageLoadActivity"
-            />
+            android:label="ImageLoadActivity" />
 
         <activity
             android:name="com.bailiangjin.demo.activity.TestDeviceActivity"
-            android:label="TestDeviceActivity"
-            />
+            android:label="TestDeviceActivity" />
         <!--应用界面demo-->
 
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -160,7 +168,9 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <meta-data android:name="QBSDKAppKey" android:value="0n9lyL29YCv7mdlQ8jlSexUG"> </meta-data>
+        <meta-data
+            android:name="QBSDKAppKey"
+            android:value="0n9lyL29YCv7mdlQ8jlSexUG"></meta-data>
 
 
     </application>

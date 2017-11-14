@@ -7,9 +7,9 @@ import android.os.Message;
 import android.view.View;
 
 import com.bailiangjin.demo.activity.TestActivity;
-import com.bailiangjin.demo.activity.TestDeviceActivity;
 import com.bailiangjin.demo.base.BtnBaseActivity;
 import com.bailiangjin.demo.demo.X5WebViewActivity;
+import com.bailiangjin.demo.demo.file.FileOperationActivity;
 import com.bailiangjin.demo.demo.fragmentdemo.MyFragmentActivity;
 import com.bailiangjin.demo.demo.networkdemo.NetworkActivity;
 import com.bailiangjin.demo.demo.viewpager.ViewPagerDemoActivity;
@@ -50,7 +50,7 @@ public class MainActivity extends BtnBaseActivity {
         btn5.setText("Fragment模块");
         btn6.setText("ViewPagerDemo");
         btn7.setText("测试WebView");
-        btn8.setText("当前测试");
+        btn8.setText("文件操作");
 
 
         btn1.setVisibility(View.VISIBLE);
@@ -116,7 +116,7 @@ public class MainActivity extends BtnBaseActivity {
 
             case R.id.btn8:
 //               shortToast("点击了当前测试");
-                ActivityUtils.startActivity(this, TestDeviceActivity.class);
+                ActivityUtils.startActivity(this, FileOperationActivity.class);
 
 //                AppUtils.startAnyApp("com.xywy.flydoctor");
 //                AppUtils.unInstallApp("com.xywy.flydoctor");
