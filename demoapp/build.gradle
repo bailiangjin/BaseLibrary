@@ -109,7 +109,8 @@ dependencies {
     implementation sdkVar.SupportDesign
     implementation sdkVar.Bugtags
     implementation sdkVar.GoogleGmsAppindexing
-    compile 'com.jakewharton:butterknife:7.0.1'
+    implementation sdkVar.Butterknife
+    annotationProcessor sdkVar.ButterknifeAnnotation
 
     implementation project(':android-ui-library')
     implementation project(':android-utils-library')

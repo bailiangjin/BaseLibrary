@@ -11,7 +11,8 @@ import com.bailiangjin.utilslibrary.utils.file.FilePathUtil;
 
 import java.io.File;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * TODD:添加类注释
@@ -22,7 +23,7 @@ import butterknife.Bind;
 
 public class FileOperationActivity extends BaseActivity {
 
-    @Bind(R.id.btn_clear_im_download_file)
+    @BindView(R.id.btn_clear_im_download_file)
     Button btn_clear_im_download_file;
     Button btn_clear_photo_file;
 
@@ -38,30 +39,30 @@ public class FileOperationActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
-        btn_clear_im_download_file= (Button) findViewById(R.id.btn_clear_im_download_file);
-        btn_clear_im_download_file.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String gomeDownloadFileDir = FilePathUtil.getSdcardPath() + File.separator + "GoMeConnect/GoMeDownLoad";
-
-              boolean isSuccess=  FileUtils.deleteFile(gomeDownloadFileDir);
-
-                shortToast("清理文件GoMe下载文件"+(isSuccess ?"成功":"失败"));
-            }
-        });
-
-        btn_clear_photo_file= (Button) findViewById(R.id.btn_clear_photo_file);
-        btn_clear_photo_file.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String gomeDownloadFileDir = FilePathUtil.getSdcardPath() + File.separator + "DCIM/Camera";
-                boolean isSuccess=  FileUtils.deleteFile(gomeDownloadFileDir);
-
-                shortToast("清理文件相册照片"+(isSuccess ?"成功":"失败"));
-            }
-        });
+//        btn_clear_im_download_file= (Button) findViewById(R.id.btn_clear_im_download_file);
+//        btn_clear_im_download_file.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                String gomeDownloadFileDir = FilePathUtil.getSdcardPath() + File.separator + "GoMeConnect/GoMeDownLoad";
+//
+//              boolean isSuccess=  FileUtils.deleteFile(gomeDownloadFileDir);
+//
+//                shortToast("清理文件GoMe下载文件"+(isSuccess ?"成功":"失败"));
+//            }
+//        });
+//
+//        btn_clear_photo_file= (Button) findViewById(R.id.btn_clear_photo_file);
+//        btn_clear_photo_file.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                String gomeDownloadFileDir = FilePathUtil.getSdcardPath() + File.separator + "DCIM/Camera";
+//                boolean isSuccess=  FileUtils.deleteFile(gomeDownloadFileDir);
+//
+//                shortToast("清理文件相册照片"+(isSuccess ?"成功":"失败"));
+//            }
+//        });
 
     }
 
@@ -72,17 +73,17 @@ public class FileOperationActivity extends BaseActivity {
 
 
 
-//    @OnClick({R.id.btn_clear_im_download_file})
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.btn_clear_im_download_file:
-//                shortToast("点击了清理文件");
-//                String gomeDownloadFileDir = FilePathUtil.getSdcardPath() + File.separator + "GoMeConnect/GoMeDownLoad";
-//                FileUtils.deleteFile(gomeDownloadFileDir);
-//                break;
-//            default:
-//                break;
-//        }
-//
-//    }
+    @OnClick({R.id.btn_clear_im_download_file})
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_clear_im_download_file:
+                shortToast("点击了清理文件");
+                String gomeDownloadFileDir = FilePathUtil.getSdcardPath() + File.separator + "GoMeConnect/GoMeDownLoad";
+                FileUtils.deleteFile(gomeDownloadFileDir);
+                break;
+            default:
+                break;
+        }
+
+    }
 }

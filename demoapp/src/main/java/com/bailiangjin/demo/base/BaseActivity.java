@@ -12,6 +12,8 @@ import com.bailiangjin.utilslibrary.utils.LogUtils;
 import com.bailiangjin.utilslibrary.utils.ToastUtils;
 import com.bailiangjin.demo.R;
 
+import butterknife.ButterKnife;
+
 
 public abstract class BaseActivity extends SuperBaseActivity {
 
@@ -217,11 +219,11 @@ public abstract class BaseActivity extends SuperBaseActivity {
 
     @Override
     public void bindView() {
+        ButterKnife.bind(this);
 
     }
 
     @Override
     public void unbindView() {
-
     }
 }

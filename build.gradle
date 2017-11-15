@@ -62,7 +62,7 @@ ext {
     okhttpVersion = '2.6.0'
     eventbusVersion = '3.0.0'
     junitVersion = '4.12'
-    butterknifeVersion = '8.6.0'
+    butterknifeVersion = '8.8.1'
     googleGmsPlayServicesAnalyticsVersion = '9.2.0'
     guavaVersion = '18.0'
 
@@ -98,7 +98,6 @@ ext {
 
             Butterknife          : "com.jakewharton:butterknife:$rootProject.butterknifeVersion",
             ButterknifeAnnotation: "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion",
-
             // commercial
 
             WeChatWithoutMta     : "com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+",
