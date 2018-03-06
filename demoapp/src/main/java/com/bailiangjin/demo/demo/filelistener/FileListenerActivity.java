@@ -5,12 +5,12 @@ import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
 
-import com.bailiangjin.javabaselib.utils.FileUtils;
-import com.bailiangjin.utilslibrary.utils.file.FileListenerUtils;
-import com.bailiangjin.utilslibrary.utils.file.FilePathUtil;
-import com.bailiangjin.utilslibrary.utils.LogUtils;
 import com.bailiangjin.demo.R;
 import com.bailiangjin.demo.base.BaseActivity;
+import com.bailiangjin.javabaselib.utils.FileUtils;
+import com.bailiangjin.utilslibrary.utils.LogUtils;
+import com.bailiangjin.utilslibrary.utils.file.FileListenerUtils;
+import com.bailiangjin.utilslibrary.utils.file.FilePathUtils;
 
 import java.io.File;
 
@@ -19,7 +19,7 @@ import java.io.File;
  */
 public class FileListenerActivity  extends BaseActivity {
 
-    private String filePath = FilePathUtil.getAppPath()+ File.separator+"test.txt";
+    private String filePath = FilePathUtils.getAppPath()+ File.separator+"test.txt";
 
     private TextView tv_content;
 

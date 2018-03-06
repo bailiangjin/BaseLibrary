@@ -7,7 +7,7 @@ import android.widget.Button;
 import com.bailiangjin.demo.R;
 import com.bailiangjin.demo.base.BaseActivity;
 import com.bailiangjin.javabaselib.utils.FileUtils;
-import com.bailiangjin.utilslibrary.utils.file.FilePathUtil;
+import com.bailiangjin.utilslibrary.utils.file.FilePathUtils;
 
 import java.io.File;
 
@@ -55,7 +55,7 @@ public class FileOperationActivity extends BaseActivity {
         switch (v.getId()) {
             case R.id.btn_clear_im_download_file:
 
-                String gomeDownloadFileDir = FilePathUtil.getSdcardPath() + File.separator + "GoMeConnect/GoMeDownLoad";
+                String gomeDownloadFileDir = FilePathUtils.getSdcardPath() + File.separator + "GoMeConnect/GoMeDownLoad";
                 boolean isSuccess = FileUtils.deleteFile(gomeDownloadFileDir);
                 shortToast("清理文件GoMe下载文件" + (isSuccess ? "成功" : "失败"));
 
@@ -63,7 +63,7 @@ public class FileOperationActivity extends BaseActivity {
 
             case R.id.btn_clear_photo_file:
 
-                String cameraFileDir = FilePathUtil.getSdcardPath() + File.separator + "DCIM/Camera";
+                String cameraFileDir = FilePathUtils.getSdcardPath() + File.separator + "DCIM/Camera";
                 boolean isDeletePhotoSuccess = FileUtils.deleteFile(cameraFileDir);
                 shortToast("清理文件相册照片" + (isDeletePhotoSuccess ? "成功" : "失败"));
 

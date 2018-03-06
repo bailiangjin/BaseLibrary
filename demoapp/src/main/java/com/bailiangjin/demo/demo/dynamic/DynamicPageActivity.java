@@ -6,10 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.bailiangjin.javabaselib.utils.FileUtils;
-import com.bailiangjin.javabaselib.utils.GsonUtils;
-import com.bailiangjin.utilslibrary.utils.file.FilePathUtil;
-import com.bailiangjin.utilslibrary.utils.LogUtils;
 import com.bailiangjin.demo.R;
 import com.bailiangjin.demo.base.BaseActivity;
 import com.bailiangjin.demo.demo.dynamic.bean.databean.ClassDataBean;
@@ -29,6 +25,10 @@ import com.bailiangjin.demo.demo.dynamic.bean.viewbean.type.BtnGroupType;
 import com.bailiangjin.demo.demo.dynamic.bean.viewbean.type.BtnType;
 import com.bailiangjin.demo.demo.dynamic.bean.viewbean.type.TxtType;
 import com.bailiangjin.demo.demo.dynamic.generater.ViewGeneratorImpl;
+import com.bailiangjin.javabaselib.utils.FileUtils;
+import com.bailiangjin.javabaselib.utils.GsonUtils;
+import com.bailiangjin.utilslibrary.utils.LogUtils;
+import com.bailiangjin.utilslibrary.utils.file.FilePathUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -267,7 +267,7 @@ public class DynamicPageActivity extends BaseActivity {
         String json = GsonUtils.INSTANCE.toJson(pageParamBean);
         LogUtils.e("pageParamBeanJson:" + json);
 
-        FileUtils.saveStringToFile(FilePathUtil.getSdcardPath() + File.separator + "json.txt", json, false);
+        FileUtils.saveStringToFile(FilePathUtils.getSdcardPath() + File.separator + "json.txt", json, false);
 
         ProjectDataBean projectDataBean = new ProjectDataBean();
         projectDataBean.setVersionNo("123");
@@ -290,7 +290,7 @@ public class DynamicPageActivity extends BaseActivity {
 
         String jsonPro = GsonUtils.INSTANCE.toJson(projectDataBean);
 
-        FileUtils.saveStringToFile(FilePathUtil.getSdcardPath() + File.separator + "json_pro.txt", jsonPro, false);
+        FileUtils.saveStringToFile(FilePathUtils.getSdcardPath() + File.separator + "json_pro.txt", jsonPro, false);
         LogUtils.e("pageParamBeanJson:" + jsonPro);
 
 

@@ -6,9 +6,9 @@ package com.bailiangjin.demo.jni;
  */
 public class NdkJniUtils {
 
-    static {
-        System.loadLibrary("testjni");	//defaultConfig.ndk.moduleName
-    }
-
-    public native String getCLanguageString();
+//    static {
+//        System.loadLibrary("testjni");	//defaultConfig.ndk.moduleName
+//    }
+//
+//    public native String getCLanguageString();
 }
