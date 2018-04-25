@@ -1,4 +1,4 @@
-include ':demoapp', ':android-utils-library', ':android-ui-library', ':baseadapter-recyclerview', ':X5WebDemo'
+include ':demoapp', ':android-utils-library', ':android-ui-library', ':baseadapter-recyclerview', ':X5WebDemo', ':TestDemo'
 
 
 project(':baseadapter-recyclerview').projectDir = new File(settingsDir, 'libs/AndroidRapidDevelopLibrarys/baseadapter-recyclerview')
