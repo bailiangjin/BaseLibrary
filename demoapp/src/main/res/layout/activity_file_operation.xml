@@ -15,5 +15,12 @@
         android:layout_marginTop="60dp"
         android:text="清理相册文件"
         style="@style/btn_full_style"/>
+    
+    
+    <TextView
+        android:id="@+id/tv_demo"
+        android:text="测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择测试选择"
+        android:layout_width="300dp"
+        android:layout_height="200dp" />
 
 </LinearLayout>
